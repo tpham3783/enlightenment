@@ -1,0 +1,1000 @@
+  907  ls /mnt/users/Pham/Atronix/
+  908  find /mnt/users/Pham/Atronix/ -iname uConnection
+  909  find /mnt/users/Pham/Atronix/ -iname uconnection
+  910  ls -lah /mnt/users/Pham/incoming/
+  911  cd FlashBuilder.Linux.track.trunk/
+  912  ls
+  913  trash/FlashBuilder 
+  914  tconfig
+  915  trash/FlashBuilder 
+  916  ifconfig
+  917  ifconfig eth1 down
+  918  tconfig
+  919  ifconfig
+  920  iwconfig
+  921  ping google.com
+  922  vi /etc/resolv.conf 
+  923  ping google.com
+  924  route -n
+  925  route add default gw 192.168.43.1
+  926  ping google.com
+  927  make
+  928  locate unixutils.pp
+  929  vi /etc/fpc.cfg 
+  930  make
+  931  vi /etc/fpc.cfg 
+  932  make
+  933  locate unixutils.pp
+  934  vi /etc/fpc.cfg 
+  935  make
+  936  ifconfig eth1 up
+  937  ifconfig
+  938  ls
+  939  mv abbrevia abbrevia-old
+  940  cp -rf /mnt/users/Pham/incoming/Abbrevia5 abbrevia
+  941  ls abbrevia
+  942  ls abbrevia/source/
+  943  ls abbrevia/packages/
+  944  grep syslinux_mbr *
+  945  git status
+  946  git add abbrevia/*
+  947  git add appconfig.inc 
+  948  git status
+  949  git commit -a -m "updated abbrevia library to version 5"
+  950  df
+  951  git push
+  952  ifconfig
+  953  trash/FlashBuilder 
+  954  ifconfig
+  955  ifconfig eth1 down
+  956  vi /etc/resolv.conf 
+  957  ifconfig
+  958  route -n
+  959  ping 8.8.8.8
+  960  ping paws.gsu.edu
+  961  shutdown -h now
+  962  sudo bash
+  963  ifconfig
+  964  dmesg
+  965  cat /proc/interrupts 
+  966  cat /proc/interrupts
+  967  pa -xu
+  968  ps -x
+  969  top
+  970  top -i
+  971  cat /proc/interrupts 
+  972  dmesg
+  973  ifconfig
+  974  cd /ups
+  975  cd /usr/local/src/FlashBuilder.Linux.track.trunk/
+  976  trash/FlashBuilder 
+  977  reset
+  978  trash/FlashBuilder 
+  979  extlinux 
+  980  killall pppd
+  981  killall wpa_supplicant
+  982  tconfig
+  983  shutdown -h now
+  984  vi /etc/ssh/ssh_config 
+  985  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.private toan@tpham3783.no-ip.org
+  986  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa toan@tpham3783.no-ip.org
+  987  ssh -p 45000 -i /usr/local/src/password/ssh/id_rsa toan@tpham3783.no-ip.org
+  988  cd /usr/local/src/
+  989  ls
+  990  git clone ssh://tpham3783.no-ip.org:/usr/src/gitrepo/password.git 
+  991  git clone ssh://tpham3783.no-ip.org:45000/usr/src/gitrepo/password.git 
+  992  cd password/
+  993  ls
+  994  cd ssh/
+  995  ls
+  996  ls -lah
+  997  vi /etc/ssh/ssh_config 
+  998  ssh -v -p 45000 root@tpham3783.no-ip.org
+  999  vi /etc/ssh/ssh_config 
+ 1000  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1001  vi /etc/ssh/ssh_config 
+ 1002  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1003  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.private.pub root@tpham.no-ip.org
+ 1004  ssh-copy-id -P 45000 -i /usr/local/src/password/ssh/id_rsa.private.pub root@tpham.no-ip.org
+ 1005  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.private.pub root@tpham.no-ip.org
+ 1006  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.private.pub root@tpham3783.no-ip.org
+ 1007  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1008  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.private.pub toan@tpham3783.no-ip.org
+ 1009  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1010  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.private.pub toan@tpham3783.no-ip.org
+ 1011  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.public toan@tpham3783.no-ip.org
+ 1012  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa toan@tpham3783.no-ip.org
+ 1013  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.pub toan@tpham3783.no-ip.org
+ 1014  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.org
+ 1015  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa" toan@tpham3783.no-ip.org
+ 1016  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.org
+ 1017  ssh-copy-id -v -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.org
+ 1018  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.org
+ 1019  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.private" toan@tpham3783.no-ip.org
+ 1020  ssh-copy-id -p 45000 -i "id_rsa.private" toan@tpham3783.no-ip.org
+ 1021  ssh-copy-id -p 45000 -i "id_rsa" toan@tpham3783.no-ip.org
+ 1022  ls
+ 1023  ssh-copy-id -p 45000 -i "id_rsa" toan@tpham3783.no-ip.org
+ 1024  ls -lah
+ 1025  ssh-copy-id -p 45000 -i "id_rsa" toan@tpham3783.no-ip.org
+ 1026  cat
+ 1027  cat id_rsa.pub 
+ 1028  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1029  vi /etc/ssh/ssh_config 
+ 1030  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1031  vi /etc/ssh/ssh_config 
+ 1032  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1033  vi /etc/ssh/ssh_config 
+ 1034  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1035  vi /etc/ssh/ssh_config 
+ 1036  ssh -v -p 45000 root@tpham3783.no-ip.org
+ 1037  ssh -vv -p 45000 root@tpham3783.no-ip.org
+ 1038  ssh -vvvv -p 45000 root@tpham3783.no-ip.org
+ 1039  ssh -vvvv -p 45000 toan@tpham3783.no-ip.org
+ 1040  chmod 600 id_rsa.p*
+ 1041  ssh -vvvv -p 45000 toan@tpham3783.no-ip.org
+ 1042  vi /etc/ssh/ssh_config 
+ 1043  ssh -vvvv -p 45000 toan@tpham3783.no-ip.org
+ 1044  ssh -vvvv -p 45000 root@tpham3783.no-ip.org
+ 1045  whoami
+ 1046  echo $USER
+ 1047  ssh -vvvv -p 45000 root@tpham3783.no-ip.org
+ 1048  ls -lah
+ 1049  ssh -vvvv -p 45000 toan@tpham3783.no-ip.org
+ 1050  ssh -vvvv -p 45000 root@tpham3783.no-ip.org
+ 1051  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.org
+ 1052  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa" toan@tpham3783.no-ip.org
+ 1053  strace ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa" toan@tpham3783.no-ip.org
+ 1054  sudo root
+ 1055  su -c bash root
+ 1056  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.orgssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.orgssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.orgssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.org
+ 1057  
+ 1058  reset
+ 1059  ssh-copy-id -p 45000 -i "/usr/local/src/password/ssh/id_rsa.pub" toan@tpham3783.no-ip.org
+ 1060  ssh-copy-id -p 45000 -i /usr/local/src/password/ssh/id_rsa.private toan@tpham3783.no-ip.org
+ 1061  cd ..
+ 1062  ls
+ 1063  git clone it clone ssh://root@svn.toanpham.com:45000/usr/src/gitrepo/osutil.git
+ 1064  git clone clone ssh://root@svn.toanpham.com:45000/usr/src/gitrepo/osutil.git
+ 1065  git clone ssh://root@svn.toanpham.com:45000/usr/src/gitrepo/osutil.git
+ 1066  ls
+ 1067  git clone ssh://root@toanpham.com:45000/usr/src/gitrepo/osutil.git
+ 1068  git clone ssh://root@tpham3783.no-ip.org:45000/usr/src/gitrepo/osutil.git
+ 1069  cd osutil/
+ 1070  ls
+ 1071  ./configure
+ 1072  apt-get search libopenssl
+ 1073  apt-cache search libopenssl
+ 1074  apt-cache search openssl
+ 1075  apt-cache search openssl | grep openssl
+ 1076  apt-get install openssl
+ 1077  apt-get install openssl-dev
+ 1078  make
+ 1079  ls
+ 1080  make menuconfig
+ 1081  m4
+ 1082  apt-get install m4
+ 1083  make menuconfig
+ 1084  autoconfig
+ 1085  apt-cache search autotool
+ 1086  apt-get install autotools
+ 1087  apt-get install autotools-dev
+ 1088  apt-get install autotools
+ 1089  apt-cache search autotool
+ 1090  make
+ 1091  apt-cache search auto | grep configure
+ 1092  apt-get install autoconf
+ 1093  make
+ 1094  touch compile
+ 1095  make
+ 1096  locate md5.h
+ 1097  apt-get install openssl-dev
+ 1098  apt-get install libssl-dev
+ 1099  ls
+ 1100  make
+ 1101  make menuconfig
+ 1102  apt-cache search ncurses
+ 1103  apt-get install libncurses5-dev
+ 1104  apt-cache search ncurses
+ 1105  make menuconfig
+ 1106  make
+ 1107  ls
+ 1108  ldd src/init
+ 1109  src/init
+ 1110  src/init --help
+ 1111  ifconfig
+ 1112  vi compile 
+ 1113  vi .gitignore 
+ 1114  git add compile 
+ 1115  git commit -m "added the compile file"
+ 1116  git push
+ 1117  cd ..
+ 1118  cd FlashBuilder.Linux.track.trunk/
+ 1119  vi .git/config 
+ 1120  git brach -h
+ 1121  git branch --help
+ 1122  git remote add toanpham.com ssh://root@tpham3783.no-ip.org:45000/usr/src/gitrepo/FlashBuilder.git
+ 1123  git push toanpham.com master
+ 1124  cd ..
+ 1125  cd /usr/local/src/password/
+ 1126  ls
+ 1127  cd ssh/
+ 1128  ls
+ 1129  ls -lah
+ 1130  git mv id_rsa.private.pub id_rsa.public
+ 1131  git commit -m "rename id_rsa file"
+ 1132  git push
+ 1133  vi /etc/ssh/ssh_config 
+ 1134  ls
+ 1135  git mv id_rsa.public id_rsa.pub
+ 1136  git commit -m "changed file name again" id_rsa.pub
+ 1137  git push
+ 1138  ls
+ 1139  ls -lah
+ 1140  ls
+ 1141  ls -lah
+ 1142  chmod 600 id_rsa.private 
+ 1143  ls -lah
+ 1144  ln -s id_rsa.private id_rsa
+ 1145  ls -lah
+ 1146  git status
+ 1147  git add id_rsa 
+ 1148  ls -lah
+ 1149  git commit -m "created symlink to id_rsa.private"
+ 1150  git push
+ 1151  vi /etc/ssh/ssh_config 
+ 1152  ifconfig
+ 1153  route -n
+ 1154  sudo bash
+ 1155  sudo bash
+ 1156  sudo bash
+ 1157  sudo bash
+ 1158  tconfig
+ 1159  cd /home/toan/Desktop/
+ 1160  ls
+ 1161  ls -lah
+ 1162  mv brothers_printer_rebate brothers_printer_rebate.pdf
+ 1163  ssh -p 45000 toan@tpham3783.no-ip.org
+ 1164  opkg search kernel
+ 1165  ssh -p 45000 toan@tpham3783.no-ip.org
+ 1166  ssh -p 45000 root@tpham3783.no-ip.org
+ 1167  sudo bash
+ 1168  sudo bash
+ 1169  df
+ 1170  cd /usr/local/src/
+ 1171  ls
+ 1172  git clone ssh://tpham3783.no-ip.org:45000:/usr/src/gitrepo/osutil.git
+ 1173  cd FlashBuilder.Linux.track.trunk/
+ 1174  ls
+ 1175  trash/FlashBuilder 
+ 1176  trash/FlashBuilder --help
+ 1177  trash/FlashBuilder --show-filter-list
+ 1178  trash/FlashBuilder show-filter-list
+ 1179  trash/FlashBuilder --show-filter-list
+ 1180  reset
+ 1181  trash/FlashBuilder --show-filter-list
+ 1182  reset
+ 1183  trash/FlashBuilder --show-filter-list
+ 1184  trash/FlashBuilder --show-drive-controller-list
+ 1185  reset
+ 1186  trash/FlashBuilder --show-drive-controller-list
+ 1187  ls /sys/class/sda/
+ 1188  ls /sys/class/block/sda
+ 1189  ls /sys/class/block/sda/device/vendor 
+ 1190  cat /sys/class/block/sda/device/vendor 
+ 1191  ls /sys/class/block/sda/device/vendor 
+ 1192  trash/FlashBuilder --show-drive-controller-list
+ 1193  ls /sys/class/block/sda/device/model 
+ 1194  cat /sys/class/block/sda/device/model 
+ 1195  trash/FlashBuilder --show-drive-controller-list
+ 1196  reset
+ 1197  trash/FlashBuilder --show-drive-controller-list
+ 1198  reset
+ 1199  trash/FlashBuilder --show-drive-controller-list
+ 1200  reset
+ 1201  trash/FlashBuilder --show-drive-controller-list
+ 1202  reset
+ 1203  trash/FlashBuilder --show-drive-controller-list
+ 1204  reset
+ 1205  trash/FlashBuilder --show-drive-controller-list
+ 1206  reset
+ 1207  trash/FlashBuilder --show-drive-controller-list
+ 1208  trash/FlashBuilder 
+ 1209  trash/FlashBuilder --show-drive-controller-list
+ 1210  history
+ 1211  trash/FlashBuilder --show-drive-controller-list --help
+ 1212  trash/FlashBuilder --show-drive-controller-listx --help
+ 1213  reset
+ 1214  trash/FlashBuilder --show-drive-controller-listx --help
+ 1215  trash/FlashBuilder --show-drive-controller-list
+ 1216  reset
+ 1217  trash/FlashBuilder --show-drive-controller-list
+ 1218  trash/FlashBuilder --show-drive-controller-listx --help
+ 1219  shutdown -h now
+ 1220  tconfig
+ 1221  ifconfig
+ 1222  chrome
+ 1223  ifconfig
+ 1224  dhclient eth1
+ 1225  apt-get install chrome-browser
+ 1226  apt-cache search chrome
+ 1227  apt-get install chromium-browser
+ 1228  ifconfig
+ 1229  ifconfig wlan0 down
+ 1230  apt-get install chromium-browser
+ 1231  vi /etc/apt/apt.conf.d/80proxy 
+ 1232  apt-get install chromium-browser
+ 1233  vi /etc/resolv.conf 
+ 1234  apt-get install chromium-browser
+ 1235  rout e-n
+ 1236  route -n
+ 1237  route add default gw 10.234.60.1
+ 1238  route -n
+ 1239  apt-get install chromium-browser
+ 1240  cd /tmp
+ 1241  wget http://www.google.com/support/enterprise/static/chromeos/docs/admin/en/generate_cloudprint_config.py.zip
+ 1242  ifconfig
+ 1243  ifconfig wlan0 down
+ 1244  wget http://www.google.com/support/enterprise/static/chromeos/docs/admin/en/generate_cloudprint_config.py.zip
+ 1245  route -n
+ 1246  export http_proxy=http://bgs7qmx:toanpham6666@proxy.ups.com:8080
+ 1247  wget http://www.google.com/support/enterprise/static/chromeos/docs/admin/en/generate_cloudprint_config.py.zip
+ 1248  ls
+ 1249  unzip generate_cloudprint_config.py.zip 
+ 1250  ls
+ 1251  chmod generate_cloudprint_config.py
+ 1252  chmod 777 generate_cloudprint_config.py
+ 1253  ./generate_cloudprint_config.py 
+ 1254  apt-cache search python | grep python
+ 1255  apt-cache search keepas
+ 1256  apt-get install keepass2
+ 1257  apt-cache search keepas
+ 1258  apt-get install keepassx
+ 1259  ls
+ 1260  cd l
+ 1261  ls
+ 1262  cd /usr/local/src/
+ 1263  cd password/
+ 1264  ls
+ 1265  sudo bash
+ 1266  cd /usr/local/src/
+ 1267  ls
+ 1268  cd ASX_Server_Emu
+ 1269  ls
+ 1270  vi asx_server.ini 
+ 1271  ls
+ 1272  vi destmap.ini 
+ 1273  ls
+ 1274  vi Label.txt 
+ 1275  kate destmap.ini &
+ 1276  ./asx_server 4444
+ 1277  reset
+ 1278  ./asx_server 18962
+ 1279  reset
+ 1280  cd ..
+ 1281  ls
+ 1282  sudo bash
+ 1283  keepass2
+ 1284  keepass2 -h
+ 1285  keepass2 --help
+ 1286  keepass2 /usr/local/src/password/keypass/keepass_tpham3783.kdbx 
+ 1287  keepass2 /usr/local/src/password/keypass/keepass_tpham3783.kdbx -pw:t106500p
+ 1288  sudo bash
+ 1289  sudo bash
+ 1290  sudo bash
+ 1291  cd /usr/local/src/FlashBuilder.Linux.track.trunk/
+ 1292  ls
+ 1293  git status
+ 1294  git commit -a -m "added support for displaying and filtering device controllers"
+ 1295  ifconfig
+ 1296  git push
+ 1297  git push origin
+ 1298  git remote -a
+ 1299  git remote show
+ 1300  git push toanpham.com
+ 1301  ifconfig
+ 1302  iwconfig
+ 1303  ifconfig
+ 1304  iwconfig
+ 1305  route -n
+ 1306  cat /etc/resolv.conf 
+ 1307  vi /etc/resolv.conf 
+ 1308  trash/FlashBuilder --show-device-controller
+ 1309  trash/FlashBuilder --show-device-controllers
+ 1310  trash/FlashBuilder --show-drive-controllers
+ 1311  trash/FlashBuilder --show-drive-controller
+ 1312  trash/FlashBuilder --show-drive-controller-list
+ 1313  trash/FlashBuilder --show-filter-list
+ 1314  export DEVICE2_MATCH="WD:Element"
+ 1315  trash/FlashBuilder --show-filter-list
+ 1316  trash/FlashBuilder --show-filter-list --help
+ 1317  trash/FlashBuilder --show-filter-listx --help
+ 1318  export DEVICE2_MATCH="WD:Element"
+ 1319  trash/FlashBuilder --show-filter-list
+ 1320  export DEVICE0_MATCH="WD:Element"
+ 1321  trash/FlashBuilder --show-filter-list
+ 1322  export DEVICE0_MATCH=WD:Element
+ 1323  trash/FlashBuilder --show-filter-list
+ 1324  trash/FlashBuilder 
+ 1325  ls /sys/class/block/sda/device/vendor 
+ 1326  cat /sys/class/block/sda/device/vendor 
+ 1327  cat /sys/class/block/sda/device/model 
+ 1328  export DEVICE0_MATCH=ATA:WDC
+ 1329  trash/FlashBuilder 
+ 1330  export DEVICE0_MATCH=ATA:WDCXXX
+ 1331  trash/FlashBuilder 
+ 1332  export DEVICE0_MATCH=ATA:WDCXXX
+ 1333  trash/FlashBuilder 
+ 1334  export DEVICE0_MATCH=ATA:WDCXX
+ 1335  trash/FlashBuilder
+ 1336  export DEVICE0_MATCH=ATAxxx:WDCXX
+ 1337  trash/FlashBuilder
+ 1338  export DEVICE0_MATCH=ATAxxx:WDCXXhhh
+ 1339  trash/FlashBuilder
+ 1340  export DEVICE0_MATCH=ATAxxx:WDCXXhhhooo
+ 1341  trash/FlashBuilder
+ 1342  export DEVICE0_MATCH=ATA:WDC
+ 1343  trash/FlashBuilder
+ 1344  export DEVICE0_MATCH=ATA:WDC
+ 1345  trash/FlashBuilder
+ 1346  export DEVICE0_MATCH=ATA:WDCcc
+ 1347  trash/FlashBuilder
+ 1348  export DEVICE0_MATCH=ATA:WD
+ 1349  trash/FlashBuilder
+ 1350  export DEVICE0_MATCH=ATA:WDl
+ 1351  trash/FlashBuilder
+ 1352  export DEVICE0_MATCH=ATA:WDC a
+ 1353  trash/FlashBuilder
+ 1354  export DEVICE0_MATCH=ATA:WDC 
+ 1355  trash/FlashBuilder
+ 1356  trash/FlashBuilder --show-filter-list
+ 1357  export DEVICE5_MATCH=ATA:asdfasdfasdf
+ 1358  trash/FlashBuilder --show-filter-list
+ 1359  reset
+ 1360  trash/FlashBuilder --show-filter-list
+ 1361  reset
+ 1362  trash/FlashBuilder --show-filter-list
+ 1363  reset
+ 1364  trash/FlashBuilder --show-filter-list
+ 1365  trash/FlashBuilder --show-filter-listl
+ 1366  trash/FlashBuilder --show-filter-list
+ 1367  git status
+ 1368  ls backup/
+ 1369  vi .gitignore 
+ 1370  git status
+ 1371  git ignore backup/*
+ 1372  git commit -a -m "added support to filter, and detect a controller as a removeable device"
+ 1373  cd /usr/local/src/
+ 1374  ls
+ 1375  cd password/
+ 1376  git status
+ 1377  git commit -a -m "added ups password"
+ 1378  git push
+ 1379  shutdown -h now
+ 1380  cd /usr/local/src/ostools/
+ 1381  ls
+ 1382  ls bin/
+ 1383  cd bin
+ 1384  ls
+ 1385  vi keepass2_app
+ 1386  chmod 777 keepass2_app 
+ 1387  ./keepass2_app 
+ 1388  ifconfig
+ 1389  ifconfig eth1 down
+ 1390  ifconfig wlan0 up
+ 1391  ifconfig
+ 1392  cd ..
+ 1393  cd password/
+ 1394  ls
+ 1395  git update
+ 1396  git pull
+ 1397  vi .git/config 
+ 1398  git pull origin
+ 1399  route -n
+ 1400  tconfig
+ 1401  git pull origin
+ 1402  vi /etc/resolv.conf 
+ 1403  git pull origin
+ 1404  ifconfig
+ 1405  iwconfig 
+ 1406  killall wpa_supplicant
+ 1407  tconfig
+ 1408  cat /etc/resolv.conf 
+ 1409  git pull origin
+ 1410  keepass2
+ 1411  df
+ 1412  dmesg
+ 1413  df
+ 1414  mkdir /mnt/drobo
+ 1415  mount -t ext3 /dev/sdc1 /mnt/drobo/
+ 1416  cd /mnt/drobo/
+ 1417  ls
+ 1418  cd i7vms/
+ 1419  ls
+ 1420  cd ..
+ 1421  ls
+ 1422  chmod 777 .
+ 1423  chmod 666 vostro_image.vdi 
+ 1424  tconfig
+ 1425  ls
+ 1426  cd dell_vostro_backup_June18/
+ 1427  ls
+ 1428  cd ..
+ 1429  ls
+ 1430  ifconfig
+ 1431  tconfig
+ 1432  qemu-nbd -c /dev/nbd0 vostro_image.vdi 
+ 1433  modprobe nbd
+ 1434  qemu-nbd -c /dev/nbd0 vostro_image.vdi 
+ 1435  fdisk /dev/nbd0 
+ 1436  mkdir /tmp/l
+ 1437  qemu-system-i386 /dev/nbd0
+ 1438  mkdir /tmp/l
+ 1439  mount -t ext3 /dev/nbd0p3 /tmp/l
+ 1440  ls /tmp/l
+ 1441  umount /tmp/l
+ 1442  qemu-system-i386 /dev/nbd0
+ 1443  df
+ 1444  mount /mnt/users/
+ 1445  cd /mnt/
+ 1446  ls
+ 1447  cd /tmp/l
+ 1448  cd ..
+ 1449  mount -t ext3 /dev/nbd0p3 l
+ 1450  cd l
+ 1451  chroot . /bin/bash
+ 1452  ls
+ 1453  cd ..
+ 1454  umount l
+ 1455  df
+ 1456  vi /etc/grub.d/10_linux 
+ 1457  man grub.conf
+ 1458  vi /etc/default/grub 
+ 1459  vi /boot/grub/grub.cfg 
+ 1460  mount -t ext3 /dev/nbd0p3 l
+ 1461  df
+ 1462  cd l
+ 1463  ls
+ 1464  chroot  . /bin/bash
+ 1465  cd ..
+ 1466  umount l
+ 1467  df
+ 1468  cd l
+ 1469  ls
+ 1470  cd ..
+ 1471  mount -t ext3 /dev/nbd0p3 l
+ 1472  cd l
+ 1473  cd etc/rc5.d/
+ 1474  ls
+ 1475  grep fs *
+ 1476  grep fsck *
+ 1477  grep fsc *
+ 1478  ls
+ 1479  cd ..
+ 1480  cd rc2.d/
+ 1481  ls
+ 1482  cd ..
+ 1483  cd init.d
+ 1484  ls
+ 1485  grep fs *
+ 1486  grep fsc *
+ 1487  vi checkfs.sh 
+ 1488  ls
+ 1489  vi checkroot.sh 
+ 1490  cd ..
+ 1491  umount l
+ 1492  df
+ 1493  mount -t ext3 /dev/nbd0p3 l
+ 1494  cd l
+ 1495  vi boot/grub/grub.conf
+ 1496  cd ..
+ 1497  umount l
+ 1498  qemu-system-i386 /dev/nbd0
+ 1499  umount l
+ 1500  df
+ 1501  qemu-nbd --help
+ 1502  qemu-nbd -d /dev/nbd0
+ 1503  dmesg
+ 1504  df
+ 1505  dmesg
+ 1506  df
+ 1507  mount -t ext3 /dev/sdd1 /mnt/drobo/
+ 1508  cd /mnt/drobo/
+ 1509  ls -lah
+ 1510  cp vostro_image.vdi vostro_image.vdi.backup
+ 1511  history
+ 1512  qemu-nbd -c vostro_image.vdi /dev/nbd0
+ 1513  df
+ 1514  fdisk /dev/nbd0
+ 1515  qemu-nbd -c vostro_image.vdi /dev/nbd0
+ 1516  dmesg
+ 1517  ls
+ 1518  qemu-nbd -c vostro_image.vdi /dev/nbd0
+ 1519  fdisk /dev/nbd0
+ 1520  p
+ 1521  qemu-nbd -d /dev/nbd0
+ 1522  qemu-nbd -c vostro_image.vdi /dev/nbd0
+ 1523  ls -lah
+ 1524  ifconfig
+ 1525  umount /mnt/users
+ 1526  ifconfig eth1 down
+ 1527  vi /etc/resolv.conf 
+ 1528  route -n
+ 1529  killall wpa_supplicant 
+ 1530  tconfig
+ 1531  ifconfig
+ 1532  vi /etc/resolv.conf 
+ 1533  ping google.com
+ 1534  ifconfig wlan0 down
+ 1535  ifconfig wlan0 up
+ 1536  iwconfig
+ 1537  tconfig
+ 1538  killall wpa_supplicant
+ 1539  tconfig
+ 1540  iwconfig
+ 1541  ifconfig
+ 1542  vi /etc/resolv.conf 
+ 1543  route -n
+ 1544  ping google.com
+ 1545  vi /etc/resolv.conf 
+ 1546  ping google.com
+ 1547  ping 8.8.8.8
+ 1548  iptables -P OUTPUT ACCEPT
+ 1549  iptables -P INPUT ACCEPT
+ 1550  vi /usr/share/lightdm/lightdm.conf.d/40-kde-plasma-kf5.conf 
+ 1551  ls
+ 1552  ls -lah
+ 1553  cp vostro_image.vdi vostro_image.vdi.repaired_hd
+ 1554  sudo bash
+ 1555  df
+ 1556  hdparm -t /dev/sdd
+ 1557  ls -lah
+ 1558  sync
+ 1559  cd /usr/local/src/pe_security-track-trunk/
+ 1560  ls
+ 1561  mv ksecpol pe_security
+ 1562  ./pe_security
+ 1563  vi pe_security
+ 1564  ldd pe_security
+ 1565  mkdir /etc/peinfo
+ 1566  ./pe_security
+ 1567  ifconfig
+ 1568  ifconfig eth1 up
+ 1569  ./pe_security
+ 1570  killall pe_security
+ 1571  ifconfig
+ 1572  ./pe_security
+ 1573  killall pe_security
+ 1574  ls
+ 1575  sudo bash
+ 1576  sudo bash
+ 1577  cd /mnt/drobo/
+ 1578  ls -lah
+ 1579  sudo bash
+ 1580  sudo bash
+ 1581  cd /tmp/l
+ 1582  chroot . /bin/bash
+ 1583  cd ..
+ 1584  mkdir k
+ 1585  fdisk /dev/nbd0 
+ 1586  mount -t ext3 /dev/nbd0p5 /tmp/k
+ 1587  mount -t ext4 /dev/nbd0p5 /tmp/k
+ 1588  cd k
+ 1589  ls
+ 1590  chroot . /bin/bash
+ 1591  chroot . /bin/sh
+ 1592  ls bin/
+ 1593  ls
+ 1594  ls dev
+ 1595  ls root
+ 1596  ls /home/toan/
+ 1597  cd /home/toan/
+ 1598  ls
+ 1599  cd /tmp/k
+ 1600  ls
+ 1601  df
+ 1602  ls
+ 1603  ls bin
+ 1604  cd home/toan/
+ 1605  ls
+ 1606  ls Downloads/
+ 1607  ls Desktop/
+ 1608  ls
+ 1609  cd Desktop/
+ 1610  ls
+ 1611  cd ..
+ 1612  ls
+ 1613  cd ..
+ 1614  ls
+ 1615  cd root
+ 1616  ls
+ 1617  cd ..
+ 1618  umount k
+ 1619  cd l
+ 1620  ls
+ 1621  ls root/
+ 1622  cd root/
+ 1623  ls
+ 1624  cd Desktop/
+ 1625  ls
+ 1626  cd ..
+ 1627  ls
+ 1628  ls workspace/
+ 1629  cd ..
+ 1630  ls
+ 1631  cd ..
+ 1632  fdisk /dev/nbd0 
+ 1633  df
+ 1634  umount /mnt/users 
+ 1635  df
+ 1636  cd /mnt/drobo/
+ 1637  ls -lah
+ 1638  shutdown -h 60
+ 1639  tconfig
+ 1640  sudo bash
+ 1641  cd /usr/local/src/
+ 1642  ls
+ 1643  cd pe_security-track-trunk/
+ 1644  ls
+ 1645  vi PEWatch.ini 
+ 1646  ls
+ 1647  sde
+ 1648  vi PFESP.ini 
+ 1649  ls
+ 1650  vi PFESP.ini 
+ 1651  ./pe_security.compiled 
+ 1652  make
+ 1653  ls backup/
+ 1654  reset
+ 1655  ls -lah
+ 1656  lazarus-ide pe_security.lpi
+ 1657  lazbuild pe_security.lpi
+ 1658  ls
+ 1659  reset
+ 1660  lazbuild pe_security.lpi
+ 1661  ls
+ 1662  ls lib
+ 1663  ls lib/synapse39/
+ 1664  lazarus-ide pe_security.lpi
+ 1665  ls
+ 1666  cd lib
+ 1667  ls
+ 1668  ls synapse39/
+ 1669  cd ..
+ 1670  lazarus-ide pe_security.lpi
+ 1671  lazbuild pe_security.lpi
+ 1672  cd lib/synapse39/
+ 1673  ls
+ 1674  rm *.o
+ 1675  cd ..
+ 1676  lazbuild pe_security.lpi
+ 1677  lazarus-ide pe_security.lpi
+ 1678  ls -lah
+ 1679  lazarus-ide pe_security.lpi
+ 1680  ls
+ 1681  ./pe_security.compiled 
+ 1682  ls -lah
+ 1683  lazbuild pe_security.lpi
+ 1684  ls -lah
+ 1685  ./ksecpol 
+ 1686  ls backup/
+ 1687  lazbuild pe_security.lpi
+ 1688  ls -lah
+ 1689  rm ksecpol 
+ 1690  lazbuild pe_security.lpi
+ 1691  ls -lah
+ 1692  lazbuild pe_security.lpi
+ 1693  lazarus-ide pe_security.lpi
+ 1694  sudo bash
+ 1695  df
+ 1696  cd /mnt/
+ 1697  df
+ 1698  mount -t ext3 /dev/sdb2 drobo/
+ 1699  df
+ 1700  mount -t ext3 /dev/sda2 drobo/
+ 1701  mount -t ext4 /dev/sda2 drobo/
+ 1702  mount -t ext3 /dev/sdc1 drobo/
+ 1703  umount drobo/
+ 1704  df
+ 1705  ifconfig
+ 1706  df
+ 1707  ifconfig
+ 1708  route -n
+ 1709  vi /etc/resolv.conf 
+ 1710  dmesg
+ 1711  qemu-system-i386 /dev/sdc
+ 1712  dmesg
+ 1713  qemu-system-i386 /dev/sdc
+ 1714  qemu-system-i386 /dev/sdc1
+ 1715  qemu-system-i386 /dev/sdc
+ 1716  dmesg
+ 1717  qemu-system-i386 /dev/sdc
+ 1718  df
+ 1719  mount -t vfat /dev/sdc1 /tmp/l
+ 1720  mkdir /tmp/l
+ 1721  mount -t vfat /dev/sdc1 /tmp/l
+ 1722  vi /tmp/l/SYSLINUX.cfg 
+ 1723  dmesg
+ 1724  fdisk /dev/sdc
+ 1725  df
+ 1726  umount l
+ 1727  df
+ 1728  umount l
+ 1729  find users/Pham/FLASHBUILDER\ IMAGES/ -iname extlinux
+ 1730  find users/Pham/ -iname extlinux
+ 1731  which extlinux
+ 1732  umount l
+ 1733  cd /usr/local/src/FlashBuilder.Linux.track.trunk/
+ 1734  cp /usr/bin/extlinux FLASHBUILDER_SSLAW\ NISE104/tools/
+ 1735  rm nise104.cfb 
+ 1736  trash/FlashBuilder -s FLASHBUILDER_SSLAW\ NISE104/ -o nise104.cfb
+ 1737  history | grep scp
+ 1738  ls
+ 1739  rm trash.lcfb 
+ 1740  ls flashtree
+ 1741  ls flashtree_recover/
+ 1742  ifconfig
+ 1743  dhclient eth1
+ 1744  ifconfig
+ 1745  mount /mnt/users/
+ 1746  ls
+ 1747  cp -rf /mnt/users/Pham/FLASHBUILDER\ IMAGES/FLASHBUILDER_SSLAW\ NISE104 .
+ 1748  ls -lah
+ 1749  trash/FlashBuilder -d FLASHBUILDER_SSLAW\ NISE104 -o nise104.cfb
+ 1750  trash/FlashBuilder -s FLASHBUILDER_SSLAW\ NISE104 -o nise104.cfb
+ 1751  ./nise104.cfb 
+ 1752  scp -p 45000 nise104.cfb root@10.234.61.119:/tmp
+ 1753  scp -P 45000 nise104.cfb root@10.234.61.119:/tmp
+ 1754  ls
+ 1755  cp -rf /mnt/users/Pham/incoming/FlashImage_ILBED_NGSA .
+ 1756  rm -rf FlashImage_ILBED_NGSA/
+ 1757  find /mnt/users/Pham/incoming/ -iname screenbuilder
+ 1758  find /mnt/users/Pham/incoming/ -iname screen*
+ 1759  find /mnt/users/Pham/ -iname screenbuilder
+ 1760  find /mnt/users/Pham/ -iname builderscreen
+ 1761  cp -rf /mnt/users/Pham/incoming/NGSA_FLASH_CARD_RECOVERY_CSI_BUILD/ .
+ 1762  ls NGSA_FLASH_CARD_RECOVERY_CSI_BUILD/
+ 1763  ls NGSA_FLASH_CARD_RECOVERY_CSI_BUILD/base/
+ 1764  ls NGSA_FLASH_CARD_RECOVERY_CSI_BUILD/base/apps/flashbuilder/
+ 1765  cp nise104.cfb NGSA_FLASH_CARD_RECOVERY_CSI_BUILD/base/apps/flashbuilder/
+ 1766  rm NGSA_FLASH_CARD_RECOVERY_CSI_BUILD/base/hd.tar.gz 
+ 1767  rm NGSA_FLASH_CARD_RECOVERY_CSI_BUILD/base/csi.?
+ 1768  mv NGSA_FLASH_CARD_RECOVERY_CSI_BUILD nise104_recovery
+ 1769  cp FLASHBUILDER_SSLAW\ NISE104/base/xle.? nise104_recovery/base/
+ 1770  cp FLASHBUILDER_SSLAW\ NISE104/base/SYSLINUX.cfg nise104_recovery/base/
+ 1771  cp FLASHBUILDER_SSLAW\ NISE104/tools/extlinux nise104_recovery/tools/
+ 1772  trash/FlashBuilder -s nise104_recovery -o nise104_recovery_installer.cfb
+ 1773  rm nise104_recovery/base/stage/*
+ 1774  rm -rf nise104_recovery/base/stage/*
+ 1775  trash/FlashBuilder -s nise104_recovery -o nise104_recovery_installer.cfb
+ 1776  history | grep scp
+ 1777  scp -P 45000 nise104.cfb root@10.234.61.119:/tmp
+ 1778  scp -P 45000 nise104_recovery_installer.cfb  root@10.234.61.119:/tmp
+ 1779  mkdir nise104_recovery/ATC
+ 1780  #mv nise104_recovery/modules/config nise104_recovery/modules/config/system.
+ 1781  rm -rf nise104_recovery/ATC
+ 1782  mkdir nise104_recovery/modules/ATC
+ 1783  mv nise104_recovery/modules/config nise104_recovery/modules/ATC/
+ 1784  trash/FlashBuilder -s nise104_recovery -o nise104_recovery_installer.cfb
+ 1785  scp -P 45000 nise104_recovery_installer.cfb  root@10.234.61.119:/tmp
+ 1786  df
+ 1787  cd /usr/local/src/
+ 1788  ls
+ 1789  mkdir ups.atm.os.iso
+ 1790  cd ups.atm.os.iso/
+ 1791  ls
+ 1792  scp root@10.234.63.40:/target/atm/release/trunk/atm_install_cd1.iso .
+ 1793  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1794  qemu-system-i386 atm_install_cd1.iso 
+ 1795  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1796  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1797  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1798  scp root@10.234.63.40:/t2target/atm/release/v1.3_official_functional_release/atm_install_cd1.is good_atm_cd.iso
+ 1799  scp root@10.234.63.40:/t2target/atm/release/v1.3_official_functional_release/atm_install_cd1.iso good_atm_cd.iso
+ 1800  scp root@10.234.63.40:/t2/target/atm/release/v1.3_official_functional_release/atm_install_cd1.iso good_atm_cd.iso
+ 1801  ls
+ 1802  qemu-system-i386 -cdrom good_atm_cd.iso 
+ 1803  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1804  qemu-system-i386 -cdrom good_atm_cd.iso 
+ 1805  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1806  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1807  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1808  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1809  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1810  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1811  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1812  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1813  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1814  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1815  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1816  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1817  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1818  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1819  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1820  scp root@10.234.63.40:/t2/target/atm/release/trunk/atm_install_cd1.iso .
+ 1821  qemu-system-i386 -cdrom atm_install_cd1.iso 
+ 1822  df
+ 1823  ls -lah
+ 1824  rm good_atm_cd.iso 
+ 1825  df
+ 1826  locate 1gfile
+ 1827  ls /
+ 1828  scp -P 45000 root@10.234.61.130:/var/opt/file 1gtestfile .
+ 1829  ls
+ 1830  ls -lah
+ 1831  mv file 1gtestfile
+ 1832  scp root@10.234.63.40:/linux-4.0.tar.gz .
+ 1833  sync
+ 1834  cd /usr/local/src/
+ 1835  ls -lah
+ 1836  sudo chown -R toan:toan pe_security-track-trunk/
+ 1837  cd FlashBuilder.Linux.track.trunk/
+ 1838  trash/FlashBuilder 
+ 1839  trash/FlashBuilder --show-device-controller
+ 1840  trash/FlashBuilder --show-device-controllers
+ 1841  trash/FlashBuilder --show-device-controller
+ 1842  trash/FlashBuilder --show-device-controller-list
+ 1843  trash/FlashBuilder --show-drive-controller-list
+ 1844  trash/FlashBuilder --show-filter-list
+ 1845  ssh root@10.234.60.41
+ 1846  ssh root@10.234.63.40
+ 1847  df
+ 1848  cd /media/elements/
+ 1849  ls
+ 1850  ls -lah
+ 1851  cd vmimage/
+ 1852  ls
+ 1853  reset
+ 1854  ls -lah
+ 1855  cd kubuntu/
+ 1856  ls
+ 1857  ls -lah
+ 1858  ls Snapshots/
+ 1859  ls Snapshots/ -lah
+ 1860  cd /home/toan/Desktop/
+ 1861  ls
+ 1862  ls home.desktop 
+ 1863  cd /root/
+ 1864  ls
+ 1865  cd Desktop/
+ 1866  ls
+ 1867  vi root.desktop 
+ 1868  vi tmp.desktop 
+ 1869  vi home.desktop 
+ 1870  cd /home/toan/
+ 1871  ls
+ 1872  cd Desktop/
+ 1873  ls
+ 1874  pdf
+ 1875  locate pdf
+ 1876  pdfvier
+ 1877  pdfviewer
+ 1878  okalar
+ 1879  okular
+ 1880  openvpn
+ 1881  cd /usr/local/src/
+ 1882  ls
+ 1883  apt-get install openvpn
+ 1884  vi /etc/apt/apt.conf.d/80proxy 
+ 1885  apt-get install openvpn
+ 1886  openvpn
+ 1887  ls
+ 1888  cd password/
+ 1889  ls
+ 1890  cd openvpn/
+ 1891  ls
+ 1892  vi certificate.crt 
+ 1893  apt-cache search vpn
+ 1894  apt-cache search vpn | grep vpn
+ 1895  apt-get install gadmin-openvpn-client
+ 1896  gadmin-openvpn-client 
+ 1897  shutdown -h now
+ 1898  cd /usr/local/src/enlightenment.source.repo/
+ 1899  ls
+ 1900  vi vi setup_env.inc.sh
+ 1901  ls
+ 1902  vi setup.env.inc.sh
+ 1903  ls
+ 1904  chmod 777 setup.env.inc.sh 
+ 1905  ls -lah
+ 1906  history > prerequisites
