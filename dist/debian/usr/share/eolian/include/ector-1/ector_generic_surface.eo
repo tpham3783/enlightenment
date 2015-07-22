@@ -1,0 +1,37 @@
+abstract Ector.Generic.Surface (Eo.Base)
+{
+   eo_prefix: ector_surface;
+   methods {
+      @property size {
+         set {
+            [[Changes the size of the given Evas object.]]
+         }
+         get {
+            [[Retrieves the (rectangular) size of the given Evas object.]]
+         }
+         values {
+            w: int;
+            h: int;
+         }
+      }
+      @property reference_point {
+         set {
+            [[This define where is (0,0) in pixels coordinate inside the surface]]
+	 }
+	 values {
+	    x: int;
+	    y: int;
+	 }
+      }
+      renderer_factory_new {
+         return: Ector_Renderer *;
+	 params {
+	    @in type: const(Eo_Class) * @nonull;
+	 }
+      }
+   }
+   implements {
+      @virtual .renderer_factory_new;
+      @virtual .reference_point.set;
+   }
+}

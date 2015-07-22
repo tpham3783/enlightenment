@@ -1,0 +1,15 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}/efl
+embryoincludedir=${datarootdir}/include
+
+Name: embryo
+Description: A small virtual machine engine and bytecode compiler
+Version: 1.15.0-beta2
+Requires.private: eina >= 1.15.0-beta2  
+Libs: -L${libdir} -lembryo
+Libs.private:  -lm
+Cflags: -I${includedir}/efl-1 -I${includedir}/embryo-1

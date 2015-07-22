@@ -1,0 +1,14 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+eoincludedir=${datarootdir}/eolian/include
+
+Name: eolian
+Description: EFL's .eo parser and code generator.
+Version: 1.15.0-beta2
+Libs: -L${libdir} -leolian
+Libs.private: 
+Cflags: -I${includedir}/efl-1 -I${includedir}/eolian-1

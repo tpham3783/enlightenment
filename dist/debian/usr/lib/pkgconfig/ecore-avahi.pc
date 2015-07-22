@@ -1,0 +1,12 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ecore-avahi
+Description: E core library, avahi integration
+Requires.private: avahi-client eo >= 1.15.0-beta2 eina >= 1.15.0-beta2 ecore >= 1.15.0-beta2  
+Version: 1.15.0-beta2
+Libs: -L${libdir} -lecore_avahi
+Libs.private: 
+Cflags: -I${includedir}/efl-1 -I${includedir}/efl-1 -I${includedir}/ecore-avahi-1

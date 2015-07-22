@@ -1,0 +1,17 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}/elua
+vmaj=1
+vmin=15
+vmic=0
+
+Name: elua
+Description: EFL Lua application platform backend
+Requires.private: luajit >= 2.0.0 ecore >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Version: 1.15.0-beta2
+Libs: -L${libdir} -lelua
+Libs.private: 
+Cflags: -I${includedir}/efl-1 -I${includedir}/elua-1

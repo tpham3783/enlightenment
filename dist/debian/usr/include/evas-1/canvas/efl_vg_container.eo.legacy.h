@@ -1,0 +1,17 @@
+#ifndef _EFL_VG_CONTAINER_EO_LEGACY_H_
+#define _EFL_VG_CONTAINER_EO_LEGACY_H_
+
+#ifndef _EFL_VG_CONTAINER_EO_CLASS_TYPE
+#define _EFL_VG_CONTAINER_EO_CLASS_TYPE
+
+typedef Eo Efl_VG_Container;
+
+#endif
+
+#ifndef _EFL_VG_CONTAINER_EO_TYPES
+#define _EFL_VG_CONTAINER_EO_TYPES
+
+
+#endif
+
+#endif

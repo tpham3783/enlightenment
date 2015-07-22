@@ -1,0 +1,11 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: efreet
+Description: Freedesktop standards implementation for the EFL
+Version: 1.15.0-beta2
+Requires.private: ecore-ipc >= 1.15.0-beta2 emile >= 1.15.0-beta2 eina >= 1.15.0-beta2 eo >= 1.15.0-beta2 ecore-file >= 1.15.0-beta2 ecore >= 1.15.0-beta2 eet >= 1.15.0-beta2  
+Libs: -L${libdir} -lefreet
+Cflags: -I${includedir}/efl-1 -I${includedir}/efreet-1

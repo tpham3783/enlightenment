@@ -1,0 +1,12 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+vmaj=1
+
+Name: ephysics
+Description: EPhysics is a wrapper for physics engine.
+Requires.private: bullet >= 2.80 emile >= 1.15.0-beta2 eo >= 1.15.0-beta2 ecore >= 1.15.0-beta2 efl >= 1.15.0-beta2 evas >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Version: 1.15.0-beta2
+Libs: -L${libdir} -lephysics
+Cflags: -I${includedir}/efl-1 -I${includedir}/ephysics-1

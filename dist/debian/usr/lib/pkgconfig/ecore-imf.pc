@@ -1,0 +1,13 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+modules=${exec_prefix}/lib/ecore_imf/modules
+module_arch=v-1.15
+
+Name: ecore-imf
+Description: E core library, IMF module
+Version: 1.15.0-beta2
+Requires.private: eina >= 1.15.0-beta2 eo >= 1.15.0-beta2 ecore-input >= 1.15.0-beta2 ecore >= 1.15.0-beta2  
+Libs: -L${libdir} -lecore_imf
+Cflags: -I${includedir}/efl-1 -I${includedir}/ecore-imf-1

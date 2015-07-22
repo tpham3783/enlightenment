@@ -1,0 +1,12 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ector
+Description: Enlightenned retained mode drawing library
+Requires.private: efl >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Version: 1.15.0-beta2
+Libs: -L${libdir} -lector
+Libs.private:  -lm
+Cflags: -I${includedir}/efl-1 -I${includedir}/ector-1

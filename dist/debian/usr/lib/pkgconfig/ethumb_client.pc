@@ -1,0 +1,11 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ethumb_client
+Description: Thumbnail Client Library
+Version: 1.15.0-beta2
+Requires.private: emile >= 1.15.0-beta2 evas >= 1.15.0-beta2 ethumb >= 1.15.0-beta2 eldbus >= 1.15.0-beta2 edje >= 1.15.0-beta2 ecore-imf >= 1.15.0-beta2 ecore >= 1.15.0-beta2 eet >= 1.15.0-beta2 efl >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Libs: -L${libdir} -lethumb_client
+Cflags: -I${includedir}/efl-1 -I${includedir}/ethumb-client-1

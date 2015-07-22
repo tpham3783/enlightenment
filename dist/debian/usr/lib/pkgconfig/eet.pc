@@ -1,0 +1,12 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: eet
+Description: Library for speedy data storage, retrieval, and compression
+Version: 1.15.0-beta2
+Requires.private: emile >= 1.15.0-beta2 eina >= 1.15.0-beta2 openssl   
+Libs: -L${libdir} -leet
+Libs.private:   -ljpeg -lm
+Cflags: -I${includedir}/efl-1 -I${includedir}/eet-1

@@ -1,0 +1,117 @@
+mixin Elm_Interface_Atspi_Accessible ()
+{
+   legacy_prefix: null;
+   eo_prefix: elm_interface_atspi_accessible;
+   data: null;
+   methods {
+      @property localized_role_name @protected {
+         get {
+            /*@ Gets an localized string describing ATSPI widget role name. */
+         }
+         values {
+            localized_name: const(char)*;
+         }
+      }
+      @property name @protected {
+         get {
+            /*@ Gets an string describing ATSPI widget role name. 
+                Should be free by a user. */
+         }
+         set {
+         }
+         values {
+            name: char*; /*@ obj name */
+         }
+      }
+      @property relation_set @protected {
+         get {
+            /*@ Gets an string describing ATSPI widget role name. Lists and
+            elements Should be free by a user. */
+         }
+         values {
+            relations: own(list<own(Elm_Atspi_Relation *)> *);
+         }
+      }
+      @property role @protected {
+         get {
+            /*@ Gets the role of the widget in ATSPI Accessibility domain. */
+         }
+         set {
+         }
+         values {
+            role: Elm_Atspi_Role;
+         }
+      }
+      @property children @protected {
+         get {
+            /*@ Gets widget's accessible children. */
+         }
+         values {
+            children: free(own(list<Eo *> *), eina_list_free);
+         }
+      }
+      @property role_name @protected {
+         get {
+            /*@ Gets human-readable string indentifying widget accessibility
+            role. */
+         }
+         values {
+            role_name: const(char)*;
+         }
+      }
+      @property attributes @protected {
+         get {
+            /*@ Gets key-value pairs indentifying widget extra 
+            attributes. Must be free by a user. */
+         }
+         values {
+            attributes: free(own(list<own(Elm_Atspi_Attribute *)> *), elm_atspi_attributes_list_free);
+         }
+      }
+      @property index_in_parent @protected {
+         get {
+            /*@ Gets index of the child in parent's children list. */
+         }
+         values {
+            idx: int;
+         }
+      }
+      @property description @protected {
+         get {
+            /*@ Gets widget contextual information. */
+         }
+         set {
+            /*@ Sets contextual information about widget. */
+         }
+         values {
+            description: const(char)*;
+         }
+      }
+      @property parent @protected {
+         get {
+            /*@ Gets widget accessible parent. */
+         }
+         set {
+            /*@ Sets widget accessible parent. */
+         }
+         values {
+            parent: Eo *;
+         }
+      }
+      @property state_set @protected {
+         get {
+            /*@ Gets set describing widget accessible states. */
+         }
+         values {
+            states: Elm_Atspi_State_Set;
+         }
+      }
+   }
+   events {
+      property,changed: const(char)*;
+      children,changed: Elm_Atspi_Event_Children_Changed_Data;
+      state,changed: Elm_Atspi_Event_State_Changed_Data;
+      visible,data,changed;
+      active,descendants,changed;
+   }
+}

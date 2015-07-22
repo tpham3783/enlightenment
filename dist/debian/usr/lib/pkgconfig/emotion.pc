@@ -1,0 +1,14 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+modules=${exec_prefix}/lib/emotion/modules
+generic_players=${exec_prefix}/lib/emotion/generic_players
+module_arch=v-1.15
+
+Name: emotion
+Description: Emotion evas based multimedia library
+Version: 1.15.0-beta2
+Requires.private: eeze >= 1.15.0-beta2 emile >= 1.15.0-beta2 eio >= 1.15.0-beta2 efl >= 1.15.0-beta2 evas >= 1.15.0-beta2 eet >= 1.15.0-beta2 ecore >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Libs: -L${libdir} -lemotion
+Cflags: -I${includedir}/efl-1 -I${includedir}/emotion-1

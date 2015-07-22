@@ -1,0 +1,23 @@
+prefix=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+modules=${exec_prefix}/lib/edje/modules
+module_arch=v-1.15
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}/edje
+vmaj=1
+vmin=15
+vmic=0
+multisense=yes
+physics=yes
+eoincludedir=${datarootdir}/eolian/include
+eolian_flags=-I${pc_sysrootdir}${eoincludedir}/edje-1
+
+Name: edje
+Description: Enlightened graphical design and layout engine.
+Requires.private: luajit >= 2.0.0 ecore-audio >= 1.15.0-beta2 ephysics >= 1.15.0-beta2 efreet >= 1.15.0-beta2 emile >= 1.15.0-beta2 eio >= 1.15.0-beta2 embryo >= 1.15.0-beta2 ecore-imf-evas >= 1.15.0-beta2 ecore-imf >= 1.15.0-beta2 ecore-input >= 1.15.0-beta2 ecore-file >= 1.15.0-beta2 ecore-evas >= 1.15.0-beta2 ecore >= 1.15.0-beta2 evas >= 1.15.0-beta2 eet >= 1.15.0-beta2 efl >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Version: 1.15.0-beta2
+Libs: -L${libdir} -ledje
+Libs.private:  -lm
+Cflags: -I${includedir}/efl-1 -I${includedir}/edje-1
