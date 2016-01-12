@@ -28,7 +28,7 @@ EAPI const Eo_Class *ecore_audio_out_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Audio_Out
  */
-EOAPI Eina_Bool  ecore_audio_obj_out_input_attach(Eo *input);
+EOAPI Eina_Bool ecore_audio_obj_out_input_attach(Ecore_Audio_In *input);
 
 /**
  * @brief Detach an input from an output
@@ -41,7 +41,7 @@ EOAPI Eina_Bool  ecore_audio_obj_out_input_attach(Eo *input);
  *
  * @ingroup Ecore_Audio_Out
  */
-EOAPI Eina_Bool  ecore_audio_obj_out_input_detach(Eo *input);
+EOAPI Eina_Bool ecore_audio_obj_out_input_detach(Ecore_Audio_In *input);
 
 /**
  * @brief Returns the list of all attached inputs
@@ -52,7 +52,7 @@ EOAPI Eina_Bool  ecore_audio_obj_out_input_detach(Eo *input);
  *
  * @ingroup Ecore_Audio_Out
  */
-EOAPI Eina_List * ecore_audio_obj_out_inputs_get(void);
+EOAPI Eina_List *ecore_audio_obj_out_inputs_get(void);
 
 
 #endif

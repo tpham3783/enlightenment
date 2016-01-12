@@ -25,7 +25,7 @@ EAPI const Eo_Class *efl_gfx_gradient_base_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_Gradient_Base
  */
-EOAPI void  efl_gfx_gradient_stop_set(const Efl_Gfx_Gradient_Stop *colors, unsigned int length);
+EOAPI void efl_gfx_gradient_stop_set(const Efl_Gfx_Gradient_Stop *colors, unsigned int length);
 
 /**
  * @brief Get the list of color stops.
@@ -35,7 +35,7 @@ EOAPI void  efl_gfx_gradient_stop_set(const Efl_Gfx_Gradient_Stop *colors, unsig
  *
  * @ingroup Efl_Gfx_Gradient_Base
  */
-EOAPI void  efl_gfx_gradient_stop_get(const Efl_Gfx_Gradient_Stop **colors, unsigned int *length);
+EOAPI void efl_gfx_gradient_stop_get(const Efl_Gfx_Gradient_Stop **colors, unsigned int *length);
 
 /**
  * @brief Specifies the spread method that should be used for this gradient.
@@ -44,7 +44,7 @@ EOAPI void  efl_gfx_gradient_stop_get(const Efl_Gfx_Gradient_Stop **colors, unsi
  *
  * @ingroup Efl_Gfx_Gradient_Base
  */
-EOAPI void  efl_gfx_gradient_spread_set(Efl_Gfx_Gradient_Spread s);
+EOAPI void efl_gfx_gradient_spread_set(Efl_Gfx_Gradient_Spread s);
 
 /**
  * @brief Returns the spread method use by this gradient. The default is
@@ -54,7 +54,7 @@ EOAPI void  efl_gfx_gradient_spread_set(Efl_Gfx_Gradient_Spread s);
  *
  * @ingroup Efl_Gfx_Gradient_Base
  */
-EOAPI Efl_Gfx_Gradient_Spread  efl_gfx_gradient_spread_get(void);
+EOAPI Efl_Gfx_Gradient_Spread efl_gfx_gradient_spread_get(void);
 
 
 #endif

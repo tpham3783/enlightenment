@@ -24,7 +24,7 @@ EAPI const Eo_Class *ecore_idle_exiter_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Idle_Exiter
  */
-EOAPI void  ecore_idle_exiter_constructor(Ecore_Task_Cb func, const void *data);
+EOAPI void ecore_idle_exiter_constructor(Ecore_Task_Cb func, const void *data);
 
 
 #endif

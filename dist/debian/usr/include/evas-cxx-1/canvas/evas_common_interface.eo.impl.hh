@@ -91,9 +91,7 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::common_inter
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_common_interface_evas_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_common_evas_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

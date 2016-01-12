@@ -24,7 +24,7 @@ EAPI const Eo_Class *efl_control_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Control
  */
-EOAPI void  efl_control_priority_set(int priority);
+EOAPI void efl_control_priority_set(int priority);
 
 /**
  * @brief Control the priority of the object.
@@ -33,7 +33,7 @@ EOAPI void  efl_control_priority_set(int priority);
  *
  * @ingroup Efl_Control
  */
-EOAPI int  efl_control_priority_get(void);
+EOAPI int efl_control_priority_get(void);
 
 /**
  * @brief Controls whether the object is suspended or not.
@@ -42,7 +42,7 @@ EOAPI int  efl_control_priority_get(void);
  *
  * @ingroup Efl_Control
  */
-EOAPI void  efl_control_suspend_set(Eina_Bool suspend);
+EOAPI void efl_control_suspend_set(Eina_Bool suspend);
 
 /**
  * @brief Controls whether the object is suspended or not.
@@ -51,7 +51,7 @@ EOAPI void  efl_control_suspend_set(Eina_Bool suspend);
  *
  * @ingroup Efl_Control
  */
-EOAPI Eina_Bool  efl_control_suspend_get(void);
+EOAPI Eina_Bool efl_control_suspend_get(void);
 
 
 #endif

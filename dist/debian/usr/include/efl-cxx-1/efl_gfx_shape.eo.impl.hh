@@ -35,9 +35,9 @@ inline void efl::gfx::shape::append_squadratic_to(double x_, double y_) const
    eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_append_squadratic_to(x_, y_));
 }
 
-inline void efl::gfx::shape::append_cubic_to(double x_, double y_, double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_) const
+inline void efl::gfx::shape::append_cubic_to(double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_, double x_, double y_) const
 {
-   eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_append_cubic_to(x_, y_, ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_));
+   eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_append_cubic_to(ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_, x_, y_));
 }
 
 inline void efl::gfx::shape::append_scubic_to(double x_, double y_, double ctrl_x_, double ctrl_y_) const
@@ -164,6 +164,18 @@ inline void efl::gfx::shape::stroke_join_set(Efl_Gfx_Join j_) const
    eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_stroke_join_set(j_));
 }
 
+inline Efl_Gfx_Fill_Rule efl::gfx::shape::fill_rule_get() const
+{
+   Efl_Gfx_Fill_Rule _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::efl_gfx_shape_fill_rule_get());
+   return _tmp_ret;
+}
+
+inline void efl::gfx::shape::fill_rule_set(Efl_Gfx_Fill_Rule fill_rule_) const
+{
+   eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_fill_rule_set(fill_rule_));
+}
+
 inline void efl::gfx::shape::path_get(const Efl_Gfx_Path_Command ** op_, const double ** points_) const
 {
    eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_path_get(op_, points_));
@@ -224,9 +236,9 @@ inline void eo_cxx::efl::gfx::shape::append_squadratic_to(double x_, double y_) 
    eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_append_squadratic_to(x_, y_));
 }
 
-inline void eo_cxx::efl::gfx::shape::append_cubic_to(double x_, double y_, double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_) const
+inline void eo_cxx::efl::gfx::shape::append_cubic_to(double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_, double x_, double y_) const
 {
-   eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_append_cubic_to(x_, y_, ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_));
+   eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_append_cubic_to(ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_, x_, y_));
 }
 
 inline void eo_cxx::efl::gfx::shape::append_scubic_to(double x_, double y_, double ctrl_x_, double ctrl_y_) const
@@ -353,6 +365,18 @@ inline void eo_cxx::efl::gfx::shape::stroke_join_set(Efl_Gfx_Join j_) const
    eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_stroke_join_set(j_));
 }
 
+inline Efl_Gfx_Fill_Rule eo_cxx::efl::gfx::shape::fill_rule_get() const
+{
+   Efl_Gfx_Fill_Rule _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::efl_gfx_shape_fill_rule_get());
+   return _tmp_ret;
+}
+
+inline void eo_cxx::efl::gfx::shape::fill_rule_set(Efl_Gfx_Fill_Rule fill_rule_) const
+{
+   eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_fill_rule_set(fill_rule_));
+}
+
 inline void eo_cxx::efl::gfx::shape::path_get(const Efl_Gfx_Path_Command ** op_, const double ** points_) const
 {
    eo_do(_concrete_eo_ptr(), ::efl_gfx_shape_path_get(op_, points_));
@@ -394,7 +418,7 @@ inline ::eo_cxx::efl::gfx::shape::operator ::efl::gfx::shape const&() const
 }
 
 template <typename T>
-void efl_gfx_shape_dup_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Eo_Base * dup_from_)
+void efl_gfx_shape_dup_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const Eo_Base * dup_from_)
 {
    try
       {
@@ -485,11 +509,11 @@ void efl_gfx_shape_append_squadratic_to_wrapper(Eo* objid EINA_UNUSED, ::efl::eo
 }
 
 template <typename T>
-void efl_gfx_shape_append_cubic_to_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, double x_, double y_, double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_)
+void efl_gfx_shape_append_cubic_to_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_, double x_, double y_)
 {
    try
       {
-         static_cast<T*>(self->this_)->append_cubic_to(x_, y_, ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_);
+         static_cast<T*>(self->this_)->append_cubic_to(ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_, x_, y_);
       }
    catch (...)
       {
@@ -798,6 +822,34 @@ void efl_gfx_shape_stroke_join_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::det
 }
 
 template <typename T>
+Efl_Gfx_Fill_Rule efl_gfx_shape_fill_rule_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->fill_rule_get();
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Efl_Gfx_Fill_Rule _tmp_ret{};
+         return _tmp_ret;
+      }
+}
+
+template <typename T>
+void efl_gfx_shape_fill_rule_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Efl_Gfx_Fill_Rule fill_rule_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->fill_rule_set(fill_rule_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
 void efl_gfx_shape_path_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const Efl_Gfx_Path_Command ** op_, const double ** points_)
 {
    try
@@ -926,12 +978,12 @@ struct operations< ::efl::gfx::shape >
                ::efl_gfx_shape_append_squadratic_to(x_, y_));
       }
 
-      virtual void append_cubic_to(double x_, double y_, double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_)
+      virtual void append_cubic_to(double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_, double x_, double y_)
       {
 
          eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
                dynamic_cast<T*>(this)->_eo_class(),
-               ::efl_gfx_shape_append_cubic_to(x_, y_, ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_));
+               ::efl_gfx_shape_append_cubic_to(ctrl_x0_, ctrl_y0_, ctrl_x1_, ctrl_y1_, x_, y_));
       }
 
       virtual void append_scubic_to(double x_, double y_, double ctrl_x_, double ctrl_y_)
@@ -1124,6 +1176,24 @@ struct operations< ::efl::gfx::shape >
                ::efl_gfx_shape_stroke_join_set(j_));
       }
 
+      virtual Efl_Gfx_Fill_Rule fill_rule_get()
+      {
+         Efl_Gfx_Fill_Rule _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::efl_gfx_shape_fill_rule_get());
+            return _tmp_ret;
+      }
+
+      virtual void fill_rule_set(Efl_Gfx_Fill_Rule fill_rule_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::efl_gfx_shape_fill_rule_set(fill_rule_));
+      }
+
       virtual void path_get(const Efl_Gfx_Path_Command ** op_, const double ** points_)
       {
 
@@ -1173,13 +1243,13 @@ struct operation_description_class_size< ::efl::gfx::shape >
 {
    static constexpr int value = 
 #if defined(SHAPE_PROTECTED) && defined(SHAPE_BETA)
-      35
+      37
 #elif defined(SHAPE_PROTECTED)
-      35
+      37
 #elif defined(SHAPE_BETA)
-      35
+      37
 #else
-      35
+      37
 #endif
 ;
 };
@@ -1193,247 +1263,187 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::gfx::shape>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_dup_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_dup);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_bounds_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_bounds_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_reset_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_reset);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_move_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_move_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_line_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_line_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_quadratic_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_quadratic_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_squadratic_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_squadratic_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_cubic_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_cubic_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_scubic_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_scubic_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_arc_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_arc_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_close_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_close);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_circle_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_circle);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_rect_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_rect);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_svg_path_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_append_svg_path);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_interpolate_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_interpolate);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_equal_commands_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_equal_commands);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_scale_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_scale_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_scale_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_scale_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_width_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_width_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_width_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_width_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_location_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_location_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_location_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_location_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_dash_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_dash_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_dash_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_dash_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_cap_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_cap_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_cap_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_cap_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_join_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_join_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_join_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_stroke_join_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_fill_rule_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_fill_rule_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_fill_rule_set_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_fill_rule_set);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_path_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_path_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_path_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_path_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_path_length_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_path_length_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_current_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_current_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_shape_current_ctrl_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_shape_current_ctrl_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

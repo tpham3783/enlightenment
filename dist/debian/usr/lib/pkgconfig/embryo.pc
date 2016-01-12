@@ -8,8 +8,8 @@ embryoincludedir=${datarootdir}/include
 
 Name: embryo
 Description: A small virtual machine engine and bytecode compiler
-Version: 1.15.0-beta2
-Requires.private: eina >= 1.15.0-beta2  
+Version: 1.17.0-beta1
+Requires.private: eina >= 1.17.0-beta1  
 Libs: -L${libdir} -lembryo
 Libs.private:  -lm
 Cflags: -I${includedir}/efl-1 -I${includedir}/embryo-1

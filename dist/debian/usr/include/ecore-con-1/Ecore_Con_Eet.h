@@ -43,6 +43,10 @@
  * @{
  */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef Eo Ecore_Con_Eet;
 typedef struct _Ecore_Con_Reply Ecore_Con_Reply;
 
@@ -84,6 +88,9 @@ typedef Eina_Bool (*Ecore_Con_Eet_Server_Cb)(void *data, Ecore_Con_Reply *reply,
  *                  created by the server program with @ref
  *                  ecore_con_server_add.
  *
+ * This object gets deleted automatically when the parent Ecore_Con_Server is
+ * deleted.
+ *
  * @return A new Ecore_Con_Eet server.
  */
 EAPI Ecore_Con_Eet *ecore_con_eet_server_new(Ecore_Con_Server *server);
@@ -94,6 +101,9 @@ EAPI Ecore_Con_Eet *ecore_con_eet_server_new(Ecore_Con_Server *server);
  * @param server    An existing Ecore_Con_Server that have been previously
  *                  returned by a call to @ref ecore_con_server_connect in the
  *                  client program.
+ *
+ * This object gets deleted automatically when the parent Ecore_Con_Server is
+ * deleted.
  *
  * @return A new Ecore_Con_Eet client.
  */
@@ -122,6 +132,7 @@ EAPI void ecore_con_eet_register(Ecore_Con_Eet *ece, const char *name, Eet_Data_
 
 /**
  * Register a data callback on a Ecore_Con_Eet object.
+ * When the Ecore_Con_Eet object is deleted, this automatically gets removed.
  *
  * @param ece       An Ecore_Con_Eet object.
  * @param name      The name of the Eet stream to connect.
@@ -142,6 +153,7 @@ EAPI void ecore_con_eet_data_callback_del(Ecore_Con_Eet *ece, const char *name);
 
 /**
  * Register a raw data callback on a Ecore_Con_Eet object.
+ * When the Ecore_Con_Eet object is deleted, this automatically gets removed.
  *
  * @param ece       An Ecore_Con_Eet object.
  * @param name      The name of the raw Eet stream to connect.
@@ -164,6 +176,7 @@ EAPI void ecore_con_eet_raw_data_callback_del(Ecore_Con_Eet *ece, const char *na
  * Register a client connect callback on a Ecore_Con_Eet object.
  * @brief This callback can be registered on the server program to know when a
  * client connects.
+ * When the Ecore_Con_Eet object is deleted, this automatically gets removed.
  *
  * @param ece       An Ecore_Con_Eet object.
  * @param func      The function to call as a callback.
@@ -184,6 +197,7 @@ EAPI void ecore_con_eet_client_connect_callback_del(Ecore_Con_Eet *ece, Ecore_Co
  * Register a client disconnect callback on a Ecore_Con_Eet object.
  * @brief This callback can be registered on the server program to know when a
  * client disconnects.
+ * When the Ecore_Con_Eet object is deleted, this automatically gets removed.
  *
  * @param ece       An Ecore_Con_Eet object.
  * @param func      The function to call as a callback.
@@ -204,6 +218,7 @@ EAPI void ecore_con_eet_client_disconnect_callback_del(Ecore_Con_Eet *ece, Ecore
  * Register a server connect callback on a Ecore_Con_Eet object.
  * @brief This callback can be registered on the client program to be called
  * when it has been connected to the server.
+ * When the Ecore_Con_Eet object is deleted, this automatically gets removed.
  *
  * @param ece       An Ecore_Con_Eet object.
  * @param func      The function to call as a callback.
@@ -224,6 +239,7 @@ EAPI void ecore_con_eet_server_connect_callback_del(Ecore_Con_Eet *ece, Ecore_Co
  * Register a server disconnect callback on a Ecore_Con_Eet object.
  * @brief This callback can be registered on the client program to be called
  * when it has been disconnected from the server.
+ * When the Ecore_Con_Eet object is deleted, this automatically gets removed.
  *
  * @param ece       An Ecore_Con_Eet object.
  * @param func      The function to call as a callback.
@@ -288,4 +304,11 @@ EAPI void ecore_con_eet_raw_send(Ecore_Con_Reply *reply, const char *protocol_na
  * @}
  */
 
+#ifdef __cplusplus
+}
+#endif
+
+#undef EAPI
+#define EAPI
+  
 #endif

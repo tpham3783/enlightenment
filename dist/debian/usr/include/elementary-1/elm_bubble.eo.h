@@ -45,13 +45,11 @@ EAPI const Eo_Class *elm_bubble_class_get(void) EINA_CONST;
  * determine where the arrow in the frame points to and where label, icon and
  * info are shown.
  *
- * 
- *
  * @param[in] pos The given corner for the bubble.
  *
  * @ingroup Elm_Bubble
  */
-EOAPI void  elm_obj_bubble_pos_set(Elm_Bubble_Pos pos);
+EOAPI void elm_obj_bubble_pos_set(Elm_Bubble_Pos pos);
 
 /**
  * @brief Get the corner of the bubble
@@ -62,7 +60,7 @@ EOAPI void  elm_obj_bubble_pos_set(Elm_Bubble_Pos pos);
  *
  * @ingroup Elm_Bubble
  */
-EOAPI Elm_Bubble_Pos  elm_obj_bubble_pos_get(void);
+EOAPI Elm_Bubble_Pos elm_obj_bubble_pos_get(void);
 
 
 #endif

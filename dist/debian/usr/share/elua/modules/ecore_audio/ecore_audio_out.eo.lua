@@ -20,8 +20,8 @@ cutil.init_module(init, function() end)
 
 ffi.cdef [[
     const Eo_Class *ecore_audio_out_class_get(void);
-    Eina_Bool ecore_audio_obj_out_input_attach(Eo * input);
-    Eina_Bool ecore_audio_obj_out_input_detach(Eo * input);
+    Eina_Bool ecore_audio_obj_out_input_attach(Ecore_Audio_In * input);
+    Eina_Bool ecore_audio_obj_out_input_detach(Ecore_Audio_In * input);
     Eina_List *ecore_audio_obj_out_inputs_get(void);
 ]]
 

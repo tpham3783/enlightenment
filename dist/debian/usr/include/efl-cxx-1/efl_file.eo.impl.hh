@@ -371,65 +371,47 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::file>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_save_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_save);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_eject_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_eject);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_async_wait_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_async_wait);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_mmap_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_mmap_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_mmap_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_mmap_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_file_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_file_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_async_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_async_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_file_async_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_file_async_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

@@ -33,7 +33,7 @@ EAPI const Eo_Class *eio_model_class_get(void) EINA_CONST;
  *
  * @ingroup Eio_Model
  */
-EOAPI void  eio_model_children_filter_set(Eio_Filter_Direct_Cb filter_cb, void *userdata);
+EOAPI void eio_model_children_filter_set(Eio_Filter_Direct_Cb filter_cb, void *userdata);
 
 /**
  * @brief Custom Eio_Model constructor.
@@ -44,7 +44,7 @@ EOAPI void  eio_model_children_filter_set(Eio_Filter_Direct_Cb filter_cb, void *
  *
  * @ingroup Eio_Model
  */
-EOAPI void  eio_model_path_set(const char *path);
+EOAPI void eio_model_path_set(const char *path);
 
 
 #endif

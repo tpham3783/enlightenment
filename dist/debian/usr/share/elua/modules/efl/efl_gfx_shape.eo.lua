@@ -34,19 +34,21 @@ ffi.cdef [[
     Efl_Gfx_Cap efl_gfx_shape_stroke_cap_get(void);
     void efl_gfx_shape_stroke_join_set(Efl_Gfx_Join j);
     Efl_Gfx_Join efl_gfx_shape_stroke_join_get(void);
+    void efl_gfx_shape_fill_rule_set(Efl_Gfx_Fill_Rule fill_rule);
+    Efl_Gfx_Fill_Rule efl_gfx_shape_fill_rule_get(void);
     void efl_gfx_shape_path_set(const Efl_Gfx_Path_Command * op, const double * points);
     void efl_gfx_shape_path_get(const Efl_Gfx_Path_Command * *op, const double * *points);
     void efl_gfx_shape_path_length_get(unsigned int *commands, unsigned int *points);
     void efl_gfx_shape_current_get(double *x, double *y);
     void efl_gfx_shape_current_ctrl_get(double *x, double *y);
-    void efl_gfx_shape_dup(Eo_Base * dup_from);
+    void efl_gfx_shape_dup(const Eo_Base * dup_from);
     void efl_gfx_shape_bounds_get(Eina_Rectangle *r);
     void efl_gfx_shape_reset(void);
     void efl_gfx_shape_append_move_to(double x, double y);
     void efl_gfx_shape_append_line_to(double x, double y);
     void efl_gfx_shape_append_quadratic_to(double x, double y, double ctrl_x, double ctrl_y);
     void efl_gfx_shape_append_squadratic_to(double x, double y);
-    void efl_gfx_shape_append_cubic_to(double x, double y, double ctrl_x0, double ctrl_y0, double ctrl_x1, double ctrl_y1);
+    void efl_gfx_shape_append_cubic_to(double ctrl_x0, double ctrl_y0, double ctrl_x1, double ctrl_y1, double x, double y);
     void efl_gfx_shape_append_scubic_to(double x, double y, double ctrl_x, double ctrl_y);
     void efl_gfx_shape_append_arc_to(double x, double y, double rx, double ry, double angle, Eina_Bool large_arc, Eina_Bool sweep);
     void efl_gfx_shape_append_close(void);
@@ -156,6 +158,19 @@ __body = {
         return v
     end,
 
+    fill_rule_set = function(self, fill_rule)
+        eo.__do_start(self, __class)
+        __lib.efl_gfx_shape_fill_rule_set(fill_rule)
+        eo.__do_end()
+    end,
+
+    fill_rule_get = function(self)
+        eo.__do_start(self, __class)
+        local v = __lib.efl_gfx_shape_fill_rule_get()
+        eo.__do_end()
+        return v
+    end,
+
     path_set = function(self, op, points)
         eo.__do_start(self, __class)
         __lib.efl_gfx_shape_path_set(op, points)
@@ -242,9 +257,9 @@ __body = {
         eo.__do_end()
     end,
 
-    append_cubic_to = function(self, x, y, ctrl_x0, ctrl_y0, ctrl_x1, ctrl_y1)
+    append_cubic_to = function(self, ctrl_x0, ctrl_y0, ctrl_x1, ctrl_y1, x, y)
         eo.__do_start(self, __class)
-        __lib.efl_gfx_shape_append_cubic_to(x, y, ctrl_x0, ctrl_y0, ctrl_x1, ctrl_y1)
+        __lib.efl_gfx_shape_append_cubic_to(ctrl_x0, ctrl_y0, ctrl_x1, ctrl_y1, x, y)
         eo.__do_end()
     end,
 
@@ -299,6 +314,7 @@ __body = {
     end,
 
     __properties = {
+        ["fill_rule"] = { 0, 0, 1, 1, true, true },
         ["stroke_location"] = { 0, 0, 1, 1, true, true },
         ["stroke_join"] = { 0, 0, 1, 1, true, true },
         ["stroke_color"] = { 0, 0, 4, 4, true, true },

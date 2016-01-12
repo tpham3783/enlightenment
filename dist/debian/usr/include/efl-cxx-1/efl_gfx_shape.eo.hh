@@ -62,14 +62,14 @@ struct shape
    ///
    void append_squadratic_to(double x_, double y_) const;
 
-   /// @param x 
-   /// @param y 
    /// @param ctrl_x0 
    /// @param ctrl_y0 
    /// @param ctrl_x1 
    /// @param ctrl_y1 
+   /// @param x 
+   /// @param y 
    ///
-   void append_cubic_to(double x_, double y_, double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_) const;
+   void append_cubic_to(double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_, double x_, double y_) const;
 
    /// @param x 
    /// @param y 
@@ -146,6 +146,10 @@ struct shape
    Efl_Gfx_Join stroke_join_get() const;
 
    void stroke_join_set(Efl_Gfx_Join j_) const;
+
+   Efl_Gfx_Fill_Rule fill_rule_get() const;
+
+   void fill_rule_set(Efl_Gfx_Fill_Rule fill_rule_) const;
 
    void path_get(const Efl_Gfx_Path_Command ** op_, const double ** points_) const;
 
@@ -285,14 +289,14 @@ struct shape
    ///
    void append_squadratic_to(double x_, double y_) const;
 
-   /// @param x 
-   /// @param y 
    /// @param ctrl_x0 
    /// @param ctrl_y0 
    /// @param ctrl_x1 
    /// @param ctrl_y1 
+   /// @param x 
+   /// @param y 
    ///
-   void append_cubic_to(double x_, double y_, double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_) const;
+   void append_cubic_to(double ctrl_x0_, double ctrl_y0_, double ctrl_x1_, double ctrl_y1_, double x_, double y_) const;
 
    /// @param x 
    /// @param y 
@@ -369,6 +373,10 @@ struct shape
    Efl_Gfx_Join stroke_join_get() const;
 
    void stroke_join_set(Efl_Gfx_Join j_) const;
+
+   Efl_Gfx_Fill_Rule fill_rule_get() const;
+
+   void fill_rule_set(Efl_Gfx_Fill_Rule fill_rule_) const;
 
    void path_get(const Efl_Gfx_Path_Command ** op_, const double ** points_) const;
 

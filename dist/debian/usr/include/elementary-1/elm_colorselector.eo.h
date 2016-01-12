@@ -45,7 +45,7 @@ EAPI const Eo_Class *elm_colorselector_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI void  elm_obj_colorselector_color_set(int r, int g, int b, int a);
+EOAPI void elm_obj_colorselector_color_set(int r, int g, int b, int a);
 
 /**
  * @brief Get current color from colorselector.
@@ -57,7 +57,7 @@ EOAPI void  elm_obj_colorselector_color_set(int r, int g, int b, int a);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI void  elm_obj_colorselector_color_get(int *r, int *g, int *b, int *a);
+EOAPI void elm_obj_colorselector_color_get(int *r, int *g, int *b, int *a);
 
 /**
  * @brief Set current palette's name
@@ -70,7 +70,7 @@ EOAPI void  elm_obj_colorselector_color_get(int *r, int *g, int *b, int *a);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI void  elm_obj_colorselector_palette_name_set(const char *palette_name);
+EOAPI void elm_obj_colorselector_palette_name_set(const char *palette_name);
 
 /**
  * @brief Get current palette's name
@@ -82,7 +82,7 @@ EOAPI void  elm_obj_colorselector_palette_name_set(const char *palette_name);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI const char * elm_obj_colorselector_palette_name_get(void);
+EOAPI const char *elm_obj_colorselector_palette_name_get(void);
 
 /**
  * @brief Set Colorselector's mode.
@@ -93,7 +93,7 @@ EOAPI const char * elm_obj_colorselector_palette_name_get(void);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI void  elm_obj_colorselector_mode_set(Elm_Colorselector_Mode mode);
+EOAPI void elm_obj_colorselector_mode_set(Elm_Colorselector_Mode mode);
 
 /**
  * @brief Get Colorselector's mode.
@@ -102,7 +102,7 @@ EOAPI void  elm_obj_colorselector_mode_set(Elm_Colorselector_Mode mode);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI Elm_Colorselector_Mode  elm_obj_colorselector_mode_get(void);
+EOAPI Elm_Colorselector_Mode elm_obj_colorselector_mode_get(void);
 
 /**
  * @brief Get list of palette items.
@@ -116,7 +116,7 @@ EOAPI Elm_Colorselector_Mode  elm_obj_colorselector_mode_get(void);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI const Eina_List * elm_obj_colorselector_palette_items_get(void);
+EOAPI const Eina_List *elm_obj_colorselector_palette_items_get(void);
 
 /**
  * @brief Get the selected item in colorselector palette.
@@ -127,7 +127,7 @@ EOAPI const Eina_List * elm_obj_colorselector_palette_items_get(void);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI Elm_Object_Item * elm_obj_colorselector_palette_selected_item_get(void);
+EOAPI Elm_Widget_Item *elm_obj_colorselector_palette_selected_item_get(void);
 
 /**
  * @brief Add a new color item to palette.
@@ -140,20 +140,18 @@ EOAPI Elm_Object_Item * elm_obj_colorselector_palette_selected_item_get(void);
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI Elm_Object_Item * elm_obj_colorselector_palette_color_add(int r, int g, int b, int a);
+EOAPI Elm_Widget_Item *elm_obj_colorselector_palette_color_add(int r, int g, int b, int a);
 
 /** Clear the palette items.
  *
  * @ingroup Elm_Colorselector
  */
-EOAPI void  elm_obj_colorselector_palette_clear(void);
+EOAPI void elm_obj_colorselector_palette_clear(void);
 
 EOAPI extern const Eo_Event_Description _ELM_COLORSELECTOR_EVENT_COLOR_ITEM_SELECTED;
 EOAPI extern const Eo_Event_Description _ELM_COLORSELECTOR_EVENT_COLOR_ITEM_LONGPRESSED;
 EOAPI extern const Eo_Event_Description _ELM_COLORSELECTOR_EVENT_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_COLORSELECTOR_EVENT_CHANGED_USER;
-EOAPI extern const Eo_Event_Description _ELM_COLORSELECTOR_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_COLORSELECTOR_EVENT_ACCESS_CHANGED;
 
 /**
  * No description
@@ -174,15 +172,5 @@ EOAPI extern const Eo_Event_Description _ELM_COLORSELECTOR_EVENT_ACCESS_CHANGED;
  * No description
  */
 #define ELM_COLORSELECTOR_EVENT_CHANGED_USER (&(_ELM_COLORSELECTOR_EVENT_CHANGED_USER))
-
-/**
- * No description
- */
-#define ELM_COLORSELECTOR_EVENT_LANGUAGE_CHANGED (&(_ELM_COLORSELECTOR_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_COLORSELECTOR_EVENT_ACCESS_CHANGED (&(_ELM_COLORSELECTOR_EVENT_ACCESS_CHANGED))
 
 #endif

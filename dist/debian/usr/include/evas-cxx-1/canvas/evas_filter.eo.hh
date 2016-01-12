@@ -65,6 +65,10 @@ struct filter
    void invalid_set(bool val_) const;
 #endif
 
+#ifdef FILTER_PROTECTED
+   void * output_buffer_get() const;
+#endif
+
 
 
    static Eo_Class const* _eo_class()
@@ -196,6 +200,10 @@ struct filter
 
 #ifdef FILTER_PROTECTED
    void invalid_set(bool val_) const;
+#endif
+
+#ifdef FILTER_PROTECTED
+   void * output_buffer_get() const;
 #endif
 
 

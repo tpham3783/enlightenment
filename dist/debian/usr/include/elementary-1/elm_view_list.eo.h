@@ -18,71 +18,68 @@ typedef Eo Elm_View_List;
 EAPI const Eo_Class *elm_view_list_class_get(void) EINA_CONST;
 
 /**
- * Constructor wrapper
+ * @brief Constructor wrapper
  *
- * @def elm_view_list_constructor
- * @since 1.11
- * 
- *
- * @param[in] genlist Genlist object
  * @param[in] item_type Item type
- * @param[in] item_style The current item style name. @c NULL would be default.
+ * @param[in] item_style The current item style name. @c null would be default.
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_List
  */
-EOAPI void  elm_view_list_genlist_set(Evas_Object *genlist, Elm_Genlist_Item_Type item_type, const char *item_style);
+EOAPI void elm_view_list_genlist_set(Evas_Object *genlist, Elm_Genlist_Item_Type item_type, const char *item_style);
 
 /**
- * Return evas object
- *
- * @def elm_view_list_evas_object_get
- * @since 1.11
- * 
+ * @brief Return evas object
  *
  * @param[out] widget Returned widget
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_List
  */
-EOAPI void  elm_view_list_evas_object_get(Evas_Object **widget);
+EOAPI void elm_view_list_evas_object_get(Evas_Object **widget);
 
 /**
- * Connect property
+ * @brief Connect property
  *
- * @def elm_view_list_property_connect
- * @since 1.11
- * 
- *
- * @param[in] property Property name
  * @param[in] part Edje's theme part
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_List
  */
-EOAPI void  elm_view_list_property_connect(const char *property, const char *part);
+EOAPI void elm_view_list_property_connect(const char *property, const char *part);
 
 /**
- * Set model
- *
- * @def elm_view_list_model_set
- * @since 1.11
- * 
+ * @brief Set model
  *
  * @param[in] model New Emodel to set
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_List
  */
-EOAPI void  elm_view_list_model_set(Efl_Model_Base *model);
+EOAPI void elm_view_list_model_set(Efl_Model_Base *model);
+
+/** Unset model
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_List
+ */
+EOAPI void elm_view_list_model_unset(void);
 
 /**
- * Unset model
- *
- * @def elm_view_list_model_unset
- * @since 1.11
- * 
- */
-EOAPI void  elm_view_list_model_unset(void);
-
-/**
- * Get model
- *
- * @def elm_view_list_model_get
- * @since 1.11
- * 
+ * @brief Get model
  *
  * @param[out] model Returned Emodel
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_List
  */
-EOAPI void  elm_view_list_model_get(Eo **model);
+EOAPI void elm_view_list_model_get(Eo **model);
 
 EOAPI extern const Eo_Event_Description _ELM_VIEW_LIST_EVENT_MODEL_SELECTED;
 

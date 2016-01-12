@@ -5,7 +5,7 @@ includedir=${prefix}/include
 
 Name: efreet-trash
 Description: Freedesktop Shared Trash implementation for the EFL
-Version: 1.15.0-beta2
-Requires.private: ecore-ipc >= 1.15.0-beta2 emile >= 1.15.0-beta2 eina >= 1.15.0-beta2 eo >= 1.15.0-beta2 ecore-file >= 1.15.0-beta2 ecore >= 1.15.0-beta2 eet >= 1.15.0-beta2  
+Version: 1.17.0-beta1
+Requires.private: ecore-ipc >= 1.17.0-beta1 emile >= 1.17.0-beta1 eina >= 1.17.0-beta1 eo >= 1.17.0-beta1 ecore-file >= 1.17.0-beta1 ecore >= 1.17.0-beta1 eet >= 1.17.0-beta1  
 Libs: -L${libdir} -lefreet_trash
 Cflags: -I${includedir}/efl-1 -I${includedir}/efreet-1

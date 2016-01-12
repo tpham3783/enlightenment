@@ -8,7 +8,7 @@
 dlname='libector.so.1'
 
 # Names of this library.
-library_names='libector.so.1.15.0 libector.so.1 libector.so'
+library_names='libector.so.1.17.0 libector.so.1 libector.so'
 
 # The name of the static archive.
 old_library=''
@@ -17,14 +17,14 @@ old_library=''
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libefl.la /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libeo.la /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libeina.la -ldl -lrt -lpthread -lm'
+dependency_libs=' /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libefl.la /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libeo.la /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libeet.la -L/usr/lib/i386-linux-gnu /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libemile.la -lssl -lcrypto -lz -ljpeg /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/libeina.la -ldl -lrt -lpthread -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
 
 # Version information for libector.
-current=16
-age=15
+current=18
+age=17
 revision=0
 
 # Is this an already installed library?

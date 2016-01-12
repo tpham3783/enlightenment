@@ -4,11 +4,11 @@ libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 modules=${exec_prefix}/lib/emotion/modules
 generic_players=${exec_prefix}/lib/emotion/generic_players
-module_arch=v-1.15
+module_arch=v-1.17
 
 Name: emotion
 Description: Emotion evas based multimedia library
-Version: 1.15.0-beta2
-Requires.private: eeze >= 1.15.0-beta2 emile >= 1.15.0-beta2 eio >= 1.15.0-beta2 efl >= 1.15.0-beta2 evas >= 1.15.0-beta2 eet >= 1.15.0-beta2 ecore >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Version: 1.17.0-beta1
+Requires.private: eeze >= 1.17.0-beta1 emile >= 1.17.0-beta1 eio >= 1.17.0-beta1 efl >= 1.17.0-beta1 evas >= 1.17.0-beta1 eet >= 1.17.0-beta1 ecore >= 1.17.0-beta1 eo >= 1.17.0-beta1 eina >= 1.17.0-beta1  
 Libs: -L${libdir} -lemotion
 Cflags: -I${includedir}/efl-1 -I${includedir}/emotion-1

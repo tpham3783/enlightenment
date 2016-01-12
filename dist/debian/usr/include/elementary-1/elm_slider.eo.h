@@ -18,381 +18,324 @@ typedef Eo Elm_Slider;
 EAPI const Eo_Class *elm_slider_class_get(void) EINA_CONST;
 
 /**
- * Set the orientation of a given slider widget.
+ * @brief Set the orientation of a given slider widget.
  *
- * Use this function to change how your slider is to be
- * disposed: vertically or horizontally.
+ * Use this function to change how your slider is to be disposed: vertically or
+ * horizontally.
  *
  * By default it's displayed horizontally.
  *
- * @see elm_slider_horizontal_get()
+ * @param[in] horizontal
  *
- * @ingroup Slider
- *
- * @param[in] horizontal Use @c EINA_TRUE to make @p obj to be
-@b horizontal, @c EINA_FALSE to make it @b vertical.
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_horizontal_set(Eina_Bool horizontal);
+EOAPI void elm_obj_slider_horizontal_set(Eina_Bool horizontal);
+
+/** Get the orientation of a given slider widget.
+ *
+ * @ingroup Elm_Slider
+ */
+EOAPI Eina_Bool elm_obj_slider_horizontal_get(void);
 
 /**
- * Get the orientation of a given slider widget
- *
- * @return @c EINA_TRUE, if @p obj is set to be @b horizontal,
- * @c EINA_FALSE if it's @b vertical (and on errors).
- *
- * @see elm_slider_horizontal_set() for more details.
- *
- * @ingroup Slider
- */
-EOAPI Eina_Bool  elm_obj_slider_horizontal_get(void);
-
-/**
- * Set the value the slider displays.
+ * @brief Set the value the slider displays.
  *
  * Value will be presented on the unit label following format specified with
- * elm_slider_unit_format_set() and on indicator with
- * elm_slider_indicator_format_set().
+ * @ref elm_obj_slider_unit_format_set and on indicator with
+ * @ref elm_obj_slider_indicator_format_set.
  *
- * @warning The value must to be between min and max values. This values
- * are set by elm_slider_min_max_set().
- *
- * @see elm_slider_value_get()
- * @see elm_slider_unit_format_set()
- * @see elm_slider_indicator_format_set()
- * @see elm_slider_min_max_set()
- *
- * @ingroup Slider
+ * @note The value must to be between min and max values. This values are set
+ * by @ref elm_obj_slider_min_max_set.
  *
  * @param[in] val The value to be displayed.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_value_set(double val);
+EOAPI void elm_obj_slider_value_set(double val);
 
 /**
- * Get the value displayed by the slider.
+ * @brief Get the value displayed by the slider.
  *
- * @return The value displayed.
+ * @return The value to be displayed.
  *
- * @see elm_slider_value_set() for details.
- *
- * @ingroup Slider
+ * @ingroup Elm_Slider
  */
-EOAPI double  elm_obj_slider_value_get(void);
+EOAPI double elm_obj_slider_value_get(void);
 
 /**
- * Set the format string for the indicator label.
+ * @brief Set the format string for the indicator label.
  *
- * The slider may display its value somewhere else then unit label,
- * for example, above the slider knob that is dragged around. This function
- * sets the format string used for this.
+ * The slider may display its value somewhere else then unit label, for
+ * example, above the slider knob that is dragged around. This function sets
+ * the format string used for this.
  *
- * If @c NULL, indicator label won't be visible. If not it sets the format
+ * If @c null, indicator label won't be visible. If not it sets the format
  * string for the label text. To the label text is provided a floating point
- * value, so the label text can display up to 1 floating point value.
- * Note that this is optional.
+ * value, so the label text can display up to 1 floating point value. Note that
+ * this is optional.
  *
- * Use a format string such as "%1.2f meters" for example, and it will
- * display values like: "3.14 meters" for a value equal to 3.14159.
+ * Use a format string such as "%1.2f meters" for example, and it will display
+ * values like: "3.14 meters" for a value equal to 3.14159.
  *
  * Default is indicator label disabled.
  *
- * @see elm_slider_indicator_format_get()
- *
- * @ingroup Slider
- *
  * @param[in] indicator The format string for the indicator display.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_indicator_format_set(const char *indicator);
+EOAPI void elm_obj_slider_indicator_format_set(const char *indicator);
 
 /**
- * Get the indicator label format of the slider.
+ * @brief Get the indicator label format of the slider.
  *
- * @return The indicator label format string in UTF-8.
+ * The slider may display its value somewhere else then unit label, for
+ * example, above the slider knob that is dragged around. This function gets
+ * the format string used for this.
  *
- * The slider may display its value somewhere else then unit label,
- * for example, above the slider knob that is dragged around. This function
- * gets the format string used for this.
+ * @return The format string for the indicator display.
  *
- * @see elm_slider_indicator_format_set() for more
- * information on how this works.
- *
- * @ingroup Slider
+ * @ingroup Elm_Slider
  */
-EOAPI const char * elm_obj_slider_indicator_format_get(void);
+EOAPI const char *elm_obj_slider_indicator_format_get(void);
 
 /**
- * Invert a given slider widget's displaying values order
+ * @brief Invert a given slider widget's displaying values order
  *
- * A slider may be @b inverted, in which state it gets its
- * values inverted, with high vales being on the left or top and
- * low values on the right or bottom, as opposed to normally have
- * the low values on the former and high values on the latter,
- * respectively, for horizontal and vertical modes.
+ * A slider may be inverted, in which state it gets its values inverted, with
+ * high vales being on the left or top and low values on the right or bottom,
+ * as opposed to normally have the low values on the former and high values on
+ * the latter, respectively, for horizontal and vertical modes.
  *
- * @see elm_slider_inverted_get()
+ * @param[in] inverted Use @c true to make @c obj inverted, @c false to bring
+ * it back to default, non-inverted values.
  *
- * @ingroup Slider
- *
- * @param[in] inverted Use @c EINA_TRUE to make @p obj inverted,
-@c EINA_FALSE to bring it back to default, non-inverted values.
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_inverted_set(Eina_Bool inverted);
+EOAPI void elm_obj_slider_inverted_set(Eina_Bool inverted);
 
 /**
- * Get whether a given slider widget's displaying values are
- * inverted or not.
+ * @brief Get whether a given slider widget's displaying values are inverted or
+ * not.
  *
- * @return @c EINA_TRUE, if @p obj has inverted values,
- * @c EINA_FALSE otherwise (and on errors).
+ * @return Use @c true to make @c obj inverted, @c false to bring it back to
+ * default, non-inverted values.
  *
- * @see elm_slider_inverted_set() for more details.
- *
- * @ingroup Slider
+ * @ingroup Elm_Slider
  */
-EOAPI Eina_Bool  elm_obj_slider_inverted_get(void);
+EOAPI Eina_Bool elm_obj_slider_inverted_get(void);
 
 /**
- * Set whether to enlarge slider indicator (augmented knob) or not.
+ * @brief Set whether to enlarge slider indicator (augmented knob) or not.
  *
  * By default, indicator will be bigger while dragged by the user.
  *
  * @warning It won't display values set with
- * elm_slider_indicator_format_set() if you disable indicator.
+ * @ref elm_obj_slider_indicator_format_set if you disable indicator.
  *
- * @ingroup Slider
+ * @param[in] show @c true will make it enlarge, @c false will let the knob
+ * always at default size.
  *
- * @param[in] show @c EINA_TRUE will make it enlarge, @c EINA_FALSE will
-let the knob always at default size.
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_indicator_show_set(Eina_Bool show);
+EOAPI void elm_obj_slider_indicator_show_set(Eina_Bool show);
 
 /**
- * Get whether a given slider widget's enlarging indicator or not.
+ * @brief Get whether a given slider widget's enlarging indicator or not.
  *
- * @return @c EINA_TRUE, if @p obj is enlarging indicator, or
- * @c EINA_FALSE otherwise (and on errors).
+ * @return @c true will make it enlarge, @c false will let the knob always at
+ * default size.
  *
- * @see elm_slider_indicator_show_set() for details.
- *
- * @ingroup Slider
+ * @ingroup Elm_Slider
  */
-EOAPI Eina_Bool  elm_obj_slider_indicator_show_get(void);
+EOAPI Eina_Bool elm_obj_slider_indicator_show_get(void);
 
 /**
- * Set the minimum and maximum values for the slider.
+ * @brief Set the minimum and maximum values for the slider.
  *
  * Define the allowed range of values to be selected by the user.
  *
- * If actual value is less than @p min, it will be updated to @p min. If it
- * is bigger then @p max, will be updated to @p max. Actual value can be
- * get with elm_slider_value_get().
+ * If actual value is less than @c min, it will be updated to @c min. If it is
+ * bigger then @c max, will be updated to @c max. Actual value can be get with
+ * @ref elm_obj_slider_value_get,get.
  *
  * By default, min is equal to 0.0, and max is equal to 1.0.
  *
- * @warning Maximum must be greater than minimum, otherwise behavior
- * is undefined.
- *
- * @see elm_slider_min_max_get()
- *
- * @ingroup Slider
+ * @warning maximum must be greater than minimum, otherwise behavior is
+ * undefined.
  *
  * @param[in] min The minimum value.
  * @param[in] max The maximum value.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_min_max_set(double min, double max);
+EOAPI void elm_obj_slider_min_max_set(double min, double max);
 
 /**
- * Get the minimum and maximum values of the slider.
+ * @brief Get the minimum and maximum values of the slider.
  *
- * @note If only one value is needed, the other pointer can be passed
- * as @c NULL.
- *
- * @see elm_slider_min_max_set() for details.
- *
- * @ingroup Slider
+ * @note If only one value is needed, the other pointer can be passed as
+ * @c null.
  *
  * @param[out] min The minimum value.
  * @param[out] max The maximum value.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_min_max_get(double *min, double *max);
+EOAPI void elm_obj_slider_min_max_get(double *min, double *max);
 
 /**
- * Set the format string for the unit label.
+ * @brief Set the format string for the unit label.
  *
- * Unit label is displayed all the time, if set, after slider's bar.
- * In horizontal mode, at right and in vertical mode, at bottom.
+ * Unit label is displayed all the time, if set, after slider's bar. In
+ * horizontal mode, at right and in vertical mode, at bottom.
  *
- * If @c NULL, unit label won't be visible. If not it sets the format
- * string for the label text. To the label text is provided a floating point
- * value, so the label text can display up to 1 floating point value.
- * Note that this is optional.
+ * If @c null, unit label won't be visible. If not it sets the format string
+ * for the label text. To the label text is provided a floating point value, so
+ * the label text can display up to 1 floating point value. Note that this is
+ * optional.
  *
- * Use a format string such as "%1.2f meters" for example, and it will
- * display values like: "3.14 meters" for a value equal to 3.14159.
+ * Use a format string such as "%1.2f meters" for example, and it will display
+ * values like: "3.14 meters" for a value equal to 3.14159.
  *
  * Default is unit label disabled.
  *
- * @see elm_slider_indicator_format_get()
- *
- * @ingroup Slider
- *
  * @param[in] units The format string for the unit display.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_unit_format_set(const char *units);
+EOAPI void elm_obj_slider_unit_format_set(const char *units);
 
 /**
- * Get the unit label format of the slider.
+ * @brief Get the unit label format of the slider.
  *
- * @return The unit label format string in UTF-8.
+ * Unit label is displayed all the time, if set, after slider's bar. In
+ * horizontal mode, at right and in vertical mode, at bottom.
  *
- * Unit label is displayed all the time, if set, after slider's bar.
- * In horizontal mode, at right and in vertical mode, at bottom.
+ * @return The format string for the unit display.
  *
- * @see elm_slider_unit_format_set() for more
- * information on how this works.
- *
- * @ingroup Slider
+ * @ingroup Elm_Slider
  */
-EOAPI const char * elm_obj_slider_unit_format_get(void);
+EOAPI const char *elm_obj_slider_unit_format_get(void);
 
 /**
- * Show the indicator of slider on focus
+ * @brief Show the indicator of slider on focus.
  *
- * @ingroup Slider
+ * @param[in] flag
  *
- * @param[in] flag @ EINA_TRUE sets the indicator visible
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_indicator_show_on_focus_set(Eina_Bool flag);
+EOAPI void elm_obj_slider_indicator_show_on_focus_set(Eina_Bool flag);
+
+/** Get whether the indicator of the slider is set or not.
+ *
+ * @ingroup Elm_Slider
+ */
+EOAPI Eina_Bool elm_obj_slider_indicator_show_on_focus_get(void);
 
 /**
- * Get whether the indicator of the slider is set or not
+ * @brief Set the (exact) length of the bar region of a given slider widget.
  *
- * @return @c EINA_TRUE, if indicator is set
- * @c EINA_FALSE otherwise.
+ * This sets the minimum width (when in horizontal mode) or height (when in
+ * vertical mode) of the actual bar area of the slider @c obj. This in turn
+ * affects the object's minimum size. Use this when you're not setting other
+ * size hints expanding on the given direction (like weight and alignment
+ * hints) and you would like it to have a specific size.
  *
- * @ingroup Slider
- */
-EOAPI Eina_Bool  elm_obj_slider_indicator_show_on_focus_get(void);
-
-/**
- * Set the (exact) length of the bar region of a given slider widget.
- *
- * This sets the minimum width (when in horizontal mode) or height
- * (when in vertical mode) of the actual bar area of the slider
- * @p obj. This in turn affects the object's minimum size. Use
- * this when you're not setting other size hints expanding on the
- * given direction (like weight and alignment hints) and you would
- * like it to have a specific size.
- *
- * @note Icon, end, label, indicator and unit text around @p obj
- * will require their
- * own space, which will make @p obj to require more the @p size,
+ * @note Icon, end, label, indicator and unit text around @c obj will require
+ * their own space, which will make @c obj to require more the @c size,
  * actually.
  *
- * @see elm_slider_span_size_get()
- *
- * @ingroup Slider
- *
  * @param[in] size The length of the slider's bar region.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_span_size_set(Evas_Coord size);
+EOAPI void elm_obj_slider_span_size_set(Evas_Coord size);
 
 /**
- * Get the length set for the bar region of a given slider widget
+ * @brief Get the length set for the bar region of a given slider widget
+ *
+ * If that size was not set previously, with @ref elm_obj_slider_span_size_set,
+ * this call will return $0.
  *
  * @return The length of the slider's bar region.
  *
- * If that size was not set previously, with
- * elm_slider_span_size_set(), this call will return @c 0.
- *
- * @ingroup Slider
+ * @ingroup Elm_Slider
  */
-EOAPI Evas_Coord  elm_obj_slider_span_size_get(void);
+EOAPI Evas_Coord elm_obj_slider_span_size_get(void);
 
 /**
- * Set the step by which slider indicator will move.
+ * @brief Set the step by which slider indicator will move.
  *
- * This value is used when draggable object is moved automatically i.e., in case
- * of key event when up/down/left/right key is pressed or in case when
- * accessibility is set and flick event is used to inc/dec slider values.
- * By default step value is equal to 0.05.
- *
- * @see elm_slider_step_get() for more details.
- *
- * @ingroup Slider
- * @since 1.8
+ * This value is used when draggable object is moved automatically i.e., in
+ * case of key event when up/down/left/right key is pressed or in case when
+ * accessibility is set and flick event is used to inc/dec slider values. By
+ * default step value is equal to 0.05.
  *
  * @param[in] step The step value.
+ *
+ * @since 1.8
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_step_set(double step);
+EOAPI void elm_obj_slider_step_set(double step);
 
 /**
- * Get the step by which slider indicator moves.
+ * @brief Get the step by which slider indicator moves.
  *
  * @return The step value.
  *
- * @see elm_slider_step_set() for more details.
- *
- * @ingroup Slider
  * @since 1.8
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI double  elm_obj_slider_step_get(void);
+EOAPI double elm_obj_slider_step_get(void);
 
 /**
- * Set the visible mode of indicator.
- *
- * @see elm_slider_indicator_visible_mode_get() for more details.
- *
- * @ingroup Slider
+ * @brief Set the visible mode of indicator.
  *
  * @param[in] indicator_visible_mode The indicator visible mode.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_indicator_visible_mode_set(Elm_Slider_Indicator_Visible_Mode indicator_visible_mode);
+EOAPI void elm_obj_slider_indicator_visible_mode_set(Elm_Slider_Indicator_Visible_Mode indicator_visible_mode);
 
 /**
- * Get the visible mode of indicator.
+ * @brief Get the visible mode of indicator.
  *
  * @return The indicator visible mode.
  *
- * @see elm_slider_indicator_visible_mode_set() for more details.
- *
- * @ingroup Slider
+ * @ingroup Elm_Slider
  */
-EOAPI Elm_Slider_Indicator_Visible_Mode  elm_obj_slider_indicator_visible_mode_get(void);
+EOAPI Elm_Slider_Indicator_Visible_Mode elm_obj_slider_indicator_visible_mode_get(void);
 
 /**
- * Set the format function pointer for the indicator label
+ * @brief Set the format function pointer for the indicator label
  *
  * Set the callback function to format the indicator string.
  *
- * @see elm_slider_indicator_format_set() for more info on how this works.
- *
- * @ingroup Slider
- *
  * @param[in] func The indicator format function.
  * @param[in] free_func The freeing function for the format string.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_indicator_format_function_set(slider_func_type func, slider_freefunc_type free_func);
+EOAPI void elm_obj_slider_indicator_format_function_set(slider_func_type func, slider_freefunc_type free_func);
 
 /**
- * Set the format function pointer for the units label
+ * @brief Set the format function pointer for the units label
  *
  * Set the callback function to format the units string.
  *
- * @see elm_slider_unit_format_set() for more info on how this works.
- *
- * @ingroup Slider
- *
  * @param[in] func The units format function.
  * @param[in] free_func The freeing function for the format string.
+ *
+ * @ingroup Elm_Slider
  */
-EOAPI void  elm_obj_slider_units_format_function_set(slider_func_type func, slider_freefunc_type free_func);
+EOAPI void elm_obj_slider_units_format_function_set(slider_func_type func, slider_freefunc_type free_func);
 
 EOAPI extern const Eo_Event_Description _ELM_SLIDER_EVENT_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_SLIDER_EVENT_DELAY_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_SLIDER_EVENT_SLIDER_DRAG_START;
 EOAPI extern const Eo_Event_Description _ELM_SLIDER_EVENT_SLIDER_DRAG_STOP;
-EOAPI extern const Eo_Event_Description _ELM_SLIDER_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_SLIDER_EVENT_ACCESS_CHANGED;
 
 /**
  * No description
@@ -413,15 +356,5 @@ EOAPI extern const Eo_Event_Description _ELM_SLIDER_EVENT_ACCESS_CHANGED;
  * No description
  */
 #define ELM_SLIDER_EVENT_SLIDER_DRAG_STOP (&(_ELM_SLIDER_EVENT_SLIDER_DRAG_STOP))
-
-/**
- * No description
- */
-#define ELM_SLIDER_EVENT_LANGUAGE_CHANGED (&(_ELM_SLIDER_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_SLIDER_EVENT_ACCESS_CHANGED (&(_ELM_SLIDER_EVENT_ACCESS_CHANGED))
 
 #endif

@@ -17,10 +17,7 @@ typedef Eo Evas_Common_Interface;
 
 EAPI const Eo_Class *evas_common_interface_interface_get(void) EINA_CONST;
 
-/**
- * No description supplied by the EAPI.
- */
-EOAPI Evas_Common_Interface * evas_common_evas_get(void);
+EOAPI Evas_Common_Interface *evas_common_evas_get(void);
 
 
 #endif

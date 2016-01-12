@@ -24,7 +24,7 @@ EAPI const Eo_Class *elm_app_client_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_App_Client
  */
-EOAPI Eina_Iterator * elm_app_client_views_get(void);
+EOAPI Eina_Iterator *elm_app_client_views_get(void);
 
 /**
  * @brief Return the application package.
@@ -33,7 +33,7 @@ EOAPI Eina_Iterator * elm_app_client_views_get(void);
  *
  * @ingroup Elm_App_Client
  */
-EOAPI const char * elm_app_client_package_get(void);
+EOAPI const char *elm_app_client_package_get(void);
 
 /**
  * @brief Class constructor of elm_app_client.
@@ -42,19 +42,19 @@ EOAPI const char * elm_app_client_package_get(void);
  *
  * @ingroup Elm_App_Client
  */
-EOAPI void  elm_app_client_constructor(const char *package);
+EOAPI void elm_app_client_constructor(const char *package);
 
 /** Close all views of application.
  *
  * @ingroup Elm_App_Client
  */
-EOAPI void  elm_app_client_view_all_close(void);
+EOAPI void elm_app_client_view_all_close(void);
 
 /** Terminate application.
  *
  * @ingroup Elm_App_Client
  */
-EOAPI void  elm_app_client_terminate(void);
+EOAPI void elm_app_client_terminate(void);
 
 /**
  * @brief Open an application view.
@@ -66,7 +66,7 @@ EOAPI void  elm_app_client_terminate(void);
  *
  * @ingroup Elm_App_Client
  */
-EOAPI Elm_App_Client_Pending * elm_app_client_view_open(Eina_Value *args, Elm_App_Client_Open_View_Cb view_open_cb, const void *data);
+EOAPI Elm_App_Client_Pending *elm_app_client_view_open(Eina_Value *args, Elm_App_Client_Open_View_Cb view_open_cb, const void *data);
 
 /**
  * @brief Cancel a pending elm_app_client_view_open().
@@ -75,7 +75,7 @@ EOAPI Elm_App_Client_Pending * elm_app_client_view_open(Eina_Value *args, Elm_Ap
  *
  * @ingroup Elm_App_Client
  */
-EOAPI void  elm_app_client_view_open_cancel(Elm_App_Client_Pending *pending);
+EOAPI void elm_app_client_view_open_cancel(Elm_App_Client_Pending *pending);
 
 EOAPI extern const Eo_Event_Description _ELM_APP_CLIENT_EVENT_VIEW_CREATED;
 EOAPI extern const Eo_Event_Description _ELM_APP_CLIENT_EVENT_VIEW_DELETED;

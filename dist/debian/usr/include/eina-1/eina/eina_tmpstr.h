@@ -167,7 +167,7 @@ EAPI Eina_Tmpstr *eina_tmpstr_add(const char *str) EINA_WARN_UNUSED_RESULT;
 /**
  * @brief Add a new temporary string based on the input string and length.
  *
- * @param str This is the input stringthat is copied into the temp string.
+ * @param str This is the input string that is copied into the temp string.
  * @param length This is the maximum length and the allocated length of the temp string.
  * @return A pointer to the tmp string that is a standard C string.
  *
@@ -182,11 +182,11 @@ EAPI Eina_Tmpstr *eina_tmpstr_add(const char *str) EINA_WARN_UNUSED_RESULT;
  * NULL will be returned, otherwise a valid string pointer will be returned
  * that you can treat as any other C string (eg strdup(tmpstr) or
  * printf("%s\n", tmpstr) etc.). This string should be considered read-only
- * and immutable, and when youa re done with the string yo should delete it
+ * and immutable, and when you are done with the string you should delete it
  * with eina_tmpstr_del().
  *
  * @note If the length is greater than the actual string, but still '\0'
- *       terminateed. Their won't be any crash and the string will be correct,
+ *       terminated, there won't be any crash and the string will be correct,
  *       but eina_tmpstr_len will return an erroneous length. So if you
  *       want to have the correct length always call eina_tmpstr_add_length
  *       with length == strlen(str).
@@ -236,6 +236,38 @@ EAPI size_t eina_tmpstr_len(Eina_Tmpstr *tmpstr);
  * @since 1.8.0
  */
 EAPI void eina_tmpstr_del(Eina_Tmpstr *tmpstr) EINA_ARG_NONNULL(1);
+
+/**
+ * @brief Add a new temporary string using the passed string. The passed
+ * string is used directly as the buffer. The passed string must be malloced.
+ *
+ * @param str the input string to manage.
+ * @return A pointer to the tmp string that is a standard C string.
+ *
+ * This function creates a new temporary string. On error, @c NULL is
+ * returned. To free the resources, use eina_tmpstr_del().
+ *
+ * @see eina_tmpstr_del()
+ * @since 1.17.0
+ */
+EAPI Eina_Tmpstr *eina_tmpstr_manage_new(char *str) EINA_WARN_UNUSED_RESULT;
+
+/**
+ * @brief Add a new temporary string using the passed string. The passed
+ * string is used directly as the buffer. The passed string must be malloced.
+ *
+ * @param str the input string to manage.
+ * @param length the length of the string.
+ * @return A pointer to the tmp string that is a standard C string.
+ *
+ * This function creates a new temporary string. On error, @c NULL is
+ * returned. To free the resources, use eina_tmpstr_del().
+ *
+ * @see eina_tmpstr_manage_new()
+ * @see eina_tmpstr_del()
+ * @since 1.17.0
+ */
+EAPI Eina_Tmpstr *eina_tmpstr_manage_new_length(char *str, size_t length);
 
 /**
  * @}

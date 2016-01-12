@@ -30,7 +30,7 @@ EAPI const Eo_Class *elm_fileselector_button_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Fileselector_Button
  */
-EOAPI void  elm_obj_fileselector_button_inwin_mode_set(Eina_Bool value);
+EOAPI void elm_obj_fileselector_button_inwin_mode_set(Eina_Bool value);
 
 /**
  * @brief Get whether a given file selector button widget's internal file
@@ -44,13 +44,13 @@ EOAPI void  elm_obj_fileselector_button_inwin_mode_set(Eina_Bool value);
  *
  * @ingroup Elm_Fileselector_Button
  */
-EOAPI Eina_Bool  elm_obj_fileselector_button_inwin_mode_get(void);
+EOAPI Eina_Bool elm_obj_fileselector_button_inwin_mode_get(void);
 
 /**
  * @brief Set the size of a given file selector button widget's window, holding
  * the file selector itself.
  *
- * Note: it will only take any effect if the file selector button widget is not
+ * @note it will only take any effect if the file selector button widget is not
  * under "inwin mode". The default size for the window (when applicable) is
  * 400x400 pixels.
  *
@@ -61,13 +61,13 @@ EOAPI Eina_Bool  elm_obj_fileselector_button_inwin_mode_get(void);
  *
  * @ingroup Elm_Fileselector_Button
  */
-EOAPI void  elm_obj_fileselector_button_window_size_set(Evas_Coord width, Evas_Coord height);
+EOAPI void elm_obj_fileselector_button_window_size_set(Evas_Coord width, Evas_Coord height);
 
 /**
  * @brief Get the size of a given file selector button widget's window, holding
  * the file selector itself.
  *
- * Note: Use null pointers on the size values you're not interested in: they'll
+ * @note Use null pointers on the size values you're not interested in: they'll
  * be ignored by the function.
  *
  * See also @ref elm_obj_fileselector_button_window_size_set for more details.
@@ -77,7 +77,7 @@ EOAPI void  elm_obj_fileselector_button_window_size_set(Evas_Coord width, Evas_C
  *
  * @ingroup Elm_Fileselector_Button
  */
-EOAPI void  elm_obj_fileselector_button_window_size_get(Evas_Coord *width, Evas_Coord *height);
+EOAPI void elm_obj_fileselector_button_window_size_get(Evas_Coord *width, Evas_Coord *height);
 
 /**
  * @brief Set the title for a given file selector button widget's window
@@ -86,7 +86,7 @@ EOAPI void  elm_obj_fileselector_button_window_size_get(Evas_Coord *width, Evas_
  * after a click on the button. Those windows have the default (unlocalized)
  * value of "Select a file" as titles.
  *
- * Note: It will only take effect if the file selector button widget is not
+ * @note It will only take effect if the file selector button widget is not
  * under "inwin mode".
  *
  * See also @ref elm_obj_fileselector_button_window_title_get.
@@ -95,7 +95,7 @@ EOAPI void  elm_obj_fileselector_button_window_size_get(Evas_Coord *width, Evas_
  *
  * @ingroup Elm_Fileselector_Button
  */
-EOAPI void  elm_obj_fileselector_button_window_title_set(const char *title);
+EOAPI void elm_obj_fileselector_button_window_title_set(const char *title);
 
 /**
  * @brief Get the title for a given file selector button widget's window
@@ -106,21 +106,9 @@ EOAPI void  elm_obj_fileselector_button_window_title_set(const char *title);
  *
  * @ingroup Elm_Fileselector_Button
  */
-EOAPI const char * elm_obj_fileselector_button_window_title_get(void);
+EOAPI const char *elm_obj_fileselector_button_window_title_get(void);
 
-EOAPI extern const Eo_Event_Description _ELM_FILESELECTOR_BUTTON_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_FILESELECTOR_BUTTON_EVENT_ACCESS_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_FILESELECTOR_BUTTON_EVENT_FILE_CHOSEN;
-
-/**
- * No description
- */
-#define ELM_FILESELECTOR_BUTTON_EVENT_LANGUAGE_CHANGED (&(_ELM_FILESELECTOR_BUTTON_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_FILESELECTOR_BUTTON_EVENT_ACCESS_CHANGED (&(_ELM_FILESELECTOR_BUTTON_EVENT_ACCESS_CHANGED))
 
 /**
  * No description

@@ -5,6 +5,30 @@ inline void efl::vg::base::bounds_get(Eina_Rectangle* r_) const
    eo_do(_concrete_eo_ptr(), ::efl_vg_bounds_get(r_));
 }
 
+inline bool efl::vg::base::interpolate(::efl::vg::base from_, ::efl::vg::base to_, double pos_map_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::efl_vg_interpolate(::efl::eolian::to_c(from_), ::efl::eolian::to_c(to_), pos_map_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void efl::vg::base::dup(::efl::vg::base from_) const
+{
+   eo_do(_concrete_eo_ptr(), ::efl_vg_dup(::efl::eolian::to_c(from_)));
+}
+
+inline ::efl::eina::string_view efl::vg::base::name_get() const
+{
+   const char * _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::efl_vg_name_get());
+   return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void efl::vg::base::name_set(::efl::eina::string_view name_) const
+{
+   eo_do(_concrete_eo_ptr(), ::efl_vg_name_set(::efl::eolian::to_c(name_)));
+}
+
 inline const Eina_Matrix3 * efl::vg::base::transformation_get() const
 {
    const Eina_Matrix3 * _tmp_ret;
@@ -42,6 +66,30 @@ inline void efl::vg::base::mask_set(Efl_VG * m_) const
 inline void eo_cxx::efl::vg::base::bounds_get(Eina_Rectangle* r_) const
 {
    eo_do(_concrete_eo_ptr(), ::efl_vg_bounds_get(r_));
+}
+
+inline bool eo_cxx::efl::vg::base::interpolate(::efl::vg::base from_, ::efl::vg::base to_, double pos_map_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::efl_vg_interpolate(::efl::eolian::to_c(from_), ::efl::eolian::to_c(to_), pos_map_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void eo_cxx::efl::vg::base::dup(::efl::vg::base from_) const
+{
+   eo_do(_concrete_eo_ptr(), ::efl_vg_dup(::efl::eolian::to_c(from_)));
+}
+
+inline ::efl::eina::string_view eo_cxx::efl::vg::base::name_get() const
+{
+   const char * _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::efl_vg_name_get());
+   return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void eo_cxx::efl::vg::base::name_set(::efl::eina::string_view name_) const
+{
+   eo_do(_concrete_eo_ptr(), ::efl_vg_name_set(::efl::eolian::to_c(name_)));
 }
 
 inline const Eina_Matrix3 * eo_cxx::efl::vg::base::transformation_get() const
@@ -99,6 +147,62 @@ void efl_vg_base_bounds_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::In
    try
       {
          static_cast<T*>(self->this_)->bounds_get(r_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
+bool efl_vg_base_interpolate_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const Efl_VG_Base * from_, const Efl_VG_Base * to_, double pos_map_)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->interpolate(::efl::eolian::to_cxx<::efl::vg::base>(from_, std::tuple<std::false_type>()), ::efl::eolian::to_cxx<::efl::vg::base>(to_, std::tuple<std::false_type>()), pos_map_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Eina_Bool _tmp_ret{};
+         return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+}
+
+template <typename T>
+void efl_vg_base_dup_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const Efl_VG_Base * from_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->dup(::efl::eolian::to_cxx<::efl::vg::base>(from_, std::tuple<std::false_type>()));
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
+::efl::eina::string_view efl_vg_base_name_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->name_get();
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         const char * _tmp_ret{};
+         return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+      }
+}
+
+template <typename T>
+void efl_vg_base_name_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const char * name_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->name_set(::efl::eolian::to_cxx<::efl::eina::string_view>(name_, std::tuple<std::false_type>()));
       }
    catch (...)
       {
@@ -207,6 +311,42 @@ struct operations< ::efl::vg::base >
                ::efl_vg_bounds_get(r_));
       }
 
+      virtual bool interpolate(::efl::vg::base from_, ::efl::vg::base to_, double pos_map_)
+      {
+         Eina_Bool _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::efl_vg_interpolate(::efl::eolian::to_c(from_), ::efl::eolian::to_c(to_), pos_map_));
+            return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+
+      virtual void dup(::efl::vg::base from_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::efl_vg_dup(::efl::eolian::to_c(from_)));
+      }
+
+      virtual ::efl::eina::string_view name_get()
+      {
+         const char * _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::efl_vg_name_get());
+            return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+      }
+
+      virtual void name_set(::efl::eina::string_view name_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::efl_vg_name_set(::efl::eolian::to_c(name_)));
+      }
+
       virtual const Eina_Matrix3 * transformation_get()
       {
          const Eina_Matrix3 * _tmp_ret = {};
@@ -268,13 +408,13 @@ struct operation_description_class_size< ::efl::vg::base >
 {
    static constexpr int value = 
 #if defined(BASE_PROTECTED) && defined(BASE_BETA)
-      7
+      11
 #elif defined(BASE_PROTECTED)
-      7
+      11
 #elif defined(BASE_BETA)
-      7
+      11
 #else
-      7
+      11
 #endif
       + operation_description_class_size<::eo::base >::value      + operation_description_class_size<::efl::gfx::base >::value      + operation_description_class_size<::efl::gfx::stack >::value;
 };
@@ -288,51 +428,57 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::vg::base>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_bounds_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_bounds_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_interpolate_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_interpolate);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_dup_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_dup);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_name_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_name_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_name_set_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_name_set);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_transformation_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_transformation_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_transformation_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_transformation_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_origin_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_origin_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_origin_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_origin_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_mask_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_mask_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_base_mask_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_mask_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::eo::base>(), &ops[operation_description_class_size< ::efl::vg::base >::value]);

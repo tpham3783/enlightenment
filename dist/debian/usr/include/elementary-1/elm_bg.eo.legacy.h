@@ -54,8 +54,6 @@ EAPI void elm_bg_option_set(Elm_Bg *obj, Elm_Bg_Option option);
  *
  * See also @ref elm_bg_option_set for more details
  *
- * 
- *
  * @return The desired background option(See @ref Elm_Bg_Option)
  *
  * @ingroup Elm_Bg
@@ -66,7 +64,7 @@ EAPI Elm_Bg_Option elm_bg_option_get(const Elm_Bg *obj);
  * @brief Set the size of the pixmap representation of the image set on a given
  * background widget.
  *
- * Warning: This function just makes sense if an image file was set on @c obj,
+ * @warning This function just makes sense if an image file was set on @c obj,
  * with @ref Efl.File.file.set
  *
  * This function sets a new size for pixmap representation of the given bg
@@ -74,11 +72,9 @@ EAPI Elm_Bg_Option elm_bg_option_get(const Elm_Bg *obj);
  * reducing the memory usage and load time (for example, when loading a big
  * image file with its load size set to a smaller size)
  *
- * Note: This is just a hint for the underlying system. The real size of the
+ * @note This is just a hint for the underlying system. The real size of the
  * pixmap may differ depending on the type of image being loaded, being bigger
  * than requested.
- *
- * 
  *
  * @param[in] w The new width of the image pixmap representation.
  * @param[in] h The new height of the image pixmap representation.

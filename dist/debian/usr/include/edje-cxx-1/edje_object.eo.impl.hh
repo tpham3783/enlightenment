@@ -640,6 +640,11 @@ inline bool edje::object::text_class_get(::efl::eina::string_view text_class_, c
    return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
+inline void edje::object::text_class_del(::efl::eina::string_view text_class_) const
+{
+   eo_do(_concrete_eo_ptr(), ::edje_obj_text_class_del(::efl::eolian::to_c(text_class_)));
+}
+
 inline bool edje::object::color_class_set(::efl::eina::string_view color_class_, int r_, int g_, int b_, int a_, int r2_, int g2_, int b2_, int a2_, int r3_, int g3_, int b3_, int a3_) const
 {
    Eina_Bool _tmp_ret;
@@ -659,6 +664,37 @@ inline ::efl::eina::string_view edje::object::color_class_description_get(::efl:
    const char * _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_color_class_description_get(::efl::eolian::to_c(color_class_)));
    return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline bool edje::object::color_class_clear() const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_color_class_clear());
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void edje::object::color_class_del(::efl::eina::string_view color_class_) const
+{
+   eo_do(_concrete_eo_ptr(), ::edje_obj_color_class_del(::efl::eolian::to_c(color_class_)));
+}
+
+inline bool edje::object::size_class_set(::efl::eina::string_view size_class_, int minw_, int minh_, int maxw_, int maxh_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_size_class_set(::efl::eolian::to_c(size_class_), minw_, minh_, maxw_, maxh_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline bool edje::object::size_class_get(::efl::eina::string_view size_class_, int* minw_, int* minh_, int* maxw_, int* maxh_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_size_class_get(::efl::eolian::to_c(size_class_), minw_, minh_, maxw_, maxh_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void edje::object::size_class_del(::efl::eina::string_view size_class_) const
+{
+   eo_do(_concrete_eo_ptr(), ::edje_obj_size_class_del(::efl::eolian::to_c(size_class_)));
 }
 
 inline bool edje::object::part_drag_step(::efl::eina::string_view part_, double dx_, double dy_) const
@@ -1569,6 +1605,11 @@ inline bool eo_cxx::edje::object::text_class_get(::efl::eina::string_view text_c
    return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
+inline void eo_cxx::edje::object::text_class_del(::efl::eina::string_view text_class_) const
+{
+   eo_do(_concrete_eo_ptr(), ::edje_obj_text_class_del(::efl::eolian::to_c(text_class_)));
+}
+
 inline bool eo_cxx::edje::object::color_class_set(::efl::eina::string_view color_class_, int r_, int g_, int b_, int a_, int r2_, int g2_, int b2_, int a2_, int r3_, int g3_, int b3_, int a3_) const
 {
    Eina_Bool _tmp_ret;
@@ -1588,6 +1629,37 @@ inline ::efl::eina::string_view eo_cxx::edje::object::color_class_description_ge
    const char * _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_color_class_description_get(::efl::eolian::to_c(color_class_)));
    return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline bool eo_cxx::edje::object::color_class_clear() const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_color_class_clear());
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void eo_cxx::edje::object::color_class_del(::efl::eina::string_view color_class_) const
+{
+   eo_do(_concrete_eo_ptr(), ::edje_obj_color_class_del(::efl::eolian::to_c(color_class_)));
+}
+
+inline bool eo_cxx::edje::object::size_class_set(::efl::eina::string_view size_class_, int minw_, int minh_, int maxw_, int maxh_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_size_class_set(::efl::eolian::to_c(size_class_), minw_, minh_, maxw_, maxh_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline bool eo_cxx::edje::object::size_class_get(::efl::eina::string_view size_class_, int* minw_, int* minh_, int* maxw_, int* maxh_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::edje_obj_size_class_get(::efl::eolian::to_c(size_class_), minw_, minh_, maxw_, maxh_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void eo_cxx::edje::object::size_class_del(::efl::eina::string_view size_class_) const
+{
+   eo_do(_concrete_eo_ptr(), ::edje_obj_size_class_del(::efl::eolian::to_c(size_class_)));
 }
 
 inline bool eo_cxx::edje::object::part_drag_step(::efl::eina::string_view part_, double dx_, double dy_) const
@@ -3304,6 +3376,19 @@ bool edje_object_text_class_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail
 }
 
 template <typename T>
+void edje_object_text_class_del_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const char * text_class_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->text_class_del(::efl::eolian::to_cxx<::efl::eina::string_view>(text_class_, std::tuple<std::false_type>()));
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
 bool edje_object_color_class_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const char * color_class_, int r_, int g_, int b_, int a_, int r2_, int g2_, int b2_, int a2_, int r3_, int g3_, int b3_, int a3_)
 {
    try
@@ -3345,6 +3430,77 @@ template <typename T>
          eina_error_set( ::efl::eina::unknown_error() );
          const char * _tmp_ret{};
          return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+      }
+}
+
+template <typename T>
+bool edje_object_color_class_clear_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->color_class_clear();
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Eina_Bool _tmp_ret{};
+         return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+}
+
+template <typename T>
+void edje_object_color_class_del_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const char * color_class_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->color_class_del(::efl::eolian::to_cxx<::efl::eina::string_view>(color_class_, std::tuple<std::false_type>()));
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
+bool edje_object_size_class_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const char * size_class_, int minw_, int minh_, int maxw_, int maxh_)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->size_class_set(::efl::eolian::to_cxx<::efl::eina::string_view>(size_class_, std::tuple<std::false_type>()), minw_, minh_, maxw_, maxh_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Eina_Bool _tmp_ret{};
+         return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+}
+
+template <typename T>
+bool edje_object_size_class_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const char * size_class_, int* minw_, int* minh_, int* maxw_, int* maxh_)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->size_class_get(::efl::eolian::to_cxx<::efl::eina::string_view>(size_class_, std::tuple<std::false_type>()), minw_, minh_, maxw_, maxh_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Eina_Bool _tmp_ret{};
+         return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+}
+
+template <typename T>
+void edje_object_size_class_del_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, const char * size_class_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->size_class_del(::efl::eolian::to_cxx<::efl::eina::string_view>(size_class_, std::tuple<std::false_type>()));
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
       }
 }
 
@@ -4918,6 +5074,14 @@ struct operations< ::edje::object >
             return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
       }
 
+      virtual void text_class_del(::efl::eina::string_view text_class_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::edje_obj_text_class_del(::efl::eolian::to_c(text_class_)));
+      }
+
       virtual bool color_class_set(::efl::eina::string_view color_class_, int r_, int g_, int b_, int a_, int r2_, int g2_, int b2_, int a2_, int r3_, int g3_, int b3_, int a3_)
       {
          Eina_Bool _tmp_ret = {};
@@ -4946,6 +5110,52 @@ struct operations< ::edje::object >
                dynamic_cast<T*>(this)->_eo_class(),
                _tmp_ret = ::edje_obj_color_class_description_get(::efl::eolian::to_c(color_class_)));
             return ::efl::eolian::to_cxx<::efl::eina::string_view>(_tmp_ret, std::tuple<std::false_type>());
+      }
+
+      virtual bool color_class_clear()
+      {
+         Eina_Bool _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::edje_obj_color_class_clear());
+            return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+
+      virtual void color_class_del(::efl::eina::string_view color_class_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::edje_obj_color_class_del(::efl::eolian::to_c(color_class_)));
+      }
+
+      virtual bool size_class_set(::efl::eina::string_view size_class_, int minw_, int minh_, int maxw_, int maxh_)
+      {
+         Eina_Bool _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::edje_obj_size_class_set(::efl::eolian::to_c(size_class_), minw_, minh_, maxw_, maxh_));
+            return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+
+      virtual bool size_class_get(::efl::eina::string_view size_class_, int* minw_, int* minh_, int* maxw_, int* maxh_)
+      {
+         Eina_Bool _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::edje_obj_size_class_get(::efl::eolian::to_c(size_class_), minw_, minh_, maxw_, maxh_));
+            return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+
+      virtual void size_class_del(::efl::eina::string_view size_class_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::edje_obj_size_class_del(::efl::eolian::to_c(size_class_)));
       }
 
       virtual bool part_drag_step(::efl::eina::string_view part_, double dx_, double dy_)
@@ -5357,13 +5567,13 @@ struct operation_description_class_size< ::edje::object >
 {
    static constexpr int value = 
 #if defined(OBJECT_PROTECTED) && defined(OBJECT_BETA)
-      147
+      153
 #elif defined(OBJECT_PROTECTED)
-      147
+      153
 #elif defined(OBJECT_BETA)
-      147
+      153
 #else
-      147
+      153
 #endif
       + operation_description_class_size<::evas::smart_clipped >::value      + operation_description_class_size<::efl::file >::value;
 };
@@ -5377,1031 +5587,767 @@ int initialize_operation_description(::efl::eo::detail::tag<::edje::object>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_table_clear_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_table_clear);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_external_param_type_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_external_param_type_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_select_allow_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_select_allow_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_state_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_state_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_markup_filter_callback_del_full_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_markup_filter_callback_del_full);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_step_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_step_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_step_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_step_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_imf_context_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_imf_context_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_select_begin_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_select_begin);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_style_user_peek_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_style_user_peek);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_signal_callback_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_signal_callback_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_next_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_next);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_style_user_push_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_style_user_push);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_append_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_append);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_geometry_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_geometry_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_hide_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_hide);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_item_geometry_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_item_geometry_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_table_unpack_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_table_unpack);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_select_abort_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_select_abort);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_insert_filter_callback_del_full_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_insert_filter_callback_del_full);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_style_user_pop_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_style_user_pop);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_imdata_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_imdata_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_imdata_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_imdata_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_insert_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_insert);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_box_remove_at_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_box_remove_at);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_copy_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_copy);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_parts_extends_calc_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_parts_extends_calc);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_value_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_value_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_value_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_value_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_calc_force_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_calc_force);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_pos_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_pos_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_pos_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_pos_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_freeze_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_freeze);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_content_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_content_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_layout_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_layout_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_layout_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_layout_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_table_pack_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_table_pack);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_language_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_language_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_language_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_language_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_table_col_row_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_table_col_row_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_external_object_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_external_object_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_external_content_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_external_content_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_preload_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_preload);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_enabled_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_enabled_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_enabled_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_enabled_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_select_extend_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_select_extend);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_box_insert_at_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_box_insert_at);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_anchor_geometry_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_anchor_geometry_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_down_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_down);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_page_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_page_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_page_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_page_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_box_prepend_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_box_prepend);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_signal_emit_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_signal_emit);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_layout_variation_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_layout_variation_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_layout_variation_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_layout_variation_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_message_send_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_message_send);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_select_none_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_select_none);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_object_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_object_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_size_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_size_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_insert_filter_callback_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_insert_filter_callback_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_dir_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_dir_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_unescaped_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_unescaped_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_unescaped_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_unescaped_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_signal_callback_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_signal_callback_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_select_all_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_select_all);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_return_key_disabled_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_return_key_disabled_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_return_key_disabled_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_return_key_disabled_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_autocapital_type_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_autocapital_type_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_autocapital_type_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_autocapital_type_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_unswallow_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_unswallow);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_prediction_allow_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_prediction_allow_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_prediction_allow_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_prediction_allow_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_data_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_data_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_markup_filter_callback_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_markup_filter_callback_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_message_signal_process_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_message_signal_process);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_box_remove_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_box_remove);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_thaw_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_thaw);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_swallow_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_swallow_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_imf_context_reset_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_imf_context_reset);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_return_key_type_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_return_key_type_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_return_key_type_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_return_key_type_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_table_child_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_table_child_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_box_insert_before_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_box_insert_before);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_external_param_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_external_param_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_external_param_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_external_param_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_size_min_calc_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_size_min_calc);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_box_append_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_box_append);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_size_min_restricted_calc_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_size_min_restricted_calc);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_box_remove_all_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_box_remove_all);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_page_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_page);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_show_on_demand_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_show_on_demand_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_show_on_demand_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_show_on_demand_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_hint_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_hint_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_hint_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_hint_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_selection_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_selection_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_is_format_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_is_format_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_class_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_class_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_class_del_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_class_del);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_color_class_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_color_class_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_color_class_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_color_class_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_color_class_description_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_color_class_description_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::edje_object_color_class_clear_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_color_class_clear);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::edje_object_color_class_del_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_color_class_del);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::edje_object_size_class_set_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_size_class_set);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::edje_object_size_class_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_size_class_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::edje_object_size_class_del_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_size_class_del);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_drag_step_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_drag_step);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_up_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_up);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_geometry_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_geometry_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_anchor_list_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_anchor_list_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_insert_filter_callback_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_insert_filter_callback_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_input_panel_show_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_input_panel_show);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_exists_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_exists);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_markup_filter_callback_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_markup_filter_callback_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_is_visible_format_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_is_visible_format_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_user_insert_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_user_insert);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_prev_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_prev);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_item_list_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_item_list_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_swallow_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_swallow);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_update_hints_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_update_hints_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_update_hints_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_update_hints_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_mirrored_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_mirrored_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_mirrored_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_mirrored_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_language_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_language_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_language_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_language_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_animation_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_animation_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_animation_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_animation_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_play_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_play_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_play_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_play_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_perspective_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_perspective_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_perspective_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_perspective_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_scale_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_scale_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_scale_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_scale_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_base_scale_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_base_scale_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_change_cb_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_change_cb_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_begin_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_begin_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_line_end_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_line_end_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_text_class_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_text_class_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_coord_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_coord_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_end_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_end_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_escaped_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_escaped_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_item_provider_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_item_provider_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_part_text_cursor_line_begin_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_part_text_cursor_line_begin_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_message_handler_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_message_handler_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_size_min_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_size_min_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_access_part_list_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_access_part_list_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_load_error_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_load_error_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_size_max_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_size_max_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_transition_duration_factor_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_transition_duration_factor_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::edje_object_transition_duration_factor_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::edje_obj_transition_duration_factor_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::smart_clipped>(), &ops[operation_description_class_size< ::edje::object >::value]);

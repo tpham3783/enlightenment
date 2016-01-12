@@ -15,101 +15,87 @@ typedef Eo Elm_Genlist;
 #endif
 
 /**
- * Enable/disable homogeneous mode.
+ * @brief Enable/disable homogeneous mode.
  *
- * This will enable the homogeneous mode where items are of the same
- * height and width so that genlist may do the lazy-loading at its
- * maximum (which increases the performance for scrolling the list).
- * In the normal mode, genlist will pre-calculate all the items' sizes even
- * though they are not in use. So items' callbacks are called many times than
- * expected. But homogeneous mode will skip the item size pre-calculation
- * process so items' callbacks are called only when the item is needed.
+ * This will enable the homogeneous mode where items are of the same height and
+ * width so that genlist may do the lazy-loading at its maximum (which
+ * increases the performance for scrolling the list). In the normal mode,
+ * genlist will pre-calculate all the items' sizes even though they are not in
+ * use. So items' callbacks are called many times than expected. But
+ * homogeneous mode will skip the item size pre-calculation  process so items'
+ * callbacks are called only when the item is needed.
  *
  * @note This also works well with group index.
  *
- * @see elm_genlist_mode_set()
- * @see elm_genlist_homogeneous_get()
+ * @param[in] homogeneous Assume the items within the genlist are of the same
+ * height and width. Default is @c false.
  *
- * @ingroup Genlist
- *
- * @param[in] homogeneous Assume the items within the genlist are of the
-same height and width (EINA_TRUE = on, EINA_FALSE = off). Default is @c
-EINA_FALSE.
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_homogeneous_set(Elm_Genlist *obj, Eina_Bool homogeneous);
 
 /**
- * Get whether the homogeneous mode is enabled.
+ * @brief Get whether the homogeneous mode is enabled.
  *
- * @return Assume the items within the genlist are of the same height
- * and width (EINA_TRUE = on, EINA_FALSE = off)
+ * @return Assume the items within the genlist are of the same height and
+ * width. Default is @c false.
  *
- * @see elm_genlist_homogeneous_set()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_Bool elm_genlist_homogeneous_get(const Elm_Genlist *obj);
 
 /**
- * Set the genlist select mode.
+ * @brief Set the genlist select mode.
  *
- * elm_genlist_select_mode_set() changes item select mode in the genlist widget.
- * - #ELM_OBJECT_SELECT_MODE_DEFAULT : Items will call their selection func and
- * callback once when first becoming selected. Any further clicks will
- * do nothing, unless you set always select mode.
- * - #ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected,
- * every click will make the selected callbacks be called.
- * - #ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select items
- * entirely and they will neither appear selected nor call selected
+ * #ELM_OBJECT_SELECT_MODE_DEFAULT means that items will call their selection
+ * func and callback once when first becoming selected. Any further clicks will
+ * do nothing, unless you set always select mode. ELM_OBJECT_SELECT_MODE_ALWAYS
+ * means that even if selected, every click will make the selected callbacks be
+ * called. #ELM_OBJECT_SELECT_MODE_NONE will turn off the ability to select
+ * items entirely and they will neither appear selected nor call selected
  * callback functions.
  *
- * @see elm_genlist_select_mode_get()
+ * @param[in] mode The select mode.
  *
- * @ingroup Genlist
- *
- * @param[in] mode The select mode
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_select_mode_set(Elm_Genlist *obj, Elm_Object_Select_Mode mode);
 
 /**
- * Get the genlist select mode.
+ * @brief Get the genlist select mode.
  *
- * @return The select mode
- * (If getting mode fails, it returns #ELM_OBJECT_SELECT_MODE_MAX)
+ * @return The select mode.
  *
- * @see elm_genlist_select_mode_set()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Elm_Object_Select_Mode elm_genlist_select_mode_get(const Elm_Genlist *obj);
 
 /**
- * Set focus upon items selection mode
+ * @brief Set focus upon items selection mode
  *
- * When enabled, every selection of an item inside the genlist will automatically set focus to
- * its first focusable widget from the left. This is true of course if the selection was made by
- * clicking an unfocusable area in an item or selecting it with a key movement. Clicking on a
- * focusable widget inside an item will couse this particular item to get focus as usual.
+ * When enabled, every selection of an item inside the genlist will
+ * automatically set focus to its first focusable widget from the left. This is
+ * true of course if the selection was made by clicking an unfocusable area in
+ * an item or selecting it with a key movement. Clicking on a focusable widget
+ * inside an item will couse this particular item to get focus as usual.
  *
- * @ingroup Genlist
+ * @param[in] enabled The tree effect status.
  *
- * @param[in] enabled The tree effect status
-(EINA_TRUE = enabled, EINA_FALSE = disabled)
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_focus_on_selection_set(Elm_Genlist *obj, Eina_Bool enabled);
 
 /**
- * Get whether focus upon item's selection mode is enabled.
+ * @brief Get whether focus upon item's selection mode is enabled.
  *
- * @return The tree effect status
- * (EINA_TRUE = enabled, EINA_FALSE = disabled)
+ * @return The tree effect status.
  *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_Bool elm_genlist_focus_on_selection_get(const Elm_Genlist *obj);
 
 /**
- * Set the timeout in seconds for the longpress event.
+ * @brief Set the timeout in seconds for the longpress event.
  *
  * This option will change how long it takes to send an event "longpressed"
  * after the mouse down signal is sent to the list. If this event occurs, no
@@ -119,134 +105,115 @@ EAPI Eina_Bool elm_genlist_focus_on_selection_get(const Elm_Genlist *obj);
  * will not be affected by the longpress value of elementary config value
  * later.
  *
- * @see elm_genlist_longpress_timeout_set()
+ * @param[in] timeout Timeout in seconds. Default is elm config value (1.0).
  *
- * @ingroup Genlist
- *
- * @param[in] timeout timeout in seconds. Default is elm config value(1.0)
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_longpress_timeout_set(Elm_Genlist *obj, double timeout);
 
 /**
- * Get the timeout in seconds for the longpress event.
+ * @brief Get the timeout in seconds for the longpress event.
  *
- * @return timeout in seconds
+ * @return Timeout in seconds. Default is elm config value (1.0).
  *
- * @see elm_genlist_longpress_timeout_get()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI double elm_genlist_longpress_timeout_get(const Elm_Genlist *obj);
 
 /**
- * Enable or disable multi-selection in the genlist
+ * @brief Enable or disable multi-selection in the genlist.
  *
- * This enables (@c EINA_TRUE) or disables (@c EINA_FALSE) multi-selection in
- * the list. This allows more than 1 item to be selected. To retrieve the list
- * of selected items, use elm_genlist_selected_items_get().
- *
- * @see elm_genlist_selected_items_get()
- * @see elm_genlist_multi_select_get()
- *
- * @ingroup Genlist
+ * This enables ($true) or disables ($false) multi-selection in the list. This
+ * allows more than 1 item to be selected. To retrieve the list of selected
+ * items, use @ref elm_genlist_selected_items_get.
  *
  * @param[in] multi Multi-select enable/disable. Default is disabled.
+ *
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_multi_select_set(Elm_Genlist *obj, Eina_Bool multi);
 
 /**
- * Get if multi-selection in genlist is enabled or disabled.
+ * @brief Get if multi-selection in genlist is enabled or disabled.
  *
- * @return Multi-select enabled/disabled
- * (@c EINA_TRUE = enabled/@c EINA_FALSE = disabled). Default is @c EINA_FALSE.
+ * @return Multi-select enable/disable. Default is disabled.
  *
- * @see elm_genlist_multi_select_set()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_Bool elm_genlist_multi_select_get(const Elm_Genlist *obj);
 
 /**
- * Set reorder mode
+ * @brief Set reorder mode.
  *
  * After turning on the reorder mode, longpress on normal item will trigger
  * reordering of the item. You can move the item up and down. However, reorder
  * does not work with group item.
  *
- * @ingroup Genlist
+ * @param[in] reorder_mode The reorder mode.
  *
- * @param[in] reorder_mode The reorder mode
-(EINA_TRUE = on, EINA_FALSE = off)
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_reorder_mode_set(Elm_Genlist *obj, Eina_Bool reorder_mode);
 
 /**
- * Get the reorder mode
+ * @brief Get the reorder mode.
  *
- * @return The reorder mode
- * (EINA_TRUE = on, EINA_FALSE = off)
+ * @return The reorder mode.
  *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_Bool elm_genlist_reorder_mode_get(const Elm_Genlist *obj);
 
 /**
- * Set Genlist decorate mode
+ * @brief Set Genlist decorate mode.
  *
  * This sets Genlist decorate mode to all items.
  *
- * @ingroup Genlist
+ * @param[in] decorated The decorate mode status.
  *
- * @param[in] decorated The decorate mode status
-(EINA_TRUE = decorate mode, EINA_FALSE = normal mode
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_decorate_mode_set(Elm_Genlist *obj, Eina_Bool decorated);
 
 /**
- * Get Genlist decorate mode
+ * @brief Get Genlist decorate mode.
  *
- * @return The decorate mode status
- * (EINA_TRUE = decorate mode, EINA_FALSE = normal mode
+ * @return The decorate mode status.
  *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_Bool elm_genlist_decorate_mode_get(const Elm_Genlist *obj);
 
 /**
- * Set the genlist multi select mode.
+ * @brief Set the genlist multi select mode.
  *
- * - #ELM_OBJECT_MULTI_SELECT_MODE_DEFAULT : select/unselect items whenever each
- * item is clicked.
- * - #ELM_OBJECT_MULTI_SELECT_MODE_WITH_CONTROL : Only one item will be selected
- * although multi-selection is enabled, if clicked without pressing control
- * key. This mode is only available with multi-selection.
- *
- * @see elm_genlist_multi_select_set()
- * @see elm_genlist_multi_select_mode_get()
- *
- * @ingroup Genlist
- * @since 1.8
+ * #ELM_OBJECT_MULTI_SELECT_MODE_DEFAULT means that select/unselect items
+ * whenever each item is clicked. #ELM_OBJECT_MULTI_SELECT_MODE_WITH_CONTROL
+ * means that only one item will be selected although multi-selection is
+ * enabled, if clicked without pressing control key. This mode is only
+ * available with multi-selection.
  *
  * @param[in] mode The multi select mode
+ *
+ * @since 1.8
+ *
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_multi_select_mode_set(Elm_Genlist *obj, Elm_Object_Multi_Select_Mode mode);
 
 /**
- * Get the genlist multi select mode.
+ * @brief Get the genlist multi select mode.
  *
  * @return The multi select mode
- * (If getting mode fails, it returns #ELM_OBJECT_MULTI_SELECT_MODE_MAX)
  *
- * @see elm_genlist_multi_select_set()
- * @see elm_genlist_multi_select_mode_set()
- *
- * @ingroup Genlist
  * @since 1.8
+ *
+ * @ingroup Elm_Genlist
  */
 EAPI Elm_Object_Multi_Select_Mode elm_genlist_multi_select_mode_get(const Elm_Genlist *obj);
 
 /**
- * Set the maximum number of items within an item block
+ * @brief Set the maximum number of items within an item block.
  *
  * This will configure the block count to tune to the target with particular
  * performance matrix.
@@ -260,428 +227,367 @@ EAPI Elm_Object_Multi_Select_Mode elm_genlist_multi_select_mode_get(const Elm_Ge
  * you know you will have a lot of objects visible in the screen at the same
  * time, don't try to change this.
  *
- * @see elm_genlist_block_count_get()
- * @see @ref Genlist_Implementation
+ * @param[in] count Maximum number of items within an item block. Default is
+ * 32.
  *
- * @ingroup Genlist
- *
- * @param[in] count Maximum number of items within an item block. Default is 32.
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_block_count_set(Elm_Genlist *obj, int count);
 
 /**
- * Get the maximum number of items within an item block
+ * @brief Get the maximum number of items within an item block.
  *
- * @return Maximum number of items within an item block
+ * @return Maximum number of items within an item block. Default is 32.
  *
- * @see elm_genlist_block_count_set()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI int elm_genlist_block_count_get(const Elm_Genlist *obj);
 
 /**
- * Set Genlist tree effect
+ * @brief Control genlist tree effect.
  *
- * @ingroup Genlist
+ * @param[in] enabled The tree effect status.
  *
- * @param[in] enabled The tree effect status
-(EINA_TRUE = enabled, EINA_FALSE = disabled
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_tree_effect_enabled_set(Elm_Genlist *obj, Eina_Bool enabled);
 
 /**
- * Get Genlist tree effect
+ * @brief Control genlist tree effect.
  *
- * @return The tree effect status
- * (EINA_TRUE = enabled, EINA_FALSE = disabled
+ * @return The tree effect status.
  *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_Bool elm_genlist_tree_effect_enabled_get(const Elm_Genlist *obj);
 
 /**
- * Set whether the genlist items should be highlighted on item selection.
+ * @brief Set whether the genlist items should be highlighted on item
+ * selection.
  *
  * This will turn on/off the highlight effect on item selection. The selected
  * and clicked callback functions will still be called.
  *
  * Highlight is enabled by default.
  *
- * @see elm_genlist_highlight_mode_get().
+ * @param[in] highlight @c true to enable highlighting or @c false to disable
+ * it.
  *
- * @ingroup Genlist
- *
- * @param[in] highlight @c EINA_TRUE to enable highlighting or @c EINA_FALSE to
-disable it.
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_highlight_mode_set(Elm_Genlist *obj, Eina_Bool highlight);
 
 /**
- * Get whether the genlist items' should be highlighted when item selected.
+ * @brief Get whether the genlist items' should be highlighted when item
+ * selected.
  *
- * @return @c EINA_TRUE means items can be highlighted. @c EINA_FALSE indicates
- * they can't. If @p obj is @c NULL, @c EINA_FALSE is returned.
+ * @return @c true to enable highlighting or @c false to disable it.
  *
- * @see elm_genlist_highlight_mode_set() for details.
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_Bool elm_genlist_highlight_mode_get(const Elm_Genlist *obj);
 
 /**
- * This sets the horizontal stretching mode.
+ * @brief This sets the horizontal stretching mode.
  *
- * This sets the mode used for sizing items horizontally. Valid modes
- * are #ELM_LIST_LIMIT, #ELM_LIST_SCROLL, and #ELM_LIST_COMPRESS. The default is
- * #ELM_LIST_SCROLL. This mode means that if items are too wide to fit,
- * the scroller will scroll horizontally. Otherwise items are expanded
- * to fill the width of the viewport of the scroller. If it is
- * #ELM_LIST_LIMIT, items will be expanded to the viewport width and
- * limited to that size. If it is #ELM_LIST_COMPRESS, the item width will be
- * fixed (restricted to a minimum of) to the list width when calculating its
- * size in order to allow the height to be calculated based on it. This allows,
- * for instance, text block to wrap lines if the Edje part is configured with
- * "text.min: 0 1".
+ * This sets the mode used for sizing items horizontally. Valid modes are
+ * #ELM_LIST_LIMIT, #ELM_LIST_SCROLL, and #ELM_LIST_COMPRESS. The default is
+ * #ELM_LIST_SCROLL. This mode means that if items are too wide to fit, the
+ * scroller will scroll horizontally. Otherwise items are expanded to fill the
+ * width of the viewport of the scroller. If it is #ELM_LIST_LIMIT, items will
+ * be expanded to the viewport width and limited to that size. If it is
+ * #ELM_LIST_COMPRESS, the item width will be fixed (restricted to a minimum
+ * of) to the list width when calculating its size in order to allow the height
+ * to be calculated based on it. This allows, for instance, text block to wrap
+ * lines if the Edje part is configured with "text.min: 0 1".
+ *
  * @note #ELM_LIST_COMPRESS will make list resize slower as it will have to
- * recalculate every item height again whenever the list width
- * changes!
+ * recalculate every item height again whenever the list width changes!
+ *
  * @note Homogeneous mode is for that all items in the genlist same
  * width/height. With #ELM_LIST_COMPRESS, it makes genlist items to fast
- * initializing. However there's no sub-objects in genlist which can be
- * on the flying resizable (such as TEXTBLOCK). If then, some dynamic
- * resizable objects in genlist would not diplayed properly.
+ * initializing. However there's no sub-objects in genlist which can be on the
+ * flying resizable (such as TEXTBLOCK). If then, some dynamic esizable objects
+ * in genlist would not diplayed properly.
  *
- * @see elm_genlist_mode_get()
+ * @param[in] mode The mode to use (one of #ELM_LIST_SCROLL or
+ * #ELM_LIST_LIMIT).
  *
- * @ingroup Genlist
- *
- * @param[in] mode The mode to use (one of #ELM_LIST_SCROLL or #ELM_LIST_LIMIT).
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_mode_set(Elm_Genlist *obj, Elm_List_Mode mode);
 
 /**
- * Get the horizontal stretching mode.
+ * @brief Get the horizontal stretching mode.
  *
- * @return The mode to use
- * (#ELM_LIST_LIMIT, #ELM_LIST_SCROLL)
+ * @return The mode to use (one of #ELM_LIST_SCROLL or #ELM_LIST_LIMIT).
  *
- * @see elm_genlist_mode_set()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Elm_List_Mode elm_genlist_mode_get(const Elm_Genlist *obj);
 
 /**
- * Get active genlist mode item
- *
- * @return The active item for that current mode. Or @c NULL if no item is
- * activated with any mode.
+ * @brief Get active genlist mode item.
  *
  * This function returns the item that was activated with a mode, by the
- * function elm_genlist_item_decorate_mode_set().
+ * function @ref elm_genlist_decorate_mode_set.
  *
- * @see elm_genlist_item_decorate_mode_set()
- * @see elm_genlist_mode_get()
+ * @return The active item for that current mode. Or @c null if no item is
+ * activated with any mode.
  *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_decorated_item_get(const Elm_Genlist *obj);
+EAPI Elm_Widget_Item *elm_genlist_decorated_item_get(const Elm_Genlist *obj);
 
 /**
- * Get the selected item in the genlist.
- *
- * @return The selected item, or NULL if none is selected.
+ * @brief Get the selected item in the genlist.
  *
  * This gets the selected item in the list (if multi-selection is enabled, only
  * the item that was first selected in the list is returned - which is not very
- * useful, so see elm_genlist_selected_items_get() for when multi-selection is
- * used).
+ * useful, so see @ref elm_genlist_selected_items_get for when multi-selection
+ * is used).
  *
- * If no item is selected, NULL is returned.
+ * If no item is selected, @c null is returned.
  *
- * @see elm_genlist_selected_items_get()
+ * @return The selected item, or @c null if none is selected.
  *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_selected_item_get(const Elm_Genlist *obj);
+EAPI Elm_Widget_Item *elm_genlist_selected_item_get(const Elm_Genlist *obj);
 
 /**
- * Get the first item in the genlist
+ * @brief Get the first item in the genlist.
  *
  * This returns the first item in the list.
  *
- * @return The first item, or NULL if none
+ * If filter is set on genlist, it returns the first filtered item in the list.
  *
- * @ingroup Genlist
+ * @return The first item or @c null.
+ *
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_first_item_get(const Elm_Genlist *obj);
+EAPI Elm_Widget_Item *elm_genlist_first_item_get(const Elm_Genlist *obj);
 
 /**
- * Get a list of realized items in genlist
+ * @brief Get a list of realized items in genlist.
  *
- * @return The list of realized items, nor NULL if none are realized.
+ * This returns a list of the realized items in the genlist. The list contains
+ * genlist item pointers. The list must be freed by the caller when done with
+ * @ref eina_list_free. The  item pointers in the list are only valid so long
+ * as those items are not deleted or the genlist is not deleted.
  *
- * This returns a list of the realized items in the genlist. The list
- * contains genlist item pointers. The list must be freed by the
- * caller when done with eina_list_free(). The item pointers in the
- * list are only valid so long as those items are not deleted or the
- * genlist is not deleted.
- *
- * @see elm_genlist_realized_items_update()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI Eina_List *elm_genlist_realized_items_get(const Elm_Genlist *obj) EINA_WARN_UNUSED_RESULT;
 
 /**
- * Get a list of selected items in the genlist.
- *
- * @return The list of selected items, or NULL if none are selected.
+ * @brief Get a list of selected items in the genlist.
  *
  * It returns a list of the selected items. This list pointer is only valid so
- * long as the selection doesn't change (no items are selected or unselected, or
- * unselected implicitly by deletion). The list contains genlist items
+ * long as the selection doesn't change (no items are selected or unselected,
+ * or unselected implicitl by deletion). The list contains genlist items
  * pointers. The order of the items in this list is the order which they were
  * selected, i.e. the first item in this list is the first item that was
  * selected, and so on.
  *
  * @note If not in multi-select mode, consider using function
- * elm_genlist_selected_item_get() instead.
+ * @ref elm_genlist_selected_item_get instead.
  *
- * @see elm_genlist_multi_select_set()
- * @see elm_genlist_selected_item_get()
- *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
 EAPI const Eina_List *elm_genlist_selected_items_get(const Elm_Genlist *obj);
 
 /**
- * Get the last item in the genlist
+ * @brief Get the last item in the genlist
  *
  * This returns the last item in the list.
  *
- * @return The last item, or NULL if none
+ * If filter is set to genlist, it returns last filtered item in the list.
  *
- * @ingroup Genlist
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_last_item_get(const Elm_Genlist *obj);
+EAPI Elm_Widget_Item *elm_genlist_last_item_get(const Elm_Genlist *obj);
 
 /**
- * Insert an item before another in a genlist widget
+ * @brief Set filter mode with key.
  *
- * @return A handle to the item added or @c NULL if not possible
+ * This initiates the filter mode of genlist with user/application provided
+ * key. If key is NULL, the filter mode is turned off.
  *
- * This inserts an item before another in the list. It will be in the
- * same tree level or group as the item it is inserted before.
+ * The filter data passed has to be managed by application itself and should
+ * not be deleted before genlist is deleted(or while filtering is not done.
  *
- * @see elm_genlist_item_append()
- * @see elm_genlist_item_prepend()
- * @see elm_genlist_item_insert_after()
- * @see elm_object_item_del()
+ * @param[in] key Filter key
  *
- * @ingroup Genlist
- * 
+ * @ingroup Elm_Genlist
+ */
+EAPI void elm_genlist_filter_set(Elm_Genlist *obj, void *key);
+
+/**
+ * @brief Insert an item before another in a genlist widget
  *
- * @param[in] itc The item class for the item
- * @param[in] data The item data
- * @param[in] parent The parent item, or NULL if none
+ * This inserts an item before another in the list. It will be in the same tree
+ * level or group as the item it is inserted before.
+ *
+ * @param[in] data The item data.
+ * @param[in] parent The parent item, or @c null if none.
  * @param[in] before_it The item to place this new one before.
- * @param[in] type Item type
- * @param[in] func Convenience function called when the item is selected
- * @param[in] func_data Data passed to @p func above.
+ * @param[in] type Item type.
+ * @param[in] func Convenience function called when the item is selected.
+ * @param[in] func_data Data passed to @c func above.
+ *
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_item_insert_before(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Object_Item *parent, Elm_Object_Item *before_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
+EAPI Elm_Widget_Item *elm_genlist_item_insert_before(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Widget_Item *before_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
 
 /**
- * Update the contents of all realized items.
+ * @brief Update the contents of all realized items.
  *
- * This updates all realized items by calling all the item class functions again
- * to get the contents, texts and states. Use this when the original
- * item data has changed and the changes are desired to be reflected.
+ * This updates all realized items by calling all the item class functions
+ * again to get the contents, texts and states. Use this when the original item
+ * data has changed and the changes are desired to be reflected.
  *
- * To update just one item, use elm_genlist_item_update().
+ * To update just one item, use @ref elm_genlist_item_update.
  *
- * @see elm_genlist_realized_items_get()
- * @see elm_genlist_item_update()
- *
- * @ingroup Genlist
- * 
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_realized_items_update(Elm_Genlist *obj);
 
 /**
- * Insert an item after another in a genlist widget
+ * @brief Insert an item after another in a genlist widget
  *
- * @return A handle to the item added or @c NULL if not possible
+ * This inserts an item after another in the list. It will be in the same tree
+ * level or group as the item it is inserted after.
  *
- * This inserts an item after another in the list. It will be in the
- * same tree level or group as the item it is inserted after.
- *
- * @see elm_genlist_item_append()
- * @see elm_genlist_item_prepend()
- * @see elm_genlist_item_insert_before()
- * @see elm_object_item_del()
- *
- * @ingroup Genlist
- * 
- *
- * @param[in] itc The item class for the item
- * @param[in] data The item data
- * @param[in] parent The parent item, or NULL if none
+ * @param[in] data The item data.
+ * @param[in] parent The parent item, or @c null if none.
  * @param[in] after_it The item to place this new one after.
- * @param[in] type Item type
- * @param[in] func Convenience function called when the item is selected
- * @param[in] func_data Data passed to @p func above.
+ * @param[in] type Item type.
+ * @param[in] func Convenience function called when the item is selected.
+ * @param[in] func_data Data passed to @c func above.
+ *
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_item_insert_after(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Object_Item *parent, Elm_Object_Item *after_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
+EAPI Elm_Widget_Item *elm_genlist_item_insert_after(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Widget_Item *after_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
 
 /**
- * Get the item that is at the x, y canvas coords.
+ * @brief Get the item that is at the x, y canvas coords.
  *
- * @return The item at the coordinates or NULL if none
+ * This returns the item at the given coordinates (which are canvas relative,
+ * not object-relative). If an item is at that coordinate, that item handle is
+ * returned, and if @c posret is not NULL, the integer pointed to is set to a
+ * value of -1, 0 or 1, depending if the coordinate is on the upper portion of
+ * that item (-1), on the middle section (0) or on the lower part (1). If NULL
+ * is returned as an item (no item found there), then posret may indicate -1 or
+ * 1 based if the coordinate is above or below all items respectively in the
+ * genlist.
  *
- * This returns the item at the given coordinates (which are canvas
- * relative, not object-relative). If an item is at that coordinate,
- * that item handle is returned, and if @p posret is not NULL, the
- * integer pointed to is set to a value of -1, 0 or 1, depending if
- * the coordinate is on the upper portion of that item (-1), on the
- * middle section (0) or on the lower part (1). If NULL is returned as
- * an item (no item found there), then posret may indicate -1 or 1
- * based if the coordinate is above or below all items respectively in
- * the genlist.
+ * @param[in] y The input y coordinate.
+ * @param[out] posret The position relative to the item returned here.
  *
- * @ingroup Genlist
- * 
- *
- * @param[in] x The input x coordinate
- * @param[in] y The input y coordinate
- * @param[out] posret The position relative to the item returned here
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_at_xy_item_get(const Elm_Genlist *obj, Evas_Coord x, Evas_Coord y, int *posret);
+EAPI Elm_Widget_Item *elm_genlist_at_xy_item_get(const Elm_Genlist *obj, Evas_Coord x, Evas_Coord y, int *posret);
 
 /**
- * Return how many items are currently in a list
+ * @brief Returns an iterator over the list of filtered items.
  *
- * @return The total number of list items in the list
+ * Return NULL if filter is not set. Application must take care of the case
+ * while calling the API. Must be freed after use.
+ *
+ * @return Iterator on genlist
+ *
+ * @ingroup Elm_Genlist
+ */
+EAPI Eina_Iterator *elm_genlist_filter_iterator_new(Elm_Genlist *obj);
+
+/**
+ * @brief Return how many items are currently in a list.
  *
  * This behavior is O(1) and includes items which may or may not be realized.
  *
- * @ingroup Genlist
- * 
+ * @ingroup Elm_Genlist
  */
 EAPI unsigned int elm_genlist_items_count(const Elm_Genlist *obj);
 
 /**
- * Prepend a new item in a given genlist widget.
+ * @brief Prepend a new item in a given genlist widget.
  *
- * @return A handle to the item added or NULL if not possible
+ * This adds an item to the beginning of the list or beginning of the children
+ * of the parent if given.
  *
- * This adds an item to the beginning of the list or beginning of the
- * children of the parent if given.
+ * @param[in] data The item data.
+ * @param[in] parent The parent item, or @c null if none.
+ * @param[in] type Item type.
+ * @param[in] func Convenience function called when the item is selected.
+ * @param[in] func_data Data passed to @c func above.
  *
- * @see elm_genlist_item_append()
- * @see elm_genlist_item_insert_before()
- * @see elm_genlist_item_insert_after()
- * @see elm_object_item_del()
- *
- * @ingroup Genlist
- * 
- *
- * @param[in] itc The item class for the item
- * @param[in] data The item data
- * @param[in] parent The parent item, or NULL if none
- * @param[in] type Item type
- * @param[in] func Convenience function called when the item is selected
- * @param[in] func_data Data passed to @p func above.
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_item_prepend(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Object_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
+EAPI Elm_Widget_Item *elm_genlist_item_prepend(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
 
 /**
- * Remove all items from a given genlist widget.
+ * @brief Remove all items from a given genlist widget.
  *
- * This removes (and deletes) all items in @p obj, leaving it empty.
+ * This removes (and deletes) all items in @c obj, leaving it empty.
  *
- * @see elm_object_item_del(), to remove just one item.
- *
- * @ingroup Genlist
- * 
+ * @ingroup Elm_Genlist
  */
 EAPI void elm_genlist_clear(Elm_Genlist *obj);
 
 /**
- * Append a new item in a given genlist widget.
+ * @brief Append a new item in a given genlist widget.
  *
- * @return A handle to the item added or @c NULL if not possible
+ * This adds the given item to the end of the list or the end of the children
+ * list if the @c parent is given.
  *
- * This adds the given item to the end of the list or the end of
- * the children list if the @p parent is given.
+ * @param[in] data The item data.
+ * @param[in] parent The parent item, or @c null if none.
+ * @param[in] type Item type.
+ * @param[in] func Convenience function called when the item is selected.
+ * @param[in] func_data Data passed to @c func above.
  *
- * @see elm_genlist_item_prepend()
- * @see elm_genlist_item_insert_before()
- * @see elm_genlist_item_insert_after()
- * @see elm_object_item_del()
- *
- * @ingroup Genlist
- * 
- *
- * @param[in] itc The item class for the item
- * @param[in] data The item data
- * @param[in] parent The parent item, or NULL if none
- * @param[in] type Item type
- * @param[in] func Convenience function called when the item is selected
- * @param[in] func_data Data passed to @p func above.
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_item_append(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Object_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
+EAPI Elm_Widget_Item *elm_genlist_item_append(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data);
 
 /**
- * Insert a new item into the sorted genlist object
- *
- * @return A handle to the item added or NULL if not possible
+ * @brief Insert a new item into the sorted genlist object
  *
  * This inserts an item in the genlist based on user defined comparison
- * function. The two arguments passed to the function @p func are genlist item
+ * function. The two arguments passed to the function @c func are genlist item
  * handles to compare.
  *
- * @see elm_genlist_item_append()
- * @see elm_genlist_item_prepend()
- * @see elm_genlist_item_insert_after()
- * @see elm_object_item_del()
+ * @param[in] data The item data.
+ * @param[in] parent The parent item, or @c null if none.
+ * @param[in] type Item type.
+ * @param[in] comp The function called for the sort.
+ * @param[in] func Convenience function called when the item is selected.
+ * @param[in] func_data Data passed to @c func above.
  *
- * @ingroup Genlist
- * 
- *
- * @param[in] itc The item class for the item
- * @param[in] data The item data
- * @param[in] parent The parent item, or NULL if none
- * @param[in] type Item type
- * @param[in] comp The function called for the sort
- * @param[in] func Convenience function called when item selected
- * @param[in] func_data Data passed to @p func above.
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_item_sorted_insert(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Object_Item *parent, Elm_Genlist_Item_Type type, Eina_Compare_Cb comp, Evas_Smart_Cb func, const void *func_data);
+EAPI Elm_Widget_Item *elm_genlist_item_sorted_insert(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Eina_Compare_Cb comp, Evas_Smart_Cb func, const void *func_data);
 
 /**
- * Get genlist item by given string.
+ * @brief Get genlist item by given string.
  *
- * @return Pointer to the genlist item which matches search_string in case of success, otherwise returns NULL.
+ * It takes pointer to the genlist item that will be used to start search from
+ * it.
  *
- * It takes pointer to the genlist item that will be used to start
- * search from it.
+ * This function uses globs (like "*.jpg") for searching and takes search flags
+ * as last parameter That is a bitfield with values to be ored together or 0
+ * for no flags.
  *
- * This function uses globs (like "*.jpg") for searching and takes
- * search flags as last parameter That is a bitfield with values
- * to be ored together or 0 for no flags.
- *
- * @ingroup Genlist
- * @since 1.11
- * 
- *
- * @param[in] item_to_search_from Pointer to item to start search from. If NULL search will be started from the first item of the genlist.
- * @param[in] part_name Name of the TEXT part of genlist item to search string in.
+ * @param[in] part_name Name of the TEXT part of genlist item to search string
+ * in.
  * @param[in] pattern The search pattern.
- * @param[in] flags Search flags
+ * @param[in] flags Search flags.
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_Genlist
  */
-EAPI Elm_Object_Item *elm_genlist_search_by_text_item_get(Elm_Genlist *obj, Elm_Object_Item *item_to_search_from, const char *part_name, const char *pattern, Elm_Glob_Match_Flags flags);
+EAPI Elm_Widget_Item *elm_genlist_search_by_text_item_get(Elm_Genlist *obj, Elm_Widget_Item *item_to_search_from, const char *part_name, const char *pattern, Elm_Glob_Match_Flags flags);
 
 #endif

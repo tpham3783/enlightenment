@@ -28,7 +28,7 @@ EAPI const Eo_Class *elm_photo_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Photo
  */
-EOAPI void  elm_obj_photo_editable_set(Eina_Bool set);
+EOAPI void elm_obj_photo_editable_set(Eina_Bool set);
 
 /**
  * @brief Get editability of the photo.
@@ -37,7 +37,7 @@ EOAPI void  elm_obj_photo_editable_set(Eina_Bool set);
  *
  * @ingroup Elm_Photo
  */
-EOAPI Eina_Bool  elm_obj_photo_editable_get(void);
+EOAPI Eina_Bool elm_obj_photo_editable_get(void);
 
 /**
  * @brief Set if the photo should be completely visible or not.
@@ -46,7 +46,7 @@ EOAPI Eina_Bool  elm_obj_photo_editable_get(void);
  *
  * @ingroup Elm_Photo
  */
-EOAPI void  elm_obj_photo_fill_inside_set(Eina_Bool fill);
+EOAPI void elm_obj_photo_fill_inside_set(Eina_Bool fill);
 
 /**
  * @brief Get if the photo should be completely visible or not.
@@ -55,7 +55,7 @@ EOAPI void  elm_obj_photo_fill_inside_set(Eina_Bool fill);
  *
  * @ingroup Elm_Photo
  */
-EOAPI Eina_Bool  elm_obj_photo_fill_inside_get(void);
+EOAPI Eina_Bool elm_obj_photo_fill_inside_get(void);
 
 /**
  * @brief Set whether the original aspect ratio of the photo should be kept on
@@ -72,7 +72,7 @@ EOAPI Eina_Bool  elm_obj_photo_fill_inside_get(void);
  *
  * @ingroup Elm_Photo
  */
-EOAPI void  elm_obj_photo_aspect_fixed_set(Eina_Bool fixed);
+EOAPI void elm_obj_photo_aspect_fixed_set(Eina_Bool fixed);
 
 /**
  * @brief Get if the object keeps the original aspect ratio.
@@ -81,7 +81,7 @@ EOAPI void  elm_obj_photo_aspect_fixed_set(Eina_Bool fixed);
  *
  * @ingroup Elm_Photo
  */
-EOAPI Eina_Bool  elm_obj_photo_aspect_fixed_get(void);
+EOAPI Eina_Bool elm_obj_photo_aspect_fixed_get(void);
 
 /**
  * @brief Set the size that will be used on the photo
@@ -90,7 +90,7 @@ EOAPI Eina_Bool  elm_obj_photo_aspect_fixed_get(void);
  *
  * @ingroup Elm_Photo
  */
-EOAPI void  elm_obj_photo_size_set(int size);
+EOAPI void elm_obj_photo_size_set(int size);
 
 /**
  * @brief Get the size that will be used on the photo
@@ -99,7 +99,7 @@ EOAPI void  elm_obj_photo_size_set(int size);
  *
  * @ingroup Elm_Photo
  */
-EOAPI int  elm_obj_photo_size_get(void);
+EOAPI int elm_obj_photo_size_get(void);
 
 /**
  * @brief Set the file that will be used as thumbnail in the photo.
@@ -108,7 +108,7 @@ EOAPI int  elm_obj_photo_size_get(void);
  *
  * @ingroup Elm_Photo
  */
-EOAPI void  elm_obj_photo_thumb_set(const char *file, const char *group);
+EOAPI void elm_obj_photo_thumb_set(const char *file, const char *group);
 
 
 #endif

@@ -15,6 +15,7 @@ extern "C"
 }
 
 #include "efl_vg_base.eo.hh"
+#include <string>
 
 namespace efl { namespace vg {
 
@@ -29,6 +30,12 @@ namespace efl { namespace vg {
 
 struct container
 {
+   /// @param name 
+   ///
+   ::efl::vg::base child_get(::efl::eina::string_view name_) const;
+
+   Eina_Iterator * children_get() const;
+
 
 
    static Eo_Class const* _eo_class()
@@ -128,6 +135,12 @@ struct container
    {}
 
    ~container() {}
+
+   /// @param name 
+   ///
+   ::efl::vg::base child_get(::efl::eina::string_view name_) const;
+
+   Eina_Iterator * children_get() const;
 
    template <typename F>
    ::efl::eo::signal_connection

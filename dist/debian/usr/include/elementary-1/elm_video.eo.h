@@ -24,7 +24,7 @@ EAPI const Eo_Class *elm_video_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Video
  */
-EOAPI void  elm_obj_video_audio_level_set(double volume);
+EOAPI void elm_obj_video_audio_level_set(double volume);
 
 /**
  * @brief Get the audio level of the current video.
@@ -33,29 +33,29 @@ EOAPI void  elm_obj_video_audio_level_set(double volume);
  *
  * @ingroup Elm_Video
  */
-EOAPI double  elm_obj_video_audio_level_get(void);
+EOAPI double elm_obj_video_audio_level_get(void);
 
 /**
  * @brief Set whether the object can remember the last played position.
  *
- * Note: This API only serves as indication. System support is required.
+ * @note This API only serves as indication. System support is required.
  *
  * @param[in] remember The value.
  *
  * @ingroup Elm_Video
  */
-EOAPI void  elm_obj_video_remember_position_set(Eina_Bool remember);
+EOAPI void elm_obj_video_remember_position_set(Eina_Bool remember);
 
 /**
  * @brief Set whether the object can remember the last played position.
  *
- * Note: This API only serves as indication. System support is required.
+ * @note This API only serves as indication. System support is required.
  *
  * @return The value.
  *
  * @ingroup Elm_Video
  */
-EOAPI Eina_Bool  elm_obj_video_remember_position_get(void);
+EOAPI Eina_Bool elm_obj_video_remember_position_get(void);
 
 /**
  * @brief Set the current position (in seconds) to be played in the Elm_Video
@@ -66,7 +66,7 @@ EOAPI Eina_Bool  elm_obj_video_remember_position_get(void);
  *
  * @ingroup Elm_Video
  */
-EOAPI void  elm_obj_video_play_position_set(double position);
+EOAPI void elm_obj_video_play_position_set(double position);
 
 /**
  * @brief Get the current position (in seconds) being played in the Elm_Video
@@ -76,7 +76,7 @@ EOAPI void  elm_obj_video_play_position_set(double position);
  *
  * @ingroup Elm_Video
  */
-EOAPI double  elm_obj_video_play_position_get(void);
+EOAPI double elm_obj_video_play_position_get(void);
 
 /**
  * @brief Change the mute state of the Elm_Video object.
@@ -85,7 +85,7 @@ EOAPI double  elm_obj_video_play_position_get(void);
  *
  * @ingroup Elm_Video
  */
-EOAPI void  elm_obj_video_audio_mute_set(Eina_Bool mute);
+EOAPI void elm_obj_video_audio_mute_set(Eina_Bool mute);
 
 /**
  * @brief Get whether audio is muted.
@@ -94,7 +94,7 @@ EOAPI void  elm_obj_video_audio_mute_set(Eina_Bool mute);
  *
  * @ingroup Elm_Video
  */
-EOAPI Eina_Bool  elm_obj_video_audio_mute_get(void);
+EOAPI Eina_Bool elm_obj_video_audio_mute_get(void);
 
 /**
  * @brief Is the video actually playing.
@@ -104,7 +104,7 @@ EOAPI Eina_Bool  elm_obj_video_audio_mute_get(void);
  *
  * @ingroup Elm_Video
  */
-EOAPI Eina_Bool  elm_obj_video_is_playing_get(void);
+EOAPI Eina_Bool elm_obj_video_is_playing_get(void);
 
 /**
  * @brief Get the total playing time (in seconds) of the Elm_Video object.
@@ -113,7 +113,7 @@ EOAPI Eina_Bool  elm_obj_video_is_playing_get(void);
  *
  * @ingroup Elm_Video
  */
-EOAPI double  elm_obj_video_play_length_get(void);
+EOAPI double elm_obj_video_play_length_get(void);
 
 /**
  * @brief Get the underlying Emotion object.
@@ -122,7 +122,7 @@ EOAPI double  elm_obj_video_play_length_get(void);
  *
  * @ingroup Elm_Video
  */
-EOAPI Evas_Object * elm_obj_video_emotion_get(void);
+EOAPI Evas_Object *elm_obj_video_emotion_get(void);
 
 /**
  * @brief Is it possible to seek inside the video.
@@ -131,38 +131,38 @@ EOAPI Evas_Object * elm_obj_video_emotion_get(void);
  *
  * @ingroup Elm_Video
  */
-EOAPI Eina_Bool  elm_obj_video_is_seekable_get(void);
+EOAPI Eina_Bool elm_obj_video_is_seekable_get(void);
 
 /**
  * @brief Get the title (for instance DVD title) from this emotion object.
  *
  * This function is only useful when playing a DVD.
  *
- * Note: Don't change or free the string returned by this function.
+ * @note Don't change or free the string returned by this function.
  *
  * @return A string containing the title.
  *
  * @ingroup Elm_Video
  */
-EOAPI const char * elm_obj_video_title_get(void);
+EOAPI const char *elm_obj_video_title_get(void);
 
 /** Start playing a video.
  *
  * @ingroup Elm_Video
  */
-EOAPI void  elm_obj_video_play(void);
+EOAPI void elm_obj_video_play(void);
 
 /** Pause a video.
  *
  * @ingroup Elm_Video
  */
-EOAPI void  elm_obj_video_pause(void);
+EOAPI void elm_obj_video_pause(void);
 
 /** Stop a video.
  *
  * @ingroup Elm_Video
  */
-EOAPI void  elm_obj_video_stop(void);
+EOAPI void elm_obj_video_stop(void);
 
 
 #endif

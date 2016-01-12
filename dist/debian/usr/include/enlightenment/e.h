@@ -16,6 +16,10 @@
 #  include "config.h"
 # endif
 
+#ifdef HAVE_WAYLAND
+# define EFL_BETA_API_SUPPORT
+#endif
+
 # define USE_IPC
 # if 0
 #  define OBJECT_PARANOIA_CHECK
@@ -127,7 +131,7 @@ void *alloca (size_t);
 # include <Elementary.h>
 
 # ifdef HAVE_WAYLAND
-#  include <Ecore_Wayland.h>
+#  include <Ecore_Wl2.h>
 #  include <uuid.h>
 # endif
 

@@ -53,7 +53,7 @@ EAPI const Eo_Class *evas_textgrid_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_supported_font_styles_set(Evas_Textgrid_Font_Style styles);
+EOAPI void evas_obj_textgrid_supported_font_styles_set(Evas_Textgrid_Font_Style styles);
 
 /**
  * @brief This function is not implemented yet, do not use.
@@ -62,7 +62,7 @@ EOAPI void  evas_obj_textgrid_supported_font_styles_set(Evas_Textgrid_Font_Style
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI Evas_Textgrid_Font_Style  evas_obj_textgrid_supported_font_styles_get(void);
+EOAPI Evas_Textgrid_Font_Style evas_obj_textgrid_supported_font_styles_get(void);
 
 /**
  * @brief Set the size of the textgrid object.
@@ -78,7 +78,7 @@ EOAPI Evas_Textgrid_Font_Style  evas_obj_textgrid_supported_font_styles_get(void
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_size_set(int w, int h);
+EOAPI void evas_obj_textgrid_size_set(int w, int h);
 
 /**
  * @brief Get the size of the textgrid object.
@@ -94,7 +94,7 @@ EOAPI void  evas_obj_textgrid_size_set(int w, int h);
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_size_get(int *w, int *h);
+EOAPI void evas_obj_textgrid_size_get(int *w, int *h);
 
 /**
  * @brief Retrieve the size of a cell of the given textgrid object in pixels.
@@ -117,7 +117,7 @@ EOAPI void  evas_obj_textgrid_size_get(int *w, int *h);
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_cell_size_get(int *width, int *height);
+EOAPI void evas_obj_textgrid_cell_size_get(int *width, int *height);
 
 /**
  * @brief Indicate for evas that part of a textgrid region (cells) has been
@@ -137,7 +137,7 @@ EOAPI void  evas_obj_textgrid_cell_size_get(int *width, int *height);
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_update_add(int x, int y, int w, int h);
+EOAPI void evas_obj_textgrid_update_add(int x, int y, int w, int h);
 
 /**
  * @brief Set the string at the given row of the given textgrid object.
@@ -156,7 +156,7 @@ EOAPI void  evas_obj_textgrid_update_add(int x, int y, int w, int h);
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_cellrow_set(int y, const Evas_Textgrid_Cell *row);
+EOAPI void evas_obj_textgrid_cellrow_set(int y, const Evas_Textgrid_Cell *row);
 
 /**
  * @brief Get the string at the given row of the given textgrid object.
@@ -176,7 +176,7 @@ EOAPI void  evas_obj_textgrid_cellrow_set(int y, const Evas_Textgrid_Cell *row);
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI Evas_Textgrid_Cell * evas_obj_textgrid_cellrow_get(int y);
+EOAPI Evas_Textgrid_Cell *evas_obj_textgrid_cellrow_get(int y);
 
 /**
  * @brief The set color to the given palette at the given index of the given
@@ -204,7 +204,7 @@ EOAPI Evas_Textgrid_Cell * evas_obj_textgrid_cellrow_get(int y);
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_palette_set(Evas_Textgrid_Palette pal, int idx, int r, int g, int b, int a);
+EOAPI void evas_obj_textgrid_palette_set(Evas_Textgrid_Palette pal, int idx, int r, int g, int b, int a);
 
 /**
  * @brief The retrieve color to the given palette at the given index of the
@@ -229,7 +229,7 @@ EOAPI void  evas_obj_textgrid_palette_set(Evas_Textgrid_Palette pal, int idx, in
  *
  * @ingroup Evas_Textgrid
  */
-EOAPI void  evas_obj_textgrid_palette_get(Evas_Textgrid_Palette pal, int idx, int *r, int *g, int *b, int *a);
+EOAPI void evas_obj_textgrid_palette_get(Evas_Textgrid_Palette pal, int idx, int *r, int *g, int *b, int *a);
 
 
 #endif

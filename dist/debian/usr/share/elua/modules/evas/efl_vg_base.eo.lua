@@ -20,6 +20,8 @@ cutil.init_module(init, function() end)
 
 ffi.cdef [[
     const Eo_Class *efl_vg_base_class_get(void);
+    void efl_vg_name_set(const char * name);
+    const char *efl_vg_name_get(void);
     void efl_vg_transformation_set(const Eina_Matrix3 * m);
     const Eina_Matrix3 *efl_vg_transformation_get(void);
     void efl_vg_origin_set(double x, double y);
@@ -27,12 +29,27 @@ ffi.cdef [[
     void efl_vg_mask_set(Efl_VG * m);
     Efl_VG *efl_vg_mask_get(void);
     void efl_vg_bounds_get(Eina_Rectangle *r);
+    Eina_Bool efl_vg_interpolate(const Efl_VG_Base * from, const Efl_VG_Base * to, double pos_map);
+    void efl_vg_dup(const Efl_VG_Base * from);
 ]]
 
 local __M = util.get_namespace(M, { "vg" })
 __body = {
     __eo_ctor = function(self, __func)
         if __func then __func() end
+    end,
+
+    name_set = function(self, name)
+        eo.__do_start(self, __class)
+        __lib.efl_vg_name_set(name)
+        eo.__do_end()
+    end,
+
+    name_get = function(self)
+        eo.__do_start(self, __class)
+        local v = __lib.efl_vg_name_get()
+        eo.__do_end()
+        return ffi.string(v)
     end,
 
     transformation_set = function(self, m)
@@ -84,9 +101,23 @@ __body = {
         return r[0]
     end,
 
+    interpolate = function(self, from, to, pos_map)
+        eo.__do_start(self, __class)
+        local v = __lib.efl_vg_interpolate(from, to, pos_map)
+        eo.__do_end()
+        return ((v) ~= 0)
+    end,
+
+    dup = function(self, from)
+        eo.__do_start(self, __class)
+        __lib.efl_vg_dup(from)
+        eo.__do_end()
+    end,
+
     __properties = {
         ["mask"] = { 0, 0, 1, 1, true, true },
         ["transformation"] = { 0, 0, 1, 1, true, true },
+        ["name"] = { 0, 0, 1, 1, true, true },
         ["origin"] = { 0, 0, 2, 2, true, true }
     }
 }

@@ -54,6 +54,15 @@ inline void evas::filter::invalid_set(bool val_) const
 #endif
 
 #ifdef FILTER_PROTECTED
+inline void * evas::filter::output_buffer_get() const
+{
+   void * _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_filter_output_buffer_get());
+   return _tmp_ret;
+}
+#endif
+
+#ifdef FILTER_PROTECTED
 inline void eo_cxx::evas::filter::constructor() const
 {
    eo_do(_concrete_eo_ptr(), ::evas_filter_constructor());
@@ -103,6 +112,15 @@ inline void eo_cxx::evas::filter::changed_set(bool val_) const
 inline void eo_cxx::evas::filter::invalid_set(bool val_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_filter_invalid_set(::efl::eolian::to_c(val_)));
+}
+#endif
+
+#ifdef FILTER_PROTECTED
+inline void * eo_cxx::evas::filter::output_buffer_get() const
+{
+   void * _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_filter_output_buffer_get());
+   return _tmp_ret;
 }
 #endif
 
@@ -230,6 +248,23 @@ void evas_filter_invalid_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::I
 }
 #endif
 
+#ifdef FILTER_PROTECTED
+template <typename T>
+void * evas_filter_output_buffer_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->output_buffer_get();
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         void * _tmp_ret{};
+         return _tmp_ret;
+      }
+}
+#endif
+
 namespace efl { namespace eo { namespace detail {
 
 template<>
@@ -313,6 +348,18 @@ struct operations< ::evas::filter >
       }
 #endif
 
+#ifdef FILTER_PROTECTED
+      virtual void * output_buffer_get()
+      {
+         void * _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::evas_filter_output_buffer_get());
+            return _tmp_ret;
+      }
+#endif
+
    };
 };
 
@@ -322,9 +369,9 @@ struct operation_description_class_size< ::evas::filter >
 {
    static constexpr int value = 
 #if defined(FILTER_PROTECTED) && defined(FILTER_BETA)
-      7
+      8
 #elif defined(FILTER_PROTECTED)
-      7
+      8
 #elif defined(FILTER_BETA)
       0
 #else
@@ -343,63 +390,56 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::filter>
 #ifdef FILTER_PROTECTED
    ops[i].func = reinterpret_cast<void*>(& ::evas_filter_constructor_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_constructor);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_PROTECTED
    ops[i].func = reinterpret_cast<void*>(& ::evas_filter_destructor_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_destructor);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_PROTECTED
    ops[i].func = reinterpret_cast<void*>(& ::evas_filter_input_alpha_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_input_alpha);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_PROTECTED
    ops[i].func = reinterpret_cast<void*>(& ::evas_filter_input_render_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_input_render);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_PROTECTED
    ops[i].func = reinterpret_cast<void*>(& ::evas_filter_dirty_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_dirty);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_PROTECTED
    ops[i].func = reinterpret_cast<void*>(& ::evas_filter_changed_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_changed_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_PROTECTED
    ops[i].func = reinterpret_cast<void*>(& ::evas_filter_invalid_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_invalid_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+#endif
+
+#ifdef FILTER_PROTECTED
+   ops[i].func = reinterpret_cast<void*>(& ::evas_filter_output_buffer_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_output_buffer_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 #endif
 

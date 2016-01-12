@@ -9,8 +9,8 @@ eolian_flags=-I${pc_sysrootdir}${eoincludedir}/efl-1
 
 Name: EFL++
 Description: EFL's C++ bindings
-Version: 1.15.0-beta2
-Requires.private: eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
+Version: 1.17.0-beta1
+Requires.private: eo >= 1.17.0-beta1 eina >= 1.17.0-beta1  
 Libs: -L${libdir} -lefl
 Libs.private:
 Cflags: -I${includedir}/efl-1 -I${includedir}/efl-1/interfaces -I${includedir}/efl-cxx-1

@@ -38,17 +38,23 @@ ffi.cdef [[
     Evas_Canvas3D_Material *evas_canvas3d_mesh_frame_material_get(int frame);
     void evas_canvas3d_mesh_vertex_assembly_set(Evas_Canvas3D_Vertex_Assembly assembly);
     Evas_Canvas3D_Vertex_Assembly evas_canvas3d_mesh_vertex_assembly_get(void);
+    void evas_canvas3d_mesh_shadows_edges_filtering_set(int blur_level, Evas_Real edges_size);
+    void evas_canvas3d_mesh_shadows_edges_filtering_get(int *blur_level, Evas_Real *edges_size);
+    void evas_canvas3d_mesh_shadows_constant_bias_set(Evas_Real bias);
+    Evas_Real evas_canvas3d_mesh_shadows_constant_bias_get(void);
     void evas_canvas3d_mesh_frame_vertex_data_set(int frame, Evas_Canvas3D_Vertex_Attrib attrib, int stride, const void * data);
     void evas_canvas3d_mesh_frame_vertex_data_copy_set(int frame, Evas_Canvas3D_Vertex_Attrib attrib, int stride, const void * data);
     void *evas_canvas3d_mesh_frame_vertex_data_map(int frame, Evas_Canvas3D_Vertex_Attrib attrib);
     void evas_canvas3d_mesh_frame_vertex_data_unmap(int frame, Evas_Canvas3D_Vertex_Attrib attrib);
     int evas_canvas3d_mesh_frame_vertex_stride_get(int frame, Evas_Canvas3D_Vertex_Attrib attrib);
     void evas_canvas3d_mesh_index_data_set(Evas_Canvas3D_Index_Format format, int count, const void * indices);
+    void evas_canvas3d_mesh_convex_hull_data_get(int frame, Eina_Inarray * vertex, Eina_Inarray * index);
     void evas_canvas3d_mesh_index_data_copy_set(Evas_Canvas3D_Index_Format format, int count, const void * indices);
     Evas_Canvas3D_Index_Format evas_canvas3d_mesh_index_format_get(void);
     int evas_canvas3d_mesh_index_count_get(void);
     void *evas_canvas3d_mesh_index_data_map(void);
     void evas_canvas3d_mesh_index_data_unmap(void);
+    Eina_Bool evas_canvas3d_mesh_frame_exist(int frame);
     void evas_canvas3d_mesh_frame_add(int frame);
     void evas_canvas3d_mesh_frame_del(int frame);
     void evas_canvas3d_mesh_fog_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
@@ -183,6 +189,34 @@ __body = {
         return v
     end,
 
+    shadows_edges_filtering_set = function(self, blur_level, edges_size)
+        eo.__do_start(self, __class)
+        __lib.evas_canvas3d_mesh_shadows_edges_filtering_set(blur_level, edges_size)
+        eo.__do_end()
+    end,
+
+    shadows_edges_filtering_get = function(self)
+        eo.__do_start(self, __class)
+        local blur_level = ffi.new("int[1]")
+        local edges_size = ffi.new("Evas_Real[1]")
+        __lib.evas_canvas3d_mesh_shadows_edges_filtering_get(blur_level, edges_size)
+        eo.__do_end()
+        return tonumber(blur_level[0]), edges_size[0]
+    end,
+
+    shadows_constant_bias_set = function(self, bias)
+        eo.__do_start(self, __class)
+        __lib.evas_canvas3d_mesh_shadows_constant_bias_set(bias)
+        eo.__do_end()
+    end,
+
+    shadows_constant_bias_get = function(self)
+        eo.__do_start(self, __class)
+        local v = __lib.evas_canvas3d_mesh_shadows_constant_bias_get()
+        eo.__do_end()
+        return v
+    end,
+
     frame_vertex_data_set = function(self, frame, attrib, stride, data)
         eo.__do_start(self, __class)
         __lib.evas_canvas3d_mesh_frame_vertex_data_set(frame, attrib, stride, data)
@@ -221,6 +255,12 @@ __body = {
         eo.__do_end()
     end,
 
+    convex_hull_data_get = function(self, frame, vertex, index)
+        eo.__do_start(self, __class)
+        __lib.evas_canvas3d_mesh_convex_hull_data_get(frame, vertex, index)
+        eo.__do_end()
+    end,
+
     index_data_copy_set = function(self, format, count, indices)
         eo.__do_start(self, __class)
         __lib.evas_canvas3d_mesh_index_data_copy_set(format, count, indices)
@@ -252,6 +292,13 @@ __body = {
         eo.__do_start(self, __class)
         __lib.evas_canvas3d_mesh_index_data_unmap()
         eo.__do_end()
+    end,
+
+    frame_exist = function(self, frame)
+        eo.__do_start(self, __class)
+        local v = __lib.evas_canvas3d_mesh_frame_exist(frame)
+        eo.__do_end()
+        return v
     end,
 
     frame_add = function(self, frame)
@@ -308,8 +355,10 @@ __body = {
         ["shade_mode"] = { 0, 0, 1, 1, true, true },
         ["vertex_assembly"] = { 0, 0, 1, 1, true, true },
         ["vertex_count"] = { 0, 0, 1, 1, true, true },
+        ["shadows_constant_bias"] = { 0, 0, 1, 1, true, true },
         ["alpha_func"] = { 0, 0, 2, 2, true, true },
         ["color_pick_enable"] = { 0, 0, 1, 1, true, true },
+        ["shadows_edges_filtering"] = { 0, 0, 2, 2, true, true },
         ["blending_enable"] = { 0, 0, 1, 1, true, true },
         ["frame_material"] = { 1, 1, 1, 1, true, true },
         ["fog_enable"] = { 0, 0, 1, 1, true, true },

@@ -24,7 +24,7 @@ EAPI const Eo_Class *elm_app_client_view_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI Elm_App_View_State  elm_app_client_view_state_get(void);
+EOAPI Elm_App_View_State elm_app_client_view_state_get(void);
 
 /**
  * @brief Get new events of view
@@ -33,7 +33,7 @@ EOAPI Elm_App_View_State  elm_app_client_view_state_get(void);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI int  elm_app_client_view_new_events_get(void);
+EOAPI int elm_app_client_view_new_events_get(void);
 
 /**
  * @brief Get window of view
@@ -42,7 +42,7 @@ EOAPI int  elm_app_client_view_new_events_get(void);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI int  elm_app_client_view_window_get(void);
+EOAPI int elm_app_client_view_window_get(void);
 
 /**
  * @brief Get icon pixels of view, view could have a icon  in raw format not
@@ -55,7 +55,7 @@ EOAPI int  elm_app_client_view_window_get(void);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI void  elm_app_client_view_icon_pixels_get(unsigned int *w, unsigned int *h, Eina_Bool *has_alpha, const unsigned char **pixels);
+EOAPI void elm_app_client_view_icon_pixels_get(unsigned int *w, unsigned int *h, Eina_Bool *has_alpha, const unsigned char **pixels);
 
 /**
  * @brief Get DBus path of view
@@ -64,7 +64,7 @@ EOAPI void  elm_app_client_view_icon_pixels_get(unsigned int *w, unsigned int *h
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI Eina_Stringshare * elm_app_client_view_path_get(void);
+EOAPI Eina_Stringshare *elm_app_client_view_path_get(void);
 
 /**
  * @brief Get application package
@@ -73,7 +73,7 @@ EOAPI Eina_Stringshare * elm_app_client_view_path_get(void);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI const char * elm_app_client_view_package_get(void);
+EOAPI const char *elm_app_client_view_package_get(void);
 
 /**
  * @brief Get icon path of view
@@ -82,7 +82,7 @@ EOAPI const char * elm_app_client_view_package_get(void);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI const char * elm_app_client_view_icon_get(void);
+EOAPI const char *elm_app_client_view_icon_get(void);
 
 /**
  * @brief Get progress of view, should be -1 if there nothing in progress  or
@@ -92,7 +92,7 @@ EOAPI const char * elm_app_client_view_icon_get(void);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI unsigned short  elm_app_client_view_progress_get(void);
+EOAPI unsigned short elm_app_client_view_progress_get(void);
 
 /**
  * @brief Get title of view
@@ -101,14 +101,9 @@ EOAPI unsigned short  elm_app_client_view_progress_get(void);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI const char * elm_app_client_view_title_get(void);
+EOAPI const char *elm_app_client_view_title_get(void);
 
-/**
- * No description supplied.
- *
- * @param[in] path No description supplied.
- */
-EOAPI void  elm_app_client_view_path_set(const char *path);
+EOAPI void elm_app_client_view_path_set(const char *path);
 
 /**
  * @brief Pause view
@@ -117,7 +112,7 @@ EOAPI void  elm_app_client_view_path_set(const char *path);
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI void  elm_app_client_view_pause(Elm_App_Client_View_Cb cb, const void *data);
+EOAPI void elm_app_client_view_pause(Elm_App_Client_View_Cb cb, const void *data);
 
 /**
  * @brief Resume view
@@ -126,7 +121,7 @@ EOAPI void  elm_app_client_view_pause(Elm_App_Client_View_Cb cb, const void *dat
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI void  elm_app_client_view_resume(Elm_App_Client_View_Cb cb, const void *data);
+EOAPI void elm_app_client_view_resume(Elm_App_Client_View_Cb cb, const void *data);
 
 /**
  * @brief Close view
@@ -135,7 +130,7 @@ EOAPI void  elm_app_client_view_resume(Elm_App_Client_View_Cb cb, const void *da
  *
  * @ingroup Elm_App_Client_View
  */
-EOAPI void  elm_app_client_view_close(Elm_App_Client_View_Cb cb, const void *data);
+EOAPI void elm_app_client_view_close(Elm_App_Client_View_Cb cb, const void *data);
 
 EOAPI extern const Eo_Event_Description _ELM_APP_CLIENT_VIEW_EVENT_STATE_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_APP_CLIENT_VIEW_EVENT_TITLE_CHANGED;

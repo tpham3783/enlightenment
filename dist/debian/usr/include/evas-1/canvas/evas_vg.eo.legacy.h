@@ -15,12 +15,16 @@ typedef Eo Evas_VG;
 #endif
 
 /**
- * Get the root node of the evas_object_vg.
+ * @brief Get the root node of the evas_object_vg.
  *
- * @note To manually create the shape object and show in the Vg
- * object canvas you must create the hirarchy and set the
- * parent as root node.
+ * @note To manually create the shape object and show in the Vg object canvas
+ * you must create the hirarchy and set the parent as root node.
+ *
+ * @return Root node of the VG canvas.
+ *
  * @since 1.14
+ *
+ * @ingroup Evas_VG
  */
 EAPI Efl_VG *evas_object_vg_root_node_get(const Evas_VG *obj);
 

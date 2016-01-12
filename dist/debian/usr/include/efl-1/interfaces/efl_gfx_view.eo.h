@@ -31,7 +31,7 @@ EAPI const Eo_Class *efl_gfx_view_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_View
  */
-EOAPI void  efl_gfx_view_size_set(int w, int h);
+EOAPI void efl_gfx_view_size_set(int w, int h);
 
 /**
  * @brief Retrieves the size of the given image object.
@@ -43,7 +43,7 @@ EOAPI void  efl_gfx_view_size_set(int w, int h);
  *
  * @ingroup Efl_Gfx_View
  */
-EOAPI void  efl_gfx_view_size_get(int *w, int *h);
+EOAPI void efl_gfx_view_size_get(int *w, int *h);
 
 
 #endif

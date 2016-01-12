@@ -11,6 +11,24 @@ typedef Eo Efl_Gfx_Fill;
 #ifndef _EFL_GFX_FILL_EO_TYPES
 #define _EFL_GFX_FILL_EO_TYPES
 
+/** Type defining how an image content gets filled.
+ *
+ * @since 1.14
+ *
+ * @ingroup Efl_Gfx_Fill
+ */
+typedef enum
+{
+  EFL_GFX_FILL_REFLECT = 0, /** Image fill tiling mode - tiling reflects */
+  EFL_GFX_FILL_REPEAT = 1, /** Tiling repeats */
+  EFL_GFX_FILL_RESTRICT = 2, /** Tiling clamps, range offset ignored */
+  EFL_GFX_FILL_RESTRICT_REFLECT = 3, /** Tiling clamps and any range offset
+                                      * reflects */
+  EFL_GFX_FILL_RESTRICT_REPEAT = 4, /** Tiling clamps and any range offset
+                                     * repeats */
+  EFL_GFX_FILL_PAD = 5 /** Tiling extends with end values */
+} Efl_Gfx_Fill_Spread;
+
 
 #endif
 #define EFL_GFX_FILL_INTERFACE efl_gfx_fill_interface_get()
@@ -26,7 +44,7 @@ EAPI const Eo_Class *efl_gfx_fill_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_Fill
  */
-EOAPI void  efl_gfx_fill_spread_set(Efl_Gfx_Fill_Spread spread);
+EOAPI void efl_gfx_fill_spread_set(Efl_Gfx_Fill_Spread spread);
 
 /**
  * @brief Retrieves the spread (tiling mode) for the given image object's fill.
@@ -36,7 +54,7 @@ EOAPI void  efl_gfx_fill_spread_set(Efl_Gfx_Fill_Spread spread);
  *
  * @ingroup Efl_Gfx_Fill
  */
-EOAPI Efl_Gfx_Fill_Spread  efl_gfx_fill_spread_get(void);
+EOAPI Efl_Gfx_Fill_Spread efl_gfx_fill_spread_get(void);
 
 /**
  * @brief Set how to fill an image object's drawing rectangle given the (real)
@@ -48,12 +66,12 @@ EOAPI Efl_Gfx_Fill_Spread  efl_gfx_fill_spread_get(void);
  * need to be the exact width and height of the image object itself,
  * respectively.
  *
- * Warning: The default values for the fill parameters are @c x = 0, @c y = 0,
+ * @warning The default values for the fill parameters are @c x = 0, @c y = 0,
  * @c w = 0 and @c h = 0. Thus, if you're not using the
  * evas_object_image_filled_add() helper and want your image displayed, you'll
  * have to set valid values with this function on your object.
  *
- * Note: evas_object_image_filled_set() is a helper function which will
+ * @note evas_object_image_filled_set() is a helper function which will
  * override the values set here automatically, for you, in a given way.
  *
  * @param[in] x The x coordinate (from the top left corner of the bound image)
@@ -65,13 +83,13 @@ EOAPI Efl_Gfx_Fill_Spread  efl_gfx_fill_spread_get(void);
  *
  * @ingroup Efl_Gfx_Fill
  */
-EOAPI void  efl_gfx_fill_set(int x, int y, int w, int h);
+EOAPI void efl_gfx_fill_set(int x, int y, int w, int h);
 
 /**
  * @brief Retrieve how an image object is to fill its drawing rectangle, given
  * the (real) image bound to it.
  *
- * Note: Use @c null pointers on the fill components you're not interested in:
+ * @note Use @c null pointers on the fill components you're not interested in:
  * they'll be ignored by the function.
  *
  * See @ref efl_gfx_fill_set() for more details.
@@ -85,7 +103,7 @@ EOAPI void  efl_gfx_fill_set(int x, int y, int w, int h);
  *
  * @ingroup Efl_Gfx_Fill
  */
-EOAPI void  efl_gfx_fill_get(int *x, int *y, int *w, int *h);
+EOAPI void efl_gfx_fill_get(int *x, int *y, int *w, int *h);
 
 
 #endif

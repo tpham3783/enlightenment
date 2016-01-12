@@ -974,184 +974,132 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::text>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_last_up_to_pos_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_last_up_to_pos);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_char_coords_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_char_coords_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_char_pos_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_char_pos_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_shadow_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_shadow_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_shadow_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_shadow_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_ellipsis_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_ellipsis_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_ellipsis_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_ellipsis_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_bidi_delimiters_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_bidi_delimiters_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_bidi_delimiters_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_bidi_delimiters_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_outline_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_outline_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_outline_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_outline_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_glow2_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_glow2_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_glow2_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_glow2_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_style_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_style_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_style_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_style_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_glow_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_glow_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_glow_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_glow_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_max_descent_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_max_descent_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_style_pad_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_style_pad_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_direction_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_direction_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_ascent_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_ascent_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_horiz_advance_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_horiz_advance_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_inset_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_inset_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_max_ascent_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_max_ascent_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_vert_advance_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_vert_advance_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_text_descent_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_text_descent_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::object>(), &ops[operation_description_class_size< ::evas::text >::value]);

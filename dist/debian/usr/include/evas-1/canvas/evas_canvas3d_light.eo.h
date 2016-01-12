@@ -33,7 +33,7 @@ EAPI const Eo_Class *evas_canvas3d_light_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_directional_set(Eina_Bool directional);
+EOAPI void evas_canvas3d_light_directional_set(Eina_Bool directional);
 
 /**
  * @brief Get the directional flag of the given light.
@@ -44,7 +44,7 @@ EOAPI void  evas_canvas3d_light_directional_set(Eina_Bool directional);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI Eina_Bool  evas_canvas3d_light_directional_get(void);
+EOAPI Eina_Bool evas_canvas3d_light_directional_get(void);
 
 /**
  * @brief Set the spot exponent of the given light.
@@ -62,7 +62,7 @@ EOAPI Eina_Bool  evas_canvas3d_light_directional_get(void);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_spot_exponent_set(Evas_Real exponent);
+EOAPI void evas_canvas3d_light_spot_exponent_set(Evas_Real exponent);
 
 /**
  * @brief Get the spot exponent of the given light.
@@ -73,7 +73,7 @@ EOAPI void  evas_canvas3d_light_spot_exponent_set(Evas_Real exponent);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI Evas_Real  evas_canvas3d_light_spot_exponent_get(void);
+EOAPI Evas_Real evas_canvas3d_light_spot_exponent_get(void);
 
 /**
  * @brief Set the spot cutoff angle of the given light.
@@ -87,7 +87,7 @@ EOAPI Evas_Real  evas_canvas3d_light_spot_exponent_get(void);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_spot_cutoff_set(Evas_Real cutoff);
+EOAPI void evas_canvas3d_light_spot_cutoff_set(Evas_Real cutoff);
 
 /**
  * @brief Get the spot cutoff angle of the given light.
@@ -98,7 +98,7 @@ EOAPI void  evas_canvas3d_light_spot_cutoff_set(Evas_Real cutoff);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI Evas_Real  evas_canvas3d_light_spot_cutoff_get(void);
+EOAPI Evas_Real evas_canvas3d_light_spot_cutoff_get(void);
 
 /**
  * @brief Set the attenuation enable flag of the given light.
@@ -111,7 +111,7 @@ EOAPI Evas_Real  evas_canvas3d_light_spot_cutoff_get(void);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_attenuation_enable_set(Eina_Bool enable);
+EOAPI void evas_canvas3d_light_attenuation_enable_set(Eina_Bool enable);
 
 /**
  * @brief Get the attenuation enable flag of the given light.
@@ -122,7 +122,7 @@ EOAPI void  evas_canvas3d_light_attenuation_enable_set(Eina_Bool enable);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI Eina_Bool  evas_canvas3d_light_attenuation_enable_get(void);
+EOAPI Eina_Bool evas_canvas3d_light_attenuation_enable_get(void);
 
 /**
  * @brief Set the ambient color of the given light.
@@ -135,7 +135,7 @@ EOAPI Eina_Bool  evas_canvas3d_light_attenuation_enable_get(void);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_ambient_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+EOAPI void evas_canvas3d_light_ambient_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
 
 /**
  * @brief Get the ambient color of the given light.
@@ -148,7 +148,7 @@ EOAPI void  evas_canvas3d_light_ambient_set(Evas_Real r, Evas_Real g, Evas_Real 
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+EOAPI void evas_canvas3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
 
 /**
  * @brief Set the diffuse color of the given light.
@@ -161,7 +161,7 @@ EOAPI void  evas_canvas3d_light_ambient_get(Evas_Real *r, Evas_Real *g, Evas_Rea
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_diffuse_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+EOAPI void evas_canvas3d_light_diffuse_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
 
 /**
  * @brief Get the diffuse color of the given light.
@@ -174,7 +174,7 @@ EOAPI void  evas_canvas3d_light_diffuse_set(Evas_Real r, Evas_Real g, Evas_Real 
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+EOAPI void evas_canvas3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
 
 /**
  * @brief Set the specular color of the given light.
@@ -187,7 +187,7 @@ EOAPI void  evas_canvas3d_light_diffuse_get(Evas_Real *r, Evas_Real *g, Evas_Rea
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_specular_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+EOAPI void evas_canvas3d_light_specular_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
 
 /**
  * @brief Get the specular color of the given light.
@@ -200,7 +200,7 @@ EOAPI void  evas_canvas3d_light_specular_set(Evas_Real r, Evas_Real g, Evas_Real
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+EOAPI void evas_canvas3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
 
 /**
  * @brief Set the attenuation of the given light.
@@ -220,7 +220,7 @@ EOAPI void  evas_canvas3d_light_specular_get(Evas_Real *r, Evas_Real *g, Evas_Re
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_attenuation_set(Evas_Real constant, Evas_Real linear, Evas_Real quadratic);
+EOAPI void evas_canvas3d_light_attenuation_set(Evas_Real constant, Evas_Real linear, Evas_Real quadratic);
 
 /**
  * @brief Get the attenuation of the given light.
@@ -232,7 +232,7 @@ EOAPI void  evas_canvas3d_light_attenuation_set(Evas_Real constant, Evas_Real li
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
+EOAPI void evas_canvas3d_light_attenuation_get(Evas_Real *constant, Evas_Real *linear, Evas_Real *quadratic);
 
 /**
  * @brief Set the projection matrix of the given light source.
@@ -243,12 +243,12 @@ EOAPI void  evas_canvas3d_light_attenuation_get(Evas_Real *constant, Evas_Real *
  * @ref evas_canvas3d_light_projection_ortho_set and
  * @ref evas_canvas3d_light_projection_frustum_set
  *
- * @param[in] matrix Projection Matrix. Pointer to the array of 16 Evas_Real
+ * @param[in] matrix Projection Matrix. Pointer to the array of 16 Evas.Real
  * values in column major order.
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_projection_matrix_set(const Evas_Real *matrix);
+EOAPI void evas_canvas3d_light_projection_matrix_set(const Evas_Real *matrix);
 
 /**
  * @brief Get the projection matrix of the given light source.
@@ -259,7 +259,7 @@ EOAPI void  evas_canvas3d_light_projection_matrix_set(const Evas_Real *matrix);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_projection_matrix_get(Evas_Real *matrix);
+EOAPI void evas_canvas3d_light_projection_matrix_get(Evas_Real *matrix);
 
 /**
  * @brief Set the projection matrix of the given light source with perspective
@@ -273,7 +273,7 @@ EOAPI void  evas_canvas3d_light_projection_matrix_get(Evas_Real *matrix);
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+EOAPI void evas_canvas3d_light_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
 
 /**
  * @brief Set the projection matrix of the given light source with frustum
@@ -289,7 +289,7 @@ EOAPI void  evas_canvas3d_light_projection_perspective_set(Evas_Real fovy, Evas_
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+EOAPI void evas_canvas3d_light_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
 
 /**
  * @brief Set the projection matrix of the given light source with orthogonal
@@ -305,7 +305,7 @@ EOAPI void  evas_canvas3d_light_projection_frustum_set(Evas_Real left, Evas_Real
  *
  * @ingroup Evas_Canvas3D_Light
  */
-EOAPI void  evas_canvas3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+EOAPI void evas_canvas3d_light_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
 
 
 #endif

@@ -450,79 +450,57 @@ int initialize_operation_description(::efl::eo::detail::tag<::ecore_audio>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_vio_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_vio_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_name_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_name_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_name_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_name_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_paused_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_paused_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_paused_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_paused_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_volume_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_volume_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_volume_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_volume_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_source_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_source_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_source_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_source_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_format_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_format_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_format_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_format_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::eo::base>(), &ops[operation_description_class_size< ::ecore_audio >::value]);

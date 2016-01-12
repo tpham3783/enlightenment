@@ -26,7 +26,7 @@ EAPI const Eo_Class *ecore_con_server_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Con_Server
  */
-EOAPI void  ecore_con_server_obj_name_set(const char *name);
+EOAPI void ecore_con_server_obj_name_set(const char *name);
 
 /**
  * @brief Retrieves the name of server.
@@ -37,7 +37,7 @@ EOAPI void  ecore_con_server_obj_name_set(const char *name);
  *
  * @ingroup Ecore_Con_Server
  */
-EOAPI const char * ecore_con_server_obj_name_get(void);
+EOAPI const char *ecore_con_server_obj_name_get(void);
 
 /**
  * @brief Sets a limit on the number of clients that can be handled
@@ -60,7 +60,7 @@ EOAPI const char * ecore_con_server_obj_name_get(void);
  *
  * @ingroup Ecore_Con_Server
  */
-EOAPI void  ecore_con_server_obj_client_limit_set(int client_limit, char reject_excess_clients);
+EOAPI void ecore_con_server_obj_client_limit_set(int client_limit, char reject_excess_clients);
 
 /**
  * @brief Sets a limit on the number of clients that can be handled
@@ -84,7 +84,7 @@ EOAPI void  ecore_con_server_obj_client_limit_set(int client_limit, char reject_
  *
  * @ingroup Ecore_Con_Server
  */
-EOAPI void  ecore_con_server_obj_client_limit_get(int *client_limit, char *reject_excess_clients);
+EOAPI void ecore_con_server_obj_client_limit_get(int *client_limit, char *reject_excess_clients);
 
 /**
  * @brief Retrieves the current list of clients.
@@ -97,19 +97,11 @@ EOAPI void  ecore_con_server_obj_client_limit_get(int *client_limit, char *rejec
  *
  * @ingroup Ecore_Con_Server
  */
-EOAPI const Eina_List * ecore_con_server_obj_clients_get(void);
+EOAPI const Eina_List *ecore_con_server_obj_clients_get(void);
 
-/**
- * No description supplied.
- *
- * @param[in] conn_type No description supplied.
- */
-EOAPI void  ecore_con_server_obj_connection_type_set(Ecore_Con_Type conn_type);
+EOAPI void ecore_con_server_obj_connection_type_set(Ecore_Con_Type conn_type);
 
-/**
- * No description supplied.
- */
-EOAPI Ecore_Con_Type  ecore_con_server_obj_connection_type_get(void);
+EOAPI Ecore_Con_Type ecore_con_server_obj_connection_type_get(void);
 
 
 #endif

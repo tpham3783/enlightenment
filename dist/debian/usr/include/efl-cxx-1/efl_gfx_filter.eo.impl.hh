@@ -326,63 +326,49 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::gfx::filter>
 #ifdef FILTER_BETA
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_filter_source_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_filter_source_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_BETA
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_filter_source_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_filter_source_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_BETA
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_filter_data_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_filter_data_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_BETA
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_filter_program_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_filter_program_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_BETA
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_filter_program_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_filter_program_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_BETA
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_filter_state_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_filter_state_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 
 #ifdef FILTER_BETA
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_filter_padding_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_filter_padding_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 #endif
 

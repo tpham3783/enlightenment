@@ -11,6 +11,44 @@ typedef Eo Efl_Gfx_Base;
 #ifndef _EFL_GFX_BASE_EO_TYPES
 #define _EFL_GFX_BASE_EO_TYPES
 
+typedef enum
+{
+  EFL_GFX_COLORSPACE_ARGB8888 = 0, /** ARGB 32 bits per pixel, high-byte is
+                                    * Alpha, accessed one 32-bit word at a time
+                                    */
+  EFL_GFX_COLORSPACE_GRY8 = 4 /** 8-bit gray image, or alpha only */
+} Efl_Gfx_Colorspace;
+
+typedef enum
+{
+  EFL_GFX_RENDER_OP_BLEND = 0, /** Alpha blending onto destination (default); d
+                                * = d*(1-sa) + s */
+  EFL_GFX_RENDER_OP_COPY = 1, /** Copy source to destination; d = s */
+  EFL_GFX_RENDER_OP_LAST
+} Efl_Gfx_Render_Op;
+
+typedef enum
+{
+  EFL_GFX_COLOR_TYPE_BITS8 = 0, /** Color is encoded in the top 8 bits of the
+                                 * unsigned short as a unsigned char. */
+  EFL_GFX_COLOR_TYPE_BITS16, /** Color is encoded in the 16 bits as an unsigned
+                              * char. */
+  EFL_GFX_COLOR_TYPE_LAST
+} Efl_Gfx_Color_Type;
+
+/** Define an RGBA color.
+ *
+ * @ingroup Efl_Gfx
+ */
+typedef struct _Efl_Gfx_Color
+{
+  unsigned short r; /** The red component. */
+  unsigned short g; /** The green component. */
+  unsigned short b; /** The blue component. */
+  unsigned short a; /** The alpha component. */
+  Efl_Gfx_Color_Type type;
+} Efl_Gfx_Color;
+
 
 #endif
 #define EFL_GFX_BASE_INTERFACE efl_gfx_base_interface_get()
@@ -26,7 +64,7 @@ EAPI const Eo_Class *efl_gfx_base_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI void  efl_gfx_position_set(int x, int y);
+EOAPI void efl_gfx_position_set(int x, int y);
 
 /**
  * @brief Retrieves the position of the given Evas object.
@@ -36,7 +74,7 @@ EOAPI void  efl_gfx_position_set(int x, int y);
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI void  efl_gfx_position_get(int *x, int *y);
+EOAPI void efl_gfx_position_get(int *x, int *y);
 
 /**
  * @brief Changes the size of the given Evas object.
@@ -46,7 +84,7 @@ EOAPI void  efl_gfx_position_get(int *x, int *y);
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI void  efl_gfx_size_set(int w, int h);
+EOAPI void efl_gfx_size_set(int w, int h);
 
 /**
  * @brief Retrieves the (rectangular) size of the given Evas object.
@@ -56,7 +94,7 @@ EOAPI void  efl_gfx_size_set(int w, int h);
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI void  efl_gfx_size_get(int *w, int *h);
+EOAPI void efl_gfx_size_get(int *w, int *h);
 
 /**
  * @brief Sets the general/main color of the given Evas object to the given
@@ -73,7 +111,7 @@ EOAPI void  efl_gfx_size_get(int *w, int *h);
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI void  efl_gfx_color_set(int r, int g, int b, int a);
+EOAPI void efl_gfx_color_set(int r, int g, int b, int a);
 
 /**
  * @brief Retrieves the general/main color of the given Evas object.
@@ -102,7 +140,7 @@ EOAPI void  efl_gfx_color_set(int r, int g, int b, int a);
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI void  efl_gfx_color_get(int *r, int *g, int *b, int *a);
+EOAPI void efl_gfx_color_get(int *r, int *g, int *b, int *a);
 
 /**
  * @brief Sets a specifc color of the given Efl.Gfx.Base object to the given
@@ -120,7 +158,7 @@ EOAPI void  efl_gfx_color_get(int *r, int *g, int *b, int *a);
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI Eina_Bool  efl_gfx_color_part_set(const char * part, int r, int g, int b, int a);
+EOAPI Eina_Bool efl_gfx_color_part_set(const char * part, int r, int g, int b, int a);
 
 /**
  * @brief Retrieves a specific color of the given Evas object.
@@ -147,7 +185,7 @@ EOAPI Eina_Bool  efl_gfx_color_part_set(const char * part, int r, int g, int b, 
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI Eina_Bool  efl_gfx_color_part_get(const char * part, int *r, int *g, int *b, int *a);
+EOAPI Eina_Bool efl_gfx_color_part_get(const char * part, int *r, int *g, int *b, int *a);
 
 /**
  * @brief Makes the given Evas object visible or invisible.
@@ -156,7 +194,7 @@ EOAPI Eina_Bool  efl_gfx_color_part_get(const char * part, int *r, int *g, int *
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI void  efl_gfx_visible_set(Eina_Bool v);
+EOAPI void efl_gfx_visible_set(Eina_Bool v);
 
 /**
  * @brief Retrieves whether or not the given Evas object is visible.
@@ -165,7 +203,7 @@ EOAPI void  efl_gfx_visible_set(Eina_Bool v);
  *
  * @ingroup Efl_Gfx_Base
  */
-EOAPI Eina_Bool  efl_gfx_visible_get(void);
+EOAPI Eina_Bool efl_gfx_visible_get(void);
 
 
 #endif

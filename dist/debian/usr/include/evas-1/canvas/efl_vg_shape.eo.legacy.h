@@ -13,41 +13,11 @@ typedef Eo Efl_VG_Shape;
 
 
 #endif
-
-/**
- * No description supplied.
- *
- * @param[in] f No description supplied.
- */
 EAPI void evas_vg_shape_fill_set(Efl_VG_Shape *obj, Efl_VG *f);
-
-/**
- * No description supplied.
- */
 EAPI Efl_VG *evas_vg_shape_fill_get(const Efl_VG_Shape *obj);
-
-/**
- * No description supplied.
- *
- * @param[in] f No description supplied.
- */
 EAPI void evas_vg_shape_stroke_fill_set(Efl_VG_Shape *obj, Efl_VG *f);
-
-/**
- * No description supplied.
- */
 EAPI Efl_VG *evas_vg_shape_stroke_fill_get(const Efl_VG_Shape *obj);
-
-/**
- * No description supplied.
- *
- * @param[in] m No description supplied.
- */
 EAPI void evas_vg_shape_stroke_marker_set(Efl_VG_Shape *obj, Efl_VG *m);
-
-/**
- * No description supplied.
- */
 EAPI Efl_VG *evas_vg_shape_stroke_marker_get(const Efl_VG_Shape *obj);
 
 #endif

@@ -23,7 +23,7 @@ EAPI const Eo_Class *evas_canvas3d_primitive_class_get(void) EINA_CONST;
  * Form defines which function will be chosen to set data to mesh on call of
  * evas_canvas3d_mesh_primitive_set.
  *
- * Now avaliable next forms of primitives are tabulated primitives (SQUARE and
+ * Now available next forms of primitives are tabulated primitives (SQUARE and
  * CUBE), solids of revolution (CYLINDER, CONE, SPHERE and TORUS) and surfaces
  * (SURFACE and TERRAIN).
  *
@@ -33,7 +33,7 @@ EAPI const Eo_Class *evas_canvas3d_primitive_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI void  evas_canvas3d_primitive_form_set(Evas_Canvas3D_Mesh_Primitive form);
+EOAPI void evas_canvas3d_primitive_form_set(Evas_Canvas3D_Mesh_Primitive form);
 
 /**
  * @brief Get the form of the given primitive.
@@ -44,7 +44,7 @@ EOAPI void  evas_canvas3d_primitive_form_set(Evas_Canvas3D_Mesh_Primitive form);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI Evas_Canvas3D_Mesh_Primitive  evas_canvas3d_primitive_form_get(void);
+EOAPI Evas_Canvas3D_Mesh_Primitive evas_canvas3d_primitive_form_get(void);
 
 /**
  * @brief Set the mode of the given primitive.
@@ -54,7 +54,7 @@ EOAPI Evas_Canvas3D_Mesh_Primitive  evas_canvas3d_primitive_form_get(void);
  * for primitive with given form (like cone without base or sphere textured in
  * alternative way).
  *
- * Now avaliable next mods of primitives are witout base (bases) (supported for
+ * Now available next mods of primitives are witout base (bases) (supported for
  * cylinder and cone) and with alternative UV (supported by sphere).
  *
  * Default form is EVAS_CANVAS3D_PRIMITIVE_MODE_DEFAULT.
@@ -63,7 +63,7 @@ EOAPI Evas_Canvas3D_Mesh_Primitive  evas_canvas3d_primitive_form_get(void);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI void  evas_canvas3d_primitive_mode_set(Evas_Canvas3D_Primitive_Mode mode);
+EOAPI void evas_canvas3d_primitive_mode_set(Evas_Canvas3D_Primitive_Mode mode);
 
 /**
  * @brief Get the mode of the given primitive.
@@ -74,13 +74,13 @@ EOAPI void  evas_canvas3d_primitive_mode_set(Evas_Canvas3D_Primitive_Mode mode);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI Evas_Canvas3D_Primitive_Mode  evas_canvas3d_primitive_mode_get(void);
+EOAPI Evas_Canvas3D_Primitive_Mode evas_canvas3d_primitive_mode_get(void);
 
 /**
  * @brief Set the ratio of the given primitive.
  *
  * Now ratio uses only in torus as the ratio of the major radius and minor
- * radius. For this usage Avaliable values is from 1.0 to infinity. If ratio
+ * radius. For this usage Available values is from 1.0 to infinity. If ratio
  * for torus has a bad value, will be used 3.0 as ratio. Like ratio of usual
  * doughnut.
  *
@@ -90,7 +90,7 @@ EOAPI Evas_Canvas3D_Primitive_Mode  evas_canvas3d_primitive_mode_get(void);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI void  evas_canvas3d_primitive_ratio_set(Evas_Real ratio);
+EOAPI void evas_canvas3d_primitive_ratio_set(Evas_Real ratio);
 
 /**
  * @brief Get the ratio of the given primitive.
@@ -101,13 +101,13 @@ EOAPI void  evas_canvas3d_primitive_ratio_set(Evas_Real ratio);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI Evas_Real  evas_canvas3d_primitive_ratio_get(void);
+EOAPI Evas_Real evas_canvas3d_primitive_ratio_get(void);
 
 /**
  * @brief Set the precision of the given primitive.
  *
  * Precision uses in all non tabulated primitives and defines precision of
- * created primitives. Avaliable values is from 3 to infinity. But if value
+ * created primitives. Available values is from 3 to infinity. But if value
  * will be more than 100, should be a warning about possibility of incorrect or
  * slow work.
  *
@@ -117,7 +117,7 @@ EOAPI Evas_Real  evas_canvas3d_primitive_ratio_get(void);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI void  evas_canvas3d_primitive_precision_set(int precision);
+EOAPI void evas_canvas3d_primitive_precision_set(int precision);
 
 /**
  * @brief Get the precision of the given primitive.
@@ -128,7 +128,7 @@ EOAPI void  evas_canvas3d_primitive_precision_set(int precision);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI int  evas_canvas3d_primitive_precision_get(void);
+EOAPI int evas_canvas3d_primitive_precision_get(void);
 
 /**
  * @brief Set the surface of the given primitive.
@@ -147,7 +147,7 @@ EOAPI int  evas_canvas3d_primitive_precision_get(void);
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI void  evas_canvas3d_primitive_surface_set(Evas_Canvas3D_Surface_Func *surface);
+EOAPI void evas_canvas3d_primitive_surface_set(Evas_Canvas3D_Surface_Func *surface);
 
 /**
  * @brief Set the texture scale of the given primitive.
@@ -164,7 +164,7 @@ EOAPI void  evas_canvas3d_primitive_surface_set(Evas_Canvas3D_Surface_Func *surf
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI void  evas_canvas3d_primitive_tex_scale_set(Evas_Real tex_scale_x, Evas_Real tex_scale_y);
+EOAPI void evas_canvas3d_primitive_tex_scale_set(Evas_Real tex_scale_x, Evas_Real tex_scale_y);
 
 /**
  * @brief Get the texture scale of the given primitive.
@@ -176,7 +176,7 @@ EOAPI void  evas_canvas3d_primitive_tex_scale_set(Evas_Real tex_scale_x, Evas_Re
  *
  * @ingroup Evas_Canvas3D_Primitive
  */
-EOAPI void  evas_canvas3d_primitive_tex_scale_get(Evas_Real *tex_scale_x, Evas_Real *tex_scale_y);
+EOAPI void evas_canvas3d_primitive_tex_scale_get(Evas_Real *tex_scale_x, Evas_Real *tex_scale_y);
 
 
 #endif

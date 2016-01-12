@@ -17,20 +17,8 @@ typedef Eo Elm_Genlist_Pan;
 
 EAPI const Eo_Class *elm_genlist_pan_class_get(void) EINA_CONST;
 
-EOAPI extern const Eo_Event_Description _ELM_GENLIST_PAN_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_GENLIST_PAN_EVENT_ACCESS_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_GENLIST_PAN_EVENT_ITEM_FOCUSED;
 EOAPI extern const Eo_Event_Description _ELM_GENLIST_PAN_EVENT_ITEM_UNFOCUSED;
-
-/**
- * No description
- */
-#define ELM_GENLIST_PAN_EVENT_LANGUAGE_CHANGED (&(_ELM_GENLIST_PAN_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_GENLIST_PAN_EVENT_ACCESS_CHANGED (&(_ELM_GENLIST_PAN_EVENT_ACCESS_CHANGED))
 
 /**
  * No description

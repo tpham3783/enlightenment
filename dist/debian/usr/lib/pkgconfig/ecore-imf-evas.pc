@@ -5,7 +5,7 @@ includedir=${prefix}/include
 
 Name: ecore-imf-evas
 Description: E core library, IMF Evas module
-Version: 1.15.0-beta2
-Requires.private: emile >= 1.15.0-beta2 eina >= 1.15.0-beta2 eo >= 1.15.0-beta2 efl >= 1.15.0-beta2 evas >= 1.15.0-beta2 ecore >= 1.15.0-beta2 ecore-imf >= 1.15.0-beta2  
+Version: 1.17.0-beta1
+Requires.private: emile >= 1.17.0-beta1 eina >= 1.17.0-beta1 eo >= 1.17.0-beta1 efl >= 1.17.0-beta1 evas >= 1.17.0-beta1 ecore >= 1.17.0-beta1 ecore-imf >= 1.17.0-beta1  
 Libs: -L${libdir} -lecore_imf_evas
 Cflags: -I${includedir}/efl-1 -I${includedir}/ecore-imf-evas-1

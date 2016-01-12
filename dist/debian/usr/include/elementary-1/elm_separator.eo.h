@@ -24,7 +24,7 @@ EAPI const Eo_Class *elm_separator_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Separator
  */
-EOAPI void  elm_obj_separator_horizontal_set(Eina_Bool horizontal);
+EOAPI void elm_obj_separator_horizontal_set(Eina_Bool horizontal);
 
 /**
  * @brief Get the horizontal mode of a separator object
@@ -33,7 +33,7 @@ EOAPI void  elm_obj_separator_horizontal_set(Eina_Bool horizontal);
  *
  * @ingroup Elm_Separator
  */
-EOAPI Eina_Bool  elm_obj_separator_horizontal_get(void);
+EOAPI Eina_Bool elm_obj_separator_horizontal_get(void);
 
 
 #endif

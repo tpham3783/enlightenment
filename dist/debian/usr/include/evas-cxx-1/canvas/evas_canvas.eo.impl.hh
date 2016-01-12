@@ -3606,730 +3606,522 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::canvas>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_tree_objects_at_xy_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_tree_objects_at_xy_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_wheel_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_wheel);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_on_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_on);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_down_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_down);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_mask_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_mask_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_off_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_off);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_hold_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_hold);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_move_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_move);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_up_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_up);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_out_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_out);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_input_multi_move_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_input_multi_move);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_objects_at_xy_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_objects_at_xy_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_input_multi_up_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_input_multi_up);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_multi_down_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_multi_down);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_render_async_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_render_async);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_render2_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_render2);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_render2_updates_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_render2_updates);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_focus_out_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_focus_out);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_input_mouse_move_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_input_mouse_move);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_norender_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_norender);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_count_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_count);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_input_multi_down_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_input_multi_down);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_nochange_pop_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_nochange_pop);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_off_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_off);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_nochange_push_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_nochange_push);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_cache_flush_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_cache_flush);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_hinting_can_hint_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_hinting_can_hint);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_object_top_at_xy_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_object_top_at_xy_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_on_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_on);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_up_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_up);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_down_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_down);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_refeed_event_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_refeed_event);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_available_list_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_available_list);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_objects_in_rectangle_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_objects_in_rectangle_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_object_name_find_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_object_name_find);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_path_append_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_path_append);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_nth_id_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_nth_id_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_path_clear_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_path_clear);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_smart_objects_calculate_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_smart_objects_calculate);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_nth_xy_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_nth_xy_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_damage_rectangle_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_damage_rectangle_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_sync_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_sync);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_path_list_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_path_list);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_reload_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_reload);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_coord_world_x_to_screen_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_coord_world_x_to_screen);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_multi_move_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_multi_move);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_render_updates_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_render_updates);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_flush_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_flush);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_coord_screen_y_to_world_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_coord_screen_y_to_world);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_nth_state_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_touch_point_list_nth_state_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_focus_in_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_focus_in);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_obscured_rectangle_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_obscured_rectangle_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_render_dump_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_render_dump);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_in_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_in);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_object_top_in_rectangle_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_object_top_in_rectangle_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_render_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_render);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_multi_up_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_multi_up);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_path_prepend_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_path_prepend);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_obscured_clear_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_obscured_clear);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_cancel_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_mouse_cancel);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_coord_screen_x_to_world_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_coord_screen_x_to_world);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_render_idle_flush_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_render_idle_flush);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_coord_world_y_to_screen_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_coord_world_y_to_screen);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_down_with_keycode_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_down_with_keycode);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_up_with_keycode_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_key_up_with_keycode);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_axis_update_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_feed_axis_update);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_framespace_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_framespace_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_framespace_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_framespace_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_viewport_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_viewport_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_viewport_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_viewport_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_image_cache_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_default_flags_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_default_flags_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_default_flags_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_default_flags_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_method_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_method_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_method_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_method_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_cache_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_cache_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_cache_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_cache_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_output_size_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_output_size_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_data_attach_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_data_attach_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_data_attach_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_data_attach_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_hinting_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_hinting_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_font_hinting_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_font_hinting_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_engine_info_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_engine_info_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_engine_info_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_engine_info_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_focus_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_focus_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_object_top_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_object_top_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_lock_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_pointer_canvas_xy_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_pointer_canvas_xy_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_event_down_count_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_event_down_count_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_smart_objects_calculate_count_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_smart_objects_calculate_count_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_focus_state_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_focus_state_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_changed_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_changed_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_pointer_output_xy_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_pointer_output_xy_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_pointer_inside_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_pointer_inside_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_image_max_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_image_max_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_object_bottom_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_object_bottom_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_key_modifier_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas_pointer_button_down_mask_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas_pointer_button_down_mask_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::eo::base>(), &ops[operation_description_class_size< ::evas::canvas >::value]);

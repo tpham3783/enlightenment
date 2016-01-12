@@ -28,7 +28,7 @@ EAPI const Eo_Class *evas_object_smart_class_get(void) EINA_CONST;
  * If that smart function is not provided for the given object, this flag will
  * be left unchanged.
  *
- * Note: just setting this flag will not make the canvas' whole scene dirty, by
+ * @note just setting this flag will not make the canvas' whole scene dirty, by
  * itself, and evas_render() will have no effect. To force that, use
  * evas_object_smart_changed(), that will also call this function
  * automatically, with @c true as parameter.
@@ -41,13 +41,13 @@ EAPI const Eo_Class *evas_object_smart_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_need_recalculate_set(Eina_Bool value);
+EOAPI void evas_obj_smart_need_recalculate_set(Eina_Bool value);
 
 /**
  * @brief Get the value of the flag signalling that a given smart object needs
  * to get recalculated.
  *
- * Note: this flag will be unset during the rendering phase, when the
+ * @note this flag will be unset during the rendering phase, when the
  * @c calculate() smart function is called, if one is provided. If it's not
  * provided, then the flag will be left unchanged after the rendering phase.
  *
@@ -57,7 +57,7 @@ EOAPI void  evas_obj_smart_need_recalculate_set(Eina_Bool value);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI Eina_Bool  evas_obj_smart_need_recalculate_get(void);
+EOAPI Eina_Bool evas_obj_smart_need_recalculate_get(void);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -66,7 +66,7 @@ EOAPI Eina_Bool  evas_obj_smart_need_recalculate_get(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_clip_set(Evas_Object *clip);
+EOAPI void evas_obj_smart_clip_set(Evas_Object *clip);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -78,7 +78,7 @@ EOAPI void  evas_obj_smart_clip_set(Evas_Object *clip);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_color_set(int r, int g, int b, int a);
+EOAPI void evas_obj_smart_color_set(int r, int g, int b, int a);
 
 /**
  * @brief Store a pointer to user data for a given smart object.
@@ -92,7 +92,7 @@ EOAPI void  evas_obj_smart_color_set(int r, int g, int b, int a);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_data_set(void *data);
+EOAPI void evas_obj_smart_data_set(void *data);
 
 /**
  * @brief Retrieves the list of the member objects of a given Evas smart
@@ -112,7 +112,7 @@ EOAPI void  evas_obj_smart_data_set(void *data);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI Eina_List * evas_obj_smart_members_get(void);
+EOAPI Eina_List *evas_obj_smart_members_get(void);
 
 /**
  * @brief Get the @ref Evas_Smart from which @c obj smart object was created.
@@ -121,13 +121,13 @@ EOAPI Eina_List * evas_obj_smart_members_get(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI Evas_Smart * evas_obj_smart_get(void);
+EOAPI Evas_Smart *evas_obj_smart_get(void);
 
 /** No description supplied by the EAPI.
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_show(void);
+EOAPI void evas_obj_smart_show(void);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -136,7 +136,7 @@ EOAPI void  evas_obj_smart_show(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_move(Evas_Coord x, Evas_Coord y);
+EOAPI void evas_obj_smart_move(Evas_Coord x, Evas_Coord y);
 
 /**
  * @brief Set an smart object instance's smart callbacks descriptions.
@@ -150,11 +150,11 @@ EOAPI void  evas_obj_smart_move(Evas_Coord x, Evas_Coord y);
  * evas_object_smart_callbacks_descriptions_get() should handle this case as
  * they wish.
  *
- * Note: Becase @c descriptions must be @c null terminated, and because a
+ * @note Becase @c descriptions must be @c null terminated, and because a
  * @c null name makes little sense, too, Evas_Smart_Cb_Description.name must
  * not be @c null.
  *
- * Note: While instance callbacks descriptions are possible, they are not
+ * @note While instance callbacks descriptions are possible, they are not
  * recommended. Use class callbacks descriptions instead as they make you smart
  * object user's life simpler and will use less memory, as descriptions and
  * arrays will be shared among all instances.
@@ -168,7 +168,7 @@ EOAPI void  evas_obj_smart_move(Evas_Coord x, Evas_Coord y);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI Eina_Bool  evas_obj_smart_callbacks_descriptions_set(const Evas_Smart_Cb_Description *descriptions);
+EOAPI Eina_Bool evas_obj_smart_callbacks_descriptions_set(const Evas_Smart_Cb_Description *descriptions);
 
 /**
  * @brief Retrieve an smart object's know smart callback descriptions (both
@@ -180,10 +180,10 @@ EOAPI Eina_Bool  evas_obj_smart_callbacks_descriptions_set(const Evas_Smart_Cb_D
  * class_count and instance_count can be ignored, if the caller wishes so. The
  * terminator @c null is not counted in these values.
  *
- * Note: If just class descriptions are of interest, try
+ * @note If just class descriptions are of interest, try
  * evas_smart_callbacks_descriptions_get() instead.
  *
- * Note: Use @c null pointers on the descriptions/counters you're not
+ * @note Use @c null pointers on the descriptions/counters you're not
  * interested in: they'll be ignored by the function.
  *
  * @ref evas_smart_callbacks_descriptions_get().
@@ -198,7 +198,7 @@ EOAPI Eina_Bool  evas_obj_smart_callbacks_descriptions_set(const Evas_Smart_Cb_D
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_callbacks_descriptions_get(const Evas_Smart_Cb_Description ***class_descriptions, unsigned int *class_count, const Evas_Smart_Cb_Description ***instance_descriptions, unsigned int *instance_count);
+EOAPI void evas_obj_smart_callbacks_descriptions_get(const Evas_Smart_Cb_Description ***class_descriptions, unsigned int *class_count, const Evas_Smart_Cb_Description ***instance_descriptions, unsigned int *instance_count);
 
 /**
  * @brief Retrieves an iterator of the member objects of a given Evas smart
@@ -212,7 +212,7 @@ EOAPI void  evas_obj_smart_callbacks_descriptions_get(const Evas_Smart_Cb_Descri
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI Eina_Iterator * evas_obj_smart_iterator_new(void);
+EOAPI Eina_Iterator *evas_obj_smart_iterator_new(void);
 
 /**
  * @brief Find callback description for callback called name or @c null if not
@@ -227,13 +227,13 @@ EOAPI Eina_Iterator * evas_obj_smart_iterator_new(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_callback_description_find(const char *name, const Evas_Smart_Cb_Description **class_description, const Evas_Smart_Cb_Description **instance_description);
+EOAPI void evas_obj_smart_callback_description_find(const char *name, const Evas_Smart_Cb_Description **class_description, const Evas_Smart_Cb_Description **instance_description);
 
 /** No description supplied by the EAPI.
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_hide(void);
+EOAPI void evas_obj_smart_hide(void);
 
 /**
  * @brief Call the calculate() smart function immediately on a given smart
@@ -247,7 +247,7 @@ EOAPI void  evas_obj_smart_hide(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_calculate(void);
+EOAPI void evas_obj_smart_calculate(void);
 
 /**
  * @brief Instantiates a new smart object described by @c s.
@@ -259,7 +259,7 @@ EOAPI void  evas_obj_smart_calculate(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_add(void);
+EOAPI void evas_obj_smart_add(void);
 
 /**
  * @brief Set an Evas object as a member of a given smart object.
@@ -278,7 +278,7 @@ EOAPI void  evas_obj_smart_add(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_member_add(Evas_Object *sub_obj);
+EOAPI void evas_obj_smart_member_add(Evas_Object *sub_obj);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -287,13 +287,13 @@ EOAPI void  evas_obj_smart_member_add(Evas_Object *sub_obj);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_resize(Evas_Coord w, Evas_Coord h);
+EOAPI void evas_obj_smart_resize(Evas_Coord w, Evas_Coord h);
 
 /** No description supplied by the EAPI.
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_clip_unset(void);
+EOAPI void evas_obj_smart_clip_unset(void);
 
 /**
  * @brief Mark smart object as changed, dirty.
@@ -307,7 +307,7 @@ EOAPI void  evas_obj_smart_clip_unset(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_changed(void);
+EOAPI void evas_obj_smart_changed(void);
 
 /**
  * @brief Removes a member object from a given smart object.
@@ -322,13 +322,13 @@ EOAPI void  evas_obj_smart_changed(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_member_del(Evas_Object *sub_obj);
+EOAPI void evas_obj_smart_member_del(Evas_Object *sub_obj);
 
 /** Deletes a smart object.
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_del(void);
+EOAPI void evas_obj_smart_del(void);
 
 /**
  * @brief Attach a given smart data to a given smart object.
@@ -337,7 +337,7 @@ EOAPI void  evas_obj_smart_del(void);
  *
  * @ingroup Evas_Object_Smart
  */
-EOAPI void  evas_obj_smart_attach(Evas_Smart *s);
+EOAPI void evas_obj_smart_attach(Evas_Smart *s);
 
 
 #endif

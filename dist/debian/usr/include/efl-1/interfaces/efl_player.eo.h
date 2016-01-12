@@ -24,7 +24,7 @@ EAPI const Eo_Class *efl_player_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Player
  */
-EOAPI Eina_Bool  efl_player_playable_get(void);
+EOAPI Eina_Bool efl_player_playable_get(void);
 
 /**
  * @brief Set play/pause state of the media file.
@@ -36,7 +36,7 @@ EOAPI Eina_Bool  efl_player_playable_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI void  efl_player_play_set(Eina_Bool play);
+EOAPI void efl_player_play_set(Eina_Bool play);
 
 /**
  * @brief Get play/pause state of the media file.
@@ -45,7 +45,7 @@ EOAPI void  efl_player_play_set(Eina_Bool play);
  *
  * @ingroup Efl_Player
  */
-EOAPI Eina_Bool  efl_player_play_get(void);
+EOAPI Eina_Bool efl_player_play_get(void);
 
 /**
  * @brief Set the position in the media file.
@@ -58,7 +58,7 @@ EOAPI Eina_Bool  efl_player_play_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI void  efl_player_position_set(double sec);
+EOAPI void efl_player_position_set(double sec);
 
 /**
  * @brief Get the position in the media file.
@@ -70,7 +70,7 @@ EOAPI void  efl_player_position_set(double sec);
  *
  * @ingroup Efl_Player
  */
-EOAPI double  efl_player_position_get(void);
+EOAPI double efl_player_position_get(void);
 
 /**
  * @brief Get how much of the file has been played.
@@ -82,7 +82,7 @@ EOAPI double  efl_player_position_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI double  efl_player_progress_get(void);
+EOAPI double efl_player_progress_get(void);
 
 /**
  * @brief Control the play speed of the media file.
@@ -94,7 +94,7 @@ EOAPI double  efl_player_progress_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI void  efl_player_play_speed_set(double speed);
+EOAPI void efl_player_play_speed_set(double speed);
 
 /**
  * @brief Control the play speed of the media file.
@@ -106,7 +106,7 @@ EOAPI void  efl_player_play_speed_set(double speed);
  *
  * @ingroup Efl_Player
  */
-EOAPI double  efl_player_play_speed_get(void);
+EOAPI double efl_player_play_speed_get(void);
 
 /**
  * @brief Control the audio volume.
@@ -120,7 +120,7 @@ EOAPI double  efl_player_play_speed_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI void  efl_player_audio_volume_set(double volume);
+EOAPI void efl_player_audio_volume_set(double volume);
 
 /**
  * @brief Control the audio volume.
@@ -134,7 +134,7 @@ EOAPI void  efl_player_audio_volume_set(double volume);
  *
  * @ingroup Efl_Player
  */
-EOAPI double  efl_player_audio_volume_get(void);
+EOAPI double efl_player_audio_volume_get(void);
 
 /**
  * @brief This property controls the audio mute state.
@@ -143,7 +143,7 @@ EOAPI double  efl_player_audio_volume_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI void  efl_player_audio_mute_set(Eina_Bool mute);
+EOAPI void efl_player_audio_mute_set(Eina_Bool mute);
 
 /**
  * @brief This property controls the audio mute state.
@@ -152,7 +152,7 @@ EOAPI void  efl_player_audio_mute_set(Eina_Bool mute);
  *
  * @ingroup Efl_Player
  */
-EOAPI Eina_Bool  efl_player_audio_mute_get(void);
+EOAPI Eina_Bool efl_player_audio_mute_get(void);
 
 /**
  * @brief Get the length of play for the media file.
@@ -161,7 +161,7 @@ EOAPI Eina_Bool  efl_player_audio_mute_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI double  efl_player_length_get(void);
+EOAPI double efl_player_length_get(void);
 
 /**
  * @brief Get whether the media file is seekable.
@@ -170,7 +170,7 @@ EOAPI double  efl_player_length_get(void);
  *
  * @ingroup Efl_Player
  */
-EOAPI Eina_Bool  efl_player_seekable_get(void);
+EOAPI Eina_Bool efl_player_seekable_get(void);
 
 
 #endif

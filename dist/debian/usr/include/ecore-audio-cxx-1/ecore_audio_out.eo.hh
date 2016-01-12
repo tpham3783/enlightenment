@@ -15,7 +15,7 @@ extern "C"
 }
 
 #include "ecore_audio.eo.hh"
-#include <eo_concrete.hh>
+#include <ecore_audio_in.eo.hh>
 
 struct ecore_audio_out;
 
@@ -26,13 +26,13 @@ struct ecore_audio_out
 {
    /// @param input 
    ///
-   bool input_attach(::efl::eo::concrete input_) const;
+   bool input_attach(::ecore_audio_in input_) const;
 
    /// @param input 
    ///
-   bool input_detach(::efl::eo::concrete input_) const;
+   bool input_detach(::ecore_audio_in input_) const;
 
-   ::efl::eina::range_list< ::efl::eo::concrete > inputs_get() const;
+   ::efl::eina::range_list< ::ecore_audio_in > inputs_get() const;
 
 
 
@@ -130,13 +130,13 @@ struct ecore_audio_out
 
    /// @param input 
    ///
-   bool input_attach(::efl::eo::concrete input_) const;
+   bool input_attach(::ecore_audio_in input_) const;
 
    /// @param input 
    ///
-   bool input_detach(::efl::eo::concrete input_) const;
+   bool input_detach(::ecore_audio_in input_) const;
 
-   ::efl::eina::range_list< ::efl::eo::concrete > inputs_get() const;
+   ::efl::eina::range_list< ::ecore_audio_in > inputs_get() const;
 
    template <typename F>
    ::efl::eo::signal_connection

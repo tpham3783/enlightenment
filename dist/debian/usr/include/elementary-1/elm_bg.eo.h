@@ -50,20 +50,18 @@ EAPI const Eo_Class *elm_bg_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Bg
  */
-EOAPI void  elm_obj_bg_option_set(Elm_Bg_Option option);
+EOAPI void elm_obj_bg_option_set(Elm_Bg_Option option);
 
 /**
  * @brief Get the mode of display for a given background widget's image.
  *
  * See also @ref elm_obj_bg_option_set for more details
  *
- * 
- *
  * @return The desired background option(See @ref Elm_Bg_Option)
  *
  * @ingroup Elm_Bg
  */
-EOAPI Elm_Bg_Option  elm_obj_bg_option_get(void);
+EOAPI Elm_Bg_Option elm_obj_bg_option_get(void);
 
 /**
  * @brief Set the color on a given background widget
@@ -71,14 +69,12 @@ EOAPI Elm_Bg_Option  elm_obj_bg_option_get(void);
  * This sets the color used for the background rectangle, in RGB format. Each
  * color component's range is from 0 to 255.
  *
- * Note: You probably only want to use this function if you haven't previously
+ * @note You probably only want to use this function if you haven't previously
  * called @ref efl_file_set, so that you just want a solid color background.
  *
- * Note: You can reset the color by setting @c r, @c g, @c b as -1, -1, -1.
+ * @note You can reset the color by setting @c r, @c g, @c b as -1, -1, -1.
  *
  * See also @ref elm_obj_bg_color_get
- *
- * 
  *
  * @param[in] r The red color component's value
  * @param[in] g The green color component's value
@@ -87,17 +83,15 @@ EOAPI Elm_Bg_Option  elm_obj_bg_option_get(void);
  *
  * @ingroup Elm_Bg
  */
-EOAPI void  elm_obj_bg_color_set(int r, int g, int b, int a);
+EOAPI void elm_obj_bg_color_set(int r, int g, int b, int a);
 
 /**
  * @brief Get the color set on a given background widget
  *
- * Note: Use @c null pointers on the file components you're not interested in:
+ * @note Use @c null pointers on the file components you're not interested in:
  * they'll be ignored by the function.
  *
  * See also @ref elm_obj_bg_color_get for more details
- *
- * 
  *
  * @param[out] r The red color component's value
  * @param[out] g The green color component's value
@@ -106,13 +100,13 @@ EOAPI void  elm_obj_bg_color_set(int r, int g, int b, int a);
  *
  * @ingroup Elm_Bg
  */
-EOAPI void  elm_obj_bg_color_get(int *r, int *g, int *b, int *a);
+EOAPI void elm_obj_bg_color_get(int *r, int *g, int *b, int *a);
 
 /**
  * @brief Set the size of the pixmap representation of the image set on a given
  * background widget.
  *
- * Warning: This function just makes sense if an image file was set on @c obj,
+ * @warning This function just makes sense if an image file was set on @c obj,
  * with @ref efl_file_set
  *
  * This function sets a new size for pixmap representation of the given bg
@@ -120,18 +114,16 @@ EOAPI void  elm_obj_bg_color_get(int *r, int *g, int *b, int *a);
  * reducing the memory usage and load time (for example, when loading a big
  * image file with its load size set to a smaller size)
  *
- * Note: This is just a hint for the underlying system. The real size of the
+ * @note This is just a hint for the underlying system. The real size of the
  * pixmap may differ depending on the type of image being loaded, being bigger
  * than requested.
- *
- * 
  *
  * @param[in] w The new width of the image pixmap representation.
  * @param[in] h The new height of the image pixmap representation.
  *
  * @ingroup Elm_Bg
  */
-EOAPI void  elm_obj_bg_load_size_set(Evas_Coord w, Evas_Coord h);
+EOAPI void elm_obj_bg_load_size_set(Evas_Coord w, Evas_Coord h);
 
 
 #endif

@@ -248,44 +248,32 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::canvas3d::ca
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_matrix_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_matrix_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_matrix_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_matrix_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_perspective_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_perspective_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_frustum_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_frustum_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_ortho_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_projection_ortho_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_node_visible_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_camera_node_visible_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::canvas3d::object>(), &ops[operation_description_class_size< ::evas::canvas3d::camera >::value]);

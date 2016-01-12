@@ -29,8 +29,6 @@ EOAPI extern const Eo_Event_Description _ELM_MAP_PAN_EVENT_NAME_LOADED;
 EOAPI extern const Eo_Event_Description _ELM_MAP_PAN_EVENT_NAME_LOADED_FAIL;
 EOAPI extern const Eo_Event_Description _ELM_MAP_PAN_EVENT_OVERLAY_CLICKED;
 EOAPI extern const Eo_Event_Description _ELM_MAP_PAN_EVENT_OVERLAY_DEL;
-EOAPI extern const Eo_Event_Description _ELM_MAP_PAN_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_MAP_PAN_EVENT_ACCESS_CHANGED;
 
 /**
  * No description
@@ -91,15 +89,5 @@ EOAPI extern const Eo_Event_Description _ELM_MAP_PAN_EVENT_ACCESS_CHANGED;
  * No description
  */
 #define ELM_MAP_PAN_EVENT_OVERLAY_DEL (&(_ELM_MAP_PAN_EVENT_OVERLAY_DEL))
-
-/**
- * No description
- */
-#define ELM_MAP_PAN_EVENT_LANGUAGE_CHANGED (&(_ELM_MAP_PAN_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_MAP_PAN_EVENT_ACCESS_CHANGED (&(_ELM_MAP_PAN_EVENT_ACCESS_CHANGED))
 
 #endif

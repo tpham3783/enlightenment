@@ -26,7 +26,7 @@ EAPI const Eo_Class *elm_radio_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Radio
  */
-EOAPI void  elm_obj_radio_state_value_set(int value);
+EOAPI void elm_obj_radio_state_value_set(int value);
 
 /**
  * @brief Get the integer value that this radio object represents
@@ -37,7 +37,7 @@ EOAPI void  elm_obj_radio_state_value_set(int value);
  *
  * @ingroup Elm_Radio
  */
-EOAPI int  elm_obj_radio_state_value_get(void);
+EOAPI int elm_obj_radio_state_value_get(void);
 
 /**
  * @brief Set the value of the radio group.
@@ -49,7 +49,7 @@ EOAPI int  elm_obj_radio_state_value_get(void);
  *
  * @ingroup Elm_Radio
  */
-EOAPI void  elm_obj_radio_value_set(int value);
+EOAPI void elm_obj_radio_value_set(int value);
 
 /**
  * @brief Get the value of the radio group
@@ -58,7 +58,7 @@ EOAPI void  elm_obj_radio_value_set(int value);
  *
  * @ingroup Elm_Radio
  */
-EOAPI int  elm_obj_radio_value_get(void);
+EOAPI int elm_obj_radio_value_get(void);
 
 /**
  * @brief Set a convenience pointer to a integer to change when radio group
@@ -75,7 +75,7 @@ EOAPI int  elm_obj_radio_value_get(void);
  *
  * @ingroup Elm_Radio
  */
-EOAPI void  elm_obj_radio_value_pointer_set(int *valuep);
+EOAPI void elm_obj_radio_value_pointer_set(int *valuep);
 
 /**
  * @brief Get the selected radio object.
@@ -84,7 +84,7 @@ EOAPI void  elm_obj_radio_value_pointer_set(int *valuep);
  *
  * @ingroup Elm_Radio
  */
-EOAPI Evas_Object * elm_obj_radio_selected_object_get(void);
+EOAPI Evas_Object *elm_obj_radio_selected_object_get(void);
 
 /**
  * @brief Add this radio to a group of other radio objects
@@ -98,25 +98,13 @@ EOAPI Evas_Object * elm_obj_radio_selected_object_get(void);
  *
  * @ingroup Elm_Radio
  */
-EOAPI void  elm_obj_radio_group_add(Elm_Radio *group);
+EOAPI void elm_obj_radio_group_add(Elm_Radio *group);
 
 EOAPI extern const Eo_Event_Description _ELM_RADIO_EVENT_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_RADIO_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_RADIO_EVENT_ACCESS_CHANGED;
 
 /**
  * No description
  */
 #define ELM_RADIO_EVENT_CHANGED (&(_ELM_RADIO_EVENT_CHANGED))
-
-/**
- * No description
- */
-#define ELM_RADIO_EVENT_LANGUAGE_CHANGED (&(_ELM_RADIO_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_RADIO_EVENT_ACCESS_CHANGED (&(_ELM_RADIO_EVENT_ACCESS_CHANGED))
 
 #endif

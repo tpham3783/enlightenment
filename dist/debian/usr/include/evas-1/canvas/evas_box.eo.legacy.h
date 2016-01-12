@@ -24,7 +24,7 @@ typedef Eo Evas_Box;
  * the left, with $1.0 meaning to the right. For vertical alignment, $0.0 means
  * to the top, with $1.0 meaning to the bottom.
  *
- * Note: The default values for both alignments is $0.5.
+ * @note The default values for both alignments is $0.5.
  *
  * See also @ref evas_object_box_align_get.
  *
@@ -51,7 +51,7 @@ EAPI void evas_object_box_align_get(const Evas_Box *obj, double *horizontal, dou
 /**
  * @brief Set the (space) padding between cells set for a given box object.
  *
- * Note: The default values for both padding components is $0.
+ * @note The default values for both padding components is $0.
  *
  * See also @ref evas_object_box_padding_get.
  *
@@ -91,7 +91,7 @@ EAPI void evas_object_box_padding_get(const Evas_Box *obj, Evas_Coord *horizonta
  *
  * Refer to each of their documentation texts for details on them.
  *
- * Note: A box layouting function will be triggered by the $'calculate' smart
+ * @note A box layouting function will be triggered by the $'calculate' smart
  * callback of the box's smart class.
  *
  * @param[in] cb The new layout function to set on @c o.
@@ -226,12 +226,12 @@ EAPI void evas_object_box_layout_flow_vertical(Evas_Box *obj, Evas_Object_Box_Da
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: This function will fail if @c reference is not a member of @c o.
+ * @note This function will fail if @c reference is not a member of @c o.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.insert_after
+ * @note This call will trigger the box's _Evas_Object_Box_Api.insert_after
  * smart function.
  *
  * @param[in] reference The child object to place this new one after.
@@ -261,7 +261,7 @@ EAPI Eina_Bool evas_object_box_remove_all(Evas_Box *obj, Eina_Bool clear);
 /**
  * @brief Get an iterator to walk the list of children of a given box object.
  *
- * Note: Do not remove or delete objects while walking the list.
+ * @note Do not remove or delete objects while walking the list.
  *
  * @return An iterator on @c o's child objects, on success, or @c null, on
  * errors.
@@ -287,11 +287,11 @@ EAPI Evas_Object *evas_object_box_add_to(Evas_Box *obj) EINA_WARN_UNUSED_RESULT;
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it. For example, on horizontal layouts an item in the end
  * of the box's list of children will appear on its right.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.append smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.append smart
  * function.
  *
  * @param[in] child A child Evas object to be made a member of @c o.
@@ -307,7 +307,7 @@ EAPI Evas_Object_Box_Option *evas_object_box_append(Evas_Box *obj, Evas_Object *
  * @brief Get the numerical identifier of the property of the child elements of
  * the box o which have name as name string
  *
- * Note: This call won't do anything for a canonical Evas box. Only users which
+ * @note This call won't do anything for a canonical Evas box. Only users which
  * have subclassed it, setting custom box items options (see
  * #Evas_Object_Box_Option) on it, would benefit from this function. They'd
  * have to implement it and set it to be the
@@ -327,11 +327,11 @@ EAPI int evas_object_box_option_property_id_get(const Evas_Box *obj, const char 
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it. For example, on horizontal layouts an item in the
  * beginning of the box's list of children will appear on its left.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.prepend smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.prepend smart
  * function.
  *
  * @param[in] child A child Evas object to be made a member of @c o.
@@ -347,7 +347,7 @@ EAPI Evas_Object_Box_Option *evas_object_box_prepend(Evas_Box *obj, Evas_Object 
  * @brief Get an accessor (a structure providing random items access) to the
  * list of children of a given box object.
  *
- * Note: Do not remove or delete objects while walking the list.
+ * @note Do not remove or delete objects while walking the list.
  *
  * @return An accessor on @c o's child objects, on success, or @c null, on
  * errors.
@@ -365,10 +365,10 @@ EAPI Eina_Accessor *evas_object_box_accessor_new(const Evas_Box *obj) EINA_WARN_
  * automatically for you and, also, the $"child,removed" smart event will take
  * place.
  *
- * Note: This function will fail if the given position is invalid, given @c o's
+ * @note This function will fail if the given position is invalid, given @c o's
  * internal list of elements.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.remove_at smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.remove_at smart
  * function.
  *
  * @param[in] pos The numeric position (starting from $0) of the child object
@@ -386,12 +386,12 @@ EAPI Eina_Bool evas_object_box_remove_at(Evas_Box *obj, unsigned int pos);
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: This function will fail if @c reference is not a member of @c o.
+ * @note This function will fail if @c reference is not a member of @c o.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.insert_before
+ * @note This call will trigger the box's _Evas_Object_Box_Api.insert_before
  * smart function.
  *
  * @param[in] reference The child object to place this new one before.
@@ -407,7 +407,7 @@ EAPI Evas_Object_Box_Option *evas_object_box_insert_before(Evas_Box *obj, Evas_O
  * @brief Get the name of the property of the child elements of the box o which
  * have id as identifier
  *
- * Note: This call won't do anything for a canonical Evas box. Only users which
+ * @note This call won't do anything for a canonical Evas box. Only users which
  * have subclassed it, setting custom box items options (see
  * #Evas_Object_Box_Option) on it, would benefit from this function. They'd
  * have to implement it and set it to be the
@@ -478,13 +478,13 @@ EAPI void evas_object_box_layout_homogeneous_max_size_vertical(Evas_Box *obj, Ev
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: This function will fail if the given position is invalid, given @c o's
+ * @note This function will fail if the given position is invalid, given @c o's
  * internal list of elements.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.insert_at smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.insert_at smart
  * function.
  *
  * @param[in] pos The numeric position (starting from $0) to place the new
@@ -505,7 +505,7 @@ EAPI Evas_Object_Box_Option *evas_object_box_insert_at(Evas_Box *obj, Evas_Objec
  * callback will be called automatically for you and, also, the
  * $"child,removed" smart event will take place.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.remove smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.remove smart
  * function.
  *
  * @param[in] child The handle to the child object to be removed.

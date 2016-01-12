@@ -9,8 +9,8 @@ eolian_flags=-I${pc_sysrootdir}${eoincludedir}/evas-1
 
 Name: evas
 Description: Evas C++ bindings
-Requires.private: libpng >= 1.2.10 fribidi >= 0.19.2 fontconfig >= 2.5.0 freetype2 >= 9.3.0 ector >= 1.15.0-beta2 emile >= 1.15.0-beta2 efl >= 1.15.0-beta2 eina >= 1.15.0-beta2 eet >= 1.15.0-beta2 eo >= 1.15.0-beta2 luajit >= 2.0.0  
-Version: 1.15.0-beta2
+Requires.private: libpng >= 1.2.10 fribidi >= 0.19.2 fontconfig >= 2.5.0 freetype2 >= 9.3.0 ector >= 1.17.0-beta1 emile >= 1.17.0-beta1 efl >= 1.17.0-beta1 eina >= 1.17.0-beta1 eet >= 1.17.0-beta1 eo >= 1.17.0-beta1 luajit >= 2.0.0  
+Version: 1.17.0-beta1
 Libs: -L${libdir} -levas
 Libs.private: -ljpeg  -ldl -lm  -lrt
 Cflags: -I${includedir}/efl-1 -I${includedir}/evas-1 -I${includedir}/evas-cxx-1 -I${includedir}/evas-cxx-1/canvas -I${includedir}/evas-1/canvas

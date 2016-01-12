@@ -8,7 +8,7 @@
 dlname='libecore_file.so.1'
 
 # Names of this library.
-library_names='libecore_file.so.1.15.0 libecore_file.so.1 libecore_file.so'
+library_names='libecore_file.so.1.17.0 libecore_file.so.1 libecore_file.so'
 
 # The name of the static archive.
 old_library=''
@@ -23,8 +23,8 @@ dependency_libs=' /usr/local/src/enlightenment.source.repo/dist/debian/usr/lib/l
 weak_library_names=''
 
 # Version information for libecore_file.
-current=16
-age=15
+current=18
+age=17
 revision=0
 
 # Is this an already installed library?

@@ -8,7 +8,7 @@
 dlname='libethumb.so.1'
 
 # Names of this library.
-library_names='libethumb.so.1.15.0 libethumb.so.1 libethumb.so'
+library_names='libethumb.so.1.17.0 libethumb.so.1 libethumb.so'
 
 # The name of the static archive.
 old_library=''
@@ -23,8 +23,8 @@ dependency_libs=' -L/usr/lib/i386-linux-gnu /usr/local/src/enlightenment.source.
 weak_library_names=''
 
 # Version information for libethumb.
-current=16
-age=15
+current=18
+age=17
 revision=0
 
 # Is this an already installed library?

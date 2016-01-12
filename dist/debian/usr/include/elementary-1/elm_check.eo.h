@@ -28,7 +28,7 @@ EAPI const Eo_Class *elm_check_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Check
  */
-EOAPI void  elm_obj_check_state_set(Eina_Bool state);
+EOAPI void elm_obj_check_state_set(Eina_Bool state);
 
 /**
  * @brief Get the state of the check object
@@ -37,7 +37,7 @@ EOAPI void  elm_obj_check_state_set(Eina_Bool state);
  *
  * @ingroup Elm_Check
  */
-EOAPI Eina_Bool  elm_obj_check_state_get(void);
+EOAPI Eina_Bool elm_obj_check_state_get(void);
 
 /**
  * @brief Set a convenience pointer to a boolean to change
@@ -53,25 +53,13 @@ EOAPI Eina_Bool  elm_obj_check_state_get(void);
  *
  * @ingroup Elm_Check
  */
-EOAPI void  elm_obj_check_state_pointer_set(Eina_Bool *statep);
+EOAPI void elm_obj_check_state_pointer_set(Eina_Bool *statep);
 
 EOAPI extern const Eo_Event_Description _ELM_CHECK_EVENT_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_CHECK_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_CHECK_EVENT_ACCESS_CHANGED;
 
 /**
  * No description
  */
 #define ELM_CHECK_EVENT_CHANGED (&(_ELM_CHECK_EVENT_CHANGED))
-
-/**
- * No description
- */
-#define ELM_CHECK_EVENT_LANGUAGE_CHANGED (&(_ELM_CHECK_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_CHECK_EVENT_ACCESS_CHANGED (&(_ELM_CHECK_EVENT_ACCESS_CHANGED))
 
 #endif

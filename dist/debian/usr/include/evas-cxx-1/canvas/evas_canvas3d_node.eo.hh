@@ -47,6 +47,8 @@ struct node
 
    ::efl::eina::crange_list< ::evas::canvas3d::node > member_list_get() const;
 
+   Eina_Hash * scene_root_get() const;
+
    /// @param x 
    /// @param y 
    /// @param z 
@@ -301,6 +303,8 @@ struct node
    ::evas::canvas3d::node parent_get() const;
 
    ::efl::eina::crange_list< ::evas::canvas3d::node > member_list_get() const;
+
+   Eina_Hash * scene_root_get() const;
 
    /// @param x 
    /// @param y 

@@ -24,13 +24,13 @@ EAPI const Eo_Class *evas_polygon_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Polygon
  */
-EOAPI void  evas_obj_polygon_point_add(Evas_Coord x, Evas_Coord y);
+EOAPI void evas_obj_polygon_point_add(Evas_Coord x, Evas_Coord y);
 
 /** Removes all of the points from the given evas polygon object.
  *
  * @ingroup Evas_Polygon
  */
-EOAPI void  evas_obj_polygon_points_clear(void);
+EOAPI void evas_obj_polygon_points_clear(void);
 
 
 #endif

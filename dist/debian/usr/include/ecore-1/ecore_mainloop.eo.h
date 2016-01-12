@@ -17,44 +17,19 @@ typedef Eo Ecore_Mainloop;
 
 EAPI const Eo_Class *ecore_mainloop_class_get(void) EINA_CONST;
 
-/**
- * No description supplied.
- *
- * @param[in] select_func No description supplied.
- */
-EOAPI void  ecore_mainloop_select_func_set(Ecore_Select_Function select_func);
+EOAPI void ecore_mainloop_select_func_set(Ecore_Select_Function select_func);
 
-/**
- * No description supplied.
- */
-EOAPI Ecore_Select_Function  ecore_mainloop_select_func_get(void);
+EOAPI Ecore_Select_Function ecore_mainloop_select_func_get(void);
 
-/**
- * No description supplied.
- */
-EOAPI void  ecore_mainloop_iterate(void);
+EOAPI void ecore_mainloop_iterate(void);
 
-/**
- * No description supplied.
- *
- * @param[in] may_block No description supplied.
- */
-EOAPI int  ecore_mainloop_iterate_may_block(int may_block);
+EOAPI int ecore_mainloop_iterate_may_block(int may_block);
 
-/**
- * No description supplied.
- */
-EOAPI void  ecore_mainloop_begin(void);
+EOAPI void ecore_mainloop_begin(void);
 
-/**
- * No description supplied.
- */
-EOAPI void  ecore_mainloop_quit(void);
+EOAPI void ecore_mainloop_quit(void);
 
-/**
- * No description supplied.
- */
-EOAPI Eina_Bool  ecore_mainloop_animator_ticked(void);
+EOAPI Eina_Bool ecore_mainloop_animator_ticked(void);
 
 EOAPI extern const Eo_Event_Description _ECORE_MAINLOOP_EVENT_IDLE_ENTER;
 EOAPI extern const Eo_Event_Description _ECORE_MAINLOOP_EVENT_IDLE_EXIT;

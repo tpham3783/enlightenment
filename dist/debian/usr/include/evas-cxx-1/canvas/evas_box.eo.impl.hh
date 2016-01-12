@@ -1415,268 +1415,192 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::box>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_horizontal_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_horizontal);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_vertical_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_vertical);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_homogeneous_max_size_horizontal_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_homogeneous_max_size_horizontal);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_remove_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_remove);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_flow_vertical_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_flow_vertical);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_option_free_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_option_free);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_insert_after_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_insert_after);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_remove_all_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_remove_all);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_iterator_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_iterator_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_add_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_add_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_append_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_append);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_option_property_id_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_option_property_id_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_prepend_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_prepend);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_accessor_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_accessor_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_append_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_append);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_option_property_vset_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_option_property_vset);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_remove_at_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_remove_at);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_remove_at_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_remove_at);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_option_property_vget_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_option_property_vget);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_insert_at_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_insert_at);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_insert_before_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_insert_before);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_option_property_name_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_option_property_name_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_insert_before_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_insert_before);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_homogeneous_horizontal_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_homogeneous_horizontal);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_option_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_option_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_homogeneous_max_size_vertical_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_homogeneous_max_size_vertical);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_insert_after_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_insert_after);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_insert_at_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_insert_at);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_internal_prepend_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_internal_prepend);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_remove_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_remove);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_stack_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_stack);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_homogeneous_vertical_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_homogeneous_vertical);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_flow_horizontal_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_flow_horizontal);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_align_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_align_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_align_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_align_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_padding_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_padding_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_padding_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_padding_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_box_layout_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_box_layout_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::smart_clipped>(), &ops[operation_description_class_size< ::evas::box >::value]);

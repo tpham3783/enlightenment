@@ -5,8 +5,8 @@ includedir=${prefix}/include
 
 Name: ecore-audio-cxx
 Description: E core library, audio module C++ API
-Requires.private: sndfile libpulse emile >= 1.15.0-beta2 eina >= 1.15.0-beta2 eo >= 1.15.0-beta2 eet >= 1.15.0-beta2 ecore >= 1.15.0-beta2  
-Version: 1.15.0-beta2
+Requires.private: sndfile libpulse emile >= 1.17.0-beta1 eina >= 1.17.0-beta1 eo >= 1.17.0-beta1 eet >= 1.17.0-beta1 ecore >= 1.17.0-beta1  
+Version: 1.17.0-beta1
 Libs: -L${libdir} -lecore_audio
 Libs.private:  -lm
 Cflags: -I${includedir}/efl-1 -I${includedir}/efl-1 -I${includedir}/ecore-audio-1 -I${includedir}/ecore-audio-cxx-1

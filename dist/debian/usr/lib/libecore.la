@@ -8,7 +8,7 @@
 dlname='libecore.so.1'
 
 # Names of this library.
-library_names='libecore.so.1.15.0 libecore.so.1 libecore.so'
+library_names='libecore.so.1.17.0 libecore.so.1 libecore.so'
 
 # The name of the static archive.
 old_library=''
@@ -23,8 +23,8 @@ dependency_libs=' -lgthread-2.0 -lglib-2.0 /usr/local/src/enlightenment.source.r
 weak_library_names=''
 
 # Version information for libecore.
-current=16
-age=15
+current=18
+age=17
 revision=0
 
 # Is this an already installed library?

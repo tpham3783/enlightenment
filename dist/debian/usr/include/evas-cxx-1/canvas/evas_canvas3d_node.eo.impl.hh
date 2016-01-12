@@ -36,6 +36,13 @@ inline ::efl::eina::crange_list< ::evas::canvas3d::node > evas::canvas3d::node::
    return ::efl::eolian::to_cxx<::efl::eina::crange_list< ::evas::canvas3d::node >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
 }
 
+inline Eina_Hash * evas::canvas3d::node::scene_root_get() const
+{
+   Eina_Hash * _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_canvas3d_node_scene_root_get());
+   return _tmp_ret;
+}
+
 inline void evas::canvas3d::node::position_set(Evas_Real x_, Evas_Real y_, Evas_Real z_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_node_position_set(x_, y_, z_));
@@ -216,6 +223,13 @@ inline ::efl::eina::crange_list< ::evas::canvas3d::node > eo_cxx::evas::canvas3d
    const Eina_List * _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_canvas3d_node_member_list_get());
    return ::efl::eolian::to_cxx<::efl::eina::crange_list< ::evas::canvas3d::node >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
+}
+
+inline Eina_Hash * eo_cxx::evas::canvas3d::node::scene_root_get() const
+{
+   Eina_Hash * _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_canvas3d_node_scene_root_get());
+   return _tmp_ret;
 }
 
 inline void eo_cxx::evas::canvas3d::node::position_set(Evas_Real x_, Evas_Real y_, Evas_Real z_) const
@@ -452,6 +466,21 @@ template <typename T>
          eina_error_set( ::efl::eina::unknown_error() );
          const Eina_List * _tmp_ret{};
          return ::efl::eolian::to_cxx<::efl::eina::crange_list< ::evas::canvas3d::node >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
+      }
+}
+
+template <typename T>
+Eina_Hash * evas_canvas3d_node_scene_root_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->scene_root_get();
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Eina_Hash * _tmp_ret{};
+         return _tmp_ret;
       }
 }
 
@@ -878,6 +907,16 @@ struct operations< ::evas::canvas3d::node >
             return ::efl::eolian::to_cxx<::efl::eina::crange_list< ::evas::canvas3d::node >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
       }
 
+      virtual Eina_Hash * scene_root_get()
+      {
+         Eina_Hash * _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::evas_canvas3d_node_scene_root_get());
+            return _tmp_ret;
+      }
+
       virtual void position_set(Evas_Real x_, Evas_Real y_, Evas_Real z_)
       {
 
@@ -1119,13 +1158,13 @@ struct operation_description_class_size< ::evas::canvas3d::node >
 {
    static constexpr int value = 
 #if defined(NODE_PROTECTED) && defined(NODE_BETA)
-      32
+      33
 #elif defined(NODE_PROTECTED)
-      32
+      33
 #elif defined(NODE_BETA)
-      32
+      33
 #else
-      32
+      33
 #endif
       + operation_description_class_size<::evas::canvas3d::object >::value      + operation_description_class_size<::evas::common_interface >::value;
 };
@@ -1139,226 +1178,167 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::canvas3d::no
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_type_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_type_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_member_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_member_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_member_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_member_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_parent_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_parent_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_member_list_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_member_list_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scene_root_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scene_root_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_angle_axis_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_angle_axis_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_look_at_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_look_at_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_list_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_list_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_bounding_box_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_bounding_box_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_bounding_sphere_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_bounding_sphere_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_inherit_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_inherit_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_inherit_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_position_inherit_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_inherit_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_inherit_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_inherit_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_orientation_inherit_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_inherit_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_inherit_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_inherit_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_scale_inherit_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_camera_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_camera_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_camera_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_camera_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_light_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_light_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_light_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_light_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_frame_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_frame_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_frame_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_mesh_frame_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_billboard_target_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_billboard_target_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_node_billboard_target_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_node_billboard_target_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::canvas3d::object>(), &ops[operation_description_class_size< ::evas::canvas3d::node >::value]);

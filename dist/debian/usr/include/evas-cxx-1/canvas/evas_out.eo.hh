@@ -29,20 +29,12 @@ namespace evas {
 
 struct out
 {
-   /// @brief Gets the viewport region of the canvas that the output displays
-   ///
    void view_get(Evas_Coord* x_, Evas_Coord* y_, Evas_Coord* w_, Evas_Coord* h_) const;
 
-   /// @brief Sets the viewport region of the canvas that the output displays This sets both the viewport region in the canvas that displays on the given output, but also the viewport size will match the output resolution 1:1.
-   ///
    void view_set(Evas_Coord x_, Evas_Coord y_, Evas_Coord w_, Evas_Coord h_) const;
 
-   /// @brief Gets the engine specific output parameters for a given output.
-   ///
    Evas_Engine_Info * engine_info_get() const;
 
-   /// @brief Sets the engine specific output parameters for a given output.
-   ///
    bool engine_info_set(Evas_Engine_Info * info_) const;
 
 
@@ -142,20 +134,12 @@ struct out
 
    ~out() {}
 
-   /// @brief Gets the viewport region of the canvas that the output displays
-   ///
    void view_get(Evas_Coord* x_, Evas_Coord* y_, Evas_Coord* w_, Evas_Coord* h_) const;
 
-   /// @brief Sets the viewport region of the canvas that the output displays This sets both the viewport region in the canvas that displays on the given output, but also the viewport size will match the output resolution 1:1.
-   ///
    void view_set(Evas_Coord x_, Evas_Coord y_, Evas_Coord w_, Evas_Coord h_) const;
 
-   /// @brief Gets the engine specific output parameters for a given output.
-   ///
    Evas_Engine_Info * engine_info_get() const;
 
-   /// @brief Sets the engine specific output parameters for a given output.
-   ///
    bool engine_info_set(Evas_Engine_Info * info_) const;
 
    template <typename F>

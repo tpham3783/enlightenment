@@ -264,44 +264,32 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::vg::shape>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_shape_fill_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_shape_fill_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_shape_fill_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_shape_fill_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_fill_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_fill_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_fill_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_fill_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_marker_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_marker_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_marker_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_vg_shape_stroke_marker_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::efl::vg::base>(), &ops[operation_description_class_size< ::efl::vg::shape >::value]);

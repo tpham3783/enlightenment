@@ -40,6 +40,7 @@ ffi.cdef [[
     void evas_canvas3d_node_member_del(Evas_Canvas3D_Node * member);
     Evas_Canvas3D_Node *evas_canvas3d_node_parent_get(void);
     const Eina_List *evas_canvas3d_node_member_list_get(void);
+    Eina_Hash *evas_canvas3d_node_scene_root_get(void);
     void evas_canvas3d_node_position_set(Evas_Real x, Evas_Real y, Evas_Real z);
     void evas_canvas3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Real z, Evas_Real w);
     void evas_canvas3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_Real x, Evas_Real y, Evas_Real z);
@@ -188,6 +189,13 @@ __body = {
     member_list_get = function(self)
         eo.__do_start(self, __class)
         local v = __lib.evas_canvas3d_node_member_list_get()
+        eo.__do_end()
+        return v
+    end,
+
+    scene_root_get = function(self)
+        eo.__do_start(self, __class)
+        local v = __lib.evas_canvas3d_node_scene_root_get()
         eo.__do_end()
         return v
     end,

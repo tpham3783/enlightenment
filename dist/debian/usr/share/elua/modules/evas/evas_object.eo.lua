@@ -74,6 +74,8 @@ ffi.cdef [[
     Evas_Object *evas_obj_smart_parent_get(void);
     void evas_obj_size_hint_display_mode_set(Evas_Display_Mode dispmode);
     Evas_Display_Mode evas_obj_size_hint_display_mode_get(void);
+    void evas_obj_paragraph_direction_set(Evas_BiDi_Direction dir);
+    Evas_BiDi_Direction evas_obj_paragraph_direction_get(void);
     void evas_obj_no_render_set(Eina_Bool enable);
     Eina_Bool evas_obj_no_render_get(void);
     Eina_Bool evas_obj_clipees_has(void);
@@ -482,6 +484,19 @@ __body = {
         return v
     end,
 
+    paragraph_direction_set = function(self, dir)
+        eo.__do_start(self, __class)
+        __lib.evas_obj_paragraph_direction_set(dir)
+        eo.__do_end()
+    end,
+
+    paragraph_direction_get = function(self)
+        eo.__do_start(self, __class)
+        local v = __lib.evas_obj_paragraph_direction_get()
+        eo.__do_end()
+        return v
+    end,
+
     no_render_set = function(self, enable)
         eo.__do_start(self, __class)
         __lib.evas_obj_no_render_set(enable)
@@ -582,6 +597,7 @@ __body = {
         ["propagate_events"] = { 0, 0, 1, 1, true, true },
         ["size_hint_weight"] = { 0, 0, 2, 2, true, true },
         ["no_render"] = { 0, 0, 1, 1, true, true },
+        ["paragraph_direction"] = { 0, 0, 1, 1, true, true },
         ["pass_events"] = { 0, 0, 1, 1, true, true },
         ["static_clip"] = { 0, 0, 1, 1, true, true },
         ["map_enable"] = { 0, 0, 1, 1, true, true },

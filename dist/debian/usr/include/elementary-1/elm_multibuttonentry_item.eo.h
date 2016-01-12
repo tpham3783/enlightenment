@@ -18,40 +18,40 @@ typedef Eo Elm_Multibuttonentry_Item;
 EAPI const Eo_Class *elm_multibuttonentry_item_class_get(void) EINA_CONST;
 
 /**
- * Set the selected state of an item
+ * @brief Control the selected state of an item
  *
- * @ingroup Multibuttonentry
+ * @param[in] selected @c true if selected @c false otherwise
  *
- * @param[in] selected EINA_TRUE if selected EINA_FALSE otherwise
+ * @ingroup Elm_Multibuttonentry_Item
  */
-EOAPI void  elm_obj_multibuttonentry_item_selected_set(Eina_Bool selected);
+EOAPI void elm_obj_multibuttonentry_item_selected_set(Eina_Bool selected);
 
 /**
- * Get the selected state of an item
+ * @brief Control the selected state of an item
  *
- * @ingroup Multibuttonentry
+ * @return @c true if selected @c false otherwise
+ *
+ * @ingroup Elm_Multibuttonentry_Item
  */
-EOAPI Eina_Bool  elm_obj_multibuttonentry_item_selected_get(void);
+EOAPI Eina_Bool elm_obj_multibuttonentry_item_selected_get(void);
 
 /**
- * Get the previous item in the multibuttonentry
+ * @brief Get the previous item in the multibuttonentry
  *
- * @return The item before the item @p it
+ * @return The item before the item
  *
- * @ingroup Multibuttonentry
- * 
+ * @ingroup Elm_Multibuttonentry_Item
  */
-EOAPI Elm_Object_Item * elm_obj_multibuttonentry_item_prev_get(void);
+EOAPI Elm_Widget_Item *elm_obj_multibuttonentry_item_prev_get(void);
 
 /**
- * Get the next item in the multibuttonentry
+ * @brief Get the next item in the multibuttonentry
  *
- * @return The item after the item @p it
+ * @return The item after the item
  *
- * @ingroup Multibuttonentry
- * 
+ * @ingroup Elm_Multibuttonentry_Item
  */
-EOAPI Elm_Object_Item * elm_obj_multibuttonentry_item_next_get(void);
+EOAPI Elm_Widget_Item *elm_obj_multibuttonentry_item_next_get(void);
 
 
 #endif

@@ -29,9 +29,34 @@ typedef Eo Efl_VG_Base;
 EAPI void evas_vg_node_bounds_get(Efl_VG_Base *obj, Eina_Rectangle *r);
 
 /**
+ * @brief Set an unique name from the parent point of view. @c null means no
+ * name.
+ *
+ * @param[in] name
+ *
+ * @since 1.16
+ *
+ * @ingroup Efl_VG_Base
+ */
+EAPI void evas_vg_node_name_set(Efl_VG_Base *obj, const char *name);
+
+/**
+ * @brief Get an unique name from the parent point of view.
+ *
+ * @c null means no name. When set a parent after the name what defined, it
+ * might be forced back to @c null if the parent already has a node of that
+ * name.
+ *
+ * @since 1.16
+ *
+ * @ingroup Efl_VG_Base
+ */
+EAPI const char *evas_vg_node_name_get(const Efl_VG_Base *obj);
+
+/**
  * @brief Sets the transformation matrix to be used for this node object.
  *
- * Note: Pass @c null to cancel the applied transformation.
+ * @note Pass @c null to cancel the applied transformation.
  *
  * @param[in] m transformation matrix.
  *
@@ -77,17 +102,9 @@ EAPI void evas_vg_node_origin_set(Efl_VG_Base *obj, double x, double y);
  * @ingroup Efl_VG_Base
  */
 EAPI void evas_vg_node_origin_get(const Efl_VG_Base *obj, double *x, double *y);
-
-/**
- * No description supplied.
- *
- * @param[in] m No description supplied.
- */
 EAPI void evas_vg_node_mask_set(Efl_VG_Base *obj, Efl_VG *m);
-
-/**
- * No description supplied.
- */
 EAPI Efl_VG *evas_vg_node_mask_get(const Efl_VG_Base *obj);
+EAPI Eina_Bool evas_vg_node_interpolate(Efl_VG_Base *obj, const Efl_VG_Base *from, const Efl_VG_Base *to, double pos_map);
+EAPI void evas_vg_node_dup(Efl_VG_Base *obj, const Efl_VG_Base *from);
 
 #endif

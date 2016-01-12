@@ -21,13 +21,7 @@ EAPI const Eo_Class *elm_atspi_bridge_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Atspi_Bridge
  */
-EOAPI Eina_Bool  elm_obj_atspi_bridge_connected_get(void);
-
-/** Get root object of accessible object hierarchy
- *
- * @ingroup Elm_Atspi_Bridge
- */
-EOAPI Eo * elm_obj_atspi_bridge_root_get(void);
+EOAPI Eina_Bool elm_obj_atspi_bridge_connected_get(void);
 
 EOAPI extern const Eo_Event_Description _ELM_ATSPI_BRIDGE_EVENT_CONNECTED;
 EOAPI extern const Eo_Event_Description _ELM_ATSPI_BRIDGE_EVENT_DISCONNECTED;

@@ -15,624 +15,555 @@ typedef Eo Elm_Web;
 #endif
 
 /**
- * Sets whether to highlight the matched marks
+ * @brief Sets whether to highlight the matched marks.
  *
- * If enabled, marks set with elm_web_text_matches_mark() will be
+ * If enabled, marks set with @ref elm_web_text_matches_mark will be
  * highlighted.
  *
- * @return @c EINA_TRUE on success, @c EINA_FALSE otherwise
+ * @param[in] highlight Whether to highlight the marks or not.
  *
- * @ingroup Web
- *
- * @param[in] highlight Whether to highlight the marks or not
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_text_matches_highlight_set(Elm_Web *obj, Eina_Bool highlight);
 
 /**
- * Get whether highlighting marks is enabled
+ * @brief Get whether highlighting marks is enabled.
  *
- * @return @c EINA_TRUE is marks are set to be highlighted, @c EINA_FALSE
- * otherwise
+ * @return Whether to highlight the marks or not.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_text_matches_highlight_get(const Elm_Web *obj);
 
 /**
- * Change useragent of a elm_web object
+ * @brief Change useragent of a elm_web object.
  *
- * @ingroup Web
+ * @param[in] user_agent String for useragent.
  *
- * @param[in] user_agent String for useragent
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_useragent_set(Elm_Web *obj, const char *user_agent);
 
 /**
- * Return current useragent of elm_web object
+ * @brief Return current useragent of elm_web object.
  *
- * @return Useragent string
+ * @return String for useragent.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI const char *elm_web_useragent_get(const Elm_Web *obj);
 
 /**
- * Sets the URL for the web object
+ * @brief Sets the URL for the web object.
  *
  * It must be a full URL, with resource included, in the form
  * http://www.enlightenment.org or file:///tmp/something.html
  *
- * @return @c EINA_TRUE if the URL could be set, @c EINA_FALSE if an error occurred.
+ * @param[in] url The URL to set.
  *
- * @ingroup Web
- *
- * @param[in] url The URL to set
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_url_set(Elm_Web *obj, const char *url);
 
 /**
- * Get the current URL for the object
+ * @brief Get the current URL for the object.
  *
- * The returned string must not be freed and is guaranteed to be
- * stringshared.
+ * The returned string must not be freed and is guaranteed to be stringshared.
  *
- * @return A stringshared internal string with the current URL, or @c NULL on
- * failure
+ * @return The URL to set.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI const char *elm_web_url_get(const Elm_Web *obj);
 
 /**
- * Sets the background color to be used by the web object
+ * @brief Sets the background color to be used by the web object.
  *
- * This is the color that will be used by default when the loaded page
- * does not set it's own. Color values are pre-multiplied.
+ * This is the color that will be used by default when the loaded page does not
+ * set it's own. Color values are pre-multiplied.
  *
- * @ingroup Web
+ * @param[in] r Red component.
+ * @param[in] g Green component.
+ * @param[in] b Blue component.
+ * @param[in] a Alpha component.
  *
- * @param[in] r Red component
- * @param[in] g Green component
- * @param[in] b Blue component
- * @param[in] a Alpha component
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_bg_color_set(Elm_Web *obj, int r, int g, int b, int a);
 
 /**
- * Get the background color to be used by the web object
+ * @brief Get the background color to be used by the web object.
  *
- * This is the color that will be used by default when the loaded page
- * does not set it's own. Color values are pre-multiplied.
+ * This is the color that will be used by default when the loaded page does not
+ * set it's own. Color values are pre-multiplied.
  *
- * @ingroup Web
+ * @param[out] r Red component.
+ * @param[out] g Green component.
+ * @param[out] b Blue component.
+ * @param[out] a Alpha component.
  *
- * @param[out] r Red component
- * @param[out] g Green component
- * @param[out] b Blue component
- * @param[out] a Alpha component
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_bg_color_get(const Elm_Web *obj, int *r, int *g, int *b, int *a);
 
 /**
- * Sets the default dialogs to use an Inwin instead of a normal window
+ * @brief Sets the default dialogs to use an Inwin instead of a normal window.
  *
- * If set, then the default implementation for the JavaScript dialogs and
- * file selector will be opened in an Inwin. Otherwise they will use a
- * normal separated window.
+ * If set, then the default implementation for the JavaScript dialogs and file
+ * selector will be opened in an Inwin. Otherwise they will use a normal
+ * separated window.
  *
- * @ingroup Web
+ * @param[in] value
  *
- * @param[in] value @c EINA_TRUE to use Inwin, @c EINA_FALSE to use a normal window
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_inwin_mode_set(Elm_Web *obj, Eina_Bool value);
 
-/**
- * Get whether Inwin mode is set for the current object
+/** Get whether Inwin mode is set for the current object.
  *
- * @return @c EINA_TRUE if Inwin mode is set, @c EINA_FALSE otherwise
- *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_inwin_mode_get(const Elm_Web *obj);
 
 /**
- * Sets whether to use tab propagation
+ * @brief Sets whether to use tab propagation.
  *
  * If tab propagation is enabled, whenever the user presses the Tab key,
- * Elementary will handle it and switch focus to the next widget.
- * The default value is disabled, where WebKit will handle the Tab key to
- * cycle focus though its internal objects, jumping to the next widget
- * only when that cycle ends.
+ * Elementary will handle it and switch focus to the next widget. The default
+ * value is disabled, where WebKit will handle the Tab key to cycle focus
+ * though its internal objects, jumping to the next widget only when that cycle
+ * ends.
  *
- * @ingroup Web
+ * @param[in] propagate Whether to propagate Tab keys to Elementary or not.
  *
- * @param[in] propagate Whether to propagate Tab keys to Elementary or not
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_tab_propagate_set(Elm_Web *obj, Eina_Bool propagate);
 
 /**
- * Get the status of the tab propagation
+ * @brief Get the status of the tab propagation.
  *
- * @return @c EINA_TRUE if tab propagation is enabled, @c EINA_FALSE otherwise
+ * @return Whether to propagate Tab keys to Elementary or not.
  *
- * @see elm_web_tab_propagate_set()
- *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_tab_propagate_get(const Elm_Web *obj);
 
 /**
- * Enables or disables the browsing history
+ * @brief Enables or disables the browsing history.
  *
- * @ingroup Web
+ * @param[in] enable Whether to enable or disable the browsing history.
  *
- * @param[in] enable Whether to enable or disable the browsing history
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_history_enabled_set(Elm_Web *obj, Eina_Bool enable);
 
 /**
- * Get whether browsing history is enabled for the given object
+ * @brief Get whether browsing history is enabled for the given object.
  *
- * @return @c EINA_TRUE if history is enabled, @c EINA_FALSE otherwise
+ * @return Whether to enable or disable the browsing history.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_history_enabled_get(const Elm_Web *obj);
 
 /**
- * Sets the zoom mode to use
+ * @brief Sets the zoom mode to use.
  *
  * The modes can be any of those defined in .Elm_Web_Zoom_Mode, except
  * .ELM_WEB_ZOOM_MODE_LAST. The default is .ELM_WEB_ZOOM_MODE_MANUAL.
  *
- * .ELM_WEB_ZOOM_MODE_MANUAL means the zoom level will be controlled
- * with the elm_web_zoom_set() function.
- * .ELM_WEB_ZOOM_MODE_AUTO_FIT will calculate the needed zoom level to
- * make sure the entirety of the web object's contents are shown.
- * .ELM_WEB_ZOOM_MODE_AUTO_FILL will calculate the needed zoom level to
- * fit the contents in the web object's size, without leaving any space
- * unused.
+ * .ELM_WEB_ZOOM_MODE_MANUAL means the zoom level will be controlled with the
+ * @ref elm_web_zoom_set function.
  *
- * @ingroup Web
+ * .ELM_WEB_ZOOM_MODE_AUTO_FIT will calculate the needed zoom level to make
+ * sure the entirety of the web object's contents are shown.
  *
- * @param[in] mode The mode to set
+ * .ELM_WEB_ZOOM_MODE_AUTO_FILL will calculate the needed zoom level to fit the
+ * contents in the web object's size, without leaving any space unused.
+ *
+ * @param[in] mode The mode to set.
+ *
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_zoom_mode_set(Elm_Web *obj, Elm_Web_Zoom_Mode mode);
 
 /**
- * Get the currently set zoom mode
+ * @brief Get the currently set zoom mode.
  *
- * @return The current zoom mode set for the object,
- * or .ELM_WEB_ZOOM_MODE_LAST on error
+ * @return The mode to set.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Elm_Web_Zoom_Mode elm_web_zoom_mode_get(const Elm_Web *obj);
 
 /**
- * Sets the zoom level of the web object
+ * @brief Sets the zoom level of the web object.
  *
  * Zoom level matches the Webkit API, so 1.0 means normal zoom, with higher
- * values meaning zoom in and lower meaning zoom out. This function will
- * only affect the zoom level if the mode set with elm_web_zoom_mode_set()
- * is .ELM_WEB_ZOOM_MODE_MANUAL.
+ * values meaning zoom in and lower meaning zoom out. This function will only
+ * affect the zoom level if the mode set with @ref elm_web_zoom_mode_set is
+ * .ELM_WEB_ZOOM_MODE_MANUAL.
  *
- * @ingroup Web
+ * @param[in] zoom The zoom level to set.
  *
- * @param[in] zoom The zoom level to set
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_zoom_set(Elm_Web *obj, double zoom);
 
 /**
- * Get the current zoom level set on the web object
+ * @brief Get the current zoom level set on the web object
  *
- * Note that this is the zoom level set on the web object and not that
- * of the underlying Webkit one. In the .ELM_WEB_ZOOM_MODE_MANUAL mode,
- * the two zoom levels should match, but for the other two modes the
- * Webkit zoom is calculated internally to match the chosen mode without
- * changing the zoom level set for the web object.
+ * Note that this is the zoom level set on the web object and not that of the
+ * underlying Webkit one. In the .ELM_WEB_ZOOM_MODE_MANUAL mode, the two zoom
+ * levels should match, but for the other two modes the Webkit zoom is
+ * calculated internally to match the chosen mode without changing the zoom
+ * level set for the web object.
  *
- * @return The zoom level set on the object
+ * @return The zoom level to set.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI double elm_web_zoom_get(const Elm_Web *obj);
 
 /**
- * Sets the function to call when a console message is emitted from JS
+ * @brief Sets the function to call when a console message is emitted from JS.
  *
- * This hook will be called when a console message is emitted from
- * JavaScript. There is no default implementation for this feature.
+ * This hook will be called when a console message is emitted from JavaScript.
+ * There is no default implementation for this feature.
  *
- * @ingroup Web
+ * @param[in] func The callback function to be used.
+ * @param[in] data User data.
  *
- * @param[in] func The callback function to be used
- * @param[in] data User data
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_console_message_hook_set(Elm_Web *obj, Elm_Web_Console_Message func, void *data);
 
 /**
- * Sets the function to call when a new window is requested
+ * @brief Sets the function to call when a new window is requested.
  *
- * This hook will be called when a request to create a new window is
- * issued from the web page loaded.
- * There is no default implementation for this feature, so leaving this
- * unset or passing @c NULL in @p func will prevent new windows from
- * opening.
+ * This hook will be called when a request to create a new window is issued
+ * from the web page loaded. There is no default implementation for this
+ * feature, so leaving this unset or passing @c null in @c func will prevent
+ * new windows from opening.
  *
- * @ingroup Web
+ * @param[in] func The hook function to be called when a window is requested.
+ * @param[in] data User data.
  *
- * @param[in] func The hook function to be called when a window is requested
- * @param[in] data User data
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_window_create_hook_set(Elm_Web *obj, Elm_Web_Window_Open func, void *data);
 
 /**
- * Sets the function to call when an file selector dialog
+ * @brief Sets the function to call when an file selector dialog.
  *
  * This hook will be called when a JavaScript file selector dialog is
- * requested.
- * If no function is set or @c NULL is passed in @p func, the default
- * implementation will take place.
+ * requested. If no function is set or @c null is passed in @c func, the
+ * default implementation will take place.
  *
- * @see elm_web_inwin_mode_set()
+ * @param[in] func The callback function to be used.
+ * @param[in] data User data.
  *
- * @ingroup Web
- *
- * @param[in] func The callback function to be used
- * @param[in] data User data
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_dialog_file_selector_hook_set(Elm_Web *obj, Elm_Web_Dialog_File_Selector func, void *data);
 
 /**
- * Sets the function to call when an confirm dialog
+ * @brief Sets the function to call when an confirm dialog.
  *
- * This hook will be called when a JavaScript confirm dialog is requested.
- * If no function is set or @c NULL is passed in @p func, the default
+ * This hook will be called when a JavaScript confirm dialog is requested. If
+ * no function is set or @c null is passed in @c func, the default
  * implementation will take place.
  *
- * @see elm_web_inwin_mode_set()
+ * @param[in] func The callback function to be used.
+ * @param[in] data User data.
  *
- * @ingroup Web
- *
- * @param[in] func The callback function to be used
- * @param[in] data User data
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_dialog_confirm_hook_set(Elm_Web *obj, Elm_Web_Dialog_Confirm func, void *data);
 
 /**
- * Tells the web object which index in the currently open popup was selected
+ * @brief Tells the web object which index in the currently open popup was
+ * selected.
  *
- * When the user handles the popup creation from the "popup,created" signal,
- * it needs to tell the web object which item was selected by calling this
+ * When the user handles the popup creation from the "popup,created" signal, it
+ * needs to tell the web object which item was selected by calling this
  * function with the index corresponding to the item.
  *
- * @see elm_web_popup_destroy()
+ * @param[in] idx The index selected.
  *
- * @ingroup Web
- *
- * @param[in] idx The index selected
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_popup_selected_set(Elm_Web *obj, int idx);
 
 /**
- * Sets the function to call when an prompt dialog
+ * @brief Sets the function to call when an prompt dialog.
  *
- * This hook will be called when a JavaScript prompt dialog is requested.
- * If no function is set or @c NULL is passed in @p func, the default
- * implementation will take place.
+ * This hook will be called when a JavaScript prompt dialog is requested. If no
+ * function is set or @c null is passed in @c func, the default implementation
+ * will take place.
  *
- * @see elm_web_inwin_mode_set()
+ * @param[in] func The callback function to be used.
+ * @param[in] data User data.
  *
- * @ingroup Web
- *
- * @param[in] func The callback function to be used
- * @param[in] data User data
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_dialog_prompt_hook_set(Elm_Web *obj, Elm_Web_Dialog_Prompt func, void *data);
 
 /**
- * Sets the function to call when an alert dialog
+ * @brief Sets the function to call when an alert dialog.
  *
- * This hook will be called when a JavaScript alert dialog is requested.
- * If no function is set or @c NULL is passed in @p func, the default
- * implementation will take place.
+ * This hook will be called when a JavaScript alert dialog is requested. If no
+ * function is set or @c null is passed in @c func, the default implementation
+ * will take place.
  *
- * @see elm_web_inwin_mode_set()
+ * @param[in] func callback function to be used.
+ * @param[in] data User data.
  *
- * @ingroup Web
- *
- * @param[in] func The callback function to be used
- * @param[in] data User data
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_dialog_alert_hook_set(Elm_Web *obj, Elm_Web_Dialog_Alert func, void *data);
 
-/**
- * Queries whether it's possible to go forward in history
+/** Queries whether it's possible to go forward in history.
  *
- * @return @c EINA_TRUE if it's possible to forward in history, @c EINA_FALSE
- * otherwise
- *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_forward_possible_get(const Elm_Web *obj);
 
 /**
- * Get internal ewk_view object from web object.
+ * @brief Get internal ewk_view object from web object.
  *
- * Elementary may not provide some low level features of EWebKit,
- * instead of cluttering the API with proxy methods we opted to
- * return the internal reference. Be careful using it as it may
- * interfere with elm_web behavior.
+ * Elementary may not provide some low level features of EWebKit, instead of
+ * cluttering the API with proxy methods we opted to return the internal
+ * reference. Be careful using it as it may interfere with elm_web behavior.
  *
- * @return The internal ewk_view object or @c NULL if it does not
- * exist. (Failure to create or Elementary compiled without
- * ewebkit)
+ * @return The internal ewk_view object or @c null if it does not exist.
+ * (Failure to create or Elementary compiled without ewebkit)
  *
- * @see elm_web_add()
- *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Evas_Object *elm_web_webkit_view_get(const Elm_Web *obj);
 
-/**
- * Queries whether it's possible to go back in history
+/** Queries whether it's possible to go back in history.
  *
- * @return @c EINA_TRUE if it's possible to back in history, @c EINA_FALSE
- * otherwise
- *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_back_possible_get(const Elm_Web *obj);
 
 /**
- * Get the overall loading progress of the page
+ * @brief Get the overall loading progress of the page.
  *
- * Returns the estimated loading progress of the page, with a value between
- * 0.0 and 1.0. This is an estimated progress accounting for all the frames
+ * Returns the estimated loading progress of the page, with a value between 0.0
+ * and 1.0. This is an estimated progress accounting for all the frames
  * included in the page.
  *
  * @return A value between 0.0 and 1.0 indicating the progress, or -1.0 on
- * failure
+ * failure.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI double elm_web_load_progress_get(const Elm_Web *obj);
 
 /**
- * Get a copy of the currently selected text
+ * @brief Get a copy of the currently selected text.
  *
  * The string returned must be freed by the user when it's done with it.
  *
- * @return A newly allocated string, or @c NULL if nothing is selected or an
- * error occurred
+ * @return A newly allocated string, or @c null if nothing is selected or an
+ * error occurred.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI const char *elm_web_selection_get(const Elm_Web *obj) EINA_WARN_UNUSED_RESULT;
 
 /**
- * Get the current title
+ * @brief Get the current title.
  *
- * The returned string must not be freed and is guaranteed to be
- * stringshared.
+ * The returned string must not be freed and is guaranteed to be stringshared.
  *
- * @return A stringshared internal string with the current title, or @c NULL on
- * failure
+ * @return A stringshared internal string with the current title, or @c null on
+ * failure.
  *
- * @ingroup Web
+ * @ingroup Elm_Web
  */
 EAPI const char *elm_web_title_get(const Elm_Web *obj) EINA_WARN_UNUSED_RESULT;
 
 /**
- * Jumps the given number of steps in the browsing history
+ * @brief Jumps the given number of steps in the browsing history.
  *
- * The @p steps value can be a negative integer to back in history, or a
+ * The @c steps value can be a negative integer to back in history, or a
  * positive to move forward.
  *
- * @return @c EINA_TRUE on success, @c EINA_FALSE on error or if not enough
- * history exists to jump the given number of steps
+ * @param[in] steps The number of steps to jump.
  *
- * @see elm_web_history_enabled_set()
- * @see elm_web_back()
- * @see elm_web_forward()
+ * @return @c true on success, @c false on error or if not enough history
+ * exists to jump the given number of steps
  *
- * @ingroup Web
- * 
- *
- * @param[in] steps The number of steps to jump
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_navigate(Elm_Web *obj, int steps);
 
 /**
- * Goes back one step in the browsing history
+ * @brief Goes back one step in the browsing history.
  *
  * This is equivalent to calling elm_web_object_navigate(obj, -1);
  *
- * @return @c EINA_TRUE on success, @c EINA_FALSE otherwise
- *
- * @see elm_web_history_enabled_set()
- * @see elm_web_back_possible()
- * @see elm_web_forward()
- * @see elm_web_navigate()
- *
- * @ingroup Web
- * 
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_back(Elm_Web *obj);
 
 /**
- * Loads the specified @a html string as the content of the web object
- *
- * @return @c EINA_TRUE if it the HTML was successfully loaded, @c EINA_FALSE otherwise
+ * @brief Loads the specified @c html string as the content of the web object.
  *
  * External objects such as stylesheets or images referenced in the HTML
- * document are located relative to @a base_url.
+ * document are located relative to @c base_url.
  *
- * If an @a unreachable_url is passed it is used as the url for the loaded
- * content. This is typically used to display error pages for a failed
- * load.
+ * If an @c unreachable_url is passed it is used as the url for the loaded
+ * content. This is typically used to display error pages for a failed load.
+ *
+ * @param[in] base_url Base URL used for relative paths to external objects
+ * (optional).
+ * @param[in] unreachable_url URL that could not be reached (optional).
  *
  * @since 1.9
- * @ingroup Web
- * 
  *
- * @param[in] html HTML data to load
- * @param[in] base_url Base URL used for relative paths to external objects (optional)
- * @param[in] unreachable_url URL that could not be reached (optional)
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_html_string_load(Elm_Web *obj, const char *html, const char *base_url, const char *unreachable_url);
 
 /**
- * Searches the given string in a document.
+ * @brief Searches the given string in a document.
  *
- * @return @c EINA_TRUE if the given string was found, @c EINA_FALSE if not
- * or failure
+ * @param[in] case_sensitive If search should be case sensitive or not.
+ * @param[in] forward If search is from cursor and on or backwards.
+ * @param[in] wrap If search should wrap at the end.
  *
- * @ingroup Web
- * 
+ * @return @c true if the given string was found, @c false if not or failure.
  *
- * @param[in] string String to search
- * @param[in] case_sensitive If search should be case sensitive or not
- * @param[in] forward If search is from cursor and on or backwards
- * @param[in] wrap If search should wrap at the end
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_text_search(const Elm_Web *obj, const char *string, Eina_Bool case_sensitive, Eina_Bool forward, Eina_Bool wrap);
 
 /**
- * Dismisses an open dropdown popup
+ * @brief Dismisses an open dropdown popup
  *
  * When the popup from a dropdown widget is to be dismissed, either after
  * selecting an option or to cancel it, this function must be called, which
- * will later emit an "popup,willdelete" signal to notify the user that
- * any memory and objects related to this popup can be freed.
+ * will later emit an "popup,willdelete" signal to notify the user that any
+ * memory and objects related to this popup can be freed.
  *
- * @return @c EINA_TRUE if the menu was successfully destroyed, or @c EINA_FALSE
- * if there was no menu to destroy
+ * @return @c true if the menu was successfully destroyed, or @c false if there
+ * was no menu to destroy.
  *
- * @ingroup Web
- * 
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_popup_destroy(Elm_Web *obj);
 
 /**
- * Shows the given region in the web object
+ * @brief Shows the given region in the web object.
  *
- * @ingroup Web
- * 
+ * @param[in] y The y coordinate of the region to show.
+ * @param[in] w The width of the region to show.
+ * @param[in] h The height of the region to show.
  *
- * @param[in] x The x coordinate of the region to show
- * @param[in] y The y coordinate of the region to show
- * @param[in] w The width of the region to show
- * @param[in] h The height of the region to show
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_region_show(Elm_Web *obj, int x, int y, int w, int h);
 
 /**
- * Goes forward one step in the browsing history
+ * @brief Goes forward one step in the browsing history.
  *
  * This is equivalent to calling elm_web_object_navigate(obj, 1);
  *
- * @return @c EINA_TRUE on success, @c EINA_FALSE otherwise
+ * See also @ref elm_web_history_enabled_set,
+ * @ref elm_web_forward_possible_get, @ref elm_web_back, @ref elm_web_navigate.
  *
- * @see elm_web_history_enabled_set()
- * @see elm_web_forward_possible_get()
- * @see elm_web_back()
- * @see elm_web_navigate()
+ * @return @c true on success, @c false otherwise.
  *
- * @ingroup Web
- * 
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_forward(Elm_Web *obj);
 
 /**
- * Marks matches of the given string in a document.
+ * @brief Marks matches of the given string in a document.
  *
- * @return number of matched @a string
+ * @param[in] case_sensitive If match should be case sensitive or not.
+ * @param[in] highlight If matches should be highlighted.
+ * @param[in] limit Maximum amount of matches, or zero to unlimited.
  *
- * @ingroup Web
- * 
+ * @return Number of matched @c string.
  *
- * @param[in] string String to match
- * @param[in] case_sensitive If match should be case sensitive or not
- * @param[in] highlight If matches should be highlighted
- * @param[in] limit Maximum amount of matches, or zero to unlimited
+ * @ingroup Elm_Web
  */
 EAPI unsigned int elm_web_text_matches_mark(Elm_Web *obj, const char *string, Eina_Bool case_sensitive, Eina_Bool highlight, unsigned int limit);
 
 /**
- * Brings in the region to the visible area
+ * @brief Brings in the region to the visible area.
  *
- * Like elm_web_region_show(), but it animates the scrolling of the object
- * to show the area
+ * Like @ref elm_web_region_show, but it animates the scrolling of the object
+ * to show the area.
  *
- * @ingroup Web
- * 
+ * @param[in] y The y coordinate of the region to show.
+ * @param[in] w The width of the region to show.
+ * @param[in] h The height of the region to show.
  *
- * @param[in] x The x coordinate of the region to show
- * @param[in] y The y coordinate of the region to show
- * @param[in] w The width of the region to show
- * @param[in] h The height of the region to show
+ * @ingroup Elm_Web
  */
 EAPI void elm_web_region_bring_in(Elm_Web *obj, int x, int y, int w, int h);
 
 /**
- * Stops loading the current page
+ * @brief Stops loading the current page.
  *
- * Cancels the loading of the current page in the web object. This will
- * cause a "load,error" signal to be emitted, with the is_cancellation
- * flag set to @c EINA_TRUE.
+ * Cancels the loading of the current page in the web object. This will cause a
+ * "load,error" signal to be emitted, with the is_cancellation flag set to
+ * @c true.
  *
- * @return @c EINA_TRUE if the cancel was successful, @c EINA_FALSE otherwise
+ * @return @c true if the cancel was successful, @c false otherwise.
  *
- * @ingroup Web
- * 
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_stop(Elm_Web *obj);
 
 /**
- * Queries whether it's possible to jump the given number of steps
+ * @brief Queries whether it's possible to jump the given number of steps.
  *
- * The @p steps value can be a negative integer to back in history, or a
- * positive to move forward.
+ * The @c steps value can be a negative integer to back in history, or positive
+ * to move forward.
  *
- * @return @c EINA_TRUE if enough history exists to perform the given jump,
- * @c EINA_FALSE otherwise
+ * @param[in] steps The number of steps to check for.
  *
- * @ingroup Web
- * 
+ * @return @c true if enough history exists to perform the given jump, @c false
+ * otherwise.
  *
- * @param[in] steps The number of steps to check for
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_navigate_possible_get(Elm_Web *obj, int steps);
 
 /**
- * Requests a reload of the current document, avoiding any existing caches
+ * @brief Requests a reload of the current document, avoiding any existing
+ * caches.
  *
- * @return @c EINA_TRUE on success, @c EINA_FALSE otherwise
+ * @return @c true on success, @c false otherwise.
  *
- * @ingroup Web
- * 
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_reload_full(Elm_Web *obj);
 
 /**
- * Clears all marked matches in the document
+ * @brief Clears all marked matches in the document.
  *
- * @return @c EINA_TRUE on success, @c EINA_FALSE otherwise
+ * @return @c true on success, @c false otherwise.
  *
- * @ingroup Web
- * 
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_text_matches_unmark_all(Elm_Web *obj);
 
 /**
- * Requests a reload of the current document in the object
+ * @brief Requests a reload of the current document in the object.
  *
- * @return @c EINA_TRUE on success, @c EINA_FALSE otherwise
+ * @return @c true on success, @c false otherwise.
  *
- * @ingroup Web
- * 
+ * @ingroup Elm_Web
  */
 EAPI Eina_Bool elm_web_reload(Elm_Web *obj);
 

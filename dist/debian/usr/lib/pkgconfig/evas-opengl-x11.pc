@@ -1,6 +1,6 @@
 Name: evas-opengl-x11
 Description: Evas OpenGL X11 engine
-Version: 1.15.0-beta2
+Version: 1.17.0-beta1
 
 Xlib=yes
 XCB=no

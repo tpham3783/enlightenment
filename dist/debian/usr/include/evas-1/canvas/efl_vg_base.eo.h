@@ -29,12 +29,37 @@ EAPI const Eo_Class *efl_vg_base_class_get(void) EINA_CONST;
  *
  * @ingroup Efl_VG_Base
  */
-EOAPI void  efl_vg_bounds_get(Eina_Rectangle *r);
+EOAPI void efl_vg_bounds_get(Eina_Rectangle *r);
+
+/**
+ * @brief Set an unique name from the parent point of view. @c null means no
+ * name.
+ *
+ * @param[in] name
+ *
+ * @since 1.16
+ *
+ * @ingroup Efl_VG_Base
+ */
+EOAPI void efl_vg_name_set(const char *name);
+
+/**
+ * @brief Get an unique name from the parent point of view.
+ *
+ * @c null means no name. When set a parent after the name what defined, it
+ * might be forced back to @c null if the parent already has a node of that
+ * name.
+ *
+ * @since 1.16
+ *
+ * @ingroup Efl_VG_Base
+ */
+EOAPI const char *efl_vg_name_get(void);
 
 /**
  * @brief Sets the transformation matrix to be used for this node object.
  *
- * Note: Pass @c null to cancel the applied transformation.
+ * @note Pass @c null to cancel the applied transformation.
  *
  * @param[in] m transformation matrix.
  *
@@ -42,7 +67,7 @@ EOAPI void  efl_vg_bounds_get(Eina_Rectangle *r);
  *
  * @ingroup Efl_VG_Base
  */
-EOAPI void  efl_vg_transformation_set(const Eina_Matrix3 *m);
+EOAPI void efl_vg_transformation_set(const Eina_Matrix3 *m);
 
 /**
  * @brief Gets the transformation matrix used for this node object.
@@ -53,7 +78,7 @@ EOAPI void  efl_vg_transformation_set(const Eina_Matrix3 *m);
  *
  * @ingroup Efl_VG_Base
  */
-EOAPI const Eina_Matrix3 * efl_vg_transformation_get(void);
+EOAPI const Eina_Matrix3 *efl_vg_transformation_get(void);
 
 /**
  * @brief Sets the origin position of this node object.
@@ -67,7 +92,7 @@ EOAPI const Eina_Matrix3 * efl_vg_transformation_get(void);
  *
  * @ingroup Efl_VG_Base
  */
-EOAPI void  efl_vg_origin_set(double x, double y);
+EOAPI void efl_vg_origin_set(double x, double y);
 
 /**
  * @brief Gets the origin position of this node object.
@@ -79,19 +104,15 @@ EOAPI void  efl_vg_origin_set(double x, double y);
  *
  * @ingroup Efl_VG_Base
  */
-EOAPI void  efl_vg_origin_get(double *x, double *y);
+EOAPI void efl_vg_origin_get(double *x, double *y);
 
-/**
- * No description supplied.
- *
- * @param[in] m No description supplied.
- */
-EOAPI void  efl_vg_mask_set(Efl_VG *m);
+EOAPI void efl_vg_mask_set(Efl_VG *m);
 
-/**
- * No description supplied.
- */
-EOAPI Efl_VG * efl_vg_mask_get(void);
+EOAPI Efl_VG *efl_vg_mask_get(void);
+
+EOAPI Eina_Bool efl_vg_interpolate(const Efl_VG_Base *from, const Efl_VG_Base *to, double pos_map);
+
+EOAPI void efl_vg_dup(const Efl_VG_Base *from);
 
 
 #endif

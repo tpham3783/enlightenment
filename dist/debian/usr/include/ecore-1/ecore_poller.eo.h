@@ -29,7 +29,7 @@ EAPI const Eo_Class *ecore_poller_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Poller
  */
-EOAPI Eina_Bool  ecore_poller_interval_set(int interval);
+EOAPI Eina_Bool ecore_poller_interval_set(int interval);
 
 /**
  * @brief Gets the polling interval rate of the poller.
@@ -38,7 +38,7 @@ EOAPI Eina_Bool  ecore_poller_interval_set(int interval);
  *
  * @ingroup Ecore_Poller
  */
-EOAPI int  ecore_poller_interval_get(void);
+EOAPI int ecore_poller_interval_get(void);
 
 /**
  * @brief Constructor with parameters for Ecore Poller.
@@ -49,7 +49,7 @@ EOAPI int  ecore_poller_interval_get(void);
  *
  * @ingroup Ecore_Poller
  */
-EOAPI void  ecore_poller_constructor(Ecore_Poller_Type type, int interval, Ecore_Task_Cb func, const void *data);
+EOAPI void ecore_poller_constructor(Ecore_Poller_Type type, int interval, Ecore_Task_Cb func, const void *data);
 
 
 #endif

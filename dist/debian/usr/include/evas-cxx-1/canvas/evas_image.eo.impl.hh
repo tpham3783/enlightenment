@@ -353,6 +353,18 @@ inline void evas::image::orient_set(Evas_Image_Orient orient_) const
    eo_do(_concrete_eo_ptr(), ::evas_obj_image_orient_set(orient_));
 }
 
+inline bool evas::image::snapshot_get() const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_obj_image_snapshot_get());
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void evas::image::snapshot_set(bool s_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_obj_image_snapshot_set(::efl::eolian::to_c(s_)));
+}
+
 inline void eo_cxx::evas::image::preload_begin() const
 {
    eo_do(_concrete_eo_ptr(), ::evas_obj_image_preload_begin());
@@ -704,6 +716,18 @@ inline Evas_Image_Orient eo_cxx::evas::image::orient_get() const
 inline void eo_cxx::evas::image::orient_set(Evas_Image_Orient orient_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_obj_image_orient_set(orient_));
+}
+
+inline bool eo_cxx::evas::image::snapshot_get() const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_obj_image_snapshot_get());
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+}
+
+inline void eo_cxx::evas::image::snapshot_set(bool s_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_obj_image_snapshot_set(::efl::eolian::to_c(s_)));
 }
 
 inline ::eo_cxx::evas::image::operator ::evas::image() const
@@ -1546,6 +1570,34 @@ void evas_image_orient_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inh
       }
 }
 
+template <typename T>
+bool evas_image_snapshot_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->snapshot_get();
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Eina_Bool _tmp_ret{};
+         return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+}
+
+template <typename T>
+void evas_image_snapshot_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Eina_Bool s_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->snapshot_set(::efl::eolian::to_cxx<bool>(s_, std::tuple<std::false_type>()));
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
 namespace efl { namespace eo { namespace detail {
 
 template<>
@@ -2090,6 +2142,24 @@ struct operations< ::evas::image >
                ::evas_obj_image_orient_set(orient_));
       }
 
+      virtual bool snapshot_get()
+      {
+         Eina_Bool _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::evas_obj_image_snapshot_get());
+            return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
+      }
+
+      virtual void snapshot_set(bool s_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::evas_obj_image_snapshot_set(::efl::eolian::to_c(s_)));
+      }
+
    };
 };
 
@@ -2099,13 +2169,13 @@ struct operation_description_class_size< ::evas::image >
 {
    static constexpr int value = 
 #if defined(IMAGE_PROTECTED) && defined(IMAGE_BETA)
-      59
+      61
 #elif defined(IMAGE_PROTECTED)
-      59
+      61
 #elif defined(IMAGE_BETA)
-      59
+      61
 #else
-      59
+      61
 #endif
       + operation_description_class_size<::evas::object >::value      + operation_description_class_size<::efl::file >::value      + operation_description_class_size<::efl::image >::value      + operation_description_class_size<::efl::gfx::fill >::value      + operation_description_class_size<::efl::gfx::view >::value      + operation_description_class_size<::evas::filter >::value;
 };
@@ -2119,415 +2189,307 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::image>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_preload_begin_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_preload_begin);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_data_update_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_data_update_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_animated_frame_duration_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_animated_frame_duration_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_data_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_data_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_data_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_data_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_preload_cancel_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_preload_cancel);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_dpi_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_dpi_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_dpi_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_dpi_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_clip_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_clip_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_clip_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_clip_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_filled_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_filled_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_filled_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_filled_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_content_hint_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_content_hint_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_content_hint_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_content_hint_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_region_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_region_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_region_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_region_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_alpha_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_alpha_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_alpha_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_alpha_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_border_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_border_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_border_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_border_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_border_scale_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_border_scale_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_border_scale_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_border_scale_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_pixels_dirty_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_pixels_dirty_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_pixels_dirty_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_pixels_dirty_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_video_surface_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_video_surface_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_video_surface_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_video_surface_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_video_surface_caps_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_video_surface_caps_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_video_surface_caps_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_video_surface_caps_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_orientation_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_orientation_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_orientation_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_orientation_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_border_center_fill_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_border_center_fill_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_border_center_fill_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_border_center_fill_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_visible_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_visible_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_visible_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_visible_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_native_surface_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_native_surface_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_native_surface_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_native_surface_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_scale_down_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_scale_down_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_scale_down_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_scale_down_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_scale_hint_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_scale_hint_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_scale_hint_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_scale_hint_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_events_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_events_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_source_events_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_source_events_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_colorspace_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_colorspace_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_colorspace_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_colorspace_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_pixels_get_callback_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_pixels_get_callback_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_data_copy_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_data_copy_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_animated_frame_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_animated_frame_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_region_support_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_region_support_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_load_error_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_load_error_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_animated_frame_count_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_animated_frame_count_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_stride_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_stride_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_animated_loop_type_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_animated_loop_type_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_animated_loop_count_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_animated_loop_count_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_scene_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_scene_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_scene_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_scene_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_orient_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_orient_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_image_orient_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_orient_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_image_snapshot_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_snapshot_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_image_snapshot_set_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_image_snapshot_set);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::object>(), &ops[operation_description_class_size< ::evas::image >::value]);

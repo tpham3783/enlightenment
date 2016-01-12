@@ -46,489 +46,495 @@ typedef enum
 EAPI const Eo_Class *elm_toolbar_class_get(void) EINA_CONST;
 
 /**
- * Enable/disable homogeneous mode.
+ * @brief Control homogeneous mode.
  *
  * This will enable the homogeneous mode where items are of the same size.
- * @see elm_toolbar_homogeneous_get()
  *
- * @ingroup Toolbar
+ * @param[in] homogeneous Assume the items within the toolbar are of the same
+ * size (true = on, false = off). Default is @c false.
  *
- * @param[in] homogeneous Assume the items within the toolbar are of the
-same size (EINA_TRUE = on, EINA_FALSE = off). Default is @c EINA_FALSE.
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_homogeneous_set(Eina_Bool homogeneous);
+EOAPI void elm_obj_toolbar_homogeneous_set(Eina_Bool homogeneous);
 
 /**
- * Get whether the homogeneous mode is enabled.
+ * @brief Control homogeneous mode.
  *
- * @return Assume the items within the toolbar are of the same height
- * and width (EINA_TRUE = on, EINA_FALSE = off).
+ * This will enable the homogeneous mode where items are of the same size.
  *
- * @see elm_toolbar_homogeneous_set()
+ * @return Assume the items within the toolbar are of the same size (true = on,
+ * false = off). Default is @c false.
  *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI Eina_Bool  elm_obj_toolbar_homogeneous_get(void);
+EOAPI Eina_Bool elm_obj_toolbar_homogeneous_get(void);
 
 /**
- * Set the alignment of the items.
+ * @brief Control the alignment of the items.
  *
- * Alignment of toolbar items, from <tt> 0.0 </tt> to indicates to align
- * left, to <tt> 1.0 </tt>, to align to right. <tt> 0.5 </tt> centralize
- * items.
+ * Alignment of toolbar items, from 0.0 to indicates to align left, to 1.0, to
+ * align to right. 0.5 centralize items.
  *
  * Centered items by default.
  *
- * @see elm_toolbar_align_get()
+ * @param[in] align The new alignment, a float between 0.0 and 1.0.
  *
- * @ingroup Toolbar
- *
- * @param[in] align The new alignment, a float between <tt> 0.0 </tt>
-and <tt> 1.0 </tt>.
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_align_set(double align);
+EOAPI void elm_obj_toolbar_align_set(double align);
 
 /**
- * Get the alignment of the items.
+ * @brief Control the alignment of the items.
  *
- * @return toolbar items alignment, a float between <tt> 0.0 </tt> and
- * <tt> 1.0 </tt>.
+ * Alignment of toolbar items, from 0.0 to indicates to align left, to 1.0, to
+ * align to right. 0.5 centralize items.
  *
- * @see elm_toolbar_align_set() for details.
+ * Centered items by default.
  *
- * @ingroup Toolbar
+ * @return The new alignment, a float between 0.0 and 1.0.
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI double  elm_obj_toolbar_align_get(void);
+EOAPI double elm_obj_toolbar_align_get(void);
 
 /**
- * Set the toolbar select mode.
+ * @brief Control the toolbar select mode.
  *
- * elm_toolbar_select_mode_set() changes item select mode in the toolbar widget.
- * - #ELM_OBJECT_SELECT_MODE_DEFAULT : Items will only call their selection func and
- * callback when first becoming selected. Any further clicks will
- * do nothing, unless you set always select mode.
- * - #ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected,
- * every click will make the selected callbacks be called.
- * - #ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select items
- * entirely and they will neither appear selected nor call selected
+ * elm_toolbar_select_mode_set() changes item select mode in the toolbar
+ * widget. - #ELM_OBJECT_SELECT_MODE_DEFAULT : Items will only call their
+ * selection func and callback when first becoming selected. Any further clicks
+ * will do nothing, unless you set always select mode. -
+ * #ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every
+ * click will make the selected callbacks be called. -
+ * #ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select
+ * items entirely and they will neither appear selected nor call selected
  * callback functions.
  *
- * @see elm_toolbar_select_mode_get()
+ * @param[in] mode The select mode If getting mode fails, it returns
+ * #ELM_OBJECT_SELECT_MODE_MAX
  *
- * @ingroup Toolbar
- *
- * @param[in] mode The select mode
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_select_mode_set(Elm_Object_Select_Mode mode);
+EOAPI void elm_obj_toolbar_select_mode_set(Elm_Object_Select_Mode mode);
 
 /**
- * Get the toolbar select mode.
+ * @brief Control the toolbar select mode.
  *
- * @return The select mode
- * (If getting mode fails, it returns #ELM_OBJECT_SELECT_MODE_MAX)
+ * elm_toolbar_select_mode_set() changes item select mode in the toolbar
+ * widget. - #ELM_OBJECT_SELECT_MODE_DEFAULT : Items will only call their
+ * selection func and callback when first becoming selected. Any further clicks
+ * will do nothing, unless you set always select mode. -
+ * #ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected, every
+ * click will make the selected callbacks be called. -
+ * #ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select
+ * items entirely and they will neither appear selected nor call selected
+ * callback functions.
  *
- * @see elm_toolbar_select_mode_set()
+ * @return The select mode If getting mode fails, it returns
+ * #ELM_OBJECT_SELECT_MODE_MAX
  *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Object_Select_Mode  elm_obj_toolbar_select_mode_get(void);
+EOAPI Elm_Object_Select_Mode elm_obj_toolbar_select_mode_get(void);
 
 /**
- * Set the icon size, in pixels, to be used by toolbar items.
+ * @brief Control the icon size, in pixels, to be used by toolbar items.
  *
- * @note Default value is @c 32. It reads value from elm config.
- *
- * @see elm_toolbar_icon_size_get()
- *
- * @ingroup Toolbar
+ * @note Default value is $32. It reads value from elm config.
  *
  * @param[in] icon_size The icon size in pixels
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_icon_size_set(int icon_size);
+EOAPI void elm_obj_toolbar_icon_size_set(int icon_size);
 
 /**
- * Get the icon size, in pixels, to be used by toolbar items.
+ * @brief Control the icon size, in pixels, to be used by toolbar items.
  *
- * @return The icon size in pixels.
+ * @note Default value is $32. It reads value from elm config.
  *
- * @see elm_toolbar_icon_size_set() for details.
+ * @return The icon size in pixels
  *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI int  elm_obj_toolbar_icon_size_get(void);
+EOAPI int elm_obj_toolbar_icon_size_get(void);
 
 /**
- * Change a toolbar's orientation
- * By default, a toolbar will be horizontal. Use this function to create a vertical toolbar.
- * @ingroup Toolbar
+ * @brief Change a toolbar's orientation
  *
- * @param[in] horizontal If @c EINA_TRUE, the toolbar is horizontal
+ * By default, a toolbar will be horizontal. Use this function to create a
+ * vertical toolbar.
+ *
+ * @param[in] horizontal If @c true, the toolbar is horizontal.
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_horizontal_set(Eina_Bool horizontal);
+EOAPI void elm_obj_toolbar_horizontal_set(Eina_Bool horizontal);
 
 /**
- * Get a toolbar's orientation
- * @return If @c EINA_TRUE, the toolbar is horizontal
- * By default, a toolbar will be horizontal. Use this function to determine whether a toolbar is vertical.
- * @ingroup Toolbar
+ * @brief Change a toolbar's orientation
+ *
+ * By default, a toolbar will be horizontal. Use this function to create a
+ * vertical toolbar.
+ *
+ * @return If @c true, the toolbar is horizontal.
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI Eina_Bool  elm_obj_toolbar_horizontal_get(void);
+EOAPI Eina_Bool elm_obj_toolbar_horizontal_get(void);
 
 /**
- * Sets icon lookup order, for toolbar items' icons.
+ * @brief Sets icon lookup order, for toolbar items' icons.
  *
- * Icons added before calling this function will not be affected.
- * The default lookup order is #ELM_ICON_LOOKUP_THEME_FDO.
+ * Icons added before calling this function will not be affected. The default
+ * lookup order is #ELM_ICON_LOOKUP_THEME_FDO.
  *
- * @see elm_toolbar_icon_order_lookup_get()
+ * @param[in] order The icon lookup order. (If getting the icon order loopup
+ * fails, it returns #ELM_ICON_LOOKUP_THEME_FDO)
  *
- * @ingroup Toolbar
- *
- * @param[in] order The icon lookup order.
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_icon_order_lookup_set(Elm_Icon_Lookup_Order order);
+EOAPI void elm_obj_toolbar_icon_order_lookup_set(Elm_Icon_Lookup_Order order);
 
 /**
- * Get the icon lookup order.
+ * @brief Sets icon lookup order, for toolbar items' icons.
  *
- * @return The icon lookup order.
- * (If getting the icon order loopup fails, it returns #ELM_ICON_LOOKUP_THEME_FDO)
+ * Icons added before calling this function will not be affected. The default
+ * lookup order is #ELM_ICON_LOOKUP_THEME_FDO.
  *
- * @see elm_toolbar_icon_order_lookup_set() for details.
+ * @return The icon lookup order. (If getting the icon order loopup fails, it
+ * returns #ELM_ICON_LOOKUP_THEME_FDO)
  *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Icon_Lookup_Order  elm_obj_toolbar_icon_order_lookup_get(void);
+EOAPI Elm_Icon_Lookup_Order elm_obj_toolbar_icon_order_lookup_get(void);
 
 /**
- * Set the item displaying mode of a given toolbar widget @p obj.
+ * @brief Control the item displaying mode of a given toolbar widget @c obj.
  *
- * The toolbar won't scroll under #ELM_TOOLBAR_SHRINK_NONE mode, but
- * it will enforce a minimum size, so that all the items will fit
- * inside it. It won't scroll and won't show the items that don't fit
- * under #ELM_TOOLBAR_SHRINK_HIDE mode. Finally, it'll scroll under
- * #ELM_TOOLBAR_SHRINK_SCROLL mode, and it will create a button to
- * aggregate items which didn't fit with the #ELM_TOOLBAR_SHRINK_MENU
- * mode.
+ * The toolbar won't scroll under #ELM_TOOLBAR_SHRINK_NONE mode, but it will
+ * enforce a minimum size, so that all the items will fit inside it. It won't
+ * scroll and won't show the items that don't fit under
+ * #ELM_TOOLBAR_SHRINK_HIDE mode. Finally, it'll scroll under
+ * #ELM_TOOLBAR_SHRINK_SCROLL mode, and it will create a button to aggregate
+ * items which didn't fit with the #ELM_TOOLBAR_SHRINK_MENU mode.
+ *
+ * If shrink mode is changed, Toolbar will send one of the following signal to
+ * each item for informing the current shrink mode. "elm,state,shrink,default"
+ * "elm,state,shrink,hide" "elm,state,shrink,scroll" "elm,state,shrink,menu"
+ * "elm,state,shrink,expand"
  *
  * @warning This function's behavior will clash with those of
  * elm_scroller_policy_set(), so use either one of them, but not both.
  *
- * @ingroup Toolbar
- *
  * @param[in] shrink_mode Toolbar's items display behavior
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_shrink_mode_set(Elm_Toolbar_Shrink_Mode shrink_mode);
+EOAPI void elm_obj_toolbar_shrink_mode_set(Elm_Toolbar_Shrink_Mode shrink_mode);
 
 /**
- * Get the shrink mode of toolbar @p obj.
+ * @brief Control the item displaying mode of a given toolbar widget @c obj.
  *
- * @return Toolbar's items display behavior.
+ * The toolbar won't scroll under #ELM_TOOLBAR_SHRINK_NONE mode, but it will
+ * enforce a minimum size, so that all the items will fit inside it. It won't
+ * scroll and won't show the items that don't fit under
+ * #ELM_TOOLBAR_SHRINK_HIDE mode. Finally, it'll scroll under
+ * #ELM_TOOLBAR_SHRINK_SCROLL mode, and it will create a button to aggregate
+ * items which didn't fit with the #ELM_TOOLBAR_SHRINK_MENU mode.
  *
- * @see elm_toolbar_shrink_mode_set() for details.
+ * If shrink mode is changed, Toolbar will send one of the following signal to
+ * each item for informing the current shrink mode. "elm,state,shrink,default"
+ * "elm,state,shrink,hide" "elm,state,shrink,scroll" "elm,state,shrink,menu"
+ * "elm,state,shrink,expand"
  *
- * @ingroup Toolbar
+ * @warning This function's behavior will clash with those of
+ * elm_scroller_policy_set(), so use either one of them, but not both.
+ *
+ * @return Toolbar's items display behavior
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Toolbar_Shrink_Mode  elm_obj_toolbar_shrink_mode_get(void);
+EOAPI Elm_Toolbar_Shrink_Mode elm_obj_toolbar_shrink_mode_get(void);
 
 /**
- * Set the parent object of the toolbar items' menus.
+ * @brief Control the parent object of the toolbar items' menus.
  *
  * Each item can be set as item menu, with elm_toolbar_item_menu_set().
  *
  * For more details about setting the parent for toolbar menus, see
  * elm_menu_parent_set().
  *
- * @see elm_menu_parent_set() for details.
- * @see elm_toolbar_item_menu_set() for details.
- *
- * @ingroup Toolbar
+ * See: elm_menu_parent_set() for details. See: elm_toolbar_item_menu_set() for
+ * details.
  *
  * @param[in] parent The parent of the menu objects.
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI void  elm_obj_toolbar_menu_parent_set(Evas_Object *parent);
+EOAPI void elm_obj_toolbar_menu_parent_set(Evas_Object *parent);
 
 /**
- * Get the parent object of the toolbar items' menus.
+ * @brief Control the parent object of the toolbar items' menus.
+ *
+ * Each item can be set as item menu, with elm_toolbar_item_menu_set().
+ *
+ * For more details about setting the parent for toolbar menus, see
+ * elm_menu_parent_set().
+ *
+ * See: elm_menu_parent_set() for details. See: elm_toolbar_item_menu_set() for
+ * details.
  *
  * @return The parent of the menu objects.
  *
- * @see elm_toolbar_menu_parent_set() for details.
- *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI Evas_Object * elm_obj_toolbar_menu_parent_get(void);
+EOAPI Evas_Object *elm_obj_toolbar_menu_parent_get(void);
 
 /**
- * Set the standard priority of visible items in a toolbar
- * If the priority of the item is up to standard priority, it is shown in basic panel.
- * The other items are located in more menu or panel. The more menu or panel can be shown when the more item is clicked.
+ * @brief Set the standard priority of visible items in a toolbar
  *
- * @see elm_toolbar_standard_priority_get()
- *
- * @since 1.7
- * @ingroup Toolbar
+ * If the priority of the item is up to standard priority, it is shown in basic
+ * panel. The other items are located in more menu or panel. The more menu or
+ * panel can be shown when the more item is clicked.
  *
  * @param[in] priority The standard_priority of visible items
- */
-EOAPI void  elm_obj_toolbar_standard_priority_set(int priority);
-
-/**
- * Get the standard_priority of visible items in a toolbar
- * @return The standard priority of items in @p obj toolbar
- *
- * @see elm_toolbar_standard_priority_set()
  *
  * @since 1.7
- * @ingroup Toolbar
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI int  elm_obj_toolbar_standard_priority_get(void);
+EOAPI void elm_obj_toolbar_standard_priority_set(int priority);
 
 /**
- * Get the selected item.
+ * @brief Set the standard priority of visible items in a toolbar
  *
- * @return The selected toolbar item.
+ * If the priority of the item is up to standard priority, it is shown in basic
+ * panel. The other items are located in more menu or panel. The more menu or
+ * panel can be shown when the more item is clicked.
+ *
+ * @return The standard_priority of visible items
+ *
+ * @since 1.7
+ *
+ * @ingroup Elm_Toolbar
+ */
+EOAPI int elm_obj_toolbar_standard_priority_get(void);
+
+/**
+ * @brief Get the selected item.
  *
  * The selected item can be unselected with function
  * elm_toolbar_item_selected_set().
  *
  * The selected item always will be highlighted on toolbar.
  *
- * @ingroup Toolbar
+ * @return The selected toolbar item.
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Object_Item * elm_obj_toolbar_selected_item_get(void);
+EOAPI Elm_Widget_Item *elm_obj_toolbar_selected_item_get(void);
 
 /**
- * Get the first item in the given toolbar widget's list of
- * items.
+ * @brief Get the first item in the given toolbar widget's list of items.
  *
- * @return The first item or @c NULL, if it has no items (and on
- * errors)
+ * See: @ref elm_obj_toolbar_item_append and @ref elm_obj_toolbar_last_item_get
  *
- * @see elm_toolbar_item_append()
- * @see elm_toolbar_last_item_get()
+ * @return The first item or @c NULL, if it has no items (and on errors)
  *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Object_Item * elm_obj_toolbar_first_item_get(void);
+EOAPI Elm_Widget_Item *elm_obj_toolbar_first_item_get(void);
 
 /**
- * Get the more item which is auto-generated by toolbar.
+ * @brief Get the more item which is auto-generated by toolbar.
+ *
+ * Toolbar generates 'more' item when there is no more space to fit items in
+ * and toolbar is in #ELM_TOOLBAR_SHRINK_MENU or #ELM_TOOLBAR_SHRINK_EXPAND
+ * mode. The more item can be manipulated by elm_object_item_text_set() and
+ * elm_object_item_content_set.
  *
  * @return The toolbar more item.
  *
- * Toolbar generates 'more' item when there is no more space to fit items in
- * and toolbar is in #ELM_TOOLBAR_SHRINK_MENU or #ELM_TOOLBAR_SHRINK_EXPAND mode.
- * The more item can be manipulated by elm_object_item_text_set() and
- * elm_object_item_content_set.
- *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Object_Item * elm_obj_toolbar_more_item_get(void);
+EOAPI Elm_Widget_Item *elm_obj_toolbar_more_item_get(void);
 
 /**
- * Get the last item in the given toolbar widget's list of
- * items.
+ * @brief Get the last item in the given toolbar widget's list of items.
  *
- * @return The last item or @c NULL, if it has no items (and on
- * errors)
+ * See: @ref elm_obj_toolbar_item_prepend and
+ * @ref elm_obj_toolbar_first_item_get
  *
- * @see elm_toolbar_item_prepend()
- * @see elm_toolbar_first_item_get()
+ * @return The last item or @c NULL, if it has no items (and on errors)
  *
- * @ingroup Toolbar
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Object_Item * elm_obj_toolbar_last_item_get(void);
+EOAPI Elm_Widget_Item *elm_obj_toolbar_last_item_get(void);
 
 /**
- * Insert a new item into the toolbar object before item @p before.
+ * @brief Insert a new item into the toolbar object before item @c before.
  *
- * @return The created item or @c NULL upon failure.
+ * A new item will be created and added to the toolbar. Its position in this
+ * toolbar will be just before item @c before.
  *
- * A new item will be created and added to the toolbar. Its position in
- * this toolbar will be just before item @p before.
+ * Items created with this method can be deleted with elm_object_item_del().
  *
- * Items created with this method can be deleted with
- * elm_object_item_del().
- *
- * Associated @p data can be properly freed when item is deleted if a
- * callback function is set with elm_object_item_del_cb_set().
+ * Associated @c data can be properly freed when item is deleted if a callback
+ * function is set with elm_object_item_del_cb_set().
  *
  * If a function is passed as argument, it will be called every time this item
- * is selected, i.e., the user clicks over an unselected item.
- * If such function isn't needed, just passing
- * @c NULL as @p func is enough. The same should be done for @p data.
+ * is selected, i.e., the user clicks over an unselected item. If such function
+ * isn't needed, just passing @c NULL as @c func is enough. The same should be
+ * done for @c data.
  *
- * Toolbar will load icon image from fdo or current theme.
- * This behavior can be set by elm_toolbar_icon_order_lookup_set() function.
- * If an absolute path is provided it will load it direct from a file.
+ * Toolbar will load icon image from fdo or current theme. This behavior can be
+ * set by elm_toolbar_icon_order_lookup_set() function. If an absolute path is
+ * provided it will load it direct from a file.
  *
  * @note This function does not accept relative icon path.
  *
- * @see elm_toolbar_item_icon_set()
- * @see elm_object_item_del()
+ * See: elm_toolbar_item_icon_set()
  *
- * @ingroup Toolbar
- * 
- *
- * @param[in] before The toolbar item to insert before.
- * @param[in] icon A string with icon name or the absolute path of an image file.
+ * @param[in] icon A string with icon name or the absolute path of an image
+ * file.
  * @param[in] label The label of the item.
  * @param[in] func The function to call when the item is clicked.
  * @param[in] data The data to associate with the item for related callbacks.
- */
-EOAPI Elm_Object_Item * elm_obj_toolbar_item_insert_before(Elm_Object_Item *before, const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
-
-/**
- * Insert a new item into the toolbar object after item @p after.
  *
  * @return The created item or @c NULL upon failure.
  *
- * A new item will be created and added to the toolbar. Its position in
- * this toolbar will be just after item @p after.
+ * @ingroup Elm_Toolbar
+ */
+EOAPI Elm_Widget_Item *elm_obj_toolbar_item_insert_before(Elm_Widget_Item *before, const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
+
+/**
+ * @brief Insert a new item into the toolbar object after item @c after.
  *
- * Items created with this method can be deleted with
- * elm_object_item_del().
+ * A new item will be created and added to the toolbar. Its position in this
+ * toolbar will be just after item @c after.
  *
- * Associated @p data can be properly freed when item is deleted if a
- * callback function is set with elm_object_item_del_cb_set().
+ * Items created with this method can be deleted with elm_object_item_del().
+ *
+ * Associated @c data can be properly freed when item is deleted if a callback
+ * function is set with elm_object_item_del_cb_set().
  *
  * If a function is passed as argument, it will be called every time this item
- * is selected, i.e., the user clicks over an unselected item.
- * If such function isn't needed, just passing
- * @c NULL as @p func is enough. The same should be done for @p data.
+ * is selected, i.e., the user clicks over an unselected item. If such function
+ * isn't needed, just passing @c NULL as @c func is enough. The same should be
+ * done for @c data.
  *
- * Toolbar will load icon image from fdo or current theme.
- * This behavior can be set by elm_toolbar_icon_order_lookup_set() function.
- * If an absolute path is provided it will load it direct from a file.
+ * Toolbar will load icon image from fdo or current theme. This behavior can be
+ * set by elm_toolbar_icon_order_lookup_set() function. If an absolute path is
+ * provided it will load it direct from a file.
  *
  * @note This function does not accept relative icon path.
  *
- * @see elm_toolbar_item_icon_set()
- * @see elm_object_item_del()
+ * See: elm_toolbar_item_icon_set()
  *
- * @ingroup Toolbar
- * 
- *
- * @param[in] after The toolbar item to insert after.
- * @param[in] icon A string with icon name or the absolute path of an image file.
+ * @param[in] icon A string with icon name or the absolute path of an image
+ * file.
  * @param[in] label The label of the item.
  * @param[in] func The function to call when the item is clicked.
  * @param[in] data The data to associate with the item for related callbacks.
- */
-EOAPI Elm_Object_Item * elm_obj_toolbar_item_insert_after(Elm_Object_Item *after, const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
-
-/**
- * Append item to the toolbar.
  *
  * @return The created item or @c NULL upon failure.
  *
- * A new item will be created and appended to the toolbar, i.e., will
- * be set as @b last item.
+ * @ingroup Elm_Toolbar
+ */
+EOAPI Elm_Widget_Item *elm_obj_toolbar_item_insert_after(Elm_Widget_Item *after, const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
+
+/**
+ * @brief Append item to the toolbar.
  *
- * Items created with this method can be deleted with
- * elm_object_item_del().
+ * A new item will be created and appended to the toolbar, i.e., will be set as
+ * last item.
  *
- * Associated @p data can be properly freed when item is deleted if a
- * callback function is set with elm_object_item_del_cb_set().
+ * Items created with this method can be deleted with elm_object_item_del().
+ *
+ * Associated @c data can be properly freed when item is deleted if a callback
+ * function is set with elm_object_item_del_cb_set().
  *
  * If a function is passed as argument, it will be called every time this item
- * is selected, i.e., the user clicks over an unselected item.
- * If such function isn't needed, just passing
- * @c NULL as @p func is enough. The same should be done for @p data.
+ * is selected, i.e., the user clicks over an unselected item. If such function
+ * isn't needed, just passing @c NULL as @c func is enough. The same should be
+ * done for @c data.
  *
- * Toolbar will load icon image from fdo or current theme.
- * This behavior can be set by elm_toolbar_icon_order_lookup_set() function.
- * If an absolute path is provided it will load it direct from a file.
+ * Toolbar will load icon image from fdo or current theme. This behavior can be
+ * set by elm_toolbar_icon_order_lookup_set() function. If an absolute path is
+ * provided it will load it direct from a file.
  *
  * @note This function does not accept relative icon path.
  *
- * @see elm_toolbar_item_icon_set()
- * @see elm_object_item_del()
+ * See: elm_toolbar_item_icon_set()
  *
- * @ingroup Toolbar
- * 
- *
- * @param[in] icon A string with icon name or the absolute path of an image file.
  * @param[in] label The label of the item.
  * @param[in] func The function to call when the item is clicked.
  * @param[in] data The data to associate with the item for related callbacks.
- */
-EOAPI Elm_Object_Item * elm_obj_toolbar_item_append(const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
-
-/**
- * Get the number of items in a toolbar
- * @return The number of items in @p obj toolbar
- * @ingroup Toolbar
- * 
- */
-EOAPI unsigned int  elm_obj_toolbar_items_count(void);
-
-/**
- * Prepend item to the toolbar.
  *
  * @return The created item or @c NULL upon failure.
  *
- * A new item will be created and prepended to the toolbar, i.e., will
- * be set as @b first item.
+ * @ingroup Elm_Toolbar
+ */
+EOAPI Elm_Widget_Item *elm_obj_toolbar_item_append(const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
+
+/**
+ * @brief Get the number of items in a toolbar
  *
- * Items created with this method can be deleted with
- * elm_object_item_del().
+ * @return The number of items in @c obj toolbar
  *
- * Associated @p data can be properly freed when item is deleted if a
- * callback function is set with elm_object_item_del_cb_set().
+ * @ingroup Elm_Toolbar
+ */
+EOAPI unsigned int elm_obj_toolbar_items_count(void);
+
+/**
+ * @brief Prepend item to the toolbar.
+ *
+ * A new item will be created and prepended to the toolbar, i.e., will be set
+ * as first item.
+ *
+ * Items created with this method can be deleted with elm_object_item_del().
+ *
+ * Associated @c data can be properly freed when item is deleted if a callback
+ * function is set with elm_object_item_del_cb_set().
  *
  * If a function is passed as argument, it will be called every time this item
- * is selected, i.e., the user clicks over an unselected item.
- * If such function isn't needed, just passing
- * @c NULL as @p func is enough. The same should be done for @p data.
+ * is selected, i.e., the user clicks over an unselected item. If such function
+ * isn't needed, just passing @c NULL as @c func is enough. The same should be
+ * done for @c data.
  *
- * Toolbar will load icon image from fdo or current theme.
- * This behavior can be set by elm_toolbar_icon_order_lookup_set() function.
- * If an absolute path is provided it will load it direct from a file.
+ * Toolbar will load icon image from fdo or current theme. This behavior can be
+ * set by elm_toolbar_icon_order_lookup_set() function. If an absolute path is
+ * provided it will load it direct from a file.
  *
  * @note This function does not accept relative icon path.
  *
- * @see elm_toolbar_item_icon_set()
- * @see elm_object_item_del()
+ * See: elm_toolbar_item_icon_set()
  *
- * @ingroup Toolbar
- * 
- *
- * @param[in] icon A string with icon name or the absolute path of an image file.
  * @param[in] label The label of the item.
  * @param[in] func The function to call when the item is clicked.
  * @param[in] data The data to associate with the item for related callbacks.
+ *
+ * @return The created item or @c NULL upon failure.
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Object_Item * elm_obj_toolbar_item_prepend(const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
+EOAPI Elm_Widget_Item *elm_obj_toolbar_item_prepend(const char *icon, const char *label, Evas_Smart_Cb func, const void *data);
 
 /**
- * Returns a pointer to a toolbar item by its label.
- *
- * @return The pointer to the toolbar item matching @p label or @c NULL
- * on failure.
- *
- * @ingroup Toolbar
- * 
+ * @brief Returns a pointer to a toolbar item by its label.
  *
  * @param[in] label The label of the item to find.
+ *
+ * @return The pointer to the toolbar item matching @c label or @c NULL on
+ * failure.
+ *
+ * @ingroup Elm_Toolbar
  */
-EOAPI Elm_Object_Item * elm_obj_toolbar_item_find_by_label(const char *label);
+EOAPI Elm_Widget_Item *elm_obj_toolbar_item_find_by_label(const char *label);
 
-EOAPI extern const Eo_Event_Description _ELM_TOOLBAR_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_TOOLBAR_EVENT_ACCESS_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_TOOLBAR_EVENT_ITEM_FOCUSED;
 EOAPI extern const Eo_Event_Description _ELM_TOOLBAR_EVENT_ITEM_UNFOCUSED;
-
-/**
- * No description
- */
-#define ELM_TOOLBAR_EVENT_LANGUAGE_CHANGED (&(_ELM_TOOLBAR_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_TOOLBAR_EVENT_ACCESS_CHANGED (&(_ELM_TOOLBAR_EVENT_ACCESS_CHANGED))
 
 /**
  * No description

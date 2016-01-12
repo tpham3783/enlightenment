@@ -17,82 +17,31 @@ typedef Eo Elm_App_Server_View;
 
 EAPI const Eo_Class *elm_app_server_view_class_get(void) EINA_CONST;
 
-/**
- * No description supplied.
- *
- * @param[in] progress No description supplied.
- */
-EOAPI void  elm_app_server_view_progress_set(short progress);
+EOAPI void elm_app_server_view_progress_set(short progress);
 
-/**
- * No description supplied.
- */
-EOAPI short  elm_app_server_view_progress_get(void);
+EOAPI short elm_app_server_view_progress_get(void);
 
-/**
- * No description supplied.
- *
- * @param[in] events No description supplied.
- */
-EOAPI void  elm_app_server_view_new_events_set(int events);
+EOAPI void elm_app_server_view_new_events_set(int events);
 
-/**
- * No description supplied.
- */
-EOAPI int  elm_app_server_view_new_events_get(void);
+EOAPI int elm_app_server_view_new_events_get(void);
 
-/**
- * No description supplied.
- *
- * @param[in] icon No description supplied.
- */
-EOAPI void  elm_app_server_view_icon_set(const char *icon);
+EOAPI void elm_app_server_view_icon_set(const char *icon);
 
-/**
- * No description supplied.
- */
-EOAPI const char * elm_app_server_view_icon_get(void);
+EOAPI const char *elm_app_server_view_icon_get(void);
 
-/**
- * No description supplied.
- *
- * @param[in] title No description supplied.
- */
-EOAPI void  elm_app_server_view_title_set(const char *title);
+EOAPI void elm_app_server_view_title_set(const char *title);
 
-/**
- * No description supplied.
- */
-EOAPI const char * elm_app_server_view_title_get(void);
+EOAPI const char *elm_app_server_view_title_get(void);
 
-/**
- * No description supplied.
- *
- * @param[in] win No description supplied.
- */
-EOAPI void  elm_app_server_view_window_set(Evas_Object *win);
+EOAPI void elm_app_server_view_window_set(Evas_Object *win);
 
-/**
- * No description supplied.
- *
- * @param[in] ret No description supplied.
- */
-EOAPI void  elm_app_server_view_id_set(const char *ret);
+EOAPI void elm_app_server_view_id_set(const char *ret);
 
-/**
- * No description supplied.
- */
-EOAPI const char * elm_app_server_view_id_get(void);
+EOAPI const char *elm_app_server_view_id_get(void);
 
-/**
- * No description supplied.
- */
-EOAPI Elm_App_View_State  elm_app_server_view_state_get(void);
+EOAPI Elm_App_View_State elm_app_server_view_state_get(void);
 
-/**
- * No description supplied.
- */
-EOAPI const char * elm_app_server_view_path_get(void);
+EOAPI const char *elm_app_server_view_path_get(void);
 
 /**
  * @brief Set icon to application, using the raw pixels of image.
@@ -104,7 +53,7 @@ EOAPI const char * elm_app_server_view_path_get(void);
  *
  * @ingroup Elm_App_Server_View
  */
-EOAPI void  elm_app_server_view_pixels_set(unsigned int w, unsigned int h, Eina_Bool has_alpha, const unsigned char *pixels);
+EOAPI void elm_app_server_view_pixels_set(unsigned int w, unsigned int h, Eina_Bool has_alpha, const unsigned char *pixels);
 
 /**
  * @brief Get application raw icon.
@@ -116,27 +65,15 @@ EOAPI void  elm_app_server_view_pixels_set(unsigned int w, unsigned int h, Eina_
  *
  * @ingroup Elm_App_Server_View
  */
-EOAPI void  elm_app_server_view_pixels_get(unsigned int *w, unsigned int *h, Eina_Bool *has_alpha, const unsigned char **pixels);
+EOAPI void elm_app_server_view_pixels_get(unsigned int *w, unsigned int *h, Eina_Bool *has_alpha, const unsigned char **pixels);
 
-/**
- * No description supplied.
- */
-EOAPI void  elm_app_server_view_pause(void);
+EOAPI void elm_app_server_view_pause(void);
 
-/**
- * No description supplied.
- */
-EOAPI void  elm_app_server_view_resume(void);
+EOAPI void elm_app_server_view_resume(void);
 
-/**
- * No description supplied.
- */
-EOAPI void  elm_app_server_view_shallow(void);
+EOAPI void elm_app_server_view_shallow(void);
 
-/**
- * No description supplied.
- */
-EOAPI void  elm_app_server_view_close(void);
+EOAPI void elm_app_server_view_close(void);
 
 EOAPI extern const Eo_Event_Description _ELM_APP_SERVER_VIEW_EVENT_RESUMED;
 EOAPI extern const Eo_Event_Description _ELM_APP_SERVER_VIEW_EVENT_PAUSED;

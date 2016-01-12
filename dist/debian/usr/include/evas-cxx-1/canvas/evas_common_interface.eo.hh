@@ -28,8 +28,6 @@ namespace evas {
 
 struct common_interface
 {
-   /// @brief No description supplied by the EAPI.
-   ///
    ::evas::common_interface evas_get() const;
 
 
@@ -128,8 +126,6 @@ struct common_interface
 
    ~common_interface() {}
 
-   /// @brief No description supplied by the EAPI.
-   ///
    ::evas::common_interface evas_get() const;
 
 

@@ -22,6 +22,7 @@
 #include <eina_log.hh>
 #include <eina_optional.hh>
 #include <eina_integer_sequence.hh>
+#include <eina_pp.hh>
 
 /**
  * @page eina_cxx_main Eina C++ (BETA)
@@ -66,8 +67,7 @@
  *
  * Recommended reading:
  *
-
- *
+ * @li @ref Eina_Cxx
  *
  * @addtogroup Eina_Cxx
  * @{

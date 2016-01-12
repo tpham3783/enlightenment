@@ -28,7 +28,7 @@ EAPI const Eo_Class *evas_canvas3d_node_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_position_inherit_set(Eina_Bool inherit);
+EOAPI void evas_canvas3d_node_position_inherit_set(Eina_Bool inherit);
 
 /**
  * @brief Get the position inheritance flag of the given node.
@@ -39,7 +39,7 @@ EOAPI void  evas_canvas3d_node_position_inherit_set(Eina_Bool inherit);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Eina_Bool  evas_canvas3d_node_position_inherit_get(void);
+EOAPI Eina_Bool evas_canvas3d_node_position_inherit_get(void);
 
 /**
  * @brief Set the orientation inheritance flag of the given node.
@@ -53,7 +53,7 @@ EOAPI Eina_Bool  evas_canvas3d_node_position_inherit_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_orientation_inherit_set(Eina_Bool inherit);
+EOAPI void evas_canvas3d_node_orientation_inherit_set(Eina_Bool inherit);
 
 /**
  * @brief Get the orientation inheritance flag of the given node.
@@ -64,7 +64,7 @@ EOAPI void  evas_canvas3d_node_orientation_inherit_set(Eina_Bool inherit);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Eina_Bool  evas_canvas3d_node_orientation_inherit_get(void);
+EOAPI Eina_Bool evas_canvas3d_node_orientation_inherit_get(void);
 
 /**
  * @brief Set the scale inheritance flag of the given node.
@@ -77,7 +77,7 @@ EOAPI Eina_Bool  evas_canvas3d_node_orientation_inherit_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_scale_inherit_set(Eina_Bool inherit);
+EOAPI void evas_canvas3d_node_scale_inherit_set(Eina_Bool inherit);
 
 /**
  * @brief Get the scale inheritance flag of the given node.
@@ -88,7 +88,7 @@ EOAPI void  evas_canvas3d_node_scale_inherit_set(Eina_Bool inherit);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Eina_Bool  evas_canvas3d_node_scale_inherit_get(void);
+EOAPI Eina_Bool evas_canvas3d_node_scale_inherit_get(void);
 
 /**
  * @brief Set a camera to the given node.
@@ -103,7 +103,7 @@ EOAPI Eina_Bool  evas_canvas3d_node_scale_inherit_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_camera_set(Evas_Canvas3D_Object *camera);
+EOAPI void evas_canvas3d_node_camera_set(Evas_Canvas3D_Object *camera);
 
 /**
  * @brief Get the camera of the given node.
@@ -114,7 +114,7 @@ EOAPI void  evas_canvas3d_node_camera_set(Evas_Canvas3D_Object *camera);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Evas_Canvas3D_Object * evas_canvas3d_node_camera_get(void);
+EOAPI Evas_Canvas3D_Object *evas_canvas3d_node_camera_get(void);
 
 /**
  * @brief Set the light of the given node.
@@ -129,7 +129,7 @@ EOAPI Evas_Canvas3D_Object * evas_canvas3d_node_camera_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_light_set(Evas_Canvas3D_Light *light);
+EOAPI void evas_canvas3d_node_light_set(Evas_Canvas3D_Light *light);
 
 /**
  * @brief Get the light of the given node.
@@ -140,7 +140,7 @@ EOAPI void  evas_canvas3d_node_light_set(Evas_Canvas3D_Light *light);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Evas_Canvas3D_Light * evas_canvas3d_node_light_get(void);
+EOAPI Evas_Canvas3D_Light *evas_canvas3d_node_light_get(void);
 
 /**
  * @brief Set the animation frame number of the given node for the given mesh.
@@ -158,7 +158,7 @@ EOAPI Evas_Canvas3D_Light * evas_canvas3d_node_light_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_mesh_frame_set(Evas_Canvas3D_Mesh * mesh, int frame);
+EOAPI void evas_canvas3d_node_mesh_frame_set(Evas_Canvas3D_Mesh * mesh, int frame);
 
 /**
  * @brief Set the animation frame number of the given node for the given mesh.
@@ -175,7 +175,7 @@ EOAPI void  evas_canvas3d_node_mesh_frame_set(Evas_Canvas3D_Mesh * mesh, int fra
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI int  evas_canvas3d_node_mesh_frame_get(Evas_Canvas3D_Mesh * mesh);
+EOAPI int evas_canvas3d_node_mesh_frame_get(Evas_Canvas3D_Mesh * mesh);
 
 /**
  * @brief Set behavior of node like billboard object.
@@ -185,7 +185,7 @@ EOAPI int  evas_canvas3d_node_mesh_frame_get(Evas_Canvas3D_Mesh * mesh);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_billboard_target_set(Evas_Canvas3D_Node *target);
+EOAPI void evas_canvas3d_node_billboard_target_set(Evas_Canvas3D_Node *target);
 
 /**
  * @brief Get the target node for billboard object.
@@ -197,7 +197,7 @@ EOAPI void  evas_canvas3d_node_billboard_target_set(Evas_Canvas3D_Node *target);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Evas_Canvas3D_Node * evas_canvas3d_node_billboard_target_get(void);
+EOAPI Evas_Canvas3D_Node *evas_canvas3d_node_billboard_target_get(void);
 
 /**
  * @brief Constructor.
@@ -206,7 +206,7 @@ EOAPI Evas_Canvas3D_Node * evas_canvas3d_node_billboard_target_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_constructor(Evas_Canvas3D_Node_Type type);
+EOAPI void evas_canvas3d_node_constructor(Evas_Canvas3D_Node_Type type);
 
 /**
  * @brief Get the type of the given node.
@@ -217,7 +217,7 @@ EOAPI void  evas_canvas3d_node_constructor(Evas_Canvas3D_Node_Type type);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Evas_Canvas3D_Node_Type  evas_canvas3d_node_type_get(void);
+EOAPI Evas_Canvas3D_Node_Type evas_canvas3d_node_type_get(void);
 
 /**
  * @brief Add a member node to the given node.
@@ -231,7 +231,7 @@ EOAPI Evas_Canvas3D_Node_Type  evas_canvas3d_node_type_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_member_add(Evas_Canvas3D_Node *member);
+EOAPI void evas_canvas3d_node_member_add(Evas_Canvas3D_Node *member);
 
 /**
  * @brief Delete a member node from the given node.
@@ -242,7 +242,7 @@ EOAPI void  evas_canvas3d_node_member_add(Evas_Canvas3D_Node *member);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_member_del(Evas_Canvas3D_Node *member);
+EOAPI void evas_canvas3d_node_member_del(Evas_Canvas3D_Node *member);
 
 /**
  * @brief Get the parent node of the given node.
@@ -253,7 +253,7 @@ EOAPI void  evas_canvas3d_node_member_del(Evas_Canvas3D_Node *member);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI Evas_Canvas3D_Node * evas_canvas3d_node_parent_get(void);
+EOAPI Evas_Canvas3D_Node *evas_canvas3d_node_parent_get(void);
 
 /**
  * @brief Get the list of member nodes of the given node.
@@ -264,7 +264,16 @@ EOAPI Evas_Canvas3D_Node * evas_canvas3d_node_parent_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI const Eina_List * evas_canvas3d_node_member_list_get(void);
+EOAPI const Eina_List *evas_canvas3d_node_member_list_get(void);
+
+/**
+ * @brief Get hash table of scenes using this node as root.
+ *
+ * @return scenes using this node as root.
+ *
+ * @ingroup Evas_Canvas3D_Node
+ */
+EOAPI Eina_Hash *evas_canvas3d_node_scene_root_get(void);
 
 /**
  * @brief Set the position of the given node.
@@ -281,7 +290,7 @@ EOAPI const Eina_List * evas_canvas3d_node_member_list_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_position_set(Evas_Real x, Evas_Real y, Evas_Real z);
+EOAPI void evas_canvas3d_node_position_set(Evas_Real x, Evas_Real y, Evas_Real z);
 
 /**
  * @brief Set the orientation of the given node using quaternion.
@@ -299,7 +308,7 @@ EOAPI void  evas_canvas3d_node_position_set(Evas_Real x, Evas_Real y, Evas_Real 
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Real z, Evas_Real w);
+EOAPI void evas_canvas3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Real z, Evas_Real w);
 
 /**
  * @brief Set the orientation of the given node using axis-angle.
@@ -312,7 +321,7 @@ EOAPI void  evas_canvas3d_node_orientation_set(Evas_Real x, Evas_Real y, Evas_Re
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_Real x, Evas_Real y, Evas_Real z);
+EOAPI void evas_canvas3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_Real x, Evas_Real y, Evas_Real z);
 
 /**
  * @brief Set the scale of the given node.
@@ -330,7 +339,7 @@ EOAPI void  evas_canvas3d_node_orientation_angle_axis_set(Evas_Real angle, Evas_
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_scale_set(Evas_Real x, Evas_Real y, Evas_Real z);
+EOAPI void evas_canvas3d_node_scale_set(Evas_Real x, Evas_Real y, Evas_Real z);
 
 /**
  * @brief Get the position of the given node.
@@ -343,7 +352,7 @@ EOAPI void  evas_canvas3d_node_scale_set(Evas_Real x, Evas_Real y, Evas_Real z);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_position_get(Evas_Canvas3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+EOAPI void evas_canvas3d_node_position_get(Evas_Canvas3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
 
 /**
  * @brief Get the orientation of the given node as quaternion.
@@ -357,7 +366,7 @@ EOAPI void  evas_canvas3d_node_position_get(Evas_Canvas3D_Space space, Evas_Real
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_orientation_get(Evas_Canvas3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
+EOAPI void evas_canvas3d_node_orientation_get(Evas_Canvas3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *w);
 
 /**
  * @brief Get the scale of the given node.
@@ -370,7 +379,7 @@ EOAPI void  evas_canvas3d_node_orientation_get(Evas_Canvas3D_Space space, Evas_R
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_scale_get(Evas_Canvas3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
+EOAPI void evas_canvas3d_node_scale_get(Evas_Canvas3D_Space space, Evas_Real *x, Evas_Real *y, Evas_Real *z);
 
 /**
  * @brief Rotate the given node to look at desired position.
@@ -391,7 +400,7 @@ EOAPI void  evas_canvas3d_node_scale_get(Evas_Canvas3D_Space space, Evas_Real *x
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_look_at_set(Evas_Canvas3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_Canvas3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
+EOAPI void evas_canvas3d_node_look_at_set(Evas_Canvas3D_Space target_space, Evas_Real x, Evas_Real y, Evas_Real z, Evas_Canvas3D_Space up_space, Evas_Real ux, Evas_Real uy, Evas_Real uz);
 
 /**
  * @brief Add a mesh to the given node.
@@ -405,7 +414,7 @@ EOAPI void  evas_canvas3d_node_look_at_set(Evas_Canvas3D_Space target_space, Eva
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_mesh_add(Evas_Canvas3D_Mesh *mesh);
+EOAPI void evas_canvas3d_node_mesh_add(Evas_Canvas3D_Mesh *mesh);
 
 /**
  * @brief Delete a mesh from the given node.
@@ -420,7 +429,7 @@ EOAPI void  evas_canvas3d_node_mesh_add(Evas_Canvas3D_Mesh *mesh);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_mesh_del(Evas_Canvas3D_Mesh *mesh);
+EOAPI void evas_canvas3d_node_mesh_del(Evas_Canvas3D_Mesh *mesh);
 
 /**
  * @brief Get the list of meshes of the given node.
@@ -435,7 +444,7 @@ EOAPI void  evas_canvas3d_node_mesh_del(Evas_Canvas3D_Mesh *mesh);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI const Eina_List * evas_canvas3d_node_mesh_list_get(void);
+EOAPI const Eina_List *evas_canvas3d_node_mesh_list_get(void);
 
 /**
  * @brief Get axis-aligned bounding box (AABB) of the given node.
@@ -448,7 +457,7 @@ EOAPI const Eina_List * evas_canvas3d_node_mesh_list_get(void);
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
+EOAPI void evas_canvas3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *x2, Evas_Real *y2, Evas_Real *z2);
 
 /**
  * @brief Get bounding sphere of the given node.
@@ -459,7 +468,7 @@ EOAPI void  evas_canvas3d_node_bounding_box_get(Evas_Real *x, Evas_Real *y, Evas
  *
  * @ingroup Evas_Canvas3D_Node
  */
-EOAPI void  evas_canvas3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
+EOAPI void evas_canvas3d_node_bounding_sphere_get(Evas_Real *x, Evas_Real *y, Evas_Real *z, Evas_Real *r);
 
 
 #endif

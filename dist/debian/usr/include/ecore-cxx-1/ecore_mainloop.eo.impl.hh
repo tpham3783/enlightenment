@@ -294,51 +294,37 @@ int initialize_operation_description(::efl::eo::detail::tag<::ecore_mainloop>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_mainloop_iterate_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_mainloop_iterate);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_mainloop_iterate_may_block_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_mainloop_iterate_may_block);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_mainloop_begin_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_mainloop_begin);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_mainloop_quit_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_mainloop_quit);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_mainloop_animator_ticked_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_mainloop_animator_ticked);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_mainloop_select_func_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_mainloop_select_func_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_mainloop_select_func_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_mainloop_select_func_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::eo::base>(), &ops[operation_description_class_size< ::ecore_mainloop >::value]);

@@ -18,397 +18,418 @@ typedef Eo Elm_Image;
 EAPI const Eo_Class *elm_image_class_get(void) EINA_CONST;
 
 /**
- * Make the image 'editable'.
+ * @brief Contrtol if thhe image is 'editable'.
  *
  * This means the image is a valid drag target for drag and drop, and can be
  * cut or pasted too.
  *
- * @ingroup Image
+ * @param[in] set Turn on or off editability. Default is @c false.
  *
- * @param[in] set Turn on or off editability. Default is @c EINA_FALSE.
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_editable_set(Eina_Bool set);
+EOAPI void elm_obj_image_editable_set(Eina_Bool set);
 
 /**
- * Check if the image is 'editable'.
+ * @brief Contrtol if thhe image is 'editable'.
  *
- * @return Editability.
+ * This means the image is a valid drag target for drag and drop, and can be
+ * cut or pasted too.
  *
- * A return value of EINA_TRUE means the image is a valid drag target
- * for drag and drop, and can be cut or pasted too.
+ * @return Turn on or off editability. Default is @c false.
  *
- * @ingroup Image
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_editable_get(void);
+EOAPI Eina_Bool elm_obj_image_editable_get(void);
 
 /**
- * Set whether the object's image can be resized to a size smaller than the original one.
- *
- * @ingroup Image
- * @since 1.7
+ * @brief Control whether the object's image can be resized to a size smaller
+ * than the original one.
  *
  * @param[in] resize_down whether resizing down is allowed
+ *
+ * @since 1.7
+ *
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_resize_down_set(Eina_Bool resize_down);
+EOAPI void elm_obj_image_resize_down_set(Eina_Bool resize_down);
 
 /**
- * Get whether the object's image can be resized to a size smaller than the original one.
+ * @brief Control whether the object's image can be resized to a size smaller
+ * than the original one.
  *
- * @ingroup Image
+ * @return whether resizing down is allowed
+ *
  * @since 1.7
+ *
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_resize_down_get(void);
+EOAPI Eina_Bool elm_obj_image_resize_down_get(void);
 
 /**
- * Set whether the object's image can be resized to a size larget than the original one.
- *
- * @ingroup Image
- * @since 1.7
+ * @brief Control whether the object's image can be resized to a size larget
+ * than the original one.
  *
  * @param[in] resize_up whether resizing up is allowed
- */
-EOAPI void  elm_obj_image_resize_up_set(Eina_Bool resize_up);
-
-/**
- * Get whether the object's image can be resized to a size larget than the original one.
  *
- * @ingroup Image
  * @since 1.7
+ *
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_resize_up_get(void);
+EOAPI void elm_obj_image_resize_up_set(Eina_Bool resize_up);
 
 /**
- * Set the smooth effect for an image.
+ * @brief Control whether the object's image can be resized to a size larget
+ * than the original one.
  *
- * Set the scaling algorithm to be used when scaling the image. Smooth
- * scaling provides a better resulting image, but is slower.
+ * @return whether resizing up is allowed
  *
- * The smooth scaling should be disabled when making animations that change
- * the image size, since it will be faster. Animations that don't require
- * resizing of the image can keep the smooth scaling enabled (even if the
- * image is already scaled, since the scaled image will be cached).
- *
- * @see elm_image_smooth_get()
- *
- * @ingroup Image
- *
- * @param[in] smooth @c EINA_TRUE if smooth scaling should be used, @c EINA_FALSE
-otherwise. Default is @c EINA_TRUE.
- */
-EOAPI void  elm_obj_image_smooth_set(Eina_Bool smooth);
-
-/**
- * Get the smooth effect for an image.
- *
- * @return @c EINA_TRUE if smooth scaling is enabled, @c EINA_FALSE otherwise.
- *
- * @see elm_image_smooth_set()
- *
- * @ingroup Image
- */
-EOAPI Eina_Bool  elm_obj_image_smooth_get(void);
-
-/**
- * Disable scaling of this object.
- *
- * This function disables scaling of the elm_image widget through the
- * function elm_object_scale_set(). However, this does not affect the widget
- * size/resize in any way. For that effect, take a look at
- * elm_image_resizable_set().
- *
- * @see elm_image_no_scale_get()
- * @see elm_image_resizable_set()
- * @see elm_object_scale_set()
- *
- * @ingroup Image
- *
- * @param[in] no_scale @c EINA_TRUE if the object is not scalable, @c EINA_FALSE
-otherwise. Default is @c EINA_FALSE.
- */
-EOAPI void  elm_obj_image_no_scale_set(Eina_Bool no_scale);
-
-/**
- * Get whether scaling is disabled on the object.
- *
- * @return @c EINA_TRUE if scaling is disabled, @c EINA_FALSE otherwise
- *
- * @see elm_image_no_scale_set()
- *
- * @ingroup Image
- */
-EOAPI Eina_Bool  elm_obj_image_no_scale_get(void);
-
-/**
- * Set the scale of the object's image.
- *
- * @ingroup Image
  * @since 1.7
+ *
+ * @ingroup Elm_Image
+ */
+EOAPI Eina_Bool elm_obj_image_resize_up_get(void);
+
+/**
+ * @brief Control the smooth effect for an image.
+ *
+ * Set the scaling algorithm to be used when scaling the image. Smooth scaling
+ * provides a better resulting image, but is slower.
+ *
+ * The smooth scaling should be disabled when making animations that change the
+ * image size, since it will be faster. Animations that don't require resizing
+ * of the image can keep the smooth scaling enabled (even if the image is
+ * already scaled, since the scaled image will be cached).
+ *
+ * @param[in] smooth @c true if smooth scaling should be used, @c false
+ * otherwise. Default is @c true.
+ *
+ * @ingroup Elm_Image
+ */
+EOAPI void elm_obj_image_smooth_set(Eina_Bool smooth);
+
+/**
+ * @brief Control the smooth effect for an image.
+ *
+ * Set the scaling algorithm to be used when scaling the image. Smooth scaling
+ * provides a better resulting image, but is slower.
+ *
+ * The smooth scaling should be disabled when making animations that change the
+ * image size, since it will be faster. Animations that don't require resizing
+ * of the image can keep the smooth scaling enabled (even if the image is
+ * already scaled, since the scaled image will be cached).
+ *
+ * @return @c true if smooth scaling should be used, @c false otherwise.
+ * Default is @c true.
+ *
+ * @ingroup Elm_Image
+ */
+EOAPI Eina_Bool elm_obj_image_smooth_get(void);
+
+/**
+ * @brief Control scaling behaviour of this object.
+ *
+ * This function disables scaling of the elm_image widget through the function
+ * elm_object_scale_set(). However, this does not affect the widget size/resize
+ * in any way. For that effect, take a look at @ref elm_obj_image_resizable_get
+ * and @ref elm_obj_widget_scale_get
+ *
+ * @param[in] no_scale @c true if the object is not scalable, @c false
+ * otherwise. Default is @c false.
+ *
+ * @ingroup Elm_Image
+ */
+EOAPI void elm_obj_image_no_scale_set(Eina_Bool no_scale);
+
+/**
+ * @brief Control scaling behaviour of this object.
+ *
+ * This function disables scaling of the elm_image widget through the function
+ * elm_object_scale_set(). However, this does not affect the widget size/resize
+ * in any way. For that effect, take a look at @ref elm_obj_image_resizable_get
+ * and @ref elm_obj_widget_scale_get
+ *
+ * @return @c true if the object is not scalable, @c false otherwise. Default
+ * is @c false.
+ *
+ * @ingroup Elm_Image
+ */
+EOAPI Eina_Bool elm_obj_image_no_scale_get(void);
+
+/**
+ * @brief Control the scale of the object's image.
  *
  * @param[in] scale Object's image scale.
+ *
+ * @since 1.7
+ *
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_scale_set(double scale);
+EOAPI void elm_obj_image_scale_set(double scale);
 
 /**
- * Get the scale of the object's image.
+ * @brief Control the scale of the object's image.
  *
- * @ingroup Image
+ * @return Object's image scale.
+ *
  * @since 1.7
+ *
+ * @ingroup Elm_Image
  */
-EOAPI double  elm_obj_image_scale_get(void);
+EOAPI double elm_obj_image_scale_get(void);
 
 /**
- * Set the resize method for the object's internal image when maintaining a given aspect ratio.
+ * @brief Control the resize method for the object's internal image when
+ * maintaining a given aspect ratio.
  *
- * If @p fill_inside is true, image does not overflow the widget and
- * blank spaces are added to fill the space that is still free. If it
- * is false, the image overflows the image will fill all space and
- * overflow in its larger dimension.
+ * If @c fill_inside is true, image does not overflow the widget and blank
+ * spaces are added to fill the space that is still free. If it is false, the
+ * image overflows the image will fill all space and overflow in its larger
+ * dimension.
  *
- * You can think of it as "fill: inside" or "fill: outside" and not as
- * "fill the inside".
- *
- * @see elm_image_fill_inside_get()
- * @see elm_image_fill_outside_get()
- * @see elm_image_fill_outside_set()
- * @ingroup Image
- * @since 1.7
+ * You can think of it as "fill: inside" or "fill: outside" and not as "fill
+ * the inside".
  *
  * @param[in] fill_inside Resize method for the object's internal image.
- */
-EOAPI void  elm_obj_image_fill_inside_set(Eina_Bool fill_inside);
-
-/**
- * Set the resize method for the object's internal image when maintaining a given aspect ratio.
  *
- * @see elm_image_fill_inside_set()
- * @see elm_image_fill_outside_get()
- * @see elm_image_fill_outside_set()
- * @ingroup Image
  * @since 1.7
+ *
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_fill_inside_get(void);
+EOAPI void elm_obj_image_fill_inside_set(Eina_Bool fill_inside);
 
 /**
- * Set whether the original aspect ratio of the image should be kept on resize.
+ * @brief Control the resize method for the object's internal image when
+ * maintaining a given aspect ratio.
  *
- * The original aspect ratio (width / height) of the image is usually
- * distorted to match the object's size. Enabling this option will retain
- * this original aspect, and the way that the image is fit into the object's
- * area depends on the option set by elm_image_fill_outside_set().
+ * If @c fill_inside is true, image does not overflow the widget and blank
+ * spaces are added to fill the space that is still free. If it is false, the
+ * image overflows the image will fill all space and overflow in its larger
+ * dimension.
  *
- * @see elm_image_aspect_fixed_get()
- * @see elm_image_fill_outside_set()
+ * You can think of it as "fill: inside" or "fill: outside" and not as "fill
+ * the inside".
  *
- * @ingroup Image
+ * @return Resize method for the object's internal image.
  *
- * @param[in] fixed @c EINA_TRUE if the image should retain the aspect,
-@c EINA_FALSE otherwise.
+ * @since 1.7
+ *
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_aspect_fixed_set(Eina_Bool fixed);
+EOAPI Eina_Bool elm_obj_image_fill_inside_get(void);
 
 /**
- * Get if the object retains the original aspect ratio.
+ * @brief Control whether the original aspect ratio of the image should be kept
+ * on resize.
  *
- * @return @c EINA_TRUE if the object keeps the original aspect, @c EINA_FALSE
+ * The original aspect ratio (width / height) of the image is usually distorted
+ * to match the object's size. Enabling this option will retain this original
+ * aspect, and the way that the image is fit into the object's area depends on
+ * the option set by @ref elm_obj_image_fill_outside_get.
+ *
+ * @param[in] fixed @c true if the image should retain the aspect, @c false
  * otherwise.
  *
- * @ingroup Image
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_aspect_fixed_get(void);
+EOAPI void elm_obj_image_aspect_fixed_set(Eina_Bool fixed);
+
+EOAPI Eina_Bool elm_obj_image_aspect_fixed_get(void);
 
 /**
- * Set the image orientation.
+ * @brief Contrtol the image orientation.
  *
  * This function allows to rotate or flip the given image.
  *
- * @see elm_image_orient_get()
- * @see @ref Elm_Image_Orient
+ * @param[in] orient The image orientation Elm_Image_Orient Default is
+ * #ELM_IMAGE_ORIENT_NONE.
  *
- * @ingroup Image
- *
- * @param[in] orient The image orientation @ref Elm_Image_Orient
-Default is #ELM_IMAGE_ORIENT_NONE.
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_orient_set(Elm_Image_Orient orient);
+EOAPI void elm_obj_image_orient_set(Elm_Image_Orient orient);
 
 /**
- * Get the image orientation.
+ * @brief Contrtol the image orientation.
  *
- * @return The image orientation @ref Elm_Image_Orient
+ * This function allows to rotate or flip the given image.
  *
- * @see elm_image_orient_set()
- * @see @ref Elm_Image_Orient
+ * @return The image orientation Elm_Image_Orient Default is
+ * #ELM_IMAGE_ORIENT_NONE.
  *
- * @ingroup Image
+ * @ingroup Elm_Image
  */
-EOAPI Elm_Image_Orient  elm_obj_image_orient_get(void);
+EOAPI Elm_Image_Orient elm_obj_image_orient_get(void);
 
 /**
- * Set if the image fills the entire object area, when keeping the aspect ratio.
+ * @brief Control if the image fills the entire object area, when keeping the
+ * aspect ratio.
  *
  * When the image should keep its aspect ratio even if resized to another
  * aspect ratio, there are two possibilities to resize it: keep the entire
- * image inside the limits of height and width of the object (@p fill_outside
- * is @c EINA_FALSE) or let the extra width or height go outside of the object,
- * and the image will fill the entire object (@p fill_outside is @c EINA_TRUE).
+ * image inside the limits of height and width of the object ($fill_outside is
+ * @c false) or let the extra width or height go outside of the object, and the
+ * image will fill the entire object ($fill_outside is @c true).
  *
- * @note This option will have no effect if
- * elm_image_aspect_fixed_set() is set to @c EINA_FALSE.
+ * @note This option will have no effect if @ref elm_obj_image_aspect_fixed_get
+ * is set to @c false.
  *
- * @see elm_image_fill_inside_get()
- * @see elm_image_fill_inside_set()
- * @see elm_image_fill_outside_get()
- * @see elm_image_aspect_fixed_set()
+ * See also @ref elm_obj_image_fill_inside_get.
  *
- * @ingroup Image
+ * @param[in] fill_outside @c true if the object is filled outside, @c false
+ * otherwise. Default is @c false.
  *
- * @param[in] fill_outside @c EINA_TRUE if the object is filled outside,
-@c EINA_FALSE otherwise. Default is @c EINA_FALSE.
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_fill_outside_set(Eina_Bool fill_outside);
+EOAPI void elm_obj_image_fill_outside_set(Eina_Bool fill_outside);
 
 /**
- * Get if the object is filled outside
+ * @brief Control if the image fills the entire object area, when keeping the
+ * aspect ratio.
  *
- * @return @c EINA_TRUE if the object is filled outside, @c EINA_FALSE otherwise.
+ * When the image should keep its aspect ratio even if resized to another
+ * aspect ratio, there are two possibilities to resize it: keep the entire
+ * image inside the limits of height and width of the object ($fill_outside is
+ * @c false) or let the extra width or height go outside of the object, and the
+ * image will fill the entire object ($fill_outside is @c true).
  *
- * @see elm_image_fill_inside_get()
- * @see elm_image_fill_inside_set()
- * @see elm_image_fill_outside_set()
+ * @note This option will have no effect if @ref elm_obj_image_aspect_fixed_get
+ * is set to @c false.
  *
- * @ingroup Image
+ * See also @ref elm_obj_image_fill_inside_get.
+ *
+ * @return @c true if the object is filled outside, @c false otherwise. Default
+ * is @c false.
+ *
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_fill_outside_get(void);
+EOAPI Eina_Bool elm_obj_image_fill_outside_get(void);
 
 /**
- * Set if the object is (up/down) resizable.
+ * @brief Control if the object is (up/down) resizable.
  *
- * This function limits the image resize ability. If @p size_up is set to
- * @c EINA_FALSE, the object can't have its height or width resized to a value
- * higher than the original image size. Same is valid for @p size_down.
- *
- * @see elm_image_resizable_get()
- *
- * @ingroup Image
+ * This function limits the image resize ability. If @c size_up is set to
+ * @c false, the object can't have its height or width resized to a value
+ * higher than the original image size. Same is valid for @c size_down.
  *
  * @param[in] up A bool to set if the object is resizable up. Default is
-@c EINA_TRUE.
- * @param[in] down A bool to set if the object is resizable down. Default
-is @c EINA_TRUE.
+ * @c true.
+ * @param[in] down A bool to set if the object is resizable down. Default is
+ * @c true.
+ *
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_resizable_set(Eina_Bool up, Eina_Bool down);
+EOAPI void elm_obj_image_resizable_set(Eina_Bool up, Eina_Bool down);
 
 /**
- * Get if the object is (up/down) resizable.
+ * @brief Control if the object is (up/down) resizable.
  *
- * @see elm_image_resizable_set()
- *
- * @ingroup Image
+ * This function limits the image resize ability. If @c size_up is set to
+ * @c false, the object can't have its height or width resized to a value
+ * higher than the original image size. Same is valid for @c size_down.
  *
  * @param[out] up A bool to set if the object is resizable up. Default is
-@c EINA_TRUE.
- * @param[out] down A bool to set if the object is resizable down. Default
-is @c EINA_TRUE.
+ * @c true.
+ * @param[out] down A bool to set if the object is resizable down. Default is
+ * @c true.
+ *
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_resizable_get(Eina_Bool *up, Eina_Bool *down);
+EOAPI void elm_obj_image_resizable_get(Eina_Bool *up, Eina_Bool *down);
 
 /**
- * Enable or disable preloading of the image
+ * @brief Enable or disable preloading of the image
  *
- * @ingroup Image
+ * @param[in] disabled If true, preloading will be disabled
  *
- * @param[in] disabled If EINA_TRUE, preloading will be disabled
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_preload_disabled_set(Eina_Bool disabled);
+EOAPI void elm_obj_image_preload_disabled_set(Eina_Bool disabled);
 
 /**
- * Set the file that will be used as the image's source.
+ * @brief Set the file that will be used as the image's source.
  *
- * @return (@c EINA_TRUE = success, @c EINA_FALSE = error)
+ * See: elm_image_file_set()
  *
- * @see elm_image_file_set()
- *
- * @note This function will trigger the Edje file case based on the
- * extension of the @a file string use to create the Eina_File (expects
- * @c ".edj", for this case).
+ * @note This function will trigger the Edje file case based on the extension
+ * of the @c file string use to create the Eina_File (expects $".edj", for this
+ * case).
  *
  * @note If you use animated gif image and create multiple image objects with
- * one gif image file, you should set the @p group differently for each object.
+ * one gif image file, you should set the @c group differently for each object.
  * Or image objects will share one evas image cache entry and you will get
  * unwanted frames.
  *
- * @ingroup Image
+ * @param[in] file The handler to an Eina_File that will be used as image
+ * source
+ * @param[in] group The group that the image belongs to, in case it's an EET
+ * (including Edje case) file. This can be used as a key inside evas image
+ * cache if this is a normal image file not eet file.
  *
- * @param[in] file The handler to an Eina_File that will be used as image source
- * @param[in] group The group that the image belongs to, in case it's an
-EET (including Edje case) file. This can be used as a key inside
-evas image cache if this is a normal image file not eet file.
+ * @return @c true = success, @c false = error
+ *
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_mmap_set(const Eina_File *file, const char *group);
+EOAPI Eina_Bool elm_obj_image_mmap_set(const Eina_File *file, const char *group);
 
 /**
- * Set a location in memory to be used as an image object's source
+ * @brief Set a location in memory to be used as an image object's source
  * bitmap.
  *
- * This function is handy when the contents of an image file are
- * mapped in memory, for example.
+ * This function is handy when the contents of an image file are mapped in
+ * memory, for example.
  *
- * The @p format string should be something like @c "png", @c "jpg",
- * @c "tga", @c "tiff", @c "bmp" etc, when provided (@c NULL, on the
- * contrary). This improves the loader performance as it tries the
- * "correct" loader first, before trying a range of other possible
- * loaders until one succeeds.
+ * The @c format string should be something like $"png", $"jpg", $"tga",
+ * $"tiff", $"bmp" etc, when provided ($NULL, on the contrary). This improves
+ * the loader performance as it tries the "correct" loader first, before trying
+ * a range of other possible loaders until one succeeds.
  *
- * @return (@c EINA_TRUE = success, @c EINA_FALSE = error)
+ * @param[in] img The binary data that will be used as image source
+ * @param[in] size The size of binary data blob @c img
+ * @param[in] format (Optional) expected format of @c img bytes
+ * @param[in] key Optional indexing key of @c img to be passed to the image
+ * loader (eg. if @c img is a memory-mapped EET file)
+ *
+ * @return @c true = success, @c false = error
  *
  * @since 1.7
  *
- * @ingroup Image
- *
- * @param[in] img The binary data that will be used as image source
- * @param[in] size The size of binary data blob @p img
- * @param[in] format (Optional) expected format of @p img bytes
- * @param[in] key Optional indexing key of @p img to be passed to the
-image loader (eg. if @p img is a memory-mapped EET file)
+ * @ingroup Elm_Image
  */
-EOAPI Eina_Bool  elm_obj_image_memfile_set(const void *img, size_t size, const char *format, const char *key);
+EOAPI Eina_Bool elm_obj_image_memfile_set(const void *img, size_t size, const char *format, const char *key);
 
 /**
- * Get the inlined image object of the image widget.
+ * @brief Get the inlined image object of the image widget.
+ *
+ * This function allows one to get the underlying @c Evas_Object of type Image
+ * from this elementary widget. It can be useful to do things like get the
+ * pixel data, save the image to a file, etc.
+ *
+ * @note Be careful to not manipulate it, as it is under control of elementary.
  *
  * @return The inlined image object, or NULL if none exists
  *
- * This function allows one to get the underlying @c Evas_Object of type
- * Image from this elementary widget. It can be useful to do things like get
- * the pixel data, save the image to a file, etc.
- *
- * @note Be careful to not manipulate it, as it is under control of
- * elementary.
- *
- * @ingroup Image
+ * @ingroup Elm_Image
  */
-EOAPI Evas_Object * elm_obj_image_object_get(void);
+EOAPI Evas_Object *elm_obj_image_object_get(void);
 
 /**
- * Get the current size of the image.
+ * @brief Get the current size of the image.
  *
  * This is the real size of the image, not the size of the object.
  *
- * @ingroup Image
- *
  * @param[out] w Pointer to store width, or NULL.
  * @param[out] h Pointer to store height, or NULL.
- */
-EOAPI void  elm_obj_image_object_size_get(int *w, int *h);
-
-/**
- * Re-evaluate the object's final geometry.
  *
- * @ingroup Image
- * @since 1.7
- * 
+ * @ingroup Elm_Image
  */
-EOAPI void  elm_obj_image_sizing_eval(void);
+EOAPI void elm_obj_image_object_size_get(int *w, int *h);
+
+/** Re-evaluate the object's final geometry.
+ *
+ * @since 1.7
+ *
+ * @ingroup Elm_Image
+ */
+EOAPI void elm_obj_image_sizing_eval(void);
 
 EOAPI extern const Eo_Event_Description _ELM_IMAGE_EVENT_DROP;
 EOAPI extern const Eo_Event_Description _ELM_IMAGE_EVENT_DOWNLOAD_START;

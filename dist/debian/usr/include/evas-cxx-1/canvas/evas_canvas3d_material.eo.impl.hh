@@ -326,58 +326,42 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::canvas3d::ma
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_enable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_enable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_enable_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_enable_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_shininess_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_shininess_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_shininess_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_shininess_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_texture_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_texture_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_material_texture_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_material_texture_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::canvas3d::object>(), &ops[operation_description_class_size< ::evas::canvas3d::material >::value]);

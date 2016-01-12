@@ -59,7 +59,7 @@ EAPI const Eo_Class *efl_model_base_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Efl_Model_Load_Status  efl_model_load_status_get(void);
+EOAPI Efl_Model_Load_Status efl_model_load_status_get(void);
 
 /**
  * @brief Get properties from model.
@@ -77,7 +77,7 @@ EOAPI Efl_Model_Load_Status  efl_model_load_status_get(void);
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Efl_Model_Load_Status  efl_model_properties_get(Eina_Array * const*properties);
+EOAPI Efl_Model_Load_Status efl_model_properties_get(Eina_Array * const*properties);
 
 /**
  * @brief Set a property value of a given property name.
@@ -100,7 +100,7 @@ EOAPI Efl_Model_Load_Status  efl_model_properties_get(Eina_Array * const*propert
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Efl_Model_Load_Status  efl_model_property_set(const char * property, const Eina_Value *value);
+EOAPI Efl_Model_Load_Status efl_model_property_set(const char * property, const Eina_Value *value);
 
 /**
  * @brief Retrieve the value of a given property name.
@@ -121,7 +121,7 @@ EOAPI Efl_Model_Load_Status  efl_model_property_set(const char * property, const
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Efl_Model_Load_Status  efl_model_property_get(const char * property, const Eina_Value **value);
+EOAPI Efl_Model_Load_Status efl_model_property_get(const char * property, const Eina_Value **value);
 
 /**
  * @brief Get children slice OR full range.
@@ -163,7 +163,7 @@ EOAPI Efl_Model_Load_Status  efl_model_property_get(const char * property, const
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Efl_Model_Load_Status  efl_model_children_slice_get(unsigned int start, unsigned int count, Eina_Accessor **children_accessor);
+EOAPI Efl_Model_Load_Status efl_model_children_slice_get(unsigned int start, unsigned int count, Eina_Accessor **children_accessor);
 
 /**
  * @brief Get children count.
@@ -182,7 +182,7 @@ EOAPI Efl_Model_Load_Status  efl_model_children_slice_get(unsigned int start, un
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Efl_Model_Load_Status  efl_model_children_count_get(unsigned int *children_count);
+EOAPI Efl_Model_Load_Status efl_model_children_count_get(unsigned int *children_count);
 
 /**
  * @brief Load emodel.
@@ -208,7 +208,7 @@ EOAPI Efl_Model_Load_Status  efl_model_children_count_get(unsigned int *children
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI void  efl_model_load(void);
+EOAPI void efl_model_load(void);
 
 /**
  * @brief Unload emodel.
@@ -228,7 +228,7 @@ EOAPI void  efl_model_load(void);
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI void  efl_model_unload(void);
+EOAPI void efl_model_unload(void);
 
 /**
  * @brief Properties emodel load.
@@ -242,7 +242,7 @@ EOAPI void  efl_model_unload(void);
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI void  efl_model_properties_load(void);
+EOAPI void efl_model_properties_load(void);
 
 /**
  * @brief Children emodel load.
@@ -256,7 +256,7 @@ EOAPI void  efl_model_properties_load(void);
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI void  efl_model_children_load(void);
+EOAPI void efl_model_children_load(void);
 
 /**
  * @brief Add a new child.
@@ -272,7 +272,7 @@ EOAPI void  efl_model_children_load(void);
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Eo_Base * efl_model_child_add(void);
+EOAPI Eo_Base *efl_model_child_add(void);
 
 /**
  * @brief Remove a child.
@@ -287,7 +287,7 @@ EOAPI Eo_Base * efl_model_child_add(void);
  *
  * @ingroup Efl_Model_Base
  */
-EOAPI Efl_Model_Load_Status  efl_model_child_del(Eo_Base *child);
+EOAPI Efl_Model_Load_Status efl_model_child_del(Eo_Base *child);
 
 EOAPI extern const Eo_Event_Description _EFL_MODEL_BASE_EVENT_LOAD_STATUS;
 EOAPI extern const Eo_Event_Description _EFL_MODEL_BASE_EVENT_PROPERTIES_CHANGED;

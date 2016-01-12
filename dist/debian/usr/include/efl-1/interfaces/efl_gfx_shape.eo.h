@@ -18,17 +18,6 @@ typedef Eo Efl_Gfx_Shape;
 EAPI const Eo_Class *efl_gfx_shape_mixin_get(void) EINA_CONST;
 
 /**
- * @brief Get the stroke scaling factor used for stroking this path.
- *
- * @return stroke scale value
- *
- * @since 1.14
- *
- * @ingroup Efl_Gfx_Shape
- */
-EOAPI double  efl_gfx_shape_stroke_scale_get(void);
-
-/**
  * @brief Sets the stroke scale to be used for stroking the path. the scale
  * property will be used along with stroke width property.
  *
@@ -38,21 +27,18 @@ EOAPI double  efl_gfx_shape_stroke_scale_get(void);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_scale_set(double s);
+EOAPI void efl_gfx_shape_stroke_scale_set(double s);
 
 /**
- * @brief Gets the color used for stroking the path.
+ * @brief Get the stroke scaling factor used for stroking this path.
  *
- * @param[out] r The red component of the given color.
- * @param[out] g The green component of the given color.
- * @param[out] b The blue component of the given color.
- * @param[out] a The alpha component of the given color.
+ * @return stroke scale value
  *
  * @since 1.14
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_color_get(int *r, int *g, int *b, int *a);
+EOAPI double efl_gfx_shape_stroke_scale_get(void);
 
 /**
  * @brief Sets the color to be used for stroking the path.
@@ -66,18 +52,21 @@ EOAPI void  efl_gfx_shape_stroke_color_get(int *r, int *g, int *b, int *a);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_color_set(int r, int g, int b, int a);
+EOAPI void efl_gfx_shape_stroke_color_set(int r, int g, int b, int a);
 
 /**
- * @brief Gets the stroke width to be used for stroking the path.
+ * @brief Gets the color used for stroking the path.
  *
- * @return stroke width to be used
+ * @param[out] r The red component of the given color.
+ * @param[out] g The green component of the given color.
+ * @param[out] b The blue component of the given color.
+ * @param[out] a The alpha component of the given color.
  *
  * @since 1.14
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI double  efl_gfx_shape_stroke_width_get(void);
+EOAPI void efl_gfx_shape_stroke_color_get(int *r, int *g, int *b, int *a);
 
 /**
  * @brief Sets the stroke width to be used for stroking the path.
@@ -88,13 +77,18 @@ EOAPI double  efl_gfx_shape_stroke_width_get(void);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_width_set(double w);
+EOAPI void efl_gfx_shape_stroke_width_set(double w);
 
-/** Not Implemented
+/**
+ * @brief Gets the stroke width to be used for stroking the path.
+ *
+ * @return stroke width to be used
+ *
+ * @since 1.14
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI double  efl_gfx_shape_stroke_location_get(void);
+EOAPI double efl_gfx_shape_stroke_width_get(void);
 
 /**
  * @brief Not Implemented
@@ -103,17 +97,13 @@ EOAPI double  efl_gfx_shape_stroke_location_get(void);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_location_set(double centered);
+EOAPI void efl_gfx_shape_stroke_location_set(double centered);
 
-/**
- * @brief Not Implemented
- *
- * @param[out] dash
- * @param[out] length
+/** Not Implemented
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_dash_get(const Efl_Gfx_Dash **dash, unsigned int *length);
+EOAPI double efl_gfx_shape_stroke_location_get(void);
 
 /**
  * @brief Not Implemented
@@ -123,18 +113,17 @@ EOAPI void  efl_gfx_shape_stroke_dash_get(const Efl_Gfx_Dash **dash, unsigned in
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_dash_set(const Efl_Gfx_Dash *dash, unsigned int length);
+EOAPI void efl_gfx_shape_stroke_dash_set(const Efl_Gfx_Dash *dash, unsigned int length);
 
 /**
- * @brief Gets the cap style used for stroking path.
+ * @brief Not Implemented
  *
- * @return cap style to use, default is EFL_GFX_CAP_BUTT
- *
- * @since 1.14
+ * @param[out] dash
+ * @param[out] length
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI Efl_Gfx_Cap  efl_gfx_shape_stroke_cap_get(void);
+EOAPI void efl_gfx_shape_stroke_dash_get(const Efl_Gfx_Dash **dash, unsigned int *length);
 
 /**
  * @brief Sets the cap style to be used for stroking the path. The cap will be
@@ -148,7 +137,32 @@ EOAPI Efl_Gfx_Cap  efl_gfx_shape_stroke_cap_get(void);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_cap_set(Efl_Gfx_Cap c);
+EOAPI void efl_gfx_shape_stroke_cap_set(Efl_Gfx_Cap c);
+
+/**
+ * @brief Gets the cap style used for stroking path.
+ *
+ * @return cap style to use, default is EFL_GFX_CAP_BUTT
+ *
+ * @since 1.14
+ *
+ * @ingroup Efl_Gfx_Shape
+ */
+EOAPI Efl_Gfx_Cap efl_gfx_shape_stroke_cap_get(void);
+
+/**
+ * @brief Sets the join style to be used for stroking the path. The join style
+ * will be used for joining the two line segment while stroking the path.
+ *
+ * See also @ref Efl_Gfx_Join.
+ *
+ * @param[in] j join style to use, default is EFL_GFX_JOIN_MITER
+ *
+ * @since 1.14
+ *
+ * @ingroup Efl_Gfx_Shape
+ */
+EOAPI void efl_gfx_shape_stroke_join_set(Efl_Gfx_Join j);
 
 /**
  * @brief Gets the join style used for stroking path.
@@ -159,21 +173,32 @@ EOAPI void  efl_gfx_shape_stroke_cap_set(Efl_Gfx_Cap c);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI Efl_Gfx_Join  efl_gfx_shape_stroke_join_get(void);
+EOAPI Efl_Gfx_Join efl_gfx_shape_stroke_join_get(void);
 
 /**
- * @brief Sets the join style to be used for stroking the path. The join style
- * will be used for joining the two line segment while stroking teh path.
+ * @brief Sets the fill rule of the given shape object.
+ * @c EFL_GFX_FILL_RULE_WINDING, or @c EFL_GFX_FILL_RULE_ODD_EVEN.
  *
- * See also @ref Efl_Gfx_Join.
- *
- * @param[in] j join style to use, default is EFL_GFX_JOIN_MITER
+ * @param[in] fill_rule The current fill rule of the shape object. One of
+ * @c EFL_GFX_FILL_RULE_WINDING, @c EFL_GFX_FILL_RULE_ODD_EVEN
  *
  * @since 1.14
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_stroke_join_set(Efl_Gfx_Join j);
+EOAPI void efl_gfx_shape_fill_rule_set(Efl_Gfx_Fill_Rule fill_rule);
+
+/**
+ * @brief Retrieves the fill rule for the given shape object.
+ *
+ * @return The current fill rule of the shape object. One of
+ * @c EFL_GFX_FILL_RULE_WINDING, @c EFL_GFX_FILL_RULE_ODD_EVEN
+ *
+ * @since 1.14
+ *
+ * @ingroup Efl_Gfx_Shape
+ */
+EOAPI Efl_Gfx_Fill_Rule efl_gfx_shape_fill_rule_get(void);
 
 /**
  * @brief Set the list of commands and points to be used to create the content
@@ -188,7 +213,7 @@ EOAPI void  efl_gfx_shape_stroke_join_set(Efl_Gfx_Join j);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_path_set(const Efl_Gfx_Path_Command *op, const double *points);
+EOAPI void efl_gfx_shape_path_set(const Efl_Gfx_Path_Command *op, const double *points);
 
 /**
  * @brief Gets the command and points list
@@ -200,31 +225,13 @@ EOAPI void  efl_gfx_shape_path_set(const Efl_Gfx_Path_Command *op, const double 
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_path_get(const Efl_Gfx_Path_Command **op, const double **points);
+EOAPI void efl_gfx_shape_path_get(const Efl_Gfx_Path_Command **op, const double **points);
 
-/**
- * No description supplied.
- *
- * @param[out] commands No description supplied.
- * @param[out] points No description supplied.
- */
-EOAPI void  efl_gfx_shape_path_length_get(unsigned int *commands, unsigned int *points);
+EOAPI void efl_gfx_shape_path_length_get(unsigned int *commands, unsigned int *points);
 
-/**
- * No description supplied.
- *
- * @param[out] x No description supplied.
- * @param[out] y No description supplied.
- */
-EOAPI void  efl_gfx_shape_current_get(double *x, double *y);
+EOAPI void efl_gfx_shape_current_get(double *x, double *y);
 
-/**
- * No description supplied.
- *
- * @param[out] x No description supplied.
- * @param[out] y No description supplied.
- */
-EOAPI void  efl_gfx_shape_current_ctrl_get(double *x, double *y);
+EOAPI void efl_gfx_shape_current_ctrl_get(double *x, double *y);
 
 /**
  * @brief Copy the shape data from the object specified .
@@ -235,7 +242,7 @@ EOAPI void  efl_gfx_shape_current_ctrl_get(double *x, double *y);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_dup(Eo_Base *dup_from);
+EOAPI void efl_gfx_shape_dup(const Eo_Base *dup_from);
 
 /**
  * @brief Compute and return the bounding box of the currently set path
@@ -246,7 +253,7 @@ EOAPI void  efl_gfx_shape_dup(Eo_Base *dup_from);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_bounds_get(Eina_Rectangle *r);
+EOAPI void efl_gfx_shape_bounds_get(Eina_Rectangle *r);
 
 /** Reset the shape data of the shape object.
  *
@@ -254,7 +261,7 @@ EOAPI void  efl_gfx_shape_bounds_get(Eina_Rectangle *r);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_reset(void);
+EOAPI void efl_gfx_shape_reset(void);
 
 /**
  * @brief Moves the current point to the given point,  implicitly starting a
@@ -268,7 +275,7 @@ EOAPI void  efl_gfx_shape_reset(void);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_move_to(double x, double y);
+EOAPI void efl_gfx_shape_append_move_to(double x, double y);
 
 /**
  * @brief Adds a straight line from the current position to the given endPoint.
@@ -286,7 +293,7 @@ EOAPI void  efl_gfx_shape_append_move_to(double x, double y);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_line_to(double x, double y);
+EOAPI void efl_gfx_shape_append_line_to(double x, double y);
 
 /**
  * @brief Adds a quadratic Bezier curve between the current position and the
@@ -302,7 +309,7 @@ EOAPI void  efl_gfx_shape_append_line_to(double x, double y);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_quadratic_to(double x, double y, double ctrl_x, double ctrl_y);
+EOAPI void efl_gfx_shape_append_quadratic_to(double x, double y, double ctrl_x, double ctrl_y);
 
 /**
  * @brief Same as efl_gfx_path_append_quadratic_to() api only difference is
@@ -316,7 +323,7 @@ EOAPI void  efl_gfx_shape_append_quadratic_to(double x, double y, double ctrl_x,
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_squadratic_to(double x, double y);
+EOAPI void efl_gfx_shape_append_squadratic_to(double x, double y);
 
 /**
  * @brief Adds a cubic Bezier curve between the current position and the given
@@ -324,17 +331,17 @@ EOAPI void  efl_gfx_shape_append_squadratic_to(double x, double y);
  * and (ctrl_x1, ctrl_y1). After the path is drawn, the current position is
  * updated to be at the end point of the path.
  *
- * @param[in] y Y co-ordinate of end point of the line.
- * @param[in] ctrl_x0 X co-ordinate of 1st control point.
  * @param[in] ctrl_y0 Y co-ordinate of 1st control point.
  * @param[in] ctrl_x1 X co-ordinate of 2nd control point.
  * @param[in] ctrl_y1 Y co-ordinate of 2nd control point.
+ * @param[in] x X co-ordinate of end point of the line.
+ * @param[in] y Y co-ordinate of end point of the line.
  *
  * @since 1.14
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_cubic_to(double x, double y, double ctrl_x0, double ctrl_y0, double ctrl_x1, double ctrl_y1);
+EOAPI void efl_gfx_shape_append_cubic_to(double ctrl_x0, double ctrl_y0, double ctrl_x1, double ctrl_y1, double x, double y);
 
 /**
  * @brief Same as efl_gfx_path_append_cubic_to() api only difference is that it
@@ -350,7 +357,7 @@ EOAPI void  efl_gfx_shape_append_cubic_to(double x, double y, double ctrl_x0, do
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_scubic_to(double x, double y, double ctrl_x, double ctrl_y);
+EOAPI void efl_gfx_shape_append_scubic_to(double x, double y, double ctrl_x, double ctrl_y);
 
 /**
  * @brief Append an arc that connects from the current point int the point list
@@ -374,7 +381,7 @@ EOAPI void  efl_gfx_shape_append_scubic_to(double x, double y, double ctrl_x, do
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_arc_to(double x, double y, double rx, double ry, double angle, Eina_Bool large_arc, Eina_Bool sweep);
+EOAPI void efl_gfx_shape_append_arc_to(double x, double y, double rx, double ry, double angle, Eina_Bool large_arc, Eina_Bool sweep);
 
 /**
  * @brief Closes the current subpath by drawing a line to the beginning of the
@@ -387,7 +394,7 @@ EOAPI void  efl_gfx_shape_append_arc_to(double x, double y, double rx, double ry
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_close(void);
+EOAPI void efl_gfx_shape_append_close(void);
 
 /**
  * @brief Append a circle with given center and radius.
@@ -399,7 +406,7 @@ EOAPI void  efl_gfx_shape_append_close(void);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_circle(double x, double y, double radius);
+EOAPI void efl_gfx_shape_append_circle(double x, double y, double radius);
 
 /**
  * @brief Append the given rectangle with rounded corner to the path.
@@ -423,30 +430,13 @@ EOAPI void  efl_gfx_shape_append_circle(double x, double y, double radius);
  *
  * @ingroup Efl_Gfx_Shape
  */
-EOAPI void  efl_gfx_shape_append_rect(double x, double y, double w, double h, double rx, double ry);
+EOAPI void efl_gfx_shape_append_rect(double x, double y, double w, double h, double rx, double ry);
 
-/**
- * No description supplied.
- *
- * @param[in] svg_path_data No description supplied.
- */
-EOAPI void  efl_gfx_shape_append_svg_path(const char *svg_path_data);
+EOAPI void efl_gfx_shape_append_svg_path(const char *svg_path_data);
 
-/**
- * No description supplied.
- *
- * @param[in] from No description supplied.
- * @param[in] to No description supplied.
- * @param[in] pos_map No description supplied.
- */
-EOAPI Eina_Bool  efl_gfx_shape_interpolate(const Eo_Base *from, const Eo_Base *to, double pos_map);
+EOAPI Eina_Bool efl_gfx_shape_interpolate(const Eo_Base *from, const Eo_Base *to, double pos_map);
 
-/**
- * No description supplied.
- *
- * @param[in] with No description supplied.
- */
-EOAPI Eina_Bool  efl_gfx_shape_equal_commands(const Eo_Base *with);
+EOAPI Eina_Bool efl_gfx_shape_equal_commands(const Eo_Base *with);
 
 
 #endif

@@ -5,8 +5,8 @@ includedir=${prefix}/include
 
 Name: eldbus
 Description: D-Bus access from Ecore
-Requires.private: dbus-1 eina >= 1.15.0-beta2 eo >= 1.15.0-beta2 ecore >= 1.15.0-beta2  
-Version: 1.15.0-beta2
+Requires.private: dbus-1 eina >= 1.17.0-beta1 eo >= 1.17.0-beta1 efl >= 1.17.0-beta1 ecore >= 1.17.0-beta1  
+Version: 1.17.0-beta1
 Libs: -L${libdir} -leldbus
 Libs.private: 
 Cflags: -I${includedir}/efl-1 -I${includedir}/eldbus-1

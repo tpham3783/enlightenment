@@ -18,36 +18,32 @@ typedef Eo Elm_Slideshow_Item;
 EAPI const Eo_Class *elm_slideshow_item_class_get(void) EINA_CONST;
 
 /**
- * Display a given slideshow widget's item, programmatically.
+ * @brief Display a given slideshow widget's item, programmatically.
  *
- * The change between the current item and @p item will use the
- * transition @p obj is set to use (@see
- * elm_slideshow_transition_set()).
+ * The change between the current item and @c item will use the transition
+ * @c obj is set to use.
  *
- * @ingroup Slideshow
- * 
+ * See: Elm.Slidshow.transition.get
+ *
+ * @ingroup Elm_Slideshow_Item
  */
-EOAPI void  elm_obj_slideshow_item_show(void);
+EOAPI void elm_obj_slideshow_item_show(void);
 
 /**
- * Get the real Evas object created to implement the view of a
- * given slideshow item
+ * @brief Get the real Evas object created to implement the view of a given
+ * slideshow item.
  *
- * This returns the actual Evas object used to implement the
- * specified slideshow item's view. This may be @c NULL, as it may
- * not have been created or may have been deleted, at any time, by
- * the slideshow. <b>Do not modify this object</b> (move, resize,
- * show, hide, etc.), as the slideshow is controlling it. This
- * function is for querying, emitting custom signals or hooking
- * lower level callbacks for events on that object. Do not delete
- * this object under any circumstances.
+ * This returns the actual Evas object used to implement the specified
+ * slideshow item's view. This may be @c null, as it may not have been created
+ * or may have been deleted, at any time, by the slideshow. **Do not modify
+ * this object** (move, resize, show, hide, etc.), as the slideshow is
+ * controlling it. This function is for querying, emitting custom signals or
+ * hooking lower level callbacks for events on that object. Do not delete this
+ * object under any circumstances.
  *
- * @see elm_object_item_data_get()
- *
- * @ingroup Slideshow
- * 
+ * @ingroup Elm_Slideshow_Item
  */
-EOAPI Evas_Object * elm_obj_slideshow_item_object_get(void);
+EOAPI Evas_Object *elm_obj_slideshow_item_object_get(void);
 
 
 #endif

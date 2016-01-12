@@ -22,7 +22,9 @@ typedef enum
                                                   */
   ELM_GENGRID_ITEM_SCROLLTO_TOP = 2 /* 1 << 1 */, /** To the top of viewport.
                                                    */
-  ELM_GENGRID_ITEM_SCROLLTO_MIDDLE = 4 /* 1 << 2 */ /** To the middle of
+  ELM_GENGRID_ITEM_SCROLLTO_MIDDLE = 4 /* 1 << 2 */, /** To the middle of
+                                                      * viewport. */
+  ELM_GENGRID_ITEM_SCROLLTO_BOTTOM = 8 /* 1 << 3 */ /** To the bottom of
                                                      * viewport. */
 } Elm_Gengrid_Item_Scrollto_Type;
 
@@ -43,209 +45,215 @@ typedef enum
 #endif
 
 /**
- * Get the @b previous item in a gengrid widget's internal list of items,
+ * @brief Get the previous item in a gengrid widget's internal list of items,
  * given a handle to one of those items.
  *
- * This returns the item placed before the @p item, on the container
- * gengrid.
+ * This returns the item placed before the @c item, on the container gengrid.
  *
- * @see elm_gengrid_item_next_get()
+ * @return The item before @c item, or @c NULL if there's none (and on errors)
  *
- * @ingroup Gengrid
+ * @ingroup Elm_Gengrid_Item
  */
-EAPI Elm_Object_Item *elm_gengrid_item_prev_get(const Elm_Gengrid_Item *obj);
+EAPI Elm_Widget_Item *elm_gengrid_item_prev_get(const Elm_Gengrid_Item *obj);
 
 /**
- * Get the @b next item in a gengrid widget's internal list of items,
- * given a handle to one of those items.
+ * @brief Get the next item in a gengrid widget's internal list of items, given
+ * a handle to one of those items.
  *
- * This returns the item placed after the @p item, on the container
- * gengrid.
+ * This returns the item placed after the @c item, on the container gengrid.
  *
- * @see elm_gengrid_item_prev_get()
+ * @return The item after @c item, or @c NULL if there's none (and on errors)
  *
- * @ingroup Gengrid
+ * @ingroup Elm_Gengrid_Item
  */
-EAPI Elm_Object_Item *elm_gengrid_item_next_get(const Elm_Gengrid_Item *obj);
+EAPI Elm_Widget_Item *elm_gengrid_item_next_get(const Elm_Gengrid_Item *obj);
 
 /**
- * Set whether a given gengrid item is selected or not
+ * @brief Control whether a given gengrid item is selected or not
  *
- * This sets the selected state of an item. If multi-selection is
- * not enabled on the containing gengrid and @p selected is @c
- * EINA_TRUE, any other previously selected items will get
- * unselected in favor of this new one.
+ * This API returns true for all the items selected in multi-select mode as
+ * well.
  *
- * @see elm_gengrid_item_selected_get()
+ * This sets the selected state of an item. If multi-selection is not enabled
+ * on the containing gengrid and @c selected is true, any other previously
+ * selected items will get unselected in favor of this new one.
  *
- * @ingroup Gengrid
+ * @param[in] selected the selected state ($true selected, @c false not
+ * selected)
  *
- * @param[in] selected the selected state (@c EINA_TRUE selected, @c EINA_FALSE not selected)
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_selected_set(Elm_Gengrid_Item *obj, Eina_Bool selected);
 
 /**
- * Get whether a given gengrid item is selected or not
+ * @brief Control whether a given gengrid item is selected or not
  *
- * This API returns EINA_TRUE for all the items selected in multi-select mode as well.
+ * This API returns true for all the items selected in multi-select mode as
+ * well.
  *
- * @see elm_gengrid_item_selected_set() for more details
+ * This sets the selected state of an item. If multi-selection is not enabled
+ * on the containing gengrid and @c selected is true, any other previously
+ * selected items will get unselected in favor of this new one.
  *
- * @ingroup Gengrid
+ * @return the selected state ($true selected, @c false not selected)
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI Eina_Bool elm_gengrid_item_selected_get(const Elm_Gengrid_Item *obj);
 
 /**
- * Get the Gengrid Item class for the given Gengrid Item.
+ * @brief Get the Gengrid Item class for the given Gengrid Item.
  *
- * This returns the Gengrid_Item_Class for the given item. It can be used to examine
- * the function pointers and item_style.
+ * This returns the Gengrid_Item_Class for the given item. It can be used to
+ * examine the function pointers and item_style.
  *
- * @ingroup Gengrid
+ * @return Gengrid Item class for the given item
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI const Elm_Gengrid_Item_Class *elm_gengrid_item_item_class_get(const Elm_Gengrid_Item *obj);
 
 /**
- * Get the index of the item. It is only valid once displayed.
+ * @brief Get the index of the item. It is only valid once displayed.
  *
- * @ingroup Gengrid
+ * @return the position inside the list of item.
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI int elm_gengrid_item_index_get(const Elm_Gengrid_Item *obj);
 
 /**
- * Get a given gengrid item's position, relative to the whole
- * gengrid's grid area.
+ * @brief Get a given gengrid item's position, relative to the whole gengrid's
+ * grid area.
  *
- * This returns the "logical" position of the item within the
- * gengrid. For example, @c (0, 1) would stand for first row,
- * second column.
- *
- * @ingroup Gengrid
+ * This returns the "logical" position of the item within the gengrid. For
+ * example, $(0, 1) would stand for first row, second column.
  *
  * @param[out] x Pointer to variable to store the item's <b>row number</b>.
  * @param[out] y Pointer to variable to store the item's <b>column number</b>.
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_pos_get(const Elm_Gengrid_Item *obj, unsigned int *x, unsigned int *y);
 
 /**
- * Set the gengrid item's select mode.
+ * @brief Control the gengrid item's select mode.
  *
- * elm_gengrid_select_mode_set() changes item's select mode.
- * - ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection func and
- * callback when first becoming selected. Any further clicks will
- * do nothing, unless you set always select mode.
- * - ELM_OBJECT_SELECT_MODE_ALWAYS : This means that, even if selected,
- * every click will make the selected callbacks be called.
- * - ELM_OBJECT_SELECT_MODE_NONE : This will turn off the ability to select the item
- * entirely and they will neither appear selected nor call selected
- * callback functions.
- * - ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY : This will apply no-finger-size rule
- * with ELM_OBJECT_SELECT_MODE_NONE. No-finger-size rule makes an item can be
- * smaller than lower limit. Clickable objects should be bigger than
- * human touch point device (your finger) for some touch or
- * small screen devices. So it is enabled, the item can be shrink than
- * predefined finger-size value. And the item will be updated.
+ * (If getting mode fails, it returns ELM_OBJECT_SELECT_MODE_MAX)
  *
- * @see elm_gengrid_item_select_mode_get()
- *
- * @ingroup Gengrid
+ * elm_gengrid_select_mode_set() changes item's select mode. -
+ * ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection
+ * func and callback when first becoming selected. Any further clicks will do
+ * nothing, unless you set always select mode. - ELM_OBJECT_SELECT_MODE_ALWAYS
+ * : This means that, even if selected, every click will make the selected
+ * callbacks be called. - ELM_OBJECT_SELECT_MODE_NONE : This will turn off the
+ * ability to select the item entirely and they will neither appear selected
+ * nor call selected callback functions. - ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY
+ * : This will apply no-finger-size rule with ELM_OBJECT_SELECT_MODE_NONE.
+ * No-finger-size rule makes an item can be smaller than lower limit. Clickable
+ * objects should be bigger than human touch point device (your finger) for
+ * some touch or small screen devices. So it is enabled, the item can be shrink
+ * than predefined finger-size value. And the item will be updated.
  *
  * @param[in] mode The selected mode
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_select_mode_set(Elm_Gengrid_Item *obj, Elm_Object_Select_Mode mode);
 
 /**
- * Get the gengrid item's select mode.
+ * @brief Control the gengrid item's select mode.
  *
  * (If getting mode fails, it returns ELM_OBJECT_SELECT_MODE_MAX)
  *
- * @see elm_gengrid_item_select_mode_set()
+ * elm_gengrid_select_mode_set() changes item's select mode. -
+ * ELM_OBJECT_SELECT_MODE_DEFAULT : The item will only call their selection
+ * func and callback when first becoming selected. Any further clicks will do
+ * nothing, unless you set always select mode. - ELM_OBJECT_SELECT_MODE_ALWAYS
+ * : This means that, even if selected, every click will make the selected
+ * callbacks be called. - ELM_OBJECT_SELECT_MODE_NONE : This will turn off the
+ * ability to select the item entirely and they will neither appear selected
+ * nor call selected callback functions. - ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY
+ * : This will apply no-finger-size rule with ELM_OBJECT_SELECT_MODE_NONE.
+ * No-finger-size rule makes an item can be smaller than lower limit. Clickable
+ * objects should be bigger than human touch point device (your finger) for
+ * some touch or small screen devices. So it is enabled, the item can be shrink
+ * than predefined finger-size value. And the item will be updated.
  *
- * @ingroup Gengrid
+ * @return The selected mode
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI Elm_Object_Select_Mode elm_gengrid_item_select_mode_get(const Elm_Gengrid_Item *obj);
 
 /**
- * Show the portion of a gengrid's internal grid containing a given
- * item, @b immediately.
+ * @brief Show the portion of a gengrid's internal grid containing a given
+ * item, immediately.
  *
- * This causes gengrid to @b redraw its viewport's contents to the
- * region containing the given @p item item, if it is not fully
- * visible.
- *
- * @see elm_gengrid_item_bring_in()
- *
- * @ingroup Gengrid
- * 
+ * This causes gengrid to redraw its viewport's contents to the region
+ * containing the given @c item item, if it is not fully visible.
  *
  * @param[in] type Where to position the item in the viewport.
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_show(Elm_Gengrid_Item *obj, Elm_Gengrid_Item_Scrollto_Type type);
 
 /**
- * Animatedly bring in, to the visible area of a gengrid, a given
- * item on it.
+ * @brief Animatedly bring in, to the visible area of a gengrid, a given item
+ * on it.
  *
- * This causes gengrid to jump to the given @p item and show
- * it (by scrolling), if it is not fully visible. This will use
- * animation to do so and take a period of time to complete.
- *
- * @see elm_gengrid_item_show()
- *
- * @ingroup Gengrid
- * 
+ * This causes gengrid to jump to the given @c item and show it (by scrolling),
+ * if it is not fully visible. This will use animation to do so and take a
+ * period of time to complete.
  *
  * @param[in] type Where to position the item in the viewport.
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_bring_in(Elm_Gengrid_Item *obj, Elm_Gengrid_Item_Scrollto_Type type);
 
 /**
- * Update the contents of a given gengrid item
+ * @brief Update the contents of a given gengrid item
  *
- * This updates an item by calling all the item class functions
- * again to get the contents, texts and states. Use this when the
- * original item data has changed and you want the changes to be
- * reflected.
+ * This updates an item by calling all the item class functions again to get
+ * the contents, texts and states. Use this when the original item data has
+ * changed and you want the changes to be reflected.
  *
- * @ingroup Gengrid
- * 
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_update(Elm_Gengrid_Item *obj);
 
 /**
- * Update the part of an item
+ * @brief Update the part of an item
  *
- * This updates an item's part by calling item's fetching functions again
- * to get the contents, texts and states. Use this when the original
- * item data has changed and the changes are desired to be reflected.
- * Second parts argument is used for globbing to match '*', '?', and '.'
- * It can be used at updating multi fields.
+ * This updates an item's part by calling item's fetching functions again to
+ * get the contents, texts and states. Use this when the original item data has
+ * changed and the changes are desired to be reflected. Second parts argument
+ * is used for globbing to match '*', '?', and '.' It can be used at updating
+ * multi fields.
  *
- * Use elm_gengrid_realized_items_update() to update an item's all
- * property.
+ * Use elm_gengrid_realized_items_update() to update an item's all property.
  *
- * @see elm_gengrid_iitem_update()
- *
- * @ingroup Gengrid
- * @since 1.15
- * 
- *
- * @param[in] parts The name of item's part
  * @param[in] itf The type of item's part type
+ *
+ * @since 1.15
+ *
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_fields_update(Elm_Gengrid_Item *obj, const char *parts, Elm_Gengrid_Item_Field_Type itf);
 
 /**
- * Update the item class of a gengrid item.
+ * @brief Update the item class of a gengrid item.
  *
- * This sets another class of the item, changing the way that it is
- * displayed. After changing the item class, elm_gengrid_item_update() is
- * called on the item @p it.
+ * This sets another class of the item, changing the way that it is displayed.
+ * After changing the item class, elm_gengrid_item_update() is called on the
+ * item @c it.
  *
- * @ingroup Gengrid
- * 
+ * @param[in] itc The gengrid item class describing the function pointers and
+ * the item style.
  *
- * @param[in] itc The gengrid item class describing the function pointers and the item style.
+ * @ingroup Elm_Gengrid_Item
  */
 EAPI void elm_gengrid_item_item_class_update(Elm_Gengrid_Item *obj, const Elm_Gengrid_Item_Class *itc);
 

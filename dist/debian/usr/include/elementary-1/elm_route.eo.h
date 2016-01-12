@@ -24,31 +24,31 @@ EAPI const Eo_Class *elm_route_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Route
  */
-EOAPI void  elm_obj_route_emap_set(void *emap);
+EOAPI void elm_obj_route_emap_set(void *emap);
 
 /**
  * @brief Get the minimum and maximum values along the longitude.
  *
- * Note: If only one value is needed, the other pointer can be passed as null.
+ * @note If only one value is needed, the other pointer can be passed as null.
  *
  * @param[out] min Pointer to store the minimum value.
  * @param[out] max Pointer to store the maximum value.
  *
  * @ingroup Elm_Route
  */
-EOAPI void  elm_obj_route_longitude_min_max_get(double *min, double *max);
+EOAPI void elm_obj_route_longitude_min_max_get(double *min, double *max);
 
 /**
  * @brief Get the minimum and maximum values along the latitude.
  *
- * Note: If only one value is needed, the other pointer can be passed as null.
+ * @note If only one value is needed, the other pointer can be passed as null.
  *
  * @param[out] min Pointer to store the minimum value.
  * @param[out] max Pointer to store the maximum value.
  *
  * @ingroup Elm_Route
  */
-EOAPI void  elm_obj_route_latitude_min_max_get(double *min, double *max);
+EOAPI void elm_obj_route_latitude_min_max_get(double *min, double *max);
 
 
 #endif

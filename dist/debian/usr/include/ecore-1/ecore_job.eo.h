@@ -24,7 +24,7 @@ EAPI const Eo_Class *ecore_job_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Job
  */
-EOAPI void  ecore_job_constructor(Ecore_Cb func, const void *data);
+EOAPI void ecore_job_constructor(Ecore_Cb func, const void *data);
 
 
 #endif

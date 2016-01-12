@@ -18,38 +18,35 @@ typedef Eo Elm_Segment_Control_Item;
 EAPI const Eo_Class *elm_segment_control_item_class_get(void) EINA_CONST;
 
 /**
- * Get the index of an item.
+ * @brief Get the index of an item.
  *
- * Index is the position of an item in segment control widget. Its
- * range is from @c 0 to <tt> count - 1 </tt>.
- * Count is the number of items, that can be get with
- * elm_segment_control_item_count_get().
+ * Index is the position of an item in segment control widget. Its range is
+ * from 0 to (count - 1). Count is the number of items, that can be get with
+ * elm_segment_control_item_count_get()
  *
  * @return The position of item in segment control widget.
  *
- * @ingroup SegmentControl
- * 
+ * @ingroup Elm_Segment_Control_Item
  */
-EOAPI int  elm_obj_segment_control_item_index_get(void);
+EOAPI int elm_obj_segment_control_item_index_get(void);
 
 /**
- * Get the real Evas(Edje) object created to implement the view of a given
- * segment_control @p item.
+ * @brief Get the real Evas(Edje) object created to implement the view of a
+ * given segment_control item.
  *
- * Base object is the @c Evas_Object that represents that item.
+ * Base object is the @ref Evas_Object that represents that item.
  *
- * @return The base Edje object associated with @p it.
+ * @return The base Edje object associated with @c it
  *
- * @ingroup SegmentControl
- * 
+ * @ingroup Elm_Segment_Control_Item
  */
-EOAPI Evas_Object * elm_obj_segment_control_item_object_get(void);
+EOAPI Evas_Object *elm_obj_segment_control_item_object_get(void);
 
 /**
- * Set the selected state of an item.
+ * @brief Set the selected state of an item.
  *
- * This sets the selected state of the given item @p it.
- * @c EINA_TRUE for selected, @c EINA_FALSE for not selected.
+ * This sets the selected state of the given item @c it. @c true for selected,
+ * @c false for not selected.
  *
  * If a new item is selected the previously selected will be unselected.
  * Selected item can be got with function
@@ -57,14 +54,11 @@ EOAPI Evas_Object * elm_obj_segment_control_item_object_get(void);
  *
  * The selected item always will be highlighted on segment control.
  *
- * @see elm_segment_control_item_selected_get()
- *
- * @ingroup SegmentControl
- * 
- *
  * @param[in] selected The selected state.
+ *
+ * @ingroup Elm_Segment_Control_Item
  */
-EOAPI void  elm_obj_segment_control_item_selected_set(Eina_Bool selected);
+EOAPI void elm_obj_segment_control_item_selected_set(Eina_Bool selected);
 
 
 #endif

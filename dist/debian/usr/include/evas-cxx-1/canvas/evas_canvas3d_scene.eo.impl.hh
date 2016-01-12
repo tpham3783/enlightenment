@@ -91,6 +91,16 @@ inline void evas::canvas3d::scene::camera_node_set(::evas::canvas3d::node node_)
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_scene_camera_node_set(::efl::eolian::to_c(node_)));
 }
 
+inline void evas::canvas3d::scene::shadows_depth_get(Evas_Real* depth_offset_, Evas_Real* depth_constant_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_scene_shadows_depth_get(depth_offset_, depth_constant_));
+}
+
+inline void evas::canvas3d::scene::shadows_depth_set(Evas_Real depth_offset_, Evas_Real depth_constant_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_scene_shadows_depth_set(depth_offset_, depth_constant_));
+}
+
 inline void eo_cxx::evas::canvas3d::scene::size_set(int w_, int h_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_scene_size_set(w_, h_));
@@ -180,6 +190,16 @@ inline ::evas::canvas3d::node eo_cxx::evas::canvas3d::scene::camera_node_get() c
 inline void eo_cxx::evas::canvas3d::scene::camera_node_set(::evas::canvas3d::node node_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_scene_camera_node_set(::efl::eolian::to_c(node_)));
+}
+
+inline void eo_cxx::evas::canvas3d::scene::shadows_depth_get(Evas_Real* depth_offset_, Evas_Real* depth_constant_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_scene_shadows_depth_get(depth_offset_, depth_constant_));
+}
+
+inline void eo_cxx::evas::canvas3d::scene::shadows_depth_set(Evas_Real depth_offset_, Evas_Real depth_constant_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_scene_shadows_depth_set(depth_offset_, depth_constant_));
 }
 
 inline ::eo_cxx::evas::canvas3d::scene::operator ::evas::canvas3d::scene() const
@@ -408,6 +428,32 @@ void evas_canvas3d_scene_camera_node_set_wrapper(Eo* objid EINA_UNUSED, ::efl::e
       }
 }
 
+template <typename T>
+void evas_canvas3d_scene_shadows_depth_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Evas_Real* depth_offset_, Evas_Real* depth_constant_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->shadows_depth_get(depth_offset_, depth_constant_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
+void evas_canvas3d_scene_shadows_depth_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Evas_Real depth_offset_, Evas_Real depth_constant_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->shadows_depth_set(depth_offset_, depth_constant_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
 namespace efl { namespace eo { namespace detail {
 
 template<>
@@ -554,6 +600,22 @@ struct operations< ::evas::canvas3d::scene >
                ::evas_canvas3d_scene_camera_node_set(::efl::eolian::to_c(node_)));
       }
 
+      virtual void shadows_depth_get(Evas_Real* depth_offset_, Evas_Real* depth_constant_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::evas_canvas3d_scene_shadows_depth_get(depth_offset_, depth_constant_));
+      }
+
+      virtual void shadows_depth_set(Evas_Real depth_offset_, Evas_Real depth_constant_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::evas_canvas3d_scene_shadows_depth_set(depth_offset_, depth_constant_));
+      }
+
    };
 };
 
@@ -563,13 +625,13 @@ struct operation_description_class_size< ::evas::canvas3d::scene >
 {
    static constexpr int value = 
 #if defined(SCENE_PROTECTED) && defined(SCENE_BETA)
-      15
+      17
 #elif defined(SCENE_PROTECTED)
-      15
+      17
 #elif defined(SCENE_BETA)
-      15
+      17
 #else
-      15
+      17
 #endif
       + operation_description_class_size<::evas::canvas3d::object >::value      + operation_description_class_size<::evas::common_interface >::value;
 };
@@ -583,107 +645,87 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::canvas3d::sc
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_size_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_size_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_background_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_background_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_background_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_background_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_pick_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_pick);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_exist_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_exist);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_pick_member_list_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_pick_member_list_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_enable_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_enable_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_enable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_enable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_color_pick_enable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_color_pick_enable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_color_pick_enable_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_color_pick_enable_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_root_node_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_root_node_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_root_node_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_root_node_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_camera_node_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_camera_node_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_camera_node_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_camera_node_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_depth_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_depth_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_depth_set_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_scene_shadows_depth_set);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::canvas3d::object>(), &ops[operation_description_class_size< ::evas::canvas3d::scene >::value]);

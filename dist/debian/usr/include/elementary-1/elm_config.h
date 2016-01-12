@@ -116,6 +116,22 @@ EAPI void        elm_config_profile_dir_free(const char *p_dir);
 EAPI Eina_List  *elm_config_profile_list_get(void);
 
 /**
+ * Get Elementary's list of available profiles including hidden ones.
+ *
+ * This gets a full list of profiles even with hidden names that should not
+ * be user-visible.
+ *
+ * @return The profiles list. List node data are the profile name
+ *         strings.
+ * @ingroup Profile
+ *
+ * @note One must free this list, after usage, with the function
+ *       elm_config_profile_list_free().
+ * @since 1.17
+ */
+EAPI Eina_List  *elm_config_profile_list_full_get(void);
+
+/**
  * Free Elementary's list of available profiles.
  *
  * @param l The profiles list, as returned by elm_config_profile_list_get().
@@ -123,6 +139,17 @@ EAPI Eina_List  *elm_config_profile_list_get(void);
  *
  */
 EAPI void        elm_config_profile_list_free(Eina_List *l);
+
+/**
+ * Return if a profile of the given name exists
+ * 
+ * @return EINA_TRUE if the profile exists, or EINA_FALSE if not
+ * @param profile The profile's name
+ * @ingroup Profile
+ *
+ * @since 1.17
+ */
+EAPI Eina_Bool   elm_config_profile_exists(const char *profile);
 
 /**
  * Set Elementary's profile.
@@ -136,6 +163,61 @@ EAPI void        elm_config_profile_list_free(Eina_List *l);
  *
  */
 EAPI void        elm_config_profile_set(const char *profile);
+
+/**
+ * Take the current config and write it out to the named profile
+ *
+ * This will take the current in-memory config and write it out to the named
+ * profile specified by @p profile. This will not change profile for the
+ * application or make other processes switch profile.
+ * 
+ * @param profile The profile's name
+ * @ingroup Profile
+ *
+ * @since 1.17
+ */
+EAPI void        elm_config_profile_save(const char *profile);
+
+/**
+ * Add a new profile of the given name to be derived from the current profile
+ *
+ * This creates a new profile of name @p profile that will be derived from
+ * the currently used profile using the modification commands encoded in the
+ * @p derive_options string.
+ *
+ * At this point it is not expected that anyone would generally use this API
+ * except if you are a destktop environment and so the user base of this API
+ * will be enlightenment itself.
+ *
+ * @param profile The new profile's name
+ * @param derive_options A string of derive options detailing how to modify
+ *
+ * @see elm_config_profile_derived_del
+ * @ingroup Profile
+ *
+ * @since 1.17
+ */
+EAPI void        elm_config_profile_derived_add(const char *profile, const char *derive_options);
+
+/**
+ * Deletes a profile that is derived from the current one
+ *
+ * This deletes a derived profile added by elm_config_profile_derived_add().
+ * This will delete the profile of the given name @p profile that is derived
+ * from the current profile.
+ *
+ * At this point it is not expected that anyone would generally use this API
+ * except if you are a destktop environment and so the user base of this API
+ * will be enlightenment itself.
+ *
+ * @param profile The profile's name that is to be deleted
+ *
+ * @see elm_config_profile_derived_add
+ * @ingroup Profile
+ *
+ * @since 1.17
+ */
+EAPI void        elm_config_profile_derived_del(const char *profile);
 
 /**
  * @}
@@ -214,6 +296,26 @@ EAPI double       elm_config_scroll_page_scroll_friction_get(void);
  * @ingroup Scrolling
  */
 EAPI void         elm_config_scroll_page_scroll_friction_set(double friction);
+
+/**
+ * Get enable status of context menu disabled.
+ *
+ * @see elm_config_context_menu_disabled_set()
+ * @ingroup Entry
+ * @since 1.17
+ */
+EAPI Eina_Bool elm_config_context_menu_disabled_get(void);
+
+/**
+ * Set enable status of context menu disabled.
+ *
+ * @param enabled enable context menu if @c EINA_TRUE, disable otherwise
+ *
+ * @see elm_config_focus_auto_scroll_bring_in_enabled_get()
+ * @ingroup Entry
+ * @since 1.17
+ */
+EAPI void elm_config_context_menu_disabled_set(Eina_Bool enabled);
 
 /**
  * Get the amount of inertia a scroller will impose at region bring
@@ -488,6 +590,90 @@ EAPI double       elm_config_scroll_thumbscroll_sensitivity_friction_get(void);
  * @ingroup Scrolling
  */
 EAPI void         elm_config_scroll_thumbscroll_sensitivity_friction_set(double friction);
+
+/**
+ * Get the smooth start mode for scrolling with your finger
+ *
+ * @return smooth scroll flag
+ * 
+ * @see elm_config_scroll_thumbscroll_smooth_start_set()
+ *
+ * @since 1.16
+ * @ingroup Scrolling
+ */
+EAPI Eina_Bool    elm_config_scroll_thumbscroll_smooth_start_get(void);
+
+/**
+ * Set the smooth start mode for scrolling with your finger
+ *
+ * This enabled finger scrolling to scroll from the currunt point rather than
+ * jumping and playing catch-up to make start of scrolling look smoother once
+ * the finger or mouse goes past the threshold.
+ * 
+ * @param enable The enabled state of the smooth scroller
+ * 
+ * @see elm_config_scroll_thumbscroll_smooth_start_get()
+ *
+ * @since 1.16
+ * @ingroup Scrolling
+ */
+EAPI void         elm_config_scroll_thumbscroll_smooth_start_set(Eina_Bool enable);
+
+/**
+ * Get the amount of smoothing to apply to scrolling
+ *
+ * @return the amount of smoothing to apply from 0.0 to 1.0
+ *
+ * @see elm_config_scroll_thumbscroll_smooth_amount_set()
+ *
+ * @since 1.16
+ * @ingroup Scrolling
+ */
+EAPI double       elm_config_scroll_thumbscroll_smooth_amount_get(void);
+
+/**
+ * Set the amount of smoothing to apply to scrolling
+ *
+ * Scrolling with your finger can be smoothed out and the amount to smooth
+ * is determined by this parameter. 0.0 means to not smooth at all and
+ * 1.0 is to smoth as much as possible.
+ * 
+ * @param the amount to smooth from 0.0 to 1.0 with 0.0 being none
+ *
+ * @see elm_config_thumbscroll_acceleration_threshold_set()
+ * 
+ * @since 1.16
+ * @ingroup Scrolling
+ */
+EAPI void         elm_config_scroll_thumbscroll_smooth_amount_set(double amount);
+
+/**
+ * Get the time window to look back at for events for smoothing
+ *
+ * @return the time window in seconds (between 0.0 and 1.0)
+ *
+ * @see elm_config_scroll_thumbscroll_smooth_time_window_set()
+ *
+ * @since 1.16
+ * @ingroup Scrolling
+ */
+EAPI double       elm_config_scroll_thumbscroll_smooth_time_window_get(void);
+
+/**
+ * Set the time window to look back at for events for smoothing
+ *
+ * Scrolling with your finger can be smoothed out and the window of time
+ * to look at is determined by this config. The value is in seconds and
+ * is from 0.0 to 1.0
+ * 
+ * @param the time window in seconds (between 0.0 and 1.0)
+ *
+ * @see elm_config_scroll_thumbscroll_smooth_time_window_get()
+ * 
+ * @since 1.16
+ * @ingroup Scrolling
+ */
+EAPI void         elm_config_scroll_thumbscroll_smooth_time_window_set(double amount);
 
 /**
  * Get the minimum speed of mouse cursor movement which will accelerate
@@ -919,6 +1105,7 @@ EAPI const char *elm_config_accel_preference_get(void);
  * "gl", "opengl" - try use OpenGL.
  * "3d" - try and use a 3d acceleration unit.
  * "hw", "hardware", "accel" - try any acceleration unit (best possible)
+ * "none" - use no acceleration. try use software (since 1.16)
  *
  * Since 1.14, it is also possible to specify some GL properties for the GL
  * window surface. This allows applications to use GLView with depth, stencil
@@ -928,7 +1115,7 @@ EAPI const char *elm_config_accel_preference_get(void);
  * Accepted values for depth are for instance "depth", "depth16", "depth24".
  * Accepted values for stencil are "stencil", "stencil1", "stencil8".
  * For MSAA, only predefined strings are accepted: "msaa", "msaa_low",
- * "msaa_mid" and "msaa_high". The selected configuration is not garanteed
+ * "msaa_mid" and "msaa_high". The selected configuration is not guaranteed
  * and is only valid in case of GL acceleration. Only the base acceleration
  * string will be saved (e.g. "gl" or "hw").
  *

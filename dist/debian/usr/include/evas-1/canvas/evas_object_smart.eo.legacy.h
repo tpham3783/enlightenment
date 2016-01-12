@@ -25,7 +25,7 @@ typedef Eo Evas_Object_Smart;
  * If that smart function is not provided for the given object, this flag will
  * be left unchanged.
  *
- * Note: just setting this flag will not make the canvas' whole scene dirty, by
+ * @note just setting this flag will not make the canvas' whole scene dirty, by
  * itself, and evas_render() will have no effect. To force that, use
  * evas_object_smart_changed(), that will also call this function
  * automatically, with @c true as parameter.
@@ -44,7 +44,7 @@ EAPI void evas_object_smart_need_recalculate_set(Evas_Object_Smart *obj, Eina_Bo
  * @brief Get the value of the flag signalling that a given smart object needs
  * to get recalculated.
  *
- * Note: this flag will be unset during the rendering phase, when the
+ * @note this flag will be unset during the rendering phase, when the
  * @c calculate() smart function is called, if one is provided. If it's not
  * provided, then the flag will be left unchanged after the rendering phase.
  *
@@ -111,11 +111,11 @@ EAPI Evas_Smart *evas_object_smart_smart_get(const Evas_Object_Smart *obj) EINA_
  * evas_object_smart_callbacks_descriptions_get() should handle this case as
  * they wish.
  *
- * Note: Becase @c descriptions must be @c null terminated, and because a
+ * @note Becase @c descriptions must be @c null terminated, and because a
  * @c null name makes little sense, too, Evas_Smart_Cb_Description.name must
  * not be @c null.
  *
- * Note: While instance callbacks descriptions are possible, they are not
+ * @note While instance callbacks descriptions are possible, they are not
  * recommended. Use class callbacks descriptions instead as they make you smart
  * object user's life simpler and will use less memory, as descriptions and
  * arrays will be shared among all instances.
@@ -141,10 +141,10 @@ EAPI Eina_Bool evas_object_smart_callbacks_descriptions_set(Evas_Object_Smart *o
  * class_count and instance_count can be ignored, if the caller wishes so. The
  * terminator @c null is not counted in these values.
  *
- * Note: If just class descriptions are of interest, try
+ * @note If just class descriptions are of interest, try
  * evas_smart_callbacks_descriptions_get() instead.
  *
- * Note: Use @c null pointers on the descriptions/counters you're not
+ * @note Use @c null pointers on the descriptions/counters you're not
  * interested in: they'll be ignored by the function.
  *
  * @ref evas_smart_callbacks_descriptions_get().

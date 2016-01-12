@@ -28,7 +28,7 @@ EAPI const Eo_Class *efl_gfx_stack_interface_get(void) EINA_CONST;
  * This is a low-level function, which you'd be using when something should be
  * always on top, for example.
  *
- * Warning: Be careful, it doesn't make sense to change the layer of smart
+ * @warning Be careful, it doesn't make sense to change the layer of smart
  * objects' children. Smart objects have a layer of their own, which should
  * contain all their children objects.
  *
@@ -39,7 +39,7 @@ EAPI const Eo_Class *efl_gfx_stack_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI void  efl_gfx_stack_layer_set(short l);
+EOAPI void efl_gfx_stack_layer_set(short l);
 
 /**
  * @brief Retrieves the layer of its canvas that the given object is part of.
@@ -51,7 +51,7 @@ EOAPI void  efl_gfx_stack_layer_set(short l);
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI short  efl_gfx_stack_layer_get(void);
+EOAPI short efl_gfx_stack_layer_get(void);
 
 /**
  * @brief Get the Evas object stacked right below @c obj
@@ -67,7 +67,7 @@ EOAPI short  efl_gfx_stack_layer_get(void);
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI Efl_Gfx_Stack * efl_gfx_stack_below_get(void);
+EOAPI Efl_Gfx_Stack *efl_gfx_stack_below_get(void);
 
 /**
  * @brief Get the Evas object stacked right above @c obj
@@ -83,7 +83,7 @@ EOAPI Efl_Gfx_Stack * efl_gfx_stack_below_get(void);
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI Efl_Gfx_Stack * efl_gfx_stack_above_get(void);
+EOAPI Efl_Gfx_Stack *efl_gfx_stack_above_get(void);
 
 /**
  * @brief Stack @c obj immediately @c below
@@ -109,7 +109,7 @@ EOAPI Efl_Gfx_Stack * efl_gfx_stack_above_get(void);
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI void  efl_gfx_stack_below(Efl_Gfx_Stack *below);
+EOAPI void efl_gfx_stack_below(Efl_Gfx_Stack *below);
 
 /**
  * @brief Raise @c obj to the top of its layer.
@@ -122,7 +122,7 @@ EOAPI void  efl_gfx_stack_below(Efl_Gfx_Stack *below);
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI void  efl_gfx_stack_raise(void);
+EOAPI void efl_gfx_stack_raise(void);
 
 /**
  * @brief Stack @c obj immediately @c above
@@ -148,7 +148,7 @@ EOAPI void  efl_gfx_stack_raise(void);
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI void  efl_gfx_stack_above(Efl_Gfx_Stack *above);
+EOAPI void efl_gfx_stack_above(Efl_Gfx_Stack *above);
 
 /**
  * @brief Lower @c obj to the bottom of its layer.
@@ -161,7 +161,7 @@ EOAPI void  efl_gfx_stack_above(Efl_Gfx_Stack *above);
  *
  * @ingroup Efl_Gfx_Stack
  */
-EOAPI void  efl_gfx_stack_lower(void);
+EOAPI void efl_gfx_stack_lower(void);
 
 
 #endif

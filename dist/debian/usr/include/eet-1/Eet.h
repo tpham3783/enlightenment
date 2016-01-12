@@ -3224,7 +3224,7 @@ typedef void (*Eet_Dump_Callback)(void *data, const char *str);
  *   int len;
  *   void *data;
  *
- *   f = fopen(file, "r");
+ *   f = fopen(file, "rb");
  *   fseek(f, 0, SEEK_END);
  *   len = ftell(f);
  *   rewind(f);
@@ -4030,7 +4030,7 @@ eet_data_xattr_cipher_set(const char *filename,
  *   int len;
  *   void *data;
  *
- *   f = fopen(file, "r");
+ *   f = fopen(file, "rb");
  *   fseek(f, 0, SEEK_END);
  *   len = ftell(f);
  *   rewind(f);
@@ -4192,7 +4192,7 @@ eet_data_descriptor_decode_cipher(Eet_Data_Descriptor *edd,
  * serialised chunk of data that can be decoded again by
  * eet_data_descriptor_decode(). This is useful for being able to transmit
  * data structures across sockets, pipes, IPC or shared file mechanisms,
- * without having to worry about memory space, machine type, endianess etc.
+ * without having to worry about memory space, machine type, endianness etc.
  *
  * The parameter @p edd must point to a valid data descriptor, and
  * @p data_in must point to the right data structure to encode. If not, the

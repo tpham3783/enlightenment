@@ -349,65 +349,47 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::canvas3d::ob
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_change_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_change);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_type_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_type_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_type_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_type_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_dirty_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_dirty_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_update_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_update);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_update_notify_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_update_notify);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_change_notify_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_change_notify);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_callback_register_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_callback_register);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_object_callback_unregister_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_object_callback_unregister);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::eo::base>(), &ops[operation_description_class_size< ::evas::canvas3d::object >::value]);

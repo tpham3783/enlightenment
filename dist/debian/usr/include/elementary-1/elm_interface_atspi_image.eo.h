@@ -19,38 +19,37 @@ EAPI const Eo_Class *elm_interface_atspi_image_mixin_get(void) EINA_CONST;
 
 #ifdef ELM_INTERFACE_ATSPI_IMAGE_PROTECTED
 /**
- * Gets an image extents.
+ * @brief Gets an image extents.
  *
- * @param[in] screen_coords No description supplied.
- * @param[out] x No description supplied.
- * @param[out] y No description supplied.
- * @param[out] width No description supplied.
- * @param[out] height No description supplied.
- */
-EOAPI void  elm_interface_atspi_image_extents_get(Eina_Bool screen_coords, int *x, int *y, int *width, int *height);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_IMAGE_PROTECTED
-/**
- * No description supplied.
+ * @param[in] screen_coords
+ * @param[out] x
+ * @param[out] y
+ * @param[out] width
+ * @param[out] height
  *
- * @param[in] description No description supplied.
+ * @ingroup Elm_Interface_Atspi_Image
  */
-EOAPI void  elm_interface_atspi_image_description_set(const char *description);
+EOAPI void elm_interface_atspi_image_extents_get(Eina_Bool screen_coords, int *x, int *y, int *width, int *height);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_IMAGE_PROTECTED
-/**
- * Gets textual description of image
- */
-EOAPI const char * elm_interface_atspi_image_description_get(void);
+EOAPI void elm_interface_atspi_image_description_set(const char *description);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_IMAGE_PROTECTED
-/**
- * Gets locale of the image description.
+/** Gets textual description of image
+ *
+ * @ingroup Elm_Interface_Atspi_Image
  */
-EOAPI const char * elm_interface_atspi_image_locale_get(void);
+EOAPI const char *elm_interface_atspi_image_description_get(void);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_IMAGE_PROTECTED
+/** Gets locale of the image description.
+ *
+ * @ingroup Elm_Interface_Atspi_Image
+ */
+EOAPI const char *elm_interface_atspi_image_locale_get(void);
 #endif
 
 

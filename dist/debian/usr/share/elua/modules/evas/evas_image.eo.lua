@@ -73,6 +73,8 @@ ffi.cdef [[
     Evas_Canvas3D_Scene *evas_obj_image_scene_get(void);
     void evas_obj_image_orient_set(Evas_Image_Orient orient);
     Evas_Image_Orient evas_obj_image_orient_get(void);
+    void evas_obj_image_snapshot_set(Eina_Bool s);
+    Eina_Bool evas_obj_image_snapshot_get(void);
     void evas_obj_image_preload_begin(void);
     void evas_obj_image_data_update_add(int x, int y, int w, int h);
     double evas_obj_image_animated_frame_duration_get(int start_frame, int frame_num);
@@ -434,6 +436,19 @@ __body = {
         return v
     end,
 
+    snapshot_set = function(self, s)
+        eo.__do_start(self, __class)
+        __lib.evas_obj_image_snapshot_set(s)
+        eo.__do_end()
+    end,
+
+    snapshot_get = function(self)
+        eo.__do_start(self, __class)
+        local v = __lib.evas_obj_image_snapshot_get()
+        eo.__do_end()
+        return ((v) ~= 0)
+    end,
+
     preload_begin = function(self)
         eo.__do_start(self, __class)
         __lib.evas_obj_image_preload_begin()
@@ -474,6 +489,7 @@ __body = {
 
     __properties = {
         ["region_support"] = { 0, 0, 1, 0, true, false },
+        ["snapshot"] = { 0, 0, 1, 1, true, true },
         ["border_scale"] = { 0, 0, 1, 1, true, true },
         ["video_surface"] = { 0, 0, 1, 1, true, true },
         ["animated_frame"] = { 0, 0, 0, 1, false, true },

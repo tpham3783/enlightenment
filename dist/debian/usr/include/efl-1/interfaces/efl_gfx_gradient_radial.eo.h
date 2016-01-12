@@ -25,7 +25,7 @@ EAPI const Eo_Class *efl_gfx_gradient_radial_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_Gradient_Radial
  */
-EOAPI void  efl_gfx_gradient_radial_center_set(double x, double y);
+EOAPI void efl_gfx_gradient_radial_center_set(double x, double y);
 
 /**
  * @brief Gets the center of this radial gradient.
@@ -35,7 +35,7 @@ EOAPI void  efl_gfx_gradient_radial_center_set(double x, double y);
  *
  * @ingroup Efl_Gfx_Gradient_Radial
  */
-EOAPI void  efl_gfx_gradient_radial_center_get(double *x, double *y);
+EOAPI void efl_gfx_gradient_radial_center_get(double *x, double *y);
 
 /**
  * @brief Sets the center radius of this radial gradient.
@@ -44,7 +44,7 @@ EOAPI void  efl_gfx_gradient_radial_center_get(double *x, double *y);
  *
  * @ingroup Efl_Gfx_Gradient_Radial
  */
-EOAPI void  efl_gfx_gradient_radial_radius_set(double r);
+EOAPI void efl_gfx_gradient_radial_radius_set(double r);
 
 /**
  * @brief Gets the center radius of this radial gradient.
@@ -53,7 +53,7 @@ EOAPI void  efl_gfx_gradient_radial_radius_set(double r);
  *
  * @ingroup Efl_Gfx_Gradient_Radial
  */
-EOAPI double  efl_gfx_gradient_radial_radius_get(void);
+EOAPI double efl_gfx_gradient_radial_radius_get(void);
 
 /**
  * @brief Sets the focal point of this radial gradient.
@@ -63,7 +63,7 @@ EOAPI double  efl_gfx_gradient_radial_radius_get(void);
  *
  * @ingroup Efl_Gfx_Gradient_Radial
  */
-EOAPI void  efl_gfx_gradient_radial_focal_set(double x, double y);
+EOAPI void efl_gfx_gradient_radial_focal_set(double x, double y);
 
 /**
  * @brief Gets the focal point of this radial gradient.
@@ -73,7 +73,7 @@ EOAPI void  efl_gfx_gradient_radial_focal_set(double x, double y);
  *
  * @ingroup Efl_Gfx_Gradient_Radial
  */
-EOAPI void  efl_gfx_gradient_radial_focal_get(double *x, double *y);
+EOAPI void efl_gfx_gradient_radial_focal_get(double *x, double *y);
 
 
 #endif

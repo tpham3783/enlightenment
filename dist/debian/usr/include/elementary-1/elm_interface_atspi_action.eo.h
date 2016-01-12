@@ -19,77 +19,86 @@ EAPI const Eo_Class *elm_interface_atspi_action_mixin_get(void) EINA_CONST;
 
 #ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
 /**
- * Performs action on given widget.
- * 
+ * @brief Performs action on given widget.
  *
- * @param[in] id No description supplied.
+ * @param[in] id
+ *
+ * @ingroup Elm_Interface_Atspi_Action
  */
-EOAPI Eina_Bool  elm_interface_atspi_action_do(int id);
+EOAPI Eina_Bool elm_interface_atspi_action_do(int id);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
 /**
- * Gets configured keybinding for specific action and widget.
- * returned pointer should be free by a user.
- * 
+ * @brief Gets configured keybinding for specific action and widget.
  *
- * @param[in] id No description supplied.
+ * @param[in] id
+ *
+ * @return Should be freed by the user.
+ *
+ * @ingroup Elm_Interface_Atspi_Action
  */
-EOAPI char * elm_interface_atspi_action_keybinding_get(int id);
+EOAPI char *elm_interface_atspi_action_keybinding_get(int id);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
 /**
- * Gets action name for given id
+ * @brief Gets action name for given id
  *
- * @param[in] id No description supplied.
+ * @param[in] id
+ *
+ * @ingroup Elm_Interface_Atspi_Action
  */
-EOAPI const char * elm_interface_atspi_action_name_get(int id);
+EOAPI const char *elm_interface_atspi_action_name_get(int id);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
+EOAPI void elm_interface_atspi_action_name_set(int id, const char *name);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
 /**
- * No description supplied.
+ * @brief Gets action description for given id
  *
- * @param[in] id No description supplied.
- * @param[in] name No description supplied.
+ * @param[in] id
+ *
+ * @ingroup Elm_Interface_Atspi_Action
  */
-EOAPI void  elm_interface_atspi_action_name_set(int id, const char *name);
+EOAPI const char *elm_interface_atspi_action_description_get(int id);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
 /**
- * Gets action description for given id
+ * @brief Sets action description for given id
  *
- * @param[in] id No description supplied.
+ * @param[in] id
+ * @param[in] description
+ *
+ * @ingroup Elm_Interface_Atspi_Action
  */
-EOAPI const char * elm_interface_atspi_action_description_get(int id);
+EOAPI Eina_Bool elm_interface_atspi_action_description_set(int id, const char *description);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
 /**
- * Sets action description for given id
+ * @brief Get list of available widget actions
  *
- * @param[in] id No description supplied.
- * @param[in] description No description supplied.
+ * @return contains statically allocated strings
+ *
+ * @ingroup Elm_Interface_Atspi_Action
  */
-EOAPI Eina_Bool  elm_interface_atspi_action_description_set(int id, const char *description);
+EOAPI Eina_List *elm_interface_atspi_action_actions_get(void);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
 /**
- * Get list of available widget actions
- */
-EOAPI Eina_List * elm_interface_atspi_action_actions_get(void);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_ACTION_PROTECTED
-/**
- * Gets localized action name for given id
+ * @brief Gets localized action name for given id
  *
- * @param[in] id No description supplied.
+ * @param[in] id
+ *
+ * @ingroup Elm_Interface_Atspi_Action
  */
-EOAPI const char * elm_interface_atspi_action_localized_name_get(int id);
+EOAPI const char *elm_interface_atspi_action_localized_name_get(int id);
 #endif
 
 

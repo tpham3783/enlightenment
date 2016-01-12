@@ -34,6 +34,11 @@ inline void evas::canvas3d::mesh::index_data_set(Evas_Canvas3D_Index_Format form
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_index_data_set(format_, count_, indices_));
 }
 
+inline void evas::canvas3d::mesh::convex_hull_data_get(int frame_, Eina_Inarray * vertex_, Eina_Inarray * index_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_convex_hull_data_get(frame_, vertex_, index_));
+}
+
 inline void evas::canvas3d::mesh::index_data_copy_set(Evas_Canvas3D_Index_Format format_, int count_, const void * indices_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_index_data_copy_set(format_, count_, indices_));
@@ -63,6 +68,13 @@ inline void * evas::canvas3d::mesh::index_data_map() const
 inline void evas::canvas3d::mesh::index_data_unmap() const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_index_data_unmap());
+}
+
+inline bool evas::canvas3d::mesh::frame_exist(int frame_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_canvas3d_mesh_frame_exist(frame_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
 inline void evas::canvas3d::mesh::frame_add(int frame_) const
@@ -206,6 +218,28 @@ inline void evas::canvas3d::mesh::vertex_assembly_set(Evas_Canvas3D_Vertex_Assem
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_vertex_assembly_set(assembly_));
 }
 
+inline void evas::canvas3d::mesh::shadows_edges_filtering_get(int* blur_level_, Evas_Real* edges_size_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_shadows_edges_filtering_get(blur_level_, edges_size_));
+}
+
+inline void evas::canvas3d::mesh::shadows_edges_filtering_set(int blur_level_, Evas_Real edges_size_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_shadows_edges_filtering_set(blur_level_, edges_size_));
+}
+
+inline Evas_Real evas::canvas3d::mesh::shadows_constant_bias_get() const
+{
+   Evas_Real _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_canvas3d_mesh_shadows_constant_bias_get());
+   return _tmp_ret;
+}
+
+inline void evas::canvas3d::mesh::shadows_constant_bias_set(Evas_Real bias_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_shadows_constant_bias_set(bias_));
+}
+
 inline void eo_cxx::evas::canvas3d::mesh::frame_vertex_data_set(int frame_, Evas_Canvas3D_Vertex_Attrib attrib_, int stride_, const void * data_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_frame_vertex_data_set(frame_, attrib_, stride_, data_));
@@ -240,6 +274,11 @@ inline void eo_cxx::evas::canvas3d::mesh::index_data_set(Evas_Canvas3D_Index_For
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_index_data_set(format_, count_, indices_));
 }
 
+inline void eo_cxx::evas::canvas3d::mesh::convex_hull_data_get(int frame_, Eina_Inarray * vertex_, Eina_Inarray * index_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_convex_hull_data_get(frame_, vertex_, index_));
+}
+
 inline void eo_cxx::evas::canvas3d::mesh::index_data_copy_set(Evas_Canvas3D_Index_Format format_, int count_, const void * indices_) const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_index_data_copy_set(format_, count_, indices_));
@@ -269,6 +308,13 @@ inline void * eo_cxx::evas::canvas3d::mesh::index_data_map() const
 inline void eo_cxx::evas::canvas3d::mesh::index_data_unmap() const
 {
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_index_data_unmap());
+}
+
+inline bool eo_cxx::evas::canvas3d::mesh::frame_exist(int frame_) const
+{
+   Eina_Bool _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_canvas3d_mesh_frame_exist(frame_));
+   return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
 inline void eo_cxx::evas::canvas3d::mesh::frame_add(int frame_) const
@@ -412,6 +458,28 @@ inline void eo_cxx::evas::canvas3d::mesh::vertex_assembly_set(Evas_Canvas3D_Vert
    eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_vertex_assembly_set(assembly_));
 }
 
+inline void eo_cxx::evas::canvas3d::mesh::shadows_edges_filtering_get(int* blur_level_, Evas_Real* edges_size_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_shadows_edges_filtering_get(blur_level_, edges_size_));
+}
+
+inline void eo_cxx::evas::canvas3d::mesh::shadows_edges_filtering_set(int blur_level_, Evas_Real edges_size_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_shadows_edges_filtering_set(blur_level_, edges_size_));
+}
+
+inline Evas_Real eo_cxx::evas::canvas3d::mesh::shadows_constant_bias_get() const
+{
+   Evas_Real _tmp_ret;
+   eo_do(_concrete_eo_ptr(), _tmp_ret = ::evas_canvas3d_mesh_shadows_constant_bias_get());
+   return _tmp_ret;
+}
+
+inline void eo_cxx::evas::canvas3d::mesh::shadows_constant_bias_set(Evas_Real bias_) const
+{
+   eo_do(_concrete_eo_ptr(), ::evas_canvas3d_mesh_shadows_constant_bias_set(bias_));
+}
+
 inline ::eo_cxx::evas::canvas3d::mesh::operator ::evas::canvas3d::mesh() const
 {
    return *static_cast<::evas::canvas3d::mesh const*>(static_cast<void const*>(this));
@@ -510,6 +578,19 @@ void evas_canvas3d_mesh_index_data_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo:
 }
 
 template <typename T>
+void evas_canvas3d_mesh_convex_hull_data_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, int frame_, Eina_Inarray * vertex_, Eina_Inarray * index_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->convex_hull_data_get(frame_, vertex_, index_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
 void evas_canvas3d_mesh_index_data_copy_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Evas_Canvas3D_Index_Format format_, int count_, const void * indices_)
 {
    try
@@ -577,6 +658,21 @@ void evas_canvas3d_mesh_index_data_unmap_wrapper(Eo* objid EINA_UNUSED, ::efl::e
    catch (...)
       {
          eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
+bool evas_canvas3d_mesh_frame_exist_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, int frame_)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->frame_exist(frame_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Eina_Bool _tmp_ret{};
+         return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
       }
 }
 
@@ -921,6 +1017,60 @@ void evas_canvas3d_mesh_vertex_assembly_set_wrapper(Eo* objid EINA_UNUSED, ::efl
       }
 }
 
+template <typename T>
+void evas_canvas3d_mesh_shadows_edges_filtering_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, int* blur_level_, Evas_Real* edges_size_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->shadows_edges_filtering_get(blur_level_, edges_size_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
+void evas_canvas3d_mesh_shadows_edges_filtering_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, int blur_level_, Evas_Real edges_size_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->shadows_edges_filtering_set(blur_level_, edges_size_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
+template <typename T>
+Evas_Real evas_canvas3d_mesh_shadows_constant_bias_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+{
+   try
+      {
+         return static_cast<T*>(self->this_)->shadows_constant_bias_get();
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+         Evas_Real _tmp_ret{};
+         return _tmp_ret;
+      }
+}
+
+template <typename T>
+void evas_canvas3d_mesh_shadows_constant_bias_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Evas_Real bias_)
+{
+   try
+      {
+         static_cast<T*>(self->this_)->shadows_constant_bias_set(bias_);
+      }
+   catch (...)
+      {
+         eina_error_set( ::efl::eina::unknown_error() );
+      }
+}
+
 namespace efl { namespace eo { namespace detail {
 
 template<>
@@ -984,6 +1134,14 @@ struct operations< ::evas::canvas3d::mesh >
                ::evas_canvas3d_mesh_index_data_set(format_, count_, indices_));
       }
 
+      virtual void convex_hull_data_get(int frame_, Eina_Inarray * vertex_, Eina_Inarray * index_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::evas_canvas3d_mesh_convex_hull_data_get(frame_, vertex_, index_));
+      }
+
       virtual void index_data_copy_set(Evas_Canvas3D_Index_Format format_, int count_, const void * indices_)
       {
 
@@ -1028,6 +1186,16 @@ struct operations< ::evas::canvas3d::mesh >
          eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
                dynamic_cast<T*>(this)->_eo_class(),
                ::evas_canvas3d_mesh_index_data_unmap());
+      }
+
+      virtual bool frame_exist(int frame_)
+      {
+         Eina_Bool _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::evas_canvas3d_mesh_frame_exist(frame_));
+            return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
       }
 
       virtual void frame_add(int frame_)
@@ -1246,6 +1414,40 @@ struct operations< ::evas::canvas3d::mesh >
                ::evas_canvas3d_mesh_vertex_assembly_set(assembly_));
       }
 
+      virtual void shadows_edges_filtering_get(int* blur_level_, Evas_Real* edges_size_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::evas_canvas3d_mesh_shadows_edges_filtering_get(blur_level_, edges_size_));
+      }
+
+      virtual void shadows_edges_filtering_set(int blur_level_, Evas_Real edges_size_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::evas_canvas3d_mesh_shadows_edges_filtering_set(blur_level_, edges_size_));
+      }
+
+      virtual Evas_Real shadows_constant_bias_get()
+      {
+         Evas_Real _tmp_ret = {};
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               _tmp_ret = ::evas_canvas3d_mesh_shadows_constant_bias_get());
+            return _tmp_ret;
+      }
+
+      virtual void shadows_constant_bias_set(Evas_Real bias_)
+      {
+
+         eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
+               dynamic_cast<T*>(this)->_eo_class(),
+               ::evas_canvas3d_mesh_shadows_constant_bias_set(bias_));
+      }
+
    };
 };
 
@@ -1255,13 +1457,13 @@ struct operation_description_class_size< ::evas::canvas3d::mesh >
 {
    static constexpr int value = 
 #if defined(MESH_PROTECTED) && defined(MESH_BETA)
-      36
+      42
 #elif defined(MESH_PROTECTED)
-      36
+      42
 #elif defined(MESH_BETA)
-      36
+      42
 #else
-      36
+      42
 #endif
       + operation_description_class_size<::evas::canvas3d::object >::value      + operation_description_class_size<::evas::common_interface >::value      + operation_description_class_size<::efl::file >::value;
 };
@@ -1275,254 +1477,212 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::canvas3d::me
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_copy_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_copy_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_map_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_map);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_unmap_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_data_unmap);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_stride_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_vertex_stride_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_convex_hull_data_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_convex_hull_data_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_copy_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_copy_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_format_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_format_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_count_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_count_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_map_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_map);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_unmap_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_index_data_unmap);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_exist_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_exist);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_func_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_func_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_func_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_func_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_from_primitive_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_from_primitive_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shade_mode_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shade_mode_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shade_mode_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shade_mode_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_color_pick_enable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_color_pick_enable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_color_pick_enable_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_color_pick_enable_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_count_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_count_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_count_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_count_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_enable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_enable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_enable_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_fog_enable_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_test_enable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_test_enable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_test_enable_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_test_enable_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_func_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_func_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_func_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_alpha_func_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_enable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_enable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_enable_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_blending_enable_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_material_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_material_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_material_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_frame_material_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_assembly_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_assembly_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_assembly_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_vertex_assembly_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_edges_filtering_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_edges_filtering_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_edges_filtering_set_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_edges_filtering_set);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_constant_bias_get_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_constant_bias_get);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
+   ++i;
+
+   ops[i].func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_constant_bias_set_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_canvas3d_mesh_shadows_constant_bias_set);
+   ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::canvas3d::object>(), &ops[operation_description_class_size< ::evas::canvas3d::mesh >::value]);

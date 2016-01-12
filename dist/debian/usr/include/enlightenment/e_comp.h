@@ -54,7 +54,7 @@ typedef enum _E_Layer
 extern E_API int E_EVENT_COMPOSITOR_DISABLE;
 extern E_API int E_EVENT_COMPOSITOR_ENABLE;
 
-typedef void (*E_Comp_Grab_Cb)(void);
+typedef void (*E_Comp_Cb)(void);
 
 typedef struct E_Comp_Screen_Iface
 {
@@ -68,6 +68,8 @@ typedef struct E_Comp_Screen_Iface
    E_Randr2 *(*create)(void);
    /* apply current config */
    void (*apply)(void);
+   /* set dpms (on, standby, suspend, off) */
+   void (*dpms)(int);
 } E_Comp_Screen_Iface;
 
 struct _E_Comp
@@ -86,6 +88,8 @@ struct _E_Comp
    E_Pointer      *pointer;
    Eina_List *clients;
    unsigned int new_clients;
+
+   Eina_List *pre_render_cbs; /* E_Comp_Cb */
 
    E_Comp_X_Data *x_comp_data;
    E_Comp_Wl_Data *wl_comp_data;
@@ -141,9 +145,9 @@ struct _E_Comp
    unsigned int    input_key_grabs;
    unsigned int    input_mouse_grabs;
 
-   E_Comp_Grab_Cb        grab_cb;
-   E_Comp_Grab_Cb        bindings_grab_cb;
-   E_Comp_Grab_Cb        bindings_ungrab_cb;
+   E_Comp_Cb        grab_cb;
+   E_Comp_Cb        bindings_grab_cb;
+   E_Comp_Cb        bindings_ungrab_cb;
 
    Eina_Bool       gl : 1;
    Eina_Bool       grabbed : 1;
@@ -172,6 +176,8 @@ typedef enum
 } E_Comp_Engine;
 
 extern E_API E_Comp *e_comp;
+extern E_API E_Comp_X_Data *e_comp_x;
+extern E_API E_Comp_Wl_Data *e_comp_wl;
 
 EINTERN Eina_Bool e_comp_init(void);
 E_API E_Comp *e_comp_new(void);
@@ -229,6 +235,12 @@ static inline Eina_Bool
 e_comp_util_has_x(void)
 {
    return !!e_comp->root;
+}
+
+static inline Eina_Bool
+e_comp_util_has_xwayland(void)
+{
+   return (e_comp->comp_type != E_PIXMAP_TYPE_X) && e_comp_util_has_x();
 }
 
 #endif

@@ -72,7 +72,7 @@ EAPI Elm_Actionslider_Pos elm_actionslider_magnet_pos_get(const Elm_Actionslider
  * enabled OR them together(e.g. #ELM_ACTIONSLIDER_LEFT |
  * #ELM_ACTIONSLIDER_RIGHT).
  *
- * Note: All the positions are enabled by default.
+ * @note All the positions are enabled by default.
  *
  * @param[in] pos Bit mask indicating the enabled positions.
  *

@@ -24,7 +24,7 @@ EAPI const Eo_Class *evas_canvas3d_object_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI void  evas_canvas3d_object_update_notify(void);
+EOAPI void evas_canvas3d_object_update_notify(void);
 
 /**
  * @brief Pure virtual change_notify function.
@@ -35,7 +35,7 @@ EOAPI void  evas_canvas3d_object_update_notify(void);
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI void  evas_canvas3d_object_change_notify(Evas_Canvas3D_State state, Evas_Canvas3D_Object *ref);
+EOAPI void evas_canvas3d_object_change_notify(Evas_Canvas3D_State state, Evas_Canvas3D_Object *ref);
 
 /**
  * @brief Pure virtual register samrt callback function.
@@ -44,7 +44,7 @@ EOAPI void  evas_canvas3d_object_change_notify(Evas_Canvas3D_State state, Evas_C
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI void  evas_canvas3d_object_callback_register(const char *event, const void *data);
+EOAPI void evas_canvas3d_object_callback_register(const char *event, const void *data);
 
 /**
  * @brief Pure virtual unregister smart callback function.
@@ -53,7 +53,7 @@ EOAPI void  evas_canvas3d_object_callback_register(const char *event, const void
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI void  evas_canvas3d_object_callback_unregister(const char *event);
+EOAPI void evas_canvas3d_object_callback_unregister(const char *event);
 
 /**
  * @brief Notify the object regarding its  state change.
@@ -62,13 +62,13 @@ EOAPI void  evas_canvas3d_object_callback_unregister(const char *event);
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI void  evas_canvas3d_object_change(Evas_Canvas3D_State state, Evas_Canvas3D_Object *ref);
+EOAPI void evas_canvas3d_object_change(Evas_Canvas3D_State state, Evas_Canvas3D_Object *ref);
 
 /** Returns the type of the object.
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI Evas_Canvas3D_Object_Type  evas_canvas3d_object_type_get(void);
+EOAPI Evas_Canvas3D_Object_Type evas_canvas3d_object_type_get(void);
 
 /**
  * @brief Returns the type of the object.
@@ -77,7 +77,7 @@ EOAPI Evas_Canvas3D_Object_Type  evas_canvas3d_object_type_get(void);
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI void  evas_canvas3d_object_type_set(Evas_Canvas3D_Object_Type type);
+EOAPI void evas_canvas3d_object_type_set(Evas_Canvas3D_Object_Type type);
 
 /**
  * @brief Returns the status of a particular state of the object.
@@ -86,13 +86,13 @@ EOAPI void  evas_canvas3d_object_type_set(Evas_Canvas3D_Object_Type type);
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI Eina_Bool  evas_canvas3d_object_dirty_get(Evas_Canvas3D_State state);
+EOAPI Eina_Bool evas_canvas3d_object_dirty_get(Evas_Canvas3D_State state);
 
 /** Update request for the object.
  *
  * @ingroup Evas_Canvas3D_Object
  */
-EOAPI void  evas_canvas3d_object_update(void);
+EOAPI void evas_canvas3d_object_update(void);
 
 EOAPI extern const Eo_Event_Description _EVAS_CANVAS3D_OBJECT_EVENT_CLICKED;
 EOAPI extern const Eo_Event_Description _EVAS_CANVAS3D_OBJECT_EVENT_COLLISION;

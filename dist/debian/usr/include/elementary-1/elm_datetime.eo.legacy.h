@@ -30,125 +30,70 @@ typedef enum
 #endif
 
 /**
- * Set the datetime format. Format is a combination of allowed Libc date format
- * specifiers like: "%b %d, %Y %I : %M %p".
+ * @brief Set the datetime format. Format is a combination of allowed Libc date
+ * format specifiers like: "%b %d, %Y %I : %M %p".
  *
  * Maximum allowed format length is 64 chars.
  *
- * Format can include separators for each individual datetime field except
- * for AM/PM field.
+ * Format can include separators for each individual datetime field except for
+ * AM/PM field.
  *
- * Each separator can be a maximum of 6 UTF-8 bytes.
- * Space is also taken as a separator.
+ * Each separator can be a maximum of 6 UTF-8 bytes. Space is also taken as a
+ * separator.
  *
- * Following are the allowed set of format specifiers for each datetime field.
- *
- * @b %%Y : The year as a decimal number including the century.
- *
- * @b %%y : The year as a decimal number without a century (range 00 to 99).
- *
- * @b %%m : The month as a decimal number (range 01 to 12).
- *
- * @b %%b : The abbreviated month name according to the current locale.
- *
- * @b %%B : The full month name according to the current locale.
- *
- * @b %%h : The abbreviated month name according to the current locale(same as %%b).
- *
- * @b %%d : The day of the month as a decimal number (range 01 to 31).
- *
- * @b %%e : The day of the month as a decimal number (range 1 to 31). single
- * digits are preceded by a blank.
- *
- * @b %%I : The hour as a decimal number using a 12-hour clock (range 01 to 12).
- *
- * @b %%H : The hour as a decimal number using a 24-hour clock (range 00 to 23).
- *
- * @b %%k : The hour (24-hour clock) as a decimal number (range 0 to 23). single
- * digits are preceded by a blank.
- *
- * @b %%l : The hour (12-hour clock) as a decimal number (range 1 to 12); single
- * digits are preceded by a blank.
- *
- * @b %%M : The minute as a decimal number (range 00 to 59).
- *
- * @b %%p : Either 'AM' or 'PM' according to the given time value, or the
- * corresponding strings for the current locale. Noon is treated as 'PM'
- * and midnight as 'AM'.
- *
- * @b %%P : Like %p but in lower case: 'am' or 'pm' or a corresponding string for
- * the current locale.
- *
- * @b %%c : The preferred date and time representation for the current locale.
- *
- * @b %%x : The preferred date representation for the current locale without the time.
- *
- * @b %%X : The preferred time representation for the current locale without the date.
- *
- * @b %%r : The complete calendar time using the AM/PM format of the current locale.
- *
- * @b %%R : The hour and minute in decimal numbers using the format %H:%M.
- *
- * @b %%T : The time of day in decimal numbers using the format %H:%M:%S.
- *
- * @b %%D : The date using the format %%m/%%d/%%y.
- *
- * @b %%F : The date using the format %%Y-%%m-%%d.
- *
- * These specifiers can be arranged in any order and the widget will display the
- * fields accordingly.
+ * These specifiers can be arranged in any order and the widget will display
+ * the fields accordingly.
  *
  * Default format is taken as per the system locale settings.
  *
- * @see elm_datetime_format_get()
- * @ingroup Datetime
+ * @param[in] fmt The datetime format.
  *
- * @param[in] fmt The datetime format
+ * @ingroup Elm_Datetime
  */
 EAPI void elm_datetime_format_set(Elm_Datetime *obj, const char *fmt);
 
 /**
- * Get the datetime format.
+ * @brief Get the datetime format.
+ *
+ * @return The datetime format.
+ *
+ * @ingroup Elm_Datetime
  */
 EAPI const char *elm_datetime_format_get(const Elm_Datetime *obj);
 
 /**
  * @brief Set the field limits of a field.
  *
- * Limits can be set to individual fields, independently, except for AM/PM field.
- * Any field can display the values only in between these Minimum and Maximum limits unless
- * the corresponding time value is restricted from MinTime to MaxTime.
- * That is, Min/ Max field limits always works under the limitations of MinTime/ MaxTime.
+ * Limits can be set to individual fields, independently, except for AM/PM
+ * field. Any field can display the values only in between these minimum and
+ * maximum limits unless the corresponding time value is restricted from
+ * MinTime to MaxTime. That is, min/max field limits always works under the
+ * limitations of mintime/maxtime.
  *
  * There is no provision to set the limits of AM/PM field.
  *
- * @see elm_datetime_field_limit_set()
- * @ingroup Datetime
- * 
+ * @param[in] min Reference to field's minimum value.
+ * @param[in] max Reference to field's maximum value.
  *
- * @param[in] fieldtype Type of the field. #ELM_DATETIME_YEAR etc.
- * @param[in] min Reference to field's minimum value
- * @param[in] max Reference to field's maximum value
+ * @ingroup Elm_Datetime
  */
 EAPI void elm_datetime_field_limit_set(Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype, int min, int max);
 
 /**
  * @brief Get the field limits of a field.
  *
- * Limits can be set to individual fields, independently, except for AM/PM field.
- * Any field can display the values only in between these Minimum and Maximum limits unless
- * the corresponding time value is restricted from MinTime to MaxTime.
- * That is, Min/ Max field limits always works under the limitations of MinTime/ MaxTime.
+ * Limits can be set to individual fields, independently, except for AM/PM
+ * field. Any field can display the values only in between these minimum and
+ * maximum limits unless the corresponding time value is restricted from
+ * MinTime to MaxTime. That is, min/max field limits always works under the
+ * limitations of mintime/maxtime.
  *
  * There is no provision to set the limits of AM/PM field.
  *
- * @see elm_datetime_field_limit_set()
- * @ingroup Datetime
- * 
+ * @param[out] min Reference to field's minimum value.
+ * @param[out] max Reference to field's maximum value.
  *
- * @param[in] fieldtype Type of the field. #ELM_DATETIME_YEAR etc.
- * @param[out] min Reference to field's minimum value
- * @param[out] max Reference to field's maximum value
+ * @ingroup Elm_Datetime
  */
 EAPI void elm_datetime_field_limit_get(const Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype, int *min, int *max);
 
@@ -166,13 +111,11 @@ EAPI void elm_datetime_field_limit_get(const Elm_Datetime *obj, Elm_Datetime_Fie
  *
  * Minute: default value range is from 0 to 59.
  *
- * @return @c EINA_TRUE if minimum value is accepted.
- *
- * @see elm_datetime_value_min_get()
- * @ingroup Datetime
- * 
- *
  * @param[in] mintime Time structure containing the minimum time value.
+ *
+ * @return @c true if minimum value is accepted.
+ *
+ * @ingroup Elm_Datetime
  */
 EAPI Eina_Bool elm_datetime_value_min_set(Elm_Datetime *obj, const Elm_Datetime_Time *mintime);
 
@@ -190,13 +133,11 @@ EAPI Eina_Bool elm_datetime_value_min_set(Elm_Datetime *obj, const Elm_Datetime_
  *
  * Minute: default value range is from 0 to 59.
  *
- * @return @c EINA_TRUE if minimum value is successfully returned.
+ * @param[in,out] mintime Time structure.
  *
- * @see elm_datetime_value_min_set()
- * @ingroup Datepicker
- * 
+ * @return @c true if minimum value is successfully returned.
  *
- * @param[inout] mintime Time structure.
+ * @ingroup Elm_Datetime
  */
 EAPI Eina_Bool elm_datetime_value_min_get(const Elm_Datetime *obj, Elm_Datetime_Time *mintime);
 
@@ -214,13 +155,11 @@ EAPI Eina_Bool elm_datetime_value_min_get(const Elm_Datetime *obj, Elm_Datetime_
  *
  * Minute: default value range is from 0 to 59.
  *
- * @return @c EINA_TRUE if current time is set successfully.
- *
- * @see elm_datetime_value_set()
- * @ingroup Datetime
- * 
- *
  * @param[in] newtime Time structure filled with values to be set.
+ *
+ * @return @c true if current time is set successfully.
+ *
+ * @ingroup Elm_Datetime
  */
 EAPI Eina_Bool elm_datetime_value_set(Elm_Datetime *obj, const Elm_Datetime_Time *newtime);
 
@@ -238,46 +177,40 @@ EAPI Eina_Bool elm_datetime_value_set(Elm_Datetime *obj, const Elm_Datetime_Time
  *
  * Minute: default value range is from 0 to 59.
  *
- * @return @c EINA_TRUE if current time is returned successfully.
+ * @param[in,out] currtime Time structure.
  *
- * @see elm_datetime_value_set()
- * @ingroup Datetime
- * 
+ * @return @c true if current time is returned successfully.
  *
- * @param[inout] currtime Time structure.
+ * @ingroup Elm_Datetime
  */
 EAPI Eina_Bool elm_datetime_value_get(const Elm_Datetime *obj, Elm_Datetime_Time *currtime);
 
 /**
  * @brief Set a field to be visible or not.
- * Setting this API True does not ensure that the field is visible, apart from
- * this, the field's format must be present in Datetime overall format.
- * If a field's visibility is set to False then it won't appear even though
- * its format is present in overall format.
- * So if and only if this API is set true and the corresponding field's format
- * is present in Datetime format, the field is visible.
  *
- * By default the field visibility is set to True.
+ * Setting this API to @c true does not ensure that the field is visible, apart
+ * from this, the field's format must be present in Datetime overall format.
+ *  If a field's visibility is set to @c false then it won't appear even though
+ * its format is present in overall format. So if and only if this API is set
+ * true and the corresponding field's format is present in Datetime format, the
+ * field is visible.
  *
- * @see elm_datetime_field_visible_get()
- * @ingroup Datetime
- * 
+ * By default the field visibility is set to @c true.
  *
- * @param[in] fieldtype Type of the field. #ELM_DATETIME_YEAR etc.
- * @param[in] visible @c EINA_TRUE field can be visible, @c EINA_FALSE otherwise.
+ * @param[in] visible @c true field can be visible, @c false otherwise.
+ *
+ * @ingroup Elm_Datetime
  */
 EAPI void elm_datetime_field_visible_set(Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype, Eina_Bool visible);
 
 /**
- * @brief Get whether a field can be visible/not
+ * @brief Get whether a field can be visible/not.
  *
- * @return bool @c EINA_TRUE, if field can be visible. @c EINA_FALSE otherwise.
+ * @param[in] fieldtype Type of the field. #ELM_DATETIME_YEAR etc.
  *
- * @see elm_datetime_field_visible_set()
- * @ingroup Datetime
- * 
+ * @return @c true, if field can be visible. @c false otherwise.
  *
- * @param[in] fieldtype Type of the field. #ELM_DATETIME_YEAR etc
+ * @ingroup Elm_Datetime
  */
 EAPI Eina_Bool elm_datetime_field_visible_get(const Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype);
 
@@ -295,13 +228,11 @@ EAPI Eina_Bool elm_datetime_field_visible_get(const Elm_Datetime *obj, Elm_Datet
  *
  * Minute: default value range is from 0 to 59.
  *
- * @return @c EINA_TRUE if maximum value is accepted.
- *
- * @see elm_datetime_value_max_get()
- * @ingroup Datetime
- * 
- *
  * @param[in] maxtime Time structure containing the maximum time value.
+ *
+ * @return @c true if maximum value is accepted.
+ *
+ * @ingroup Elm_Datetime
  */
 EAPI Eina_Bool elm_datetime_value_max_set(Elm_Datetime *obj, const Elm_Datetime_Time *maxtime);
 
@@ -319,13 +250,11 @@ EAPI Eina_Bool elm_datetime_value_max_set(Elm_Datetime *obj, const Elm_Datetime_
  *
  * Minute: default value range is from 0 to 59.
  *
- * @return @c EINA_TRUE if maximum value is returned successfully.
+ * @param[in,out] maxtime Time structure containing the maximum time value.
  *
- * @see elm_datetime_value_max_set()
- * @ingroup Datetime
- * 
+ * @return @c true if maximum value is returned successfully.
  *
- * @param[inout] maxtime Time structure containing the maximum time value.
+ * @ingroup Elm_Datetime
  */
 EAPI Eina_Bool elm_datetime_value_max_get(const Elm_Datetime *obj, Elm_Datetime_Time *maxtime);
 

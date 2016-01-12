@@ -4,9 +4,9 @@ libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
 Name: ector
-Description: Enlightenned retained mode drawing library
-Requires.private: efl >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
-Version: 1.15.0-beta2
+Description: Enlightened retained mode drawing library
+Requires.private: efl >= 1.17.0-beta1 eo >= 1.17.0-beta1 eet >= 1.17.0-beta1 emile >= 1.17.0-beta1 eina >= 1.17.0-beta1  
+Version: 1.17.0-beta1
 Libs: -L${libdir} -lector
 Libs.private:  -lm
-Cflags: -I${includedir}/efl-1 -I${includedir}/ector-1
+Cflags:

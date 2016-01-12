@@ -60,7 +60,7 @@ EAPI const Eo_Class *elm_clock_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_show_am_pm_set(Eina_Bool am_pm);
+EOAPI void elm_obj_clock_show_am_pm_set(Eina_Bool am_pm);
 
 /**
  * @brief Get if the given clock widget shows hours in military or am/pm mode
@@ -73,7 +73,7 @@ EOAPI void  elm_obj_clock_show_am_pm_set(Eina_Bool am_pm);
  *
  * @ingroup Elm_Clock
  */
-EOAPI Eina_Bool  elm_obj_clock_show_am_pm_get(void);
+EOAPI Eina_Bool elm_obj_clock_show_am_pm_get(void);
 
 /**
  * @brief Set the first interval on time updates for a user mouse button hold
@@ -98,7 +98,7 @@ EOAPI Eina_Bool  elm_obj_clock_show_am_pm_get(void);
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_first_interval_set(double interval);
+EOAPI void elm_obj_clock_first_interval_set(double interval);
 
 /**
  * @brief Get the first interval on time updates for a user mouse button hold
@@ -110,7 +110,7 @@ EOAPI void  elm_obj_clock_first_interval_set(double interval);
  *
  * @ingroup Elm_Clock
  */
-EOAPI double  elm_obj_clock_first_interval_get(void);
+EOAPI double elm_obj_clock_first_interval_get(void);
 
 /**
  * @brief Set if the given clock widget must show time with seconds or not
@@ -124,7 +124,7 @@ EOAPI double  elm_obj_clock_first_interval_get(void);
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_show_seconds_set(Eina_Bool seconds);
+EOAPI void elm_obj_clock_show_seconds_set(Eina_Bool seconds);
 
 /**
  * @brief Get whether the given clock widget is showing time with seconds or
@@ -138,7 +138,7 @@ EOAPI void  elm_obj_clock_show_seconds_set(Eina_Bool seconds);
  *
  * @ingroup Elm_Clock
  */
-EOAPI Eina_Bool  elm_obj_clock_show_seconds_get(void);
+EOAPI Eina_Bool elm_obj_clock_show_seconds_get(void);
 
 /**
  * @brief Set whether a given clock widget is under edition mode or under
@@ -149,7 +149,7 @@ EOAPI Eina_Bool  elm_obj_clock_show_seconds_get(void);
  * them back to canonical mode. The @ref elm_obj_clock_edit_mode_set function
  * will influence which digits of the clock will be editable.
  *
- * Note: am/pm sheets, if being shown, will always be editable under edition
+ * @note am/pm sheets, if being shown, will always be editable under edition
  * mode.
  *
  * See also @ref elm_obj_clock_edit_get.
@@ -159,7 +159,7 @@ EOAPI Eina_Bool  elm_obj_clock_show_seconds_get(void);
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_edit_set(Eina_Bool edit);
+EOAPI void elm_obj_clock_edit_set(Eina_Bool edit);
 
 /**
  * @brief Get whether a given clock widget is under editing mode or under
@@ -175,7 +175,7 @@ EOAPI void  elm_obj_clock_edit_set(Eina_Bool edit);
  *
  * @ingroup Elm_Clock
  */
-EOAPI Eina_Bool  elm_obj_clock_edit_get(void);
+EOAPI Eina_Bool elm_obj_clock_edit_get(void);
 
 /**
  * @brief Set whether the given clock widget should be paused or not.
@@ -190,7 +190,7 @@ EOAPI Eina_Bool  elm_obj_clock_edit_get(void);
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_pause_set(Eina_Bool paused);
+EOAPI void elm_obj_clock_pause_set(Eina_Bool paused);
 
 /**
  * @brief Get whether the given clock widget is paused.
@@ -205,7 +205,7 @@ EOAPI void  elm_obj_clock_pause_set(Eina_Bool paused);
  *
  * @ingroup Elm_Clock
  */
-EOAPI Eina_Bool  elm_obj_clock_pause_get(void);
+EOAPI Eina_Bool elm_obj_clock_pause_get(void);
 
 /**
  * @brief Set a clock widget's time, programmatically
@@ -215,7 +215,7 @@ EOAPI Eina_Bool  elm_obj_clock_pause_get(void);
  * Values must be set within 0-23 for hours and 0-59 for minutes and seconds,
  * even if the clock is not in "military" mode.
  *
- * Warning: The behavior for values set out of those ranges is undefined.
+ * @warning The behavior for values set out of those ranges is undefined.
  *
  * @param[in] hrs The hours to set
  * @param[in] min The minutes to set
@@ -223,7 +223,7 @@ EOAPI Eina_Bool  elm_obj_clock_pause_get(void);
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_time_set(int hrs, int min, int sec);
+EOAPI void elm_obj_clock_time_set(int hrs, int min, int sec);
 
 /**
  * @brief Get a clock widget's time values
@@ -231,7 +231,7 @@ EOAPI void  elm_obj_clock_time_set(int hrs, int min, int sec);
  * This function gets the time set for @c obj, returning it on the variables
  * passed as the arguments to function
  *
- * Note: Use @c null pointers on the time values you're not interested in:
+ * @note Use @c null pointers on the time values you're not interested in:
  * they'll be ignored by the function.
  *
  * @param[out] hrs The hours to set
@@ -240,7 +240,7 @@ EOAPI void  elm_obj_clock_time_set(int hrs, int min, int sec);
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_time_get(int *hrs, int *min, int *sec);
+EOAPI void elm_obj_clock_time_get(int *hrs, int *min, int *sec);
 
 /**
  * @brief Set what digits of the given clock widget should be editable when in
@@ -253,7 +253,7 @@ EOAPI void  elm_obj_clock_time_get(int *hrs, int *min, int *sec);
  *
  * @ingroup Elm_Clock
  */
-EOAPI void  elm_obj_clock_edit_mode_set(Elm_Clock_Edit_Mode digedit);
+EOAPI void elm_obj_clock_edit_mode_set(Elm_Clock_Edit_Mode digedit);
 
 /**
  * @brief Get what digits of the given clock widget should be editable when in
@@ -266,25 +266,13 @@ EOAPI void  elm_obj_clock_edit_mode_set(Elm_Clock_Edit_Mode digedit);
  *
  * @ingroup Elm_Clock
  */
-EOAPI Elm_Clock_Edit_Mode  elm_obj_clock_edit_mode_get(void);
+EOAPI Elm_Clock_Edit_Mode elm_obj_clock_edit_mode_get(void);
 
 EOAPI extern const Eo_Event_Description _ELM_CLOCK_EVENT_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_CLOCK_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_CLOCK_EVENT_ACCESS_CHANGED;
 
 /**
  * No description
  */
 #define ELM_CLOCK_EVENT_CHANGED (&(_ELM_CLOCK_EVENT_CHANGED))
-
-/**
- * No description
- */
-#define ELM_CLOCK_EVENT_LANGUAGE_CHANGED (&(_ELM_CLOCK_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_CLOCK_EVENT_ACCESS_CHANGED (&(_ELM_CLOCK_EVENT_ACCESS_CHANGED))
 
 #endif

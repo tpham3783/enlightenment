@@ -20,10 +20,4 @@ typedef Eo Elm_Atspi_Bridge;
  */
 EAPI Eina_Bool elm_atspi_bridge_connected_get(const Elm_Atspi_Bridge *obj);
 
-/** Get root object of accessible object hierarchy
- *
- * @ingroup Elm_Atspi_Bridge
- */
-EAPI Eo *elm_atspi_bridge_root_get(const Elm_Atspi_Bridge *obj);
-
 #endif

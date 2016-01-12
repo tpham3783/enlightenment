@@ -31,13 +31,6 @@ namespace evas {
 
 struct vg
 {
-   /// @brief Get the root node of the evas_object_vg.
-   ///
-   /// @note To manually create the shape object and show in the Vg
-   /// object canvas you must create the hirarchy and set the
-   /// parent as root node.
-   /// @since 1.14
-   ///
    Efl_VG * root_node_get() const;
 
 
@@ -143,13 +136,6 @@ struct vg
 
    ~vg() {}
 
-   /// @brief Get the root node of the evas_object_vg.
-   ///
-   /// @note To manually create the shape object and show in the Vg
-   /// object canvas you must create the hirarchy and set the
-   /// parent as root node.
-   /// @since 1.14
-   ///
    Efl_VG * root_node_get() const;
 
    template <typename F>

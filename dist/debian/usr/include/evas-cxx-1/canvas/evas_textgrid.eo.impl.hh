@@ -380,72 +380,52 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::textgrid>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_update_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_update_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_cellrow_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_cellrow_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_cellrow_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_cellrow_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_palette_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_palette_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_palette_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_palette_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_supported_font_styles_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_supported_font_styles_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_supported_font_styles_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_supported_font_styles_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_size_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_size_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textgrid_cell_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textgrid_cell_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::object>(), &ops[operation_description_class_size< ::evas::textgrid >::value]);

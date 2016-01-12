@@ -5,8 +5,17 @@ PREFIX=/usr/local
 
 
 PREFIX_UBUNTU_PACKAGE_DIR=/usr/local/src/enlightenment.source.repo/dist/debian/usr
-modules = efl elementary evas_generic_loaders enlightenment terminology
 
+modules_git = http://git.enlightenment.org/core/efl.git \
+	      http://git.enlightenment.org/core/elementary.git \
+	      http://git.enlightenment.org/core/evas_generic_loaders.git \
+	      http://git.enlightenment.org/core/enlightenment.git \
+	      http://git.enlightenment.org/apps/terminology.git
+
+modules = efl elementary evas_generic_loaders enlightenment
+#modules = efl elementary evas_generic_loaders enlightenment terminology
+
+E_VERSION=$(shell grep VERSION enlightenment/config.h | grep -v PACK | cut -d' ' -f 3)
 
 help:
 	@echo "TARGET              DESCRIPTION"
@@ -50,6 +59,7 @@ libxcb-keysyms1-dev libbullet-dev vlc libvlc-dev autoconf libtool
 	
 bootstrap: prerequisite
 	@echo "TODO: initialize all git repos"
+	@$(foreach mod, $(modules_git), $(shell git clone $(mod) || echo ""));
 	
 	
 pull:
@@ -61,10 +71,10 @@ e:
 	@sleep 5;
 	@mkdir -p ${PREFIX}
 	
-	cd efl && ./configure --prefix=$(PREFIX) && make -j8 && make install
-	cd elementary && ./configure --prefix=$(PREFIX) && make -j8 && make install
-	cd enlightenment && ./configure --prefix=$(PREFIX) && make -j8 && make install
-	cd terminology && ./configure --prefix=$(PREFIX) && make -j8 && make install
+	cd efl && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
+	cd elementary && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
+	cd enlightenment && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
+	cd terminology && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
 	install dist/enlightenment.desktop dist/debian/usr/share/xsessions/enlightenment.desktop
 	@echo "Finish & enjoy!"
 
@@ -86,10 +96,13 @@ ubuntu_installer:
 	cd enlightenment && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
 	cd evas_generic_loaders && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
 	install dist/enlightenment.desktop dist/debian/usr/share/xsessions/enlightenment.desktop
+	make update_version
 	cd dist && make && echo "Create package at dist/e19.deb"
 	
 	
-
+update_version:
+	@echo "Updating package version to reflect Ubuntu pkg version: ${E_VERSION}"
+	@sed -i s/Version.*/Version:\ ${E_VERSION}/g dist/debian/DEBIAN/control
 clean: 
 	rm dist/e19.deb
 	rm -rf dist/debian/usr

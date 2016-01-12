@@ -120,6 +120,10 @@
 # endif
 #endif /* ! _WIN32 */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef EFL_NOLEGACY_API_SUPPORT
 #include "Emotion_Legacy.h"
 #endif
@@ -266,26 +270,23 @@ typedef enum _Emotion_Aspect    Emotion_Aspect; /**< Aspect ratio option. */
 #define EMOTION_CHANNEL_AUTO -1
 #define EMOTION_CHANNEL_DEFAULT 0
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #define EMOTION_VERSION_MAJOR EFL_VERSION_MAJOR
 #define EMOTION_VERSION_MINOR EFL_VERSION_MINOR
-   /**
-    * @typedef Emotion_Version
-    * Represents the current version of Emotion
-    */
-   typedef struct _Emotion_Version
-     {
-        int major; /** < major (binary or source incompatible changes) */
-        int minor; /** < minor (new features, bugfixes, major improvements version) */
-        int micro; /** < micro (bugfix, internal improvements, no new features version) */
-        int revision; /** < git revision (0 if a proper release or the git revision number Emotion is built from) */
-     } Emotion_Version;
-   
-   EAPI extern Emotion_Version *emotion_version;
-   
+
+/**
+ * @typedef Emotion_Version
+ * Represents the current version of Emotion
+ */
+typedef struct _Emotion_Version
+  {
+     int major; /** < major (binary or source incompatible changes) */
+     int minor; /** < minor (new features, bugfixes, major improvements version) */
+     int micro; /** < micro (bugfix, internal improvements, no new features version) */
+     int revision; /** < git revision (0 if a proper release or the git revision number Emotion is built from) */
+  } Emotion_Version;
+
+EAPI extern Emotion_Version *emotion_version;
+
 /* api calls available */
 
 /**
@@ -873,7 +874,7 @@ EAPI Eina_Bool    emotion_object_smooth_scale_get      (const Evas_Object *obj);
  * @param obj The object target of the event.
  * @param ev The emotion event.
  *
- * @see Emotion_Event 
+ * @see Emotion_Event
  */
 EAPI void         emotion_object_event_simple_send     (Evas_Object *obj, Emotion_Event ev);
 
@@ -1165,15 +1166,15 @@ EAPI Emotion_Vis  emotion_object_vis_get               (const Evas_Object *obj);
 EAPI Eina_Bool    emotion_object_vis_supported         (const Evas_Object *obj, Emotion_Vis visualization);
 
 /**
- * @brief Raise priority of an object so it will have a priviledged access to hardware ressource.
+ * @brief Raise priority of an object so it will have a priviledged access to hardware resources.
  *
  * @param obj The object which the query is being ran on.
- * @param priority EINA_TRUE means give me a priority access to the hardware ressource.
+ * @param priority EINA_TRUE means give me a priority access to the hardware resources.
  *
  * Hardware have a few dedicated hardware pipeline that process the video at no cost for the CPU.
  * Especially on SoC, you mostly have one (on mobile phone SoC) or two (on Set Top Box SoC) when
  * Picture in Picture is needed. And most application just have a few video stream that really
- * deserve high frame rate, hiogh quality output. That's why this call is for.
+ * deserve high frame rate, high quality output. That's why this call is for.
  *
  * Please note that if Emotion can't acquire a priviledged hardware ressource, it will fallback
  * to the no-priority path. This work on the first asking first get basis system.
@@ -1266,7 +1267,7 @@ EAPI void         emotion_object_last_position_save(Evas_Object *obj);
  *
  * @param file A stringshared filename that we want to know if Emotion can play.
  *
- * This just actually look at the extention of the file, it doesn't check the mime-type
+ * This just actually look at the extension of the file, it doesn't check the mime-type
  * nor if the file is actually sane. So this is just an hint for your application.
  *
  * @see emotion_object_extension_may_play_get()
@@ -1278,7 +1279,7 @@ EAPI Eina_Bool    emotion_object_extension_may_play_fast_get(const char *file);
  *
  * @param file A filename that we want to know if Emotion can play.
  *
- * This just actually look at the extention of the file, it doesn't check the mime-type
+ * This just actually look at the extension of the file, it doesn't check the mime-type
  * nor if the file is actually sane. So this is just an hint for your application.
  *
  * @see emotion_object_extension_may_play_fast_get()
@@ -1290,7 +1291,7 @@ EAPI Eina_Bool    emotion_object_extension_may_play_get(const char *file);
  *
  * @param obj The object which the query is being ran on.
  *
- * This function is usefull when you want to get a direct access to the pixels.
+ * This function is useful when you want to get a direct access to the pixels.
  *
  * @see emotion_object_image_get()
  */

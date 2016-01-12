@@ -29,7 +29,7 @@ EAPI const Eo_Class *edje_object_class_get(void) EINA_CONST;
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_update_hints_set(Eina_Bool update);
+EOAPI void edje_obj_update_hints_set(Eina_Bool update);
 
 /**
  * @brief Whether or not Edje will update size hints on itself.
@@ -38,7 +38,7 @@ EOAPI void  edje_obj_update_hints_set(Eina_Bool update);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_update_hints_get(void);
+EOAPI Eina_Bool edje_obj_update_hints_get(void);
 
 /**
  * @brief Set the RTL orientation for this object.
@@ -49,7 +49,7 @@ EOAPI Eina_Bool  edje_obj_update_hints_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_mirrored_set(Eina_Bool rtl);
+EOAPI void edje_obj_mirrored_set(Eina_Bool rtl);
 
 /**
  * @brief Get the RTL orientation for this object.
@@ -62,7 +62,7 @@ EOAPI void  edje_obj_mirrored_set(Eina_Bool rtl);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_mirrored_get(void);
+EOAPI Eina_Bool edje_obj_mirrored_get(void);
 
 /**
  * @brief Set the language for this object.
@@ -73,7 +73,7 @@ EOAPI Eina_Bool  edje_obj_mirrored_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_language_set(const char *language);
+EOAPI void edje_obj_language_set(const char *language);
 
 /**
  * @brief Get the language for this object.
@@ -84,7 +84,7 @@ EOAPI void  edje_obj_language_set(const char *language);
  *
  * @ingroup Edje_Object
  */
-EOAPI const char * edje_obj_language_get(void);
+EOAPI const char *edje_obj_language_get(void);
 
 /**
  * @brief Set the object's animation state.
@@ -98,7 +98,7 @@ EOAPI const char * edje_obj_language_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_animation_set(Eina_Bool on);
+EOAPI void edje_obj_animation_set(Eina_Bool on);
 
 /**
  * @brief Get the Edje object's animation state.
@@ -112,7 +112,7 @@ EOAPI void  edje_obj_animation_set(Eina_Bool on);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_animation_get(void);
+EOAPI Eina_Bool edje_obj_animation_get(void);
 
 /**
  * @brief Set the Edje object to playing or paused states.
@@ -127,7 +127,7 @@ EOAPI Eina_Bool  edje_obj_animation_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_play_set(Eina_Bool play);
+EOAPI void edje_obj_play_set(Eina_Bool play);
 
 /**
  * @brief Get the Edje object's state.
@@ -141,7 +141,7 @@ EOAPI void  edje_obj_play_set(Eina_Bool play);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_play_get(void);
+EOAPI Eina_Bool edje_obj_play_get(void);
 
 /**
  * @brief Set the given perspective object on this Edje object.
@@ -162,7 +162,7 @@ EOAPI Eina_Bool  edje_obj_play_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_perspective_set(Edje_Perspective *ps);
+EOAPI void edje_obj_perspective_set(Edje_Perspective *ps);
 
 /**
  * @brief Get the current perspective used on this Edje object.
@@ -173,7 +173,7 @@ EOAPI void  edje_obj_perspective_set(Edje_Perspective *ps);
  *
  * @ingroup Edje_Object
  */
-EOAPI const Edje_Perspective * edje_obj_perspective_get(void);
+EOAPI const Edje_Perspective *edje_obj_perspective_get(void);
 
 /**
  * @brief Set the scaling factor for a given Edje object.
@@ -184,7 +184,7 @@ EOAPI const Edje_Perspective * edje_obj_perspective_get(void);
  * scaling will  override any global scaling set, for the object obj's parts.
  * Put it back to zero to get the effects of the global scaling again.
  *
- * Warning: Only parts which, at EDC level, had the @"scale" property set to
+ * @warning Only parts which, at EDC level, had the @"scale" property set to
  * @1, will be affected by this function. Check the complete @ref edcref
  * "syntax reference" for EDC files.
  *
@@ -195,7 +195,7 @@ EOAPI const Edje_Perspective * edje_obj_perspective_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_scale_set(double scale);
+EOAPI Eina_Bool edje_obj_scale_set(double scale);
 
 /**
  * @brief Get a given Edje object's scaling factor.
@@ -210,7 +210,7 @@ EOAPI Eina_Bool  edje_obj_scale_set(double scale);
  *
  * @ingroup Edje_Object
  */
-EOAPI double  edje_obj_scale_get(void);
+EOAPI double edje_obj_scale_get(void);
 
 /**
  * @brief Get a given Edje object's base_scale factor.
@@ -224,7 +224,7 @@ EOAPI double  edje_obj_scale_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI double  edje_obj_base_scale_get(void);
+EOAPI double edje_obj_base_scale_get(void);
 
 /**
  * @brief Set the object text callback.
@@ -236,7 +236,7 @@ EOAPI double  edje_obj_base_scale_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_text_change_cb_set(Edje_Text_Change_Cb func, void *data);
+EOAPI void edje_obj_text_change_cb_set(Edje_Text_Change_Cb func, void *data);
 
 /**
  * @brief Moves the cursor to the beginning of the text part @ref
@@ -247,7 +247,7 @@ EOAPI void  edje_obj_text_change_cb_set(Edje_Text_Change_Cb func, void *data);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_cursor_begin_set(const char *part, Edje_Cursor cur);
+EOAPI void edje_obj_part_text_cursor_begin_set(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Move the cursor to the end of the line. @ref
@@ -258,7 +258,7 @@ EOAPI void  edje_obj_part_text_cursor_begin_set(const char *part, Edje_Cursor cu
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_cursor_line_end_set(const char *part, Edje_Cursor cur);
+EOAPI void edje_obj_part_text_cursor_line_end_set(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Sets Edje text class.
@@ -273,7 +273,7 @@ EOAPI void  edje_obj_part_text_cursor_line_end_set(const char *part, Edje_Cursor
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_text_class_set(const char *text_class, const char *font, Evas_Font_Size size);
+EOAPI Eina_Bool edje_obj_text_class_set(const char *text_class, const char *font, Evas_Font_Size size);
 
 /**
  * @brief Position the given cursor to a X,Y position.
@@ -289,7 +289,7 @@ EOAPI Eina_Bool  edje_obj_text_class_set(const char *text_class, const char *fon
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_cursor_coord_set(const char *part, Edje_Cursor cur, Evas_Coord x, Evas_Coord y);
+EOAPI Eina_Bool edje_obj_part_text_cursor_coord_set(const char *part, Edje_Cursor cur, Evas_Coord x, Evas_Coord y);
 
 /**
  * @brief Moves the cursor to the end of the text part. @ref
@@ -300,7 +300,7 @@ EOAPI Eina_Bool  edje_obj_part_text_cursor_coord_set(const char *part, Edje_Curs
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_cursor_end_set(const char *part, Edje_Cursor cur);
+EOAPI void edje_obj_part_text_cursor_end_set(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Sets the text for an object part, but converts HTML escapes to UTF8
@@ -318,7 +318,7 @@ EOAPI void  edje_obj_part_text_cursor_end_set(const char *part, Edje_Cursor cur)
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_escaped_set(const char *part, const char *text);
+EOAPI Eina_Bool edje_obj_part_text_escaped_set(const char *part, const char *text);
 
 /**
  * @brief Set the function that provides item objects for named items in an
@@ -333,7 +333,7 @@ EOAPI Eina_Bool  edje_obj_part_text_escaped_set(const char *part, const char *te
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_item_provider_set(Edje_Item_Provider_Cb func, void *data);
+EOAPI void edje_obj_item_provider_set(Edje_Item_Provider_Cb func, void *data);
 
 /**
  * @brief Move the cursor to the beginning of the line. @ref
@@ -344,7 +344,7 @@ EOAPI void  edje_obj_item_provider_set(Edje_Item_Provider_Cb func, void *data);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_cursor_line_begin_set(const char *part, Edje_Cursor cur);
+EOAPI void edje_obj_part_text_cursor_line_begin_set(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Set an Edje message handler function for a given Edje object.
@@ -364,7 +364,7 @@ EOAPI void  edje_obj_part_text_cursor_line_begin_set(const char *part, Edje_Curs
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_message_handler_set(Edje_Message_Handler_Cb func, void *data);
+EOAPI void edje_obj_message_handler_set(Edje_Message_Handler_Cb func, void *data);
 
 /**
  * @brief Get the minimum size specified -- as an EDC property -- for a given
@@ -373,10 +373,10 @@ EOAPI void  edje_obj_message_handler_set(Edje_Message_Handler_Cb func, void *dat
  * This function retrieves the obj object's minimum size values, as declared in
  * its EDC group definition.
  *
- * Note: If the @c min EDC property was not declared for obj, this call will
+ * @note If the @c min EDC property was not declared for obj, this call will
  * return the value 0, for each axis.
  *
- * Note: On failure, this function will make all non-$null size pointers'
+ * @note On failure, this function will make all non-$null size pointers'
  * pointed variables be set to zero.
  *
  * See also @ref edje_obj_size_max_get()
@@ -386,7 +386,7 @@ EOAPI void  edje_obj_message_handler_set(Edje_Message_Handler_Cb func, void *dat
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_size_min_get(Evas_Coord *minw, Evas_Coord *minh);
+EOAPI void edje_obj_size_min_get(Evas_Coord *minw, Evas_Coord *minh);
 
 /**
  * @brief Retrieve a list all accessibility part names
@@ -397,7 +397,7 @@ EOAPI void  edje_obj_size_min_get(Evas_Coord *minw, Evas_Coord *minh);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_List * edje_obj_access_part_list_get(void);
+EOAPI Eina_List *edje_obj_access_part_list_get(void);
 
 /**
  * @brief Gets the (last) file loading error for a given Edje object
@@ -417,7 +417,7 @@ EOAPI Eina_List * edje_obj_access_part_list_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_Load_Error  edje_obj_load_error_get(void);
+EOAPI Edje_Load_Error edje_obj_load_error_get(void);
 
 /**
  * @brief Get the maximum size specified -- as an EDC property -- for a given
@@ -426,10 +426,10 @@ EOAPI Edje_Load_Error  edje_obj_load_error_get(void);
  * This function retrieves the obj object's maximum size values, as declared in
  * its EDC group definition.
  *
- * Note: If the @c max EDC property was not declared for obj, this call will
+ * @note If the @c max EDC property was not declared for obj, this call will
  * return the maximum size a given Edje object may have, for each axis.
  *
- * Note: On failure, this function will make all non-$null size pointers'
+ * @note On failure, this function will make all non-$null size pointers'
  * pointed variables be set to zero.
  *
  * See also @ref edje_obj_size_min_get()
@@ -439,7 +439,7 @@ EOAPI Edje_Load_Error  edje_obj_load_error_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_size_max_get(Evas_Coord *maxw, Evas_Coord *maxh);
+EOAPI void edje_obj_size_max_get(Evas_Coord *maxw, Evas_Coord *maxh);
 
 /**
  * @brief Set transition duration factor.
@@ -451,7 +451,7 @@ EOAPI void  edje_obj_size_max_get(Evas_Coord *maxw, Evas_Coord *maxh);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_transition_duration_factor_set(double scale);
+EOAPI void edje_obj_transition_duration_factor_set(double scale);
 
 /**
  * @brief Get transition duration factor.
@@ -463,7 +463,7 @@ EOAPI void  edje_obj_transition_duration_factor_set(double scale);
  *
  * @ingroup Edje_Object
  */
-EOAPI double  edje_obj_transition_duration_factor_get(void);
+EOAPI double edje_obj_transition_duration_factor_get(void);
 
 /**
  * @brief Removes all object from the table.
@@ -477,7 +477,7 @@ EOAPI double  edje_obj_transition_duration_factor_get(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_table_clear(const char *part, Eina_Bool clear);
+EOAPI Eina_Bool edje_obj_part_table_clear(const char *part, Eina_Bool clear);
 
 /**
  * @brief Facility to query the type of the given parameter of the given part.
@@ -489,7 +489,7 @@ EOAPI Eina_Bool  edje_obj_part_table_clear(const char *part, Eina_Bool clear);
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_External_Param_Type  edje_obj_part_external_param_type_get(const char *part, const char *param);
+EOAPI Edje_External_Param_Type edje_obj_part_external_param_type_get(const char *part, const char *param);
 
 /**
  * @brief Enables selection if the entry is an EXPLICIT selection mode type.
@@ -502,7 +502,7 @@ EOAPI Edje_External_Param_Type  edje_obj_part_external_param_type_get(const char
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_select_allow_set(const char *part, Eina_Bool allow);
+EOAPI void edje_obj_part_text_select_allow_set(const char *part, Eina_Bool allow);
 
 /**
  * @brief Returns the state of the Edje part.
@@ -513,7 +513,7 @@ EOAPI void  edje_obj_part_text_select_allow_set(const char *part, Eina_Bool allo
  *
  * @ingroup Edje_Object
  */
-EOAPI const char * edje_obj_part_state_get(const char *part, double *val_ret);
+EOAPI const char *edje_obj_part_state_get(const char *part, double *val_ret);
 
 /**
  * @brief Delete a function and matching user data from the markup filter list.
@@ -533,7 +533,7 @@ EOAPI const char * edje_obj_part_state_get(const char *part, double *val_ret);
  *
  * @ingroup Edje_Object
  */
-EOAPI void * edje_obj_text_markup_filter_callback_del_full(const char *part, Edje_Markup_Filter_Cb func, void *data);
+EOAPI void *edje_obj_text_markup_filter_callback_del_full(const char *part, Edje_Markup_Filter_Cb func, void *data);
 
 /**
  * @brief Sets the drag step increment.
@@ -551,7 +551,7 @@ EOAPI void * edje_obj_text_markup_filter_callback_del_full(const char *part, Edj
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_step_set(const char *part, double dx, double dy);
+EOAPI Eina_Bool edje_obj_part_drag_step_set(const char *part, double dx, double dy);
 
 /**
  * @brief Gets the drag step increment values.
@@ -565,7 +565,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_step_set(const char *part, double dx, double
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_step_get(const char *part, double *dx, double *dy);
+EOAPI Eina_Bool edje_obj_part_drag_step_get(const char *part, double *dx, double *dy);
 
 /**
  * @brief Get the input method context in entry.
@@ -581,7 +581,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_step_get(const char *part, double *dx, doubl
  *
  * @ingroup Edje_Object
  */
-EOAPI void * edje_obj_part_text_imf_context_get(const char *part);
+EOAPI void *edje_obj_part_text_imf_context_get(const char *part);
 
 /**
  * @brief Starts selecting at current cursor position
@@ -590,7 +590,7 @@ EOAPI void * edje_obj_part_text_imf_context_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_select_begin(const char *part);
+EOAPI void edje_obj_part_text_select_begin(const char *part);
 
 /**
  * @brief Return the text of the object part.
@@ -605,7 +605,7 @@ EOAPI void  edje_obj_part_text_select_begin(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI const char * edje_obj_part_text_style_user_peek(const char *part);
+EOAPI const char *edje_obj_part_text_style_user_peek(const char *part);
 
 /**
  * @brief Remove a signal-triggered callback from an object.
@@ -627,7 +627,7 @@ EOAPI const char * edje_obj_part_text_style_user_peek(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void * edje_obj_signal_callback_del(const char *emission, const char *source, Edje_Signal_Cb func, void *data);
+EOAPI void *edje_obj_signal_callback_del(const char *emission, const char *source, Edje_Signal_Cb func, void *data);
 
 /**
  * @brief Advances the cursor to the next cursor position. @ref
@@ -637,7 +637,7 @@ EOAPI void * edje_obj_signal_callback_del(const char *emission, const char *sour
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_cursor_next(const char *part, Edje_Cursor cur);
+EOAPI Eina_Bool edje_obj_part_text_cursor_next(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Set the style of the
@@ -650,7 +650,7 @@ EOAPI Eina_Bool  edje_obj_part_text_cursor_next(const char *part, Edje_Cursor cu
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_style_user_push(const char *part, const char *style);
+EOAPI void edje_obj_part_text_style_user_push(const char *part, const char *style);
 
 /**
  * @brief Insert text for an object part.
@@ -664,7 +664,7 @@ EOAPI void  edje_obj_part_text_style_user_push(const char *part, const char *sty
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_append(const char *part, const char *text);
+EOAPI void edje_obj_part_text_append(const char *part, const char *text);
 
 /**
  * @brief Retrieve the geometry of a given Edje part, in a given Edje object's
@@ -674,10 +674,10 @@ EOAPI void  edje_obj_part_text_append(const char *part, const char *text);
  * y coordinates are relative to the top left corner of the whole obj object's
  * area.
  *
- * Note: Use @c null pointers on the geometry components you're not interested
+ * @note Use @c null pointers on the geometry components you're not interested
  * in: they'll be ignored by the function.
  *
- * Note: On failure, this function will make all non-$null geometry pointers'
+ * @note On failure, this function will make all non-$null geometry pointers'
  * pointed variables be set to zero.
  *
  * @param[out] x A pointer to a variable where to store the part's x coordinate
@@ -687,7 +687,7 @@ EOAPI void  edje_obj_part_text_append(const char *part, const char *text);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_geometry_get(const char *part, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h);
+EOAPI Eina_Bool edje_obj_part_geometry_get(const char *part, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h);
 
 /**
  * @brief Hide the input panel (virtual keyboard). See also
@@ -703,7 +703,7 @@ EOAPI Eina_Bool  edje_obj_part_geometry_get(const char *part, Evas_Coord *x, Eva
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_hide(const char *part);
+EOAPI void edje_obj_part_text_input_panel_hide(const char *part);
 
 /**
  * @brief Return item geometry.
@@ -720,7 +720,7 @@ EOAPI void  edje_obj_part_text_input_panel_hide(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_item_geometry_get(const char *part, const char *item, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch);
+EOAPI Eina_Bool edje_obj_part_text_item_geometry_get(const char *part, const char *item, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch);
 
 /**
  * @brief Removes an object from the table.
@@ -733,7 +733,7 @@ EOAPI Eina_Bool  edje_obj_part_text_item_geometry_get(const char *part, const ch
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_table_unpack(const char *part, Evas_Object *child_obj);
+EOAPI Eina_Bool edje_obj_part_table_unpack(const char *part, Evas_Object *child_obj);
 
 /**
  * @brief Aborts any selection action on a part.
@@ -742,7 +742,7 @@ EOAPI Eina_Bool  edje_obj_part_table_unpack(const char *part, Evas_Object *child
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_select_abort(const char *part);
+EOAPI void edje_obj_part_text_select_abort(const char *part);
 
 /**
  * @brief Delete a function and matching user data from the filter list.
@@ -760,7 +760,7 @@ EOAPI void  edje_obj_part_text_select_abort(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void * edje_obj_text_insert_filter_callback_del_full(const char *part, Edje_Text_Filter_Cb func, void *data);
+EOAPI void *edje_obj_text_insert_filter_callback_del_full(const char *part, Edje_Text_Filter_Cb func, void *data);
 
 /**
  * @brief Delete the top style form the user style stack.
@@ -771,7 +771,7 @@ EOAPI void * edje_obj_text_insert_filter_callback_del_full(const char *part, Edj
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_style_user_pop(const char *part);
+EOAPI void edje_obj_part_text_style_user_pop(const char *part);
 
 /**
  * @brief Set the input panel-specific data to deliver to the input panel.
@@ -787,7 +787,7 @@ EOAPI void  edje_obj_part_text_style_user_pop(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_imdata_set(const char *part, const void *data, int len);
+EOAPI void edje_obj_part_text_input_panel_imdata_set(const char *part, const void *data, int len);
 
 /**
  * @brief Get the specific data of the current active input panel.
@@ -799,7 +799,7 @@ EOAPI void  edje_obj_part_text_input_panel_imdata_set(const char *part, const vo
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_imdata_get(const char *part, void *data, int *len);
+EOAPI void edje_obj_part_text_input_panel_imdata_get(const char *part, void *data, int *len);
 
 /**
  * @brief Insert text for an object part.
@@ -811,7 +811,7 @@ EOAPI void  edje_obj_part_text_input_panel_imdata_get(const char *part, void *da
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_insert(const char *part, const char *text);
+EOAPI void edje_obj_part_text_insert(const char *part, const char *text);
 
 /**
  * @brief Removes an object from the box.
@@ -827,7 +827,7 @@ EOAPI void  edje_obj_part_text_insert(const char *part, const char *text);
  *
  * @ingroup Edje_Object
  */
-EOAPI Evas_Object * edje_obj_part_box_remove_at(const char *part, unsigned int pos);
+EOAPI Evas_Object *edje_obj_part_box_remove_at(const char *part, unsigned int pos);
 
 /**
  * @brief Copy the cursor to another cursor.
@@ -837,7 +837,7 @@ EOAPI Evas_Object * edje_obj_part_box_remove_at(const char *part, unsigned int p
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_cursor_copy(const char *part, Edje_Cursor src, Edje_Cursor dst);
+EOAPI void edje_obj_part_text_cursor_copy(const char *part, Edje_Cursor src, Edje_Cursor dst);
 
 /**
  * @brief Calculate the geometry of the region, relative to a given Edje
@@ -849,10 +849,10 @@ EOAPI void  edje_obj_part_text_cursor_copy(const char *part, Edje_Cursor src, Ed
  * out of the group's boundaries will also be taken in account, so that x and y
  * may be negative.
  *
- * Note: Use @c null pointers on the geometry components you're not interested
+ * @note Use @c null pointers on the geometry components you're not interested
  * in: they'll be ignored by the function.
  *
- * Note: On failure, this function will make all non-$null geometry pointers'
+ * @note On failure, this function will make all non-$null geometry pointers'
  * pointed variables be set to zero.
  *
  * @param[out] y A pointer to a variable where to store the parts region's y
@@ -864,7 +864,7 @@ EOAPI void  edje_obj_part_text_cursor_copy(const char *part, Edje_Cursor src, Ed
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_parts_extends_calc(Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h);
+EOAPI Eina_Bool edje_obj_parts_extends_calc(Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h);
 
 /**
  * @brief Set the dragable object location.
@@ -888,7 +888,7 @@ EOAPI Eina_Bool  edje_obj_parts_extends_calc(Evas_Coord *x, Evas_Coord *y, Evas_
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_value_set(const char *part, double dx, double dy);
+EOAPI Eina_Bool edje_obj_part_drag_value_set(const char *part, double dx, double dy);
 
 /**
  * @brief Get the dragable object location.
@@ -905,7 +905,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_value_set(const char *part, double dx, doubl
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_value_get(const char *part, double *dx, double *dy);
+EOAPI Eina_Bool edje_obj_part_drag_value_get(const char *part, double *dx, double *dy);
 
 /**
  * @brief Force a Size/Geometry calculation.
@@ -914,7 +914,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_value_get(const char *part, double *dx, doub
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_calc_force(void);
+EOAPI void edje_obj_calc_force(void);
 
 /**
  * @brief Sets the cursor position to the given value
@@ -926,7 +926,7 @@ EOAPI void  edje_obj_calc_force(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_cursor_pos_set(const char *part, Edje_Cursor cur, int pos);
+EOAPI void edje_obj_part_text_cursor_pos_set(const char *part, Edje_Cursor cur, int pos);
 
 /**
  * @brief Retrieves the current position of the cursor
@@ -939,7 +939,7 @@ EOAPI void  edje_obj_part_text_cursor_pos_set(const char *part, Edje_Cursor cur,
  *
  * @ingroup Edje_Object
  */
-EOAPI int  edje_obj_part_text_cursor_pos_get(const char *part, Edje_Cursor cur);
+EOAPI int edje_obj_part_text_cursor_pos_get(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Freezes the Edje object.
@@ -953,7 +953,7 @@ EOAPI int  edje_obj_part_text_cursor_pos_get(const char *part, Edje_Cursor cur);
  *
  * @ingroup Edje_Object
  */
-EOAPI int  edje_obj_freeze(void);
+EOAPI int edje_obj_freeze(void);
 
 /**
  * @brief Returns the content (char) at the cursor position. @ref
@@ -968,7 +968,7 @@ EOAPI int  edje_obj_freeze(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI char * edje_obj_part_text_cursor_content_get(const char *part, Edje_Cursor cur);
+EOAPI char *edje_obj_part_text_cursor_content_get(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Set the layout of the input panel.
@@ -984,7 +984,7 @@ EOAPI char * edje_obj_part_text_cursor_content_get(const char *part, Edje_Cursor
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_layout_set(const char *part, Edje_Input_Panel_Layout layout);
+EOAPI void edje_obj_part_text_input_panel_layout_set(const char *part, Edje_Input_Panel_Layout layout);
 
 /**
  * @brief Get the layout of the input panel.
@@ -999,7 +999,7 @@ EOAPI void  edje_obj_part_text_input_panel_layout_set(const char *part, Edje_Inp
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_Input_Panel_Layout  edje_obj_part_text_input_panel_layout_get(const char *part);
+EOAPI Edje_Input_Panel_Layout edje_obj_part_text_input_panel_layout_get(const char *part);
 
 /**
  * @brief Packs an object into the table.
@@ -1016,7 +1016,7 @@ EOAPI Edje_Input_Panel_Layout  edje_obj_part_text_input_panel_layout_get(const c
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_table_pack(const char *part, Evas_Object *child_obj, unsigned short col, unsigned short row, unsigned short colspan, unsigned short rowspan);
+EOAPI Eina_Bool edje_obj_part_table_pack(const char *part, Evas_Object *child_obj, unsigned short col, unsigned short row, unsigned short colspan, unsigned short rowspan);
 
 /**
  * @brief Set the language mode of the input panel.
@@ -1029,7 +1029,7 @@ EOAPI Eina_Bool  edje_obj_part_table_pack(const char *part, Evas_Object *child_o
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_language_set(const char *part, Edje_Input_Panel_Lang lang);
+EOAPI void edje_obj_part_text_input_panel_language_set(const char *part, Edje_Input_Panel_Lang lang);
 
 /**
  * @brief Get the language mode of the input panel.
@@ -1044,7 +1044,7 @@ EOAPI void  edje_obj_part_text_input_panel_language_set(const char *part, Edje_I
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_Input_Panel_Lang  edje_obj_part_text_input_panel_language_get(const char *part);
+EOAPI Edje_Input_Panel_Lang edje_obj_part_text_input_panel_language_get(const char *part);
 
 /**
  * @brief Gets the number of columns and rows the table has.
@@ -1058,7 +1058,7 @@ EOAPI Edje_Input_Panel_Lang  edje_obj_part_text_input_panel_language_get(const c
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_table_col_row_size_get(const char *part, int *cols, int *rows);
+EOAPI Eina_Bool edje_obj_part_table_col_row_size_get(const char *part, int *cols, int *rows);
 
 /**
  * @brief Get the object created by this external part.
@@ -1070,7 +1070,7 @@ EOAPI Eina_Bool  edje_obj_part_table_col_row_size_get(const char *part, int *col
  * This function returns the part created by such external plugins and being
  * currently managed by this Edje.
  *
- * Note: Almost all swallow rules apply: you should not move, resize, hide,
+ * @note Almost all swallow rules apply: you should not move, resize, hide,
  * show, set the color or clipper of such part. It's a bit more restrictive as
  * one must  never delete this object!
  *
@@ -1081,7 +1081,7 @@ EOAPI Eina_Bool  edje_obj_part_table_col_row_size_get(const char *part, int *col
  *
  * @ingroup Edje_Object
  */
-EOAPI Evas_Object * edje_obj_part_external_object_get(const char *part);
+EOAPI Evas_Object *edje_obj_part_external_object_get(const char *part);
 
 /**
  * @brief Get an object contained in an part of type EXTERNAL
@@ -1094,7 +1094,7 @@ EOAPI Evas_Object * edje_obj_part_external_object_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Evas_Object * edje_obj_part_external_content_get(const char *part, const char *content);
+EOAPI Evas_Object *edje_obj_part_external_content_get(const char *part, const char *content);
 
 /**
  * @brief Preload the images on the Edje Object in the background.
@@ -1104,7 +1104,7 @@ EOAPI Evas_Object * edje_obj_part_external_content_get(const char *part, const c
  * might be other pending requests of this type). It emits a signal
  * "preload,done" when finished.
  *
- * Note: Use @c true on scenarios where you don't need the image data preloaded
+ * @note Use @c true on scenarios where you don't need the image data preloaded
  * anymore.
  *
  * @param[in] cancel @c false will add it the preloading work queue, @c true
@@ -1114,7 +1114,7 @@ EOAPI Evas_Object * edje_obj_part_external_content_get(const char *part, const c
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_preload(Eina_Bool cancel);
+EOAPI Eina_Bool edje_obj_preload(Eina_Bool cancel);
 
 /**
  * @brief Sets the attribute to show the input panel automatically.
@@ -1126,7 +1126,7 @@ EOAPI Eina_Bool  edje_obj_preload(Eina_Bool cancel);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_enabled_set(const char *part, Eina_Bool enabled);
+EOAPI void edje_obj_part_text_input_panel_enabled_set(const char *part, Eina_Bool enabled);
 
 /**
  * @brief Retrieve the attribute to show the input panel automatically. See
@@ -1140,7 +1140,7 @@ EOAPI void  edje_obj_part_text_input_panel_enabled_set(const char *part, Eina_Bo
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_input_panel_enabled_get(const char *part);
+EOAPI Eina_Bool edje_obj_part_text_input_panel_enabled_get(const char *part);
 
 /**
  * @brief Extends the current selection to the current cursor position
@@ -1149,7 +1149,7 @@ EOAPI Eina_Bool  edje_obj_part_text_input_panel_enabled_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_select_extend(const char *part);
+EOAPI void edje_obj_part_text_select_extend(const char *part);
 
 /**
  * @brief Inserts an object to the box.
@@ -1166,7 +1166,7 @@ EOAPI void  edje_obj_part_text_select_extend(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_box_insert_at(const char *part, Evas_Object *child, unsigned int pos);
+EOAPI Eina_Bool edje_obj_part_box_insert_at(const char *part, Evas_Object *child, unsigned int pos);
 
 /**
  * @brief Return a list of Evas_Textblock_Rectangle anchor rectangles.
@@ -1180,7 +1180,7 @@ EOAPI Eina_Bool  edje_obj_part_box_insert_at(const char *part, Evas_Object *chil
  *
  * @ingroup Edje_Object
  */
-EOAPI const Eina_List * edje_obj_part_text_anchor_geometry_get(const char *part, const char *anchor);
+EOAPI const Eina_List *edje_obj_part_text_anchor_geometry_get(const char *part, const char *anchor);
 
 /**
  * @brief Moves the cursor to the char below the current cursor position.
@@ -1189,7 +1189,7 @@ EOAPI const Eina_List * edje_obj_part_text_anchor_geometry_get(const char *part,
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_cursor_down(const char *part, Edje_Cursor cur);
+EOAPI Eina_Bool edje_obj_part_text_cursor_down(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Sets the page step increments.
@@ -1207,7 +1207,7 @@ EOAPI Eina_Bool  edje_obj_part_text_cursor_down(const char *part, Edje_Cursor cu
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_page_set(const char *part, double dx, double dy);
+EOAPI Eina_Bool edje_obj_part_drag_page_set(const char *part, double dx, double dy);
 
 /**
  * @brief Gets the page step increments.
@@ -1221,7 +1221,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_page_set(const char *part, double dx, double
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_page_get(const char *part, double *dx, double *dy);
+EOAPI Eina_Bool edje_obj_part_drag_page_get(const char *part, double *dx, double *dy);
 
 /**
  * @brief Prepends an object to the box.
@@ -1238,7 +1238,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_page_get(const char *part, double *dx, doubl
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_box_prepend(const char *part, Evas_Object *child);
+EOAPI Eina_Bool edje_obj_part_box_prepend(const char *part, Evas_Object *child);
 
 /**
  * @brief Send/emit an Edje signal to a given Edje object
@@ -1254,7 +1254,7 @@ EOAPI Eina_Bool  edje_obj_part_box_prepend(const char *part, Evas_Object *child)
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_signal_emit(const char *emission, const char *source);
+EOAPI void edje_obj_signal_emit(const char *emission, const char *source);
 
 /**
  * @brief Set the layout variation of the input panel.
@@ -1270,7 +1270,7 @@ EOAPI void  edje_obj_signal_emit(const char *emission, const char *source);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_layout_variation_set(const char *part, int variation);
+EOAPI void edje_obj_part_text_input_panel_layout_variation_set(const char *part, int variation);
 
 /**
  * @brief Get the layout variation of the input panel.
@@ -1285,7 +1285,7 @@ EOAPI void  edje_obj_part_text_input_panel_layout_variation_set(const char *part
  *
  * @ingroup Edje_Object
  */
-EOAPI int  edje_obj_part_text_input_panel_layout_variation_get(const char *part);
+EOAPI int edje_obj_part_text_input_panel_layout_variation_get(const char *part);
 
 /**
  * @brief Send an (Edje) message to a given Edje object
@@ -1307,7 +1307,7 @@ EOAPI int  edje_obj_part_text_input_panel_layout_variation_get(const char *part)
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_message_send(Edje_Message_Type type, int id, void *msg);
+EOAPI void edje_obj_message_send(Edje_Message_Type type, int id, void *msg);
 
 /**
  * @brief Set the selection to be none.
@@ -1318,7 +1318,7 @@ EOAPI void  edje_obj_message_send(Edje_Message_Type type, int id, void *msg);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_select_none(const char *part);
+EOAPI void edje_obj_part_text_select_none(const char *part);
 
 /**
  * @brief Get a handle to the Evas object implementing a given Edje part, in an
@@ -1340,7 +1340,7 @@ EOAPI void  edje_obj_part_text_select_none(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI const Evas_Object * edje_obj_part_object_get(const char *part);
+EOAPI const Evas_Object *edje_obj_part_object_get(const char *part);
 
 /**
  * @brief Set the dragable object size.
@@ -1357,7 +1357,7 @@ EOAPI const Evas_Object * edje_obj_part_object_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_size_set(const char *part, double dw, double dh);
+EOAPI Eina_Bool edje_obj_part_drag_size_set(const char *part, double dw, double dh);
 
 /**
  * @brief Get the dragable object size.
@@ -1371,7 +1371,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_size_set(const char *part, double dw, double
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_size_get(const char *part, double *dw, double *dh);
+EOAPI Eina_Bool edje_obj_part_drag_size_get(const char *part, double *dw, double *dh);
 
 /**
  * @brief Delete a function from the filter list.
@@ -1388,7 +1388,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_size_get(const char *part, double *dw, doubl
  *
  * @ingroup Edje_Object
  */
-EOAPI void * edje_obj_text_insert_filter_callback_del(const char *part, Edje_Text_Filter_Cb func);
+EOAPI void *edje_obj_text_insert_filter_callback_del(const char *part, Edje_Text_Filter_Cb func);
 
 /**
  * @brief Determine dragable directions.
@@ -1405,12 +1405,12 @@ EOAPI void * edje_obj_text_insert_filter_callback_del(const char *part, Edje_Tex
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_Drag_Dir  edje_obj_part_drag_dir_get(const char *part);
+EOAPI Edje_Drag_Dir edje_obj_part_drag_dir_get(const char *part);
 
 /**
  * @brief Sets the raw (non escaped) text for an object part.
  *
- * This funciton will not do escape for you if it is a TEXTBLOCK part, that is,
+ * This function will not do escape for you if it is a TEXTBLOCK part, that is,
  * if text contain tags, these tags will not be interpreted/parsed by
  * TEXTBLOCK.
  *
@@ -1420,7 +1420,7 @@ EOAPI Edje_Drag_Dir  edje_obj_part_drag_dir_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_unescaped_set(const char *part, const char *text_to_escape);
+EOAPI Eina_Bool edje_obj_part_text_unescaped_set(const char *part, const char *text_to_escape);
 
 /**
  * @brief Returns the text of the object part, without escaping.
@@ -1437,7 +1437,7 @@ EOAPI Eina_Bool  edje_obj_part_text_unescaped_set(const char *part, const char *
  *
  * @ingroup Edje_Object
  */
-EOAPI char * edje_obj_part_text_unescaped_get(const char *part);
+EOAPI char *edje_obj_part_text_unescaped_get(const char *part);
 
 /**
  * @brief Add a callback for an arriving Edje signal, emitted by a given Edje
@@ -1470,7 +1470,7 @@ EOAPI char * edje_obj_part_text_unescaped_get(const char *part);
  * parameters of the callback function (e.g. "mouse,down,2" and
  * @"button.close"), for each of those events.
  *
- * Note: See @ref edcref "the syntax" for EDC files See also
+ * @note See @ref edcref "the syntax" for EDC files See also
  * @ref edje_obj_signal_emit() on how to emits Edje signals from code to a an
  * object @ref edje_object_signal_callback_del_full()
  *
@@ -1481,7 +1481,7 @@ EOAPI char * edje_obj_part_text_unescaped_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_signal_callback_add(const char *emission, const char *source, Edje_Signal_Cb func, void *data);
+EOAPI void edje_obj_signal_callback_add(const char *emission, const char *source, Edje_Signal_Cb func, void *data);
 
 /**
  * @brief Set the selection to be everything.
@@ -1492,7 +1492,7 @@ EOAPI void  edje_obj_signal_callback_add(const char *emission, const char *sourc
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_select_all(const char *part);
+EOAPI void edje_obj_part_text_select_all(const char *part);
 
 /**
  * @brief Set the return key on the input panel to be disabled.
@@ -1503,7 +1503,7 @@ EOAPI void  edje_obj_part_text_select_all(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_return_key_disabled_set(const char *part, Eina_Bool disabled);
+EOAPI void edje_obj_part_text_input_panel_return_key_disabled_set(const char *part, Eina_Bool disabled);
 
 /**
  * @brief Get whether the return key on the input panel should be disabled or
@@ -1517,7 +1517,7 @@ EOAPI void  edje_obj_part_text_input_panel_return_key_disabled_set(const char *p
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_input_panel_return_key_disabled_get(const char *part);
+EOAPI Eina_Bool edje_obj_part_text_input_panel_return_key_disabled_get(const char *part);
 
 /**
  * @brief Set the autocapitalization type on the immodule.
@@ -1528,7 +1528,7 @@ EOAPI Eina_Bool  edje_obj_part_text_input_panel_return_key_disabled_get(const ch
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_autocapital_type_set(const char *part, Edje_Text_Autocapital_Type autocapital_type);
+EOAPI void edje_obj_part_text_autocapital_type_set(const char *part, Edje_Text_Autocapital_Type autocapital_type);
 
 /**
  * @brief Retrieves the autocapitalization type
@@ -1541,14 +1541,14 @@ EOAPI void  edje_obj_part_text_autocapital_type_set(const char *part, Edje_Text_
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_Text_Autocapital_Type  edje_obj_part_text_autocapital_type_get(const char *part);
+EOAPI Edje_Text_Autocapital_Type edje_obj_part_text_autocapital_type_get(const char *part);
 
 /**
  * @brief Unswallow an object.
  *
  * Causes the edje to regurgitate a previously swallowed object. :)
  *
- * Note: obj_swallow will  not be deleted or hidden. Note: obj_swallow may
+ * @note obj_swallow will  not be deleted or hidden. Note: obj_swallow may
  * appear shown on the evas depending on its state when it got unswallowed.
  * Make sure you delete it or hide it if you do not want it to.
  *
@@ -1556,7 +1556,7 @@ EOAPI Edje_Text_Autocapital_Type  edje_obj_part_text_autocapital_type_get(const 
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_unswallow(Evas_Object *obj_swallow);
+EOAPI void edje_obj_part_unswallow(Evas_Object *obj_swallow);
 
 /**
  * @brief Set whether the prediction is allowed or not.
@@ -1567,7 +1567,7 @@ EOAPI void  edje_obj_part_unswallow(Evas_Object *obj_swallow);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_prediction_allow_set(const char *part, Eina_Bool prediction);
+EOAPI void edje_obj_part_text_prediction_allow_set(const char *part, Eina_Bool prediction);
 
 /**
  * @brief Get whether the prediction is allowed or not.
@@ -1580,7 +1580,7 @@ EOAPI void  edje_obj_part_text_prediction_allow_set(const char *part, Eina_Bool 
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_prediction_allow_get(const char *part);
+EOAPI Eina_Bool edje_obj_part_text_prediction_allow_get(const char *part);
 
 /**
  * @brief Retrive an EDC data field's value from a given Edje object's group.
@@ -1594,7 +1594,7 @@ EOAPI Eina_Bool  edje_obj_part_text_prediction_allow_get(const char *part);
  * this function. Check the complete @ref edcref "syntax reference" for EDC
  * files.
  *
- * Warning: Do not confuse this call with edje_file_data_get(), which queries
+ * @warning Do not confuse this call with edje_file_data_get(), which queries
  * for a  global EDC data field on an EDC declaration file.
  *
  * @ref edje_object_file_set()
@@ -1605,7 +1605,7 @@ EOAPI Eina_Bool  edje_obj_part_text_prediction_allow_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI const char * edje_obj_data_get(const char *key);
+EOAPI const char *edje_obj_data_get(const char *key);
 
 /**
  * @brief Add a markup filter function for newly inserted text.
@@ -1621,7 +1621,7 @@ EOAPI const char * edje_obj_data_get(const char *key);
  * function is different from edje_object_text_insert_filter_callback_add() in
  * that the text parameter in the fucn filter is always markup.
  *
- * Warning: If you use this function with
+ * @warning If you use this function with
  * edje_object_text_insert_filter_callback_add() togehter, all
  * Edje_Text_Filter_Cb functions and Edje_Markup_Filter_Cb functions will be
  * executed, and then filtered text will be inserted.
@@ -1637,7 +1637,7 @@ EOAPI const char * edje_obj_data_get(const char *key);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_text_markup_filter_callback_add(const char *part, Edje_Markup_Filter_Cb func, void *data);
+EOAPI void edje_obj_text_markup_filter_callback_add(const char *part, Edje_Markup_Filter_Cb func, void *data);
 
 /**
  * @brief Process an object's message queue.
@@ -1648,7 +1648,7 @@ EOAPI void  edje_obj_text_markup_filter_callback_add(const char *part, Edje_Mark
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_message_signal_process(void);
+EOAPI void edje_obj_message_signal_process(void);
 
 /**
  * @brief Removes an object from the box.
@@ -1664,7 +1664,7 @@ EOAPI void  edje_obj_message_signal_process(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI Evas_Object * edje_obj_part_box_remove(const char *part, Evas_Object *child);
+EOAPI Evas_Object *edje_obj_part_box_remove(const char *part, Evas_Object *child);
 
 /**
  * @brief Thaws the Edje object.
@@ -1680,7 +1680,7 @@ EOAPI Evas_Object * edje_obj_part_box_remove(const char *part, Evas_Object *chil
  *
  * @ingroup Edje_Object
  */
-EOAPI int  edje_obj_thaw(void);
+EOAPI int edje_obj_thaw(void);
 
 /**
  * @brief Get the object currently swallowed by a part.
@@ -1691,7 +1691,7 @@ EOAPI int  edje_obj_thaw(void);
  *
  * @ingroup Edje_Object
  */
-EOAPI Evas_Object * edje_obj_part_swallow_get(const char *part);
+EOAPI Evas_Object *edje_obj_part_swallow_get(const char *part);
 
 /**
  * @brief Reset the input method context if needed.
@@ -1705,7 +1705,7 @@ EOAPI Evas_Object * edje_obj_part_swallow_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_imf_context_reset(const char *part);
+EOAPI void edje_obj_part_text_imf_context_reset(const char *part);
 
 /**
  * @brief Set the "return" key type. This type is used to set string or icon on
@@ -1719,7 +1719,7 @@ EOAPI void  edje_obj_part_text_imf_context_reset(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_return_key_type_set(const char *part, Edje_Input_Panel_Return_Key_Type return_key_type);
+EOAPI void edje_obj_part_text_input_panel_return_key_type_set(const char *part, Edje_Input_Panel_Return_Key_Type return_key_type);
 
 /**
  * @brief Get the "return" key type.
@@ -1735,7 +1735,7 @@ EOAPI void  edje_obj_part_text_input_panel_return_key_type_set(const char *part,
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_Input_Panel_Return_Key_Type  edje_obj_part_text_input_panel_return_key_type_get(const char *part);
+EOAPI Edje_Input_Panel_Return_Key_Type edje_obj_part_text_input_panel_return_key_type_get(const char *part);
 
 /**
  * @brief Retrieve a child from a table
@@ -1747,7 +1747,7 @@ EOAPI Edje_Input_Panel_Return_Key_Type  edje_obj_part_text_input_panel_return_ke
  *
  * @ingroup Edje_Object
  */
-EOAPI Evas_Object * edje_obj_part_table_child_get(const char *part, unsigned int col, unsigned int row);
+EOAPI Evas_Object *edje_obj_part_table_child_get(const char *part, unsigned int col, unsigned int row);
 
 /**
  * @brief Adds an object to the box.
@@ -1764,7 +1764,7 @@ EOAPI Evas_Object * edje_obj_part_table_child_get(const char *part, unsigned int
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_box_insert_before(const char *part, Evas_Object *child, const Evas_Object *reference);
+EOAPI Eina_Bool edje_obj_part_box_insert_before(const char *part, Evas_Object *child, const Evas_Object *reference);
 
 /**
  * @brief Set the parameter for the external part.
@@ -1773,12 +1773,12 @@ EOAPI Eina_Bool  edje_obj_part_box_insert_before(const char *part, Evas_Object *
  * by the external plugin. For instance, it may be a string that defines a
  * button label and setting this property will change that label on the fly.
  *
- * Note: external parts have parameters set when they change states. Those
+ * @note external parts have parameters set when they change states. Those
  * parameters will never be changed by this function. The interpretation of how
  * state_set parameters and param_set will interact is up to the external
  * plugin.
  *
- * Note: this function will not check if parameter value is valid using
+ * @note this function will not check if parameter value is valid using
  * #Edje_External_Param_Info minimum, maximum, valid choices and others.
  * However these should be checked by the underlying implementation provided by
  * the external plugin. This is done for performance reasons.
@@ -1792,7 +1792,7 @@ EOAPI Eina_Bool  edje_obj_part_box_insert_before(const char *part, Evas_Object *
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_external_param_set(const char *part, const Edje_External_Param *param);
+EOAPI Eina_Bool edje_obj_part_external_param_set(const char *part, const Edje_External_Param *param);
 
 /**
  * @brief Get the parameter for the external part.
@@ -1817,7 +1817,7 @@ EOAPI Eina_Bool  edje_obj_part_external_param_set(const char *part, const Edje_E
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_external_param_get(const char *part, Edje_External_Param *param);
+EOAPI Eina_Bool edje_obj_part_external_param_get(const char *part, Edje_External_Param *param);
 
 /**
  * @brief Calculate the minimum required size for a given Edje object.
@@ -1830,7 +1830,7 @@ EOAPI Eina_Bool  edje_obj_part_external_param_get(const char *part, Edje_Externa
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_size_min_calc(Evas_Coord *minw, Evas_Coord *minh);
+EOAPI void edje_obj_size_min_calc(Evas_Coord *minw, Evas_Coord *minh);
 
 /**
  * @brief Appends an object to the box.
@@ -1847,7 +1847,7 @@ EOAPI void  edje_obj_size_min_calc(Evas_Coord *minw, Evas_Coord *minh);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_box_append(const char *part, Evas_Object *child);
+EOAPI Eina_Bool edje_obj_part_box_append(const char *part, Evas_Object *child);
 
 /**
  * @brief Calculate the minimum required size for a given Edje object.
@@ -1858,11 +1858,11 @@ EOAPI Eina_Bool  edje_obj_part_box_append(const char *part, Evas_Object *child);
  * resulting calculation to get to values equal or bigger than restrictedw and
  * restrictedh, for width and height, respectively.
  *
- * Note: At the end of this call, obj  won't be automatically resized to new
+ * @note At the end of this call, obj  won't be automatically resized to new
  * dimensions, but just return the calculated sizes. The caller is the one up
  * to change its geometry or not.
  *
- * Warning: Be advised that invisible parts in obj  will be taken into account
+ * @warning Be advised that invisible parts in obj  will be taken into account
  * in this calculation.
  *
  * @param[out] minh Pointer to a variable where to store the minimum required
@@ -1874,7 +1874,7 @@ EOAPI Eina_Bool  edje_obj_part_box_append(const char *part, Evas_Object *child);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_size_min_restricted_calc(Evas_Coord *minw, Evas_Coord *minh, Evas_Coord restrictedw, Evas_Coord restrictedh);
+EOAPI void edje_obj_size_min_restricted_calc(Evas_Coord *minw, Evas_Coord *minh, Evas_Coord restrictedw, Evas_Coord restrictedh);
 
 /**
  * @brief Removes all elements from the box.
@@ -1891,7 +1891,7 @@ EOAPI void  edje_obj_size_min_restricted_calc(Evas_Coord *minw, Evas_Coord *minh
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_box_remove_all(const char *part, Eina_Bool clear);
+EOAPI Eina_Bool edje_obj_part_box_remove_all(const char *part, Eina_Bool clear);
 
 /**
  * @brief Pages x,y steps.
@@ -1900,7 +1900,7 @@ EOAPI Eina_Bool  edje_obj_part_box_remove_all(const char *part, Eina_Bool clear)
  *
  * Values for dx and dy are real numbers that range from 0 to 1.
  *
- * Warning: Paging is bugged!
+ * @warning Paging is bugged!
  *
  * See also @ref edje_obj_part_drag_step()
  *
@@ -1909,7 +1909,7 @@ EOAPI Eina_Bool  edje_obj_part_box_remove_all(const char *part, Eina_Bool clear)
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_page(const char *part, double dx, double dy);
+EOAPI Eina_Bool edje_obj_part_drag_page(const char *part, double dx, double dy);
 
 /**
  * @brief Sets the text for an object part
@@ -1920,7 +1920,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_page(const char *part, double dx, double dy)
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_set(const char *part, const char *text);
+EOAPI Eina_Bool edje_obj_part_text_set(const char *part, const char *text);
 
 /**
  * @brief Return the text of the object part.
@@ -1935,7 +1935,7 @@ EOAPI Eina_Bool  edje_obj_part_text_set(const char *part, const char *text);
  *
  * @ingroup Edje_Object
  */
-EOAPI const char * edje_obj_part_text_get(const char *part);
+EOAPI const char *edje_obj_part_text_get(const char *part);
 
 /**
  * @brief Set the attribute to show the input panel in case of only an user's
@@ -1949,7 +1949,7 @@ EOAPI const char * edje_obj_part_text_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_show_on_demand_set(const char *part, Eina_Bool ondemand);
+EOAPI void edje_obj_part_text_input_panel_show_on_demand_set(const char *part, Eina_Bool ondemand);
 
 /**
  * @brief Get the attribute to show the input panel in case of only an user's
@@ -1964,7 +1964,7 @@ EOAPI void  edje_obj_part_text_input_panel_show_on_demand_set(const char *part, 
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_input_panel_show_on_demand_get(const char *part);
+EOAPI Eina_Bool edje_obj_part_text_input_panel_show_on_demand_get(const char *part);
 
 /**
  * @brief Sets the input hint which allows input methods to fine-tune their
@@ -1976,7 +1976,7 @@ EOAPI Eina_Bool  edje_obj_part_text_input_panel_show_on_demand_get(const char *p
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_hint_set(const char *part, Edje_Input_Hints input_hints);
+EOAPI void edje_obj_part_text_input_hint_set(const char *part, Edje_Input_Hints input_hints);
 
 /**
  * @brief Gets the value of input hint
@@ -1989,7 +1989,7 @@ EOAPI void  edje_obj_part_text_input_hint_set(const char *part, Edje_Input_Hints
  *
  * @ingroup Edje_Object
  */
-EOAPI Edje_Input_Hints  edje_obj_part_text_input_hint_get(const char *part);
+EOAPI Edje_Input_Hints edje_obj_part_text_input_hint_get(const char *part);
 
 /**
  * @brief Return the selection text of the object part.
@@ -2005,7 +2005,7 @@ EOAPI Edje_Input_Hints  edje_obj_part_text_input_hint_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI const char * edje_obj_part_text_selection_get(const char *part);
+EOAPI const char *edje_obj_part_text_selection_get(const char *part);
 
 /**
  * @brief Returns whether the cursor points to a format. @ref
@@ -2017,7 +2017,7 @@ EOAPI const char * edje_obj_part_text_selection_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_cursor_is_format_get(const char *part, Edje_Cursor cur);
+EOAPI Eina_Bool edje_obj_part_text_cursor_is_format_get(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Gets font and font size from edje text class.
@@ -2033,7 +2033,24 @@ EOAPI Eina_Bool  edje_obj_part_text_cursor_is_format_get(const char *part, Edje_
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_text_class_get(const char *text_class, const char **font, Evas_Font_Size *size);
+EOAPI Eina_Bool edje_obj_text_class_get(const char *text_class, const char **font, Evas_Font_Size *size);
+
+/**
+ * @brief Delete the object text class.
+ *
+ * This function deletes any values at the object level for the specified
+ * object and text class.
+ *
+ * Deleting the text class will revert it to the values defined by
+ * edje_text_class_set() or the text class defined in the theme file.
+ *
+ * @param[in] text_class The color class to be deleted.
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EOAPI void edje_obj_text_class_del(const char *text_class);
 
 /**
  * @brief Sets the object color class.
@@ -2048,7 +2065,7 @@ EOAPI Eina_Bool  edje_obj_text_class_get(const char *text_class, const char **fo
  * Setting color emits a signal "color_class,set" with source being the given
  * color.
  *
- * Note: unlike Evas, Edje colors are  not pre-multiplied. That is,
+ * @note unlike Evas, Edje colors are  not pre-multiplied. That is,
  * half-transparent white is 255 255 255 128.
  *
  * @param[in] r Object Red value
@@ -2066,7 +2083,7 @@ EOAPI Eina_Bool  edje_obj_text_class_get(const char *text_class, const char **fo
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_color_class_set(const char *color_class, int r, int g, int b, int a, int r2, int g2, int b2, int a2, int r3, int g3, int b3, int a3);
+EOAPI Eina_Bool edje_obj_color_class_set(const char *color_class, int r, int g, int b, int a, int r2, int g2, int b2, int a2, int r3, int g3, int b3, int a3);
 
 /**
  * @brief Gets the object color class.
@@ -2077,7 +2094,7 @@ EOAPI Eina_Bool  edje_obj_color_class_set(const char *color_class, int r, int g,
  * The first color is the object, the second is the text outline, and the third
  * is the text shadow. (Note that the second two only apply to text parts).
  *
- * Note: unlike Evas, Edje colors are  not pre-multiplied. That is,
+ * @note unlike Evas, Edje colors are  not pre-multiplied. That is,
  * half-transparent white is 255 255 255 128.
  *
  * @param[out] r Object Red value
@@ -2097,7 +2114,7 @@ EOAPI Eina_Bool  edje_obj_color_class_set(const char *color_class, int r, int g,
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_color_class_get(const char *color_class, int *r, int *g, int *b, int *a, int *r2, int *g2, int *b2, int *a2, int *r3, int *g3, int *b3, int *a3);
+EOAPI Eina_Bool edje_obj_color_class_get(const char *color_class, int *r, int *g, int *b, int *a, int *r2, int *g2, int *b2, int *a2, int *r3, int *g3, int *b3, int *a3);
 
 /**
  * @brief Gets the description of an object color class.
@@ -2110,7 +2127,93 @@ EOAPI Eina_Bool  edje_obj_color_class_get(const char *color_class, int *r, int *
  *
  * @ingroup Edje_Object
  */
-EOAPI const char * edje_obj_color_class_description_get(const char *color_class);
+EOAPI const char *edje_obj_color_class_description_get(const char *color_class);
+
+/**
+ * @brief Clear object color classes.
+ *
+ * @return @c true, on success or @c false, on error
+ *
+ * @since 1.17.0
+ *
+ * @ingroup Edje_Object
+ */
+EOAPI Eina_Bool edje_obj_color_class_clear(void);
+
+/**
+ * @brief Delete the object color class.
+ *
+ * This function deletes any values at the object level for the specified
+ * object and color class.
+ *
+ * Deleting the color class will revert it to the values defined by
+ * edje_color_class_set() or the color class defined in the theme file.
+ *
+ * Deleting the color class will emit the signal "color_class,del" for the
+ * given Edje object.
+ *
+ * @param[in] color_class The color class to be deleted.
+ *
+ * @ingroup Edje_Object
+ */
+EOAPI void edje_obj_color_class_del(const char *color_class);
+
+/**
+ * @brief Sets the object size class.
+ *
+ * This function sets the min and max values for an object level size class.
+ * This will make all edje parts in the specified object that have the
+ * specified size class update their min and max size with given values.
+ *
+ * @param[in] minw The min width
+ * @param[in] minh The min height
+ * @param[in] maxw The max width
+ * @param[in] maxh The max height
+ *
+ * @return @c true, on success or @c false, on error
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EOAPI Eina_Bool edje_obj_size_class_set(const char *size_class, int minw, int minh, int maxw, int maxh);
+
+/**
+ * @brief Gets the object size class.
+ *
+ * This function gets the min and max values for an object level size class.
+ * These values will only be valid until the size class is changed or the edje
+ * object is deleted.
+ *
+ * @param[out] minw The min width
+ * @param[out] minh The min height
+ * @param[out] maxw The max width
+ * @param[out] maxh The max height
+ *
+ * @return @c true, on success or @c false, on error
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EOAPI Eina_Bool edje_obj_size_class_get(const char *size_class, int *minw, int *minh, int *maxw, int *maxh);
+
+/**
+ * @brief Delete the object size class.
+ *
+ * This function deletes any values at the object level for the specified
+ * object and size class.
+ *
+ * Deleting the size class will revert it to the values defined by
+ * edje_size_class_set() or the color class defined in the theme file.
+ *
+ * @param[in] size_class
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EOAPI void edje_obj_size_class_del(const char *size_class);
 
 /**
  * @brief Steps the dragable x,y steps.
@@ -2127,7 +2230,7 @@ EOAPI const char * edje_obj_color_class_description_get(const char *color_class)
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_drag_step(const char *part, double dx, double dy);
+EOAPI Eina_Bool edje_obj_part_drag_step(const char *part, double dx, double dy);
 
 /**
  * @brief Move the cursor to the char above the current cursor position.
@@ -2136,7 +2239,7 @@ EOAPI Eina_Bool  edje_obj_part_drag_step(const char *part, double dx, double dy)
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_cursor_up(const char *part, Edje_Cursor cur);
+EOAPI Eina_Bool edje_obj_part_text_cursor_up(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Returns the cursor geometry of the part relative to the edje object.
@@ -2148,7 +2251,7 @@ EOAPI Eina_Bool  edje_obj_part_text_cursor_up(const char *part, Edje_Cursor cur)
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_cursor_geometry_get(const char *part, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h);
+EOAPI void edje_obj_part_text_cursor_geometry_get(const char *part, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h);
 
 /**
  * @brief Return a list of char anchor names.
@@ -2161,7 +2264,7 @@ EOAPI void  edje_obj_part_text_cursor_geometry_get(const char *part, Evas_Coord 
  *
  * @ingroup Edje_Object
  */
-EOAPI const Eina_List * edje_obj_part_text_anchor_list_get(const char *part);
+EOAPI const Eina_List *edje_obj_part_text_anchor_list_get(const char *part);
 
 /**
  * @brief Add a filter function for newly inserted text.
@@ -2176,7 +2279,7 @@ EOAPI const Eina_List * edje_obj_part_text_anchor_list_get(const char *part);
  * If the text is to be rejected, freeing it and setting the pointer to @c null
  * will make Edje break out of the filter cycle and reject the inserted text.
  *
- * Warning: This function will be deprecated because of difficulty in use. The
+ * @warning This function will be deprecated because of difficulty in use. The
  * type(format, text, or markup) of text should be always checked in the filter
  * function for correct filtering. Please use
  * edje_object_text_markup_filter_callback_add() instead. There is no need to
@@ -2195,7 +2298,7 @@ EOAPI const Eina_List * edje_obj_part_text_anchor_list_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_text_insert_filter_callback_add(const char *part, Edje_Text_Filter_Cb func, void *data);
+EOAPI void edje_obj_text_insert_filter_callback_add(const char *part, Edje_Text_Filter_Cb func, void *data);
 
 /**
  * @brief Show the input panel (virtual keyboard) based on the input panel
@@ -2211,7 +2314,7 @@ EOAPI void  edje_obj_text_insert_filter_callback_add(const char *part, Edje_Text
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_input_panel_show(const char *part);
+EOAPI void edje_obj_part_text_input_panel_show(const char *part);
 
 /**
  * @brief Check if an Edje part exists in a given Edje object's group
@@ -2230,7 +2333,7 @@ EOAPI void  edje_obj_part_text_input_panel_show(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_exists(const char *part);
+EOAPI Eina_Bool edje_obj_part_exists(const char *part);
 
 /**
  * @brief Delete a function from the markup filter list.
@@ -2249,7 +2352,7 @@ EOAPI Eina_Bool  edje_obj_part_exists(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI void * edje_obj_text_markup_filter_callback_del(const char *part, Edje_Markup_Filter_Cb func);
+EOAPI void *edje_obj_text_markup_filter_callback_del(const char *part, Edje_Markup_Filter_Cb func);
 
 /**
  * @brief Return true if the cursor points to a visible format For example \\t,
@@ -2259,7 +2362,7 @@ EOAPI void * edje_obj_text_markup_filter_callback_del(const char *part, Edje_Mar
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_cursor_is_visible_format_get(const char *part, Edje_Cursor cur);
+EOAPI Eina_Bool edje_obj_part_text_cursor_is_visible_format_get(const char *part, Edje_Cursor cur);
 
 /**
  * @brief This function inserts text as if the user has inserted it.
@@ -2273,7 +2376,7 @@ EOAPI Eina_Bool  edje_obj_part_text_cursor_is_visible_format_get(const char *par
  *
  * @ingroup Edje_Object
  */
-EOAPI void  edje_obj_part_text_user_insert(const char *part, const char *text);
+EOAPI void edje_obj_part_text_user_insert(const char *part, const char *text);
 
 /**
  * @brief Moves the cursor to the previous char @ref
@@ -2283,7 +2386,7 @@ EOAPI void  edje_obj_part_text_user_insert(const char *part, const char *text);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_text_cursor_prev(const char *part, Edje_Cursor cur);
+EOAPI Eina_Bool edje_obj_part_text_cursor_prev(const char *part, Edje_Cursor cur);
 
 /**
  * @brief Return a list of char item names.
@@ -2296,7 +2399,7 @@ EOAPI Eina_Bool  edje_obj_part_text_cursor_prev(const char *part, Edje_Cursor cu
  *
  * @ingroup Edje_Object
  */
-EOAPI const Eina_List * edje_obj_part_text_item_list_get(const char *part);
+EOAPI const Eina_List *edje_obj_part_text_item_list_get(const char *part);
 
 /**
  * @brief "Swallows" an object into one of the Edje object @c SWALLOW parts.
@@ -2321,7 +2424,7 @@ EOAPI const Eina_List * edje_obj_part_text_item_list_get(const char *part);
  * be unswallowed (as in edje_object_part_unswallow()) before the new object is
  * swallowed.
  *
- * Note:  obj  won't delete the swallowed object once it is deleted --
+ * @note  obj  won't delete the swallowed object once it is deleted --
  *  obj_swallow will get to an unparented state again.
  *
  * For more details on EDC @c SWALLOW parts, see @ref edcref "syntax
@@ -2331,7 +2434,7 @@ EOAPI const Eina_List * edje_obj_part_text_item_list_get(const char *part);
  *
  * @ingroup Edje_Object
  */
-EOAPI Eina_Bool  edje_obj_part_swallow(const char *part, Evas_Object *obj_swallow);
+EOAPI Eina_Bool edje_obj_part_swallow(const char *part, Evas_Object *obj_swallow);
 
 EOAPI extern const Eo_Event_Description _EDJE_OBJECT_EVENT_RECALC;
 

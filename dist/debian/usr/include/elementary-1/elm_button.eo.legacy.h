@@ -24,8 +24,6 @@ typedef Eo Elm_Button;
  * See also @ref elm_button_autorepeat_set,
  * @ref elm_button_autorepeat_gap_timeout_set.
  *
- * 
- *
  * @param[in] t Timeout in seconds
  *
  * @ingroup Elm_Button
@@ -36,8 +34,6 @@ EAPI void elm_button_autorepeat_initial_timeout_set(Elm_Button *obj, double t);
  * @brief Get the initial timeout before the autorepeat event is generated
  *
  * See also @ref elm_button_autorepeat_initial_timeout_set.
- *
- * 
  *
  * @return Timeout in seconds
  *
@@ -52,8 +48,6 @@ EAPI double elm_button_autorepeat_initial_timeout_get(const Elm_Button *obj);
  * after a delay of @c t seconds for each.
  *
  * See also @ref elm_button_autorepeat_initial_timeout_set.
- *
- * 
  *
  * @param[in] t Interval in seconds
  *
@@ -83,8 +77,6 @@ EAPI double elm_button_autorepeat_gap_timeout_get(const Elm_Button *obj);
  * @ref elm_button_autorepeat_initial_timeout_set, and the time between each
  * new emission by @ref elm_button_autorepeat_gap_timeout_set.
  *
- * 
- *
  * @param[in] on A bool to turn on/off the event
  *
  * @ingroup Elm_Button
@@ -96,8 +88,6 @@ EAPI void elm_button_autorepeat_set(Elm_Button *obj, Eina_Bool on);
  * on, @c false otherwise)
  *
  * See also @ref elm_button_autorepeat_set.
- *
- * 
  *
  * @return A bool to turn on/off the event
  *

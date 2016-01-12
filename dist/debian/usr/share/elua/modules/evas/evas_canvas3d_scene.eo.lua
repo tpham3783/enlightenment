@@ -24,6 +24,8 @@ ffi.cdef [[
     Evas_Canvas3D_Node *evas_canvas3d_scene_root_node_get(void);
     void evas_canvas3d_scene_camera_node_set(Evas_Canvas3D_Node * node);
     Evas_Canvas3D_Node *evas_canvas3d_scene_camera_node_get(void);
+    void evas_canvas3d_scene_shadows_depth_set(Evas_Real depth_offset, Evas_Real depth_constant);
+    void evas_canvas3d_scene_shadows_depth_get(Evas_Real *depth_offset, Evas_Real *depth_constant);
     void evas_canvas3d_scene_size_set(int w, int h);
     void evas_canvas3d_scene_size_get(int *w, int *h);
     void evas_canvas3d_scene_background_color_set(Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
@@ -67,6 +69,21 @@ __body = {
         local v = __lib.evas_canvas3d_scene_camera_node_get()
         eo.__do_end()
         return v
+    end,
+
+    shadows_depth_set = function(self, depth_offset, depth_constant)
+        eo.__do_start(self, __class)
+        __lib.evas_canvas3d_scene_shadows_depth_set(depth_offset, depth_constant)
+        eo.__do_end()
+    end,
+
+    shadows_depth_get = function(self)
+        eo.__do_start(self, __class)
+        local depth_offset = ffi.new("Evas_Real[1]")
+        local depth_constant = ffi.new("Evas_Real[1]")
+        __lib.evas_canvas3d_scene_shadows_depth_get(depth_offset, depth_constant)
+        eo.__do_end()
+        return depth_offset[0], depth_constant[0]
     end,
 
     size_set = function(self, w, h)
@@ -155,6 +172,7 @@ __body = {
 
     __properties = {
         ["camera_node"] = { 0, 0, 1, 1, true, true },
+        ["shadows_depth"] = { 0, 0, 2, 2, true, true },
         ["root_node"] = { 0, 0, 1, 1, true, true }
     }
 }

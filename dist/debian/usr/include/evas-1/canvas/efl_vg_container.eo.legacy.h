@@ -13,5 +13,7 @@ typedef Eo Efl_VG_Container;
 
 
 #endif
+EAPI Efl_VG_Base *evas_vg_container_child_get(Efl_VG_Container *obj, const char *name);
+EAPI Eina_Iterator *evas_vg_container_children_get(Efl_VG_Container *obj) EINA_WARN_UNUSED_RESULT;
 
 #endif

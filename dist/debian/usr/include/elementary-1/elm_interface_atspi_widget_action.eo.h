@@ -18,10 +18,7 @@ typedef Eo Elm_Interface_Atspi_Widget_Action;
 EAPI const Eo_Class *elm_interface_atspi_widget_action_mixin_get(void) EINA_CONST;
 
 #ifdef ELM_INTERFACE_ATSPI_WIDGET_ACTION_PROTECTED
-/**
- * No description supplied.
- */
-EOAPI const Elm_Atspi_Action * elm_interface_atspi_widget_action_elm_actions_get(void);
+EOAPI const Elm_Atspi_Action *elm_interface_atspi_widget_action_elm_actions_get(void);
 #endif
 
 

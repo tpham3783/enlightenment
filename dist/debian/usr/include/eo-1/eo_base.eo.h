@@ -18,8 +18,8 @@ typedef Eo Eo_Base;
 typedef struct _Eo_Event_Description
 {
   const char *name; /** name of the event. */
-  const char *doc; /** Explanation about the event. */
   Eina_Bool unfreezable; /** Eina_True if the event cannot be frozen. */
+  Eina_Bool legacy_is; /** Internal use: if is a legacy event. */
 } Eo_Event_Description;
 
 /**
@@ -73,7 +73,7 @@ EAPI const Eo_Class *eo_base_class_get(void) EINA_CONST;
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_parent_set(Eo_Base *parent);
+EOAPI void eo_parent_set(Eo_Base *parent);
 
 /**
  * @brief Get the parent of an object
@@ -82,7 +82,7 @@ EOAPI void  eo_parent_set(Eo_Base *parent);
  *
  * @ingroup Eo_Base
  */
-EOAPI Eo_Base * eo_parent_get(void);
+EOAPI Eo_Base *eo_parent_get(void);
 
 /**
  * @brief Return freeze events of object.
@@ -93,7 +93,7 @@ EOAPI Eo_Base * eo_parent_get(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI int  eo_event_global_freeze_count_get(void);
+EOAPI int eo_event_global_freeze_count_get(void);
 
 /**
  * @brief Return freeze events of object.
@@ -104,13 +104,13 @@ EOAPI int  eo_event_global_freeze_count_get(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI int  eo_event_freeze_count_get(void);
+EOAPI int eo_event_freeze_count_get(void);
 
 /** True if the object is already finalized, false otherwise.
  *
  * @ingroup Eo_Base
  */
-EOAPI Eina_Bool  eo_finalized_get(void);
+EOAPI Eina_Bool eo_finalized_get(void);
 
 /**
  * @brief Call the object's constructor.
@@ -121,7 +121,7 @@ EOAPI Eina_Bool  eo_finalized_get(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI Eo_Base * eo_constructor(void);
+EOAPI Eo_Base *eo_constructor(void);
 
 /**
  * @brief Call the object's destructor.
@@ -130,7 +130,7 @@ EOAPI Eo_Base * eo_constructor(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_destructor(void);
+EOAPI void eo_destructor(void);
 
 /**
  * @brief Called at the end of #eo_add. Should not be called, just overridden.
@@ -139,7 +139,7 @@ EOAPI void  eo_destructor(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI Eo_Base * eo_finalize(void);
+EOAPI Eo_Base *eo_finalize(void);
 
 /**
  * @brief Add a new weak reference to obj.
@@ -153,7 +153,7 @@ EOAPI Eo_Base * eo_finalize(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_wref_add(Eo_Base **wref);
+EOAPI void eo_wref_add(Eo_Base **wref);
 
 /**
  * @brief Delete the weak reference passed.
@@ -162,7 +162,7 @@ EOAPI void  eo_wref_add(Eo_Base **wref);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_wref_del(Eo_Base **wref);
+EOAPI void eo_wref_del(Eo_Base **wref);
 
 /**
  * @brief Set generic data to object.
@@ -173,7 +173,7 @@ EOAPI void  eo_wref_del(Eo_Base **wref);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_key_data_set(const char *key, const void *data);
+EOAPI void eo_key_data_set(const char *key, const void *data);
 
 /**
  * @brief Get generic data from object.
@@ -184,7 +184,7 @@ EOAPI void  eo_key_data_set(const char *key, const void *data);
  *
  * @ingroup Eo_Base
  */
-EOAPI void * eo_key_data_get(const char *key);
+EOAPI void *eo_key_data_get(const char *key);
 
 /**
  * @brief Del generic data from object.
@@ -193,7 +193,7 @@ EOAPI void * eo_key_data_get(const char *key);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_key_data_del(const char *key);
+EOAPI void eo_key_data_del(const char *key);
 
 /**
  * @brief thaw events of object.
@@ -202,7 +202,7 @@ EOAPI void  eo_key_data_del(const char *key);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_thaw(void);
+EOAPI void eo_event_thaw(void);
 
 /**
  * @brief freeze events of object.
@@ -211,7 +211,7 @@ EOAPI void  eo_event_thaw(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_freeze(void);
+EOAPI void eo_event_freeze(void);
 
 /**
  * @brief thaw events of object.
@@ -220,7 +220,7 @@ EOAPI void  eo_event_freeze(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_global_thaw(void);
+EOAPI void eo_event_global_thaw(void);
 
 /**
  * @brief freeze events of object.
@@ -229,7 +229,7 @@ EOAPI void  eo_event_global_thaw(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_global_freeze(void);
+EOAPI void eo_event_global_freeze(void);
 
 /**
  * @brief Add a callback for an event with a specific priority.
@@ -242,7 +242,7 @@ EOAPI void  eo_event_global_freeze(void);
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_callback_priority_add(const Eo_Event_Description *desc, Eo_Callback_Priority priority, Eo_Event_Cb cb, const void *data);
+EOAPI void eo_event_callback_priority_add(const Eo_Event_Description *desc, Eo_Callback_Priority priority, Eo_Event_Cb cb, const void *data);
 
 /**
  * @brief Del a callback with a specific data associated to it for an event.
@@ -252,7 +252,7 @@ EOAPI void  eo_event_callback_priority_add(const Eo_Event_Description *desc, Eo_
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_callback_del(const Eo_Event_Description *desc, Eo_Event_Cb func, const void *user_data);
+EOAPI void eo_event_callback_del(const Eo_Event_Description *desc, Eo_Event_Cb func, const void *user_data);
 
 /**
  * @brief Add a callback array for an event with a specific priority.
@@ -264,7 +264,7 @@ EOAPI void  eo_event_callback_del(const Eo_Event_Description *desc, Eo_Event_Cb 
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_callback_array_priority_add(const Eo_Callback_Array_Item *array, Eo_Callback_Priority priority, const void *data);
+EOAPI void eo_event_callback_array_priority_add(const Eo_Callback_Array_Item *array, Eo_Callback_Priority priority, const void *data);
 
 /**
  * @brief Del a callback array with a specific data associated to it for an
@@ -274,7 +274,7 @@ EOAPI void  eo_event_callback_array_priority_add(const Eo_Callback_Array_Item *a
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_callback_array_del(const Eo_Callback_Array_Item *array, const void *user_data);
+EOAPI void eo_event_callback_array_del(const Eo_Callback_Array_Item *array, const void *user_data);
 
 /**
  * @brief Call the callbacks for an event of an object.
@@ -285,7 +285,7 @@ EOAPI void  eo_event_callback_array_del(const Eo_Callback_Array_Item *array, con
  *
  * @ingroup Eo_Base
  */
-EOAPI Eina_Bool  eo_event_callback_call(const Eo_Event_Description *desc, void *event_info);
+EOAPI Eina_Bool eo_event_callback_call(const Eo_Event_Description *desc, void *event_info);
 
 /**
  * @brief Add an event callback forwarder for an event and an object.
@@ -294,7 +294,7 @@ EOAPI Eina_Bool  eo_event_callback_call(const Eo_Event_Description *desc, void *
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_callback_forwarder_add(const Eo_Event_Description *desc, Eo_Base *new_obj);
+EOAPI void eo_event_callback_forwarder_add(const Eo_Event_Description *desc, Eo_Base *new_obj);
 
 /**
  * @brief Remove an event callback forwarder for an event and an object.
@@ -303,7 +303,7 @@ EOAPI void  eo_event_callback_forwarder_add(const Eo_Event_Description *desc, Eo
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_event_callback_forwarder_del(const Eo_Event_Description *desc, Eo_Base *new_obj);
+EOAPI void eo_event_callback_forwarder_del(const Eo_Event_Description *desc, Eo_Base *new_obj);
 
 /**
  * @brief Get dbg information from the object.
@@ -312,13 +312,13 @@ EOAPI void  eo_event_callback_forwarder_del(const Eo_Event_Description *desc, Eo
  *
  * @ingroup Eo_Base
  */
-EOAPI void  eo_dbg_info_get(Eo_Dbg_Info *root_node);
+EOAPI void eo_dbg_info_get(Eo_Dbg_Info *root_node);
 
 /** Get an iterator on all childrens
  *
  * @ingroup Eo_Base
  */
-EOAPI Eina_Iterator * eo_children_iterator_new(void);
+EOAPI Eina_Iterator *eo_children_iterator_new(void);
 
 #ifdef EO_BASE_BETA
 /**
@@ -332,11 +332,11 @@ EOAPI Eina_Iterator * eo_children_iterator_new(void);
  *
  * @param[in] comp_obj the object that will be used to composite the parent.
  *
- * @return @c true if successfull. @c false otherwise.
+ * @return @c true if successful. @c false otherwise.
  *
  * @ingroup Eo_Base
  */
-EOAPI Eina_Bool  eo_composite_attach(Eo_Base *comp_obj);
+EOAPI Eina_Bool eo_composite_attach(Eo_Base *comp_obj);
 #endif
 
 #ifdef EO_BASE_BETA
@@ -349,11 +349,11 @@ EOAPI Eina_Bool  eo_composite_attach(Eo_Base *comp_obj);
  *
  * @param[in] comp_obj the object that will be removed from the parent.
  *
- * @return @c true if successfull. @c false otherwise.
+ * @return @c true if successful. @c false otherwise.
  *
  * @ingroup Eo_Base
  */
-EOAPI Eina_Bool  eo_composite_detach(Eo_Base *comp_obj);
+EOAPI Eina_Bool eo_composite_detach(Eo_Base *comp_obj);
 #endif
 
 #ifdef EO_BASE_BETA
@@ -366,7 +366,7 @@ EOAPI Eina_Bool  eo_composite_detach(Eo_Base *comp_obj);
  *
  * @ingroup Eo_Base
  */
-EOAPI Eina_Bool  eo_composite_part_is(void);
+EOAPI Eina_Bool eo_composite_part_is(void);
 #endif
 
 EOAPI extern const Eo_Event_Description _EO_BASE_EVENT_CALLBACK_ADD;

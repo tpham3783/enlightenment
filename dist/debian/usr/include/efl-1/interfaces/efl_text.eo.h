@@ -26,7 +26,7 @@ EAPI const Eo_Class *efl_text_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Text
  */
-EOAPI void  efl_text_set(const char *text);
+EOAPI void efl_text_set(const char *text);
 
 /**
  * @brief Retrieves the text string currently being displayed by the given text
@@ -40,7 +40,7 @@ EOAPI void  efl_text_set(const char *text);
  *
  * @ingroup Efl_Text
  */
-EOAPI const char * efl_text_get(void);
+EOAPI const char *efl_text_get(void);
 
 
 #endif

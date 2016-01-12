@@ -20,9 +20,7 @@ typedef Eo Elm_Box;
  * If enabled, homogeneous layout makes all items the same size, according to
  * the size of the largest of its children.
  *
- * Note: This flag is ignored if a custom layout function is set.
- *
- * 
+ * @note This flag is ignored if a custom layout function is set.
  *
  * @param[in] homogeneous The homogeneous flag
  *
@@ -47,8 +45,6 @@ EAPI Eina_Bool elm_box_homogeneous_get(const Elm_Box *obj);
  * their sizes and position has been calculated, will be aligned within the
  * space given for the whole box widget.
  *
- * 
- *
  * @param[in] horizontal The horizontal alignment of elements
  * @param[in] vertical The vertical alignment of elements
  *
@@ -60,8 +56,6 @@ EAPI void elm_box_align_set(Elm_Box *obj, double horizontal, double vertical);
  * @brief Get the alignment of the whole bounding box of contents.
  *
  * See also @ref elm_box_align_set.
- *
- * 
  *
  * @param[out] horizontal The horizontal alignment of elements
  * @param[out] vertical The vertical alignment of elements
@@ -77,9 +71,7 @@ EAPI void elm_box_align_get(const Elm_Box *obj, double *horizontal, double *vert
  * bottom. By calling this function with @c horizontal as @c true, the box will
  * become horizontal, arranging contents from left to right.
  *
- * Note: This flag is ignored if a custom layout function is set.
- *
- * 
+ * @note This flag is ignored if a custom layout function is set.
  *
  * @param[in] horizontal The horizontal flag
  *
@@ -105,8 +97,6 @@ EAPI Eina_Bool elm_box_horizontal_get(const Elm_Box *obj);
  * for all elements in the box, besides any possible padding that individual
  * elements may have through their size hints.
  *
- * 
- *
  * @param[in] horizontal The horizontal space between elements
  * @param[in] vertical The vertical space between elements
  *
@@ -118,8 +108,6 @@ EAPI void elm_box_padding_set(Elm_Box *obj, Evas_Coord horizontal, Evas_Coord ve
  * @brief Get the space (padding) between the box's elements.
  *
  * See also @ref elm_box_padding_set.
- *
- * 
  *
  * @param[out] horizontal The horizontal space between elements
  * @param[out] vertical The vertical space between elements
@@ -156,8 +144,6 @@ EAPI void elm_box_padding_get(const Elm_Box *obj, Evas_Coord *horizontal, Evas_C
  *
  * See also @ref elm_box_layout_transition.
  *
- * 
- *
  * @param[in] cb The callback function used for layout
  * @param[in] data Data that will be passed to layout function
  * @param[in] free_data Function called to free @c data
@@ -173,8 +159,6 @@ EAPI void elm_box_layout_set(Elm_Box *obj, Evas_Object_Box_Layout cb, const void
  * order of the list corresponds to the packing order the box uses.
  *
  * You must free this list with eina_list_free() once you are done with it.
- *
- * 
  *
  * @ingroup Elm_Box
  */
@@ -221,8 +205,6 @@ EAPI void elm_box_unpack_all(Elm_Box *obj);
  *
  * See also @ref elm_box_unpack_all, @ref elm_box_clear.
  *
- * 
- *
  * @param[in] subobj The object to unpack
  *
  * @ingroup Elm_Box
@@ -240,8 +222,6 @@ EAPI void elm_box_unpack(Elm_Box *obj, Evas_Object *subobj);
  * See also @ref elm_box_pack_start, @ref elm_box_pack_end,
  * @ref elm_box_pack_before, @ref elm_box_unpack, @ref elm_box_unpack_all,
  * @ref elm_box_clear.
- *
- * 
  *
  * @param[in] after The object after which to add it
  *
@@ -261,8 +241,6 @@ EAPI void elm_box_pack_after(Elm_Box *obj, Evas_Object *subobj, Evas_Object *aft
  * @ref elm_box_pack_after, @ref elm_box_unpack, @ref elm_box_unpack_all,
  * @ref elm_box_clear.
  *
- * 
- *
  * @param[in] subobj The object to add to the box
  *
  * @ingroup Elm_Box
@@ -276,8 +254,6 @@ EAPI void elm_box_pack_start(Elm_Box *obj, Evas_Object *subobj);
  * immediately rather leaving it to the next main loop iteration. While this is
  * great as it would save lots of recalculation, whenever you need to get the
  * position of a just added item you must force recalculate before doing so.
- *
- * 
  *
  * @ingroup Elm_Box
  */
@@ -295,8 +271,6 @@ EAPI void elm_box_recalculate(Elm_Box *obj);
  * @ref elm_box_pack_after, @ref elm_box_unpack, @ref elm_box_unpack_all,
  * @ref elm_box_clear.
  *
- * 
- *
  * @param[in] before The object before which to add it
  *
  * @ingroup Elm_Box
@@ -310,8 +284,6 @@ EAPI void elm_box_pack_before(Elm_Box *obj, Evas_Object *subobj, Evas_Object *be
  * objects.
  *
  * See also @ref elm_box_unpack, @ref elm_box_unpack_all.
- *
- * 
  *
  * @ingroup Elm_Box
  */

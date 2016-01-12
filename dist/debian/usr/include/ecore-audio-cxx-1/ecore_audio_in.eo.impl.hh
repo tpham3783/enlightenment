@@ -93,11 +93,11 @@ inline void ecore_audio_in::length_set(double length_) const
    eo_do(_concrete_eo_ptr(), ::ecore_audio_obj_in_length_set(length_));
 }
 
-inline ::efl::eo::concrete ecore_audio_in::output_get() const
+inline ::ecore_audio ecore_audio_in::output_get() const
 {
-   Eo * _tmp_ret;
+   Ecore_Audio * _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_in_output_get());
-   return ::efl::eolian::to_cxx<::efl::eo::concrete>(_tmp_ret, std::tuple<std::false_type>());
+   return ::efl::eolian::to_cxx<::ecore_audio>(_tmp_ret, std::tuple<std::false_type>());
 }
 
 inline double ecore_audio_in::remaining_get() const
@@ -200,11 +200,11 @@ inline void eo_cxx::ecore_audio_in::length_set(double length_) const
    eo_do(_concrete_eo_ptr(), ::ecore_audio_obj_in_length_set(length_));
 }
 
-inline ::efl::eo::concrete eo_cxx::ecore_audio_in::output_get() const
+inline ::ecore_audio eo_cxx::ecore_audio_in::output_get() const
 {
-   Eo * _tmp_ret;
+   Ecore_Audio * _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_in_output_get());
-   return ::efl::eolian::to_cxx<::efl::eo::concrete>(_tmp_ret, std::tuple<std::false_type>());
+   return ::efl::eolian::to_cxx<::ecore_audio>(_tmp_ret, std::tuple<std::false_type>());
 }
 
 inline double eo_cxx::ecore_audio_in::remaining_get() const
@@ -443,7 +443,7 @@ void _ecore_audio_in_length_set_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail
 }
 
 template <typename T>
-::efl::eo::concrete _ecore_audio_in_output_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+::ecore_audio _ecore_audio_in_output_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
 {
    try
       {
@@ -452,8 +452,8 @@ template <typename T>
    catch (...)
       {
          eina_error_set( ::efl::eina::unknown_error() );
-         Eo * _tmp_ret{};
-         return ::efl::eolian::to_cxx<::efl::eo::concrete>(_tmp_ret, std::tuple<std::false_type>());
+         Ecore_Audio * _tmp_ret{};
+         return ::efl::eolian::to_cxx<::ecore_audio>(_tmp_ret, std::tuple<std::false_type>());
       }
 }
 
@@ -619,14 +619,14 @@ struct operations< ::ecore_audio_in >
                ::ecore_audio_obj_in_length_set(length_));
       }
 
-      virtual ::efl::eo::concrete output_get()
+      virtual ::ecore_audio output_get()
       {
-         Eo * _tmp_ret = {};
+         Ecore_Audio * _tmp_ret = {};
 
          eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
                dynamic_cast<T*>(this)->_eo_class(),
                _tmp_ret = ::ecore_audio_obj_in_output_get());
-            return ::efl::eolian::to_cxx<::efl::eo::concrete>(_tmp_ret, std::tuple<std::false_type>());
+            return ::efl::eolian::to_cxx<::ecore_audio>(_tmp_ret, std::tuple<std::false_type>());
       }
 
       virtual double remaining_get()
@@ -668,121 +668,87 @@ int initialize_operation_description(::efl::eo::detail::tag<::ecore_audio_in>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_read_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_read);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_read_internal_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_read_internal);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_seek_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_seek);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_speed_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_speed_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_speed_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_speed_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_samplerate_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_samplerate_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_samplerate_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_samplerate_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_channels_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_channels_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_channels_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_channels_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_preloaded_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_preloaded_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_preloaded_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_preloaded_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_looped_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_looped_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_looped_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_looped_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_length_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_length_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_length_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_length_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_output_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_output_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_in_remaining_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_in_remaining_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::ecore_audio>(), &ops[operation_description_class_size< ::ecore_audio_in >::value]);

@@ -34,7 +34,7 @@ EAPI const Eo_Class *efl_gfx_filter_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_Filter
  */
-EOAPI void  efl_gfx_filter_program_set(const char *code, const char *name);
+EOAPI void efl_gfx_filter_program_set(const char *code, const char *name);
 #endif
 
 #ifdef EFL_GFX_FILTER_BETA
@@ -46,7 +46,7 @@ EOAPI void  efl_gfx_filter_program_set(const char *code, const char *name);
  *
  * @ingroup Efl_Gfx_Filter
  */
-EOAPI void  efl_gfx_filter_program_get(const char **code, const char **name);
+EOAPI void efl_gfx_filter_program_get(const char **code, const char **name);
 #endif
 
 #ifdef EFL_GFX_FILTER_BETA
@@ -61,7 +61,7 @@ EOAPI void  efl_gfx_filter_program_get(const char **code, const char **name);
  *
  * @ingroup Efl_Gfx_Filter
  */
-EOAPI void  efl_gfx_filter_state_set(const char *cur_state, double cur_val, const char *next_state, double next_val, double pos);
+EOAPI void efl_gfx_filter_state_set(const char *cur_state, double cur_val, const char *next_state, double next_val, double pos);
 #endif
 
 #ifdef EFL_GFX_FILTER_BETA
@@ -75,7 +75,7 @@ EOAPI void  efl_gfx_filter_state_set(const char *cur_state, double cur_val, cons
  *
  * @ingroup Efl_Gfx_Filter
  */
-EOAPI void  efl_gfx_filter_padding_get(int *l, int *r, int *t, int *b);
+EOAPI void efl_gfx_filter_padding_get(int *l, int *r, int *t, int *b);
 #endif
 
 #ifdef EFL_GFX_FILTER_BETA
@@ -89,7 +89,7 @@ EOAPI void  efl_gfx_filter_padding_get(int *l, int *r, int *t, int *b);
  *
  * @ingroup Efl_Gfx_Filter
  */
-EOAPI void  efl_gfx_filter_source_set(const char *name, Efl_Gfx_Base *source);
+EOAPI void efl_gfx_filter_source_set(const char *name, Efl_Gfx_Base *source);
 #endif
 
 #ifdef EFL_GFX_FILTER_BETA
@@ -101,7 +101,7 @@ EOAPI void  efl_gfx_filter_source_set(const char *name, Efl_Gfx_Base *source);
  *
  * @ingroup Efl_Gfx_Filter
  */
-EOAPI void  efl_gfx_filter_source_get(const char *name, Efl_Gfx_Base **source);
+EOAPI void efl_gfx_filter_source_get(const char *name, Efl_Gfx_Base **source);
 #endif
 
 #ifdef EFL_GFX_FILTER_BETA
@@ -115,7 +115,7 @@ EOAPI void  efl_gfx_filter_source_get(const char *name, Efl_Gfx_Base **source);
  *
  * @ingroup Efl_Gfx_Filter
  */
-EOAPI void  efl_gfx_filter_data_set(const char *name, const char *value, Eina_Bool execute);
+EOAPI void efl_gfx_filter_data_set(const char *name, const char *value, Eina_Bool execute);
 #endif
 
 

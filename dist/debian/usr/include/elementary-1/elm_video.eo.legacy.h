@@ -35,7 +35,7 @@ EAPI double elm_video_audio_level_get(const Elm_Video *obj);
 /**
  * @brief Set whether the object can remember the last played position.
  *
- * Note: This API only serves as indication. System support is required.
+ * @note This API only serves as indication. System support is required.
  *
  * @param[in] remember The value.
  *
@@ -46,7 +46,7 @@ EAPI void elm_video_remember_position_set(Elm_Video *obj, Eina_Bool remember);
 /**
  * @brief Set whether the object can remember the last played position.
  *
- * Note: This API only serves as indication. System support is required.
+ * @note This API only serves as indication. System support is required.
  *
  * @return The value.
  *
@@ -135,7 +135,7 @@ EAPI Eina_Bool elm_video_is_seekable_get(const Elm_Video *obj);
  *
  * This function is only useful when playing a DVD.
  *
- * Note: Don't change or free the string returned by this function.
+ * @note Don't change or free the string returned by this function.
  *
  * @return A string containing the title.
  *

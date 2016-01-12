@@ -35,7 +35,7 @@ EAPI const Eo_Class *ecore_con_base_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI const char * ecore_con_obj_ip_get(void);
+EOAPI const char *ecore_con_obj_ip_get(void);
 
 /**
  * @brief Check how long the object has been connected
@@ -46,7 +46,7 @@ EOAPI const char * ecore_con_obj_ip_get(void);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI double  ecore_con_obj_uptime_get(void);
+EOAPI double ecore_con_obj_uptime_get(void);
 
 /**
  * @brief Return the port that the obj is connected to
@@ -55,7 +55,7 @@ EOAPI double  ecore_con_obj_uptime_get(void);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI void  ecore_con_obj_port_set(int port);
+EOAPI void ecore_con_obj_port_set(int port);
 
 /**
  * @brief Return the port that the obj is connected to
@@ -64,7 +64,7 @@ EOAPI void  ecore_con_obj_port_set(int port);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI int  ecore_con_obj_port_get(void);
+EOAPI int ecore_con_obj_port_get(void);
 
 /**
  * @brief Get the fd that the server is connected to
@@ -73,10 +73,10 @@ EOAPI int  ecore_con_obj_port_get(void);
  * connection. It should not be tampered with unless you REALLY know what you
  * are doing.
  *
- * Note: This function is only valid for servers created with @ref
+ * @note This function is only valid for servers created with @ref
  * ecore_con_server_connect.
  *
- * Warning: Seriously. Don't use this unless you know what you are doing.
+ * @warning Seriously. Don't use this unless you know what you are doing.
  *
  * @return The fd, or -1 on failure.
  *
@@ -84,7 +84,7 @@ EOAPI int  ecore_con_obj_port_get(void);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI int  ecore_con_obj_fd_get(void);
+EOAPI int ecore_con_obj_fd_get(void);
 
 /**
  * @brief Returns whether the client is still connected
@@ -93,7 +93,7 @@ EOAPI int  ecore_con_obj_fd_get(void);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI Eina_Bool  ecore_con_obj_connected_get(void);
+EOAPI Eina_Bool ecore_con_obj_connected_get(void);
 
 /**
  * @brief Control the default time after which an inactive client will be
@@ -113,7 +113,7 @@ EOAPI Eina_Bool  ecore_con_obj_connected_get(void);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI void  ecore_con_obj_timeout_set(double timeout);
+EOAPI void ecore_con_obj_timeout_set(double timeout);
 
 /**
  * @brief Control the default time after which an inactive client will be
@@ -133,7 +133,7 @@ EOAPI void  ecore_con_obj_timeout_set(double timeout);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI double  ecore_con_obj_timeout_get(void);
+EOAPI double ecore_con_obj_timeout_get(void);
 
 /**
  * @brief Flushes all pending data to the given server.
@@ -142,7 +142,7 @@ EOAPI double  ecore_con_obj_timeout_get(void);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI void  ecore_con_obj_flush(void);
+EOAPI void ecore_con_obj_flush(void);
 
 /**
  * @brief Sends the given data to the given server.
@@ -158,7 +158,7 @@ EOAPI void  ecore_con_obj_flush(void);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI int  ecore_con_obj_send(const void *data, int size);
+EOAPI int ecore_con_obj_send(const void *data, int size);
 
 /**
  * @brief Do an asynchronous DNS lookup.
@@ -178,7 +178,7 @@ EOAPI int  ecore_con_obj_send(const void *data, int size);
  *
  * @ingroup Ecore_Con_Base
  */
-EOAPI Eina_Bool  ecore_con_obj_lookup(const char *name, Ecore_Con_Dns_Cb done_cb, const void *data);
+EOAPI Eina_Bool ecore_con_obj_lookup(const char *name, Ecore_Con_Dns_Cb done_cb, const void *data);
 
 EOAPI extern const Eo_Event_Description _ECORE_CON_BASE_EVENT_DATA_RECEIVED;
 EOAPI extern const Eo_Event_Description _ECORE_CON_BASE_EVENT_CONNECTION_UPGRADED;

@@ -18,7 +18,7 @@ typedef Eo Elm_Fileselector;
  * @brief Enable/disable the "ok" and "cancel" buttons on a given file selector
  * widget
  *
- * Note: A file selector without those buttons will never emit the "done" smart
+ * @note A file selector without those buttons will never emit the "done" smart
  * event, and is only usable if one is just hooking to the other two events.
  *
  * See also @ref elm_fileselector_buttons_ok_cancel_get.

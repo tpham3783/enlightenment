@@ -680,6 +680,7 @@ struct _Ecore_X_Event_Window_Property
    Ecore_X_Window win;
    Ecore_X_Atom   atom;
    Ecore_X_Time   time;
+   Eina_Bool      state; /**< @since 1.16 If @c EINA_TRUE, property was deleted */
 };
 
 struct _Ecore_X_Event_Window_Colormap
@@ -741,6 +742,7 @@ struct _Ecore_X_Event_Selection_Notify
    Ecore_X_Atom      atom;
    char             *target;
    void             *data;
+   Ecore_X_Atom      property; /**< @since 1.16 */
 };
 
 struct _Ecore_X_Selection_Data
@@ -2734,12 +2736,12 @@ typedef enum
 
 //add mod, anymod, priority for the future.
 //we will support modifier and priority feature later.
-EAPI Eina_Bool                             ecore_x_window_keygrab_set(Ecore_X_Window win, const char *key, int mod, int any_mod, int priority, Ecore_X_Win_Keygrab_Mode grab_mode);
-EAPI Eina_Bool                             ecore_x_window_keygrab_unset(Ecore_X_Window win, const char *key, int mod, int any_mod);
+EAPI Eina_Bool                             ecore_x_window_keygrab_set(Ecore_X_Window win, const char *key, int mod, int any_mod, int priority, Ecore_X_Win_Keygrab_Mode grab_mode); /**< @since 1.15 */
+EAPI Eina_Bool                             ecore_x_window_keygrab_unset(Ecore_X_Window win, const char *key, int mod, int any_mod); /**< @since 1.15 */
 
 //this API for keyrouter protocol
-EAPI void                                  ecore_x_e_keyrouter_set(Ecore_X_Window root, Eina_Bool on); //Key router set keyrouter flag using this
-EAPI Eina_Bool                             ecore_x_e_keyrouter_get(Ecore_X_Window root); //Client check the existance of keyrouter using this
+EAPI void                                  ecore_x_e_keyrouter_set(Ecore_X_Window root, Eina_Bool on); /**< @since 1.15 */ //Key router set keyrouter flag using this
+EAPI Eina_Bool                             ecore_x_e_keyrouter_get(Ecore_X_Window root); /**< @since 1.15 */ //Client check the existance of keyrouter using this
 
 #include <Ecore_X_Atoms.h>
 #include <Ecore_X_Cursor.h>

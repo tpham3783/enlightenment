@@ -36,7 +36,7 @@ EAPI const Eo_Class *efl_text_properties_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Text_Properties
  */
-EOAPI void  efl_text_properties_font_set(const char *font, Efl_Font_Size size);
+EOAPI void efl_text_properties_font_set(const char *font, Efl_Font_Size size);
 
 /**
  * @brief Retrieve the font family and size in use on a given text object.
@@ -52,7 +52,7 @@ EOAPI void  efl_text_properties_font_set(const char *font, Efl_Font_Size size);
  *
  * @ingroup Efl_Text_Properties
  */
-EOAPI void  efl_text_properties_font_get(const char **font, Efl_Font_Size *size);
+EOAPI void efl_text_properties_font_get(const char **font, Efl_Font_Size *size);
 
 /**
  * @brief Set the font (source) file to be used on a given text object.
@@ -67,7 +67,7 @@ EOAPI void  efl_text_properties_font_get(const char **font, Efl_Font_Size *size)
  *
  * @ingroup Efl_Text_Properties
  */
-EOAPI void  efl_text_properties_font_source_set(const char *font_source);
+EOAPI void efl_text_properties_font_source_set(const char *font_source);
 
 /**
  * @brief Get the font file's path which is being used on a given text object.
@@ -78,7 +78,7 @@ EOAPI void  efl_text_properties_font_source_set(const char *font_source);
  *
  * @ingroup Efl_Text_Properties
  */
-EOAPI const char * efl_text_properties_font_source_get(void);
+EOAPI const char *efl_text_properties_font_source_get(void);
 
 
 #endif

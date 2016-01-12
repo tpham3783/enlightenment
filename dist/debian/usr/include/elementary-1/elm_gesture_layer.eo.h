@@ -18,157 +18,147 @@ typedef Eo Elm_Gesture_Layer;
 EAPI const Eo_Class *elm_gesture_layer_class_get(void) EINA_CONST;
 
 /**
- * This function sets step-value for zoom action.
- * Set step to any positive value.
- * Cancel step setting by setting to 0
+ * @brief Control step value for zoom action.
  *
- * @see elm_gesture_layer_zoom_step_get()
- * @ingroup Elm_Gesture_Layer
+ * @param[in] step The zoom step value.
  *
- * @param[in] step new zoom step value.
- */
-EOAPI void  elm_obj_gesture_layer_zoom_step_set(double step);
-
-/**
- * This function returns step-value for zoom action.
- *
- * @return zoom step value.
- *
- * @see elm_gesture_layer_zoom_step_set()
  * @ingroup Elm_Gesture_Layer
  */
-EOAPI double  elm_obj_gesture_layer_zoom_step_get(void);
+EOAPI void elm_obj_gesture_layer_zoom_step_set(double step);
 
 /**
- * This function sets the gesture layer finger-size for taps
- * If not set, this size taken from elm_config.
- * Set to ZERO if you want GLayer to use system finger size value (default)
+ * @brief Control step value for zoom action.
+ *
+ * @return The zoom step value.
+ *
+ * @ingroup Elm_Gesture_Layer
+ */
+EOAPI double elm_obj_gesture_layer_zoom_step_get(void);
+
+/**
+ * @brief This function sets the gesture layer finger-size for taps.
+ *
+ * If not set, it's taken from elm_config. Set to 0 if you want GLayer to use
+ * the system finger size value (default).
+ *
+ * @param[in] sz The finger size.
  *
  * @since 1.8
- * @ingroup Elm_Gesture_Layer
  *
- * @param[in] sz Finger size
+ * @ingroup Elm_Gesture_Layer
  */
-EOAPI void  elm_obj_gesture_layer_tap_finger_size_set(Evas_Coord sz);
+EOAPI void elm_obj_gesture_layer_tap_finger_size_set(Evas_Coord sz);
 
 /**
- * This function returns the gesture layer finger-size for taps
+ * @brief This function returns the gesture layer finger-size for taps
  *
- * @return Finger size that is currently used by Gesture Layer for taps.
+ * @return The finger size.
  *
  * @since 1.8
+ *
  * @ingroup Elm_Gesture_Layer
  */
-EOAPI Evas_Coord  elm_obj_gesture_layer_tap_finger_size_get(void);
+EOAPI Evas_Coord elm_obj_gesture_layer_tap_finger_size_get(void);
 
 /**
- * This function is to make gesture-layer repeat events.
+ * @brief This function makes gesture-layer repeat events.
+ *
  * Set this if you like to get the raw events only if gestures were not
  * detected.
+ *
  * Clear this if you like gesture layer to forward events as testing gestures.
- * @ingroup Elm_Gesture_Layer
  *
- * @param[in] hold_events hold events or not.
- */
-EOAPI void  elm_obj_gesture_layer_hold_events_set(Eina_Bool hold_events);
-
-/**
- * Call this function to get repeat-events settings.
+ * @param[in] hold_events
  *
- * @return repeat events settings.
- * @see elm_gesture_layer_hold_events_set()
  * @ingroup Elm_Gesture_Layer
  */
-EOAPI Eina_Bool  elm_obj_gesture_layer_hold_events_get(void);
+EOAPI void elm_obj_gesture_layer_hold_events_set(Eina_Bool hold_events);
 
-/**
- * This function sets step-value for rotate action.
- * Set step to any positive value.
- * Cancel step setting by setting to 0
- * @ingroup Elm_Gesture_Layer
+/** Get the repeat-events setting.
  *
- * @param[in] step new rotate step value.
- */
-EOAPI void  elm_obj_gesture_layer_rotate_step_set(double step);
-
-/**
- * This function returns step-value for rotate action.
- *
- * @return rotate step value.
  * @ingroup Elm_Gesture_Layer
  */
-EOAPI double  elm_obj_gesture_layer_rotate_step_get(void);
+EOAPI Eina_Bool elm_obj_gesture_layer_hold_events_get(void);
 
 /**
- * Use function to set callbacks to be notified about
- * change of state of gesture.
- * When a user registers a callback with this function
- * this means this gesture has to be tested.
+ * @brief This function sets the step value for rotate action.
  *
- * When ALL callbacks for a gesture are set to NULL
- * it means user isn't interested in gesture-state
- * and it will not be tested.
+ * Set to 0 to cancel step setting.
+ *
+ * @param[in] step New rotate step value.
+ *
  * @ingroup Elm_Gesture_Layer
- *
- * @param[in] idx The gesture you would like to track its state.
- * @param[in] cb_type what event this callback tracks: START, MOVE, END, ABORT.
- * @param[in] cb callback function pointer.
- * @param[in] data user info to be sent to callback (usually, Smart Data)
  */
-EOAPI void  elm_obj_gesture_layer_cb_set(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data);
+EOAPI void elm_obj_gesture_layer_rotate_step_set(double step);
 
 /**
- * Attach a given gesture layer widget to an Evas object, thus setting
- * the widget's @b target.
+ * @brief This function returns step-value for rotate action.
  *
- * A gesture layer target may be whichever Evas object one
- * chooses. This will be object @a obj will listen all mouse and key
- * events from, to report the gestures made upon it back.
+ * @return New rotate step value.
  *
- * @return @c EINA_TRUE, on success, @c EINA_FALSE otherwise.
  * @ingroup Elm_Gesture_Layer
- * 
- *
- * @param[in] target Object to attach to @a obj (target)
  */
-EOAPI Eina_Bool  elm_obj_gesture_layer_attach(Evas_Object *target);
+EOAPI double elm_obj_gesture_layer_rotate_step_get(void);
 
 /**
- * Use this function to remove a callback that has been added
- * to be notified about change of state of gesture.
+ * @brief Set the gesture state change callback.
+ *
+ * When all callbacks for the gesture are set to @c null, it means this gesture
+ * is disabled.
+ *
+ * @param[in] idx The gesture you want to track state of.
+ * @param[in] cb_type The event the callback tracks (START, MOVE, END, ABORT).
+ * @param[in] cb The callback itself.
+ * @param[in] data Custom data to be passed.
+ *
  * @ingroup Elm_Gesture_Layer
- * 
- *
- * @param[in] idx The gesture you would like to track its state.
- * @param[in] cb_type what event this callback tracks: START, MOVE, END, ABORT.
- * @param[in] cb callback function pointer.
- * @param[in] data user info for the callback (usually, Smart Data)
  */
-EOAPI void  elm_obj_gesture_layer_cb_del(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data);
+EOAPI void elm_obj_gesture_layer_cb_set(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data);
 
 /**
- * Use function to add callbacks to be notified about
- * change of state of gesture.
- * When a user registers a callback with this function
- * this means this gesture has to be tested.
+ * @brief Attach a gesture layer widget to an Evas object (setting the widget's
+ * target).
  *
- * When ALL callbacks for a gesture are set to NULL
- * it means user isn't interested in gesture-state
- * and it will not be tested.
+ * A gesture layer's target may be any Evas object. This object will be used to
+ * listen to mouse and key events.
+ *
+ * @param[in] target The object to attach.
+ *
+ * @return @c true on success, @c false otherwise.
+ *
+ * @ingroup Elm_Gesture_Layer
+ */
+EOAPI Eina_Bool elm_obj_gesture_layer_attach(Evas_Object *target);
+
+/**
+ * @brief Remove a gesture callback.
+ *
+ * @param[in] cb_type The event the callback tracks (START, MOVE, END, ABORT).
+ * @param[in] cb The callback itself.
+ * @param[in] data Custom callback data.
+ *
+ * @ingroup Elm_Gesture_Layer
+ */
+EOAPI void elm_obj_gesture_layer_cb_del(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data);
+
+/**
+ * @brief Add a gesture state change callback.
+ *
+ * When all callbacks for the gesture are set to @c null, it means this gesture
+ * is disabled.
  *
  * If a function was already set for this gesture/type/state, it will be
  * replaced by the new one. For ABI compat, callbacks added by
- * elm_gesture_layer_cb_add will be removed. It is recommended to
- * use only one of these functions for a gesture object.
- * @ingroup Elm_Gesture_Layer
- * 
+ * @ref elm_obj_gesture_layer_cb_add will be removed. It is recommended to use
+ * only one of these functions for a gesture object.
  *
- * @param[in] idx The gesture you would like to track its state.
- * @param[in] cb_type what event this callback tracks: START, MOVE, END, ABORT.
- * @param[in] cb callback function pointer.
- * @param[in] data user info to be sent to callback (usually, Smart Data)
+ * @param[in] cb_type The event the callback tracks (START, MOVE, END, ABORT).
+ * @param[in] cb The callback itself.
+ * @param[in] data Custom data to be passed.
+ *
+ * @ingroup Elm_Gesture_Layer
  */
-EOAPI void  elm_obj_gesture_layer_cb_add(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data);
+EOAPI void elm_obj_gesture_layer_cb_add(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data);
 
 
 #endif

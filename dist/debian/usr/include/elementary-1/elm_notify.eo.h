@@ -22,7 +22,7 @@ EAPI const Eo_Class *elm_notify_class_get(void) EINA_CONST;
  *
  * Sets the alignment in which the notify will appear in its parent.
  *
- * Note: To fill the notify box in the parent area, please pass the
+ * @note To fill the notify box in the parent area, please pass the
  * ELM_NOTIFY_ALIGN_FILL to horizontal and vertical.
  *
  * @param[in] horizontal The horizontal alignment of the notification
@@ -32,7 +32,7 @@ EAPI const Eo_Class *elm_notify_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Notify
  */
-EOAPI void  elm_obj_notify_align_set(double horizontal, double vertical);
+EOAPI void elm_obj_notify_align_set(double horizontal, double vertical);
 
 /**
  * @brief Get the alignment of the notify object
@@ -44,7 +44,7 @@ EOAPI void  elm_obj_notify_align_set(double horizontal, double vertical);
  *
  * @ingroup Elm_Notify
  */
-EOAPI void  elm_obj_notify_align_get(double *horizontal, double *vertical);
+EOAPI void elm_obj_notify_align_get(double *horizontal, double *vertical);
 
 /**
  * @brief Sets whether events should be passed to by a click outside its area.
@@ -52,13 +52,13 @@ EOAPI void  elm_obj_notify_align_get(double *horizontal, double *vertical);
  * When true if the user clicks outside the window the events will be caught by
  * the others widgets, else the events are blocked.
  *
- * Note: The default value is true.
+ * @note The default value is true.
  *
  * @param[in] allow true if events are allowed, otherwise false
  *
  * @ingroup Elm_Notify
  */
-EOAPI void  elm_obj_notify_allow_events_set(Eina_Bool allow);
+EOAPI void elm_obj_notify_allow_events_set(Eina_Bool allow);
 
 /**
  * @brief Return true if events are allowed below the notify object.
@@ -67,7 +67,7 @@ EOAPI void  elm_obj_notify_allow_events_set(Eina_Bool allow);
  *
  * @ingroup Elm_Notify
  */
-EOAPI Eina_Bool  elm_obj_notify_allow_events_get(void);
+EOAPI Eina_Bool elm_obj_notify_allow_events_get(void);
 
 /**
  * @brief Set the time interval after which the notify window is going to be
@@ -78,16 +78,16 @@ EOAPI Eina_Bool  elm_obj_notify_allow_events_get(void);
  * timer controlling when the notify is hidden, setting this before the notify
  * is shown will in effect mean starting the timer when the notify is shown.
  *
- * Note: Set a value <= 0.0 to disable a running timer.
+ * @note Set a value <= 0.0 to disable a running timer.
  *
- * Note: If the value > 0.0 and the notify is previously visible, the timer
+ * @note If the value > 0.0 and the notify is previously visible, the timer
  * will be started with this value, canceling any running timer.
  *
  * @param[in] timeout The timeout in seconds
  *
  * @ingroup Elm_Notify
  */
-EOAPI void  elm_obj_notify_timeout_set(double timeout);
+EOAPI void elm_obj_notify_timeout_set(double timeout);
 
 /**
  * @brief Return the timeout value (in seconds)
@@ -96,10 +96,19 @@ EOAPI void  elm_obj_notify_timeout_set(double timeout);
  *
  * @ingroup Elm_Notify
  */
-EOAPI double  elm_obj_notify_timeout_get(void);
+EOAPI double elm_obj_notify_timeout_get(void);
+
+/** Dismiss a notify object.
+ *
+ * @since 1.17
+ *
+ * @ingroup Elm_Notify
+ */
+EOAPI void elm_obj_notify_dismiss(void);
 
 EOAPI extern const Eo_Event_Description _ELM_NOTIFY_EVENT_BLOCK_CLICKED;
 EOAPI extern const Eo_Event_Description _ELM_NOTIFY_EVENT_TIMEOUT;
+EOAPI extern const Eo_Event_Description _ELM_NOTIFY_EVENT_DISMISSED;
 
 /**
  * No description
@@ -110,5 +119,10 @@ EOAPI extern const Eo_Event_Description _ELM_NOTIFY_EVENT_TIMEOUT;
  * No description
  */
 #define ELM_NOTIFY_EVENT_TIMEOUT (&(_ELM_NOTIFY_EVENT_TIMEOUT))
+
+/**
+ * No description
+ */
+#define ELM_NOTIFY_EVENT_DISMISSED (&(_ELM_NOTIFY_EVENT_DISMISSED))
 
 #endif

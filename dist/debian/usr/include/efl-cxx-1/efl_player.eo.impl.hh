@@ -558,100 +558,72 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::player>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_playable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_playable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_play_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_play_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_play_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_play_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_position_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_position_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_position_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_position_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_progress_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_progress_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_play_speed_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_play_speed_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_play_speed_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_play_speed_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_audio_volume_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_audio_volume_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_audio_volume_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_audio_volume_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_audio_mute_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_audio_mute_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_audio_mute_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_audio_mute_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_length_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_length_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_player_seekable_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_player_seekable_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

@@ -18,25 +18,26 @@ typedef Eo Elm_View_Form;
 EAPI const Eo_Class *elm_view_form_class_get(void) EINA_CONST;
 
 /**
- * Set model
- * @def elm_view_form_model_set
- * @since 1.11
- * 
+ * @brief Set model
  *
  * @param[in] model Emodel object
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_Form
  */
-EOAPI void  elm_view_form_model_set(Efl_Model_Base *model);
+EOAPI void elm_view_form_model_set(Efl_Model_Base *model);
 
 /**
- * Add new widget
- * @def elm_view_form_widget_add
- * @since 1.11
- * 
+ * @brief Add new widget
  *
- * @param[in] propname Property name
  * @param[in] evas Evas widget
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_View_Form
  */
-EOAPI void  elm_view_form_widget_add(const char *propname, Evas_Object *evas);
+EOAPI void elm_view_form_widget_add(const char *propname, Evas_Object *evas);
 
 
 #endif

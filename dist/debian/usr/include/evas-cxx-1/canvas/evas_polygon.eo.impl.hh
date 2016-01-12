@@ -115,16 +115,12 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::polygon>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_polygon_point_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_polygon_point_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_polygon_points_clear_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_polygon_points_clear);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::object>(), &ops[operation_description_class_size< ::evas::polygon >::value]);

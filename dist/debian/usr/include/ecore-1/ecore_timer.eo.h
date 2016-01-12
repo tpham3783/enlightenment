@@ -37,7 +37,7 @@ EAPI const Eo_Class *ecore_timer_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Timer
  */
-EOAPI void  ecore_obj_timer_interval_set(double in);
+EOAPI void ecore_obj_timer_interval_set(double in);
 
 /**
  * @brief Get the interval the timer ticks on.
@@ -46,13 +46,13 @@ EOAPI void  ecore_obj_timer_interval_set(double in);
  *
  * @ingroup Ecore_Timer
  */
-EOAPI double  ecore_obj_timer_interval_get(void);
+EOAPI double ecore_obj_timer_interval_get(void);
 
 /** Get the pending time regarding a timer.
  *
  * @ingroup Ecore_Timer
  */
-EOAPI double  ecore_obj_timer_pending_get(void);
+EOAPI double ecore_obj_timer_pending_get(void);
 
 /**
  * @brief Create a timer to call in a given time from now
@@ -63,7 +63,7 @@ EOAPI double  ecore_obj_timer_pending_get(void);
  *
  * @ingroup Ecore_Timer
  */
-EOAPI void  ecore_obj_timer_loop_constructor(double in, Ecore_Task_Cb func, const void *data);
+EOAPI void ecore_obj_timer_loop_constructor(double in, Ecore_Task_Cb func, const void *data);
 
 /**
  * @brief Create a timer to call in a given time from when the mainloop woke up
@@ -75,7 +75,7 @@ EOAPI void  ecore_obj_timer_loop_constructor(double in, Ecore_Task_Cb func, cons
  *
  * @ingroup Ecore_Timer
  */
-EOAPI void  ecore_obj_timer_constructor(double in, Ecore_Task_Cb func, const void *data);
+EOAPI void ecore_obj_timer_constructor(double in, Ecore_Task_Cb func, const void *data);
 
 /** Reset a timer to its full interval. This effectively makes the timer start
  * ticking off from zero now.
@@ -84,7 +84,7 @@ EOAPI void  ecore_obj_timer_constructor(double in, Ecore_Task_Cb func, const voi
  *
  * @ingroup Ecore_Timer
  */
-EOAPI void  ecore_obj_timer_reset(void);
+EOAPI void ecore_obj_timer_reset(void);
 
 /**
  * @brief Add some delay for the next occurrence of a timer. This doesn't
@@ -94,7 +94,7 @@ EOAPI void  ecore_obj_timer_reset(void);
  *
  * @ingroup Ecore_Timer
  */
-EOAPI void  ecore_obj_timer_delay(double add);
+EOAPI void ecore_obj_timer_delay(double add);
 
 
 #endif

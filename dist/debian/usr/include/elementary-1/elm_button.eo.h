@@ -27,26 +27,22 @@ EAPI const Eo_Class *elm_button_class_get(void) EINA_CONST;
  * See also @ref elm_obj_button_autorepeat_set,
  * @ref elm_obj_button_autorepeat_gap_timeout_set.
  *
- * 
- *
  * @param[in] t Timeout in seconds
  *
  * @ingroup Elm_Button
  */
-EOAPI void  elm_obj_button_autorepeat_initial_timeout_set(double t);
+EOAPI void elm_obj_button_autorepeat_initial_timeout_set(double t);
 
 /**
  * @brief Get the initial timeout before the autorepeat event is generated
  *
  * See also @ref elm_obj_button_autorepeat_initial_timeout_set.
  *
- * 
- *
  * @return Timeout in seconds
  *
  * @ingroup Elm_Button
  */
-EOAPI double  elm_obj_button_autorepeat_initial_timeout_get(void);
+EOAPI double elm_obj_button_autorepeat_initial_timeout_get(void);
 
 /**
  * @brief Set the interval between each generated autorepeat event
@@ -56,13 +52,11 @@ EOAPI double  elm_obj_button_autorepeat_initial_timeout_get(void);
  *
  * See also @ref elm_obj_button_autorepeat_initial_timeout_set.
  *
- * 
- *
  * @param[in] t Interval in seconds
  *
  * @ingroup Elm_Button
  */
-EOAPI void  elm_obj_button_autorepeat_gap_timeout_set(double t);
+EOAPI void elm_obj_button_autorepeat_gap_timeout_set(double t);
 
 /**
  * @brief Get the interval between each generated autorepeat event
@@ -71,7 +65,7 @@ EOAPI void  elm_obj_button_autorepeat_gap_timeout_set(double t);
  *
  * @ingroup Elm_Button
  */
-EOAPI double  elm_obj_button_autorepeat_gap_timeout_get(void);
+EOAPI double elm_obj_button_autorepeat_gap_timeout_get(void);
 
 /**
  * @brief Turn on/off the autorepeat event generated when the button is kept
@@ -86,13 +80,11 @@ EOAPI double  elm_obj_button_autorepeat_gap_timeout_get(void);
  * @ref elm_obj_button_autorepeat_initial_timeout_set, and the time between
  * each new emission by @ref elm_obj_button_autorepeat_gap_timeout_set.
  *
- * 
- *
  * @param[in] on A bool to turn on/off the event
  *
  * @ingroup Elm_Button
  */
-EOAPI void  elm_obj_button_autorepeat_set(Eina_Bool on);
+EOAPI void elm_obj_button_autorepeat_set(Eina_Bool on);
 
 /**
  * @brief Get whether the autorepeat feature is enabled ($true if autorepeat is
@@ -100,19 +92,17 @@ EOAPI void  elm_obj_button_autorepeat_set(Eina_Bool on);
  *
  * See also @ref elm_obj_button_autorepeat_set.
  *
- * 
- *
  * @return A bool to turn on/off the event
  *
  * @ingroup Elm_Button
  */
-EOAPI Eina_Bool  elm_obj_button_autorepeat_get(void);
+EOAPI Eina_Bool elm_obj_button_autorepeat_get(void);
 
 /** Get whether the button supports autorepeat.
  *
  * @ingroup Elm_Button
  */
-EOAPI Eina_Bool  elm_obj_button_admits_autorepeat_get(void);
+EOAPI Eina_Bool elm_obj_button_admits_autorepeat_get(void);
 
 
 #endif

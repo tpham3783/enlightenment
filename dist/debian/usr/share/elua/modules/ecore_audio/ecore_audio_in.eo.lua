@@ -32,7 +32,7 @@ ffi.cdef [[
     Eina_Bool ecore_audio_obj_in_looped_get(void);
     void ecore_audio_obj_in_length_set(double length);
     double ecore_audio_obj_in_length_get(void);
-    Eo *ecore_audio_obj_in_output_get(void);
+    Ecore_Audio *ecore_audio_obj_in_output_get(void);
     double ecore_audio_obj_in_remaining_get(void);
     ssize_t ecore_audio_obj_in_read(void * buf, size_t len);
     ssize_t ecore_audio_obj_in_read_internal(void * buf, size_t len);

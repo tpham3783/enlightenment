@@ -18,294 +18,261 @@ typedef Eo Elm_Thumb;
 EAPI const Eo_Class *elm_thumb_class_get(void) EINA_CONST;
 
 /**
- * Set the compression for the thumb object.
- * @since 1.8
- *
- * @see elm_thumb_file_set()
- *
- * @ingroup Thumb
+ * @brief Set the compression for the thumb object.
  *
  * @param[in] compress The compression of the thumb.
- */
-EOAPI void  elm_obj_thumb_compress_set(int compress);
-
-/**
- * Get the compression of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The compress setting.
- *
- * @see elm_thumb_compress_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_compress_set(int compress);
+
+/**
+ * @brief Get the compression of the thumb object.
  *
  * @param[out] compress The compression of the thumb.
- */
-EOAPI void  elm_obj_thumb_compress_get(int *compress);
-
-/**
- * Set the format for the thumb object.
+ *
+ * @return Force the return type to be sure the argument doesn't become the
+ * return
+ *
  * @since 1.8
  *
- * @see elm_thumb_file_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_compress_get(int *compress);
+
+/**
+ * @brief Set the format for the thumb object.
  *
  * @param[in] format The format setting.
- */
-EOAPI void  elm_obj_thumb_format_set(Ethumb_Thumb_Format format);
-
-/**
- * Get the format of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The Format setting.
- *
- * @see elm_thumb_format_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
  */
-EOAPI Ethumb_Thumb_Format  elm_obj_thumb_format_get(void);
+EOAPI void elm_obj_thumb_format_set(Ethumb_Thumb_Format format);
 
 /**
- * Set the animation state for the thumb object. If its content is an animated
- * video, you may start/stop the animation or tell it to play continuously and
- * looping.
+ * @brief Get the format of the thumb object.
  *
- * @see elm_thumb_file_set()
+ * @return The format setting.
  *
- * @ingroup Thumb
- *
- * @param[in] setting The animation setting.
- */
-EOAPI void  elm_obj_thumb_animate_set(Elm_Thumb_Animation_Setting setting);
-
-/**
- * Get the animation state for the thumb object.
- *
- * @return getting The animation setting or #ELM_THUMB_ANIMATION_LAST,
- * on errors.
- *
- * @see elm_thumb_animate_set()
- *
- * @ingroup Thumb
- */
-EOAPI Elm_Thumb_Animation_Setting  elm_obj_thumb_animate_get(void);
-
-/**
- * Set the FDO size for the thumb object.
  * @since 1.8
  *
- * @see elm_thumb_file_set()
+ * @ingroup Elm_Thumb
+ */
+EOAPI Ethumb_Thumb_Format elm_obj_thumb_format_get(void);
+
+/**
+ * @brief Set the animation state for the thumb object.
  *
- * @ingroup Thumb
+ * If its content is an animated video, you may start/stop the animation or
+ * tell it o play continuously and looping.
+ *
+ * @param[in] setting The animation setting or #ELM_THUMB_ANIMATION_LAST
+ *
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_animate_set(Elm_Thumb_Animation_Setting setting);
+
+/**
+ * @brief Get the animation state for the thumb object.
+ *
+ * @return The animation setting or #ELM_THUMB_ANIMATION_LAST
+ *
+ * @ingroup Elm_Thumb
+ */
+EOAPI Elm_Thumb_Animation_Setting elm_obj_thumb_animate_get(void);
+
+/**
+ * @brief Set the FDO size for the thumb object.
  *
  * @param[in] size The FDO size setting.
- */
-EOAPI void  elm_obj_thumb_fdo_size_set(Ethumb_Thumb_FDO_Size size);
-
-/**
- * Get the fdo size of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The FDO size setting.
- *
- * @see elm_thumb_fdo_size_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
  */
-EOAPI Ethumb_Thumb_FDO_Size  elm_obj_thumb_fdo_size_get(void);
+EOAPI void elm_obj_thumb_fdo_size_set(Ethumb_Thumb_FDO_Size size);
 
 /**
- * Set the orientation for the thumb object.
+ * @brief Get the fdo size of the thumb object.
+ *
+ * @return The FDO size setting.
+ *
  * @since 1.8
  *
- * @see elm_thumb_file_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI Ethumb_Thumb_FDO_Size elm_obj_thumb_fdo_size_get(void);
+
+/**
+ * @brief Set the orientation for the thumb object.
  *
  * @param[in] orient The orientation setting.
- */
-EOAPI void  elm_obj_thumb_orientation_set(Ethumb_Thumb_Orientation orient);
-
-/**
- * Get the orientation of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The orientation setting.
- *
- * @see elm_thumb_orientation_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
  */
-EOAPI Ethumb_Thumb_Orientation  elm_obj_thumb_orientation_get(void);
+EOAPI void elm_obj_thumb_orientation_set(Ethumb_Thumb_Orientation orient);
 
 /**
- * Make the thumbnail 'editable'.
+ * @brief Get the orientation of the thumb object.
  *
- * This means the thumbnail is a valid drag target for drag and drop, and can be
- * cut or pasted too.
+ * @return The orientation setting.
  *
- * @see elm_thumb_editable_get()
- *
- * @ingroup Thumb
- *
- * @param[in] edit Turn on or off editability. Default is @c EINA_FALSE.
- */
-EOAPI Eina_Bool  elm_obj_thumb_editable_set(Eina_Bool edit);
-
-/**
- * Make the thumbnail 'editable'.
- *
- * @return Editability.
- *
- * This means the thumbnail is a valid drag target for drag and drop, and can be
- * cut or pasted too.
- *
- * @see elm_thumb_editable_set()
- *
- * @ingroup Thumb
- */
-EOAPI Eina_Bool  elm_obj_thumb_editable_get(void);
-
-/**
- * Set the aspect for the thumb object.
  * @since 1.8
  *
- * @see elm_thumb_file_set()
+ * @ingroup Elm_Thumb
+ */
+EOAPI Ethumb_Thumb_Orientation elm_obj_thumb_orientation_get(void);
+
+/**
+ * @brief Make the thumbnail 'editable'.
  *
- * @ingroup Thumb
+ * This means the thumbnail is a valid drag target for drag and drop, and can
+ * be cut or pasted too.
+ *
+ * @param[in] edit The editable state, default is @c false.
+ *
+ * @ingroup Elm_Thumb
+ */
+EOAPI Eina_Bool elm_obj_thumb_editable_set(Eina_Bool edit);
+
+/**
+ * @brief Get whether the thumbnail is editable.
+ *
+ * This means the thumbnail is a valid drag target for drag and drop, and can
+ * be cut or pasted too.
+ *
+ * @return The editable state, default is @c false.
+ *
+ * @ingroup Elm_Thumb
+ */
+EOAPI Eina_Bool elm_obj_thumb_editable_get(void);
+
+/**
+ * @brief Set the aspect for the thumb object.
  *
  * @param[in] aspect The aspect setting.
- */
-EOAPI void  elm_obj_thumb_aspect_set(Ethumb_Thumb_Aspect aspect);
-
-/**
- * Get the aspect of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The aspect setting.
- *
- * @see elm_thumb_aspect_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
  */
-EOAPI Ethumb_Thumb_Aspect  elm_obj_thumb_aspect_get(void);
+EOAPI void elm_obj_thumb_aspect_set(Ethumb_Thumb_Aspect aspect);
 
 /**
- * Set the quality for the thumb object.
+ * @brief Get the aspect of the thumb object.
+ *
+ * @return The aspect setting.
+ *
  * @since 1.8
  *
- * @see elm_thumb_file_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI Ethumb_Thumb_Aspect elm_obj_thumb_aspect_get(void);
+
+/**
+ * @brief Set the quality for the thumb object.
  *
  * @param[in] quality The quality of the thumb.
- */
-EOAPI void  elm_obj_thumb_quality_set(int quality);
-
-/**
- * Get the quality of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The quality setting.
- *
- * @see elm_thumb_quality_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_quality_set(int quality);
+
+/**
+ * @brief Get the quality of the thumb object.
  *
  * @param[out] quality The quality of the thumb.
- */
-EOAPI void  elm_obj_thumb_quality_get(int *quality);
-
-/**
- * Set the size for the thumb object.
+ *
  * @since 1.8
  *
- * @see elm_thumb_file_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_quality_get(int *quality);
+
+/**
+ * @brief Set the size for the thumb object.
  *
  * @param[in] tw The width of the thumb.
  * @param[in] th The height of the thumb.
- */
-EOAPI void  elm_obj_thumb_size_set(int tw, int th);
-
-/**
- * Get the size of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The size setting.
- *
- * @see elm_thumb_size_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_size_set(int tw, int th);
+
+/**
+ * @brief Get the size of the thumb object.
  *
  * @param[out] tw The width of the thumb.
  * @param[out] th The height of the thumb.
- */
-EOAPI void  elm_obj_thumb_size_get(int *tw, int *th);
-
-/**
- * Set the crop alignment for the thumb object.
+ *
  * @since 1.8
  *
- * @see elm_thumb_file_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_size_get(int *tw, int *th);
+
+/**
+ * @brief Set the crop alignment for the thumb object.
  *
  * @param[in] cropx The x coordinate of the crop.
  * @param[in] cropy The y coordinate of the crop.
- */
-EOAPI void  elm_obj_thumb_crop_align_set(double cropx, double cropy);
-
-/**
- * Get the crop alignment of the thumb object.
+ *
  * @since 1.8
  *
- * @return getting The crop align setting.
- *
- * @see elm_thumb_crop_align_set()
- *
- * @ingroup Thumb
+ * @ingroup Elm_Thumb
+ */
+EOAPI void elm_obj_thumb_crop_align_set(double cropx, double cropy);
+
+/**
+ * @brief Get the crop alignment of the thumb object.
  *
  * @param[out] cropx The x coordinate of the crop.
  * @param[out] cropy The y coordinate of the crop.
+ *
+ * @since 1.8
+ *
+ * @ingroup Elm_Thumb
  */
-EOAPI void  elm_obj_thumb_crop_align_get(double *cropx, double *cropy);
+EOAPI void elm_obj_thumb_crop_align_get(double *cropx, double *cropy);
 
 /**
- * Get the path and key to the image or video thumbnail generated by ethumb.
+ * @brief Get the path and key to the image or video thumbnail generated by
+ * ethumb.
  *
  * One just needs to make sure that the thumbnail was generated before getting
- * its path; otherwise, the path will be NULL. One way to do that is by asking
- * for the path when/after the "generate,stop" smart callback is called.
- *
- * @see elm_thumb_file_get()
- *
- * @ingroup Thumb
+ * its path; otherwise, the path will be @c null. One way to do that is by
+ * asking for the path when/after the "generate,stop" smart callback is called.
  *
  * @param[out] file Pointer to thumb path.
  * @param[out] key Pointer to thumb key.
+ *
+ * @ingroup Elm_Thumb
  */
-EOAPI void  elm_obj_thumb_path_get(const char **file, const char **key);
+EOAPI void elm_obj_thumb_path_get(const char **file, const char **key);
 
 /**
- * Reload thumbnail if it was generated before.
+ * @brief Reload thumbnail if it was generated before.
  *
- * This is useful if the ethumb client configuration changed, like its
- * size, aspect or any other property one set in the handle returned
- * by elm_thumb_ethumb_client_get().
+ * This is useful if the ethumb client configuration changed, like its size,
+ * aspect or any other property one set in the handle returned by
+ * elm_thumb_ethumb_client_get().
  *
  * If the options didn't change, the thumbnail won't be generated again, but
  * the old one will still be used.
  *
- * @see elm_thumb_file_set()
- *
- * @ingroup Thumb
- * 
+ * @ingroup Elm_Thumb
  */
-EOAPI void  elm_obj_thumb_reload(void);
+EOAPI void elm_obj_thumb_reload(void);
 
 EOAPI extern const Eo_Event_Description _ELM_THUMB_EVENT_GENERATE_ERROR;
 EOAPI extern const Eo_Event_Description _ELM_THUMB_EVENT_GENERATE_START;

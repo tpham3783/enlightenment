@@ -47,7 +47,7 @@ EAPI Eina_Bool elm_fileselector_button_inwin_mode_get(const Elm_Fileselector_But
  * @brief Set the size of a given file selector button widget's window, holding
  * the file selector itself.
  *
- * Note: it will only take any effect if the file selector button widget is not
+ * @note it will only take any effect if the file selector button widget is not
  * under "inwin mode". The default size for the window (when applicable) is
  * 400x400 pixels.
  *
@@ -64,7 +64,7 @@ EAPI void elm_fileselector_button_window_size_set(Elm_Fileselector_Button *obj, 
  * @brief Get the size of a given file selector button widget's window, holding
  * the file selector itself.
  *
- * Note: Use null pointers on the size values you're not interested in: they'll
+ * @note Use null pointers on the size values you're not interested in: they'll
  * be ignored by the function.
  *
  * See also @ref elm_fileselector_button_window_size_set for more details.
@@ -83,7 +83,7 @@ EAPI void elm_fileselector_button_window_size_get(const Elm_Fileselector_Button 
  * after a click on the button. Those windows have the default (unlocalized)
  * value of "Select a file" as titles.
  *
- * Note: It will only take effect if the file selector button widget is not
+ * @note It will only take effect if the file selector button widget is not
  * under "inwin mode".
  *
  * See also @ref elm_fileselector_button_window_title_get.

@@ -24,7 +24,7 @@ EAPI const Eo_Class *ecore_idle_enterer_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Idle_Enterer
  */
-EOAPI void  ecore_idle_enterer_before_constructor(Ecore_Task_Cb func, const void *data);
+EOAPI void ecore_idle_enterer_before_constructor(Ecore_Task_Cb func, const void *data);
 
 /**
  * @brief Contructor. Will insert the handler at the end of the list.
@@ -33,7 +33,7 @@ EOAPI void  ecore_idle_enterer_before_constructor(Ecore_Task_Cb func, const void
  *
  * @ingroup Ecore_Idle_Enterer
  */
-EOAPI void  ecore_idle_enterer_after_constructor(Ecore_Task_Cb func, const void *data);
+EOAPI void ecore_idle_enterer_after_constructor(Ecore_Task_Cb func, const void *data);
 
 
 #endif

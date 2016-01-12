@@ -807,163 +807,117 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::object_smart
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_show_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_show);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_move_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_move);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_callbacks_descriptions_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_callbacks_descriptions_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_callbacks_descriptions_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_callbacks_descriptions_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_iterator_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_iterator_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_callback_description_find_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_callback_description_find);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_hide_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_hide);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_calculate_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_calculate);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_member_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_member_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_resize_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_resize);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_clip_unset_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_clip_unset);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_changed_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_changed);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_member_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_member_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_attach_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_attach);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_need_recalculate_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_need_recalculate_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_need_recalculate_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_need_recalculate_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_clip_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_clip_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_data_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_data_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_members_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_members_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_object_smart_smart_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_smart_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::object>(), &ops[operation_description_class_size< ::evas::object_smart >::value]);

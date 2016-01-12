@@ -13,7 +13,6 @@ typedef struct _E_Config_Binding_Acpi       E_Config_Binding_Acpi;
 typedef struct _E_Config_Desktop_Background E_Config_Desktop_Background;
 typedef struct _E_Config_Desklock_Background E_Config_Desklock_Background;
 typedef struct _E_Config_Desktop_Name       E_Config_Desktop_Name;
-typedef struct _E_Config_Desktop_Window_Profile E_Config_Desktop_Window_Profile;
 typedef struct _E_Config_Gadcon             E_Config_Gadcon;
 typedef struct _E_Config_Gadcon_Client      E_Config_Gadcon_Client;
 typedef struct _E_Config_Shelf              E_Config_Shelf;
@@ -47,7 +46,7 @@ typedef enum
 /* increment this whenever a new set of config values are added but the users
  * config doesn't need to be wiped - simply new values need to be put in
  */
-#define E_CONFIG_FILE_GENERATION 18
+#define E_CONFIG_FILE_GENERATION 19
 #define E_CONFIG_FILE_VERSION    ((E_CONFIG_FILE_EPOCH * 1000000) + E_CONFIG_FILE_GENERATION)
 
 #define E_CONFIG_BINDINGS_VERSION 0 // DO NOT INCREMENT UNLESS YOU WANT TO WIPE ALL BINDINGS!!!!!
@@ -60,9 +59,7 @@ struct _E_Config
    const char *desktop_default_background; // GUI
    Eina_List  *desktop_backgrounds; // GUI
    const char *desktop_default_name;
-   const char *desktop_default_window_profile;
    Eina_List  *desktop_names; // GUI
-   Eina_List  *desktop_window_profiles; // GUI
    double      menus_scroll_speed; // GUI
    double      menus_fast_mouse_move_threshhold; // GUI
    double      menus_click_drag_timeout; // GUI
@@ -71,10 +68,6 @@ struct _E_Config
    double      border_shade_speed; // GUI
    double      framerate; // GUI
    int         priority; // GUI
-   int         image_cache; // GUI
-   int         font_cache; // GUI
-   int         edje_cache; // GUI
-   int         edje_collection_cache; // GUI
    int         zone_desks_x_count; // GUI
    int         zone_desks_y_count; // GUI
    int         show_desktop_icons; // GUI
@@ -165,6 +158,7 @@ struct _E_Config
    int         resize_info_visible; // GUI
    int         focus_last_focused_per_desktop; // GUI
    int         focus_revert_on_hide_or_close; // GUI
+   int         focus_revert_allow_sticky; // GUI
    int         disable_all_pointer_warps; // GUI
    int         pointer_slide; // GUI
    double      pointer_warp_speed; // GUI
@@ -282,13 +276,12 @@ struct _E_Config
 
    Eina_List                *mime_icons; // GUI
    int                       desk_auto_switch; // GUI;
-   
+
    int                       screen_limits;
 
    int                       thumb_nice;
 
    int                       ping_clients_interval; // GUI
-   int                       cache_flush_poll_interval; // GUI
 
    int                       thumbscroll_enable; // GUI
    int                       thumbscroll_threshhold; // GUI
@@ -432,11 +425,18 @@ struct _E_Config
       const char *cur_layout; // whatever the current layout is
       const char *selected_layout; // whatever teh current layout that the user has selected is
       const char *desklock_layout;
+      Eina_Bool use_cache;
    } xkb;
-   
+
+   struct
+   {
+      int repeat_delay;//delay in milliseconds since key down until repeating starts
+      int repeat_rate;//the rate of repeating keys in characters per second
+   } keyboard;
+
    Eina_List  *menu_applications;
    unsigned char exe_always_single_instance; // GUI
-   int           use_desktop_window_profile; // GUI
+   Eina_List *screen_profiles;
 };
 
 struct E_Config_Bindings
@@ -554,14 +554,6 @@ struct _E_Config_Desktop_Name
    int         desk_x;
    int         desk_y;
    const char *name;
-};
-
-struct _E_Config_Desktop_Window_Profile
-{
-   int         zone;
-   int         desk_x;
-   int         desk_y;
-   const char *profile;
 };
 
 struct _E_Config_Gadcon

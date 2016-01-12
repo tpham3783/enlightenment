@@ -38,80 +38,83 @@ EAPI const Eo_Class *elm_ctxpopup_class_get(void) EINA_CONST;
 /**
  * @brief Change the ctxpopup's orientation to horizontal or vertical.
  *
- * @ingroup Ctxpopup
+ * @param[in] horizontal @c true for horizontal mode, @c false for vertical.
  *
- * @param[in] horizontal @c EINA_TRUE for horizontal mode, @c EINA_FALSE for vertical
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI void  elm_obj_ctxpopup_horizontal_set(Eina_Bool horizontal);
+EOAPI void elm_obj_ctxpopup_horizontal_set(Eina_Bool horizontal);
 
 /**
  * @brief Get the value of current ctxpopup object's orientation.
  *
- * @return @c EINA_TRUE for horizontal mode, @c EINA_FALSE for vertical mode (or errors)
+ * See also @ref elm_obj_ctxpopup_horizontal_set.
  *
- * @see elm_ctxpopup_horizontal_set()
+ * @return @c true for horizontal mode, @c false for vertical.
  *
- * @ingroup Ctxpopup
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Eina_Bool  elm_obj_ctxpopup_horizontal_get(void);
+EOAPI Eina_Bool elm_obj_ctxpopup_horizontal_get(void);
 
 /**
  * @brief Set ctxpopup auto hide mode triggered by ctxpopup policy.
- * @since 1.9
  *
- * Use this function when user wants ctxpopup not to hide automatically.
- * By default, ctxpopup is dismissed whenever mouse clicked its background area, language is changed,
- * and its parent geometry is updated(changed).
- * Not to hide ctxpopup automatically, disable auto hide function by calling this API,
+ * Use this function when user wants ctxpopup not to hide automatically. By
+ * default, ctxpopup is dismissed whenever mouse clicked its background area,
+ * language is changed, and its parent geometry is updated(changed). Not to
+ * hide ctxpopup automatically, disable auto hide function by calling this API,
  * then ctxpopup won't be dismissed in those scenarios.
  *
- * Default value of disabled is @c EINA_FALSE.
+ * Default value of disabled is @c false.
  *
- * @see elm_ctxpopup_auto_hide_disabled_get()
- *
- * @ingroup Ctxpopup
+ * See also @ref elm_obj_ctxpopup_auto_hide_disabled_get.
  *
  * @param[in] disabled auto hide enable/disable.
+ *
+ * @since 1.9
+ *
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI void  elm_obj_ctxpopup_auto_hide_disabled_set(Eina_Bool disabled);
+EOAPI void elm_obj_ctxpopup_auto_hide_disabled_set(Eina_Bool disabled);
 
 /**
  * @brief Get ctxpopup auto hide mode triggered by ctxpopup policy.
+ *
+ * See also @ref elm_obj_ctxpopup_auto_hide_disabled_set for more information.
+ *
+ * @return auto hide enable/disable.
+ *
  * @since 1.9
  *
- * @return auto hide mode's state of a ctxpopup
- *
- * @see elm_ctxpopup_auto_hide_disabled_set() for more information.
- *
- * @ingroup Ctxpopup
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Eina_Bool  elm_obj_ctxpopup_auto_hide_disabled_get(void);
+EOAPI Eina_Bool elm_obj_ctxpopup_auto_hide_disabled_get(void);
 
 /**
  * @brief Set the Ctxpopup's parent
  *
  * Set the parent object.
  *
- * @note elm_ctxpopup_add() will automatically call this function
- * with its @c parent argument.
+ * @note @ref elm_ctxpopup_add will automatically call this function with its
+ * @c parent argument.
  *
- * @see elm_ctxpopup_add()
- * @see elm_hover_parent_set()
+ * See also @ref elm_ctxpopup_add, @ref elm_hover_parent_set.
  *
- * @ingroup Ctxpopup
+ * @param[in] parent The parent to use.
  *
- * @param[in] parent The parent to use
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI void  elm_obj_ctxpopup_hover_parent_set(Evas_Object *parent);
+EOAPI void elm_obj_ctxpopup_hover_parent_set(Evas_Object *parent);
 
 /**
  * @brief Get the Ctxpopup's parent
  *
- * @see elm_ctxpopup_hover_parent_set() for more information
+ * See also @ref elm_obj_ctxpopup_hover_parent_set for more information
  *
- * @ingroup Ctxpopup
+ * @return The parent to use.
+ *
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Evas_Object * elm_obj_ctxpopup_hover_parent_get(void);
+EOAPI Evas_Object *elm_obj_ctxpopup_hover_parent_get(void);
 
 /**
  * @brief Set the direction priority of a ctxpopup.
@@ -120,158 +123,153 @@ EOAPI Evas_Object * elm_obj_ctxpopup_hover_parent_get(void);
  * showing direction. This doesn't guarantee the ctxpopup will appear in the
  * requested direction.
  *
- * @see Elm.Ctxpopup.Direction
- *
- * @ingroup Ctxpopup
+ * See also @ref Elm_Ctxpopup_Direction.
  *
  * @param[in] first 1st priority of direction
  * @param[in] second 2nd priority of direction
  * @param[in] third 3th priority of direction
  * @param[in] fourth 4th priority of direction
+ *
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI void  elm_obj_ctxpopup_direction_priority_set(Elm_Ctxpopup_Direction first, Elm_Ctxpopup_Direction second, Elm_Ctxpopup_Direction third, Elm_Ctxpopup_Direction fourth);
+EOAPI void elm_obj_ctxpopup_direction_priority_set(Elm_Ctxpopup_Direction first, Elm_Ctxpopup_Direction second, Elm_Ctxpopup_Direction third, Elm_Ctxpopup_Direction fourth);
 
 /**
  * @brief Get the direction priority of a ctxpopup.
  *
- * @see elm_ctxpopup_direction_priority_set() for more information.
- *
- * @ingroup Ctxpopup
+ * See also @ref elm_obj_ctxpopup_direction_priority_set for more information.
  *
  * @param[out] first 1st priority of direction
  * @param[out] second 2nd priority of direction
  * @param[out] third 3th priority of direction
  * @param[out] fourth 4th priority of direction
+ *
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI void  elm_obj_ctxpopup_direction_priority_get(Elm_Ctxpopup_Direction *first, Elm_Ctxpopup_Direction *second, Elm_Ctxpopup_Direction *third, Elm_Ctxpopup_Direction *fourth);
+EOAPI void elm_obj_ctxpopup_direction_priority_get(Elm_Ctxpopup_Direction *first, Elm_Ctxpopup_Direction *second, Elm_Ctxpopup_Direction *third, Elm_Ctxpopup_Direction *fourth);
 
 /**
  * @brief Get the current direction of a ctxpopup.
  *
- * @return current direction of a ctxpopup
- * (If getting the current direction is failed, it returns #ELM_CTXPOPUP_DIRECTION_UNKNOWN)
- *
  * @warning Once the ctxpopup showed up, the direction would be determined
  *
- * @ingroup Ctxpopup
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Elm_Ctxpopup_Direction  elm_obj_ctxpopup_direction_get(void);
+EOAPI Elm_Ctxpopup_Direction elm_obj_ctxpopup_direction_get(void);
 
 /**
  * @brief Get the internal list of items in a given ctxpopup widget.
+ *
+ * This list is not to be modified in any way and must not be freed. Use the
+ * list members with functions like @ref elm_object_item_text_set, @ref
+ * elm_object_item_text_get, @ref elm_object_item_del.
+ *
+ * @warning This list is only valid until @c obj object's internal items list
+ * is changed. It should be fetched again with another call to this function
+ * when changes happen.
+ *
+ * @return The list of items or @c null on errors.
+ *
  * @since 1.11
  *
- * @return The list of items (#Elm_Object_Item as data) or
- * @c NULL on errors.
- *
- * This list is @b not to be modified in any way and must not be
- * freed. Use the list members with functions like
- * elm_object_item_text_set(),
- * elm_object_item_text_get(),
- * elm_object_item_del().
- *
- * @warning This list is only valid until @p obj object's internal
- * items list is changed. It should be fetched again with another
- * call to this function when changes happen.
- *
- * @ingroup Ctxpopup
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI const Eina_List * elm_obj_ctxpopup_items_get(void);
+EOAPI const Eina_List *elm_obj_ctxpopup_items_get(void);
 
 /**
- * Get the first item in the given ctxpopup widget's list of
- * items.
+ * @brief Get the first item in the given ctxpopup widget's list of items.
+ *
+ * See also  @ref elm_obj_ctxpopup_item_append,
+ * @ref elm_obj_ctxpopup_last_item_get.
+ *
+ * @return The first item or @c null, if it has no items (and on errors).
+ *
  * @since 1.11
  *
- * @return The first item or @c NULL, if it has no items (and on
- * errors)
- *
- * @see elm_ctxpopup_item_append()
- * @see elm_ctxpopup_last_item_get()
- *
- * @ingroup Ctxpopup
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Elm_Object_Item * elm_obj_ctxpopup_first_item_get(void);
+EOAPI Elm_Widget_Item *elm_obj_ctxpopup_first_item_get(void);
 
 /**
- * Get the last item in the given ctxpopup widget's list of
- * items.
- * @since 1.11
+ * @brief Get the last item in the given ctxpopup widget's list of items.
  *
- * @return The last item or @c NULL, if it has no items (and on
- * errors)
+ * See also @ref elm_obj_ctxpopup_item_prepend,
+ * @ref elm_obj_ctxpopup_first_item_get.
  *
- * @see elm_ctxpopup_item_prepend()
- * @see elm_ctxpopup_first_item_get()
+ * @return The last item or @c null, if it has no items (and on errors).
  *
- * @ingroup Ctxpopup
+ * @since 1.1
+ *
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Elm_Object_Item * elm_obj_ctxpopup_last_item_get(void);
+EOAPI Elm_Widget_Item *elm_obj_ctxpopup_last_item_get(void);
 
 /**
  * @brief Dismiss a ctxpopup object
  *
- * Use this function to simulate clicking outside of the ctxpopup to dismiss it.
- * In this way, the ctxpopup will be hidden and the "clicked" signal will be
- * emitted.
- * 
- */
-EOAPI void  elm_obj_ctxpopup_dismiss(void);
-
-/**
- * @brief Clear all items in the given ctxpopup object.
+ * Use this function to simulate clicking outside of the ctxpopup to dismiss
+ * it. In this way, the ctxpopup will be hidden and the "clicked" signal will
+ * be emitted.
  *
- * @ingroup Ctxpopup
- * 
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI void  elm_obj_ctxpopup_clear(void);
+EOAPI void elm_obj_ctxpopup_dismiss(void);
+
+/** Clear all items in the given ctxpopup object.
+ *
+ * @ingroup Elm_Ctxpopup
+ */
+EOAPI void elm_obj_ctxpopup_clear(void);
 
 /**
  * @brief Add a new item to a ctxpopup object.
  *
- * @return A handle to the item added or @c NULL, on errors
- *
- * @warning Ctxpopup can't hold both an item list and a content at the same
+ * Warning:Ctxpopup can't hold both an item list and a content at the same
  * time. When an item is added, any previous content will be removed.
  *
- * @see elm_object_content_set()
+ * See also @ref elm_object_content_set.
  *
- * @ingroup Ctxpopup
- * 
- *
- * @param[in] label The Label of the new item
  * @param[in] icon Icon to be set on new item
  * @param[in] func Convenience function called when item selected
- * @param[in] data Data passed to @p func
+ * @param[in] data Data passed to @c func
+ *
+ * @return A handle to the item added or @c null, on errors.
+ *
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Elm_Object_Item * elm_obj_ctxpopup_item_append(const char *label, Evas_Object *icon, Evas_Smart_Cb func, const void *data);
+EOAPI Elm_Widget_Item *elm_obj_ctxpopup_item_append(const char *label, Evas_Object *icon, Evas_Smart_Cb func, const void *data);
 
 /**
  * @brief Prepend a new item to a ctxpopup object.
- * @since 1.11
- *
- * @return A handle to the item added or @c NULL, on errors
  *
  * @warning Ctxpopup can't hold both an item list and a content at the same
  * time. When an item is added, any previous content will be removed.
  *
- * @see elm_object_content_set()
+ * See also @ref elm_object_content_set.
  *
- * @ingroup Ctxpopup
- * 
- *
- * @param[in] label The Label of the new item
  * @param[in] icon Icon to be set on new item
  * @param[in] func Convenience function called when item selected
- * @param[in] data Data passed to @p func
+ * @param[in] data Data passed to @c func
+ *
+ * @return A handle to the item added or @c null, on errors.
+ *
+ * @since 1.11
+ *
+ * @ingroup Elm_Ctxpopup
  */
-EOAPI Elm_Object_Item * elm_obj_ctxpopup_item_prepend(const char *label, Evas_Object *icon, Evas_Smart_Cb func, const void *data);
+EOAPI Elm_Widget_Item *elm_obj_ctxpopup_item_prepend(const char *label, Evas_Object *icon, Evas_Smart_Cb func, const void *data);
 
 EOAPI extern const Eo_Event_Description _ELM_CTXPOPUP_EVENT_DISMISSED;
+EOAPI extern const Eo_Event_Description _ELM_CTXPOPUP_EVENT_GEOMETRY_UPDATE;
 
 /**
  * No description
  */
 #define ELM_CTXPOPUP_EVENT_DISMISSED (&(_ELM_CTXPOPUP_EVENT_DISMISSED))
+
+/**
+ * No description
+ */
+#define ELM_CTXPOPUP_EVENT_GEOMETRY_UPDATE (&(_ELM_CTXPOPUP_EVENT_GEOMETRY_UPDATE))
 
 #endif

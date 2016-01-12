@@ -17,17 +17,9 @@ typedef Eo Elm_App_Server;
 
 EAPI const Eo_Class *elm_app_server_class_get(void) EINA_CONST;
 
-/**
- * No description supplied.
- *
- * @param[in] icon No description supplied.
- */
-EOAPI void  elm_app_server_icon_set(Eina_Stringshare *icon);
+EOAPI void elm_app_server_icon_set(Eina_Stringshare *icon);
 
-/**
- * No description supplied.
- */
-EOAPI Eina_Stringshare * elm_app_server_icon_get(void);
+EOAPI Eina_Stringshare *elm_app_server_icon_get(void);
 
 /**
  * @brief Return a iterator with all views of application
@@ -37,17 +29,11 @@ EOAPI Eina_Stringshare * elm_app_server_icon_get(void);
  *
  * @ingroup Elm_App_Server
  */
-EOAPI Eina_Iterator * elm_app_server_views_get(void);
+EOAPI Eina_Iterator *elm_app_server_views_get(void);
 
-/**
- * No description supplied.
- */
-EOAPI const char * elm_app_server_path_get(void);
+EOAPI const char *elm_app_server_path_get(void);
 
-/**
- * No description supplied.
- */
-EOAPI Eina_Stringshare * elm_app_server_package_get(void);
+EOAPI Eina_Stringshare *elm_app_server_package_get(void);
 
 /**
  * @brief Set icon to application, using the raw pixels of image.
@@ -59,7 +45,7 @@ EOAPI Eina_Stringshare * elm_app_server_package_get(void);
  *
  * @ingroup Elm_App_Server
  */
-EOAPI void  elm_app_server_pixels_set(unsigned int w, unsigned int h, Eina_Bool has_alpha, const unsigned char *pixels);
+EOAPI void elm_app_server_pixels_set(unsigned int w, unsigned int h, Eina_Bool has_alpha, const unsigned char *pixels);
 
 /**
  * @brief Get application raw icon.
@@ -71,23 +57,23 @@ EOAPI void  elm_app_server_pixels_set(unsigned int w, unsigned int h, Eina_Bool 
  *
  * @ingroup Elm_App_Server
  */
-EOAPI void  elm_app_server_pixels_get(unsigned int *w, unsigned int *h, Eina_Bool *has_alpha, const unsigned char **pixels);
+EOAPI void elm_app_server_pixels_get(unsigned int *w, unsigned int *h, Eina_Bool *has_alpha, const unsigned char **pixels);
 
 /**
  * @brief Class constructor of elm_app_server
  *
- * @param[in] create_view_cb callback to be called when user whants to open
- * some application view
+ * @param[in] create_view_cb callback to be called when user wants to open some
+ * application view
  *
  * @ingroup Elm_App_Server
  */
-EOAPI void  elm_app_server_constructor(const char *packageid, Elm_App_Server_Create_View_Cb create_view_cb);
+EOAPI void elm_app_server_constructor(const char *packageid, Elm_App_Server_Create_View_Cb create_view_cb);
 
 /** Close all views of application
  *
  * @ingroup Elm_App_Server
  */
-EOAPI void  elm_app_server_close_all(void);
+EOAPI void elm_app_server_close_all(void);
 
 /**
  * @brief If view id is available and unique, return the full DBus object path
@@ -99,7 +85,7 @@ EOAPI void  elm_app_server_close_all(void);
  *
  * @ingroup Elm_App_Server
  */
-EOAPI Eina_Bool  elm_app_server_view_check(const char *id);
+EOAPI Eina_Bool elm_app_server_view_check(const char *id);
 
 /**
  * @brief Add a view to elm_app_server. This should only be used if the
@@ -109,7 +95,7 @@ EOAPI Eina_Bool  elm_app_server_view_check(const char *id);
  *
  * @ingroup Elm_App_Server
  */
-EOAPI void  elm_app_server_view_add(Elm_App_Server_View *view);
+EOAPI void elm_app_server_view_add(Elm_App_Server_View *view);
 
 /**
  * @brief Set a title to application.
@@ -118,7 +104,7 @@ EOAPI void  elm_app_server_view_add(Elm_App_Server_View *view);
  *
  * @ingroup Elm_App_Server
  */
-EOAPI void  elm_app_server_title_set(const char *title);
+EOAPI void elm_app_server_title_set(const char *title);
 
 /**
  * @brief Get title of application
@@ -127,13 +113,13 @@ EOAPI void  elm_app_server_title_set(const char *title);
  *
  * @ingroup Elm_App_Server
  */
-EOAPI Eina_Stringshare * elm_app_server_title_get(void);
+EOAPI Eina_Stringshare *elm_app_server_title_get(void);
 
 /** Save the state of all views
  *
  * @ingroup Elm_App_Server
  */
-EOAPI void  elm_app_server_save(void);
+EOAPI void elm_app_server_save(void);
 
 EOAPI extern const Eo_Event_Description _ELM_APP_SERVER_EVENT_TERMINATE;
 

@@ -26,7 +26,7 @@ EAPI const Eo_Class *ecore_audio_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Audio
  */
-EOAPI const char * ecore_audio_obj_source_get(void);
+EOAPI const char *ecore_audio_obj_source_get(void);
 
 /**
  * @brief Set the source of the object
@@ -43,7 +43,7 @@ EOAPI const char * ecore_audio_obj_source_get(void);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI Eina_Bool  ecore_audio_obj_source_set(const char *source);
+EOAPI Eina_Bool ecore_audio_obj_source_set(const char *source);
 
 /**
  * @brief Get the format of the object
@@ -57,7 +57,7 @@ EOAPI Eina_Bool  ecore_audio_obj_source_set(const char *source);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI Ecore_Audio_Format  ecore_audio_obj_format_get(void);
+EOAPI Ecore_Audio_Format ecore_audio_obj_format_get(void);
 
 /**
  * @brief Set the format of the object
@@ -73,7 +73,7 @@ EOAPI Ecore_Audio_Format  ecore_audio_obj_format_get(void);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI Eina_Bool  ecore_audio_obj_format_set(Ecore_Audio_Format format);
+EOAPI Eina_Bool ecore_audio_obj_format_set(Ecore_Audio_Format format);
 
 /**
  * @brief Set the virtual IO functions
@@ -86,7 +86,7 @@ EOAPI Eina_Bool  ecore_audio_obj_format_set(Ecore_Audio_Format format);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI void  ecore_audio_obj_vio_set(Ecore_Audio_Vio *vio, void *data, eo_key_data_free_func free_func);
+EOAPI void ecore_audio_obj_vio_set(Ecore_Audio_Vio *vio, void *data, eo_key_data_free_func free_func);
 
 /**
  * @brief Set the name of the object
@@ -97,7 +97,7 @@ EOAPI void  ecore_audio_obj_vio_set(Ecore_Audio_Vio *vio, void *data, eo_key_dat
  *
  * @ingroup Ecore_Audio
  */
-EOAPI void  ecore_audio_obj_name_set(const char *name);
+EOAPI void ecore_audio_obj_name_set(const char *name);
 
 /** Get the name of the object
  *
@@ -105,7 +105,7 @@ EOAPI void  ecore_audio_obj_name_set(const char *name);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI const char * ecore_audio_obj_name_get(void);
+EOAPI const char *ecore_audio_obj_name_get(void);
 
 /**
  * @brief Set the pause state of the object
@@ -116,7 +116,7 @@ EOAPI const char * ecore_audio_obj_name_get(void);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI void  ecore_audio_obj_paused_set(Eina_Bool paused);
+EOAPI void ecore_audio_obj_paused_set(Eina_Bool paused);
 
 /**
  * @brief Get the pause state of the object
@@ -127,7 +127,7 @@ EOAPI void  ecore_audio_obj_paused_set(Eina_Bool paused);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI Eina_Bool  ecore_audio_obj_paused_get(void);
+EOAPI Eina_Bool ecore_audio_obj_paused_get(void);
 
 /**
  * @brief Set the volume of the object
@@ -138,7 +138,7 @@ EOAPI Eina_Bool  ecore_audio_obj_paused_get(void);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI void  ecore_audio_obj_volume_set(double volume);
+EOAPI void ecore_audio_obj_volume_set(double volume);
 
 /**
  * @brief Get the volume of the object
@@ -149,7 +149,7 @@ EOAPI void  ecore_audio_obj_volume_set(double volume);
  *
  * @ingroup Ecore_Audio
  */
-EOAPI double  ecore_audio_obj_volume_get(void);
+EOAPI double ecore_audio_obj_volume_get(void);
 
 
 #endif

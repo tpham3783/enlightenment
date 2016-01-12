@@ -137,7 +137,7 @@ extern "C"
 #include <elm_authors.h>
 
 #define ELM_VERSION_MAJOR 1
-#define ELM_VERSION_MINOR 15
+#define ELM_VERSION_MINOR 17
 
 typedef struct _Elm_Version
 {
@@ -151,8 +151,11 @@ EAPI extern Elm_Version *elm_version;
 
 /* include these first for general used definitions */
 #include <elm_general.h>
+#include <elm_config.h>
+#include <elm_focus.h>
 #include <elm_tooltip.h>
 #include <elm_object_item.h>
+#include <elm_focus_item.h>
 
 #include <elm_prefs_data.h>
 #include <elm_prefs.h>
@@ -171,6 +174,7 @@ EAPI extern Elm_Version *elm_version;
 
 /* other includes */
 #include <elc_ctxpopup.h>
+#include <elc_combobox.h>
 #include <elm_dayselector.h>
 #include <elc_fileselector_button.h>
 #include <elc_fileselector_entry.h>
@@ -200,7 +204,6 @@ EAPI extern Elm_Version *elm_version;
 #include <elm_cnp.h>
 #include <elm_colorselector.h>
 #include <elm_color_class.h>
-#include <elm_config.h>
 #include <elm_conform.h>
 #include <elm_container.h>
 #include <elm_cursor.h>
@@ -212,7 +215,6 @@ EAPI extern Elm_Version *elm_version;
 #include <elm_finger.h>
 #include <elm_flip.h>
 #include <elm_flipselector.h>
-#include <elm_focus.h>
 #include <elm_font.h>
 #include <elm_frame.h>
 #include <elm_gen.h>

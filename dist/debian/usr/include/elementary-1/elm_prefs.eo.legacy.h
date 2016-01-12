@@ -15,301 +15,285 @@ typedef Eo Elm_Prefs;
 #endif
 
 /**
- * Set user data for a given prefs widget
+ * @brief Set user data for a given prefs widget
  *
- * @return @c EINA_TRUE, on success, @c EINA_FALSE otherwise
+ * Once a prefs widget is created, after elm_prefs_file_set() is issued on it,
+ * all of its UI elements will get default values, when declared on that file.
+ * To fetch an user's own, personal set of those values, one gets to pair a
+ * prefs data handle to the prefs widget. This is what this call is intended
+ * for.
  *
- * Once a prefs widget is created, after elm_prefs_file_set() is
- * issued on it, all of its UI elements will get default values, when
- * declared on that file. To fetch an user's own, personal set of
- * those values, one gets to pair a <b>prefs data</b> handle to the
- * prefs widget. This is what this call is intended for.
+ * Prefs data values from @c prefs_data with keys matching the ones present on
+ * the file passed on elm_prefs_file_set() to @c obj will have their values
+ * applied to the respective UI elements of the widget.
  *
- * Prefs data values from @a prefs_data with keys matching the ones
- * present on the file passed on elm_prefs_file_set() to @a obj will
- * have their values applied to the respective UI elements of the
- * widget.
- *
- * When @a obj dies, the values of the elements declared on its @b
- * .epb file (the one set on elm_prefs_file_set()) marked as permanent
- * <b>will be written back</b> to @a prefs_data, if it is writable.
- * One is also able to make this writing event to take place
- * automatically after each UI element modification by using
+ * When @c obj dies, the values of the elements declared on its .epb file (the
+ * one set on elm_prefs_file_set()) marked as permanent will be written back to
+ * prefs_data, if it is writable. One is also able to make this writing event
+ * to take place automatically after each UI element modification by using
  * elm_prefs_autosave_set().
  *
- * @note @a obj will keep a reference of its own for @a prefs_data,
- * but you should still unreference it by yourself, after the widget
- * is gone.
+ * @note @c obj will keep a reference of its own for @c prefs_data, but you
+ * should still unreference it by yourself, after the widget is gone.
  *
- * @see elm_prefs_data_get()
+ * @param[in] data A valid prefs_data handle
+ *
+ * @return @c true, on success, @c false otherwise
  *
  * @since 1.8
  *
- * @param[in] data A valid prefs_data handle
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_data_set(Elm_Prefs *obj, Elm_Prefs_Data *data);
 
 /**
- * Get user data for a given prefs widget
+ * @brief Set user data for a given prefs widget
  *
- * @return A pointer to the user data of a given prefs widget on success.
- * @c NULL otherwise.
+ * Once a prefs widget is created, after elm_prefs_file_set() is issued on it,
+ * all of its UI elements will get default values, when declared on that file.
+ * To fetch an user's own, personal set of those values, one gets to pair a
+ * prefs data handle to the prefs widget. This is what this call is intended
+ * for.
  *
- * @see elm_prefs_data_set() for more details
+ * Prefs data values from @c prefs_data with keys matching the ones present on
+ * the file passed on elm_prefs_file_set() to @c obj will have their values
+ * applied to the respective UI elements of the widget.
+ *
+ * When @c obj dies, the values of the elements declared on its .epb file (the
+ * one set on elm_prefs_file_set()) marked as permanent will be written back to
+ * prefs_data, if it is writable. One is also able to make this writing event
+ * to take place automatically after each UI element modification by using
+ * elm_prefs_autosave_set().
+ *
+ * @note @c obj will keep a reference of its own for @c prefs_data, but you
+ * should still unreference it by yourself, after the widget is gone.
+ *
+ * @return A valid prefs_data handle
  *
  * @since 1.8
+ *
+ * @ingroup Elm_Prefs
  */
 EAPI Elm_Prefs_Data *elm_prefs_data_get(const Elm_Prefs *obj);
 
 /**
- * Set whether a given prefs widget should save its values back (on
- * the user data file, if set) automatically on every UI element
- * changes.
+ * @brief Control whether a given prefs widget should save its values back (on
+ * the user data file, if set) automatically on every UI element changes.
  *
- * If @a autosave is @c EINA_TRUE, every call to
- * elm_prefs_item_value_set(), every
- * Elm_Prefs_Data_Event_Type.ELM_PREFS_DATA_EVENT_ITEM_CHANGED event
- * coming for its prefs data and every UI element direct value
- * changing will implicitly make the prefs values to be flushed back
- * to it prefs data. If a prefs data handle with no writing
- * permissions or no prefs data is set on @a prefs, naturally nothing
- * will happen.
+ * If @c autosave is @c true, every call to elm_prefs_item_value_set(), every
+ * Elm_Prefs_Data_Event_Type.ELM_PREFS_DATA_EVENT_ITEM_CHANGED event coming for
+ * its prefs data and every UI element direct value changing will implicitly
+ * make the prefs values to be flushed back to it prefs data. If a prefs data
+ * handle with no writing permissions or no prefs data is set on @c prefs,
+ * naturally nothing will happen.
  *
- * @see elm_prefs_autosave_get()
+ * @param[in] autosave @c true to save automatically, @c false otherwise.
  *
  * @since 1.8
  *
- * @param[in] autosave @c EINA_TRUE to save automatically, @c EINA_FALSE
-otherwise.
+ * @ingroup Elm_Prefs
  */
 EAPI void elm_prefs_autosave_set(Elm_Prefs *obj, Eina_Bool autosave);
 
 /**
- * Get whether a given prefs widget is saving its values back
- * automatically on changes.
+ * @brief Control whether a given prefs widget should save its values back (on
+ * the user data file, if set) automatically on every UI element changes.
  *
- * @return @c EINA_TRUE if @a prefs is saving automatically,
- * @c EINA_FALSE otherwise.
+ * If @c autosave is @c true, every call to elm_prefs_item_value_set(), every
+ * Elm_Prefs_Data_Event_Type.ELM_PREFS_DATA_EVENT_ITEM_CHANGED event coming for
+ * its prefs data and every UI element direct value changing will implicitly
+ * make the prefs values to be flushed back to it prefs data. If a prefs data
+ * handle with no writing permissions or no prefs data is set on @c prefs,
+ * naturally nothing will happen.
  *
- * @see elm_prefs_autosave_set(), for more details
+ * @return @c true to save automatically, @c false otherwise.
  *
  * @since 1.8
+ *
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_autosave_get(const Elm_Prefs *obj);
 
 /**
- * Reset the values of a given prefs widget to a previous state.
+ * @brief Reset the values of a given prefs widget to a previous state.
  *
- * As can be seen on #Elm_Prefs_Reset_Mode, there are two possible
- * actions to be taken by this call -- either to reset @a prefs'
- * values to the defaults (declared on the @c .epb file it is bound
- * to) or to reset to the state they were before the last modification
- * it got.
+ * As can be seen on #Elm_Prefs_Reset_Mode, there are two possible actions to
+ * be taken by this call -- either to reset @c prefs' values to the defaults
+ * (declared on the $.epb file it is bound to) or to reset to the state they
+ * were before the last modification it got.
+ *
+ * @param[in] mode The reset mode to apply on @c prefs
  *
  * @since 1.8
- * 
  *
- * @param[in] mode The reset mode to apply on @a prefs
+ * @ingroup Elm_Prefs
  */
 EAPI void elm_prefs_reset(Elm_Prefs *obj, Elm_Prefs_Reset_Mode mode);
 
 /**
- * Set the value on a given prefs widget's item.
+ * @brief Set the value on a given prefs widget's item.
  *
- * @return @c EINA_TRUE, on success, @c EINA_FALSE otherwise
+ * This will change the value of item named @c name programatically.
  *
- * This will change the value of item named @a name programatically.
+ * @param[in] value The value to set on the item. It should be typed as the
+ * item expects, preferably, or a conversion will take place
  *
- * @see elm_prefs_item_value_get()
+ * @return @c true, on success, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection)
- * @param[in] value The value to set on the item. It should be typed as
-the item expects, preferably, or a conversion will
-take place
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_item_value_set(Elm_Prefs *obj, const char *name, const Eina_Value *value);
 
 /**
- * Get the value of a given prefs widget's item.
+ * @brief Get the value of a given prefs widget's item.
  *
- * @return @c EINA_TRUE, on success, @c EINA_FALSE otherwise
+ * This will retrieve the value of item named @c name.
  *
- * This will retrieve the value of item named @a name.
+ * @param[out] value Where to store the value of the item. It will be
+ * overwritten and setup with the type the item is bound to
  *
- * @see elm_prefs_item_value_set()
+ * @return @c true, on success, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to get value from
- * @param[out] value Where to store the value of the item. It will be
-overwritten and setup with the type the item
-is bound to
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_item_value_get(const Elm_Prefs *obj, const char *name, Eina_Value *value);
 
 /**
- * Get the Elementary widget bound to a given prefs widget's
- * item.
+ * @brief Get the Elementary widget bound to a given prefs widget's item.
+ *
+ * This will retrieve a handle to the real widget implementing a given item of
+ * @c prefs, <b>for read-only</b> actions.
+ *
+ * @warning You should never modify the state of the returned widget, because
+ * it's meant to be managed by @c prefs, solely.
+ *
+ * @param[in] name The name of the item (as declared in the prefs collection)
+ * to get object from
  *
  * @return A valid widget handle, on success, or @c NULL, otherwise
  *
- * This will retrieve a handle to the real widget implementing a given
- * item of @a prefs, <b>for read-only</b> actions.
- *
- * @warning You should @b never modify the state of the returned
- * widget, because it's meant to be managed by @a prefs, solely.
- *
- * @see elm_prefs_item_value_set()
- *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to get object from
+ * @ingroup Elm_Prefs
  */
 EAPI const Evas_Object *elm_prefs_item_object_get(Elm_Prefs *obj, const char *name);
 
 /**
- * Set whether the widget bound to a given prefs widget's item is
+ * @brief Set whether the widget bound to a given prefs widget's item is
  * disabled or not.
  *
- * @see elm_prefs_item_disabled_get()
+ * @param[in] disabled @c true, to make it disabled, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to act on
- * @param[in] disabled @c EINA_TRUE, to make it disabled, @c EINA_FALSE
-otherwise
+ * @ingroup Elm_Prefs
  */
 EAPI void elm_prefs_item_disabled_set(Elm_Prefs *obj, const char *name, Eina_Bool disabled);
 
 /**
- * Get whether the widget bound to a given prefs widget's item is
+ * @brief Get whether the widget bound to a given prefs widget's item is
  * disabled or not.
  *
- * @return @c EINA_TRUE, if it is disabled, @c EINA_FALSE
- * otherwise
+ * @param[in] name The name of the item (as declared in the prefs collection)
+ * to get disabled state from
  *
- * @see elm_prefs_item_disabled_set()
+ * @return @c true, if it is disabled, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to get disabled state from
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_item_disabled_get(const Elm_Prefs *obj, const char *name);
 
 /**
- * "Swallows" an object into a SWALLOW item of a prefs widget.
+ * @brief "Swallows" an object into a SWALLOW item of a prefs widget.
  *
- * @return @c EINA_TRUE, on success, @c EINA_FALSE otherwise
+ * @param[in] child The object to occupy the item
  *
- * @see elm_prefs_item_swallow() for more details
+ * @return @c true, on success, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name the name of the SWALLOW item (as declared in the prefs
-collection)
- * @param[in] child The object to occupy the item
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_item_swallow(Elm_Prefs *obj, const char *name, Evas_Object *child);
 
 /**
- * Set whether the widget bound to a given prefs widget's item is
+ * @brief Set whether the widget bound to a given prefs widget's item is
  * editable or not.
  *
- * @note Only @c TEXT or @c TEXTAREA items' default widgets implement
- * the 'editable' property. Custom registered widgets may as well
- * implement them.
+ * @note Only @c TEXT or @c TEXTAREA items' default widgets implement the
+ * 'editable' property. Custom registered widgets may as well implement them.
  *
- * @see elm_prefs_item_editable_get()
+ * @param[in] editable @c true, to make it editable, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to act on
- * @param[in] editable @c EINA_TRUE, to make it editable, @c EINA_FALSE
-otherwise
+ * @ingroup Elm_Prefs
  */
 EAPI void elm_prefs_item_editable_set(Elm_Prefs *obj, const char *name, Eina_Bool editable);
 
 /**
- * Get whether the widget bound to a given prefs widget's item is
+ * @brief Get whether the widget bound to a given prefs widget's item is
  * editable or not.
  *
- * @return @c EINA_TRUE, if it is editable, @c EINA_FALSE
- * otherwise
+ * @param[in] name The name of the item (as declared in the prefs collection)
+ * to get editable state from
  *
- * @see elm_prefs_item_editable_set() for more details
+ * @return @c true, if it is editable, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to get editable state from
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_item_editable_get(const Elm_Prefs *obj, const char *name);
 
 /**
- * Unswallow an object from a SWALLOW item of a prefs widget.
+ * @brief Unswallow an object from a SWALLOW item of a prefs widget.
+ *
+ * @param[in] name the name of the SWALLOW item (as declared in the prefs
+ * collection)
  *
  * @return The unswallowed object, or NULL on errors
  *
- * @see elm_prefs_item_unswallow() for more details
- *
  * @since 1.8
- * 
  *
- * @param[in] name the name of the SWALLOW item (as declared in the prefs
-collection)
+ * @ingroup Elm_Prefs
  */
 EAPI Evas_Object *elm_prefs_item_unswallow(Elm_Prefs *obj, const char *name);
 
 /**
- * Set whether the widget bound to given prefs widget's item should be
+ * @brief Set whether the widget bound to given prefs widget's item should be
  * visible or not.
  *
- * Each prefs item may have a default visibility state, declared on
- * the @c .epb @a prefs it was loaded with. By this call one may alter
- * that state, programatically.
+ * Each prefs item may have a default visibility state, declared on the $.epb
+ * @c prefs it was loaded with. By this call one may alter that state,
+ * programatically.
  *
- * @see elm_prefs_item_visible_get()
+ * @param[in] visible @c true, to make it visible, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to change visibility of
- * @param[in] visible @c EINA_TRUE, to make it visible, @c EINA_FALSE
-otherwise
+ * @ingroup Elm_Prefs
  */
 EAPI void elm_prefs_item_visible_set(Elm_Prefs *obj, const char *name, Eina_Bool visible);
 
 /**
- * Get whether the widget bound to a given prefs widget's item is
+ * @brief Get whether the widget bound to a given prefs widget's item is
  * visible or not.
  *
- * @return @c EINA_TRUE, if it is visible, @c EINA_FALSE
- * otherwise
+ * @param[in] name The name of the item (as declared in the prefs collection)
+ * to get visibility state from
  *
- * @see elm_prefs_item_visible_set() for more details
+ * @return @c true, if it is visible, @c false otherwise
  *
  * @since 1.8
- * 
  *
- * @param[in] name The name of the item (as declared in the prefs
-collection) to get visibility state from
+ * @ingroup Elm_Prefs
  */
 EAPI Eina_Bool elm_prefs_item_visible_get(const Elm_Prefs *obj, const char *name);
 

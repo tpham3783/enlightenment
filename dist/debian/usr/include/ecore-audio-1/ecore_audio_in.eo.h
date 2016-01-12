@@ -26,7 +26,7 @@ EAPI const Eo_Class *ecore_audio_in_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI Eina_Bool  ecore_audio_obj_in_preloaded_get(void);
+EOAPI Eina_Bool ecore_audio_obj_in_preloaded_get(void);
 
 /**
  * @brief Set the preloaded state of the input
@@ -37,7 +37,7 @@ EOAPI Eina_Bool  ecore_audio_obj_in_preloaded_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI void  ecore_audio_obj_in_preloaded_set(Eina_Bool preloaded);
+EOAPI void ecore_audio_obj_in_preloaded_set(Eina_Bool preloaded);
 
 /**
  * @brief Seek within the input
@@ -51,7 +51,7 @@ EOAPI void  ecore_audio_obj_in_preloaded_set(Eina_Bool preloaded);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI double  ecore_audio_obj_in_seek(double offs, int mode);
+EOAPI double ecore_audio_obj_in_seek(double offs, int mode);
 
 /**
  * @brief Set the length of the input
@@ -65,7 +65,7 @@ EOAPI double  ecore_audio_obj_in_seek(double offs, int mode);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI void  ecore_audio_obj_in_length_set(double length);
+EOAPI void ecore_audio_obj_in_length_set(double length);
 
 /**
  * @brief Set the playback speed of the input.
@@ -76,7 +76,7 @@ EOAPI void  ecore_audio_obj_in_length_set(double length);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI void  ecore_audio_obj_in_speed_set(double speed);
+EOAPI void ecore_audio_obj_in_speed_set(double speed);
 
 /**
  * @brief Get the playback speed of the input.
@@ -87,7 +87,7 @@ EOAPI void  ecore_audio_obj_in_speed_set(double speed);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI double  ecore_audio_obj_in_speed_get(void);
+EOAPI double ecore_audio_obj_in_speed_get(void);
 
 /**
  * @brief Set the sample-rate of the input
@@ -98,7 +98,7 @@ EOAPI double  ecore_audio_obj_in_speed_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI void  ecore_audio_obj_in_samplerate_set(int samplerate);
+EOAPI void ecore_audio_obj_in_samplerate_set(int samplerate);
 
 /**
  * @brief Get the he sample-rate of the input
@@ -109,7 +109,7 @@ EOAPI void  ecore_audio_obj_in_samplerate_set(int samplerate);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI int  ecore_audio_obj_in_samplerate_get(void);
+EOAPI int ecore_audio_obj_in_samplerate_get(void);
 
 /**
  * @brief Set the amount of channels the input has
@@ -120,7 +120,7 @@ EOAPI int  ecore_audio_obj_in_samplerate_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI void  ecore_audio_obj_in_channels_set(int channels);
+EOAPI void ecore_audio_obj_in_channels_set(int channels);
 
 /**
  * @brief Get the amount of channels the input has
@@ -131,7 +131,7 @@ EOAPI void  ecore_audio_obj_in_channels_set(int channels);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI int  ecore_audio_obj_in_channels_get(void);
+EOAPI int ecore_audio_obj_in_channels_get(void);
 
 /**
  * @brief Set the looped state of the input
@@ -146,7 +146,7 @@ EOAPI int  ecore_audio_obj_in_channels_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI void  ecore_audio_obj_in_looped_set(Eina_Bool looped);
+EOAPI void ecore_audio_obj_in_looped_set(Eina_Bool looped);
 
 /**
  * @brief Get the looped state of the input
@@ -157,7 +157,7 @@ EOAPI void  ecore_audio_obj_in_looped_set(Eina_Bool looped);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI Eina_Bool  ecore_audio_obj_in_looped_get(void);
+EOAPI Eina_Bool ecore_audio_obj_in_looped_get(void);
 
 /**
  * @brief Get the length of the input
@@ -168,7 +168,7 @@ EOAPI Eina_Bool  ecore_audio_obj_in_looped_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI double  ecore_audio_obj_in_length_get(void);
+EOAPI double ecore_audio_obj_in_length_get(void);
 
 /**
  * @brief Get the output that this input is attached to
@@ -179,7 +179,7 @@ EOAPI double  ecore_audio_obj_in_length_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI Eo * ecore_audio_obj_in_output_get(void);
+EOAPI Ecore_Audio *ecore_audio_obj_in_output_get(void);
 
 /**
  * @brief Get the remaining time of the input
@@ -190,7 +190,7 @@ EOAPI Eo * ecore_audio_obj_in_output_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI double  ecore_audio_obj_in_remaining_get(void);
+EOAPI double ecore_audio_obj_in_remaining_get(void);
 
 /**
  * @brief Read from the input
@@ -203,7 +203,7 @@ EOAPI double  ecore_audio_obj_in_remaining_get(void);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI ssize_t  ecore_audio_obj_in_read(void *buf, size_t len);
+EOAPI ssize_t ecore_audio_obj_in_read(void *buf, size_t len);
 
 /**
  * @brief Internal read function
@@ -216,7 +216,7 @@ EOAPI ssize_t  ecore_audio_obj_in_read(void *buf, size_t len);
  *
  * @ingroup Ecore_Audio_In
  */
-EOAPI ssize_t  ecore_audio_obj_in_read_internal(void *buf, size_t len);
+EOAPI ssize_t ecore_audio_obj_in_read_internal(void *buf, size_t len);
 
 EOAPI extern const Eo_Event_Description _ECORE_AUDIO_IN_EVENT_IN_LOOPED;
 EOAPI extern const Eo_Event_Description _ECORE_AUDIO_IN_EVENT_IN_STOPPED;

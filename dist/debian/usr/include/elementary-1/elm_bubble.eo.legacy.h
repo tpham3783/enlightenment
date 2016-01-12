@@ -42,8 +42,6 @@ typedef enum
  * determine where the arrow in the frame points to and where label, icon and
  * info are shown.
  *
- * 
- *
  * @param[in] pos The given corner for the bubble.
  *
  * @ingroup Elm_Bubble

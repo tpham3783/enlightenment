@@ -123,7 +123,7 @@ EAPI const Eina_List *elm_colorselector_palette_items_get(const Elm_Colorselecto
  *
  * @ingroup Elm_Colorselector
  */
-EAPI Elm_Object_Item *elm_colorselector_palette_selected_item_get(const Elm_Colorselector *obj);
+EAPI Elm_Widget_Item *elm_colorselector_palette_selected_item_get(const Elm_Colorselector *obj);
 
 /**
  * @brief Add a new color item to palette.
@@ -136,7 +136,7 @@ EAPI Elm_Object_Item *elm_colorselector_palette_selected_item_get(const Elm_Colo
  *
  * @ingroup Elm_Colorselector
  */
-EAPI Elm_Object_Item *elm_colorselector_palette_color_add(Elm_Colorselector *obj, int r, int g, int b, int a);
+EAPI Elm_Widget_Item *elm_colorselector_palette_color_add(Elm_Colorselector *obj, int r, int g, int b, int a);
 
 /** Clear the palette items.
  *

@@ -262,44 +262,32 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::image>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_image_animated_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_image_animated_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_image_load_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_image_load_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_image_load_size_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_image_load_size_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_image_smooth_scale_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_image_smooth_scale_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_image_smooth_scale_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_image_smooth_scale_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_image_ratio_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_image_ratio_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

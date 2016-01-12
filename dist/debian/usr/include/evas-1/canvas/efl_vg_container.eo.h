@@ -17,5 +17,9 @@ typedef Eo Efl_VG_Container;
 
 EAPI const Eo_Class *efl_vg_container_class_get(void) EINA_CONST;
 
+EOAPI Efl_VG_Base *efl_vg_container_child_get(const char *name);
+
+EOAPI Eina_Iterator *efl_vg_container_children_get(void);
+
 
 #endif

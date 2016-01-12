@@ -29,7 +29,7 @@ EAPI const Eo_Class *evas_line_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Line
  */
-EOAPI void  evas_obj_line_xy_set(Evas_Coord x1, Evas_Coord y1, Evas_Coord x2, Evas_Coord y2);
+EOAPI void evas_obj_line_xy_set(Evas_Coord x1, Evas_Coord y1, Evas_Coord x2, Evas_Coord y2);
 
 /**
  * @brief Retrieves the coordinates of the end points of the given evas line
@@ -42,7 +42,7 @@ EOAPI void  evas_obj_line_xy_set(Evas_Coord x1, Evas_Coord y1, Evas_Coord x2, Ev
  *
  * @ingroup Evas_Line
  */
-EOAPI void  evas_obj_line_xy_get(Evas_Coord *x1, Evas_Coord *y1, Evas_Coord *x2, Evas_Coord *y2);
+EOAPI void evas_obj_line_xy_get(Evas_Coord *x1, Evas_Coord *y1, Evas_Coord *x2, Evas_Coord *y2);
 
 
 #endif

@@ -32,7 +32,7 @@ EAPI const Eo_Class *efl_file_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_File
  */
-EOAPI Eina_Bool  efl_file_mmap_set(const Eina_File *f, const char *key);
+EOAPI Eina_Bool efl_file_mmap_set(const Eina_File *f, const char *key);
 
 /**
  * @brief Get the source mmaped file from where an image object must fetch the
@@ -49,7 +49,7 @@ EOAPI Eina_Bool  efl_file_mmap_set(const Eina_File *f, const char *key);
  *
  * @ingroup Efl_File
  */
-EOAPI void  efl_file_mmap_get(const Eina_File **f, const char **key);
+EOAPI void efl_file_mmap_get(const Eina_File **f, const char **key);
 
 /**
  * @brief Set the source file from where an image object must fetch the real
@@ -64,7 +64,7 @@ EOAPI void  efl_file_mmap_get(const Eina_File **f, const char **key);
  *
  * @ingroup Efl_File
  */
-EOAPI Eina_Bool  efl_file_set(const char *file, const char *key);
+EOAPI Eina_Bool efl_file_set(const char *file, const char *key);
 
 /**
  * @brief Retrieve the source file from where an image object is to fetch the
@@ -72,7 +72,7 @@ EOAPI Eina_Bool  efl_file_set(const char *file, const char *key);
  *
  * You must not modify the strings on the returned pointers.
  *
- * Note: Use @c null pointers on the file components you're not interested in:
+ * @note Use @c null pointers on the file components you're not interested in:
  * they'll be ignored by the function.
  *
  * @param[out] file The image file path.
@@ -81,7 +81,7 @@ EOAPI Eina_Bool  efl_file_set(const char *file, const char *key);
  *
  * @ingroup Efl_File
  */
-EOAPI void  efl_file_get(const char **file, const char **key);
+EOAPI void efl_file_get(const char **file, const char **key);
 
 /**
  * @brief If true, file open will happen asynchronously allowing for better
@@ -96,7 +96,7 @@ EOAPI void  efl_file_get(const char **file, const char **key);
  *
  * @ingroup Efl_File
  */
-EOAPI void  efl_file_async_set(Eina_Bool async);
+EOAPI void efl_file_async_set(Eina_Bool async);
 
 /**
  * @brief Retrieves the asynchronous open flag, which will be true only if
@@ -106,7 +106,7 @@ EOAPI void  efl_file_async_set(Eina_Bool async);
  *
  * @ingroup Efl_File
  */
-EOAPI Eina_Bool  efl_file_async_get(void);
+EOAPI Eina_Bool efl_file_async_get(void);
 
 /**
  * @brief Save the given image object's contents to an (image) file.
@@ -125,7 +125,7 @@ EOAPI Eina_Bool  efl_file_async_get(void);
  *
  * @ingroup Efl_File
  */
-EOAPI Eina_Bool  efl_file_save(const char *file, const char *key, const char *flags);
+EOAPI Eina_Bool efl_file_save(const char *file, const char *key, const char *flags);
 
 /**
  * @brief Eject the represented object.
@@ -134,17 +134,17 @@ EOAPI Eina_Bool  efl_file_save(const char *file, const char *key, const char *fl
  *
  * @ingroup Efl_File
  */
-EOAPI void  efl_file_eject(void);
+EOAPI void efl_file_eject(void);
 
 /**
  * @brief Block and wait until all asynchronous operations are completed.
  * Unless the async flag was set on this object, this method has no effect.
  *
- * @return @c false if an error occured, else @c true
+ * @return @c false if an error occurred, else @c true
  *
  * @ingroup Efl_File
  */
-EOAPI Eina_Bool  efl_file_async_wait(void);
+EOAPI Eina_Bool efl_file_async_wait(void);
 
 EOAPI extern const Eo_Event_Description _EFL_FILE_EVENT_ASYNC_OPENED;
 EOAPI extern const Eo_Event_Description _EFL_FILE_EVENT_ASYNC_ERROR;
@@ -155,7 +155,7 @@ EOAPI extern const Eo_Event_Description _EFL_FILE_EVENT_ASYNC_ERROR;
  */
 #define EFL_FILE_EVENT_ASYNC_OPENED (&(_EFL_FILE_EVENT_ASYNC_OPENED))
 
-/** Error occured in asynchronous file operation
+/** Error occurred in asynchronous file operation
  *
  * @ingroup Efl_File
  */

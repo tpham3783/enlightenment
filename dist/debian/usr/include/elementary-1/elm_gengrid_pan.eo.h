@@ -17,17 +17,5 @@ typedef Eo Elm_Gengrid_Pan;
 
 EAPI const Eo_Class *elm_gengrid_pan_class_get(void) EINA_CONST;
 
-EOAPI extern const Eo_Event_Description _ELM_GENGRID_PAN_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_GENGRID_PAN_EVENT_ACCESS_CHANGED;
-
-/**
- * No description
- */
-#define ELM_GENGRID_PAN_EVENT_LANGUAGE_CHANGED (&(_ELM_GENGRID_PAN_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_GENGRID_PAN_EVENT_ACCESS_CHANGED (&(_ELM_GENGRID_PAN_EVENT_ACCESS_CHANGED))
 
 #endif

@@ -26,7 +26,7 @@ EAPI void elm_route_emap_set(Elm_Route *obj, void *emap);
 /**
  * @brief Get the minimum and maximum values along the longitude.
  *
- * Note: If only one value is needed, the other pointer can be passed as null.
+ * @note If only one value is needed, the other pointer can be passed as null.
  *
  * @param[out] min Pointer to store the minimum value.
  * @param[out] max Pointer to store the maximum value.
@@ -38,7 +38,7 @@ EAPI void elm_route_longitude_min_max_get(const Elm_Route *obj, double *min, dou
 /**
  * @brief Get the minimum and maximum values along the latitude.
  *
- * Note: If only one value is needed, the other pointer can be passed as null.
+ * @note If only one value is needed, the other pointer can be passed as null.
  *
  * @param[out] min Pointer to store the minimum value.
  * @param[out] max Pointer to store the maximum value.

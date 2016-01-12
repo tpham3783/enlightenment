@@ -534,6 +534,10 @@ struct object
    ///
    bool text_class_get(::efl::eina::string_view text_class_, const char ** font_, Evas_Font_Size* size_) const;
 
+   /// @param text_class 
+   ///
+   void text_class_del(::efl::eina::string_view text_class_) const;
+
    /// @param color_class 
    /// @param r 
    /// @param g 
@@ -569,6 +573,32 @@ struct object
    /// @param color_class 
    ///
    ::efl::eina::string_view color_class_description_get(::efl::eina::string_view color_class_) const;
+
+   bool color_class_clear() const;
+
+   /// @param color_class 
+   ///
+   void color_class_del(::efl::eina::string_view color_class_) const;
+
+   /// @param size_class 
+   /// @param minw 
+   /// @param minh 
+   /// @param maxw 
+   /// @param maxh 
+   ///
+   bool size_class_set(::efl::eina::string_view size_class_, int minw_, int minh_, int maxw_, int maxh_) const;
+
+   /// @param size_class 
+   /// @param[out] minw 
+   /// @param[out] minh 
+   /// @param[out] maxw 
+   /// @param[out] maxh 
+   ///
+   bool size_class_get(::efl::eina::string_view size_class_, int* minw_, int* minh_, int* maxw_, int* maxh_) const;
+
+   /// @param size_class 
+   ///
+   void size_class_del(::efl::eina::string_view size_class_) const;
 
    /// @param part 
    /// @param dx 
@@ -1329,6 +1359,10 @@ struct object
    ///
    bool text_class_get(::efl::eina::string_view text_class_, const char ** font_, Evas_Font_Size* size_) const;
 
+   /// @param text_class 
+   ///
+   void text_class_del(::efl::eina::string_view text_class_) const;
+
    /// @param color_class 
    /// @param r 
    /// @param g 
@@ -1364,6 +1398,32 @@ struct object
    /// @param color_class 
    ///
    ::efl::eina::string_view color_class_description_get(::efl::eina::string_view color_class_) const;
+
+   bool color_class_clear() const;
+
+   /// @param color_class 
+   ///
+   void color_class_del(::efl::eina::string_view color_class_) const;
+
+   /// @param size_class 
+   /// @param minw 
+   /// @param minh 
+   /// @param maxw 
+   /// @param maxh 
+   ///
+   bool size_class_set(::efl::eina::string_view size_class_, int minw_, int minh_, int maxw_, int maxh_) const;
+
+   /// @param size_class 
+   /// @param[out] minw 
+   /// @param[out] minh 
+   /// @param[out] maxw 
+   /// @param[out] maxh 
+   ///
+   bool size_class_get(::efl::eina::string_view size_class_, int* minw_, int* minh_, int* maxw_, int* maxh_) const;
+
+   /// @param size_class 
+   ///
+   void size_class_del(::efl::eina::string_view size_class_) const;
 
    /// @param part 
    /// @param dx 

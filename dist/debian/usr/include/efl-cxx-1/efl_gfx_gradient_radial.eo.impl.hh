@@ -247,44 +247,32 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::gfx::gradient
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_center_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_center_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_center_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_center_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_radius_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_radius_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_radius_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_radius_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_focal_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_focal_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_focal_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_radial_focal_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::efl::gfx::gradient::base>(), &ops[operation_description_class_size< ::efl::gfx::gradient::radial >::value]);

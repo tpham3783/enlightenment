@@ -57,8 +57,6 @@ struct _Elm_Genlist_Data
    Elm_Object_Item                      *last_focused_item; /**< This records the last focused item when widget looses focus. This is required to set the focus on last focused item when widgets gets focus. */
    Ecore_Job                            *calc_job;
    int                                   walking;
-   int                                   item_width, item_height;
-   int                                   group_item_width, group_item_height;
    int                                   minw, minh;
    Eina_Bool                             scr_minw : 1; /* a flag for determining
                                                         * minimum width to limit
@@ -143,6 +141,15 @@ struct _Elm_Genlist_Data
    Elm_Genlist_Item_Move_Effect_Mode     move_effect_mode;
    int                                   reorder_fast;
 
+   Eina_List                            *filter_queue;
+   Eina_List                            *filtered_list;
+   void                                 *filter_data;
+   unsigned int                          processed_count;
+   unsigned int                          filtered_count;
+   Ecore_Idle_Enterer                   *queue_filter_enterer;
+   Eina_Hash                             *size_caches;
+
+   Eina_Bool                             filter;
    Eina_Bool                             focus_on_selection_enabled : 1;
    Eina_Bool                             tree_effect_enabled : 1;
    Eina_Bool                             auto_scroll_enabled : 1;
@@ -196,6 +203,7 @@ struct _Elm_Genlist_Data
 
 typedef struct _Item_Block Item_Block;
 typedef struct _Item_Cache Item_Cache;
+typedef struct _Item_Size Item_Size;
 
 struct Elm_Gen_Item_Type
 {
@@ -267,13 +275,15 @@ struct _Item_Cache
    EINA_INLIST;
 
    Evas_Object *base_view, *spacer;
-
    const char  *item_style; // it->itc->item_style
-
-   Eina_Bool    selected : 1; // it->selected
-   Eina_Bool    disabled : 1; // it->disabled
-   Eina_Bool    expanded : 1; // it->item->expanded
    Eina_Bool    tree : 1; // it->group
+};
+
+struct _Item_Size
+{
+     const Elm_Genlist_Item_Class *itc;
+     Evas_Coord minw;
+     Evas_Coord minh;
 };
 
 typedef struct _Elm_Genlist_Pan_Data Elm_Genlist_Pan_Data;
@@ -283,6 +293,24 @@ struct _Elm_Genlist_Pan_Data
    Elm_Genlist_Data       *wsd;
    Ecore_Job              *resize_job;
 };
+
+/**
+ * Structure added to genlist for internal filter iterator implementation
+ * Can be extended to genlist as a whole in future if needed.
+ */
+typedef struct _Elm_Genlist_Filter Elm_Genlist_Filter;
+struct _Elm_Genlist_Filter
+{
+   Eina_Iterator iterator;
+   const Eina_Inlist *head;
+   const Eina_Inlist *current;
+   Evas_Object *obj;
+};
+
+#define ELM_GENLIST_FILTER_ITERATOR_ITEM_GET(ptr,                 \
+                                  type) ((type *)((char *)ptr - \
+                                                  offsetof(type, __in_list)))
+
 
 /**
  * @}

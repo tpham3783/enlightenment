@@ -17,6 +17,7 @@ extern "C"
 #include "eo_base.eo.hh"
 #include "efl_gfx_base.eo.hh"
 #include "efl_gfx_stack.eo.hh"
+#include <string>
 
 namespace efl { namespace vg {
 
@@ -34,6 +35,20 @@ struct base
    /// @param[out] r 
    ///
    void bounds_get(Eina_Rectangle* r_) const;
+
+   /// @param from 
+   /// @param to 
+   /// @param pos_map 
+   ///
+   bool interpolate(::efl::vg::base from_, ::efl::vg::base to_, double pos_map_) const;
+
+   /// @param from 
+   ///
+   void dup(::efl::vg::base from_) const;
+
+   ::efl::eina::string_view name_get() const;
+
+   void name_set(::efl::eina::string_view name_) const;
 
    const Eina_Matrix3 * transformation_get() const;
 
@@ -149,6 +164,20 @@ struct base
    /// @param[out] r 
    ///
    void bounds_get(Eina_Rectangle* r_) const;
+
+   /// @param from 
+   /// @param to 
+   /// @param pos_map 
+   ///
+   bool interpolate(::efl::vg::base from_, ::efl::vg::base to_, double pos_map_) const;
+
+   /// @param from 
+   ///
+   void dup(::efl::vg::base from_) const;
+
+   ::efl::eina::string_view name_get() const;
+
+   void name_set(::efl::eina::string_view name_) const;
 
    const Eina_Matrix3 * transformation_get() const;
 

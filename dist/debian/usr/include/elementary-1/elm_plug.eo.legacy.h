@@ -15,32 +15,30 @@ typedef Eo Elm_Plug;
 #endif
 
 /**
- * Get the basic Evas_Image object from this object (widget).
+ * @brief Get the basic Evas_Image object from this object (widget).
  *
- * @return The inlined image object, or NULL if none exists
+ * This function allows one to get the underlying Evas object of type Image
+ * from this elementary widget. It can be useful to do things like get the
+ * pixel data, save the image to a file, etc.
  *
- * This function allows one to get the underlying @c Evas_Object of type
- * Image from this elementary widget. It can be useful to do things like get
- * the pixel data, save the image to a file, etc.
+ * @note Be careful to not manipulate it, as it is under control of elementary.
  *
- * @note Be careful to not manipulate it, as it is under control of
- * elementary.
+ * @return The inlined image object or @c null.
  *
- * @ingroup Plug
+ * @ingroup Elm_Plug
  */
 EAPI Evas_Object *elm_plug_image_object_get(const Elm_Plug *obj);
 
 /**
- * Connect a plug widget to service provided by socket image.
+ * @brief Connect a plug widget to service provided by socket image.
  *
- * @return (@c EINA_TRUE = success, @c EINA_FALSE = error)
- *
- * @ingroup Plug
- * 
- *
- * @param[in] svcname The service name to connect to set up by the socket.
  * @param[in] svcnum The service number to connect to (set up by socket).
- * @param[in] svcsys Boolean to set if the service is a system one or not (set up by socket).
+ * @param[in] svcsys Boolean to set if the service is a system one or not (set
+ * up by socket).
+ *
+ * @return @c true on success, @c false on error.
+ *
+ * @ingroup Elm_Plug
  */
 EAPI Eina_Bool elm_plug_connect(Elm_Plug *obj, const char *svcname, int svcnum, Eina_Bool svcsys);
 

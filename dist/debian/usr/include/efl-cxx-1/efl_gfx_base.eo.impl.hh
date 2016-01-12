@@ -386,72 +386,52 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::gfx::base>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_position_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_position_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_position_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_position_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_size_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_size_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_color_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_color_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_color_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_color_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_color_part_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_color_part_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_color_part_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_color_part_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_visible_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_visible_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_base_visible_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_visible_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

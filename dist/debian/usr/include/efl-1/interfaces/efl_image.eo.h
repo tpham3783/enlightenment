@@ -24,7 +24,7 @@ EAPI const Eo_Class *efl_image_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Image
  */
-EOAPI Eina_Bool  efl_image_animated_get(void);
+EOAPI Eina_Bool efl_image_animated_get(void);
 
 /**
  * @brief Set the loading size of an image. The image will be loaded into
@@ -36,15 +36,9 @@ EOAPI Eina_Bool  efl_image_animated_get(void);
  *
  * @ingroup Efl_Image
  */
-EOAPI void  efl_image_load_size_set(int w, int h);
+EOAPI void efl_image_load_size_set(int w, int h);
 
-/**
- * No description supplied.
- *
- * @param[out] w No description supplied.
- * @param[out] h No description supplied.
- */
-EOAPI void  efl_image_load_size_get(int *w, int *h);
+EOAPI void efl_image_load_size_get(int *w, int *h);
 
 /**
  * @brief Sets whether to use high-quality image scaling algorithm on the given
@@ -58,7 +52,7 @@ EOAPI void  efl_image_load_size_get(int *w, int *h);
  *
  * @ingroup Efl_Image
  */
-EOAPI void  efl_image_smooth_scale_set(Eina_Bool smooth_scale);
+EOAPI void efl_image_smooth_scale_set(Eina_Bool smooth_scale);
 
 /**
  * @brief Retrieves whether the given image is using high-quality image scaling
@@ -68,7 +62,7 @@ EOAPI void  efl_image_smooth_scale_set(Eina_Bool smooth_scale);
  *
  * @ingroup Efl_Image
  */
-EOAPI Eina_Bool  efl_image_smooth_scale_get(void);
+EOAPI Eina_Bool efl_image_smooth_scale_get(void);
 
 /**
  * @brief The native ration of the image object
@@ -77,7 +71,7 @@ EOAPI Eina_Bool  efl_image_smooth_scale_get(void);
  *
  * @ingroup Efl_Image
  */
-EOAPI double  efl_image_ratio_get(void);
+EOAPI double efl_image_ratio_get(void);
 
 
 #endif

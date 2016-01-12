@@ -30,81 +30,77 @@ typedef enum
 EAPI const Eo_Class *elm_panel_class_get(void) EINA_CONST;
 
 /**
- * @brief Sets the orientation of the panel
+ * @brief Set the orientation of the panel
  *
- * Sets from where the panel will (dis)appear.
+ * Set from where the panel will (dis)appear.
  *
- * @ingroup Panel
+ * @param[in] orient The panel orientation.
  *
- * @param[in] orient The panel orientation. Can be one of the following:
-@li #ELM_PANEL_ORIENT_TOP
-@li #ELM_PANEL_ORIENT_LEFT
-@li #ELM_PANEL_ORIENT_RIGHT
+ * @ingroup Elm_Panel
  */
-EOAPI void  elm_obj_panel_orient_set(Elm_Panel_Orient orient);
+EOAPI void elm_obj_panel_orient_set(Elm_Panel_Orient orient);
 
 /**
  * @brief Get the orientation of the panel.
  *
- * @return The Elm_Panel_Orient, or #ELM_PANEL_ORIENT_LEFT on failure.
+ * @return The panel orientation.
  *
- * @ingroup Panel
+ * @ingroup Elm_Panel
  */
-EOAPI Elm_Panel_Orient  elm_obj_panel_orient_get(void);
+EOAPI Elm_Panel_Orient elm_obj_panel_orient_get(void);
 
 /**
  * @brief Set the state of the panel.
  *
- * @ingroup Panel
- *
  * @param[in] hidden If true, the panel will run the animation to disappear.
+ *
+ * @ingroup Elm_Panel
  */
-EOAPI void  elm_obj_panel_hidden_set(Eina_Bool hidden);
+EOAPI void elm_obj_panel_hidden_set(Eina_Bool hidden);
 
 /**
  * @brief Get the state of the panel.
  *
- * @return EINA_TRUE if it is hidden state
+ * @return If true, the panel will run the animation to disappear.
  *
- * @ingroup Panel
+ * @ingroup Elm_Panel
  */
-EOAPI Eina_Bool  elm_obj_panel_hidden_get(void);
+EOAPI Eina_Bool elm_obj_panel_hidden_get(void);
 
 /**
  * @brief Set the scrollability of the panel.
  *
- * @ingroup Panel
+ * @param[in] scrollable The scrollable state.
  *
- * @param[in] scrollable No description supplied.
+ * @ingroup Elm_Panel
  */
-EOAPI void  elm_obj_panel_scrollable_set(Eina_Bool scrollable);
+EOAPI void elm_obj_panel_scrollable_set(Eina_Bool scrollable);
 
 /**
  * @brief Get the state of the scrollability.
  *
- * @return EINA_TRUE if it is scrollable
+ * @return The scrollable state.
  *
- * @ingroup Panel
  * @since 1.12
+ *
+ * @ingroup Elm_Panel
  */
-EOAPI Eina_Bool  elm_obj_panel_scrollable_get(void);
+EOAPI Eina_Bool elm_obj_panel_scrollable_get(void);
 
 /**
  * @brief Set the size of the scrollable panel.
  *
- * @ingroup Panel
+ * @param[in] ratio
  *
- * @param[in] ratio No description supplied.
+ * @ingroup Elm_Panel
  */
-EOAPI void  elm_obj_panel_scrollable_content_size_set(double ratio);
+EOAPI void elm_obj_panel_scrollable_content_size_set(double ratio);
 
-/**
- * @brief Toggle the hidden state of the panel from code
+/** Toggle the hidden state of the panel from code
  *
- * @ingroup Panel
- * 
+ * @ingroup Elm_Panel
  */
-EOAPI void  elm_obj_panel_toggle(void);
+EOAPI void elm_obj_panel_toggle(void);
 
 
 #endif

@@ -489,86 +489,62 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::grid>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_accessor_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_accessor_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_clear_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_clear);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_iterator_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_iterator_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_add_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_add_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_unpack_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_unpack);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_pack_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_pack_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_pack_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_pack);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_mirrored_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_mirrored_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_mirrored_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_mirrored_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_size_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_size_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_grid_children_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_grid_children_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::smart_clipped>(), &ops[operation_description_class_size< ::evas::grid >::value]);

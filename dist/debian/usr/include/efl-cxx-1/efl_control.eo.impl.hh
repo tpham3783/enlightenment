@@ -192,30 +192,22 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::control>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_control_priority_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_control_priority_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_control_priority_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_control_priority_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_control_suspend_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_control_suspend_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_control_suspend_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_control_suspend_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

@@ -25,7 +25,7 @@ EAPI const Eo_Class *ecore_con_client_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Con_Client
  */
-EOAPI Ecore_Con_Server * ecore_con_client_obj_server_get(void);
+EOAPI Ecore_Con_Server *ecore_con_client_obj_server_get(void);
 
 
 #endif

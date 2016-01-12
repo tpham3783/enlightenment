@@ -31,254 +31,78 @@ namespace evas {
 
 struct textblock
 {
-   /// @brief Get the geometry of a line number.
-   ///
-   /// @return @c EINA_TRUE on success, @c EINA_FALSE otherwise.
-   ///
-   /// @param line the line number.
-   /// @param[out] cx x coord of the line.
-   /// @param[out] cy y coord of the line.
-   /// @param[out] cw w coord of the line.
-   /// @param[out] ch h coord of the line.
+   /// @param line 
+   /// @param[out] cx 
+   /// @param[out] cy 
+   /// @param[out] cw 
+   /// @param[out] ch 
    ///
    bool line_number_geometry_get(int line_, Evas_Coord* cx_, Evas_Coord* cy_, Evas_Coord* cw_, Evas_Coord* ch_) const;
 
-   /// @brief @brief Get the "replacement character" for given textblock object. Returns
-   /// @c NULL if no replacement character is in use.
-   ///
-   /// @return Replacement character or @c NULL.
-   ///
    ::efl::eina::string_view replace_char_get() const;
 
-   /// @brief Del the from the top of the user style stack.
-   ///
-   /// @see evas_object_textblock_style_get
-   /// @since 1.2
-   ///
    void style_user_pop() const;
 
-   /// @brief Create a new cursor, associate it to the obj and init it to point
-   /// to the start of the textblock. Association to the object means the cursor
-   /// will be updated when the object will change.
-   ///
-   /// @note if you need speed and you know what you are doing, it's slightly faster to just allocate the cursor yourself and not associate it. (only people developing the actual object, and not users of the object).
-   ///
-   /// @return the new cursor.
-   ///
    Evas_Textblock_Cursor * cursor_new() const;
 
-   /// @brief No description supplied by the EAPI.
-   ///
    /// @param anchor 
    ///
    ::efl::eina::crange_list< ::evas::object > node_format_list_get(::efl::eina::string_view anchor_) const;
 
-   /// @brief Get (don't remove) the style at the top of the user style stack.
-   ///
-   /// @return the style of the object.
-   /// @see evas_object_textblock_style_get
-   /// @since 1.2
-   ///
    const Evas_Textblock_Style * style_user_peek() const;
 
-   /// @brief Remove a format node and its match.
-   ///
    /// @param n 
    ///
    void node_format_remove_pair(Evas_Textblock_Node_Format * n_) const;
 
-   /// @brief Clear the textblock object.
-   /// @note Does *NOT* free the Evas object itself.
-   ///
-   /// @return nothing.
-   ///
    void clear() const;
 
-   /// @brief Push ts to the top of the user style stack.
-   ///
-   /// FIXME: API is solid but currently only supports 1 style in the stack.
-   ///
-   /// The user style overrides the corresponding elements of the regular style.
-   /// This is the proper way to do theme overrides in code.
-   /// @return Returns no value.
-   /// @see evas_object_textblock_style_set
-   /// @since 1.2
-   ///
-   /// @param ts the style to set.
+   /// @param ts 
    ///
    void style_user_push(Evas_Textblock_Style * ts_) const;
 
-   /// @brief Add obstacle evas object @p eo_obs to be observed during layout of text.
-   /// The textblock does the layout of the text according to the position
-   /// of the obstacle.
-   ///
-   /// @return Returns true on success, false on failure.
-   ///
-   /// @since 1.15
-   ///
    /// @param eo_obs 
    ///
    bool obstacle_add(::evas::object eo_obs_) const;
 
-   /// @brief Removes @p eo_obs from observation during text layout
-   ///
-   /// @return Returns true on success, false on failure.
-   ///
-   /// @since 1.15
-   ///
    /// @param eo_obs 
    ///
    bool obstacle_del(::evas::object eo_obs_) const;
 
-   /// @brief Triggers for relayout due to obstacles' state change. The obstacles
-   /// alone don't affect the layout, until this is called. Use this after
-   /// doing changes (moving, positioning etc.) in the obstacles that you
-   /// would like to be considered in the layout.
-   /// For example: if you have just repositioned the obstacles to differrent
-   /// coordinates relative to the textblock, you need to call this so
-   /// it will consider this new state and will relayout the text.
-   ///
-   /// @return Returns no value.
-   ///
-   /// @since 1.15
-   ///
    void obstacles_update() const;
 
-   /// @brief Return the markup of the object.
-   ///
-   /// @return the markup text of the object.
-   ///
    ::efl::eina::string_view text_markup_get() const;
 
-   /// @brief Sets the tetxblock's text to the markup text.
-   ///
-   /// @note assumes text does not include the unicode object replacement char (0xFFFC)
-   ///
-   /// @return Return no value.
-   ///
    void text_markup_set(::efl::eina::string_view text_) const;
 
-   /// @brief @brief Gets the vertical alignment of a textblock
-   ///
-   /// @return The alignment set for the object.
-   /// @since 1.1
-   ///
    double valign_get() const;
 
-   /// @brief @brief Sets the vertical alignment of text within the textblock object
-   /// as a whole.
-   ///
-   /// Normally alignment is 0.0 (top of object). Values given should be
-   /// between 0.0 and 1.0 (1.0 bottom of object, 0.5 being vertically centered
-   /// etc.).
-   ///
-   /// @since 1.1
-   ///
    void valign_set(double align_) const;
 
-   /// @brief @brief Gets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @return A null terminated string of delimiters, e.g ",|". If empty, returns
-   /// @c NULL.
-   /// @since 1.1
-   ///
    ::efl::eina::string_view bidi_delimiters_get() const;
 
-   /// @brief @brief Sets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @since 1.1
-   ///
    void bidi_delimiters_set(::efl::eina::string_view delim_) const;
 
-   /// @brief @brief Set the "replacement character" to use for the given textblock object.
-   ///
    void replace_char_set(::efl::eina::string_view ch_) const;
 
-   /// @brief @brief Gets newline mode. When true, newline character behaves
-   /// as a paragraph separator.
-   ///
-   /// @return @c EINA_TRUE if in legacy mode, @c EINA_FALSE otherwise.
-   /// @since 1.1
-   ///
    bool legacy_newline_get() const;
 
-   /// @brief @brief Sets newline mode. When true, newline character will behave
-   /// as a paragraph separator.
-   ///
-   /// @since 1.1
-   ///
    void legacy_newline_set(bool mode_) const;
 
-   /// @brief Return the style of an object.
-   /// @return the style of the object.
-   ///
    const Evas_Textblock_Style * style_get() const;
 
-   /// @brief Set the objects style to ts.
-   /// @return Returns no value.
-   ///
    void style_set(const Evas_Textblock_Style * ts_) const;
 
-   /// @brief Returns the first format node.
-   ///
    const Evas_Textblock_Node_Format * node_format_first_get() const;
 
-   /// @brief Get the formatted width and height. This calculates the actual size after restricting
-   /// the textblock to the current size of the object.
-   /// The main difference between this and @ref evas_object_textblock_size_native_get
-   /// is that the "native" function does not wrapping into account
-   /// it just calculates the real width of the object if it was placed on an
-   /// infinite canvas, while this function gives the size after wrapping
-   /// according to the size restrictions of the object.
-   ///
-   /// For example for a textblock containing the text: "You shall not pass!"
-   /// with no margins or padding and assuming a monospace font and a size of
-   /// 7x10 char widths (for simplicity) has a native size of 19x1
-   /// and a formatted size of 5x4.
-   ///
-   ///
-   /// @return Returns no value.
-   /// @see evas_object_textblock_size_native_get
-   ///
    void size_formatted_get(Evas_Coord* w_, Evas_Coord* h_) const;
 
-   /// @brief Returns the last format node.
-   ///
    const Evas_Textblock_Node_Format * node_format_last_get() const;
 
-   /// @brief Return the object's main cursor.
-   ///
-   /// @return The @p obj's main cursor.
-   ///
    Evas_Textblock_Cursor * cursor_get() const;
 
-   /// @brief Get the native width and height. This calculates the actual size without taking account
-   /// the current size of the object.
-   /// The main difference between this and @ref evas_object_textblock_size_formatted_get
-   /// is that the "native" function does not take wrapping into account
-   /// it just calculates the real width of the object if it was placed on an
-   /// infinite canvas, while the "formatted" function gives the size after
-   /// wrapping text according to the size restrictions of the object.
-   ///
-   /// For example for a textblock containing the text: "You shall not pass!"
-   /// with no margins or padding and assuming a monospace font and a size of
-   /// 7x10 char widths (for simplicity) has a native size of 19x1
-   /// and a formatted size of 5x4.
-   ///
-   /// @return Returns no value.
-   ///
    void size_native_get(Evas_Coord* w_, Evas_Coord* h_) const;
 
-   /// @brief No description supplied by the EAPI.
-   ///
    void style_insets_get(Evas_Coord* l_, Evas_Coord* r_, Evas_Coord* t_, Evas_Coord* b_) const;
 
 
@@ -382,254 +206,78 @@ struct textblock
 
    ~textblock() {}
 
-   /// @brief Get the geometry of a line number.
-   ///
-   /// @return @c EINA_TRUE on success, @c EINA_FALSE otherwise.
-   ///
-   /// @param line the line number.
-   /// @param[out] cx x coord of the line.
-   /// @param[out] cy y coord of the line.
-   /// @param[out] cw w coord of the line.
-   /// @param[out] ch h coord of the line.
+   /// @param line 
+   /// @param[out] cx 
+   /// @param[out] cy 
+   /// @param[out] cw 
+   /// @param[out] ch 
    ///
    bool line_number_geometry_get(int line_, Evas_Coord* cx_, Evas_Coord* cy_, Evas_Coord* cw_, Evas_Coord* ch_) const;
 
-   /// @brief @brief Get the "replacement character" for given textblock object. Returns
-   /// @c NULL if no replacement character is in use.
-   ///
-   /// @return Replacement character or @c NULL.
-   ///
    ::efl::eina::string_view replace_char_get() const;
 
-   /// @brief Del the from the top of the user style stack.
-   ///
-   /// @see evas_object_textblock_style_get
-   /// @since 1.2
-   ///
    void style_user_pop() const;
 
-   /// @brief Create a new cursor, associate it to the obj and init it to point
-   /// to the start of the textblock. Association to the object means the cursor
-   /// will be updated when the object will change.
-   ///
-   /// @note if you need speed and you know what you are doing, it's slightly faster to just allocate the cursor yourself and not associate it. (only people developing the actual object, and not users of the object).
-   ///
-   /// @return the new cursor.
-   ///
    Evas_Textblock_Cursor * cursor_new() const;
 
-   /// @brief No description supplied by the EAPI.
-   ///
    /// @param anchor 
    ///
    ::efl::eina::crange_list< ::evas::object > node_format_list_get(::efl::eina::string_view anchor_) const;
 
-   /// @brief Get (don't remove) the style at the top of the user style stack.
-   ///
-   /// @return the style of the object.
-   /// @see evas_object_textblock_style_get
-   /// @since 1.2
-   ///
    const Evas_Textblock_Style * style_user_peek() const;
 
-   /// @brief Remove a format node and its match.
-   ///
    /// @param n 
    ///
    void node_format_remove_pair(Evas_Textblock_Node_Format * n_) const;
 
-   /// @brief Clear the textblock object.
-   /// @note Does *NOT* free the Evas object itself.
-   ///
-   /// @return nothing.
-   ///
    void clear() const;
 
-   /// @brief Push ts to the top of the user style stack.
-   ///
-   /// FIXME: API is solid but currently only supports 1 style in the stack.
-   ///
-   /// The user style overrides the corresponding elements of the regular style.
-   /// This is the proper way to do theme overrides in code.
-   /// @return Returns no value.
-   /// @see evas_object_textblock_style_set
-   /// @since 1.2
-   ///
-   /// @param ts the style to set.
+   /// @param ts 
    ///
    void style_user_push(Evas_Textblock_Style * ts_) const;
 
-   /// @brief Add obstacle evas object @p eo_obs to be observed during layout of text.
-   /// The textblock does the layout of the text according to the position
-   /// of the obstacle.
-   ///
-   /// @return Returns true on success, false on failure.
-   ///
-   /// @since 1.15
-   ///
    /// @param eo_obs 
    ///
    bool obstacle_add(::evas::object eo_obs_) const;
 
-   /// @brief Removes @p eo_obs from observation during text layout
-   ///
-   /// @return Returns true on success, false on failure.
-   ///
-   /// @since 1.15
-   ///
    /// @param eo_obs 
    ///
    bool obstacle_del(::evas::object eo_obs_) const;
 
-   /// @brief Triggers for relayout due to obstacles' state change. The obstacles
-   /// alone don't affect the layout, until this is called. Use this after
-   /// doing changes (moving, positioning etc.) in the obstacles that you
-   /// would like to be considered in the layout.
-   /// For example: if you have just repositioned the obstacles to differrent
-   /// coordinates relative to the textblock, you need to call this so
-   /// it will consider this new state and will relayout the text.
-   ///
-   /// @return Returns no value.
-   ///
-   /// @since 1.15
-   ///
    void obstacles_update() const;
 
-   /// @brief Return the markup of the object.
-   ///
-   /// @return the markup text of the object.
-   ///
    ::efl::eina::string_view text_markup_get() const;
 
-   /// @brief Sets the tetxblock's text to the markup text.
-   ///
-   /// @note assumes text does not include the unicode object replacement char (0xFFFC)
-   ///
-   /// @return Return no value.
-   ///
    void text_markup_set(::efl::eina::string_view text_) const;
 
-   /// @brief @brief Gets the vertical alignment of a textblock
-   ///
-   /// @return The alignment set for the object.
-   /// @since 1.1
-   ///
    double valign_get() const;
 
-   /// @brief @brief Sets the vertical alignment of text within the textblock object
-   /// as a whole.
-   ///
-   /// Normally alignment is 0.0 (top of object). Values given should be
-   /// between 0.0 and 1.0 (1.0 bottom of object, 0.5 being vertically centered
-   /// etc.).
-   ///
-   /// @since 1.1
-   ///
    void valign_set(double align_) const;
 
-   /// @brief @brief Gets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @return A null terminated string of delimiters, e.g ",|". If empty, returns
-   /// @c NULL.
-   /// @since 1.1
-   ///
    ::efl::eina::string_view bidi_delimiters_get() const;
 
-   /// @brief @brief Sets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @since 1.1
-   ///
    void bidi_delimiters_set(::efl::eina::string_view delim_) const;
 
-   /// @brief @brief Set the "replacement character" to use for the given textblock object.
-   ///
    void replace_char_set(::efl::eina::string_view ch_) const;
 
-   /// @brief @brief Gets newline mode. When true, newline character behaves
-   /// as a paragraph separator.
-   ///
-   /// @return @c EINA_TRUE if in legacy mode, @c EINA_FALSE otherwise.
-   /// @since 1.1
-   ///
    bool legacy_newline_get() const;
 
-   /// @brief @brief Sets newline mode. When true, newline character will behave
-   /// as a paragraph separator.
-   ///
-   /// @since 1.1
-   ///
    void legacy_newline_set(bool mode_) const;
 
-   /// @brief Return the style of an object.
-   /// @return the style of the object.
-   ///
    const Evas_Textblock_Style * style_get() const;
 
-   /// @brief Set the objects style to ts.
-   /// @return Returns no value.
-   ///
    void style_set(const Evas_Textblock_Style * ts_) const;
 
-   /// @brief Returns the first format node.
-   ///
    const Evas_Textblock_Node_Format * node_format_first_get() const;
 
-   /// @brief Get the formatted width and height. This calculates the actual size after restricting
-   /// the textblock to the current size of the object.
-   /// The main difference between this and @ref evas_object_textblock_size_native_get
-   /// is that the "native" function does not wrapping into account
-   /// it just calculates the real width of the object if it was placed on an
-   /// infinite canvas, while this function gives the size after wrapping
-   /// according to the size restrictions of the object.
-   ///
-   /// For example for a textblock containing the text: "You shall not pass!"
-   /// with no margins or padding and assuming a monospace font and a size of
-   /// 7x10 char widths (for simplicity) has a native size of 19x1
-   /// and a formatted size of 5x4.
-   ///
-   ///
-   /// @return Returns no value.
-   /// @see evas_object_textblock_size_native_get
-   ///
    void size_formatted_get(Evas_Coord* w_, Evas_Coord* h_) const;
 
-   /// @brief Returns the last format node.
-   ///
    const Evas_Textblock_Node_Format * node_format_last_get() const;
 
-   /// @brief Return the object's main cursor.
-   ///
-   /// @return The @p obj's main cursor.
-   ///
    Evas_Textblock_Cursor * cursor_get() const;
 
-   /// @brief Get the native width and height. This calculates the actual size without taking account
-   /// the current size of the object.
-   /// The main difference between this and @ref evas_object_textblock_size_formatted_get
-   /// is that the "native" function does not take wrapping into account
-   /// it just calculates the real width of the object if it was placed on an
-   /// infinite canvas, while the "formatted" function gives the size after
-   /// wrapping text according to the size restrictions of the object.
-   ///
-   /// For example for a textblock containing the text: "You shall not pass!"
-   /// with no margins or padding and assuming a monospace font and a size of
-   /// 7x10 char widths (for simplicity) has a native size of 19x1
-   /// and a formatted size of 5x4.
-   ///
-   /// @return Returns no value.
-   ///
    void size_native_get(Evas_Coord* w_, Evas_Coord* h_) const;
 
-   /// @brief No description supplied by the EAPI.
-   ///
    void style_insets_get(Evas_Coord* l_, Evas_Coord* r_, Evas_Coord* t_, Evas_Coord* b_) const;
 
    template <typename F>

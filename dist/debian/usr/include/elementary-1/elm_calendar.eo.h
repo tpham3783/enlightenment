@@ -114,21 +114,19 @@ EAPI const Eo_Class *elm_calendar_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_first_day_of_week_set(Elm_Calendar_Weekday day);
+EOAPI void elm_obj_calendar_first_day_of_week_set(Elm_Calendar_Weekday day);
 
 /**
  * @brief Get the first day of week, who are used on calendar widgets'.
  *
  * See also  @ref elm_obj_calendar_first_day_of_week_set for more details.
  *
- * 
- *
  * @return An int which correspond to the first day of the week (Sunday = 0,
  * Monday = 1, ..., Saturday = 6).
  *
  * @ingroup Elm_Calendar
  */
-EOAPI Elm_Calendar_Weekday  elm_obj_calendar_first_day_of_week_get(void);
+EOAPI Elm_Calendar_Weekday elm_obj_calendar_first_day_of_week_get(void);
 
 /**
  * @brief Define which fields of a tm struct will be taken into account, when
@@ -145,7 +143,7 @@ EOAPI Elm_Calendar_Weekday  elm_obj_calendar_first_day_of_week_get(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_selectable_set(Elm_Calendar_Selectable selectable);
+EOAPI void elm_obj_calendar_selectable_set(Elm_Calendar_Selectable selectable);
 
 /**
  * @brief Get how elm_calendar_selected_time_set manage a date
@@ -159,7 +157,7 @@ EOAPI void  elm_obj_calendar_selectable_set(Elm_Calendar_Selectable selectable);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI Elm_Calendar_Selectable  elm_obj_calendar_selectable_get(void);
+EOAPI Elm_Calendar_Selectable elm_obj_calendar_selectable_get(void);
 
 /**
  * @brief Set the interval on time updates for an user mouse button hold on
@@ -184,7 +182,7 @@ EOAPI Elm_Calendar_Selectable  elm_obj_calendar_selectable_get(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_interval_set(double interval);
+EOAPI void elm_obj_calendar_interval_set(double interval);
 
 /**
  * @brief Get the interval on time updates for an user mouse button hold on
@@ -196,7 +194,7 @@ EOAPI void  elm_obj_calendar_interval_set(double interval);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI double  elm_obj_calendar_interval_get(void);
+EOAPI double elm_obj_calendar_interval_get(void);
 
 /**
  * @brief Set weekdays names to be displayed by the calendar.
@@ -216,7 +214,7 @@ EOAPI double  elm_obj_calendar_interval_get(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_weekdays_names_set(const char **weekdays);
+EOAPI void elm_obj_calendar_weekdays_names_set(const char **weekdays);
 
 /**
  * @brief Get weekdays names displayed by the calendar.
@@ -235,7 +233,7 @@ EOAPI void  elm_obj_calendar_weekdays_names_set(const char **weekdays);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI const char ** elm_obj_calendar_weekdays_names_get(void);
+EOAPI const char **elm_obj_calendar_weekdays_names_get(void);
 
 /**
  * @brief Set select day mode to use.
@@ -246,7 +244,7 @@ EOAPI const char ** elm_obj_calendar_weekdays_names_get(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_select_mode_set(Elm_Calendar_Select_Mode mode);
+EOAPI void elm_obj_calendar_select_mode_set(Elm_Calendar_Select_Mode mode);
 
 /**
  * @brief Get the select day mode used.
@@ -255,13 +253,11 @@ EOAPI void  elm_obj_calendar_select_mode_set(Elm_Calendar_Select_Mode mode);
  *
  * See also @ref elm_obj_calendar_select_mode_set for more details.
  *
- * 
- *
  * @return The select mode to use.
  *
  * @ingroup Elm_Calendar
  */
-EOAPI Elm_Calendar_Select_Mode  elm_obj_calendar_select_mode_get(void);
+EOAPI Elm_Calendar_Select_Mode elm_obj_calendar_select_mode_get(void);
 
 /**
  * @brief Set the minimum and maximum values for the year
@@ -281,7 +277,7 @@ EOAPI Elm_Calendar_Select_Mode  elm_obj_calendar_select_mode_get(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_min_max_year_set(int min, int max);
+EOAPI void elm_obj_calendar_min_max_year_set(int min, int max);
 
 /**
  * @brief Get the minimum and maximum values for the year
@@ -297,7 +293,7 @@ EOAPI void  elm_obj_calendar_min_max_year_set(int min, int max);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_min_max_year_get(int *min, int *max);
+EOAPI void elm_obj_calendar_min_max_year_get(int *min, int *max);
 
 /**
  * @brief Set a function to format the string that will be used to display
@@ -315,7 +311,7 @@ EOAPI void  elm_obj_calendar_min_max_year_get(int *min, int *max);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_format_function_set(Elm_Calendar_Format_Cb format_function);
+EOAPI void elm_obj_calendar_format_function_set(Elm_Calendar_Format_Cb format_function);
 
 /**
  * @brief Get a list of all the calendar marks.
@@ -323,11 +319,9 @@ EOAPI void  elm_obj_calendar_format_function_set(Elm_Calendar_Format_Cb format_f
  * See also @ref elm_obj_calendar_mark_add, @ref elm_calendar_mark_del(),
  * @ref elm_obj_calendar_marks_clear.
  *
- * 
- *
  * @ingroup Elm_Calendar
  */
-EOAPI const Eina_List * elm_obj_calendar_marks_get(void);
+EOAPI const Eina_List *elm_obj_calendar_marks_get(void);
 
 /**
  * @brief Set selected date to be highlighted on calendar.
@@ -344,7 +338,7 @@ EOAPI const Eina_List * elm_obj_calendar_marks_get(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_selected_time_set(Elm_Calendar_Time *selected_time);
+EOAPI void elm_obj_calendar_selected_time_set(Elm_Calendar_Time *selected_time);
 
 /**
  * @brief Get selected date.
@@ -362,7 +356,7 @@ EOAPI void  elm_obj_calendar_selected_time_set(Elm_Calendar_Time *selected_time)
  *
  * @ingroup Elm_Calendar
  */
-EOAPI Eina_Bool  elm_obj_calendar_selected_time_get(Elm_Calendar_Time *selected_time);
+EOAPI Eina_Bool elm_obj_calendar_selected_time_get(Elm_Calendar_Time *selected_time);
 
 /**
  * @brief Add a new mark to the calendar
@@ -390,18 +384,16 @@ EOAPI Eina_Bool  elm_obj_calendar_selected_time_get(Elm_Calendar_Time *selected_
  *
  * @ingroup Elm_Calendar
  */
-EOAPI Elm_Calendar_Mark * elm_obj_calendar_mark_add(const char *mark_type, Elm_Calendar_Time *mark_time, Elm_Calendar_Mark_Repeat_Type repeat);
+EOAPI Elm_Calendar_Mark *elm_obj_calendar_mark_add(const char *mark_type, Elm_Calendar_Time *mark_time, Elm_Calendar_Mark_Repeat_Type repeat);
 
 /**
  * @brief Remove all calendar's marks
  *
  * See also  @ref elm_obj_calendar_mark_add, @ref elm_calendar_mark_del().
  *
- * 
- *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_marks_clear(void);
+EOAPI void elm_obj_calendar_marks_clear(void);
 
 /**
  * @brief Draw calendar marks.
@@ -420,7 +412,7 @@ EOAPI void  elm_obj_calendar_marks_clear(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI void  elm_obj_calendar_marks_draw(void);
+EOAPI void elm_obj_calendar_marks_draw(void);
 
 /**
  * @brief Get the current time displayed in the widget
@@ -431,12 +423,10 @@ EOAPI void  elm_obj_calendar_marks_draw(void);
  *
  * @ingroup Elm_Calendar
  */
-EOAPI Eina_Bool  elm_obj_calendar_displayed_time_get(Elm_Calendar_Time *displayed_time);
+EOAPI Eina_Bool elm_obj_calendar_displayed_time_get(Elm_Calendar_Time *displayed_time);
 
 EOAPI extern const Eo_Event_Description _ELM_CALENDAR_EVENT_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_CALENDAR_EVENT_DISPLAY_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_CALENDAR_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_CALENDAR_EVENT_ACCESS_CHANGED;
 
 /**
  * No description
@@ -447,15 +437,5 @@ EOAPI extern const Eo_Event_Description _ELM_CALENDAR_EVENT_ACCESS_CHANGED;
  * No description
  */
 #define ELM_CALENDAR_EVENT_DISPLAY_CHANGED (&(_ELM_CALENDAR_EVENT_DISPLAY_CHANGED))
-
-/**
- * No description
- */
-#define ELM_CALENDAR_EVENT_LANGUAGE_CHANGED (&(_ELM_CALENDAR_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_CALENDAR_EVENT_ACCESS_CHANGED (&(_ELM_CALENDAR_EVENT_ACCESS_CHANGED))
 
 #endif

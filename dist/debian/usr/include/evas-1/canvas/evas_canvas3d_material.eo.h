@@ -31,7 +31,7 @@ EAPI const Eo_Class *evas_canvas3d_material_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI void  evas_canvas3d_material_enable_set(Evas_Canvas3D_Material_Attrib attrib, Eina_Bool enable);
+EOAPI void evas_canvas3d_material_enable_set(Evas_Canvas3D_Material_Attrib attrib, Eina_Bool enable);
 
 /**
  * @brief Get the material attribute enable flag of the given material.
@@ -44,7 +44,7 @@ EOAPI void  evas_canvas3d_material_enable_set(Evas_Canvas3D_Material_Attrib attr
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI Eina_Bool  evas_canvas3d_material_enable_get(Evas_Canvas3D_Material_Attrib attrib);
+EOAPI Eina_Bool evas_canvas3d_material_enable_get(Evas_Canvas3D_Material_Attrib attrib);
 
 /**
  * @brief Set the shininess of the given material.
@@ -60,7 +60,7 @@ EOAPI Eina_Bool  evas_canvas3d_material_enable_get(Evas_Canvas3D_Material_Attrib
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI void  evas_canvas3d_material_shininess_set(Evas_Real shininess);
+EOAPI void evas_canvas3d_material_shininess_set(Evas_Real shininess);
 
 /**
  * @brief Get the shininess of the given material.
@@ -71,7 +71,7 @@ EOAPI void  evas_canvas3d_material_shininess_set(Evas_Real shininess);
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI Evas_Real  evas_canvas3d_material_shininess_get(void);
+EOAPI Evas_Real evas_canvas3d_material_shininess_get(void);
 
 /**
  * @brief Set the texture of the given material.
@@ -85,7 +85,7 @@ EOAPI Evas_Real  evas_canvas3d_material_shininess_get(void);
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI void  evas_canvas3d_material_texture_set(Evas_Canvas3D_Material_Attrib attrib, Evas_Canvas3D_Texture *texture);
+EOAPI void evas_canvas3d_material_texture_set(Evas_Canvas3D_Material_Attrib attrib, Evas_Canvas3D_Texture *texture);
 
 /**
  * @brief Get the texture of the given material.
@@ -98,13 +98,13 @@ EOAPI void  evas_canvas3d_material_texture_set(Evas_Canvas3D_Material_Attrib att
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI Evas_Canvas3D_Texture * evas_canvas3d_material_texture_get(Evas_Canvas3D_Material_Attrib attrib);
+EOAPI Evas_Canvas3D_Texture *evas_canvas3d_material_texture_get(Evas_Canvas3D_Material_Attrib attrib);
 
 /**
  * @brief Set the material attribute color of the given material.
  *
  * Material color is used also when texture map is enabled. The colors will be
- * modulated (multiplied). To controll the color contribution of a material
+ * modulated (multiplied). To control the color contribution of a material
  * attribute, use gray color. Setting color value for normal attribute has no
  * effect.
  *
@@ -120,7 +120,7 @@ EOAPI Evas_Canvas3D_Texture * evas_canvas3d_material_texture_get(Evas_Canvas3D_M
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI void  evas_canvas3d_material_color_set(Evas_Canvas3D_Material_Attrib attrib, Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
+EOAPI void evas_canvas3d_material_color_set(Evas_Canvas3D_Material_Attrib attrib, Evas_Real r, Evas_Real g, Evas_Real b, Evas_Real a);
 
 /**
  * @brief Get the material attribute color of the given material.
@@ -134,7 +134,7 @@ EOAPI void  evas_canvas3d_material_color_set(Evas_Canvas3D_Material_Attrib attri
  *
  * @ingroup Evas_Canvas3D_Material
  */
-EOAPI void  evas_canvas3d_material_color_get(Evas_Canvas3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
+EOAPI void evas_canvas3d_material_color_get(Evas_Canvas3D_Material_Attrib attrib, Evas_Real *r, Evas_Real *g, Evas_Real *b, Evas_Real *a);
 
 
 #endif

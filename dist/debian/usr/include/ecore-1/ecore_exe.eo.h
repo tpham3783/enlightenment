@@ -25,7 +25,7 @@ EAPI const Eo_Class *ecore_exe_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Exe
  */
-EOAPI void  ecore_obj_exe_command_set(const char *exe_cmd, Ecore_Exe_Flags flags);
+EOAPI void ecore_obj_exe_command_set(const char *exe_cmd, Ecore_Exe_Flags flags);
 
 /**
  * @brief Control the command that's executed. FIXME: May need a split/rename.
@@ -35,7 +35,7 @@ EOAPI void  ecore_obj_exe_command_set(const char *exe_cmd, Ecore_Exe_Flags flags
  *
  * @ingroup Ecore_Exe
  */
-EOAPI void  ecore_obj_exe_command_get(const char **exe_cmd, Ecore_Exe_Flags *flags);
+EOAPI void ecore_obj_exe_command_get(const char **exe_cmd, Ecore_Exe_Flags *flags);
 
 EOAPI extern const Eo_Event_Description _ECORE_EXE_EVENT_DATA_GET;
 EOAPI extern const Eo_Event_Description _ECORE_EXE_EVENT_DATA_ERROR;

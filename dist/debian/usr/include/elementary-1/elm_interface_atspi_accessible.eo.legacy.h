@@ -11,6 +11,18 @@ typedef Eo Elm_Interface_Atspi_Accessible;
 #ifndef _ELM_INTERFACE_ATSPI_ACCESSIBLE_EO_TYPES
 #define _ELM_INTERFACE_ATSPI_ACCESSIBLE_EO_TYPES
 
+/** Type of accessibility object
+ *
+ * @ingroup Elm_Atspi
+ */
+typedef enum
+{
+  ELM_ATSPI_TYPE_REGULAR = 0, /** default accessibile object */
+  ELM_ATSPI_TYPE_DISABLED, /** skip object and its children in accessibility
+                            * hierarchy */
+  ELM_ATSPI_TYPE_SKIPPED /** skip object in accessibility hierarchy */
+} Elm_Atspi_Type;
+
 
 #endif
 

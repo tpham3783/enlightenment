@@ -18,43 +18,40 @@ typedef Eo Elm_Interface_Atspi_Value;
 EAPI const Eo_Class *elm_interface_atspi_value_interface_get(void) EINA_CONST;
 
 #ifdef ELM_INTERFACE_ATSPI_VALUE_PROTECTED
-/**
- * No description supplied.
- *
- * @param[in] value Value of widget casted to floating point number.
- * @param[in] text string describing value in given context
-eg. small, enough
- */
-EOAPI Eina_Bool  elm_interface_atspi_value_and_text_set(double value, const char *text);
+EOAPI Eina_Bool elm_interface_atspi_value_and_text_set(double value, const char *text);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_VALUE_PROTECTED
 /**
- * Gets value displayed by a accessible widget.
+ * @brief Gets value displayed by a accessible widget.
  *
  * @param[out] value Value of widget casted to floating point number.
- * @param[out] text string describing value in given context
-eg. small, enough
- */
-EOAPI void  elm_interface_atspi_value_and_text_get(double *value, const char **text);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_VALUE_PROTECTED
-/**
- * Gets a range of all possible values and its description
+ * @param[out] text string describing value in given context eg. small, enough
  *
- * @param[out] lower_limit No description supplied.
- * @param[out] upper_limit No description supplied.
- * @param[out] description No description supplied.
+ * @ingroup Elm_Interface_Atspi_Value
  */
-EOAPI void  elm_interface_atspi_value_range_get(double *lower_limit, double *upper_limit, const char **description);
+EOAPI void elm_interface_atspi_value_and_text_get(double *value, const char **text);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_VALUE_PROTECTED
 /**
- * Gets an minimal incrementation value
+ * @brief Gets a range of all possible values and its description
+ *
+ * @param[out] lower_limit
+ * @param[out] upper_limit
+ * @param[out] description
+ *
+ * @ingroup Elm_Interface_Atspi_Value
  */
-EOAPI double  elm_interface_atspi_value_increment_get(void);
+EOAPI void elm_interface_atspi_value_range_get(double *lower_limit, double *upper_limit, const char **description);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_VALUE_PROTECTED
+/** Gets an minimal incrementation value
+ *
+ * @ingroup Elm_Interface_Atspi_Value
+ */
+EOAPI double elm_interface_atspi_value_increment_get(void);
 #endif
 
 

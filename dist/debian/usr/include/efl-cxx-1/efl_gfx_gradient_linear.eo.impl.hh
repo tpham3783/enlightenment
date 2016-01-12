@@ -177,30 +177,22 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::gfx::gradient
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_start_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_start_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_start_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_start_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_end_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_end_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_end_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_gfx_gradient_linear_end_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::efl::gfx::gradient::base>(), &ops[operation_description_class_size< ::efl::gfx::gradient::linear >::value]);

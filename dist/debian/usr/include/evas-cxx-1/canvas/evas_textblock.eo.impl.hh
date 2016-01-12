@@ -1072,205 +1072,147 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::textblock>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_line_number_geometry_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_line_number_geometry_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_replace_char_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_replace_char_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_style_user_pop_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_style_user_pop);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_cursor_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_cursor_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_node_format_list_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_node_format_list_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_style_user_peek_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_style_user_peek);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_node_format_remove_pair_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_node_format_remove_pair);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_clear_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_clear);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_style_user_push_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_style_user_push);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_obstacle_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_obstacle_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_obstacle_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_obstacle_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_obstacles_update_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_obstacles_update);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_text_markup_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_text_markup_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_text_markup_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_text_markup_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_valign_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_valign_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_valign_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_valign_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_bidi_delimiters_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_bidi_delimiters_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_bidi_delimiters_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_bidi_delimiters_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_replace_char_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_replace_char_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_legacy_newline_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_legacy_newline_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_legacy_newline_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_legacy_newline_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_style_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_style_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_style_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_style_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_node_format_first_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_node_format_first_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_size_formatted_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_size_formatted_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_node_format_last_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_node_format_last_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_cursor_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_cursor_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_size_native_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_size_native_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_textblock_style_insets_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_textblock_style_insets_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::object>(), &ops[operation_description_class_size< ::evas::textblock >::value]);

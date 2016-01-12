@@ -27,7 +27,7 @@ EAPI const Eo_Class *evas_box_class_get(void) EINA_CONST;
  * the left, with $1.0 meaning to the right. For vertical alignment, $0.0 means
  * to the top, with $1.0 meaning to the bottom.
  *
- * Note: The default values for both alignments is $0.5.
+ * @note The default values for both alignments is $0.5.
  *
  * See also @ref evas_obj_box_align_get.
  *
@@ -36,7 +36,7 @@ EAPI const Eo_Class *evas_box_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_align_set(double horizontal, double vertical);
+EOAPI void evas_obj_box_align_set(double horizontal, double vertical);
 
 /**
  * @brief Get the alignment of the whole bounding box of contents, for a given
@@ -49,12 +49,12 @@ EOAPI void  evas_obj_box_align_set(double horizontal, double vertical);
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_align_get(double *horizontal, double *vertical);
+EOAPI void evas_obj_box_align_get(double *horizontal, double *vertical);
 
 /**
  * @brief Set the (space) padding between cells set for a given box object.
  *
- * Note: The default values for both padding components is $0.
+ * @note The default values for both padding components is $0.
  *
  * See also @ref evas_obj_box_padding_get.
  *
@@ -63,7 +63,7 @@ EOAPI void  evas_obj_box_align_get(double *horizontal, double *vertical);
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_padding_set(Evas_Coord horizontal, Evas_Coord vertical);
+EOAPI void evas_obj_box_padding_set(Evas_Coord horizontal, Evas_Coord vertical);
 
 /**
  * @brief Get the (space) padding between cells set for a given box object.
@@ -75,7 +75,7 @@ EOAPI void  evas_obj_box_padding_set(Evas_Coord horizontal, Evas_Coord vertical)
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_padding_get(Evas_Coord *horizontal, Evas_Coord *vertical);
+EOAPI void evas_obj_box_padding_get(Evas_Coord *horizontal, Evas_Coord *vertical);
 
 /**
  * @brief Set a new layouting function to a given box object
@@ -92,7 +92,7 @@ EOAPI void  evas_obj_box_padding_get(Evas_Coord *horizontal, Evas_Coord *vertica
  *
  * Refer to each of their documentation texts for details on them.
  *
- * Note: A box layouting function will be triggered by the $'calculate' smart
+ * @note A box layouting function will be triggered by the $'calculate' smart
  * callback of the box's smart class.
  *
  * @param[in] cb The new layout function to set on @c o.
@@ -101,7 +101,7 @@ EOAPI void  evas_obj_box_padding_get(Evas_Coord *horizontal, Evas_Coord *vertica
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_set(Evas_Object_Box_Layout cb, const void *data, Eina_Free_Cb free_data);
+EOAPI void evas_obj_box_layout_set(Evas_Object_Box_Layout cb, const void *data, Eina_Free_Cb free_data);
 
 /**
  * @brief Layout function which sets the box o to a (basic) horizontal box
@@ -150,7 +150,7 @@ EOAPI void  evas_obj_box_layout_set(Evas_Object_Box_Layout cb, const void *data,
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_horizontal(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_horizontal(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief Layout function which sets the box o to a (basic) vertical box
@@ -163,7 +163,7 @@ EOAPI void  evas_obj_box_layout_horizontal(Evas_Object_Box_Data *priv, void *dat
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_vertical(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_vertical(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief Layout function which sets the box o to a maximum size, homogeneous
@@ -206,7 +206,7 @@ EOAPI void  evas_obj_box_layout_vertical(Evas_Object_Box_Data *priv, void *data)
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_homogeneous_max_size_horizontal(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_homogeneous_max_size_horizontal(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -215,7 +215,7 @@ EOAPI void  evas_obj_box_layout_homogeneous_max_size_horizontal(Evas_Object_Box_
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object * evas_obj_box_internal_remove(Evas_Object *child);
+EOAPI Evas_Object *evas_obj_box_internal_remove(Evas_Object *child);
 
 /**
  * @brief Layout function which sets the box o to a flow vertical box.
@@ -228,7 +228,7 @@ EOAPI Evas_Object * evas_obj_box_internal_remove(Evas_Object *child);
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_flow_vertical(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_flow_vertical(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -237,7 +237,7 @@ EOAPI void  evas_obj_box_layout_flow_vertical(Evas_Object_Box_Data *priv, void *
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_internal_option_free(Evas_Object_Box_Option *opt);
+EOAPI void evas_obj_box_internal_option_free(Evas_Object_Box_Option *opt);
 
 /**
  * @brief Insert a new child object after another existing one, in a given box
@@ -245,12 +245,12 @@ EOAPI void  evas_obj_box_internal_option_free(Evas_Object_Box_Option *opt);
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: This function will fail if @c reference is not a member of @c o.
+ * @note This function will fail if @c reference is not a member of @c o.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.insert_after
+ * @note This call will trigger the box's _Evas_Object_Box_Api.insert_after
  * smart function.
  *
  * @param[in] reference The child object to place this new one after.
@@ -260,7 +260,7 @@ EOAPI void  evas_obj_box_internal_option_free(Evas_Object_Box_Option *opt);
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_insert_after(Evas_Object *child, const Evas_Object *reference);
+EOAPI Evas_Object_Box_Option *evas_obj_box_insert_after(Evas_Object *child, const Evas_Object *reference);
 
 /**
  * @brief Remove all child objects from a box object, unparenting them again.
@@ -275,19 +275,19 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_insert_after(Evas_Object *child, con
  *
  * @ingroup Evas_Box
  */
-EOAPI Eina_Bool  evas_obj_box_remove_all(Eina_Bool clear);
+EOAPI Eina_Bool evas_obj_box_remove_all(Eina_Bool clear);
 
 /**
  * @brief Get an iterator to walk the list of children of a given box object.
  *
- * Note: Do not remove or delete objects while walking the list.
+ * @note Do not remove or delete objects while walking the list.
  *
  * @return An iterator on @c o's child objects, on success, or @c null, on
  * errors.
  *
  * @ingroup Evas_Box
  */
-EOAPI Eina_Iterator * evas_obj_box_iterator_new(void);
+EOAPI Eina_Iterator *evas_obj_box_iterator_new(void);
 
 /**
  * @brief Add a new box as a child of a given smart object.
@@ -299,18 +299,18 @@ EOAPI Eina_Iterator * evas_obj_box_iterator_new(void);
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object * evas_obj_box_add_to(void);
+EOAPI Evas_Object *evas_obj_box_add_to(void);
 
 /**
  * @brief Append a new child object to the given box object o.
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it. For example, on horizontal layouts an item in the end
  * of the box's list of children will appear on its right.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.append smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.append smart
  * function.
  *
  * @param[in] child A child Evas object to be made a member of @c o.
@@ -320,13 +320,13 @@ EOAPI Evas_Object * evas_obj_box_add_to(void);
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_append(Evas_Object *child);
+EOAPI Evas_Object_Box_Option *evas_obj_box_append(Evas_Object *child);
 
 /**
  * @brief Get the numerical identifier of the property of the child elements of
  * the box o which have name as name string
  *
- * Note: This call won't do anything for a canonical Evas box. Only users which
+ * @note This call won't do anything for a canonical Evas box. Only users which
  * have subclassed it, setting custom box items options (see
  * #Evas_Object_Box_Option) on it, would benefit from this function. They'd
  * have to implement it and set it to be the
@@ -339,18 +339,18 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_append(Evas_Object *child);
  *
  * @ingroup Evas_Box
  */
-EOAPI int  evas_obj_box_option_property_id_get(const char *name);
+EOAPI int evas_obj_box_option_property_id_get(const char *name);
 
 /**
  * @brief Prepend a new child object to the given box object o.
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it. For example, on horizontal layouts an item in the
  * beginning of the box's list of children will appear on its left.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.prepend smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.prepend smart
  * function.
  *
  * @param[in] child A child Evas object to be made a member of @c o.
@@ -360,20 +360,20 @@ EOAPI int  evas_obj_box_option_property_id_get(const char *name);
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_prepend(Evas_Object *child);
+EOAPI Evas_Object_Box_Option *evas_obj_box_prepend(Evas_Object *child);
 
 /**
  * @brief Get an accessor (a structure providing random items access) to the
  * list of children of a given box object.
  *
- * Note: Do not remove or delete objects while walking the list.
+ * @note Do not remove or delete objects while walking the list.
  *
  * @return An accessor on @c o's child objects, on success, or @c null, on
  * errors.
  *
  * @ingroup Evas_Box
  */
-EOAPI Eina_Accessor * evas_obj_box_accessor_new(void);
+EOAPI Eina_Accessor *evas_obj_box_accessor_new(void);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -382,7 +382,7 @@ EOAPI Eina_Accessor * evas_obj_box_accessor_new(void);
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_internal_append(Evas_Object *child);
+EOAPI Evas_Object_Box_Option *evas_obj_box_internal_append(Evas_Object *child);
 
 /**
  * @brief Set a property value (by its given numerical identifier), on a given
@@ -399,7 +399,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_append(Evas_Object *child);
  *
  * @ingroup Evas_Box
  */
-EOAPI Eina_Bool  evas_obj_box_option_property_vset(Evas_Object_Box_Option *opt, int property, va_list *args);
+EOAPI Eina_Bool evas_obj_box_option_property_vset(Evas_Object_Box_Option *opt, int property, va_list *args);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -408,7 +408,7 @@ EOAPI Eina_Bool  evas_obj_box_option_property_vset(Evas_Object_Box_Option *opt, 
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object * evas_obj_box_internal_remove_at(unsigned int pos);
+EOAPI Evas_Object *evas_obj_box_internal_remove_at(unsigned int pos);
 
 /**
  * @brief Remove an object, bound to a given position in a box object,
@@ -419,10 +419,10 @@ EOAPI Evas_Object * evas_obj_box_internal_remove_at(unsigned int pos);
  * automatically for you and, also, the $"child,removed" smart event will take
  * place.
  *
- * Note: This function will fail if the given position is invalid, given @c o's
+ * @note This function will fail if the given position is invalid, given @c o's
  * internal list of elements.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.remove_at smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.remove_at smart
  * function.
  *
  * @param[in] pos The numeric position (starting from $0) of the child object
@@ -432,7 +432,7 @@ EOAPI Evas_Object * evas_obj_box_internal_remove_at(unsigned int pos);
  *
  * @ingroup Evas_Box
  */
-EOAPI Eina_Bool  evas_obj_box_remove_at(unsigned int pos);
+EOAPI Eina_Bool evas_obj_box_remove_at(unsigned int pos);
 
 /**
  * @brief Get a property's value (by its given numerical identifier), on a
@@ -450,7 +450,7 @@ EOAPI Eina_Bool  evas_obj_box_remove_at(unsigned int pos);
  *
  * @ingroup Evas_Box
  */
-EOAPI Eina_Bool  evas_obj_box_option_property_vget(Evas_Object_Box_Option *opt, int property, va_list *args);
+EOAPI Eina_Bool evas_obj_box_option_property_vget(Evas_Object_Box_Option *opt, int property, va_list *args);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -459,7 +459,7 @@ EOAPI Eina_Bool  evas_obj_box_option_property_vget(Evas_Object_Box_Option *opt, 
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_at(Evas_Object *child, unsigned int pos);
+EOAPI Evas_Object_Box_Option *evas_obj_box_internal_insert_at(Evas_Object *child, unsigned int pos);
 
 /**
  * @brief Insert a new child object before another existing one, in a given box
@@ -467,12 +467,12 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_at(Evas_Object *chil
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: This function will fail if @c reference is not a member of @c o.
+ * @note This function will fail if @c reference is not a member of @c o.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.insert_before
+ * @note This call will trigger the box's _Evas_Object_Box_Api.insert_before
  * smart function.
  *
  * @param[in] reference The child object to place this new one before.
@@ -482,13 +482,13 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_at(Evas_Object *chil
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_insert_before(Evas_Object *child, const Evas_Object *reference);
+EOAPI Evas_Object_Box_Option *evas_obj_box_insert_before(Evas_Object *child, const Evas_Object *reference);
 
 /**
  * @brief Get the name of the property of the child elements of the box o which
  * have id as identifier
  *
- * Note: This call won't do anything for a canonical Evas box. Only users which
+ * @note This call won't do anything for a canonical Evas box. Only users which
  * have subclassed it, setting custom box items options (see
  * #Evas_Object_Box_Option) on it, would benefit from this function. They'd
  * have to implement it and set it to be the
@@ -502,7 +502,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_insert_before(Evas_Object *child, co
  *
  * @ingroup Evas_Box
  */
-EOAPI const char * evas_obj_box_option_property_name_get(int property);
+EOAPI const char *evas_obj_box_option_property_name_get(int property);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -511,7 +511,7 @@ EOAPI const char * evas_obj_box_option_property_name_get(int property);
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_before(Evas_Object *child, const Evas_Object *reference);
+EOAPI Evas_Object_Box_Option *evas_obj_box_internal_insert_before(Evas_Object *child, const Evas_Object *reference);
 
 /**
  * @brief Layout function which sets the box o to a homogeneous horizontal box
@@ -546,7 +546,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_before(Evas_Object *
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_homogeneous_horizontal(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_homogeneous_horizontal(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -555,7 +555,7 @@ EOAPI void  evas_obj_box_layout_homogeneous_horizontal(Evas_Object_Box_Data *pri
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_internal_option_new(Evas_Object *child);
+EOAPI Evas_Object_Box_Option *evas_obj_box_internal_option_new(Evas_Object *child);
 
 /**
  * @brief Layout function which sets the box o to a maximum size, homogeneous
@@ -569,7 +569,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_option_new(Evas_Object *chi
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_homogeneous_max_size_vertical(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_homogeneous_max_size_vertical(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -578,7 +578,7 @@ EOAPI void  evas_obj_box_layout_homogeneous_max_size_vertical(Evas_Object_Box_Da
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_after(Evas_Object *child, const Evas_Object *reference);
+EOAPI Evas_Object_Box_Option *evas_obj_box_internal_insert_after(Evas_Object *child, const Evas_Object *reference);
 
 /**
  * @brief Insert a new child object at a given position, in a given box object
@@ -586,13 +586,13 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_after(Evas_Object *c
  *
  * On success, the $"child,added" smart event will take place.
  *
- * Note: This function will fail if the given position is invalid, given @c o's
+ * @note This function will fail if the given position is invalid, given @c o's
  * internal list of elements.
  *
- * Note: The actual placing of the item relative to @c o's area will depend on
+ * @note The actual placing of the item relative to @c o's area will depend on
  * the layout set to it.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.insert_at smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.insert_at smart
  * function.
  *
  * @param[in] pos The numeric position (starting from $0) to place the new
@@ -603,7 +603,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_insert_after(Evas_Object *c
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_insert_at(Evas_Object *child, unsigned int pos);
+EOAPI Evas_Object_Box_Option *evas_obj_box_insert_at(Evas_Object *child, unsigned int pos);
 
 /**
  * @brief No description supplied by the EAPI.
@@ -612,7 +612,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_insert_at(Evas_Object *child, unsign
  *
  * @ingroup Evas_Box
  */
-EOAPI Evas_Object_Box_Option * evas_obj_box_internal_prepend(Evas_Object *child);
+EOAPI Evas_Object_Box_Option *evas_obj_box_internal_prepend(Evas_Object *child);
 
 /**
  * @brief Remove a given object from a box object, unparenting it again.
@@ -622,7 +622,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_prepend(Evas_Object *child)
  * callback will be called automatically for you and, also, the
  * $"child,removed" smart event will take place.
  *
- * Note: This call will trigger the box's _Evas_Object_Box_Api.remove smart
+ * @note This call will trigger the box's _Evas_Object_Box_Api.remove smart
  * function.
  *
  * @param[in] child The handle to the child object to be removed.
@@ -631,7 +631,7 @@ EOAPI Evas_Object_Box_Option * evas_obj_box_internal_prepend(Evas_Object *child)
  *
  * @ingroup Evas_Box
  */
-EOAPI Eina_Bool  evas_obj_box_remove(Evas_Object *child);
+EOAPI Eina_Bool evas_obj_box_remove(Evas_Object *child);
 
 /**
  * @brief Layout function which sets the box o to a stacking box
@@ -655,7 +655,7 @@ EOAPI Eina_Bool  evas_obj_box_remove(Evas_Object *child);
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_stack(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_stack(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief Layout function which sets the box o to a homogeneous vertical box.
@@ -668,7 +668,7 @@ EOAPI void  evas_obj_box_layout_stack(Evas_Object_Box_Data *priv, void *data);
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_homogeneous_vertical(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_homogeneous_vertical(Evas_Object_Box_Data *priv, void *data);
 
 /**
  * @brief Layout function which sets the box o to a flow horizontal box.
@@ -704,7 +704,7 @@ EOAPI void  evas_obj_box_layout_homogeneous_vertical(Evas_Object_Box_Data *priv,
  *
  * @ingroup Evas_Box
  */
-EOAPI void  evas_obj_box_layout_flow_horizontal(Evas_Object_Box_Data *priv, void *data);
+EOAPI void evas_obj_box_layout_flow_horizontal(Evas_Object_Box_Data *priv, void *data);
 
 EOAPI extern const Eo_Event_Description _EVAS_BOX_EVENT_CHILD_ADDED;
 EOAPI extern const Eo_Event_Description _EVAS_BOX_EVENT_CHILD_REMOVED;

@@ -151,9 +151,15 @@ ffi.cdef [[
     const char *edje_obj_part_text_selection_get(const char * part);
     Eina_Bool edje_obj_part_text_cursor_is_format_get(const char * part, Edje_Cursor cur);
     Eina_Bool edje_obj_text_class_get(const char * text_class, const char * *font, Evas_Font_Size *size);
+    void edje_obj_text_class_del(const char * text_class);
     Eina_Bool edje_obj_color_class_set(const char * color_class, int r, int g, int b, int a, int r2, int g2, int b2, int a2, int r3, int g3, int b3, int a3);
     Eina_Bool edje_obj_color_class_get(const char * color_class, int *r, int *g, int *b, int *a, int *r2, int *g2, int *b2, int *a2, int *r3, int *g3, int *b3, int *a3);
     const char *edje_obj_color_class_description_get(const char * color_class);
+    Eina_Bool edje_obj_color_class_clear(void);
+    void edje_obj_color_class_del(const char * color_class);
+    Eina_Bool edje_obj_size_class_set(const char * size_class, int minw, int minh, int maxw, int maxh);
+    Eina_Bool edje_obj_size_class_get(const char * size_class, int *minw, int *minh, int *maxw, int *maxh);
+    void edje_obj_size_class_del(const char * size_class);
     Eina_Bool edje_obj_part_drag_step(const char * part, double dx, double dy);
     Eina_Bool edje_obj_part_text_cursor_up(const char * part, Edje_Cursor cur);
     void edje_obj_part_text_cursor_geometry_get(const char * part, Evas_Coord *x, Evas_Coord *y, Evas_Coord *w, Evas_Coord *h);
@@ -1075,6 +1081,12 @@ __body = {
         return ((v) ~= 0), ffi.string(font[0]), size[0]
     end,
 
+    text_class_del = function(self, text_class)
+        eo.__do_start(self, __class)
+        __lib.edje_obj_text_class_del(text_class)
+        eo.__do_end()
+    end,
+
     color_class_set = function(self, color_class, r, g, b, a, r2, g2, b2, a2, r3, g3, b3, a3)
         eo.__do_start(self, __class)
         local v = __lib.edje_obj_color_class_set(color_class, r, g, b, a, r2, g2, b2, a2, r3, g3, b3, a3)
@@ -1106,6 +1118,43 @@ __body = {
         local v = __lib.edje_obj_color_class_description_get(color_class)
         eo.__do_end()
         return ffi.string(v)
+    end,
+
+    color_class_clear = function(self)
+        eo.__do_start(self, __class)
+        local v = __lib.edje_obj_color_class_clear()
+        eo.__do_end()
+        return ((v) ~= 0)
+    end,
+
+    color_class_del = function(self, color_class)
+        eo.__do_start(self, __class)
+        __lib.edje_obj_color_class_del(color_class)
+        eo.__do_end()
+    end,
+
+    size_class_set = function(self, size_class, minw, minh, maxw, maxh)
+        eo.__do_start(self, __class)
+        local v = __lib.edje_obj_size_class_set(size_class, minw, minh, maxw, maxh)
+        eo.__do_end()
+        return ((v) ~= 0)
+    end,
+
+    size_class_get = function(self, size_class)
+        eo.__do_start(self, __class)
+        local minw = ffi.new("int[1]")
+        local minh = ffi.new("int[1]")
+        local maxw = ffi.new("int[1]")
+        local maxh = ffi.new("int[1]")
+        local v = __lib.edje_obj_size_class_get(size_class, minw, minh, maxw, maxh)
+        eo.__do_end()
+        return ((v) ~= 0), tonumber(minw[0]), tonumber(minh[0]), tonumber(maxw[0]), tonumber(maxh[0])
+    end,
+
+    size_class_del = function(self, size_class)
+        eo.__do_start(self, __class)
+        __lib.edje_obj_size_class_del(size_class)
+        eo.__do_end()
     end,
 
     part_drag_step = function(self, part, dx, dy)

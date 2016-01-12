@@ -62,7 +62,7 @@ struct ecore_audio_in
 
    void length_set(double length_) const;
 
-   ::efl::eo::concrete output_get() const;
+   ::ecore_audio output_get() const;
 
    double remaining_get() const;
 
@@ -274,7 +274,7 @@ struct ecore_audio_in
 
    void length_set(double length_) const;
 
-   ::efl::eo::concrete output_get() const;
+   ::ecore_audio output_get() const;
 
    double remaining_get() const;
 

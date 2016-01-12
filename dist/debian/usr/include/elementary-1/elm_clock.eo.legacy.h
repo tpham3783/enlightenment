@@ -146,7 +146,7 @@ EAPI Eina_Bool elm_clock_show_seconds_get(const Elm_Clock *obj);
  * them back to canonical mode. The @ref elm_clock_edit_mode_set function will
  * influence which digits of the clock will be editable.
  *
- * Note: am/pm sheets, if being shown, will always be editable under edition
+ * @note am/pm sheets, if being shown, will always be editable under edition
  * mode.
  *
  * See also @ref elm_clock_edit_get.
@@ -212,7 +212,7 @@ EAPI Eina_Bool elm_clock_pause_get(const Elm_Clock *obj);
  * Values must be set within 0-23 for hours and 0-59 for minutes and seconds,
  * even if the clock is not in "military" mode.
  *
- * Warning: The behavior for values set out of those ranges is undefined.
+ * @warning The behavior for values set out of those ranges is undefined.
  *
  * @param[in] hrs The hours to set
  * @param[in] min The minutes to set
@@ -228,7 +228,7 @@ EAPI void elm_clock_time_set(Elm_Clock *obj, int hrs, int min, int sec);
  * This function gets the time set for @c obj, returning it on the variables
  * passed as the arguments to function
  *
- * Note: Use @c null pointers on the time values you're not interested in:
+ * @note Use @c null pointers on the time values you're not interested in:
  * they'll be ignored by the function.
  *
  * @param[out] hrs The hours to set

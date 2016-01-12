@@ -38,7 +38,7 @@ EAPI const Eo_Class *elm_actionslider_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Actionslider
  */
-EOAPI void  elm_obj_actionslider_indicator_pos_set(Elm_Actionslider_Pos pos);
+EOAPI void elm_obj_actionslider_indicator_pos_set(Elm_Actionslider_Pos pos);
 
 /**
  * @brief Get actionslider indicator position.
@@ -47,7 +47,7 @@ EOAPI void  elm_obj_actionslider_indicator_pos_set(Elm_Actionslider_Pos pos);
  *
  * @ingroup Elm_Actionslider
  */
-EOAPI Elm_Actionslider_Pos  elm_obj_actionslider_indicator_pos_get(void);
+EOAPI Elm_Actionslider_Pos elm_obj_actionslider_indicator_pos_get(void);
 
 /**
  * @brief Set actionslider magnet position.
@@ -59,7 +59,7 @@ EOAPI Elm_Actionslider_Pos  elm_obj_actionslider_indicator_pos_get(void);
  *
  * @ingroup Elm_Actionslider
  */
-EOAPI void  elm_obj_actionslider_magnet_pos_set(Elm_Actionslider_Pos pos);
+EOAPI void elm_obj_actionslider_magnet_pos_set(Elm_Actionslider_Pos pos);
 
 /**
  * @brief Get actionslider magnet position.
@@ -68,20 +68,20 @@ EOAPI void  elm_obj_actionslider_magnet_pos_set(Elm_Actionslider_Pos pos);
  *
  * @ingroup Elm_Actionslider
  */
-EOAPI Elm_Actionslider_Pos  elm_obj_actionslider_magnet_pos_get(void);
+EOAPI Elm_Actionslider_Pos elm_obj_actionslider_magnet_pos_get(void);
 
 /**
  * @brief Set actionslider enabled position. To set multiple positions as
  * enabled OR them together(e.g. #ELM_ACTIONSLIDER_LEFT |
  * #ELM_ACTIONSLIDER_RIGHT).
  *
- * Note: All the positions are enabled by default.
+ * @note All the positions are enabled by default.
  *
  * @param[in] pos Bit mask indicating the enabled positions.
  *
  * @ingroup Elm_Actionslider
  */
-EOAPI void  elm_obj_actionslider_enabled_pos_set(Elm_Actionslider_Pos pos);
+EOAPI void elm_obj_actionslider_enabled_pos_set(Elm_Actionslider_Pos pos);
 
 /**
  * @brief Get actionslider enabled position.
@@ -90,27 +90,15 @@ EOAPI void  elm_obj_actionslider_enabled_pos_set(Elm_Actionslider_Pos pos);
  *
  * @ingroup Elm_Actionslider
  */
-EOAPI Elm_Actionslider_Pos  elm_obj_actionslider_enabled_pos_get(void);
+EOAPI Elm_Actionslider_Pos elm_obj_actionslider_enabled_pos_get(void);
 
 /** Get actionslider selected label.
  *
  * @ingroup Elm_Actionslider
  */
-EOAPI const char * elm_obj_actionslider_selected_label_get(void);
+EOAPI const char *elm_obj_actionslider_selected_label_get(void);
 
-EOAPI extern const Eo_Event_Description _ELM_ACTIONSLIDER_EVENT_LANGUAGE_CHANGED;
-EOAPI extern const Eo_Event_Description _ELM_ACTIONSLIDER_EVENT_ACCESS_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_ACTIONSLIDER_EVENT_POS_CHANGED;
-
-/**
- * No description
- */
-#define ELM_ACTIONSLIDER_EVENT_LANGUAGE_CHANGED (&(_ELM_ACTIONSLIDER_EVENT_LANGUAGE_CHANGED))
-
-/**
- * No description
- */
-#define ELM_ACTIONSLIDER_EVENT_ACCESS_CHANGED (&(_ELM_ACTIONSLIDER_EVENT_ACCESS_CHANGED))
 
 /**
  * No description

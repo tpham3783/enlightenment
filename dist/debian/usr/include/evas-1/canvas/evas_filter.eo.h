@@ -22,7 +22,7 @@ EAPI const Eo_Class *evas_filter_mixin_get(void) EINA_CONST;
  *
  * @ingroup Evas_Filter
  */
-EOAPI Eina_Bool  evas_filter_input_alpha(void);
+EOAPI Eina_Bool evas_filter_input_alpha(void);
 #endif
 
 #ifdef EVAS_FILTER_PROTECTED
@@ -40,7 +40,7 @@ EOAPI Eina_Bool  evas_filter_input_alpha(void);
  *
  * @ingroup Evas_Filter
  */
-EOAPI Eina_Bool  evas_filter_input_render(void *filter, void *drawctx, int l, int r, int t, int b, Eina_Bool do_async);
+EOAPI Eina_Bool evas_filter_input_render(void *filter, void *drawctx, int l, int r, int t, int b, Eina_Bool do_async);
 #endif
 
 #ifdef EVAS_FILTER_PROTECTED
@@ -51,7 +51,7 @@ EOAPI Eina_Bool  evas_filter_input_render(void *filter, void *drawctx, int l, in
  *
  * @ingroup Evas_Filter
  */
-EOAPI void  evas_filter_dirty(void);
+EOAPI void evas_filter_dirty(void);
 #endif
 
 #ifdef EVAS_FILTER_PROTECTED
@@ -62,7 +62,7 @@ EOAPI void  evas_filter_dirty(void);
  *
  * @ingroup Evas_Filter
  */
-EOAPI void  evas_filter_changed_set(Eina_Bool val);
+EOAPI void evas_filter_changed_set(Eina_Bool val);
 #endif
 
 #ifdef EVAS_FILTER_PROTECTED
@@ -73,7 +73,18 @@ EOAPI void  evas_filter_changed_set(Eina_Bool val);
  *
  * @ingroup Evas_Filter
  */
-EOAPI void  evas_filter_invalid_set(Eina_Bool val);
+EOAPI void evas_filter_invalid_set(Eina_Bool val);
+#endif
+
+#ifdef EVAS_FILTER_PROTECTED
+/**
+ * @brief Retrieve cached output buffer, if any.
+ *
+ * Does not increment the reference count.
+ *
+ * @ingroup Evas_Filter
+ */
+EOAPI void *evas_filter_output_buffer_get(void);
 #endif
 
 #ifdef EVAS_FILTER_PROTECTED
@@ -84,7 +95,7 @@ EOAPI void  evas_filter_invalid_set(Eina_Bool val);
  *
  * @ingroup Evas_Filter
  */
-EOAPI void  evas_filter_constructor(void);
+EOAPI void evas_filter_constructor(void);
 #endif
 
 #ifdef EVAS_FILTER_PROTECTED
@@ -96,7 +107,7 @@ EOAPI void  evas_filter_constructor(void);
  *
  * @ingroup Evas_Filter
  */
-EOAPI void  evas_filter_destructor(void);
+EOAPI void evas_filter_destructor(void);
 #endif
 
 

@@ -18,256 +18,239 @@ typedef Eo Evas_Object;
 EAPI const Eo_Class *evas_object_class_get(void) EINA_CONST;
 
 /**
- * Sets the hints for an object's maximum size.
+ * @brief Sets the hints for an object's maximum size.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * Values @c -1 will be treated as unset hint components, when queried
- * by managers.
+ * Values -1 will be treated as unset hint components, when queried by
+ * managers.
  *
- * @note Smart objects(such as elementary) can have their own size hint
+ * @note Smart objects (such as elementary) can have their own size hint
  * policy. So calling this API may or may not affect the size of smart objects.
- *
- * Example:
- * @dontinclude evas-hints.c
- * @skip evas_object_size_hint_max_set
- * @until return
- *
- * In this example the maximum size hints change the behavior of an
- * Evas box when layouting its children. See the full @ref
- * Example_Evas_Size_Hints "example".
- *
- * @see evas_object_size_hint_max_get()
  *
  * @param[in] w Integer to use as the maximum width hint.
  * @param[in] h Integer to use as the maximum height hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_max_set(Evas_Coord w, Evas_Coord h);
+EOAPI void evas_obj_size_hint_max_set(Evas_Coord w, Evas_Coord h);
 
 /**
- * Retrieves the hints for an object's maximum size.
+ * @brief Retrieves the hints for an object's maximum size.
  *
- * These are hints on the maximum sizes @p obj should have. This is
- * not a size enforcement in any way, it's just a hint that should be
- * used whenever appropriate.
+ * These are hints on the maximum sizes @c obj should have. This is not a size
+ * enforcement in any way, it's just a hint that should be used whenever
+ * appropriate.
  *
- * @note Use @c NULL pointers on the hint components you're not
- * interested in: they'll be ignored by the function.
- *
- * @see evas_object_size_hint_max_set()
+ * @note Use @c null pointers on the hint components you're not interested in:
+ * they'll be ignored by the function.
  *
  * @param[out] w Integer to use as the maximum width hint.
  * @param[out] h Integer to use as the maximum height hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_max_get(Evas_Coord *w, Evas_Coord *h);
+EOAPI void evas_obj_size_hint_max_get(Evas_Coord *w, Evas_Coord *h);
 
 /**
- * Sets the hints for an object's optimum size.
+ * @brief Sets the hints for an object's optimum size.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that hould be
+ * used whenever appropriate.
  *
- * Values @c 0 will be treated as unset hint components, when queried
- * by managers.
+ * Values 0 will be treated as unset hint components, when queried by managers.
  *
- * @note Smart objects(such as elementary) can have their own size hint
- * policy. So calling this API may or may not affect the size of smart objects.
- *
- * @see evas_object_size_hint_request_get()
+ * @note Smart objects(such as elementary) can have their own size hint policy.
+ * So calling this API may or may not affect the size of smart objects.
  *
  * @param[in] w Integer to use as the preferred width hint.
  * @param[in] h Integer to use as the preferred height hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_request_set(Evas_Coord w, Evas_Coord h);
+EOAPI void evas_obj_size_hint_request_set(Evas_Coord w, Evas_Coord h);
 
 /**
- * Retrieves the hints for an object's optimum size.
+ * @brief Retrieves the hints for an object's optimum size.
  *
- * These are hints on the optimum sizes @p obj should have. This is
- * not a size enforcement in any way, it's just a hint that should be
- * used whenever appropriate.
+ * These are hints on the optimum sizes @c obj should have. This is not a size
+ * enforcement in any way, it's just a hint that should be used whenever
+ * appropriate.
  *
- * @note Use @c NULL pointers on the hint components you're not
- * interested in: they'll be ignored by the function.
- *
- * @see evas_object_size_hint_request_set()
+ * @note Use @c null pointers on the hint components you're not interested in:
+ * they'll be ignored by the function.
  *
  * @param[out] w Integer to use as the preferred width hint.
  * @param[out] h Integer to use as the preferred height hint.
- */
-EOAPI void  evas_obj_size_hint_request_get(Evas_Coord *w, Evas_Coord *h);
-
-/**
- * Sets the type of the given Evas object.
  *
- * @param[in] type in
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_type_set(const char *type);
+EOAPI void evas_obj_size_hint_request_get(Evas_Coord *w, Evas_Coord *h);
 
 /**
- * Retrieves the type of the given Evas object.
+ * @brief Sets the type of the given Evas object.
+ *
+ * @param[in] type The type of the object.
+ *
+ * @ingroup Evas_Object
+ */
+EOAPI void evas_obj_type_set(const char *type);
+
+/**
+ * @brief Retrieves the type of the given Evas object.
+ *
+ * For Evas' builtin types, the return strings will be one of "rectangle",
+ * "line", "polygon", "text", "textblock" or "image".
+ *
+ * For Evas smart objects (see @ref Evas_Smart_Group), the name of the smart
+ * class itself is returned on this call. For the built-in smart objects, these
+ * names are "EvasObjectSmartClipped" for the clipped smart object,
+ * "Evas_Object_Box" for the box object and "Evas_Object_Table for the table
+ * object.
  *
  * @return The type of the object.
  *
- * For Evas' builtin types, the return strings will be one of:
- * - <c>"rectangle"</c>,
- * - <c>"line"</c>,
- * - <c>"polygon"</c>,
- * - <c>"text"</c>,
- * - <c>"textblock"</c> and
- * - <c>"image"</c>.
- *
- * For Evas smart objects (see @ref Evas_Smart_Group), the name of the
- * smart class itself is returned on this call. For the built-in smart
- * objects, these names are:
- * - <c>"EvasObjectSmartClipped"</c>, for the clipped smart object
- * - <c>"Evas_Object_Box"</c>, for the box object and
- * - <c>"Evas_Object_Table"</c>, for the table object.
- *
- * Example:
- * @dontinclude evas-object-manipulation.c
- * @skip d.img = evas_object_image_filled_add(d.canvas);
- * @until border on the
- *
- * See the full @ref Example_Evas_Object_Manipulation "example".
+ * @ingroup Evas_Object
  */
-EOAPI const char * evas_obj_type_get(void);
+EOAPI const char *evas_obj_type_get(void);
 
 /**
- * Sets the hints for an object's minimum size.
+ * @brief Sets the hints for an object's minimum size.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * Values @c 0 will be treated as unset hint components, when queried
- * by managers.
+ * Values 0 will be treated as unset hint components, when queried by managers.
  *
- * @note Smart objects(such as elementary) can have their own size hint
- * policy. So calling this API may or may not affect the size of smart objects.
- *
- * Example:
- * @dontinclude evas-hints.c
- * @skip evas_object_size_hint_min_set
- * @until return
- *
- * In this example the minimum size hints change the behavior of an
- * Evas box when layouting its children. See the full @ref
- * Example_Evas_Size_Hints "example".
- *
- * @see evas_object_size_hint_min_get()
+ * @note Smart objects(such as elementary) can have their own size hint policy.
+ * So calling this API may or may not affect the size of smart objects.
  *
  * @param[in] w Integer to use as the minimum width hint.
  * @param[in] h Integer to use as the minimum height hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_min_set(Evas_Coord w, Evas_Coord h);
+EOAPI void evas_obj_size_hint_min_set(Evas_Coord w, Evas_Coord h);
 
 /**
- * Retrieves the hints for an object's minimum size.
+ * @brief Retrieves the hints for an object's minimum size.
  *
- * These are hints on the minimum sizes @p obj should have. This is
- * not a size enforcement in any way, it's just a hint that should be
- * used whenever appropriate.
+ * These are hints on the minimum sizes @c obj should have. This is not a size
+ * enforcement in any way, it's just a hint that should be used whenever
+ * appropriate.
  *
- * @note Use @c NULL pointers on the hint components you're not
- * interested in: they'll be ignored by the function.
- *
- * @see evas_object_size_hint_min_set() for an example
+ * @note Use @c null pointers on the hint components you're not interested in:
+ * they'll be ignored by the function.
  *
  * @param[out] w Integer to use as the minimum width hint.
  * @param[out] h Integer to use as the minimum height hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_min_get(Evas_Coord *w, Evas_Coord *h);
+EOAPI void evas_obj_size_hint_min_get(Evas_Coord *w, Evas_Coord *h);
 
 /**
- * Set pointer behavior.
+ * @brief Set pointer behavior.
  *
- * This function has direct effect on event callbacks related to
- * mouse.
+ * This function has direct effect on event callbacks related to mouse.
  *
- * If @p setting is EVAS_OBJECT_POINTER_MODE_AUTOGRAB, then when mouse
- * is down at this object, events will be restricted to it as source,
- * mouse moves, for example, will be emitted even if outside this
- * object area.
+ * If @c setting is EVAS_OBJECT_POINTER_MODE_AUTOGRAB, then when mouse is down
+ * at this object, events will be restricted to it as source, mouse moves, for
+ * example, will be emitted even if outside this object area.
  *
- * If @p setting is EVAS_OBJECT_POINTER_MODE_NOGRAB, then events will
- * be emitted just when inside this object area.
+ * If @c setting is EVAS_OBJECT_POINTER_MODE_NOGRAB, then events will be
+ * emitted just when inside this object area.
  *
  * The default value is EVAS_OBJECT_POINTER_MODE_AUTOGRAB.
  *
- * @ingroup Evas_Object_Group_Extras
+ * @param[in] pointer_mode Desired behavior.
  *
- * @param[in] pointer_mode desired behavior.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_pointer_mode_set(Evas_Object_Pointer_Mode pointer_mode);
+EOAPI void evas_obj_pointer_mode_set(Evas_Object_Pointer_Mode pointer_mode);
 
 /**
- * Determine how pointer will behave.
- * @return pointer behavior.
- * @ingroup Evas_Object_Group_Extras
+ * @brief Determine how pointer will behave.
+ *
+ * @return Desired behavior.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Evas_Object_Pointer_Mode  evas_obj_pointer_mode_get(void);
+EOAPI Evas_Object_Pointer_Mode evas_obj_pointer_mode_get(void);
 
 /**
- * Sets the render_op to be used for rendering the Evas object.
- * @ingroup Evas_Object_Group_Extras
+ * @brief Sets the render mode to be used for compositing the Evas object.
  *
- * @param[in] render_op one of the Evas_Render_Op values.
+ * Note that only copy and blend modes are actually supported: -
+ * @ref Evas_Render_Op.EVAS_RENDER_BLEND means the object will be merged on top
+ * of objects below it using simple alpha compositing. -
+ * @ref Evas_Render_Op.EVAS_RENDER_COPY means this object's pixels will replace
+ * everything that is below, making this object opaque.
+ *
+ * Please do not assume that @ref Evas_Render_Op.EVAS_RENDER_COPY mode can be
+ * used to "poke" holes in a window (to see through it), as only the compositor
+ * can ensure that. Copy mode should only be used with otherwise opaque
+ * widgets, or inside non-window surfaces (eg. a transparent background inside
+ * an Ecore.Evas.Buffer).
+ *
+ * @param[in] render_op One of the Evas_Render_Op values. Only blend (default)
+ * and copy modes are supported.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_render_op_set(Evas_Render_Op render_op);
+EOAPI void evas_obj_render_op_set(Evas_Render_Op render_op);
 
 /**
- * Retrieves the current value of the operation used for rendering the Evas object.
- * @return  one of the enumerated values in Evas_Render_Op.
- * @ingroup Evas_Object_Group_Extras
+ * @brief Retrieves the current value of the operation used for rendering the
+ * Evas object.
+ *
+ * @return One of the Evas_Render_Op values. Only blend (default) and copy
+ * modes are supported.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Evas_Render_Op  evas_obj_render_op_get(void);
+EOAPI Evas_Render_Op evas_obj_render_op_get(void);
 
 /**
- * Set whether an Evas object is to freeze (discard) events.
+ * @brief Set whether an Evas object is to freeze (discard) events.
  *
- * If @p freeze is @c EINA_TRUE, it will make events on @p obj to be @b
- * discarded. Unlike evas_object_pass_events_set(), events will not be
- * passed to @b next lower object. This API can be used for blocking
- * events while @p obj is on transiting.
+ * If @c freeze is @c true, it will make events on @c obj to be discarded.
+ * Unlike @ref evas_obj_pass_events_set, events will not be passed to next
+ * lower object. This API can be used for blocking events while @c obj is on
+ * transiting.
  *
- * If @p freeze is @c EINA_FALSE, events will be processed on that
- * object as normal.
+ * If @c freeze is @c false, events will be processed on that object as normal.
  *
  * @warning If you block only key/mouse up events with this API, we won't
- * guarantee the state of the object, that only had key/mouse down
- * events, will be.
+ * guarantee the state of the object, that only had key/mouse down events, will
+ * be.
  *
- * @see evas_object_freeze_events_get()
- * @see evas_object_pass_events_set()
- * @see evas_object_repeat_events_set()
- * @see evas_object_propagate_events_set()
+ * @param[in] freeze Pass when @c obj is to freeze events ($true) or not
+ * ($false).
+ *
  * @since 1.1
  *
- * @param[in] freeze pass whether @p obj is to freeze events (@c EINA_TRUE) or not
-(@c EINA_FALSE)
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_freeze_events_set(Eina_Bool freeze);
+EOAPI void evas_obj_freeze_events_set(Eina_Bool freeze);
 
 /**
- * Determine whether an object is set to freeze (discard) events.
+ * @brief Determine whether an object is set to freeze (discard) events.
  *
- * @return freeze whether @p obj is set to freeze events (@c EINA_TRUE) or
- * not (@c EINA_FALSE)
+ * @return Pass when @c obj is to freeze events ($true) or not ($false).
  *
- * @see evas_object_freeze_events_set()
- * @see evas_object_pass_events_get()
- * @see evas_object_repeat_events_get()
- * @see evas_object_propagate_events_get()
  * @since 1.1
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_freeze_events_get(void);
+EOAPI Eina_Bool evas_obj_freeze_events_get(void);
 
 /**
- * Set current object transformation map.
+ * @brief Set current object transformation map.
  *
- * This sets the map on a given object. It is copied from the @p map pointer,
- * so there is no need to keep the @p map object if you don't need it anymore.
+ * This sets the map on a given object. It is copied from the @c map pointer,
+ * so there is no need to keep the @c map object if you don't need it anymore.
  *
  * A map is a set of 4 points which have canvas x, y coordinates per point,
  * with an optional z point value as a hint for perspective correction, if it
@@ -275,1050 +258,846 @@ EOAPI Eina_Bool  evas_obj_freeze_events_get(void);
  * "texture coordinates" in OpenGL in that they define a point in the source
  * image that is mapped to that map vertex/point. The u corresponds to the x
  * coordinate of this mapped point and v, the y coordinate. Note that these
- * coordinates describe a bounding region to sample. If you have a 200x100
- * source image and want to display it at 200x100 with proper pixel
- * precision, then do:
+ * coordinates describe a bounding region to sample.
  *
- * @code
- * Evas_Map *m = evas_map_new(4);
- * evas_map_point_coord_set(m, 0,   0,   0, 0);
- * evas_map_point_coord_set(m, 1, 200,   0, 0);
- * evas_map_point_coord_set(m, 2, 200, 100, 0);
- * evas_map_point_coord_set(m, 3,   0, 100, 0);
- * evas_map_point_image_uv_set(m, 0,   0,   0);
- * evas_map_point_image_uv_set(m, 1, 200,   0);
- * evas_map_point_image_uv_set(m, 2, 200, 100);
- * evas_map_point_image_uv_set(m, 3,   0, 100);
- * evas_object_map_set(obj, m);
- * evas_map_free(m);
- * @endcode
+ * @note The map points a uv coordinates match the image geometry. If the
+ * @c map parameter is @c null, the stored map will be freed and geometry prior
+ * to enabling/setting a map will be restored.
  *
- * Note that the map points a uv coordinates match the image geometry. If
- * the @p map parameter is NULL, the stored map will be freed and geometry
- * prior to enabling/setting a map will be restored.
+ * @param[in] map The map.
  *
- * @see evas_map_new()
- *
- * @param[in] map new map to use
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_map_set(const Evas_Map *map);
+EOAPI void evas_obj_map_set(const Evas_Map *map);
 
 /**
- * Get current object transformation map.
+ * @brief Get current object transformation map.
  *
  * This returns the current internal map set on the indicated object. It is
- * intended for read-only access and is only valid as long as the object is
- * not deleted or the map on the object is not changed. If you wish to modify
- * the map and set it back do the following:
+ * intended for read-only access and is only valid as long as the object is not
+ * deleted or the map on the object is not changed.
  *
- * @code
- * const Evas_Map *m = evas_object_map_get(obj);
- * Evas_Map *m2 = evas_map_dup(m);
- * evas_map_util_rotate(m2, 30.0, 0, 0);
- * evas_object_map_set(obj, m2);
- * evas_map_free(m2);
- * @endcode
+ * @return The map.
  *
- * @return map reference to map in use. This is an internal data structure, so
- * do not modify it.
- *
- * @see evas_object_map_set()
+ * @ingroup Evas_Object
  */
-EOAPI const Evas_Map * evas_obj_map_get(void);
+EOAPI const Evas_Map *evas_obj_map_get(void);
 
 /**
- * Sets the hints for an object's aspect ratio.
+ * @brief Sets the hints for an object's aspect ratio.
  *
- * This is not a size enforcement in any way, it's just a hint that should
- * be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * If any of the given aspect ratio terms are @c 0,
- * the object's container will ignore the aspect and scale @p obj to
- * occupy the whole available area, for any given policy.
+ * If any of the given aspect ratio terms are 0, the object's container will
+ * ignore the aspect and scale @c obj to occupy the whole available area, for
+ * any given policy.
  *
- * @note Smart objects(such as elementary) can have their own size hint
- * policy. So calling this API may or may not affect the size of smart objects.
+ * @note Smart objects(such as elementary) can have their own size hint policy.
+ * So calling this API may or may not affect the size of smart objects.
  *
- * @see evas_object_size_hint_aspect_get() for more information.
- *
- * @param[in] aspect The policy/type of aspect ratio to apply to @p obj.
+ * @param[in] aspect The policy/type of aspect ratio to apply to @c obj.
  * @param[in] w Integer to use as aspect width ratio term.
  * @param[in] h Integer to use as aspect height ratio term.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_aspect_set(Evas_Aspect_Control aspect, Evas_Coord w, Evas_Coord h);
+EOAPI void evas_obj_size_hint_aspect_set(Evas_Aspect_Control aspect, Evas_Coord w, Evas_Coord h);
 
 /**
- * Retrieves the hints for an object's aspect ratio.
+ * @brief Retrieves the hints for an object's aspect ratio.
  *
  * The different aspect ratio policies are documented in the
- * #Evas_Aspect_Control type. A container respecting these size hints
- * would @b resize its children accordingly to those policies.
+ * #Evas_Aspect_Control type. A container respecting these size hints would
+ * resize its children accordingly to those policies.
  *
- * For any policy, if any of the given aspect ratio terms are @c 0,
- * the object's container should ignore the aspect and scale @p obj to
- * occupy the whole available area. If they are both positive
- * integers, that proportion will be respected, under each scaling
- * policy.
+ * For any policy, if any of the given aspect ratio terms are 0, the object's
+ * container should ignore the aspect and scale @c obj to occupy the whole
+ * available area. If they are both positive integers, that proportion will be
+ * respected, under each scaling policy.
  *
- * These images illustrate some of the #Evas_Aspect_Control policies:
+ * @note Use @c null pointers on the hint components you're not interested in:
+ * they'll be ignored by the function.
  *
- * @image html any-policy.png
- * @image rtf any-policy.png
- * @image latex any-policy.eps
- *
- * @image html aspect-control-none-neither.png
- * @image rtf aspect-control-none-neither.png
- * @image latex aspect-control-none-neither.eps
- *
- * @image html aspect-control-both.png
- * @image rtf aspect-control-both.png
- * @image latex aspect-control-both.eps
- *
- * @image html aspect-control-horizontal.png
- * @image rtf aspect-control-horizontal.png
- * @image latex aspect-control-horizontal.eps
- *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
- *
- * @note Use @c NULL pointers on the hint components you're not
- * interested in: they'll be ignored by the function.
- *
- * Example:
- * @dontinclude evas-aspect-hints.c
- * @skip if (strcmp(ev->key, "c") == 0)
- * @until }
- *
- * See the full @ref Example_Evas_Aspect_Hints "example".
- *
- * @see evas_object_size_hint_aspect_set()
- *
- * @param[out] aspect The policy/type of aspect ratio to apply to @p obj.
+ * @param[out] aspect The policy/type of aspect ratio to apply to @c obj.
  * @param[out] w Integer to use as aspect width ratio term.
  * @param[out] h Integer to use as aspect height ratio term.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_aspect_get(Evas_Aspect_Control *aspect, Evas_Coord *w, Evas_Coord *h);
+EOAPI void evas_obj_size_hint_aspect_get(Evas_Aspect_Control *aspect, Evas_Coord *w, Evas_Coord *h);
 
 /**
- * Clip one object to another.
+ * @brief Clip one object to another.
  *
- * This function will clip the object @p obj to the area occupied by
- * the object @p clip. This means the object @p obj will only be
- * visible within the area occupied by the clipping object (@p clip).
+ * This function will clip the object @c obj to the area occupied by the object
+ * @c clip. This means the object @c obj will only be visible within the area
+ * occupied by the clipping object ($clip).
  *
- * The color of the object being clipped will be multiplied by the
- * color of the clipping one, so the resulting color for the former
- * will be <code>RESULT = (OBJ * CLIP) / (255 * 255)</code>, per color
- * element (red, green, blue and alpha).
+ * The color of the object being clipped will be multiplied by the color of the
+ * clipping one, so the resulting color for the former will be "RESULT = (OBJ *
+ * CLIP) / (255 * 255)", per color element (red, green, blue and alpha).
  *
- * Clipping is recursive, so clipping objects may be clipped by
- * others, and their color will in term be multiplied. You may @b not
- * set up circular clipping lists (i.e. object 1 clips object 2, which
- * clips object 1): the behavior of Evas is undefined in this case.
+ * Clipping is recursive, so clipping objects may be clipped by others, and
+ * their color will in term be multiplied. You may not set up circular clipping
+ * lists (i.e. object 1 clips object 2, which clips object 1): the behavior of
+ * Evas is undefined in this case.
  *
- * Objects which do not clip others are visible in the canvas as
- * normal; <b>those that clip one or more objects become invisible
- * themselves</b>, only affecting what they clip. If an object ceases
- * to have other objects being clipped by it, it will become visible
- * again.
+ * Objects which do not clip others are visible in the canvas as normal; those
+ * that clip one or more objects become invisible themselves, only affecting
+ * what they clip. If an object ceases to have other objects being clipped by
+ * it, it will become visible again.
  *
- * The visibility of an object affects the objects that are clipped by
- * it, so if the object clipping others is not shown (as in
- * evas_object_show()), the objects clipped by it will not be shown
- * either.
+ * The visibility of an object affects the objects that are clipped by it, so
+ * if the object clipping others is not shown (as in @ref evas_object_show),
+ * the objects clipped by it will not be shown  either.
  *
- * If @p obj was being clipped by another object when this function is
- * called, it gets implicitly removed from the old clipper's domain
- * and is made now to be clipped by its new clipper.
+ * If @c obj was being clipped by another object when this function is  called,
+ * it gets implicitly removed from the old clipper's domain and is made now to
+ * be clipped by its new clipper.
  *
- * The following figure illustrates some clipping in Evas:
+ * @note At the moment the only objects that can validly be used to clip other
+ * objects are rectangle objects. All other object types are invalid and the
+ * result of using them is undefined. The clip object @c clip must be a valid
+ * object, but can also be @c null, in which case the effect of this function
+ * is the same as @ref evas_obj_clip_unset on the @c obj object.
  *
- * @image html clipping.png
- * @image rtf clipping.png
- * @image latex clipping.eps
+ * @param[in] clip The object to clip @c obj by.
  *
- * @note At the moment the <b>only objects that can validly be used to
- * clip other objects are rectangle objects</b>. All other object
- * types are invalid and the result of using them is undefined. The
- * clip object @p clip must be a valid object, but can also be @c
- * NULL, in which case the effect of this function is the same as
- * calling evas_object_clip_unset() on the @p obj object.
- *
- * Example:
- * @dontinclude evas-object-manipulation.c
- * @skip solid white clipper (note that it's the default color for a
- * @until evas_object_show(d.clipper);
- *
- * See the full @ref Example_Evas_Object_Manipulation "example".
- *
- * @param[in] clip The object to clip @p obj by
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_clip_set(Evas_Object *clip);
+EOAPI void evas_obj_clip_set(Evas_Object *clip);
 
 /**
- * Get the object clipping @p obj (if any).
+ * @brief Get the object clipping @c obj (if any).
  *
- * This function returns the object clipping @p obj. If @p obj is
- * not being clipped at all, @c NULL is returned. The object @p obj
- * must be a valid .Evas_Object.
+ * This function returns the object clipping @c obj. If @c obj is not being
+ * clipped at all, @c null is returned. The object @c obj must be a valid
+ * Evas_Object.
  *
- * See also evas_object_clip_set(), evas_object_clip_unset() and
- * evas_object_clipees_get().
+ * @return The object to clip @c obj by.
  *
- * Example:
- * @dontinclude evas-object-manipulation.c
- * @skip if (evas_object_clip_get(d.img) == d.clipper)
- * @until return
- *
- * See the full @ref Example_Evas_Object_Manipulation "example".
+ * @ingroup Evas_Object
  */
-EOAPI Evas_Object * evas_obj_clip_get(void);
+EOAPI Evas_Object *evas_obj_clip_get(void);
 
 /**
- * Sets the hints for an object's padding space.
+ * @brief Sets the hints for an object's padding space.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * @note Smart objects(such as elementary) can have their own size hint
- * policy. So calling this API may or may not affect the size of smart objects.
- *
- * @see evas_object_size_hint_padding_get() for more information
+ * @note Smart objects(such as elementary) can have their own size hint policy.
+ * So calling this API may or may not affect the size of smart objects.
  *
  * @param[in] l Integer to specify left padding.
  * @param[in] r Integer to specify right padding.
  * @param[in] t Integer to specify top padding.
  * @param[in] b Integer to specify bottom padding.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_padding_set(Evas_Coord l, Evas_Coord r, Evas_Coord t, Evas_Coord b);
+EOAPI void evas_obj_size_hint_padding_set(Evas_Coord l, Evas_Coord r, Evas_Coord t, Evas_Coord b);
 
 /**
- * Retrieves the hints for an object's padding space.
+ * @brief Retrieves the hints for an object's padding space.
  *
- * Padding is extra space an object takes on each of its delimiting
- * rectangle sides, in canvas units. This space will be rendered
- * transparent, naturally, as in the following figure:
+ * Padding is extra space an object takes on each of its delimiting rectangle
+ * sides, in canvas units.
  *
- * @image html padding-hints.png
- * @image rtf padding-hints.png
- * @image latex padding-hints.eps
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
- *
- * @note Use @c NULL pointers on the hint components you're not
- * interested in: they'll be ignored by the function.
- *
- * Example:
- * @dontinclude evas-hints.c
- * @skip evas_object_size_hint_padding_set
- * @until return
- *
- * In this example the padding hints change the behavior of an Evas box
- * when layouting its children. See the full @ref
- * Example_Evas_Size_Hints "example".
- *
- * @see evas_object_size_hint_padding_set()
+ * @note Use @c null pointers on the hint components you're not interested in:
+ * they'll be ignored by the function.
  *
  * @param[out] l Integer to specify left padding.
  * @param[out] r Integer to specify right padding.
  * @param[out] t Integer to specify top padding.
  * @param[out] b Integer to specify bottom padding.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_padding_get(Evas_Coord *l, Evas_Coord *r, Evas_Coord *t, Evas_Coord *b);
+EOAPI void evas_obj_size_hint_padding_get(Evas_Coord *l, Evas_Coord *r, Evas_Coord *t, Evas_Coord *b);
 
 /**
- * Set whether an Evas object is to repeat events.
+ * @brief Set whether an Evas object is to repeat events.
  *
- * If @p repeat is @c EINA_TRUE, it will make events on @p obj to also
- * be repeated for the @b next lower object in the objects' stack (see
- * see evas_object_below_get()).
+ * If @c repeat is @c true, it will make events on @c obj to also be repeated
+ * for the next lower object in the objects' stack (see see @ref
+ * evas_object_below_get).
  *
- * If @p repeat is @c EINA_FALSE, events occurring on @p obj will be
- * processed only on it.
+ * If @c repeat is @c false, events occurring on @c obj will be processed only
+ * on it.
  *
- * Example:
- * @dontinclude evas-stacking.c
- * @skip if (strcmp(ev->key, "r") == 0)
- * @until }
+ * @param[in] repeat Whether @c obj is to repeat events ($true) or not
+ * ($false).
  *
- * See the full @ref Example_Evas_Stacking "example".
- *
- * @see evas_object_repeat_events_get()
- * @see evas_object_pass_events_set()
- * @see evas_object_propagate_events_set()
- * @see evas_object_freeze_events_set()
- *
- * @param[in] repeat whether @p obj is to repeat events (@c EINA_TRUE) or not
-(@c EINA_FALSE)
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_repeat_events_set(Eina_Bool repeat);
+EOAPI void evas_obj_repeat_events_set(Eina_Bool repeat);
 
 /**
- * Determine whether an object is set to repeat events.
+ * @brief Determine whether an object is set to repeat events.
  *
- * @return whether @p obj is set to repeat events (@c EINA_TRUE)
- * or not (@c EINA_FALSE)
+ * @return Whether @c obj is to repeat events ($true) or not ($false).
  *
- * @see evas_object_repeat_events_set() for an example
- * @see evas_object_pass_events_get()
- * @see evas_object_propagate_events_get()
- * @see evas_object_freeze_events_get()
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_repeat_events_get(void);
+EOAPI Eina_Bool evas_obj_repeat_events_get(void);
 
 /**
- * Sets the hints for an object's weight.
+ * @brief Sets the hints for an object's weight.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * This is a hint on how a container object should @b resize a given
- * child within its area. Containers may adhere to the simpler logic
- * of just expanding the child object's dimensions to fit its own (see
- * the #EVAS_HINT_EXPAND helper weight macro) or the complete one of
- * taking each child's weight hint as real @b weights to how much of
- * its size to allocate for them in each axis. A container is supposed
- * to, after @b normalizing the weights of its children (with weight
- * hints), distribute the space it has to layout them by those factors
- * -- most weighted children get larger in this process than the least
+ * This is a hint on how a container object should resize a given child within
+ * its area. Containers may adhere to the simpler logic of just expanding the
+ * child object's dimensions to fit its own (see the #EVAS_HINT_EXPAND helper
+ * weight macro) or the complete one of taking each child's weight hint as real
+ * weights to how much of its size to allocate for them in each axis. A
+ * container is supposed to, after normalizing the weights of its children
+ * (with weight  hints), distribut the space it has to layout them by those
+ * factors -- most weighted children get larger in this process than the least
  * ones.
- *
- * Example:
- * @dontinclude evas-hints.c
- * @skip evas_object_size_hint_weight_set
- * @until return
- *
- * In this example the weight hints change the behavior of an Evas box
- * when layouting its children. See the full @ref
- * Example_Evas_Size_Hints "example".
  *
  * @note Default weight hint values are 0.0, for both axis.
  *
- * @see evas_object_size_hint_weight_get() for more information
+ * @param[in] x Non-negative double value to use as horizontal weight hint.
+ * @param[in] y Non-negative double value to use as vertical weight hint.
  *
- * @param[in] x Nonnegative double value to use as horizontal weight hint.
- * @param[in] y Nonnegative double value to use as vertical weight hint.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_weight_set(double x, double y);
+EOAPI void evas_obj_size_hint_weight_set(double x, double y);
 
 /**
- * Retrieves the hints for an object's weight.
+ * @brief Retrieves the hints for an object's weight.
  *
- * Accepted values are zero or positive values. Some users might use
- * this hint as a boolean, but some might consider it as a @b
- * proportion, see documentation of possible users, which in Evas are
- * the @ref Evas_Object_Box "box" and @ref Evas_Object_Table "table"
- * smart objects.
+ * Accepted values are zero or positive values. Some users might use this hint
+ * as a boolean, but some might consider it as a proportion, see documentation
+ * of possible users, which in Evas are the @ref Evas_Object_Box "box" and @ref
+ * Evas_Object_Table "table" smart objects.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * @note Use @c NULL pointers on the hint components you're not
- * interested in: they'll be ignored by the function.
- * @note If @c obj is invalid, then the hint components will be set with 0.0
+ * @note Use @c null pointers on the hint components you're not interested in:
+ * they'll be ignored by the function.
  *
- * @see evas_object_size_hint_weight_set() for an example
+ * @note If @c obj is invalid, then the hint components will be set with 0.0.
  *
- * @param[out] x Nonnegative double value to use as horizontal weight hint.
- * @param[out] y Nonnegative double value to use as vertical weight hint.
+ * @param[out] x Non-negative double value to use as horizontal weight hint.
+ * @param[out] y Non-negative double value to use as vertical weight hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_weight_get(double *x, double *y);
+EOAPI void evas_obj_size_hint_weight_get(double *x, double *y);
 
 /**
- * Sets the name of the given Evas object to the given name.
+ * @brief Sets the name of the given Evas object to the given name.
  *
- * There might be occasions where one would like to name his/her
- * objects.
- *
- * Example:
- * @dontinclude evas-events.c
- * @skip d.bg = evas_object_rectangle_add(d.canvas);
- * @until evas_object_name_set(d.bg, "our dear rectangle");
- *
- * See the full @ref Example_Evas_Events "example".
+ * There might be occasions where one would like to name his/her objects.
  *
  * @param[in] name The given name.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_name_set(const char *name);
+EOAPI void evas_obj_name_set(const char *name);
 
 /**
- * Retrieves the name of the given Evas object.
+ * @brief Retrieves the name of the given Evas object.
  *
- * @return  The name of the object or @c NULL, if no name has been given
- * to it.
+ * Return: The name of the object or @c null, if no name has been given to it.
  *
- * Example:
- * @dontinclude evas-events.c
- * @skip fprintf(stdout, "An object got focused: %s\n",
- * @until evas_focus_get
+ * @return The given name.
  *
- * See the full @ref Example_Evas_Events "example".
+ * @ingroup Evas_Object
  */
-EOAPI const char * evas_obj_name_get(void);
+EOAPI const char *evas_obj_name_get(void);
 
 /**
- * Sets the scaling factor for an Evas object. Does not affect all
+ * @brief Sets the scaling factor for an Evas object. Does not affect all
  * objects.
  *
- * This will multiply the object's dimension by the given factor, thus
- * altering its geometry (width and height). Useful when you want
- * scalable UI elements, possibly at run time.
+ * This will multiply the object's dimension by the given factor, thus altering
+ * its geometry (width and height). Useful when you want scalable UI elements,
+ * possibly at run time.
  *
- * @note Only text and textblock objects have scaling change
- * handlers. Other objects won't change visually on this call.
+ * @note Only text and textblock objects have scaling change handlers. Other
+ * objects won't change visually on this call.
  *
- * @see evas_object_scale_get()
+ * @param[in] scale The scaling factor. 1.0 means no scaling, default size.
  *
- * @ingroup Evas_Object_Group_Extras
- *
- * @param[in] scale The scaling factor. <c>1.0</c> means no scaling,
-default size.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_scale_set(double scale);
+EOAPI void evas_obj_scale_set(double scale);
 
 /**
- * Retrieves the scaling factor for the given Evas object.
+ * @brief Retrieves the scaling factor for the given Evas object.
  *
- * @return  The scaling factor.
+ * @return The scaling factor. 1.0 means no scaling, default size.
  *
- * @ingroup Evas_Object_Group_Extras
- *
- * @see evas_object_scale_set()
+ * @ingroup Evas_Object
  */
-EOAPI double  evas_obj_scale_get(void);
+EOAPI double evas_obj_scale_get(void);
 
 /**
- * Set a hint flag on the given Evas object that it's used as a "static
+ * @brief Set a hint flag on the given Evas object that it's used as a "static
  * clipper".
  *
- * This is a hint to Evas that this object is used as a big static
- * clipper and shouldn't be moved with children and otherwise
- * considered specially. The default value for new objects is
- * @c EINA_FALSE.
+ * This is a hint to Evas that this object is used as a big static clipper and
+ * shouldn't be moved with children and otherwise considered specially. The
+ * default value for new objects is @c false.
  *
- * @see evas_object_static_clip_get()
+ * @param[in] is_static_clip @c true if it's to be used as a static clipper,
+ * @c false otherwise.
  *
- * @ingroup Evas_Object_Group_Extras
- *
- * @param[in] is_static_clip @c EINA_TRUE if it's to be used as a static
-clipper, @c EINA_FALSE otherwise.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_static_clip_set(Eina_Bool is_static_clip);
+EOAPI void evas_obj_static_clip_set(Eina_Bool is_static_clip);
 
 /**
- * Get the "static clipper" hint flag for a given Evas object.
+ * @brief Get the "static clipper" hint flag for a given Evas object.
  *
- * @return @c EINA_TRUE if it's set as a static clipper,
- * @c EINA_FALSE otherwise.
+ * @return @c true if it's to be used as a static clipper, @c false otherwise.
  *
- * @see evas_object_static_clip_set() for more details
- *
- * @ingroup Evas_Object_Group_Extras
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_static_clip_get(void);
+EOAPI Eina_Bool evas_obj_static_clip_get(void);
 
 /**
- * Sets or unsets a given object as the currently focused one on its
+ * @brief Sets or unsets a given object as the currently focused one on its
  * canvas.
  *
- * Changing focus only affects where (key) input events go. There can
- * be only one object focused at any time. If @p focus is @c EINA_TRUE,
- * @p obj will be set as the currently focused object and it will
- * receive all keyboard events that are not exclusive key grabs on
- * other objects.
+ * Changing focus only affects where (key) input events go. There can be only
+ * one object focused at any time. If @c focus is @c true, @c obj will be set
+ * as the currently focused object and it will receive all keyboard events that
+ * are not exclusive key grabs on other objects.
  *
- * Example:
- * @dontinclude evas-events.c
- * @skip evas_object_focus_set
- * @until evas_object_focus_set
+ * See also @ref evas_obj_key_grab, @ref evas_obj_key_ungrab.
  *
- * See the full example @ref Example_Evas_Events "here".
+ * @param[in] focus @c true when set as focused or @c false otherwise.
  *
- * @see evas_object_focus_get
- * @see evas_focus_get
- * @see evas_object_key_grab
- * @see evas_object_key_ungrab
- *
- * @param[in] focus @c EINA_TRUE, to set it as focused or @c EINA_FALSE,
-to take away the focus from it.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_focus_set(Eina_Bool focus);
+EOAPI void evas_obj_focus_set(Eina_Bool focus);
 
 /**
- * Retrieve whether an object has the focus.
+ * @brief Retrieve whether an object has the focus.
  *
- * @return @c EINA_TRUE if the object has the focus, @c EINA_FALSE otherwise.
+ * If the passed object is the currently focused one, @c true is returned.
+ * @c false is returned, otherwise.
  *
- * If the passed object is the currently focused one, @c EINA_TRUE is
- * returned. @c EINA_FALSE is returned, otherwise.
+ * @return @c true when set as focused or @c false otherwise.
  *
- * Example:
- * @dontinclude evas-events.c
- * @skip And again
- * @until something is bad
- *
- * See the full example @ref Example_Evas_Events "here".
- *
- * @see evas_object_focus_set
- * @see evas_focus_get
- * @see evas_object_key_grab
- * @see evas_object_key_ungrab
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_focus_get(void);
+EOAPI Eina_Bool evas_obj_focus_get(void);
 
 /**
+ * @brief No description supplied.
+ *
+ * @param[in] is_frame
+ *
  * @since 1.2
  *
- * @param[in] is_frame in
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_is_frame_object_set(Eina_Bool is_frame);
+EOAPI void evas_obj_is_frame_object_set(Eina_Bool is_frame);
 
-/**
+/** No description supplied.
+ *
  * @since 1.2
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_is_frame_object_get(void);
+EOAPI Eina_Bool evas_obj_is_frame_object_get(void);
 
 /**
- * Enable or disable the map that is set.
+ * @brief Enable or disable the map that is set.
  *
- * Enable or disable the use of map for the object @p obj.
- * On enable, the object geometry will be saved, and the new geometry will
- * change (position and size) to reflect the map geometry set.
+ * Enable or disable the use of map for the object @c obj. On enable, the
+ * object geometry will be saved, and the new geometry will change (position
+ * and size) to reflect the map geometry set.
  *
- * If the object doesn't have a map set (with evas_object_map_set()), the
- * initial geometry will be undefined. It is advised to always set a map
- * to the object first, and then call this function to enable its use.
+ * If the object doesn't have a map set (with @ref evas_object_map_set), the
+ * initial geometry will be undefined. It is advised to always set a map to the
+ * object first, and then call this function to enable its use.
  *
- * @param[in] enabled enabled state
+ * @param[in] enabled Enabled state.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_map_enable_set(Eina_Bool enabled);
+EOAPI void evas_obj_map_enable_set(Eina_Bool enabled);
 
 /**
- * Get the map enabled state
+ * @brief Get the map enabled state
  *
  * This returns the currently enabled state of the map on the object indicated.
  * The default map enable state is off. You can enable and disable it with
- * evas_object_map_enable_set().
+ * @ref evas_obj_map_enable_set.
  *
- * @return the map enabled state
+ * @return Enabled state.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_map_enable_get(void);
+EOAPI Eina_Bool evas_obj_map_enable_get(void);
 
 /**
- * Set whether to use precise (usually expensive) point collision
+ * @brief Set whether to use precise (usually expensive) point collision
  * detection for a given Evas object.
  *
- * Use this function to make Evas treat objects' transparent areas as
- * @b not belonging to it with regard to mouse pointer events. By
- * default, all of the object's boundary rectangle will be taken in
- * account for them.
+ * Use this function to make Evas treat objects' transparent areas as not
+ * belonging to it with regard to mouse pointer events. By default, all of the
+ * object's boundary rectangle will be taken in account for them.
  *
- * @warning By using precise point collision detection you'll be
- * making Evas more resource intensive.
+ * @warning By using precise point collision detection you'll be making Evas
+ * more resource intensive.
  *
- * Example code follows.
- * @dontinclude evas-events.c
- * @skip if (strcmp(ev->key, "p") == 0)
- * @until }
+ * @param[in] precise Whether to use precise point collision detection or not.
+ * The default value is false.
  *
- * See the full example @ref Example_Evas_Events "here".
- *
- * @see evas_object_precise_is_inside_get()
- * @ingroup Evas_Object_Group_Extras
- *
- * @param[in] precise Whether to use precise point collision detection or
-not. The default value is false.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_precise_is_inside_set(Eina_Bool precise);
+EOAPI void evas_obj_precise_is_inside_set(Eina_Bool precise);
 
 /**
- * Determine whether an object is set to use precise point collision
+ * @brief Determine whether an object is set to use precise point collision
  * detection.
  *
- * @return whether @p obj is set to use precise point collision
- * detection or not The default value is false.
+ * @return Whether to use precise point collision detection or not. The default
+ * value is false.
  *
- * @see evas_object_precise_is_inside_set() for an example
- *
- * @ingroup Evas_Object_Group_Extras
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_precise_is_inside_get(void);
+EOAPI Eina_Bool evas_obj_precise_is_inside_get(void);
 
 /**
- * Sets the hints for an object's alignment.
+ * @brief Sets the hints for an object's alignment.
  *
- * These are hints on how to align an object <b>inside the boundaries
- * of a container/manager</b>. Accepted values are in the @c 0.0 to @c
- * 1.0 range, with the special value #EVAS_HINT_FILL used to specify
- * "justify" or "fill" by some users. In this case, maximum size hints
- * should be enforced with higher priority, if they are set. Also, any
- * padding hint set on objects should add up to the alignment space on
- * the final scene composition.
+ * These are hints on how to align an object inside the boundaries of a
+ * container/manager. Accepted values are in the 0.0 to 1.0 range, with the
+ * special value #EVAS_HINT_FILL used to specify "justify" or "fill" by some
+ * users. In this case, maximum size hints should be enforced with higher
+ * priority, if they are set. Also, any padding hint set on objects should add
+ * up to the alignment space on the final scene composition.
  *
  * See documentation of possible users: in Evas, they are the @ref
- * Evas_Object_Box "box" and @ref Evas_Object_Table "table" smart
- * objects.
+ * Evas_Object_Box "box" and @ref Evas_Object_Table "table" smart objects.
  *
- * For the horizontal component, @c 0.0 means to the left, @c 1.0
- * means to the right. Analogously, for the vertical component, @c 0.0
- * to the top, @c 1.0 means to the bottom.
+ * For the horizontal component, 0.0 means to the left, 1.0 means to the right.
+ * Analogously, for the vertical component, 0.0 to the top, 1.0 means to the
+ * bottom.
  *
- * See the following figure:
- *
- * @image html alignment-hints.png
- * @image rtf alignment-hints.png
- * @image latex alignment-hints.eps
- *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
  * @note Default alignment hint values are 0.5, for both axis.
  *
- * Example:
- * @dontinclude evas-hints.c
- * @skip evas_object_size_hint_align_set
- * @until return
+ * @param[in] x Double, ranging from 0.0 to 1.0 or with the special value
+ * #EVAS_HINT_FILL, to use as horizontal alignment hint.
+ * @param[in] y Double, ranging from 0.0 to 1.0 or with the special value
+ * #EVAS_HINT_FILL, to use as vertical alignment hint.
  *
- * In this example the alignment hints change the behavior of an Evas
- * box when layouting its children. See the full @ref
- * Example_Evas_Size_Hints "example".
- *
- * @see evas_object_size_hint_align_get()
- * @see evas_object_size_hint_max_set()
- * @see evas_object_size_hint_padding_set()
- *
- * @param[in] x Double, ranging from @c 0.0 to @c 1.0 or with the
-special value #EVAS_HINT_FILL, to use as horizontal alignment hint.
- * @param[in] y Double, ranging from @c 0.0 to @c 1.0 or with the
-special value #EVAS_HINT_FILL, to use as vertical alignment hint.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_align_set(double x, double y);
+EOAPI void evas_obj_size_hint_align_set(double x, double y);
 
 /**
- * Retrieves the hints for on object's alignment.
+ * @brief Retrieves the hints for on object's alignment.
  *
- * This is not a size enforcement in any way, it's just a hint that
- * should be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that should be
+ * used whenever appropriate.
  *
- * @note Use @c NULL pointers on the hint components you're not
- * interested in: they'll be ignored by the function.
+ * @note Use @c null pointers on the hint components you're not interested in:
+ * they'll be ignored by the function.
+ *
  * @note If @c obj is invalid, then the hint components will be set with 0.5
  *
- * @see evas_object_size_hint_align_set() for more information
+ * @param[out] x Double, ranging from 0.0 to 1.0 or with the special value
+ * #EVAS_HINT_FILL, to use as horizontal alignment hint.
+ * @param[out] y Double, ranging from 0.0 to 1.0 or with the special value
+ * #EVAS_HINT_FILL, to use as vertical alignment hint.
  *
- * @param[out] x Double, ranging from @c 0.0 to @c 1.0 or with the
-special value #EVAS_HINT_FILL, to use as horizontal alignment hint.
- * @param[out] y Double, ranging from @c 0.0 to @c 1.0 or with the
-special value #EVAS_HINT_FILL, to use as vertical alignment hint.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_align_get(double *x, double *y);
+EOAPI void evas_obj_size_hint_align_get(double *x, double *y);
 
 /**
- * Set whether events on a smart object's member should get propagated
+ * @brief Set whether events on a smart object's member should get propagated
  * up to its parent.
  *
- * This function has @b no effect if @p obj is not a member of a smart
- * object.
+ * This function has no effect if @c obj is not a member of a smart object.
  *
- * If @p prop is @c EINA_TRUE, events occurring on this object will be
- * propagated on to the smart object of which @p obj is a member.  If
- * @p prop is @c EINA_FALSE, events occurring on this object will @b
- * not be propagated on to the smart object of which @p obj is a
- * member.  The default value is @c EINA_TRUE.
+ * If @c prop is @c true, events occurring on this object will be propagated on
+ * to the smart object of which @c obj is a member. If @c prop is @c false,
+ * events occurring on this object will not be propagated on to the smart
+ * object of which @c obj is a member. The default value is @c true.
  *
- * @see evas_object_propagate_events_get()
- * @see evas_object_repeat_events_set()
- * @see evas_object_pass_events_set()
- * @see evas_object_freeze_events_set()
+ * See also @ref evas_obj_repeat_events_set, @ref evas_obj_pass_events_set,
+ * @ref evas_obj_freeze_events_set.
  *
- * @param[in] propagate whether to propagate events (@c EINA_TRUE) or not
-(@c EINA_FALSE)
+ * @param[in] propagate Whether to propagate events ($true) or not ($false).
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_propagate_events_set(Eina_Bool propagate);
+EOAPI void evas_obj_propagate_events_set(Eina_Bool propagate);
 
 /**
- * Retrieve whether an Evas object is set to propagate events.
+ * @brief Retrieve whether an Evas object is set to propagate events.
  *
- * @return whether @p obj is set to propagate events (@c EINA_TRUE)
- * or not (@c EINA_FALSE)
+ * See also @ref evas_obj_repeat_events_get, @ref evas_obj_pass_events_get,
+ * @ref evas_obj_freeze_events_get.
  *
- * @see evas_object_propagate_events_set()
- * @see evas_object_repeat_events_get()
- * @see evas_object_pass_events_get()
- * @see evas_object_freeze_events_get()
+ * @return Whether to propagate events ($true) or not ($false).
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_propagate_events_get(void);
+EOAPI Eina_Bool evas_obj_propagate_events_get(void);
 
 /**
- * Set whether an Evas object is to pass (ignore) events.
+ * @brief Set whether an Evas object is to pass (ignore) events.
  *
- * If @p pass is @c EINA_TRUE, it will make events on @p obj to be @b
- * ignored. They will be triggered on the @b next lower object (that
- * is not set to pass events), instead (see evas_object_below_get()).
+ * If @c pass is @c true, it will make events on @c obj to be ignored. They
+ * will be triggered on the next lower object (that is not set to pass events),
+ * instead (see @ref evas_object_below_get).
  *
- * If @p pass is @c EINA_FALSE, events will be processed on that
- * object as normal.
+ * If @c pass is @c false, events will be processed on that object as normal.
  *
- * @see evas_object_pass_events_get() for an example
- * @see evas_object_repeat_events_set()
- * @see evas_object_propagate_events_set()
- * @see evas_object_freeze_events_set()
+ * See also @ref evas_obj_repeat_events_set,
+ * @ref evas_obj_propagate_events_set, @ref evas_obj_freeze_events_set.
  *
- * @param[in] pass whether @p obj is to pass events (@c EINA_TRUE) or not
-(@c EINA_FALSE)
+ * @param[in] pass Whether @c obj is to pass events ($true) or not ($false).
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_pass_events_set(Eina_Bool pass);
+EOAPI void evas_obj_pass_events_set(Eina_Bool pass);
 
 /**
- * Determine whether an object is set to pass (ignore) events.
+ * @brief Determine whether an object is set to pass (ignore) events.
  *
- * @return pass whether @p obj is set to pass events (@c EINA_TRUE) or not
- * (@c EINA_FALSE)
+ * See also @ref evas_obj_repeat_events_get,
+ * @ref evas_obj_propagate_events_get, @ref evas_obj_freeze_events_get.
  *
- * Example:
- * @dontinclude evas-stacking.c
- * @skip if (strcmp(ev->key, "p") == 0)
- * @until }
+ * @return Whether @c obj is to pass events ($true) or not ($false).
  *
- * See the full @ref Example_Evas_Stacking "example".
- *
- * @see evas_object_pass_events_set()
- * @see evas_object_repeat_events_get()
- * @see evas_object_propagate_events_get()
- * @see evas_object_freeze_events_get()
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_pass_events_get(void);
+EOAPI Eina_Bool evas_obj_pass_events_get(void);
 
 /**
- * Sets whether or not the given Evas object is to be drawn anti-aliased.
+ * @brief Sets whether or not the given Evas object is to be drawn
+ * anti-aliased.
  *
- * @ingroup Evas_Object_Group_Extras
+ * @param[in] anti_alias @c true if the object is to be anti_aliased, @c false
+ * otherwise.
  *
- * @param[in] anti_alias (@c EINA_TRUE) if the object is to be anti_aliased, (@c EINA_FALSE) otherwise.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_anti_alias_set(Eina_Bool anti_alias);
+EOAPI void evas_obj_anti_alias_set(Eina_Bool anti_alias);
 
 /**
- * Retrieves whether or not the given Evas object is to be drawn anti_aliased.
- * @return  (@c EINA_TRUE) if the object is to be anti_aliased.  (@c EINA_FALSE) otherwise.
- * @ingroup Evas_Object_Group_Extras
+ * @brief Retrieves whether or not the given Evas object is to be drawn
+ * anti_aliased.
+ *
+ * @return @c true if the object is to be anti_aliased, @c false otherwise.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_anti_alias_get(void);
+EOAPI Eina_Bool evas_obj_anti_alias_get(void);
 
 /**
- * Retrieve user data stored on a given smart object.
+ * @brief Retrieve user data stored on a given smart object.
  *
- * @return A pointer to data stored using
- * evas_object_smart_data_set(), or @c NULL, if none has been
- * set.
+ * @return A pointer to data or @c null.
  *
- * @see evas_object_smart_data_set()
- *
- * @ingroup Evas_Smart_Object_Group
+ * @ingroup Evas_Object
  */
-EOAPI void * evas_obj_smart_data_get(void);
+EOAPI void *evas_obj_smart_data_get(void);
 
 /**
- * Get the clipper object for the given clipped smart object.
+ * @brief Get the clipper object for the given clipped smart object.
  *
- * @return the clipper object.
+ * Use this function if you want to change any of this clipper's properties,
+ * like colors.
  *
- * Use this function if you want to change any of this clipper's
- * properties, like colors.
- *
- * @see evas_object_smart_clipped_smart_add()
+ * @ingroup Evas_Object
  */
-EOAPI Evas_Object * evas_obj_smart_clipped_clipper_get(void);
+EOAPI Evas_Object *evas_obj_smart_clipped_clipper_get(void);
 
 /**
- * Return a list of objects currently clipped by @p obj.
+ * @brief Return a list of objects currently clipped by @c obj.
  *
- * @return a list of objects being clipped by @p obj
+ * This returns the internal list handle that contains all objects clipped by
+ * the object @c obj. If none are clipped by it, the call returns @c null. This
+ * list is only valid until the clip list is changed and should be fetched
+ * again with another call to this function if any objects being clipped by
+ * this object are unclipped, clipped by a new object, deleted or get the
+ * clipper deleted. These operations will invalidate the list returned, so it
+ * should not be used anymore after that point. Any use of the list after this
+ * may have undefined results, possibly leading to crashes. The object @c obj
+ * must be a valid Evas_Object.
  *
- * This returns the internal list handle that contains all objects
- * clipped by the object @p obj. If none are clipped by it, the call
- * returns @c NULL. This list is only valid until the clip list is
- * changed and should be fetched again with another call to
- * evas_object_clipees_get() if any objects being clipped by this
- * object are unclipped, clipped by a new object, deleted or get the
- * clipper deleted. These operations will invalidate the list
- * returned, so it should not be used anymore after that point. Any
- * use of the list after this may have undefined results, possibly
- * leading to crashes. The object @p obj must be a valid
- * .Evas_Object.
+ * See also @ref evas_obj_clip_set, @ref evas_obj_clip_unset and
+ * @ref evas_obj_clip_get.
  *
- * See also evas_object_clip_set(), evas_object_clip_unset() and
- * evas_object_clip_get().
+ * @return A list of objects being clipped by @c obj.
  *
- * Example:
- * @code
- * extern Evas_Object *obj;
- * Evas_Object *clipper;
- *
- * clipper = evas_object_clip_get(obj);
- * if (clipper)
- * {
- * Eina_List *clippees, *l;
- * Evas_Object *obj_tmp;
- *
- * clippees = evas_object_clipees_get(clipper);
- * printf("Clipper clips %i objects\n", eina_list_count(clippees));
- * EINA_LIST_FOREACH(clippees, l, obj_tmp)
- * evas_object_show(obj_tmp);
- * }
- * @endcode
+ * @ingroup Evas_Object
  */
-EOAPI const Eina_List * evas_obj_clipees_get(void);
+EOAPI const Eina_List *evas_obj_clipees_get(void);
 
 /**
- * Gets the parent smart object of a given Evas object, if it has one.
+ * @brief Gets the parent smart object of a given Evas object, if it has one.
  *
- * @return Returns the parent smart object of @a obj or @c NULL, if @a
- * obj is not a smart member of any
+ * @return The parent smart object of @c obj or @c null.
  *
- * @ingroup Evas_Smart_Object_Group
+ * @ingroup Evas_Object
  */
-EOAPI Evas_Object * evas_obj_smart_parent_get(void);
+EOAPI Evas_Object *evas_obj_smart_parent_get(void);
 
 /**
- * Sets the hints for an object's disply mode
+ * @brief Sets the hints for an object's disply mode,
  *
- * This is not a size enforcement in any way, it's just a hint that
- * can be used whenever appropriate.
+ * This is not a size enforcement in any way, it's just a hint that can be used
+ * whenever appropriate.
  *
- * @param[in] dispmode display mode hint
+ * @param[in] dispmode Display mode hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_size_hint_display_mode_set(Evas_Display_Mode dispmode);
+EOAPI void evas_obj_size_hint_display_mode_set(Evas_Display_Mode dispmode);
 
 /**
- * Retrieves the hints for an object's display mode
+ * @brief Retrieves the hints for an object's display mode
  *
- * These are hints on the display mode @p obj. This is
- * not a size enforcement in any way, it's just a hint that can be
- * used whenever appropriate.
- * This mode can be used object's display mode like commpress or expand
+ * These are hints on the display mode @c obj. This is not a size enforcement
+ * in any way, it's just a hint that can be used whenever appropriate. This
+ * mode can be used object's display mode like commpress or expand.
+ *
+ * @return Display mode hint.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Evas_Display_Mode  evas_obj_size_hint_display_mode_get(void);
+EOAPI Evas_Display_Mode evas_obj_size_hint_display_mode_get(void);
 
 /**
- * Disable all rendering on the canvas.
+ * @brief This handles text paragraph direction of the given object. Even if
+ * the given object is not textblock or text, its smart child objects can
+ * inherit the paragraph direction from the given object. The default paragraph
+ * direction is @ref Evas_BiDi_Direction.EVAS_BIDI_DIRECTION_INHERIT.
  *
- * This flag will be used to indicate to Evas that this object should
- * never be rendered on the canvas under any circurmstances. In
- * particular, this is useful to avoid drawing clipper objects (or masks)
- * even when they don't clip any object. This can also be used to replace
- * the old source_visible flag with proxy objects.
+ * @param[in] dir Paragraph direction for the given object.
  *
- * This is different to the visible property, as even visible objects
- * marked as "no-render" will never appear on screen. But those objects
- * can still be used as proxy sources or clippers. When hidden, all
- * "no-render" objects will completely disappear from the canvas, and
- * hide their clippees or be invisible when used as proxy sources.
+ * @ingroup Evas_Object
+ */
+EOAPI void evas_obj_paragraph_direction_set(Evas_BiDi_Direction dir);
+
+/**
+ * @brief This handles text paragraph direction of the given object. Even if
+ * the given object is not textblock or text, its smart child objects can
+ * inherit the paragraph direction from the given object. The default paragraph
+ * direction is @ref Evas_BiDi_Direction.EVAS_BIDI_DIRECTION_INHERIT.
  *
- * @since 1.15
+ * @return Paragraph direction for the given object.
+ *
+ * @ingroup Evas_Object
+ */
+EOAPI Evas_BiDi_Direction evas_obj_paragraph_direction_get(void);
+
+/**
+ * @brief Disable all rendering on the canvas.
+ *
+ * This flag will be used to indicate to Evas that this object should never be
+ * rendered on the canvas under any circurmstances. In particular, this is
+ * useful to avoid drawing clipper objects (or masks) even when they don't clip
+ * any object. This can also be used to replace the old source_visible flag
+ * with proxy objects.
+ *
+ * This is different to the visible property, as even visible objects marked as
+ * "no-render" will never appear on screen. But those objects can still be used
+ * as proxy sources or clippers. When hidden, all "no-render" objects will
+ * completely disappear from the canvas, and hide their clippees or be
+ * invisible when used as proxy sources.
  *
  * @param[in] enable Enable "no-render" mode.
- */
-EOAPI void  evas_obj_no_render_set(Eina_Bool enable);
-
-/**
- * Returns the state of the "no-render" flag, which means, when true,
- * that an object should never be rendered on the canvas.
- *
- * This flag can be used to avoid rendering visible clippers on the
- * canvas, even if they currently don't clip any object.
  *
  * @since 1.15
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_no_render_get(void);
+EOAPI void evas_obj_no_render_set(Eina_Bool enable);
 
 /**
- * Test if any object is clipped by @p obj.
+ * @brief Returns the state of the "no-render" flag, which means, when true,
+ * that an object should never be rendered on the canvas.
  *
- * @return EINA_TRUE if @p obj clip any object.
+ * This flag can be used to avoid rendering visible clippers on the canvas,
+ * even if they currently don't clip any object.
+ *
+ * @return Enable "no-render" mode.
+ *
+ * @since 1.15
+ *
+ * @ingroup Evas_Object
+ */
+EOAPI Eina_Bool evas_obj_no_render_get(void);
+
+/** Test if any object is clipped by @c obj.
+ *
  * @since 1.8
- * 
+ *
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_clipees_has(void);
+EOAPI Eina_Bool evas_obj_clipees_has(void);
 
 /**
- * Requests @p keyname key events be directed to @p obj.
+ * @brief Requests @c keyname key events be directed to @c obj.
  *
- * @return @c EINA_TRUE, if the call succeeded, @c EINA_FALSE otherwise.
+ * Key grabs allow one or more objects to receive key events for specific key
+ * strokes even if other objects have focus. Whenever a key is grabbed, only
+ * the objects grabbing it will get the events for the given keys.
  *
- * Key grabs allow one or more objects to receive key events for
- * specific key strokes even if other objects have focus. Whenever a
- * key is grabbed, only the objects grabbing it will get the events
- * for the given keys.
+ * @c keyname is a platform dependent symbolic name for the key pressed (see
+ * @ref Evas_Keys for more information).
  *
- * @p keyname is a platform dependent symbolic name for the key
- * pressed (see @ref Evas_Keys for more information).
+ * @c modifiers and @c not_modifiers are bit masks of all the modifiers that
+ * must and mustn't, respectively, be pressed along with @c keyname key in
+ * order to trigger this new key grab. Modifiers can be things such as Shift
+ * and Ctrl as well as user defined types via @ref evas_key_modifier_add.
+ * Retrieve them with @ref evas_key_modifier_mask_get or use 0 for empty masks.
  *
- * @p modifiers and @p not_modifiers are bit masks of all the
- * modifiers that must and mustn't, respectively, be pressed along
- * with @p keyname key in order to trigger this new key
- * grab. Modifiers can be things such as Shift and Ctrl as well as
- * user defined types via evas_key_modifier_add(). Retrieve them with
- * evas_key_modifier_mask_get() or use @c 0 for empty masks.
+ * @c exclusive will make the given object the only one permitted to grab the
+ * given key. If given @c true, subsequent calls on this function with
+ * different @c obj arguments will fail, unless the key is ungrabbed again.
  *
- * @p exclusive will make the given object the only one permitted to
- * grab the given key. If given @c EINA_TRUE, subsequent calls on this
- * function with different @p obj arguments will fail, unless the key
- * is ungrabbed again.
+ * @warning Providing impossible modifier sets creates undefined behavior.
  *
- * Example code follows.
- * @dontinclude evas-events.c
- * @skip if (d.focus)
- * @until else
+ * See also @ref evas_obj_key_ungrab, @ref evas_obj_focus_get,
+ * @ref evas_obj_focus_set, @ref evas_focus_get, @ref evas_key_modifier_add.
  *
- * See the full example @ref Example_Evas_Events "here".
+ * @param[in] modifiers A mask of modifiers that must be present to trigger the
+ * event.
+ * @param[in] not_modifiers A mask of modifiers that must not be present to
+ * trigger the event.
+ * @param[in] exclusive Request that the @c obj is the only object receiving
+ * the @c keyname events.
  *
- * @warning Providing impossible modifier sets creates undefined behavior
+ * @return @c true if the call succeeded, @c false otherwise.
  *
- * @see evas_object_key_ungrab
- * @see evas_object_focus_set
- * @see evas_object_focus_get
- * @see evas_focus_get
- * @see evas_key_modifier_add
- * 
- *
- * @param[in] keyname the key to request events for.
- * @param[in] modifiers a mask of modifiers that must be present to
-trigger the event.
- * @param[in] not_modifiers a mask of modifiers that must @b not be present
-to trigger the event.
- * @param[in] exclusive request that the @p obj is the only object
-receiving the @p keyname events.
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_key_grab(const char *keyname, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers, Eina_Bool exclusive);
+EOAPI Eina_Bool evas_obj_key_grab(const char *keyname, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers, Eina_Bool exclusive);
 
 /**
- * Checks whether a given smart object or any of its smart object
+ * @brief Checks whether a given smart object or any of its smart object
  * parents is of a given smart class.
  *
- * @return @c EINA_TRUE, if @a obj or any of its parents is of type @a
- * type, @c EINA_FALSE otherwise
+ * If @c obj is not a smart object, this call will fail immediately.
  *
- * If @p obj is not a smart object, this call will fail
- * immediately.
+ * This function supports Eo and legacy inheritance mechanisms. However, it is
+ * recommended to use @ref eo_isa instead if your object is using Eo from top
+ * to bottom.
  *
- * This function supports Eo and legacy inheritance mechanisms. However,
- * it is recommended to use eo_isa instead if your object is using Eo from
- * top to bottom.
+ * The checks use smart classes names and string comparison. There is a version
+ * of this same check using pointer comparison, since a smart class' name is a
+ * single string in Evas.
  *
- * The checks use smart classes names and <b>string
- * comparison</b>. There is a version of this same check using
- * <b>pointer comparison</b>, since a smart class' name is a single
- * string in Evas.
+ * See also @ref evas_obj_smart_type_check_ptr.
  *
- * @see evas_object_smart_type_check_ptr()
- * @see eo_isa
+ * @param[in] type The name (type) of the smart class to check for.
  *
- * @ingroup Evas_Smart_Object_Group
- * 
- *
- * @param[in] type The @b name (type) of the smart class to check for
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_smart_type_check(const char *type);
+EOAPI Eina_Bool evas_obj_smart_type_check(const char *type);
 
 /**
- * Retrieves the object from children of the given object with the given name.
- * @return  If successful, the Evas object with the given name.  Otherwise,
- * @c NULL.
+ * @brief Retrieves the object from children of the given object with the given
+ * name.
  *
- * This looks for the evas object given a name by evas_object_name_set(), but
+ * This looks for the evas object given a name by @ref evas_obj_name_set, but
  * it ONLY looks at the children of the object *p obj, and will only recurse
- * into those children if @p recurse is greater than 0. If the name is not
+ * into those children if @c recurse is greater than 0. If the name is not
  * unique within immediate children (or the whole child tree) then it is not
- * defined which child object will be returned. If @p recurse is set to -1 then
+ * defined which child object will be returned. If @c recurse is set to -1 then
  * it will recurse without limit.
+ *
+ * @param[in] recurse Set to the number of child levels to recurse (0 == don't
+ * recurse, 1 == only look at the children of @c obj or their immediate
+ * children, but no further etc.).
+ *
+ * @return The Evas object with the given name on success, Otherwise @c null.
  *
  * @since 1.2
  *
- * @ingroup Evas_Object_Group_Find
- * 
- *
- * @param[in] name The given name.
- * @param[in] recurse Set to the number of child levels to recurse (0 == don't recurse, 1 == only look at the children of @p obj or their immediate children, but no further etc.).
+ * @ingroup Evas_Object
  */
-EOAPI Evas_Object * evas_obj_name_child_find(const char *name, int recurse);
+EOAPI Evas_Object *evas_obj_name_child_find(const char *name, int recurse);
 
 /**
- * Removes the grab on @p keyname key events by @p obj.
+ * @brief Removes the grab on @c keyname key events by @c obj.
  *
- * Removes a key grab on @p obj if @p keyname, @p modifiers, and @p
- * not_modifiers match.
+ * Removes a key grab on @c obj if @c keyname, @c modifiers, and
+ * @c not_modifiers match.
  *
- * Example code follows.
- * @dontinclude evas-events.c
- * @skip got here by key grabs
- * @until }
+ * See also @ref evas_obj_key_grab, @ref evas_obj_focus_get,
+ * @ref evas_obj_focus_set, @ref evas_focus_get.
  *
- * See the full example @ref Example_Evas_Events "here".
+ * @param[in] modifiers A mask of modifiers that must be present to trigger the
+ * event.
+ * @param[in] not_modifiers A mask of modifiers that mus not not be present to
+ * trigger the event.
  *
- * @see evas_object_key_grab
- * @see evas_object_focus_set
- * @see evas_object_focus_get
- * @see evas_focus_get
- * 
- *
- * @param[in] keyname the key the grab is set for.
- * @param[in] modifiers a mask of modifiers that must be present to
-trigger the event.
- * @param[in] not_modifiers a mask of modifiers that must not not be
-present to trigger the event.
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_key_ungrab(const char *keyname, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers);
+EOAPI void evas_obj_key_ungrab(const char *keyname, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers);
 
 /**
- * Disable/cease clipping on a clipped @p obj object.
+ * @brief Disable/cease clipping on a clipped @c obj object.
  *
- * This function disables clipping for the object @p obj, if it was
- * already clipped, i.e., its visibility and color get detached from
- * the previous clipper. If it wasn't, this has no effect. The object
- * @p obj must be a valid .Evas_Object.
+ * This function disables clipping for the object @c obj, if it was already
+ * clipped, i.e., its visibility and color get detached from the previous
+ * clipper. If it wasn't, this has no effect. The object @c obj must be a valid
+ * Evas_Object.
  *
- * See also evas_object_clip_set() (for an example),
- * evas_object_clipees_get() and evas_object_clip_get().
- * 
+ * See also @ref evas_obj_clip_set, @ref evas_obj_clipees_get and
+ * @ref evas_obj_clip_get.
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_clip_unset(void);
+EOAPI void evas_obj_clip_unset(void);
 
 /**
- * Moves all children objects of a given smart object relative to a
+ * @brief Moves all children objects of a given smart object relative to a
  * given offset.
  *
- * This will make each of @p obj object's children to move, from where
- * they before, with those delta values (offsets) on both directions.
+ * This will make each of @c obj object's children to move, from where they
+ * before, with those delta values (offsets) on both directions.
  *
- * @note This is most useful on custom smart @c move() functions.
+ * @note This is most useful on custom smart @c move functions.
  *
- * @note Clipped smart objects already make use of this function on
- * their @c move() smart function definition.
- * 
+ * @note Clipped smart objects already make use of this function on their
+ * @c move smart function definition.
  *
- * @param[in] dx horizontal offset (delta).
- * @param[in] dy vertical offset (delta).
+ * @param[in] dy Vertical offset (delta).
+ *
+ * @ingroup Evas_Object
  */
-EOAPI void  evas_obj_smart_move_children_relative(Evas_Coord dx, Evas_Coord dy);
+EOAPI void evas_obj_smart_move_children_relative(Evas_Coord dx, Evas_Coord dy);
 
 /**
- * Checks whether a given smart object or any of its smart object
- * parents is of a given smart class, <b>using pointer comparison</b>.
+ * @brief Checks whether a given smart object or any of its smart object
+ * parents is of a given smart class, using pointer comparison.
  *
- * @return @c EINA_TRUE, if @a obj or any of its parents is of type @a
- * type, @c EINA_FALSE otherwise
+ * @param[in] type The type (name string) to check for. Must be the name.
  *
- * @see evas_object_smart_type_check() for more details
- * @see eo_isa
+ * @return @c true if @c obj or any of its parents is of type @c type, @c false
+ * otherwise.
  *
- * @ingroup Evas_Smart_Object_Group
- * 
- *
- * @param[in] type The type (name string) to check for. Must be the name
+ * @ingroup Evas_Object
  */
-EOAPI Eina_Bool  evas_obj_smart_type_check_ptr(const char *type);
+EOAPI Eina_Bool evas_obj_smart_type_check_ptr(const char *type);
 
 EOAPI extern const Eo_Event_Description _EVAS_OBJECT_EVENT_MOUSE_IN;
 EOAPI extern const Eo_Event_Description _EVAS_OBJECT_EVENT_MOUSE_OUT;

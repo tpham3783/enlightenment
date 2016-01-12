@@ -15,112 +15,105 @@ typedef Eo Elm_Menu_Item;
 #endif
 
 /**
- * Set the icon of a menu item to the standard icon with name @p icon
+ * @brief Set the icon of a menu item to the standard icon with the given name.
  *
- * Once this icon is set, any previously set icon will be deleted.
- * To hide icon set it to "".
+ * Once this icon is set, any previously set icon will be deleted. To hide icon
+ * set it to "".
  *
- * @ingroup Menu
+ * @param[in] icon The name of icon object.
  *
- * @param[in] icon The name of icon object
+ * @ingroup Elm_Menu_Item
  */
 EAPI void elm_menu_item_icon_name_set(Elm_Menu_Item *obj, const char *icon);
 
 /**
- * Get the string representation from the icon of a menu item
+ * @brief Get the string representation from the icon of a menu item
  *
- * Once this icon is set, any previously set icon will be deleted.
- * To hide icon set it to "".
+ * Once this icon is set, any previously set icon will be deleted. To hide icon
+ * set it to "".
  *
- * @see elm_menu_item_icon_name_set()
- * @ingroup Menu
+ * @return The name of icon object.
+ *
+ * @ingroup Elm_Menu_Item
  */
 EAPI const char *elm_menu_item_icon_name_get(const Elm_Menu_Item *obj);
 
 /**
- * Set the selected state of @p item.
+ * @brief Set the selected state of @c item.
  *
- * @ingroup Menu
+ * @param[in] selected The selection state.
  *
- * @param[in] selected EINA_TRUE if selected EINA_FALSE otherwise
+ * @ingroup Elm_Menu_Item
  */
 EAPI void elm_menu_item_selected_set(Elm_Menu_Item *obj, Eina_Bool selected);
 
 /**
- * Get the selected state of @p item.
+ * @brief Get the selected state of @c item.
  *
- * @see elm_menu_item_selected_set()
+ * @return The selection state.
  *
- * @ingroup Menu
+ * @ingroup Elm_Menu_Item
  */
 EAPI Eina_Bool elm_menu_item_selected_get(const Elm_Menu_Item *obj);
 
-/**
- * Get the previous item in the menu.
+/** Get the previous item in the menu.
  *
- * @ingroup Menu
- * 
+ * @ingroup Elm_Menu_Item
  */
-EAPI Elm_Object_Item *elm_menu_item_prev_get(const Elm_Menu_Item *obj);
+EAPI Elm_Widget_Item *elm_menu_item_prev_get(const Elm_Menu_Item *obj);
 
-/**
- * Get the next item in the menu.
+/** Get the next item in the menu.
  *
- * @ingroup Menu
- * 
+ * @ingroup Elm_Menu_Item
  */
-EAPI Elm_Object_Item *elm_menu_item_next_get(const Elm_Menu_Item *obj);
+EAPI Elm_Widget_Item *elm_menu_item_next_get(const Elm_Menu_Item *obj);
 
-/**
- * Get the next item in the menu.
+/** Get the next item in the menu.
  *
- * @ingroup Menu
- * 
+ * @ingroup Elm_Menu_Item
  */
 EAPI unsigned int elm_menu_item_index_get(const Elm_Menu_Item *obj);
 
 /**
- * Remove all sub-items (children) of the given item
- * @since 1.8
+ * @brief Remove all sub-items (children) of the given item
  *
  * This removes all items that are children (and their descendants) of the
- * given item @p it.
+ * given item @c it.
  *
- * @see elm_object_item_del()
+ * @since 1.8
  *
- * @ingroup Menu
- * 
+ * @ingroup Elm_Menu_Item
  */
 EAPI void elm_menu_item_subitems_clear(Elm_Menu_Item *obj);
 
 /**
- * Returns a list of @p item's subitems.
+ * @brief Returns a list of @c item's subitems.
  *
- * @see elm_menu_add()
+ * @return a list of @c item's subitems
  *
- * @ingroup Menu
- * 
+ * @ingroup Elm_Menu_Item
  */
 EAPI const Eina_List *elm_menu_item_subitems_get(const Elm_Menu_Item *obj);
 
 /**
- * Returns whether @p item is a separator.
+ * @brief Returns whether @c item is a separator.
  *
- * @see elm_menu_item_separator_add()
+ * @return @c true if the item is a separator.
  *
- * @ingroup Menu
- * 
+ * @ingroup Elm_Menu_Item
  */
 EAPI Eina_Bool elm_menu_item_is_separator(const Elm_Menu_Item *obj);
 
 /**
- * Get the real Evas(Edje) object created to implement the view of a given
- * menu @p item.
+ * @brief Get the real Evas(Edje) object created to implement the view of a
+ * given menu item.
  *
  * @warning Don't manipulate this object!
  *
- * @ingroup Menu
- * 
+ * @return The base Edje object containing the swallowed content associated
+ * with the item.
+ *
+ * @ingroup Elm_Menu_Item
  */
 EAPI Evas_Object *elm_menu_item_object_get(const Elm_Menu_Item *obj);
 

@@ -21,7 +21,7 @@ EAPI const Eo_Class *elm_fileselector_class_get(void) EINA_CONST;
  * @brief Enable/disable the "ok" and "cancel" buttons on a given file selector
  * widget
  *
- * Note: A file selector without those buttons will never emit the "done" smart
+ * @note A file selector without those buttons will never emit the "done" smart
  * event, and is only usable if one is just hooking to the other two events.
  *
  * See also @ref elm_obj_fileselector_buttons_ok_cancel_get.
@@ -30,7 +30,7 @@ EAPI const Eo_Class *elm_fileselector_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Fileselector
  */
-EOAPI void  elm_obj_fileselector_buttons_ok_cancel_set(Eina_Bool visible);
+EOAPI void elm_obj_fileselector_buttons_ok_cancel_set(Eina_Bool visible);
 
 /**
  * @brief Get whether the "ok" and "cancel" buttons on a given file selector
@@ -42,7 +42,7 @@ EOAPI void  elm_obj_fileselector_buttons_ok_cancel_set(Eina_Bool visible);
  *
  * @ingroup Elm_Fileselector
  */
-EOAPI Eina_Bool  elm_obj_fileselector_buttons_ok_cancel_get(void);
+EOAPI Eina_Bool elm_obj_fileselector_buttons_ok_cancel_get(void);
 
 EOAPI extern const Eo_Event_Description _ELM_FILESELECTOR_EVENT_DONE;
 EOAPI extern const Eo_Event_Description _ELM_FILESELECTOR_EVENT_ACTIVATED;

@@ -25,7 +25,7 @@ EAPI const Eo_Class *efl_gfx_gradient_linear_interface_get(void) EINA_CONST;
  *
  * @ingroup Efl_Gfx_Gradient_Linear
  */
-EOAPI void  efl_gfx_gradient_linear_start_set(double x, double y);
+EOAPI void efl_gfx_gradient_linear_start_set(double x, double y);
 
 /**
  * @brief Gets the start point of this linear gradient.
@@ -35,7 +35,7 @@ EOAPI void  efl_gfx_gradient_linear_start_set(double x, double y);
  *
  * @ingroup Efl_Gfx_Gradient_Linear
  */
-EOAPI void  efl_gfx_gradient_linear_start_get(double *x, double *y);
+EOAPI void efl_gfx_gradient_linear_start_get(double *x, double *y);
 
 /**
  * @brief Sets the end point of this linear gradient.
@@ -45,7 +45,7 @@ EOAPI void  efl_gfx_gradient_linear_start_get(double *x, double *y);
  *
  * @ingroup Efl_Gfx_Gradient_Linear
  */
-EOAPI void  efl_gfx_gradient_linear_end_set(double x, double y);
+EOAPI void efl_gfx_gradient_linear_end_set(double x, double y);
 
 /**
  * @brief Gets the end point of this linear gradient.
@@ -55,7 +55,7 @@ EOAPI void  efl_gfx_gradient_linear_end_set(double x, double y);
  *
  * @ingroup Efl_Gfx_Gradient_Linear
  */
-EOAPI void  efl_gfx_gradient_linear_end_get(double *x, double *y);
+EOAPI void efl_gfx_gradient_linear_end_get(double *x, double *y);
 
 
 #endif

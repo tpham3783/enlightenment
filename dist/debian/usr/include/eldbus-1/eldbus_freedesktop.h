@@ -125,7 +125,7 @@ typedef void (*Eldbus_Name_Owner_Changed_Cb)(void *data, const char *bus, const 
  *
  * This function implicitly calls eldbus_name_owner_get() in order to be able to
  * monitor the name. If the only interest is to receive notifications when the
- * name in fact changes, pass EINA_FALSE to @param allow_initial_call so your
+ * name in fact changes, pass EINA_FALSE to \p allow_initial_call so your
  * callback will not be called on first retrieval of name owner. If the
  * initial state is important, pass EINA_TRUE to this parameter.
  *
@@ -238,6 +238,21 @@ EAPI Eldbus_Pending        *eldbus_proxy_property_get(Eldbus_Proxy *proxy, const
  * @return Eldbus_Pending object corresponding to the message sent.
  */
 EAPI Eldbus_Pending        *eldbus_proxy_property_set(Eldbus_Proxy *proxy, const char *name, const char *sig, const void *value, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1, 2, 3, 4);
+
+/**
+ * Set a property with a Eina_Value.
+ *
+ * @param proxy The proxy object on which to do the query.
+ * @param name The property name to get.
+ * @param sig
+ * @param value The value to set.
+ * @param cb The callback to be called when receiving an answer.
+ * @param data Data to be passed to the callback.
+ * @return Eldbus_Pending object corresponding to the message sent.
+ *
+ * @since 1.17
+ */
+EAPI Eldbus_Pending        *eldbus_proxy_property_value_set(Eldbus_Proxy *proxy, const char *name, const char *sig, const Eina_Value *value, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1, 2, 3, 4);
 
 /**
  * Get all properties.

@@ -18,121 +18,114 @@ typedef Eo Elm_List_Item;
 EAPI const Eo_Class *elm_list_item_class_get(void) EINA_CONST;
 
 /**
- * Set or unset item as a separator.
+ * @brief Set or unset item as a separator.
  *
  * Items aren't set as separator by default.
  *
- * If set as separator it will display separator theme, so won't display
- * icons or label.
+ * If set as separator it will display separator theme, so won't display icons
+ * or label.
  *
- * @see elm_list_item_separator_get()
+ * @param[in] setting @c true means item @c it is a separator. @c false
+ * indicates it's not.
  *
- * @ingroup List
- *
- * @param[in] setting @c EINA_TRUE means item @p it is a separator. @c EINA_FALSE
-indicates it's not.
+ * @ingroup Elm_List_Item
  */
-EOAPI void  elm_obj_list_item_separator_set(Eina_Bool setting);
+EOAPI void elm_obj_list_item_separator_set(Eina_Bool setting);
 
 /**
- * Get a value whether item is a separator or not.
- * @see elm_list_item_separator_set() for details.  
- * @ingroup List
+ * @brief Get a value whether item is a separator or not.
+ *
+ * @return @c true means item @c it is a separator. @c false indicates it's
+ * not.
+ *
+ * @ingroup Elm_List_Item
  */
-EOAPI Eina_Bool  elm_obj_list_item_separator_get(void);
+EOAPI Eina_Bool elm_obj_list_item_separator_get(void);
 
 /**
- * Set the selected state of an item.
+ * @brief Set the selected state of an item.
  *
- * This sets the selected state of the given item @p it.
- * @c EINA_TRUE for selected, @c EINA_FALSE for not selected.
+ * This sets the selected state of the given item.
  *
- * If a new item is selected the previously selected will be unselected,
- * unless multiple selection is enabled with elm_list_multi_select_set().
- * Previously selected item can be get with function
- * elm_list_selected_item_get().
+ * If a new item is selected the previously selected will be unselected, unless
+ * multiple selection is enabled with @ref elm_list_multi_select_set.
+ * Previously selected item can be get with function @ref
+ * elm_list_selected_item_get.
  *
  * Selected items will be highlighted.
  *
- * @see elm_list_item_selected_get()
- * @see elm_list_selected_item_get()
- * @see elm_list_multi_select_set()
+ * @param[in] selected The selected state.
  *
- * @ingroup List
- *
- * @param[in] selected the selected state (@c EINA_TRUE selected, @c EINA_FALSE not selected)
+ * @ingroup Elm_List_Item
  */
-EOAPI void  elm_obj_list_item_selected_set(Eina_Bool selected);
+EOAPI void elm_obj_list_item_selected_set(Eina_Bool selected);
 
 /**
- * Get whether the @p item is selected or not.
+ * @brief Get whether the item is selected or not.
  *
- * @see elm_list_selected_item_set() for details.
- * @see elm_list_item_selected_get()
+ * @return The selected state.
  *
- * @ingroup List
+ * @ingroup Elm_List_Item
  */
-EOAPI Eina_Bool  elm_obj_list_item_selected_get(void);
+EOAPI Eina_Bool elm_obj_list_item_selected_get(void);
 
 /**
- * Get the real Evas(Edje) object created to implement the view of a given
- * list @p item.
+ * @brief Get the real Evas(Edje) object created to implement the view of a
+ * given list item.
  *
  * Base object is the @c Evas_Object that represents that item.
  *
- * @ingroup List
+ * @return The base Edje object associated with the item.
+ *
+ * @ingroup Elm_List_Item
  */
-EOAPI Evas_Object * elm_obj_list_item_object_get(void);
+EOAPI Evas_Object *elm_obj_list_item_object_get(void);
 
 /**
- * Get the item before @p it in list.
+ * @brief Get the item before the item in list.
  *
- * @note If it is the first item, @c NULL will be returned.
+ * @note If it is the first item, @c null will be returned.
  *
- * @see elm_list_item_append()
- * @see elm_list_items_get()
+ * @return The item before or @c null.
  *
- * @ingroup List
+ * @ingroup Elm_List_Item
  */
-EOAPI Elm_Object_Item * elm_obj_list_item_prev_get(void);
+EOAPI Elm_Widget_Item *elm_obj_list_item_prev_get(void);
 
 /**
- * Get the item after @p it in list.
+ * @brief Get the item after the item in list.
  *
- * @note If it is the last item, @c NULL will be returned.
+ * @note If it is the last item, @c null will be returned.
  *
- * @see elm_list_item_append()
- * @see elm_list_items_get()
+ * @return The item after or @c null.
  *
- * @ingroup List
+ * @ingroup Elm_List_Item
  */
-EOAPI Elm_Object_Item * elm_obj_list_item_next_get(void);
+EOAPI Elm_Widget_Item *elm_obj_list_item_next_get(void);
 
 /**
- * Show @p item in the list view.
+ * @brief Show item in the list view.
  *
- * It won't animate list until item is visible. If such behavior is wanted,
- * use elm_list_bring_in() instead.
+ * It won't animate list until item is visible. If such behavior is wanted, use
+ * @ref elm_obj_list_item_bring_in instead.
  *
- * @ingroup List
- * 
+ * @ingroup Elm_List_Item
  */
-EOAPI void  elm_obj_list_item_show(void);
+EOAPI void elm_obj_list_item_show(void);
 
 /**
- * Bring in the given item to list view.
+ * @brief Bring in the given item to list view.
  *
- * This causes list to jump to the given item @p item and show it
- * (by scrolling), if it is not fully visible.
+ * This causes list to jump to the given item and show it (by scrolling), if it
+ * is not fully visible.
  *
  * This may use animation to do so and take a period of time.
  *
- * If animation isn't wanted, elm_list_item_show() can be used.
+ * If animation isn't wanted, @ref elm_obj_list_item_show can be used.
  *
- * @ingroup List
- * 
+ * @ingroup Elm_List_Item
  */
-EOAPI void  elm_obj_list_item_bring_in(void);
+EOAPI void elm_obj_list_item_bring_in(void);
 
 
 #endif

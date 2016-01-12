@@ -5,13 +5,13 @@ includedir=${prefix}/include
 datarootdir=${prefix}/share
 datadir=${datarootdir}/elua
 vmaj=1
-vmin=15
+vmin=17
 vmic=0
 
 Name: elua
 Description: EFL Lua application platform backend
-Requires.private: luajit >= 2.0.0 ecore >= 1.15.0-beta2 eo >= 1.15.0-beta2 eina >= 1.15.0-beta2  
-Version: 1.15.0-beta2
+Requires.private: luajit >= 2.0.0 ecore >= 1.17.0-beta1 eo >= 1.17.0-beta1 eina >= 1.17.0-beta1  
+Version: 1.17.0-beta1
 Libs: -L${libdir} -lelua
 Libs.private: 
 Cflags: -I${includedir}/efl-1 -I${includedir}/elua-1

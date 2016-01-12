@@ -71,10 +71,10 @@ EAPI Elm_Icon_Lookup_Order elm_icon_order_lookup_get(const Elm_Icon *obj);
  * If name is not found in any of the expected locations and it is the absolute
  * path of an image file, this image will be used.
  *
- * Note: The icon image set by this function can be changed by
+ * @note The icon image set by this function can be changed by
  * @ref Efl.File.file.set.
  *
- * Note: This function does not accept relative icon path.
+ * @note This function does not accept relative icon path.
  *
  * See also @ref elm_icon_standard_get.
  *

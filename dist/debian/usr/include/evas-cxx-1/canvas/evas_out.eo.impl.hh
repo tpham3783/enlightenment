@@ -193,30 +193,22 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::out>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_out_view_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_out_view_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_out_view_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_out_view_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_out_engine_info_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_out_engine_info_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_out_engine_info_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_out_engine_info_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::eo::base>(), &ops[operation_description_class_size< ::evas::out >::value]);

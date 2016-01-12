@@ -33,7 +33,7 @@ EAPI const Eo_Class *emotion_object_class_get(void) EINA_CONST;
  *
  * @ingroup Emotion_Object
  */
-EOAPI void  emotion_obj_option_set(const char *opt, const char *val);
+EOAPI void emotion_obj_option_set(const char *opt, const char *val);
 
 /**
  * @brief Initializes an emotion object with the specified module.
@@ -58,7 +58,7 @@ EOAPI void  emotion_obj_option_set(const char *opt, const char *val);
  *
  * @ingroup Emotion_Object
  */
-EOAPI Eina_Bool  emotion_obj_engine_set(const char *module_filename);
+EOAPI Eina_Bool emotion_obj_engine_set(const char *module_filename);
 
 EOAPI extern const Eo_Event_Description _EMOTION_OBJECT_EVENT_FRAME_DECODE;
 EOAPI extern const Eo_Event_Description _EMOTION_OBJECT_EVENT_POSITION_UPDATE;

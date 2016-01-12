@@ -118,8 +118,6 @@ EAPI void elm_calendar_first_day_of_week_set(Elm_Calendar *obj, Elm_Calendar_Wee
  *
  * See also  @ref elm_calendar_first_day_of_week_set for more details.
  *
- * 
- *
  * @return An int which correspond to the first day of the week (Sunday = 0,
  * Monday = 1, ..., Saturday = 6).
  *
@@ -252,8 +250,6 @@ EAPI void elm_calendar_select_mode_set(Elm_Calendar *obj, Elm_Calendar_Select_Mo
  *
  * See also @ref elm_calendar_select_mode_set for more details.
  *
- * 
- *
  * @return The select mode to use.
  *
  * @ingroup Elm_Calendar
@@ -319,8 +315,6 @@ EAPI void elm_calendar_format_function_set(Elm_Calendar *obj, Elm_Calendar_Forma
  *
  * See also @ref elm_calendar_mark_add, @ref elm_calendar_mark_del(),
  * @ref elm_calendar_marks_clear.
- *
- * 
  *
  * @ingroup Elm_Calendar
  */
@@ -392,8 +386,6 @@ EAPI Elm_Calendar_Mark *elm_calendar_mark_add(Elm_Calendar *obj, const char *mar
  * @brief Remove all calendar's marks
  *
  * See also  @ref elm_calendar_mark_add, @ref elm_calendar_mark_del().
- *
- * 
  *
  * @ingroup Elm_Calendar
  */

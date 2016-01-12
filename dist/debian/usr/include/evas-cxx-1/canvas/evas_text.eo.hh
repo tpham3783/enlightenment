@@ -33,219 +33,60 @@ namespace evas {
 
 struct text
 {
-   /// @brief Returns the logical position of the last char in the text up to the pos given. this is NOT the position of the last char because of the possibility of RTL in the text.
-   ///
-   /// @param x in
-   /// @param y in
+   /// @param x 
+   /// @param y 
    ///
    int last_up_to_pos(Evas_Coord x_, Evas_Coord y_) const;
 
-   /// @param x in
-   /// @param y in
-   /// @param[out] cx out
-   /// @param[out] cy out
-   /// @param[out] cw out
-   /// @param[out] ch out
+   /// @param x 
+   /// @param y 
+   /// @param[out] cx 
+   /// @param[out] cy 
+   /// @param[out] cw 
+   /// @param[out] ch 
    ///
    int char_coords_get(Evas_Coord x_, Evas_Coord y_, Evas_Coord* cx_, Evas_Coord* cy_, Evas_Coord* cw_, Evas_Coord* ch_) const;
 
-   /// @brief Retrieve position and dimension information of a character within a text @c Evas_Object.
-   ///
-   /// This function is used to obtain the X, Y, width and height of the character
-   /// located at @p pos within the @c Evas_Object @p obj. @p obj must be a text object
-   /// as created with evas_object_text_add(). Any of the @c Evas_Coord parameters (@p cx,
-   /// @p cy, @p cw, @p ch) may be @c NULL in which case no value will be assigned to that
-   /// parameter.
-   ///
-   /// @return @c EINA_FALSE on success, @c EINA_TRUE on error.
-   ///
-   /// @param pos The character position to request co-ordinates for.
-   /// @param[out] cx A pointer to an @c Evas_Coord to store the X value in (can be NULL).
-   /// @param[out] cy A pointer to an @c Evas_Coord to store the Y value in (can be NULL).
-   /// @param[out] cw A pointer to an @c Evas_Coord to store the Width value in (can be NULL).
-   /// @param[out] ch A pointer to an @c Evas_Coord to store the Height value in (can be NULL).
+   /// @param pos 
+   /// @param[out] cx 
+   /// @param[out] cy 
+   /// @param[out] cw 
+   /// @param[out] ch 
    ///
    bool char_pos_get(int pos_, Evas_Coord* cx_, Evas_Coord* cy_, Evas_Coord* cw_, Evas_Coord* ch_) const;
 
-   /// @brief Retrieves the shadow color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_shadow_color_set() for more details.
-   ///
    void shadow_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the shadow color for the given text object.
-   ///
-   /// Shadow effects, which are fading colors decorating the text
-   /// underneath it, will just be shown if the object is set to one of
-   /// the following styles:
-   ///
-   /// - #EVAS_TEXT_STYLE_SHADOW
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SHADOW
-   /// - #EVAS_TEXT_STYLE_FAR_SHADOW
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SOFT_SHADOW
-   /// - #EVAS_TEXT_STYLE_SOFT_SHADOW
-   /// - #EVAS_TEXT_STYLE_FAR_SOFT_SHADOW
-   ///
-   /// One can also change the direction where the shadow grows to, with
-   /// evas_object_text_style_set().
-   ///
-   /// @see evas_object_text_shadow_color_get()
-   ///
    void shadow_color_set(int r_, int g_, int b_, int a_) const;
 
-   /// @brief @brief Gets the ellipsis currently set on the text object.
-   ///
-   /// @return The ellipsis set on the text object. The ellipsis is -1.0.
-   /// @see evas_object_text_ellipsis_set.
-   /// @since 1.8
-   ///
    double ellipsis_get() const;
 
-   /// @brief @brief Sets the ellipsis that should be used for the text object.
-   ///
-   /// This is a value between 0.0 and 1.0 indicating the position of the text
-   /// to be shown. 0.0 means the start will be shown and the end trimmed, 1.0
-   /// means the beginning will be trimmed and the end will be shown, and any value
-   /// in between will cause ellipsis to be added in both end of the text and the
-   /// requested part to be shown.
-   /// -1.0 means ellipsis is turned off.
-   ///
-   /// @since 1.8
-   ///
    void ellipsis_set(double ellipsis_) const;
 
-   /// @brief @brief Gets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @return A null terminated string of delimiters, e.g ",|". If empty, returns NULL.
-   /// @since 1.1
-   ///
    ::efl::eina::string_view bidi_delimiters_get() const;
 
-   /// @brief @brief Sets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @since 1.1
-   ///
    void bidi_delimiters_set(::efl::eina::string_view delim_) const;
 
-   /// @brief Retrieves the outline color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_outline_color_set() for more details.
-   ///
    void outline_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the outline color for the given text object.
-   ///
-   /// Outline effects (colored lines around text glyphs) will just be
-   /// shown if the object is set to one of the following styles:
-   /// - #EVAS_TEXT_STYLE_OUTLINE
-   /// - #EVAS_TEXT_STYLE_SOFT_OUTLINE
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SHADOW
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SOFT_SHADOW
-   ///
-   /// @see evas_object_text_outline_color_get()
-   ///
    void outline_color_set(int r_, int g_, int b_, int a_) const;
 
-   /// @brief Retrieves the 'glow 2' color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_glow2_color_set() for more details.
-   ///
    void glow2_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the 'glow 2' color for the given text object.
-   ///
-   /// 'Glow 2' effects, which are glowing colors decorating the text's
-   /// (immediate) surroundings, will just be shown if the object is set
-   /// to the #EVAS_TEXT_STYLE_GLOW style. See also
-   /// evas_object_text_glow_color_set().
-   ///
-   /// @see evas_object_text_glow2_color_get()
-   ///
    void glow2_color_set(int r_, int g_, int b_, int a_) const;
 
-   /// @brief Retrieves the style on use on the given text object.
-   ///
-   /// @return the style type in use.
-   ///
-   /// @see evas_object_text_style_set() for more details.
-   ///
    Evas_Text_Style_Type style_get() const;
 
-   /// @brief Sets the style to apply on the given text object.
-   ///
-   /// Text object styles are one of the values in
-   /// #Evas_Text_Style_Type. Some of those values are combinations of
-   /// more than one style, and some account for the direction of the
-   /// rendering of shadow effects.
-   ///
-   /// @note One may use the helper macros #EVAS_TEXT_STYLE_BASIC_SET and
-   /// #EVAS_TEXT_STYLE_SHADOW_DIRECTION_SET to assemble a style value.
-   ///
-   /// The following figure illustrates the text styles:
-   ///
-   /// @image html text-styles.png
-   /// @image rtf text-styles.png
-   /// @image latex text-styles.eps
-   ///
-   /// @see evas_object_text_style_get()
-   /// @see evas_object_text_shadow_color_set()
-   /// @see evas_object_text_outline_color_set()
-   /// @see evas_object_text_glow_color_set()
-   /// @see evas_object_text_glow2_color_set()
-   ///
    void style_set(Evas_Text_Style_Type style_) const;
 
-   /// @brief Retrieves the glow color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_glow_color_set() for more details.
-   ///
    void glow_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the glow color for the given text object.
-   ///
-   /// Glow effects, which are glowing colors decorating the text's
-   /// surroundings, will just be shown if the object is set to the
-   /// #EVAS_TEXT_STYLE_GLOW style.
-   ///
-   /// @note Glow effects are placed from a short distance of the text
-   /// itself, but no touching it. For glowing effects right on the
-   /// borders of the glyphs, see 'glow 2' effects
-   /// (evas_object_text_glow2_color_set()).
-   ///
-   /// @see evas_object_text_glow_color_get()
-   ///
    void glow_color_set(int r_, int g_, int b_, int a_) const;
 
    Evas_Coord max_descent_get() const;
 
-   /// @brief Gets the text style pad of a text object.
-   ///
    void style_pad_get(int* l_, int* r_, int* t_, int* b_) const;
 
-   /// @brief Retrieves the direction of the text currently being displayed in the
-   /// text object.
-   /// @return the direction of the text
-   ///
    Evas_BiDi_Direction direction_get() const;
 
    Evas_Coord ascent_get() const;
@@ -365,219 +206,60 @@ struct text
 
    ~text() {}
 
-   /// @brief Returns the logical position of the last char in the text up to the pos given. this is NOT the position of the last char because of the possibility of RTL in the text.
-   ///
-   /// @param x in
-   /// @param y in
+   /// @param x 
+   /// @param y 
    ///
    int last_up_to_pos(Evas_Coord x_, Evas_Coord y_) const;
 
-   /// @param x in
-   /// @param y in
-   /// @param[out] cx out
-   /// @param[out] cy out
-   /// @param[out] cw out
-   /// @param[out] ch out
+   /// @param x 
+   /// @param y 
+   /// @param[out] cx 
+   /// @param[out] cy 
+   /// @param[out] cw 
+   /// @param[out] ch 
    ///
    int char_coords_get(Evas_Coord x_, Evas_Coord y_, Evas_Coord* cx_, Evas_Coord* cy_, Evas_Coord* cw_, Evas_Coord* ch_) const;
 
-   /// @brief Retrieve position and dimension information of a character within a text @c Evas_Object.
-   ///
-   /// This function is used to obtain the X, Y, width and height of the character
-   /// located at @p pos within the @c Evas_Object @p obj. @p obj must be a text object
-   /// as created with evas_object_text_add(). Any of the @c Evas_Coord parameters (@p cx,
-   /// @p cy, @p cw, @p ch) may be @c NULL in which case no value will be assigned to that
-   /// parameter.
-   ///
-   /// @return @c EINA_FALSE on success, @c EINA_TRUE on error.
-   ///
-   /// @param pos The character position to request co-ordinates for.
-   /// @param[out] cx A pointer to an @c Evas_Coord to store the X value in (can be NULL).
-   /// @param[out] cy A pointer to an @c Evas_Coord to store the Y value in (can be NULL).
-   /// @param[out] cw A pointer to an @c Evas_Coord to store the Width value in (can be NULL).
-   /// @param[out] ch A pointer to an @c Evas_Coord to store the Height value in (can be NULL).
+   /// @param pos 
+   /// @param[out] cx 
+   /// @param[out] cy 
+   /// @param[out] cw 
+   /// @param[out] ch 
    ///
    bool char_pos_get(int pos_, Evas_Coord* cx_, Evas_Coord* cy_, Evas_Coord* cw_, Evas_Coord* ch_) const;
 
-   /// @brief Retrieves the shadow color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_shadow_color_set() for more details.
-   ///
    void shadow_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the shadow color for the given text object.
-   ///
-   /// Shadow effects, which are fading colors decorating the text
-   /// underneath it, will just be shown if the object is set to one of
-   /// the following styles:
-   ///
-   /// - #EVAS_TEXT_STYLE_SHADOW
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SHADOW
-   /// - #EVAS_TEXT_STYLE_FAR_SHADOW
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SOFT_SHADOW
-   /// - #EVAS_TEXT_STYLE_SOFT_SHADOW
-   /// - #EVAS_TEXT_STYLE_FAR_SOFT_SHADOW
-   ///
-   /// One can also change the direction where the shadow grows to, with
-   /// evas_object_text_style_set().
-   ///
-   /// @see evas_object_text_shadow_color_get()
-   ///
    void shadow_color_set(int r_, int g_, int b_, int a_) const;
 
-   /// @brief @brief Gets the ellipsis currently set on the text object.
-   ///
-   /// @return The ellipsis set on the text object. The ellipsis is -1.0.
-   /// @see evas_object_text_ellipsis_set.
-   /// @since 1.8
-   ///
    double ellipsis_get() const;
 
-   /// @brief @brief Sets the ellipsis that should be used for the text object.
-   ///
-   /// This is a value between 0.0 and 1.0 indicating the position of the text
-   /// to be shown. 0.0 means the start will be shown and the end trimmed, 1.0
-   /// means the beginning will be trimmed and the end will be shown, and any value
-   /// in between will cause ellipsis to be added in both end of the text and the
-   /// requested part to be shown.
-   /// -1.0 means ellipsis is turned off.
-   ///
-   /// @since 1.8
-   ///
    void ellipsis_set(double ellipsis_) const;
 
-   /// @brief @brief Gets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @return A null terminated string of delimiters, e.g ",|". If empty, returns NULL.
-   /// @since 1.1
-   ///
    ::efl::eina::string_view bidi_delimiters_get() const;
 
-   /// @brief @brief Sets the BiDi delimiters used in the textblock.
-   ///
-   /// BiDi delimiters are use for in-paragraph separation of bidi segments. This
-   /// is useful for example in recipients fields of e-mail clients where bidi
-   /// oddities can occur when mixing RTL and LTR.
-   ///
-   /// @since 1.1
-   ///
    void bidi_delimiters_set(::efl::eina::string_view delim_) const;
 
-   /// @brief Retrieves the outline color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_outline_color_set() for more details.
-   ///
    void outline_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the outline color for the given text object.
-   ///
-   /// Outline effects (colored lines around text glyphs) will just be
-   /// shown if the object is set to one of the following styles:
-   /// - #EVAS_TEXT_STYLE_OUTLINE
-   /// - #EVAS_TEXT_STYLE_SOFT_OUTLINE
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SHADOW
-   /// - #EVAS_TEXT_STYLE_OUTLINE_SOFT_SHADOW
-   ///
-   /// @see evas_object_text_outline_color_get()
-   ///
    void outline_color_set(int r_, int g_, int b_, int a_) const;
 
-   /// @brief Retrieves the 'glow 2' color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_glow2_color_set() for more details.
-   ///
    void glow2_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the 'glow 2' color for the given text object.
-   ///
-   /// 'Glow 2' effects, which are glowing colors decorating the text's
-   /// (immediate) surroundings, will just be shown if the object is set
-   /// to the #EVAS_TEXT_STYLE_GLOW style. See also
-   /// evas_object_text_glow_color_set().
-   ///
-   /// @see evas_object_text_glow2_color_get()
-   ///
    void glow2_color_set(int r_, int g_, int b_, int a_) const;
 
-   /// @brief Retrieves the style on use on the given text object.
-   ///
-   /// @return the style type in use.
-   ///
-   /// @see evas_object_text_style_set() for more details.
-   ///
    Evas_Text_Style_Type style_get() const;
 
-   /// @brief Sets the style to apply on the given text object.
-   ///
-   /// Text object styles are one of the values in
-   /// #Evas_Text_Style_Type. Some of those values are combinations of
-   /// more than one style, and some account for the direction of the
-   /// rendering of shadow effects.
-   ///
-   /// @note One may use the helper macros #EVAS_TEXT_STYLE_BASIC_SET and
-   /// #EVAS_TEXT_STYLE_SHADOW_DIRECTION_SET to assemble a style value.
-   ///
-   /// The following figure illustrates the text styles:
-   ///
-   /// @image html text-styles.png
-   /// @image rtf text-styles.png
-   /// @image latex text-styles.eps
-   ///
-   /// @see evas_object_text_style_get()
-   /// @see evas_object_text_shadow_color_set()
-   /// @see evas_object_text_outline_color_set()
-   /// @see evas_object_text_glow_color_set()
-   /// @see evas_object_text_glow2_color_set()
-   ///
    void style_set(Evas_Text_Style_Type style_) const;
 
-   /// @brief Retrieves the glow color for the given text object.
-   ///
-   /// @note Use @c NULL pointers on the color components you're not
-   /// interested in: they'll be ignored by the function.
-   ///
-   /// @see evas_object_text_glow_color_set() for more details.
-   ///
    void glow_color_get(int* r_, int* g_, int* b_, int* a_) const;
 
-   /// @brief Sets the glow color for the given text object.
-   ///
-   /// Glow effects, which are glowing colors decorating the text's
-   /// surroundings, will just be shown if the object is set to the
-   /// #EVAS_TEXT_STYLE_GLOW style.
-   ///
-   /// @note Glow effects are placed from a short distance of the text
-   /// itself, but no touching it. For glowing effects right on the
-   /// borders of the glyphs, see 'glow 2' effects
-   /// (evas_object_text_glow2_color_set()).
-   ///
-   /// @see evas_object_text_glow_color_get()
-   ///
    void glow_color_set(int r_, int g_, int b_, int a_) const;
 
    Evas_Coord max_descent_get() const;
 
-   /// @brief Gets the text style pad of a text object.
-   ///
    void style_pad_get(int* l_, int* r_, int* t_, int* b_) const;
 
-   /// @brief Retrieves the direction of the text currently being displayed in the
-   /// text object.
-   /// @return the direction of the text
-   ///
    Evas_BiDi_Direction direction_get() const;
 
    Evas_Coord ascent_get() const;

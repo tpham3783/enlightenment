@@ -23,15 +23,13 @@ EAPI const Eo_Class *elm_box_class_get(void) EINA_CONST;
  * If enabled, homogeneous layout makes all items the same size, according to
  * the size of the largest of its children.
  *
- * Note: This flag is ignored if a custom layout function is set.
- *
- * 
+ * @note This flag is ignored if a custom layout function is set.
  *
  * @param[in] homogeneous The homogeneous flag
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_homogeneous_set(Eina_Bool homogeneous);
+EOAPI void elm_obj_box_homogeneous_set(Eina_Bool homogeneous);
 
 /**
  * @brief Get whether the box is using homogeneous mode or not ($true if it's
@@ -41,7 +39,7 @@ EOAPI void  elm_obj_box_homogeneous_set(Eina_Bool homogeneous);
  *
  * @ingroup Elm_Box
  */
-EOAPI Eina_Bool  elm_obj_box_homogeneous_get(void);
+EOAPI Eina_Bool elm_obj_box_homogeneous_get(void);
 
 /**
  * @brief Set the alignment of the whole bounding box of contents.
@@ -50,28 +48,24 @@ EOAPI Eina_Bool  elm_obj_box_homogeneous_get(void);
  * their sizes and position has been calculated, will be aligned within the
  * space given for the whole box widget.
  *
- * 
- *
  * @param[in] horizontal The horizontal alignment of elements
  * @param[in] vertical The vertical alignment of elements
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_align_set(double horizontal, double vertical);
+EOAPI void elm_obj_box_align_set(double horizontal, double vertical);
 
 /**
  * @brief Get the alignment of the whole bounding box of contents.
  *
  * See also @ref elm_obj_box_align_set.
  *
- * 
- *
  * @param[out] horizontal The horizontal alignment of elements
  * @param[out] vertical The vertical alignment of elements
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_align_get(double *horizontal, double *vertical);
+EOAPI void elm_obj_box_align_get(double *horizontal, double *vertical);
 
 /**
  * @brief Set the horizontal orientation
@@ -80,15 +74,13 @@ EOAPI void  elm_obj_box_align_get(double *horizontal, double *vertical);
  * bottom. By calling this function with @c horizontal as @c true, the box will
  * become horizontal, arranging contents from left to right.
  *
- * Note: This flag is ignored if a custom layout function is set.
- *
- * 
+ * @note This flag is ignored if a custom layout function is set.
  *
  * @param[in] horizontal The horizontal flag
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_horizontal_set(Eina_Bool horizontal);
+EOAPI void elm_obj_box_horizontal_set(Eina_Bool horizontal);
 
 /**
  * @brief Get the horizontal orientation ($true if the box is set to horizontal
@@ -98,7 +90,7 @@ EOAPI void  elm_obj_box_horizontal_set(Eina_Bool horizontal);
  *
  * @ingroup Elm_Box
  */
-EOAPI Eina_Bool  elm_obj_box_horizontal_get(void);
+EOAPI Eina_Bool elm_obj_box_horizontal_get(void);
 
 /**
  * @brief Set the space (padding) between the box's elements.
@@ -108,28 +100,24 @@ EOAPI Eina_Bool  elm_obj_box_horizontal_get(void);
  * for all elements in the box, besides any possible padding that individual
  * elements may have through their size hints.
  *
- * 
- *
  * @param[in] horizontal The horizontal space between elements
  * @param[in] vertical The vertical space between elements
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_padding_set(Evas_Coord horizontal, Evas_Coord vertical);
+EOAPI void elm_obj_box_padding_set(Evas_Coord horizontal, Evas_Coord vertical);
 
 /**
  * @brief Get the space (padding) between the box's elements.
  *
  * See also @ref elm_obj_box_padding_set.
  *
- * 
- *
  * @param[out] horizontal The horizontal space between elements
  * @param[out] vertical The vertical space between elements
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_padding_get(Evas_Coord *horizontal, Evas_Coord *vertical);
+EOAPI void elm_obj_box_padding_get(Evas_Coord *horizontal, Evas_Coord *vertical);
 
 /**
  * @brief Set the layout defining function to be used by the box
@@ -159,15 +147,13 @@ EOAPI void  elm_obj_box_padding_get(Evas_Coord *horizontal, Evas_Coord *vertical
  *
  * See also @ref elm_box_layout_transition.
  *
- * 
- *
  * @param[in] cb The callback function used for layout
  * @param[in] data Data that will be passed to layout function
  * @param[in] free_data Function called to free @c data
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_layout_set(Evas_Object_Box_Layout cb, const void *data, Ecore_Cb free_data);
+EOAPI void elm_obj_box_layout_set(Evas_Object_Box_Layout cb, const void *data, Ecore_Cb free_data);
 
 /**
  * @brief Get a list of the objects packed into the box
@@ -177,11 +163,9 @@ EOAPI void  elm_obj_box_layout_set(Evas_Object_Box_Layout cb, const void *data, 
  *
  * You must free this list with eina_list_free() once you are done with it.
  *
- * 
- *
  * @ingroup Elm_Box
  */
-EOAPI Eina_List * elm_obj_box_children_get(void);
+EOAPI Eina_List *elm_obj_box_children_get(void);
 
 /**
  * @brief Add an object at the end of the pack list
@@ -199,7 +183,7 @@ EOAPI Eina_List * elm_obj_box_children_get(void);
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_pack_end(Evas_Object *subobj);
+EOAPI void elm_obj_box_pack_end(Evas_Object *subobj);
 
 /**
  * @brief Remove all items from the box, without deleting them
@@ -214,7 +198,7 @@ EOAPI void  elm_obj_box_pack_end(Evas_Object *subobj);
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_unpack_all(void);
+EOAPI void elm_obj_box_unpack_all(void);
 
 /**
  * @brief Unpack a box item
@@ -224,13 +208,11 @@ EOAPI void  elm_obj_box_unpack_all(void);
  *
  * See also @ref elm_obj_box_unpack_all, @ref elm_obj_box_clear.
  *
- * 
- *
  * @param[in] subobj The object to unpack
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_unpack(Evas_Object *subobj);
+EOAPI void elm_obj_box_unpack(Evas_Object *subobj);
 
 /**
  * @brief Adds an object to the box after the indicated object
@@ -244,13 +226,11 @@ EOAPI void  elm_obj_box_unpack(Evas_Object *subobj);
  * @ref elm_obj_box_pack_before, @ref elm_obj_box_unpack,
  * @ref elm_obj_box_unpack_all, @ref elm_obj_box_clear.
  *
- * 
- *
  * @param[in] after The object after which to add it
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_pack_after(Evas_Object *subobj, Evas_Object *after);
+EOAPI void elm_obj_box_pack_after(Evas_Object *subobj, Evas_Object *after);
 
 /**
  * @brief Add an object to the beginning of the pack list
@@ -264,13 +244,11 @@ EOAPI void  elm_obj_box_pack_after(Evas_Object *subobj, Evas_Object *after);
  * @ref elm_obj_box_pack_after, @ref elm_obj_box_unpack,
  * @ref elm_obj_box_unpack_all, @ref elm_obj_box_clear.
  *
- * 
- *
  * @param[in] subobj The object to add to the box
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_pack_start(Evas_Object *subobj);
+EOAPI void elm_obj_box_pack_start(Evas_Object *subobj);
 
 /**
  * @brief Force the box to recalculate its children packing.
@@ -280,11 +258,9 @@ EOAPI void  elm_obj_box_pack_start(Evas_Object *subobj);
  * great as it would save lots of recalculation, whenever you need to get the
  * position of a just added item you must force recalculate before doing so.
  *
- * 
- *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_recalculate(void);
+EOAPI void elm_obj_box_recalculate(void);
 
 /**
  * @brief Adds an object to the box before the indicated object
@@ -298,13 +274,11 @@ EOAPI void  elm_obj_box_recalculate(void);
  * @ref elm_obj_box_pack_after, @ref elm_obj_box_unpack,
  * @ref elm_obj_box_unpack_all, @ref elm_obj_box_clear.
  *
- * 
- *
  * @param[in] before The object before which to add it
  *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_pack_before(Evas_Object *subobj, Evas_Object *before);
+EOAPI void elm_obj_box_pack_before(Evas_Object *subobj, Evas_Object *before);
 
 /**
  * @brief Clear the box of all children
@@ -314,11 +288,9 @@ EOAPI void  elm_obj_box_pack_before(Evas_Object *subobj, Evas_Object *before);
  *
  * See also @ref elm_obj_box_unpack, @ref elm_obj_box_unpack_all.
  *
- * 
- *
  * @ingroup Elm_Box
  */
-EOAPI void  elm_obj_box_clear(void);
+EOAPI void elm_obj_box_clear(void);
 
 EOAPI extern const Eo_Event_Description _ELM_BOX_EVENT_CHILD_ADDED;
 EOAPI extern const Eo_Event_Description _ELM_BOX_EVENT_CHILD_REMOVED;

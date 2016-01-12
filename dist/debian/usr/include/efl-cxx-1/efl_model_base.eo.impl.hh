@@ -488,86 +488,62 @@ int initialize_operation_description(::efl::eo::detail::tag<::efl::model::base>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_load_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_load);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_unload_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_unload);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_properties_load_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_properties_load);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_children_load_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_children_load);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_child_add_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_child_add);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_child_del_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_child_del);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_load_status_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_load_status_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_properties_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_properties_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_property_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_property_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_property_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_property_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_children_slice_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_children_slice_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::efl_model_base_children_count_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::efl_model_children_count_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    return 0;

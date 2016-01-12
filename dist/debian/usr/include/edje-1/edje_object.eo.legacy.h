@@ -181,7 +181,7 @@ EAPI const Edje_Perspective *edje_object_perspective_get(const Edje_Object *obj)
  * scaling will  override any global scaling set, for the object obj's parts.
  * Put it back to zero to get the effects of the global scaling again.
  *
- * Warning: Only parts which, at EDC level, had the @"scale" property set to
+ * @warning Only parts which, at EDC level, had the @"scale" property set to
  * @1, will be affected by this function. Check the complete @ref edcref
  * "syntax reference" for EDC files.
  *
@@ -370,10 +370,10 @@ EAPI void edje_object_message_handler_set(Edje_Object *obj, Edje_Message_Handler
  * This function retrieves the obj object's minimum size values, as declared in
  * its EDC group definition.
  *
- * Note: If the @c min EDC property was not declared for obj, this call will
+ * @note If the @c min EDC property was not declared for obj, this call will
  * return the value 0, for each axis.
  *
- * Note: On failure, this function will make all non-$null size pointers'
+ * @note On failure, this function will make all non-$null size pointers'
  * pointed variables be set to zero.
  *
  * See also @ref edje_object_size_max_get()
@@ -423,10 +423,10 @@ EAPI Edje_Load_Error edje_object_load_error_get(const Edje_Object *obj);
  * This function retrieves the obj object's maximum size values, as declared in
  * its EDC group definition.
  *
- * Note: If the @c max EDC property was not declared for obj, this call will
+ * @note If the @c max EDC property was not declared for obj, this call will
  * return the maximum size a given Edje object may have, for each axis.
  *
- * Note: On failure, this function will make all non-$null size pointers'
+ * @note On failure, this function will make all non-$null size pointers'
  * pointed variables be set to zero.
  *
  * See also @ref edje_object_size_min_get()
@@ -649,10 +649,10 @@ EAPI void edje_object_part_text_append(Edje_Object *obj, const char *part, const
  * y coordinates are relative to the top left corner of the whole obj object's
  * area.
  *
- * Note: Use @c null pointers on the geometry components you're not interested
+ * @note Use @c null pointers on the geometry components you're not interested
  * in: they'll be ignored by the function.
  *
- * Note: On failure, this function will make all non-$null geometry pointers'
+ * @note On failure, this function will make all non-$null geometry pointers'
  * pointed variables be set to zero.
  *
  * @param[out] x A pointer to a variable where to store the part's x coordinate
@@ -824,10 +824,10 @@ EAPI void edje_object_part_text_cursor_copy(Edje_Object *obj, const char *part, 
  * out of the group's boundaries will also be taken in account, so that x and y
  * may be negative.
  *
- * Note: Use @c null pointers on the geometry components you're not interested
+ * @note Use @c null pointers on the geometry components you're not interested
  * in: they'll be ignored by the function.
  *
- * Note: On failure, this function will make all non-$null geometry pointers'
+ * @note On failure, this function will make all non-$null geometry pointers'
  * pointed variables be set to zero.
  *
  * @param[out] y A pointer to a variable where to store the parts region's y
@@ -1046,7 +1046,7 @@ EAPI Eina_Bool edje_object_part_table_col_row_size_get(const Edje_Object *obj, c
  * This function returns the part created by such external plugins and being
  * currently managed by this Edje.
  *
- * Note: Almost all swallow rules apply: you should not move, resize, hide,
+ * @note Almost all swallow rules apply: you should not move, resize, hide,
  * show, set the color or clipper of such part. It's a bit more restrictive as
  * one must  never delete this object!
  *
@@ -1080,7 +1080,7 @@ EAPI Evas_Object *edje_object_part_external_content_get(const Edje_Object *obj, 
  * might be other pending requests of this type). It emits a signal
  * "preload,done" when finished.
  *
- * Note: Use @c true on scenarios where you don't need the image data preloaded
+ * @note Use @c true on scenarios where you don't need the image data preloaded
  * anymore.
  *
  * @param[in] cancel @c false will add it the preloading work queue, @c true
@@ -1387,7 +1387,7 @@ EAPI Edje_Drag_Dir edje_object_part_drag_dir_get(const Edje_Object *obj, const c
 /**
  * @brief Sets the raw (non escaped) text for an object part.
  *
- * This funciton will not do escape for you if it is a TEXTBLOCK part, that is,
+ * This function will not do escape for you if it is a TEXTBLOCK part, that is,
  * if text contain tags, these tags will not be interpreted/parsed by
  * TEXTBLOCK.
  *
@@ -1447,7 +1447,7 @@ EAPI char *edje_object_part_text_unescaped_get(const Edje_Object *obj, const cha
  * parameters of the callback function (e.g. "mouse,down,2" and
  * @"button.close"), for each of those events.
  *
- * Note: See @ref edcref "the syntax" for EDC files See also
+ * @note See @ref edcref "the syntax" for EDC files See also
  * @ref edje_object_signal_emit() on how to emits Edje signals from code to a
  * an object @ref edje_object_signal_callback_del_full()
  *
@@ -1525,7 +1525,7 @@ EAPI Edje_Text_Autocapital_Type edje_object_part_text_autocapital_type_get(const
  *
  * Causes the edje to regurgitate a previously swallowed object. :)
  *
- * Note: obj_swallow will  not be deleted or hidden. Note: obj_swallow may
+ * @note obj_swallow will  not be deleted or hidden. Note: obj_swallow may
  * appear shown on the evas depending on its state when it got unswallowed.
  * Make sure you delete it or hide it if you do not want it to.
  *
@@ -1571,7 +1571,7 @@ EAPI Eina_Bool edje_object_part_text_prediction_allow_get(const Edje_Object *obj
  * this function. Check the complete @ref edcref "syntax reference" for EDC
  * files.
  *
- * Warning: Do not confuse this call with edje_file_data_get(), which queries
+ * @warning Do not confuse this call with edje_file_data_get(), which queries
  * for a  global EDC data field on an EDC declaration file.
  *
  * @ref edje_object_file_set()
@@ -1598,7 +1598,7 @@ EAPI const char *edje_object_data_get(const Edje_Object *obj, const char *key);
  * function is different from edje_object_text_insert_filter_callback_add() in
  * that the text parameter in the fucn filter is always markup.
  *
- * Warning: If you use this function with
+ * @warning If you use this function with
  * edje_object_text_insert_filter_callback_add() togehter, all
  * Edje_Text_Filter_Cb functions and Edje_Markup_Filter_Cb functions will be
  * executed, and then filtered text will be inserted.
@@ -1751,12 +1751,12 @@ EAPI Eina_Bool edje_object_part_box_insert_before(Edje_Object *obj, const char *
  * by the external plugin. For instance, it may be a string that defines a
  * button label and setting this property will change that label on the fly.
  *
- * Note: external parts have parameters set when they change states. Those
+ * @note external parts have parameters set when they change states. Those
  * parameters will never be changed by this function. The interpretation of how
  * state_set parameters and param_set will interact is up to the external
  * plugin.
  *
- * Note: this function will not check if parameter value is valid using
+ * @note this function will not check if parameter value is valid using
  * #Edje_External_Param_Info minimum, maximum, valid choices and others.
  * However these should be checked by the underlying implementation provided by
  * the external plugin. This is done for performance reasons.
@@ -1836,11 +1836,11 @@ EAPI Eina_Bool edje_object_part_box_append(Edje_Object *obj, const char *part, E
  * resulting calculation to get to values equal or bigger than restrictedw and
  * restrictedh, for width and height, respectively.
  *
- * Note: At the end of this call, obj  won't be automatically resized to new
+ * @note At the end of this call, obj  won't be automatically resized to new
  * dimensions, but just return the calculated sizes. The caller is the one up
  * to change its geometry or not.
  *
- * Warning: Be advised that invisible parts in obj  will be taken into account
+ * @warning Be advised that invisible parts in obj  will be taken into account
  * in this calculation.
  *
  * @param[out] minh Pointer to a variable where to store the minimum required
@@ -1878,7 +1878,7 @@ EAPI Eina_Bool edje_object_part_box_remove_all(Edje_Object *obj, const char *par
  *
  * Values for dx and dy are real numbers that range from 0 to 1.
  *
- * Warning: Paging is bugged!
+ * @warning Paging is bugged!
  *
  * See also @ref edje_object_part_drag_step()
  *
@@ -2014,6 +2014,23 @@ EAPI Eina_Bool edje_object_part_text_cursor_is_format_get(const Edje_Object *obj
 EAPI Eina_Bool edje_object_text_class_get(const Edje_Object *obj, const char *text_class, const char **font, Evas_Font_Size *size);
 
 /**
+ * @brief Delete the object text class.
+ *
+ * This function deletes any values at the object level for the specified
+ * object and text class.
+ *
+ * Deleting the text class will revert it to the values defined by
+ * edje_text_class_set() or the text class defined in the theme file.
+ *
+ * @param[in] text_class The color class to be deleted.
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EAPI void edje_object_text_class_del(Edje_Object *obj, const char *text_class);
+
+/**
  * @brief Sets the object color class.
  *
  * This function sets the color values for an object level color class. This
@@ -2026,7 +2043,7 @@ EAPI Eina_Bool edje_object_text_class_get(const Edje_Object *obj, const char *te
  * Setting color emits a signal "color_class,set" with source being the given
  * color.
  *
- * Note: unlike Evas, Edje colors are  not pre-multiplied. That is,
+ * @note unlike Evas, Edje colors are  not pre-multiplied. That is,
  * half-transparent white is 255 255 255 128.
  *
  * @param[in] r Object Red value
@@ -2055,7 +2072,7 @@ EAPI Eina_Bool edje_object_color_class_set(Edje_Object *obj, const char *color_c
  * The first color is the object, the second is the text outline, and the third
  * is the text shadow. (Note that the second two only apply to text parts).
  *
- * Note: unlike Evas, Edje colors are  not pre-multiplied. That is,
+ * @note unlike Evas, Edje colors are  not pre-multiplied. That is,
  * half-transparent white is 255 255 255 128.
  *
  * @param[out] r Object Red value
@@ -2089,6 +2106,92 @@ EAPI Eina_Bool edje_object_color_class_get(const Edje_Object *obj, const char *c
  * @ingroup Edje_Object
  */
 EAPI const char *edje_object_color_class_description_get(const Edje_Object *obj, const char *color_class);
+
+/**
+ * @brief Clear object color classes.
+ *
+ * @return @c true, on success or @c false, on error
+ *
+ * @since 1.17.0
+ *
+ * @ingroup Edje_Object
+ */
+EAPI Eina_Bool edje_object_color_class_clear(const Edje_Object *obj);
+
+/**
+ * @brief Delete the object color class.
+ *
+ * This function deletes any values at the object level for the specified
+ * object and color class.
+ *
+ * Deleting the color class will revert it to the values defined by
+ * edje_color_class_set() or the color class defined in the theme file.
+ *
+ * Deleting the color class will emit the signal "color_class,del" for the
+ * given Edje object.
+ *
+ * @param[in] color_class The color class to be deleted.
+ *
+ * @ingroup Edje_Object
+ */
+EAPI void edje_object_color_class_del(Edje_Object *obj, const char *color_class);
+
+/**
+ * @brief Sets the object size class.
+ *
+ * This function sets the min and max values for an object level size class.
+ * This will make all edje parts in the specified object that have the
+ * specified size class update their min and max size with given values.
+ *
+ * @param[in] minw The min width
+ * @param[in] minh The min height
+ * @param[in] maxw The max width
+ * @param[in] maxh The max height
+ *
+ * @return @c true, on success or @c false, on error
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EAPI Eina_Bool edje_object_size_class_set(Edje_Object *obj, const char *size_class, int minw, int minh, int maxw, int maxh);
+
+/**
+ * @brief Gets the object size class.
+ *
+ * This function gets the min and max values for an object level size class.
+ * These values will only be valid until the size class is changed or the edje
+ * object is deleted.
+ *
+ * @param[out] minw The min width
+ * @param[out] minh The min height
+ * @param[out] maxw The max width
+ * @param[out] maxh The max height
+ *
+ * @return @c true, on success or @c false, on error
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EAPI Eina_Bool edje_object_size_class_get(const Edje_Object *obj, const char *size_class, int *minw, int *minh, int *maxw, int *maxh);
+
+/**
+ * @brief Delete the object size class.
+ *
+ * This function deletes any values at the object level for the specified
+ * object and size class.
+ *
+ * Deleting the size class will revert it to the values defined by
+ * edje_size_class_set() or the color class defined in the theme file.
+ *
+ * @param[in] size_class
+ *
+ * @since 1.17
+ *
+ * @ingroup Edje_Object
+ */
+EAPI void edje_object_size_class_del(Edje_Object *obj, const char *size_class);
 
 /**
  * @brief Steps the dragable x,y steps.
@@ -2154,7 +2257,7 @@ EAPI const Eina_List *edje_object_part_text_anchor_list_get(const Edje_Object *o
  * If the text is to be rejected, freeing it and setting the pointer to @c null
  * will make Edje break out of the filter cycle and reject the inserted text.
  *
- * Warning: This function will be deprecated because of difficulty in use. The
+ * @warning This function will be deprecated because of difficulty in use. The
  * type(format, text, or markup) of text should be always checked in the filter
  * function for correct filtering. Please use
  * edje_object_text_markup_filter_callback_add() instead. There is no need to
@@ -2299,7 +2402,7 @@ EAPI const Eina_List *edje_object_part_text_item_list_get(const Edje_Object *obj
  * be unswallowed (as in edje_object_part_unswallow()) before the new object is
  * swallowed.
  *
- * Note:  obj  won't delete the swallowed object once it is deleted --
+ * @note  obj  won't delete the swallowed object once it is deleted --
  *  obj_swallow will get to an unparented state again.
  *
  * For more details on EDC @c SWALLOW parts, see @ref edcref "syntax

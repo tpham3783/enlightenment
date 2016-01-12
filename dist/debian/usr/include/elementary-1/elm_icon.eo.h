@@ -48,7 +48,7 @@ EAPI const Eo_Class *elm_icon_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Icon
  */
-EOAPI void  elm_obj_icon_order_lookup_set(Elm_Icon_Lookup_Order order);
+EOAPI void elm_obj_icon_order_lookup_set(Elm_Icon_Lookup_Order order);
 
 /**
  * @brief Get the icon lookup order.
@@ -60,7 +60,7 @@ EOAPI void  elm_obj_icon_order_lookup_set(Elm_Icon_Lookup_Order order);
  *
  * @ingroup Elm_Icon
  */
-EOAPI Elm_Icon_Lookup_Order  elm_obj_icon_order_lookup_get(void);
+EOAPI Elm_Icon_Lookup_Order elm_obj_icon_order_lookup_get(void);
 
 /**
  * @brief Set the icon by icon standards names.
@@ -74,10 +74,10 @@ EOAPI Elm_Icon_Lookup_Order  elm_obj_icon_order_lookup_get(void);
  * If name is not found in any of the expected locations and it is the absolute
  * path of an image file, this image will be used.
  *
- * Note: The icon image set by this function can be changed by
+ * @note The icon image set by this function can be changed by
  * @ref efl_file_set.
  *
- * Note: This function does not accept relative icon path.
+ * @note This function does not accept relative icon path.
  *
  * See also @ref elm_obj_icon_standard_get.
  *
@@ -87,7 +87,7 @@ EOAPI Elm_Icon_Lookup_Order  elm_obj_icon_order_lookup_get(void);
  *
  * @ingroup Elm_Icon
  */
-EOAPI Eina_Bool  elm_obj_icon_standard_set(const char *name);
+EOAPI Eina_Bool elm_obj_icon_standard_set(const char *name);
 
 /**
  * @brief Get the icon name set by icon standard names.
@@ -99,7 +99,7 @@ EOAPI Eina_Bool  elm_obj_icon_standard_set(const char *name);
  *
  * @ingroup Elm_Icon
  */
-EOAPI const char * elm_obj_icon_standard_get(void);
+EOAPI const char *elm_obj_icon_standard_get(void);
 
 /**
  * @brief Set the file that will be used, but use a generated thumbnail.
@@ -114,7 +114,7 @@ EOAPI const char * elm_obj_icon_standard_get(void);
  *
  * @ingroup Elm_Icon
  */
-EOAPI void  elm_obj_icon_thumb_set(const char *file, const char *group);
+EOAPI void elm_obj_icon_thumb_set(const char *file, const char *group);
 
 EOAPI extern const Eo_Event_Description _ELM_ICON_EVENT_THUMB_DONE;
 EOAPI extern const Eo_Event_Description _ELM_ICON_EVENT_THUMB_ERROR;

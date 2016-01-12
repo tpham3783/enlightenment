@@ -45,7 +45,7 @@ __body = {
         local h = ffi.new("Evas_Coord[1]")
         __lib.evas_out_view_get(x, y, w, h)
         eo.__do_end()
-        return tonumber(x[0]), tonumber(y[0]), tonumber(w[0]), tonumber(h[0])
+        return x[0], y[0], w[0], h[0]
     end,
 
     engine_info_set = function(self, info)

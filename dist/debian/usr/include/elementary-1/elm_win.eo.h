@@ -191,54 +191,52 @@ typedef enum
 EAPI const Eo_Class *elm_win_class_get(void) EINA_CONST;
 
 /**
- * Sets whether the window is a keyboard.
+ * @brief Sets whether the window is a keyboard.
  *
- * @ingroup Win
+ * @param[in] is_keyboard If true, the window is a virtual keyboard.
  *
- * @param[in] is_keyboard If true, the window is a virtual keyboard
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_keyboard_win_set(Eina_Bool is_keyboard);
+EOAPI void elm_obj_win_keyboard_win_set(Eina_Bool is_keyboard);
 
 /**
- * Get whether the window is a keyboard.
+ * @brief Get whether the window is a keyboard.
  *
- * @return If the window is a virtual keyboard
+ * @return If true, the window is a virtual keyboard.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_keyboard_win_get(void);
+EOAPI Eina_Bool elm_obj_win_keyboard_win_get(void);
 
 /**
- * Set the window's autodel state.
+ * @brief Set the window's autodel state.
  *
  * When closing the window in any way outside of the program control, like
- * pressing the X button in the titlebar or using a command from the
- * Window Manager, a "delete,request" signal is emitted to indicate that
- * this event occurred and the developer can take any action, which may
- * include, or not, destroying the window object.
+ * pressing the X button in the titlebar or using a command from the Window
+ * Manager, a "delete,request" signal is emitted to indicate that this event
+ * occurred and the developer can take any action, which may include, or not,
+ * destroying the window object.
  *
- * When the @p autodel parameter is set, the window will be automatically
- * destroyed when this event occurs, after the signal is emitted.
- * If @p autodel is @c EINA_FALSE, then the window will not be destroyed
- * and is up to the program to do so when it's required.
- *
- * @ingroup Win
+ * When the @c autodel parameter is set, the window will be automatically
+ * destroyed when this event occurs, after the signal is emitted. If @c autodel
+ * is @c false, then the window will not be destroyed and is up to the program
+ * to do so when it's required.
  *
  * @param[in] autodel If true, the window will automatically delete itself when
-closed
+ * closed.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_autodel_set(Eina_Bool autodel);
+EOAPI void elm_obj_win_autodel_set(Eina_Bool autodel);
 
 /**
- * Get the window's autodel state.
+ * @brief Get the window's autodel state.
  *
- * @return If the window will automatically delete itself when closed
+ * @return If true, the window will automatically delete itself when closed.
  *
- * @see elm_win_autodel_set()
- *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_autodel_get(void);
+EOAPI Eina_Bool elm_obj_win_autodel_get(void);
 
 /**
  * @brief Window's autohide state.
@@ -251,14 +249,15 @@ EOAPI Eina_Bool  elm_obj_win_autodel_get(void);
  * @c ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN which allows exiting Elementary's main
  * loop when all the windows are hidden.
  *
- * Note: @ref elm_obj_win_autodel_get and @c autohide are not mutually
+ * @note @ref elm_obj_win_autodel_get and @c autohide are not mutually
  * exclusive. The window will be deleted if both are set to @c true.
  *
- * @param[in] autohide
+ * @param[in] autohide If true, the window will automatically hide itself when
+ * closed.
  *
  * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_autohide_set(Eina_Bool autohide);
+EOAPI void elm_obj_win_autohide_set(Eina_Bool autohide);
 
 /**
  * @brief Window's autohide state.
@@ -271,1327 +270,1286 @@ EOAPI void  elm_obj_win_autohide_set(Eina_Bool autohide);
  * @c ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN which allows exiting Elementary's main
  * loop when all the windows are hidden.
  *
- * Note: @ref elm_obj_win_autodel_get and @c autohide are not mutually
+ * @note @ref elm_obj_win_autodel_get and @c autohide are not mutually
  * exclusive. The window will be deleted if both are set to @c true.
+ *
+ * @return If true, the window will automatically hide itself when closed.
  *
  * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_autohide_get(void);
+EOAPI Eina_Bool elm_obj_win_autohide_get(void);
 
 /**
- * Set the override state of a window.
+ * @brief Set the override state of a window.
  *
- * A window with @p override set to EINA_TRUE will not be managed by the
- * Window Manager. This means that no decorations of any kind will be shown
- * for it, moving and resizing must be handled by the application, as well
- * as the window visibility.
+ * A window with @c override set to true will not be managed by the Window
+ * Manager. This means that no decorations of any kind will be shown for it,
+ * moving and resizing must be handled by the application, as well as the
+ * window visibility.
  *
- * This should not be used for normal windows, and even for not so normal
- * ones, it should only be used when there's a good reason and with a lot
- * of care. Mishandling override windows may result situations that
- * disrupt the normal workflow of the end user.
+ * This should not be used for normal windows, and even for not so normal ones,
+ * it should only be used when there's a good reason and with a lot of care.
+ * Mishandling override windows may result situations that disrupt the normal
+ * workflow of the end user.
  *
- * @ingroup Win
+ * @param[in] override If true, the window is overridden.
  *
- * @param[in] override If true, the window is overridden
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_override_set(Eina_Bool override);
+EOAPI void elm_obj_win_override_set(Eina_Bool override);
 
 /**
- * Get the override state of a window.
+ * @brief Get the override state of a window.
  *
- * @return If true, the window is overridden
+ * @return If true, the window is overridden.
  *
- * @see elm_win_override_set()
- *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_override_get(void);
+EOAPI Eina_Bool elm_obj_win_override_get(void);
 
 /**
- * Set the iconified state of a window.
+ * @brief Set the iconified state of a window.
  *
- * @ingroup Win
+ * @param[in] iconified If true, the window is iconified.
  *
- * @param[in] iconified If true, the window is iconified
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_iconified_set(Eina_Bool iconified);
+EOAPI void elm_obj_win_iconified_set(Eina_Bool iconified);
 
 /**
- * Get the iconified state of a window.
+ * @brief Get the iconified state of a window.
  *
- * @return If true, the window is iconified
+ * @return If true, the window is iconified.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_iconified_get(void);
+EOAPI Eina_Bool elm_obj_win_iconified_get(void);
 
 /**
- * Set the array of available window rotations.
+ * @brief Set the array of available window rotations.
  *
- * This function is used to set the available rotations to give the hints to WM.
- * WM will refer this hints and set the orientation window properly.
- *
- * @see elm_win_wm_rotation_available_rotations_get()
- *
- * ingroup Win
- * @since 1.9
+ * This function is used to set the available rotations to give the hints to
+ * WM. WM will refer this hints and set the orientation window properly.
  *
  * @param[in] rotations The array of rotation value.
- * @param[in] count The size of the @param rotations array.
+ * @param[in] count The size of the rotations array.
+ *
+ * @since 1.9
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_wm_available_rotations_set(const int *rotations, unsigned int count);
+EOAPI void elm_obj_win_wm_available_rotations_set(const int *rotations, unsigned int count);
 
 /**
- * Get the array of available window rotations.
+ * @brief Get the array of available window rotations.
  *
  * This function is used to get the available rotations.
  *
- * @see elm_win_wm_rotation_available_rotations_set()
+ * @param[out] rotations The array of rotation value.
+ * @param[out] count The size of the rotations array.
  *
- * ingroup Win
  * @since 1.9
  *
- * @param[out] rotations The array of rotation value.
- * @param[out] count The size of the @param rotations array.
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_wm_available_rotations_get(int **rotations, unsigned int *count);
+EOAPI Eina_Bool elm_obj_win_wm_available_rotations_get(int **rotations, unsigned int *count);
 
 /**
- * Set which zone this quickpanel should appear in
+ * @brief Set which zone this quickpanel should appear in.
  *
- * @ingroup Win
+ * @param[in] zone The requested zone for this quickpanel.
  *
- * @param[in] zone The requested zone for this quickpanel
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_quickpanel_zone_set(int zone);
+EOAPI void elm_obj_win_quickpanel_zone_set(int zone);
 
 /**
- * Get which zone this quickpanel should appear in
+ * @brief Get which zone this quickpanel should appear in.
  *
- * @return The requested zone for this quickpanel
+ * @return The requested zone for this quickpanel.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI int  elm_obj_win_quickpanel_zone_get(void);
+EOAPI int elm_obj_win_quickpanel_zone_get(void);
 
 /**
- * Set the maximized state of a window.
+ * @brief Set the maximized state of a window.
  *
- * @ingroup Win
+ * @param[in] maximized If true, the window is maximized.
  *
- * @param[in] maximized If true, the window is maximized
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_maximized_set(Eina_Bool maximized);
+EOAPI void elm_obj_win_maximized_set(Eina_Bool maximized);
 
 /**
- * Get the maximized state of a window.
+ * @brief Get the maximized state of a window.
  *
- * @return If true, the window is maximized
+ * @return If true, the window is maximized.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_maximized_get(void);
+EOAPI Eina_Bool elm_obj_win_maximized_get(void);
 
 /**
- * Set the modal state of a window.
+ * @brief Set the modal state of a window.
  *
- * @ingroup Win
+ * @param[in] modal If true, the window is modal.
  *
- * @param[in] modal If true, the window is modal
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_modal_set(Eina_Bool modal);
+EOAPI void elm_obj_win_modal_set(Eina_Bool modal);
 
 /**
- * Get the modal state of a window.
+ * @brief Get the modal state of a window.
  *
- * @return If true, the window is modal
+ * @return If true, the window is modal.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_modal_get(void);
+EOAPI Eina_Bool elm_obj_win_modal_get(void);
 
 /**
- * Set the icon name of the window
+ * @brief Set the icon name of the window.
  *
- * @ingroup Win
+ * @param[in] icon_name The icon name to set.
  *
- * @param[in] icon_name The icon name to set
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_icon_name_set(const char *icon_name);
+EOAPI void elm_obj_win_icon_name_set(const char *icon_name);
 
 /**
- * Get the icon name of the window
+ * @brief Get the icon name of the window.
  *
- * The returned string is an internal one and should not be freed or
- * modified. It will also be invalid if a new icon name is set or if
- * the window is destroyed.
+ * The returned string is an internal one and should not be freed or modified.
+ * It will also be invalid if a new icon name is set or if the window is
+ * destroyed.
  *
- * @return The icon name
+ * @return The icon name to set.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI const char * elm_obj_win_icon_name_get(void);
+EOAPI const char *elm_obj_win_icon_name_get(void);
 
 /**
- * Set the withdrawn state of a window.
+ * @brief Set the withdrawn state of a window.
  *
- * @ingroup Win
+ * @param[in] withdrawn If true, the window is withdrawn.
  *
- * @param[in] withdrawn If true, the window is withdrawn
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_withdrawn_set(Eina_Bool withdrawn);
+EOAPI void elm_obj_win_withdrawn_set(Eina_Bool withdrawn);
 
 /**
- * Get the withdrawn state of a window.
+ * @brief Get the withdrawn state of a window.
  *
- * @return If true, the window is withdrawn
+ * @return If true, the window is withdrawn.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_withdrawn_get(void);
+EOAPI Eina_Bool elm_obj_win_withdrawn_get(void);
 
 /**
- * Set the role of the window
+ * @brief Set the role of the window.
  *
- * @ingroup Win
+ * @param[in] role The role to set.
  *
- * @param[in] role The role to set
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_role_set(const char *role);
+EOAPI void elm_obj_win_role_set(const char *role);
 
 /**
- * Get the role of the window
+ * @brief Get the role of the window.
  *
- * The returned string is an internal one and should not be freed or
- * modified. It will also be invalid if a new role is set or if
- * the window is destroyed.
+ * The returned string is an internal one and should not be freed or modified.
+ * It will also be invalid if a new role is set or if the window is destroyed.
  *
- * @return The role
+ * @return The role to set.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI const char * elm_obj_win_role_get(void);
+EOAPI const char *elm_obj_win_role_get(void);
 
 /**
- * Set the window stepping used with sizing calculation
+ * @brief Set the window stepping used with sizing calculation.
  *
  * Base size + stepping is what is calculated for window sizing restrictions.
  *
- * @ingroup Win
- * @see elm_win_size_step_get
- * @see elm_win_size_base_set
+ * @param[in] w The stepping width (0 disables).
+ * @param[in] h The stepping height (0 disables).
+ *
  * @since 1.7
  *
- * @param[in] w The stepping width (0 disables)
- * @param[in] h The stepping height (0 disables)
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_size_step_set(int w, int h);
+EOAPI void elm_obj_win_size_step_set(int w, int h);
 
 /**
- * Get the stepping of a window.
+ * @brief Get the stepping of a window.
  *
- * @ingroup Win
- * @see elm_win_size_base_set
- * @see elm_win_size_step_set
+ * @param[out] w The stepping width (0 disables).
+ * @param[out] h The stepping height (0 disables).
+ *
  * @since 1.7
  *
- * @param[out] w The stepping width (0 disables)
- * @param[out] h The stepping height (0 disables)
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_size_step_get(int *w, int *h);
+EOAPI void elm_obj_win_size_step_get(int *w, int *h);
 
 /**
- * Set the style for the focus highlight on this window
+ * @brief Set the style for the focus highlight on this window.
  *
- * Sets the style to use for theming the highlight of focused objects on
- * the given window. If @p style is NULL, the default will be used.
+ * Sets the style to use for theming the highlight of focused objects on the
+ * given window. If @c style is NULL, the default will be used.
  *
- * @ingroup Win
+ * @param[in] style The style or @c null if none.
  *
- * @param[in] style The style to set
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_focus_highlight_style_set(const char *style);
+EOAPI void elm_obj_win_focus_highlight_style_set(const char *style);
 
 /**
- * Get the style set for the focus highlight object
+ * @brief Get the style set for the focus highlight object.
  *
- * Get the style set for this windows highlight object, or NULL if none
- * is set.
+ * @return The style or @c null if none.
  *
- * @return The style set or NULL if none was. Default is used in that case.
- *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI const char * elm_obj_win_focus_highlight_style_get(void);
+EOAPI const char *elm_obj_win_focus_highlight_style_get(void);
 
 /**
- * Set the borderless state of a window.
+ * @brief Set the borderless state of a window.
  *
- * This function requests the Window Manager to not draw any decoration
- * around the window.
+ * This function requests the Window Manager to not draw any decoration around
+ * the window.
  *
- * @ingroup Win
+ * @param[in] borderless If true, the window is borderless.
  *
- * @param[in] borderless If true, the window is borderless
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_borderless_set(Eina_Bool borderless);
+EOAPI void elm_obj_win_borderless_set(Eina_Bool borderless);
 
 /**
- * Get the borderless state of a window.
+ * @brief Get the borderless state of a window.
  *
- * @return If true, the window is borderless
+ * @return If true, the window is borderless.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_borderless_get(void);
+EOAPI Eina_Bool elm_obj_win_borderless_get(void);
 
 /**
- * Constrain the maximum width and height of a window to the width and height of its screen
+ * @brief Constrain the maximum width and height of a window to the width and
+ * height of its screen.
  *
- * When @p constrain is true, @p obj will never resize larger than the screen.
- * @ingroup Win
+ * When @c constrain is @c true, @c obj will never resize larger than the
+ * screen.
  *
- * @param[in] constrain EINA_TRUE to restrict the window's maximum size, EINA_FALSE to disable restriction
+ * @param[in] constrain @c true to restrict the window's maximum size.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_screen_constrain_set(Eina_Bool constrain);
+EOAPI void elm_obj_win_screen_constrain_set(Eina_Bool constrain);
 
 /**
- * Get the constraints on the maximum width and height of a window relative to the width and height of its screen
+ * @brief Get the constraints on the maximum width and height of a window
+ * relative to the width and height of its screen.
  *
- * When this function returns true, @p obj will never resize larger than the screen.
- * @return EINA_TRUE to restrict the window's maximum size, EINA_FALSE to disable restriction
+ * When this function returns @c true, @c obj will never resize larger than the
+ * screen.
  *
- * @ingroup Win
+ * @return @c true to restrict the window's maximum size.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_screen_constrain_get(void);
+EOAPI Eina_Bool elm_obj_win_screen_constrain_get(void);
 
 /**
- * Set the array of available profiles to a window.
+ * @brief Set the array of available profiles to a window.
  *
- * @ingroup Win
+ * @param[in] profiles The string array of available profiles.
+ * @param[in] count The number of members in profiles.
+ *
  * @since 1.8
  *
- * @param[in] profiles The string array of available profiles
- * @param[in] count The number of members in profiles
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_available_profiles_set(const char **profiles, unsigned int count);
+EOAPI void elm_obj_win_available_profiles_set(const char **profiles, unsigned int count);
 
 /**
- * Get the array of available profiles of a window.
+ * @brief Get the array of available profiles of a window.
  *
- * @return EINA_TRUE if available profiles exist, EINA_FALSE otherwise
+ * @param[out] profiles The string array of available profiles.
+ * @param[out] count The number of members in profiles.
  *
- * @ingroup Win
  * @since 1.8
  *
- * @param[out] profiles The string array of available profiles
- * @param[out] count The number of members in profiles
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_available_profiles_get(char ***profiles, unsigned int *count);
+EOAPI Eina_Bool elm_obj_win_available_profiles_get(char ***profiles, unsigned int *count);
 
 /**
- * Set the enabled status for the focus highlight in a window
+ * @brief Set the enabled status for the focus highlight in a window.
  *
- * This function will enable or disable the focus highlight only for the
- * given window, regardless of the global setting for it
+ * This function will enable or disable the focus highlight only for the given
+ * window, regardless of the global setting for it.
  *
- * @ingroup Win
+ * @param[in] enabled The enabled value for the highlight.
  *
- * @param[in] enabled The enabled value for the highlight
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_focus_highlight_enabled_set(Eina_Bool enabled);
+EOAPI void elm_obj_win_focus_highlight_enabled_set(Eina_Bool enabled);
 
 /**
- * Get the enabled value of the focus highlight for this window
+ * @brief Get the enabled value of the focus highlight for this window.
  *
- * @return EINA_TRUE if enabled, EINA_FALSE otherwise
+ * @return The enabled value for the highlight.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_focus_highlight_enabled_get(void);
+EOAPI Eina_Bool elm_obj_win_focus_highlight_enabled_get(void);
 
 /**
- * Set the title of the window
+ * @brief Set the title of the window.
  *
- * @ingroup Win
+ * @param[in] title The title.
  *
- * @param[in] title The title to set
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_title_set(const char *title);
+EOAPI void elm_obj_win_title_set(const char *title);
 
 /**
- * Get the title of the window
+ * @brief Get the title of the window.
  *
- * The returned string is an internal one and should not be freed or
- * modified. It will also be invalid if a new title is set or if
- * the window is destroyed.
+ * The returned string is an internal one and should not be freed or modified.
+ * It will also be invalid if a new title is set or if the window is destroyed.
  *
- * @return The title
+ * @return The title.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI const char * elm_obj_win_title_get(void);
+EOAPI const char *elm_obj_win_title_get(void);
 
 /**
- * Set the alpha channel state of a window.
+ * @brief Set the alpha channel state of a window.
  *
- * If @p alpha is EINA_TRUE, the alpha channel of the canvas will be enabled
+ * If @c alpha is true, the alpha channel of the canvas will be enabled
  * possibly making parts of the window completely or partially transparent.
  * This is also subject to the underlying system supporting it, like for
  * example, running under a compositing manager. If no compositing is
  * available, enabling this option will instead fallback to using shaped
- * windows, with elm_win_shaped_set().
+ * windows, with @ref elm_obj_win_shaped_set.
  *
- * @note Alpha window can be enabled automatically by window theme style's property.
- * If "alpha" data.item is "1" or "true" in window style(eg. elm/win/base/default),
- * the window is switched to alpha automatically without the explicit api call.
+ * @note Alpha window can be enabled automatically by window theme style's
+ * property. If "alpha" data.item is "1" or "true" in window style(eg.
+ * elm/win/base/default), the window is switched to alpha automatically without
+ * the explicit api call.
  *
- * @see elm_win_alpha_set()
+ * @param[in] alpha @c true if the window alpha channel is enabled, @c false
+ * otherwise.
  *
- * @ingroup Win
- *
- * @param[in] alpha EINA_TRUE if the window alpha channel is enabled, EINA_FALSE otherwise
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_alpha_set(Eina_Bool alpha);
+EOAPI void elm_obj_win_alpha_set(Eina_Bool alpha);
 
 /**
- * Get the alpha channel state of a window.
+ * @brief Get the alpha channel state of a window.
  *
- * @return EINA_TRUE if the window alpha channel is enabled, EINA_FALSE
- * otherwise
+ * @return @c true if the window alpha channel is enabled, @c false otherwise.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_alpha_get(void);
+EOAPI Eina_Bool elm_obj_win_alpha_get(void);
 
 /**
- * Set the urgent state of a window.
+ * @brief Set the urgent state of a window.
  *
- * @ingroup Win
+ * @param[in] urgent If true, the window is urgent.
  *
- * @param[in] urgent If true, the window is urgent
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_urgent_set(Eina_Bool urgent);
+EOAPI void elm_obj_win_urgent_set(Eina_Bool urgent);
 
 /**
- * Get the urgent state of a window.
+ * @brief Get the urgent state of a window.
  *
- * @return If true, the window is urgent
+ * @return If true, the window is urgent.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_urgent_get(void);
+EOAPI Eina_Bool elm_obj_win_urgent_get(void);
 
 /**
- * Set the rotation of the window.
+ * @brief Set the rotation of the window.
  *
  * Most engines only work with multiples of 90.
  *
- * This function is used to set the orientation of the window @p obj to
- * match that of the screen. The window itself will be resized to adjust
- * to the new geometry of its contents. If you want to keep the window size,
- * see elm_win_rotation_with_resize_set().
- *
- * @ingroup Win
+ * This function is used to set the orientation of the window @c obj to match
+ * that of the screen. The window itself will be resized to adjust to the new
+ * geometry of its contents. If you want to keep the window size, see
+ * @ref elm_obj_win_rotation_with_resize_set.
  *
  * @param[in] rotation The rotation of the window, in degrees (0-360),
-counter-clockwise.
+ * counter-clockwise.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_rotation_set(int rotation);
+EOAPI void elm_obj_win_rotation_set(int rotation);
 
 /**
- * Get the rotation of the window.
+ * @brief Get the rotation of the window.
  *
- * @return The rotation of the window in degrees (0-360)
+ * @return The rotation of the window, in degrees (0-360), counter-clockwise.
  *
- * @see elm_win_rotation_set()
- * @see elm_win_rotation_with_resize_set()
- *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI int  elm_obj_win_rotation_get(void);
+EOAPI int elm_obj_win_rotation_get(void);
 
 /**
- * Set a window object's icon
+ * @brief Set a window object's icon.
  *
- * This sets an image to be used as the icon for the given window, in
- * the window manager decoration part. The exact pixel dimensions of
- * the object (not object size) will be used, and the image pixels
- * will be used as-is when this function is called. If the image
- * object has been updated, then call this function again to source
- * the image pixels and put them on the window's icon. Note that
- * <b>only Evas image objects are allowed</b>, for
+ * This sets an image to be used as the icon for the given window, in the
+ * window manager decoration part. The exact pixel dimensions of the object
+ * (not object size) will be used, and the image pixels will be used as-is when
+ * this function is called. If the image object has been updated, then call
+ * this function again to source the image pixels and put them on the window's
+ * icon. Note that only Evas image objects are allowed.
  *
- * Example of usage:
- * @code
- * icon = evas_object_image_add(evas_object_evas_get(elm_window));
- * evas_object_image_file_set(icon, "/path/to/the/icon", NULL);
- * elm_win_icon_object_set(elm_window, icon);
- * evas_object_show(icon);
- * @endcode
+ * @param[in] icon The Evas image object to use for an icon.
  *
- * @ingroup Win
- *
- * @param[in] icon The Evas image object to use for an icon
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_icon_object_set(Evas_Object *icon);
+EOAPI void elm_obj_win_icon_object_set(Evas_Object *icon);
 
 /**
- * Get the icon object used for the window
+ * @brief Get the icon object used for the window.
  *
- * The object returns is the one marked by elm_win_icon_object_set() as the
- * object to use for the window icon.
+ * The object returns is the one marked by @ref elm_obj_win_icon_object_set as
+ * the object to use for the window icon.
  *
- * @return The icon object set
+ * @return The Evas image object to use for an icon.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI const Evas_Object * elm_obj_win_icon_object_get(void);
+EOAPI const Evas_Object *elm_obj_win_icon_object_get(void);
 
 /**
- * Set the minor priority of a quickpanel window
+ * @brief Set the minor priority of a quickpanel window.
  *
- * @ingroup Win
+ * @param[in] priority The minor priority for this quickpanel.
  *
- * @param[in] priority The minor priority for this quickpanel
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_quickpanel_priority_minor_set(int priority);
+EOAPI void elm_obj_win_quickpanel_priority_minor_set(int priority);
 
 /**
- * Get the minor priority of a quickpanel window
+ * @brief Get the minor priority of a quickpanel window.
  *
- * @return The minor priority of this quickpanel. If the object is not window object, return -1.
+ * @return The minor priority for this quickpanel.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI int  elm_obj_win_quickpanel_priority_minor_get(void);
+EOAPI int elm_obj_win_quickpanel_priority_minor_get(void);
 
 /**
- * Set the sticky state of the window.
+ * @brief Set the sticky state of the window.
  *
- * Hints the Window Manager that the window in @p obj should be left fixed
- * at its position even when the virtual desktop it's on moves or changes.
+ * Hints the Window Manager that the window in @c obj should be left fixed at
+ * its position even when the virtual desktop it's on moves or changes.
  *
- * @ingroup Win
+ * @param[in] sticky If true, the window's sticky state is enabled.
  *
- * @param[in] sticky If true, the window's sticky state is enabled
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_sticky_set(Eina_Bool sticky);
+EOAPI void elm_obj_win_sticky_set(Eina_Bool sticky);
 
 /**
- * Get the sticky state of the window.
+ * @brief Get the sticky state of the window.
  *
- * @return If true, the window's sticky state is enabled
+ * @return If true, the window's sticky state is enabled.
  *
- * @see elm_win_sticky_set()
- *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_sticky_get(void);
+EOAPI Eina_Bool elm_obj_win_sticky_get(void);
 
 /**
- * Sets the keyboard mode of the window.
+ * @brief Sets the keyboard mode of the window.
  *
- * @ingroup Win
+ * @param[in] mode The mode, one of #Elm_Win_Keyboard_Mode.
  *
- * @param[in] mode The mode to set, one of #Elm_Win_Keyboard_Mode
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_keyboard_mode_set(Elm_Win_Keyboard_Mode mode);
+EOAPI void elm_obj_win_keyboard_mode_set(Elm_Win_Keyboard_Mode mode);
 
 /**
- * Get the keyboard mode of the window.
+ * @brief Get the keyboard mode of the window.
  *
- * @return The mode, one of #Elm_Win_Keyboard_Mode
+ * @return The mode, one of #Elm_Win_Keyboard_Mode.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Elm_Win_Keyboard_Mode  elm_obj_win_keyboard_mode_get(void);
+EOAPI Elm_Win_Keyboard_Mode elm_obj_win_keyboard_mode_get(void);
 
 /**
- * Set the animate status for the focus highlight for this window.
+ * @brief Set the animate status for the focus highlight for this window.
  *
  * This function will enable or disable the animation of focus highlight only
- * for the given window, regardless of the global setting for it
+ * for the given window, regardless of the global setting for it.
  *
- * @ingroup Win
+ * @param[in] animate The enabled value for the highlight animation.
  *
- * @param[in] animate The enabled value for the highlight animation
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_focus_highlight_animate_set(Eina_Bool animate);
+EOAPI void elm_obj_win_focus_highlight_animate_set(Eina_Bool animate);
 
 /**
- * Get the animate value of the focus highlight for this window
+ * @brief Get the animate value of the focus highlight for this window.
  *
- * @return EINA_TRUE if animation is enabled, EINA_FALSE otherwise
+ * @return The enabled value for the highlight animation.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_focus_highlight_animate_get(void);
+EOAPI Eina_Bool elm_obj_win_focus_highlight_animate_get(void);
 
 /**
- * Set the aspect ratio of a window.
- *
- * @ingroup Win
+ * @brief Set the aspect ratio of a window.
  *
  * @param[in] aspect If 0, the window has no aspect limits, otherwise it is
-width divided by height
+ * width divided by height.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_aspect_set(double aspect);
+EOAPI void elm_obj_win_aspect_set(double aspect);
 
 /**
- * Get the aspect ratio of a window.
+ * @brief Get the aspect ratio of a window.
  *
- * @return The aspect ratio set (0 by default)
+ * @return If 0, the window has no aspect limits, otherwise it is width divided
+ * by height.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI double  elm_obj_win_aspect_get(void);
+EOAPI double elm_obj_win_aspect_get(void);
 
 /**
- * Set the major priority of a quickpanel window
+ * @brief Set the major priority of a quickpanel window.
  *
- * @ingroup Win
+ * @param[in] priority The major priority for this quickpanel or -1.
  *
- * @param[in] priority The major priority for this quickpanel
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_quickpanel_priority_major_set(int priority);
+EOAPI void elm_obj_win_quickpanel_priority_major_set(int priority);
 
 /**
- * Get the major priority of a quickpanel window
+ * @brief Get the major priority of a quickpanel window.
  *
- * @return The major priority of this quickpanel. If the object is not window object, return -1.
+ * @return The major priority for this quickpanel or -1.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI int  elm_obj_win_quickpanel_priority_major_get(void);
+EOAPI int elm_obj_win_quickpanel_priority_major_get(void);
 
 /**
- * Sets the indicator opacity mode of the window.
+ * @brief Sets the indicator opacity mode of the window.
  *
- * @ingroup Win
+ * @param[in] mode The mode, one of #Elm_Win_Indicator_Opacity_Mode.
  *
- * @param[in] mode The mode to set, one of #Elm_Win_Indicator_Opacity_Mode
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_indicator_opacity_set(Elm_Win_Indicator_Opacity_Mode mode);
+EOAPI void elm_obj_win_indicator_opacity_set(Elm_Win_Indicator_Opacity_Mode mode);
 
 /**
- * Get the indicator opacity mode of the window.
+ * @brief Get the indicator opacity mode of the window.
  *
- * @return The mode, one of #Elm_Win_Indicator_Opacity_Mode
+ * @return The mode, one of #Elm_Win_Indicator_Opacity_Mode.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Elm_Win_Indicator_Opacity_Mode  elm_obj_win_indicator_opacity_get(void);
+EOAPI Elm_Win_Indicator_Opacity_Mode elm_obj_win_indicator_opacity_get(void);
 
 /**
- * Set the demand_attention state of a window.
+ * @brief Set the demand_attention state of a window.
  *
- * @ingroup Win
+ * @param[in] demand_attention If true, the window is demand_attention.
  *
- * @param[in] demand_attention If true, the window is demand_attention
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_demand_attention_set(Eina_Bool demand_attention);
+EOAPI void elm_obj_win_demand_attention_set(Eina_Bool demand_attention);
 
 /**
- * Get the demand_attention state of a window.
+ * @brief Get the demand_attention state of a window.
  *
- * @return If true, the window is demand_attention
+ * @return If true, the window is demand_attention.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_demand_attention_get(void);
+EOAPI Eina_Bool elm_obj_win_demand_attention_get(void);
 
 /**
- * Set the preferred rotation value.
+ * @brief Set the preferred rotation value.
  *
- * This function is used to set the orientation of window @p obj to spicific angle fixed.
- *
- * @see elm_win_wm_rotation_preferred_rotation_get()
- *
- * ingroup Win
- * @since 1.9
+ * This function is used to set the orientation of window @c obj to spicific
+ * angle fixed.
  *
  * @param[in] rotation The preferred rotation of the window in degrees (0-360),
-counter-clockwise.
+ * counter-clockwise.
+ *
+ * @since 1.9
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_wm_preferred_rotation_set(int rotation);
+EOAPI void elm_obj_win_wm_preferred_rotation_set(int rotation);
 
 /**
- * Get the preferred rotation value.
+ * @brief Get the preferred rotation value.
  *
  * This function is used to get the preferred rotoation value.
  *
  * @return The preferred rotation of the window in degrees (0-360),
  * counter-clockwise.
  *
- * @see elm_win_wm_rotation_preferred_rotation_set()
- *
- * ingroup Win
  * @since 1.9
+ *
+ * @ingroup Elm_Win
  */
-EOAPI int  elm_obj_win_wm_preferred_rotation_get(void);
+EOAPI int elm_obj_win_wm_preferred_rotation_get(void);
 
 /**
- * Set the layer of the window.
+ * @brief Set the layer of the window.
  *
  * What this means exactly will depend on the underlying engine used.
  *
- * In the case of X11 backed engines, the value in @p layer has the
- * following meanings:
- * @li < 3: The window will be placed below all others.
- * @li > 5: The window will be placed above all others.
- * @li other: The window will be placed in the default layer.
+ * In the case of X11 backed engines, the value in @c layer has the following
+ * meanings - less than 3 means that the window will be placed below all
+ * others, more than 5 means that the window will be placed above all others,
+ * and anything else means that the window will be placed in the default layer.
  *
- * @ingroup Win
+ * @param[in] layer The layer of the window.
  *
- * @param[in] layer The layer of the window
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_layer_set(int layer);
+EOAPI void elm_obj_win_layer_set(int layer);
 
 /**
- * Get the layer of the window.
+ * @brief Get the layer of the window.
  *
- * @return The layer of the window
+ * @return The layer of the window.
  *
- * @see elm_win_layer_set()
- *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI int  elm_obj_win_layer_get(void);
+EOAPI int elm_obj_win_layer_get(void);
 
 /**
- * Set the profile of a window.
+ * @brief Set the profile of a window.
  *
- * @ingroup Win
+ * @param[in] profile The string value of a window profile.
+ *
  * @since 1.8
  *
- * @param[in] profile The string value of a window profile
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_profile_set(const char *profile);
+EOAPI void elm_obj_win_profile_set(const char *profile);
 
 /**
- * Get the profile of a window.
+ * @brief Get the profile of a window.
  *
- * @return The string value of a window profile, or NULL if none exists
+ * @return The string value of a window profile.
  *
- * @ingroup Win
  * @since 1.8
+ *
+ * @ingroup Elm_Win
  */
-EOAPI const char * elm_obj_win_profile_get(void);
+EOAPI const char *elm_obj_win_profile_get(void);
 
 /**
- * Set the shaped state of a window.
+ * @brief Set the shaped state of a window.
  *
- * Shaped windows, when supported, will render the parts of the window that
- * has no content, transparent.
+ * Shaped windows, when supported, will render the parts of the window that has
+ * no content, transparent.
  *
- * If @p shaped is EINA_FALSE, then it is strongly advised to have some
- * background object or cover the entire window in any other way, or the
- * parts of the canvas that have no data will show framebuffer artifacts.
+ * If @c shaped is false, then it is strongly advised to have some background
+ * object or cover the entire window in any other way, or the parts of the
+ * canvas that have no data will show framebuffer artifacts.
  *
- * @see elm_win_alpha_set()
+ * @param[in] shaped If @c true, the window is shaped.
  *
- * @ingroup Win
- *
- * @param[in] shaped If true, the window is shaped
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_shaped_set(Eina_Bool shaped);
+EOAPI void elm_obj_win_shaped_set(Eina_Bool shaped);
 
 /**
- * Get the shaped state of a window.
+ * @brief Get the shaped state of a window.
  *
- * @return If true, the window is shaped
+ * @return If @c true, the window is shaped.
  *
- * @see elm_win_shaped_set()
- *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_shaped_get(void);
+EOAPI Eina_Bool elm_obj_win_shaped_get(void);
 
 /**
- * Set the fullscreen state of a window.
+ * @brief Set the fullscreen state of a window.
  *
- * @ingroup Win
+ * @param[in] fullscreen If @c true, the window is fullscreen.
  *
- * @param[in] fullscreen If true, the window is fullscreen
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_fullscreen_set(Eina_Bool fullscreen);
+EOAPI void elm_obj_win_fullscreen_set(Eina_Bool fullscreen);
 
 /**
- * Get the fullscreen state of a window.
+ * @brief Get the fullscreen state of a window.
  *
- * @return If true, the window is fullscreen
+ * @return If @c true, the window is fullscreen.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_fullscreen_get(void);
+EOAPI Eina_Bool elm_obj_win_fullscreen_get(void);
 
 /**
- * Set the manual rotation done mode.
+ * @brief Set the manual rotation done mode.
  *
- * This function is used to set or reset the manual rotation done mode.
- * the message of rotation done is sent to WM after rendering its canvas in Ecore_Evas.
- * but if set the manual rotation done mode,
- * it's disabled and user should call the "elm_win_wm_rotation_manual_done" explicitly to sends the message.
+ * This function is used to set or reset the manual rotation done mode. the
+ * message of rotation done is sent to WM after rendering its canvas in
+ * Ecore_Evas. but if set the manual rotation done mode, it's disabled and user
+ * should call this explicitly to sends the message.
  *
- * @see elm_win_wm_rotation_manual_rotation_done_get()
- * @see elm_win_wm_rotation_manual_rotation_done()
+ * @param[in] set @c true to set manual rotation done mode, @c false otherwise.
  *
- * ingroup Win
  * @since 1.9
  *
- * @param[in] set EINA_TRUE means to set manual rotation done mode EINA_FALSE otherwise.
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_wm_manual_rotation_done_set(Eina_Bool set);
+EOAPI void elm_obj_win_wm_manual_rotation_done_set(Eina_Bool set);
 
 /**
- * Get the state of manual rotation done mode.
+ * @brief Get the state of manual rotation done mode.
  *
  * This function is used to get the state of manual rotation done mode.
  *
- * @return @c EINA_TRUE manual rotationn done mode, @c EINA_FALSE otherwise.
+ * @return @c true to set manual rotation done mode, @c false otherwise.
  *
- * @see elm_win_wm_rotation_manual_rotation_done_set()
- * @see elm_win_wm_rotation_manual_rotation_done()
- *
- * ingroup Win
  * @since 1.9
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_wm_manual_rotation_done_get(void);
+EOAPI Eina_Bool elm_obj_win_wm_manual_rotation_done_get(void);
 
 /**
- * Sets the indicator mode of the window.
+ * @brief Sets the indicator mode of the window.
  *
- * @ingroup Win
+ * @param[in] mode The mode, one of #Elm_Win_Indicator_Mode.
  *
- * @param[in] mode The mode to set, one of #Elm_Win_Indicator_Mode
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_indicator_mode_set(Elm_Win_Indicator_Mode mode);
+EOAPI void elm_obj_win_indicator_mode_set(Elm_Win_Indicator_Mode mode);
 
 /**
- * Get the indicator mode of the window.
+ * @brief Get the indicator mode of the window.
  *
- * @return The mode, one of #Elm_Win_Indicator_Mode
+ * @return The mode, one of #Elm_Win_Indicator_Mode.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Elm_Win_Indicator_Mode  elm_obj_win_indicator_mode_get(void);
+EOAPI Elm_Win_Indicator_Mode elm_obj_win_indicator_mode_get(void);
 
 /**
- * Set if this window is an illume conformant window
+ * @brief Set if this window is an illume conformant window.
  *
- * @ingroup Win
+ * @param[in] conformant The conformant flag.
  *
- * @param[in] conformant The conformant flag (1 = conformant, 0 = non-conformant)
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_conformant_set(Eina_Bool conformant);
+EOAPI void elm_obj_win_conformant_set(Eina_Bool conformant);
 
 /**
- * Get if this window is an illume conformant window
+ * @brief Get if this window is an illume conformant window.
  *
- * @return A boolean if this window is illume conformant or not
+ * @return The conformant flag.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_conformant_get(void);
+EOAPI Eina_Bool elm_obj_win_conformant_get(void);
 
 /**
- * Set the base window size used with stepping calculation
+ * @brief Set the base window size used with stepping calculation
  *
  * Base size + stepping is what is calculated for window sizing restrictions.
  *
- * @ingroup Win
- * @see elm_win_size_step_set
- * @see elm_win_size_base_get
+ * @param[in] w The base width.
+ * @param[in] h The base height.
+ *
  * @since 1.7
  *
- * @param[in] w The base width
- * @param[in] h The base height
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_size_base_set(int w, int h);
+EOAPI void elm_obj_win_size_base_set(int w, int h);
 
 /**
- * Get the base size of a window.
+ * @brief Get the base size of a window.
  *
- * @ingroup Win
- * @see elm_win_size_base_set
- * @see elm_win_size_step_set
+ * @param[out] w The base width.
+ * @param[out] h The base height.
+ *
  * @since 1.7
  *
- * @param[out] w The base width
- * @param[out] h The base height
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_size_base_get(int *w, int *h);
+EOAPI void elm_obj_win_size_base_get(int *w, int *h);
 
 /**
- * Set a window to be an illume quickpanel window
+ * @brief Set a window to be an illume quickpanel window.
  *
  * By default window objects are not quickpanel windows.
  *
- * @ingroup Win
+ * @param[in] quickpanel The quickpanel flag.
  *
- * @param[in] quickpanel The quickpanel flag (1 = quickpanel, 0 = normal window)
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_quickpanel_set(Eina_Bool quickpanel);
+EOAPI void elm_obj_win_quickpanel_set(Eina_Bool quickpanel);
 
 /**
- * Get if this window is a quickpanel or not
+ * @brief Get if this window is a quickpanel or not.
  *
- * @return A boolean if this window is a quickpanel or not
+ * @return The quickpanel flag.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_quickpanel_get(void);
+EOAPI Eina_Bool elm_obj_win_quickpanel_get(void);
 
 /**
- * Rotates the window and resizes it.
+ * @brief Rotates the window and resizes it.
  *
- * Like elm_win_rotation_set(), but it also resizes the window's contents so
- * that they fit inside the current window geometry.
- *
- * @ingroup Win
+ * Like @ref elm_obj_win_rotation_set, but it also resizes the window's
+ * contents so that they fit inside the current window geometry.
  *
  * @param[in] rotation The rotation of the window in degrees (0-360),
-counter-clockwise.
+ * counter-clockwise.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_rotation_with_resize_set(int rotation);
+EOAPI void elm_obj_win_rotation_with_resize_set(int rotation);
 
 /**
- * Set the window to be skipped by keyboard focus
+ * @brief Set the window to be skipped by keyboard focus.
  *
- * This sets the window to be skipped by normal keyboard input. This means
- * a window manager will be asked to not focus this window as well as omit
- * it from things like the taskbar, pager, "alt-tab" list etc. etc.
+ * This sets the window to be skipped by normal keyboard input. This means a
+ * window manager will be asked to not focus this window as well as omit it
+ * from things like the taskbar, pager, "alt-tab" list etc. etc.
  *
  * Call this and enable it on a window BEFORE you show it for the first time,
  * otherwise it may have no effect.
  *
  * Use this for windows that have only output information or might only be
- * interacted with by the mouse or fingers, and never for typing input.
- * Be careful that this may have side-effects like making the window
+ * interacted with by the mouse or fingers, and never for typing input. Be
+ * careful that this may have side-effects like making the window
  * non-accessible in some cases unless the window is specially handled. Use
  * this with care.
  *
- * @ingroup Win
+ * @param[in] skip The skip flag state ($true if it is to be skipped).
  *
- * @param[in] skip The skip flag state (EINA_TRUE if it is to be skipped)
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_prop_focus_skip_set(Eina_Bool skip);
+EOAPI void elm_obj_win_prop_focus_skip_set(Eina_Bool skip);
 
 /**
- * Get the screen position of a window.
+ * @brief Get the screen position of a window.
  *
- * @ingroup Win
+ * @param[out] x The int to store the x coordinate to.
+ * @param[out] y The int to store the y coordinate to.
  *
- * @param[out] x The int to store the x coordinate to
- * @param[out] y The int to store the y coordinate to
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_screen_position_get(int *x, int *y);
+EOAPI void elm_obj_win_screen_position_get(int *x, int *y);
 
 /**
- * Query whether window manager supports window rotation or not.
+ * @brief Query whether window manager supports window rotation or not.
  *
- * The window manager rotation allows the WM to controls the rotation of application windows.
- * It is designed to support synchronized rotation for the multiple application windows at same time.
+ * The window manager rotation allows the WM to controls the rotation of
+ * application windows. It is designed to support synchronized rotation for the
+ * multiple application windows at same time.
  *
- * @return @c EINA_TRUE if the window manager rotation is supported, @c EINA_FALSE otherwise.
+ * See also @ref elm_obj_win_wm_preferred_rotation_get,
+ * @ref elm_obj_win_wm_available_rotations_get,
+ * @ref elm_obj_win_wm_manual_rotation_done_get.
  *
- * @see elm_win_wm_rotation_supported_get()
- * @see elm_win_wm_rotation_preferred_rotation_set()
- * @see elm_win_wm_rotation_preferred_rotation_get()
- * @see elm_win_wm_rotation_available_rotations_set()
- * @see elm_win_wm_rotation_available_rotations_get()
- * @see elm_win_wm_rotation_manual_rotation_done_set()
- * @see elm_win_wm_rotation_manual_rotation_done_get()
- * @see elm_win_wm_rotation_manual_rotation_done()
- *
- * @ingroup Win
  * @since 1.9
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_wm_rotation_supported_get(void);
+EOAPI Eina_Bool elm_obj_win_wm_rotation_supported_get(void);
+
+/** Get the Ecore_X_Window of an Evas_Object.
+ *
+ * @ingroup Elm_Win
+ */
+EOAPI Ecore_X_Window elm_obj_win_xwindow_get(void);
+
+/** Get whether a window has focus.
+ *
+ * @ingroup Elm_Win
+ */
+EOAPI Eina_Bool elm_obj_win_focus_get(void);
 
 /**
- * Get the Ecore_X_Window of an Evas_Object
+ * @brief Get screen geometry details for the screen that a window is on.
  *
- * @return The Ecore_X_Window of @p obj
+ * @param[out] x Where to return the horizontal offset value. May be @c null.
+ * @param[out] y Where to return the vertical offset value. May be @c null.
+ * @param[out] w Where to return the width value. May be @c null.
+ * @param[out] h Where to return the height value. May be @c null.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Ecore_X_Window  elm_obj_win_xwindow_get(void);
+EOAPI void elm_obj_win_screen_size_get(int *x, int *y, int *w, int *h);
 
 /**
- * Determine whether a window has focus
- * @return EINA_TRUE if the window exists and has focus, else EINA_FALSE
+ * @brief Get the Main Menu of a window.
  *
- * @ingroup Win
+ * @return The Main Menu of the window ($null on error).
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_focus_get(void);
+EOAPI Evas_Object *elm_obj_win_main_menu_get(void);
 
 /**
- * Get screen geometry details for the screen that a window is on
- * @ingroup Win
+ * @brief Get the Ecore_Wl2_Window of an Evas_Object.
  *
- * @param[out] x where to return the horizontal offset value. May be NULL.
- * @param[out] y where to return the vertical offset value. May be NULL.
- * @param[out] w where to return the width value. May be NULL.
- * @param[out] h where to return the height value. May be NULL.
+ * @return The Ecore_Wl2_Window of @c obj.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_screen_size_get(int *x, int *y, int *w, int *h);
+EOAPI Ecore_Wl2_Window *elm_obj_win_wl_window_get(void);
 
 /**
- * Get the Main Menu of a window.
+ * @brief Get the Ecore_Cocoa_Window of an Evas.Object.
  *
- * @return The Main Menu of the window (NULL if error).
+ * @return The Ecore_Cocoa_Window of @c obj.
  *
- * @ingroup Win
+ * @since 1.17
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Evas_Object * elm_obj_win_main_menu_get(void);
+EOAPI Ecore_Cocoa_Window *elm_obj_win_cocoa_window_get(void);
 
 /**
- * Get the Ecore_Wl_Window of an Evas_Object
+ * @brief Get the Ecore_Win32_Window of an Evas_Object
  *
- * @return The Ecore_Wl_Window of @p obj
+ * @return The Ecore_Win32_Window of @c obj.
  *
- * @ingroup Win
+ * @since 1.17
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Ecore_Wl_Window * elm_obj_win_wl_window_get(void);
+EOAPI Ecore_Win32_Window *elm_obj_win_win32_window_get(void);
 
 /**
- * Get the Ecore_Window of an Evas_Object
+ * @brief Get the Ecore_Window of an Evas_Object
  *
- * When Elementary is using a Wayland engine, this function will return the surface id of the elm window's surface.
+ * When Elementary is using a Wayland engine, this function will return the
+ * surface id of the elm window's surface.
  *
- * @return The Ecore_Window of an Evas_Object
+ * @return The Ecore_Window of an Evas_Object.
  *
- * @ingroup Win
  * @since 1.8
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Ecore_Window  elm_obj_win_window_id_get(void);
+EOAPI Ecore_Window elm_obj_win_window_id_get(void);
 
 /**
- * Get screen dpi for the screen that a window is on
- * @ingroup Win
+ * @brief Get screen dpi for the screen that a window is on.
+ *
+ * @param[out] xdpi Pointer to value to store return horizontal dpi. May be
+ * @c null.
+ * @param[out] ydpi Pointer to value to store return vertical dpi. May be
+ * @c null.
+ *
  * @since 1.7
  *
- * @param[out] xdpi Pointer to value to store return horizontal dpi. May be NULL.
- * @param[out] ydpi Pointer to value to store return vertical dpi. May be NULL.
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_screen_dpi_get(int *xdpi, int *ydpi);
+EOAPI void elm_obj_win_screen_dpi_get(int *xdpi, int *ydpi);
 
 /**
- * Get the inlined image object handle
+ * @brief Get the inlined image object handle
  *
  * When you create a window with elm_win_add() of type #ELM_WIN_INLINED_IMAGE,
  * then the window is in fact an evas image object inlined in the parent
- * canvas. You can get this object (be careful to not manipulate it as it
- * is under control of elementary), and use it to do things like get pixel
- * data, save the image to a file, etc.
+ * canvas. You can get this object (be careful to not manipulate it as it is
+ * under control of elementary), and use it to do things like get pixel data,
+ * save the image to a file, etc.
  *
- * @return The inlined image object, or NULL if none exists
+ * @return The inlined image object or @c null if none exists.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Evas_Object * elm_obj_win_inlined_image_object_get(void);
+EOAPI Evas_Object *elm_obj_win_inlined_image_object_get(void);
 
 /**
- * The window name.
+ * @brief The window name.
  *
  * The meaning of name depends on the underlying windowing system.
  *
- * The window name is a constructing property that need to be set at
- * creation within @ref eo_add.
- *
- * Example:
- * @code
- * win = eo_add(ELM_WIN_CLASS, NULL, elm_obj_win_name_set(ELM_WIN_BASIC));
- * @endcode
+ * The window name is a constructing property that need to be set at creation
+ * within @ref eo_add.
  *
  * @note Once set, it can NOT be modified afterward.
  *
- * @ingroup Win
  * Can only be used at creation time, within @ref eo_add.
  *
- * @ingroup Win
+ * @param[in] name
  *
- * @param[in] name No description supplied.
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_name_set(const char *name);
+EOAPI void elm_obj_win_name_set(const char *name);
 
 /**
- * The type of the window.
+ * @brief The type of the window.
  *
  * It is a hint of how the Window Manager should handle it.
  *
- * The window type is a constructing property that need to be set at
- * creation within @ref eo_add.
- *
- * Example:
- * @code
- * win = eo_add(ELM_WIN_CLASS, NULL, elm_obj_win_type_set(ELM_WIN_BASIC));
- * @endcode
+ * The window type is a constructing property that need to be set at creation
+ * within @ref eo_add.
  *
  * @note Once set, it can NOT be modified afterward.
  *
- * @see Elm_Win_Type
- *
- * @ingroup Win
  * Can only be used at creation time, within @ref eo_add.
  *
- * @see Elm_Win_Type
+ * @param[in] type
  *
- * @ingroup Win
- *
- * @param[in] type No description supplied.
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_type_set(Elm_Win_Type type);
+EOAPI void elm_obj_win_type_set(Elm_Win_Type type);
 
 /**
- * The type of the window.
+ * @brief The type of the window.
  *
  * It is a hint of how the Window Manager should handle it.
  *
- * The window type is a constructing property that need to be set at
- * creation within @ref eo_add.
- *
- * Example:
- * @code
- * win = eo_add(ELM_WIN_CLASS, NULL, elm_obj_win_type_set(ELM_WIN_BASIC));
- * @endcode
+ * The window type is a constructing property that need to be set at creation
+ * within @ref eo_add.
  *
  * @note Once set, it can NOT be modified afterward.
  *
- * @see Elm_Win_Type
- *
- * @ingroup Win
  * If the object is not window object, return #ELM_WIN_UNKNOWN.
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Elm_Win_Type  elm_obj_win_type_get(void);
+EOAPI Elm_Win_Type elm_obj_win_type_get(void);
 
 /**
- * Set the noblank property of a window.
+ * @brief Set the noblank property of a window.
  *
- * The "noblank" property is a way to request the display on which
- * the windowis shown does not blank, screensave or otherwise hide
- * or obscure the window. It is intended for uses such as media
- * playback on a television where a user may not want to be
- * interrupted by an idle screen. The noblank property may have no
- * effect if the window is iconified/minimized or hidden.
+ * The "noblank" property is a way to request the display on which the windowis
+ * shown does not blank, screensave or otherwise hide or obscure the window. It
+ * is intended for uses such as media playback on a television where a user may
+ * not want to be interrupted by an idle screen. The noblank property may have
+ * no effect if the window is iconified/minimized or hidden.
+ *
+ * @param[in] noblank If true, the window is set to noblank.
  *
  * @since 1.11
  *
- * @ingroup Win
- *
- * @param[in] noblank If true, the window is set to noblank
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_noblank_set(Eina_Bool noblank);
+EOAPI void elm_obj_win_noblank_set(Eina_Bool noblank);
 
 /**
- * Get the noblank property of a window.
+ * @brief Get the noblank property of a window.
  *
- * @return If true, the window has "noblank" set.
+ * @return If true, the window is set to noblank.
  *
  * @since 1.11
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_noblank_get(void);
+EOAPI Eina_Bool elm_obj_win_noblank_get(void);
 
 /**
- * Get the trap data associated with a window
+ * @brief Get the trap data associated with a window.
+ *
+ * @return The trap data of the window.
+ *
  * @since 1.12
  *
- * @ingroup Win
+ * @ingroup Elm_Win
  */
-EOAPI void * elm_obj_win_trap_data_get(void);
+EOAPI void *elm_obj_win_trap_data_get(void);
 
 #ifdef ELM_WIN_PROTECTED
 /**
- * Internal. Used to completent the fake window type.
+ * @brief Internal. Used to completent the fake window type.
  *
- * @param[in] oee No description supplied.
+ * @param[in] oee
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_fake_canvas_set(Ecore_Evas *oee);
+EOAPI void elm_obj_win_fake_canvas_set(Ecore_Evas *oee);
 #endif
 
 /**
- * To notify the rotation done to WM manually.
+ * @brief To notify the rotation done to WM manually.
  *
  * This function is used to notify the rotation done to WM manually.
  *
- * @see elm_win_wm_rotation_manual_rotation_done_set()
- * @see elm_win_wm_rotation_manual_rotation_done_get()
- *
- * ingroup Win
  * @since 1.9
- * 
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_wm_manual_rotation_done_manual(void);
+EOAPI void elm_obj_win_wm_manual_rotation_done_manual(void);
 
 /**
- * Create a socket to provide the service for Plug widget
+ * @brief Create a socket to provide the service for Plug widget.
  *
- * @return If socket creation is successful
+ * @param[in] svcnum A number (any value, 0 being the common default) to
+ * differentiate multiple instances of services with the same name.
+ * @param[in] svcsys A boolean that if true, specifies to create a system-wide
+ * service all users can connect to, otherwise the service is private to the
+ * user id that created the service.
  *
- * @ingroup Win
- * 
- *
- * @param[in] svcname The name of the service to be advertised. ensure that it is unique (when combined with @p svcnum) otherwise creation may fail.
- * @param[in] svcnum A number (any value, 0 being the common default) to differentiate multiple instances of services with the same name.
- * @param[in] svcsys A boolean that if true, specifies to create a system-wide service all users can connect to, otherwise the service is private to the user id that created the service.
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_socket_listen(const char *svcname, int svcnum, Eina_Bool svcsys);
+EOAPI Eina_Bool elm_obj_win_socket_listen(const char *svcname, int svcnum, Eina_Bool svcsys);
 
 /**
- * Send a command to the windowing environment
+ * @brief Send a command to the windowing environment
  *
- * This is intended to work in touchscreen or small screen device
- * environments where there is a more simplistic window management policy in
- * place. This uses the window object indicated to select which part of the
- * environment to control (the part that this window lives in), and provides
- * a command and an optional parameter structure (use NULL for this if not
- * needed).
+ * This is intended to work in touchscreen or small screen device environments
+ * where there is a more simplistic window management policy in place. This
+ * uses the window object indicated to select which part of the environment to
+ * control (the part that this window lives in), and provides a command and an
+ * optional parameter structure (use NULL for this if not needed).
  *
- * @ingroup Win
- * 
+ * @param[in] params Optional parameters for the command.
  *
- * @param[in] command The command to send
- * @param[in] params Optional parameters for the command
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_illume_command_send(Elm_Illume_Command command, void *params);
+EOAPI void elm_obj_win_illume_command_send(Elm_Illume_Command command, void *params);
 
 /**
- * Activate a window object.
+ * @brief Activate a window object.
  *
- * This function sends a request to the Window Manager to activate the
- * window pointed by @p obj. If honored by the WM, the window will receive
- * the keyboard focus.
+ * This function sends a request to the Window Manager to activate the window
+ * pointed by @c obj. If honored by the WM, the window will receive the
+ * keyboard focus.
  *
  * @note This is just a request that a Window Manager may ignore, so calling
- * this function does not ensure in any way that the window will be the
- * active one after it.
+ * this function does not ensure in any way that the window will be the active
+ * one after it.
  *
- * @ingroup Win
- * 
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_activate(void);
+EOAPI void elm_obj_win_activate(void);
 
 /**
- * Add @p subobj as a resize object of window @p obj.
+ * @brief Add @c subobj as a resize object of window @c obj.
  *
+ * Setting an object as a resize object of the window means that the @c subobj
+ * child's size and position will be controlled by the window directly. That
+ * is, the object will be resized to match the window size and should never be
+ * moved or resized manually by the developer.
  *
- * Setting an object as a resize object of the window means that the
- * @p subobj child's size and position will be controlled by the window
- * directly. That is, the object will be resized to match the window size
- * and should never be moved or resized manually by the developer.
+ * In addition, resize objects of the window control what the minimum size of
+ * it will be, as well as whether it can or not be resized by the user.
  *
- * In addition, resize objects of the window control what the minimum size
- * of it will be, as well as whether it can or not be resized by the user.
- *
- * For the end user to be able to resize a window by dragging the handles
- * or borders provided by the Window Manager, or using any other similar
- * mechanism, all of the resize objects in the window should have their
- * evas_object_size_hint_weight_set() set to EVAS_HINT_EXPAND.
+ * For the end user to be able to resize a window by dragging the handles or
+ * borders provided by the Window Manager, or using any other similar
+ * mechanism, all of the resize objects in the window should have their @ref
+ * evas_object_size_hint_weight_set set to EVAS_HINT_EXPAND.
  *
  * Also notice that the window can get resized to the current size of the
- * object if the EVAS_HINT_EXPAND is set @b after the call to
- * elm_win_resize_object_add(). So if the object should get resized to the
- * size of the window, set this hint @b before adding it as a resize object
- * (this happens because the size of the window and the object are evaluated
- * as soon as the object is added to the window).
+ * object if the EVAS_HINT_EXPAND is set after the call to this. So if the
+ * object should get resized to the size of the window, set this hint before
+ * adding it as a resize object (this happens because the size of the window
+ * and the object are evaluated as soon as the object is added to the window).
  *
- * @ingroup Win
- * 
+ * @param[in] subobj The resize object to add.
  *
- * @param[in] subobj The resize object to add
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_resize_object_add(Evas_Object *subobj);
+EOAPI void elm_obj_win_resize_object_add(Evas_Object *subobj);
 
 /**
- * Raise a window object.
+ * @brief Raise a window object.
  *
- * Places the window pointed by @p obj at the top of the stack, so that it's
+ * Places the window pointed by @c obj at the top of the stack, so that it's
  * not covered by any other window.
  *
- * If elm_win_override_set() is not set, the Window Manager may ignore this
- * request.
+ * If @ref elm_obj_win_override_set is not set, the Window Manager may ignore
+ * this request.
  *
- * @ingroup Win
- * 
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_raise(void);
+EOAPI void elm_obj_win_raise(void);
 
 /**
- * Lower a window object.
+ * @brief Lower a window object.
  *
- * Places the window pointed by @p obj at the bottom of the stack, so that
- * no other window is covered by it.
+ * Places the window pointed by @c obj at the bottom of the stack, so that no
+ * other window is covered by it.
  *
- * If elm_win_override_set() is not set, the Window Manager may ignore this
- * request.
+ * If @ref elm_obj_win_override_set is not set, the Window Manager may ignore
+ * this request.
  *
- * @ingroup Win
- * 
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_lower(void);
+EOAPI void elm_obj_win_lower(void);
 
 /**
- * Delete @p subobj as a resize object of window @p obj.
+ * @brief Delete @c subobj as a resize object of window @c obj.
  *
- * This function removes the object @p subobj from the resize objects of
- * the window @p obj. It will not delete the object itself, which will be
- * left unmanaged and should be deleted by the developer, manually handled
- * or set as child of some other container.
+ * This function removes the object @c subobj from the resize objects of the
+ * window @c obj. It will not delete the object itself, which will be left
+ * unmanaged and should be deleted by the developer, manually handled or set as
+ * child of some other container.
  *
- * @ingroup Win
- * 
+ * @param[in] subobj The resize object to add.
  *
- * @param[in] subobj The resize object to add
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_resize_object_del(Evas_Object *subobj);
+EOAPI void elm_obj_win_resize_object_del(Evas_Object *subobj);
 
 /**
- * Center a window on its screen
+ * @brief Center a window on its screen
  *
- * This function centers window @p obj horizontally and/or vertically based on the values
- * of @p h and @p v.
- * @ingroup Win
- * 
+ * This function centers window @c obj horizontally and/or vertically based on
+ * the values of @c h and @c v.
  *
- * @param[in] h If true, center horizontally. If false, do not change horizontal location.
- * @param[in] v If true, center vertically. If false, do not change vertical location.
+ * @param[in] v If true, center vertically. If false, do not change vertical
+ * location.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI void  elm_obj_win_center(Eina_Bool h, Eina_Bool v);
+EOAPI void elm_obj_win_center(Eina_Bool h, Eina_Bool v);
 
 /**
- * Set keygrab value of the window
+ * @brief Set keygrab value of the window
  *
- * This function grabs the @p key of window using @p grab_mode.
- * @ingroup Win
- * 
+ * This function grabs the @c key of window using @c grab_mode.
  *
- * @param[in] key This string is the keyname to grab.
- * @param[in] modifiers This is for the keymask feature. Currently this feature is not supported.
- * @param[in] not_modifiers This is for the keymask feature. Currently this feature is not supported.
- * @param[in] proirity This is for the priority of keygrab. Currently this feature is not supported.
- * @param[in] grab_mode According to the grabmode, it can grab key differently
+ * @param[in] modifiers This is for the keymask feature. Currently this feature
+ * is not supported.
+ * @param[in] not_modifiers This is for the keymask feature. Currently this
+ * feature is not supported.
+ * @param[in] proirity This is for the priority of keygrab. Currently this
+ * feature is not supported.
+ * @param[in] grab_mode According to the grabmode, it can grab key differently.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_keygrab_set(const char *key, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers, int proirity, Elm_Win_Keygrab_Mode grab_mode);
+EOAPI Eina_Bool elm_obj_win_keygrab_set(const char *key, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers, int proirity, Elm_Win_Keygrab_Mode grab_mode);
 
 /**
- * Unset keygrab value of the window
+ * @brief Unset keygrab value of the window
  *
- * This function unset keygrab value. Ungrab @p key of window.
- * @ingroup Win
- * 
+ * This function unset keygrab value. Ungrab @c key of window.
  *
- * @param[in] key This string is the keyname to grab.
- * @param[in] modifiers This is for the keymask feature. Currently this feature is not supported.
- * @param[in] not_modifiers This is for the keymask feature. Currently this feature is not supported.
+ * @param[in] modifiers This is for the keymask feature. Currently this feature
+ * is not supported.
+ * @param[in] not_modifiers This is for the keymask feature. Currently this
+ * feature is not supported.
+ *
+ * @ingroup Elm_Win
  */
-EOAPI Eina_Bool  elm_obj_win_keygrab_unset(const char *key, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers);
+EOAPI Eina_Bool elm_obj_win_keygrab_unset(const char *key, Evas_Modifier_Mask modifiers, Evas_Modifier_Mask not_modifiers);
 
 EOAPI extern const Eo_Event_Description _ELM_WIN_EVENT_DELETE_REQUEST;
 EOAPI extern const Eo_Event_Description _ELM_WIN_EVENT_MOVED;

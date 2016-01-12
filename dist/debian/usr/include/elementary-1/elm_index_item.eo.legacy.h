@@ -15,10 +15,10 @@ typedef Eo Elm_Index_Item;
 #endif
 
 /**
- * Set the selected state of an item.
+ * @brief Set the selected state of an item.
  *
- * This sets the selected state of the given item @p it.
- * @c EINA_TRUE for selected, @c EINA_FALSE for not selected.
+ * This sets the selected state of the given item @c it. @c true for selected,
+ * @c false for not selected.
  *
  * If a new item is selected the previously selected will be unselected.
  * Previously selected item can be get with function
@@ -26,20 +26,34 @@ typedef Eo Elm_Index_Item;
  *
  * Selected items will be highlighted.
  *
- * @see elm_index_selected_item_get()
+ * @param[in] selected @c true if selected, @c false otherwise
  *
- * @ingroup Index
- *
- * @param[in] selected EINA_TRUE if selected EINA_FALSE otherwise
+ * @ingroup Elm_Index_Item
  */
 EAPI void elm_index_item_selected_set(Elm_Index_Item *obj, Eina_Bool selected);
 
 /**
- * Get the letter (string) set on a given index widget item.
- * @return The letter string set on @p item
+ * @brief Sets the priority of an item.
  *
- * @ingroup Index
- * 
+ * The priority is -1 by default, which means that the item doesn't belong to a
+ * group. The value of the priority starts from 0.
+ *
+ * In elm_index_level_go, the items are sorted in ascending order according to
+ * priority. Items of the same priority make a group and the primary group is
+ * shown by default.
+ *
+ * @param[in] priority The priority
+ *
+ * @ingroup Elm_Index_Item
+ */
+EAPI void elm_index_item_priority_set(Elm_Index_Item *obj, int priority);
+
+/**
+ * @brief Get the letter (string) set on a given index widget item.
+ *
+ * @return The letter string set on @c item
+ *
+ * @ingroup Elm_Index_Item
  */
 EAPI const char *elm_index_item_letter_get(const Elm_Index_Item *obj);
 

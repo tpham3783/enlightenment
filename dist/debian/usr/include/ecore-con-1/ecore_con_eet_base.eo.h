@@ -24,13 +24,13 @@ EAPI const Eo_Class *ecore_con_eet_base_class_get(void) EINA_CONST;
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_server_set(Ecore_Con_Server *data);
+EOAPI void ecore_con_eet_base_server_set(Ecore_Con_Server *data);
 
 /** The server object to which we send and receive.
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI Ecore_Con_Server * ecore_con_eet_base_server_get(void);
+EOAPI Ecore_Con_Server *ecore_con_eet_base_server_get(void);
 
 /**
  * @brief A callback function which should be called when data is received by
@@ -43,7 +43,7 @@ EOAPI Ecore_Con_Server * ecore_con_eet_base_server_get(void);
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_data_callback_set(const char *name, Ecore_Con_Eet_Data_Cb func, const void *data);
+EOAPI void ecore_con_eet_base_data_callback_set(const char *name, Ecore_Con_Eet_Data_Cb func, const void *data);
 
 /**
  * @brief A callback function which should be calledn when raw data is received
@@ -56,7 +56,7 @@ EOAPI void  ecore_con_eet_base_data_callback_set(const char *name, Ecore_Con_Eet
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_raw_data_callback_set(const char *name, Ecore_Con_Eet_Raw_Data_Cb func, const void *data);
+EOAPI void ecore_con_eet_base_raw_data_callback_set(const char *name, Ecore_Con_Eet_Raw_Data_Cb func, const void *data);
 
 /**
  * @brief Function to delete the @ref ecore_con_eet_base_data_callback_set.
@@ -65,7 +65,7 @@ EOAPI void  ecore_con_eet_base_raw_data_callback_set(const char *name, Ecore_Con
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_data_callback_del(const char *name);
+EOAPI void ecore_con_eet_base_data_callback_del(const char *name);
 
 /**
  * @brief Function to delete the @ref ecore_con_eet_base_raw_data_callback_set.
@@ -74,7 +74,7 @@ EOAPI void  ecore_con_eet_base_data_callback_del(const char *name);
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_raw_data_callback_del(const char *name);
+EOAPI void ecore_con_eet_base_raw_data_callback_del(const char *name);
 
 /**
  * @brief Function to register a @ref Eet_Data_Descriptor to the ecore_con_eet
@@ -84,7 +84,7 @@ EOAPI void  ecore_con_eet_base_raw_data_callback_del(const char *name);
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_register(const char *name, Eet_Data_Descriptor *edd);
+EOAPI void ecore_con_eet_base_register(const char *name, Eet_Data_Descriptor *edd);
 
 /**
  * @brief Function to send data.
@@ -94,7 +94,7 @@ EOAPI void  ecore_con_eet_base_register(const char *name, Eet_Data_Descriptor *e
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_send(Ecore_Con_Reply *reply, const char *name, void *value);
+EOAPI void ecore_con_eet_base_send(Ecore_Con_Reply *reply, const char *name, void *value);
 
 /**
  * @brief Function to send raw data.
@@ -106,7 +106,7 @@ EOAPI void  ecore_con_eet_base_send(Ecore_Con_Reply *reply, const char *name, vo
  *
  * @ingroup Ecore_Con_Eet_Base
  */
-EOAPI void  ecore_con_eet_base_raw_send(Ecore_Con_Reply *reply, const char *protocol_name, const char *section, void *value, unsigned int length);
+EOAPI void ecore_con_eet_base_raw_send(Ecore_Con_Reply *reply, const char *protocol_name, const char *section, void *value, unsigned int length);
 
 
 #endif

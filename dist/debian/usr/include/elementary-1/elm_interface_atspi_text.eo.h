@@ -19,187 +19,132 @@ EAPI const Eo_Class *elm_interface_atspi_text_interface_get(void) EINA_CONST;
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
 /**
- * Gets single character present in accessible widget's text
- * at given offset.
+ * @brief Gets single character present in accessible widget's text at given
+ * offset.
  *
  * @param[in] offset Position in text.
- */
-EOAPI Eina_Unicode  elm_interface_atspi_text_character_get(int offset);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * Gets string, start and end offset in text according to
- * given initial offset and granulatity.
  *
- * @param[in] granularity No description supplied.
- * @param[in] start_offset Offset indicating start of string
-according to given granularity.
--1 in case of error.
- * @param[in] end_offset Offset indicating end of string according
-to given granularity. -1 in case of error.
+ * @return Character at offset. 0 when out-of bounds offset has been given.
+ *  Codepoints between DC80 and DCFF indicates that string includes invalid
+ * UTF8 chars.
+ *
+ * @ingroup Elm_Interface_Atspi_Text
  */
-EOAPI char * elm_interface_atspi_text_string_get(Elm_Atspi_Text_Granularity granularity, int * start_offset, int * end_offset);
+EOAPI Eina_Unicode elm_interface_atspi_text_character_get(int offset);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
 /**
- * Gets text of accessible widget.
+ * @brief Gets string, start and end offset in text according to given initial
+ * offset and granulatity.
+ *
+ * @param[in] granularity
+ * @param[in] start_offset Offset indicating start of string according to given
+ * granularity.  -1 in case of error.
+ * @param[in] end_offset Offset indicating end of string according to given
+ * granularity. -1 in case of error.
+ *
+ * @return Newly allocated UTF-8 encoded string.  Must be free by a user.
+ *
+ * @ingroup Elm_Interface_Atspi_Text
+ */
+EOAPI char *elm_interface_atspi_text_string_get(Elm_Atspi_Text_Granularity granularity, int * start_offset, int * end_offset);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
+/**
+ * @brief Gets text of accessible widget.
  *
  * @param[in] start_offset Position in text.
  * @param[in] end_offset End offset of text.
- */
-EOAPI char * elm_interface_atspi_text_get(int start_offset, int end_offset);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
  *
- * @param[in] offset No description supplied.
+ * @return UTF-8 encoded text.
+ *
+ * @ingroup Elm_Interface_Atspi_Text
  */
-EOAPI Eina_Bool  elm_interface_atspi_text_caret_offset_set(int offset);
+EOAPI char *elm_interface_atspi_text_get(int start_offset, int end_offset);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
+EOAPI Eina_Bool elm_interface_atspi_text_caret_offset_set(int offset);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
+/** Gets offset position of caret (cursor)
+ *
+ * @ingroup Elm_Interface_Atspi_Text
+ */
+EOAPI int elm_interface_atspi_text_caret_offset_get(void);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
 /**
- * Gets offset position of caret (cursor)
- */
-EOAPI int  elm_interface_atspi_text_caret_offset_get(void);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * Indicate if a text attribute with a given name is set
+ * @brief Indicate if a text attribute with a given name is set
  *
  * @param[in] name text attribute name
- * @param[in] start_offset Position in text from which
-given attribute is set.
- * @param[in] end_offset Position in text to which given attribute
-is set.
+ * @param[in] start_offset Position in text from which given attribute is set.
+ * @param[in] end_offset Position in text to which given attribute is set.
  * @param[out] value Value of text attribute. Should be free()
- */
-EOAPI Eina_Bool  elm_interface_atspi_text_attribute_get(const char * name, int * start_offset, int * end_offset, char **value);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * Gets list of all text attributes.
  *
- * @param[in] start_offset No description supplied.
- * @param[in] end_offset No description supplied.
+ * @ingroup Elm_Interface_Atspi_Text
  */
-EOAPI Eina_List * elm_interface_atspi_text_attributes_get(int * start_offset, int * end_offset);
+EOAPI Eina_Bool elm_interface_atspi_text_attribute_get(const char * name, int * start_offset, int * end_offset, char **value);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
 /**
- * No description supplied.
- */
-EOAPI Eina_List * elm_interface_atspi_text_default_attributes_get(void);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
+ * @brief Gets list of all text attributes.
  *
- * @param[in] offset No description supplied.
- * @param[in] screen_coords No description supplied.
- * @param[out] rect No description supplied.
- */
-EOAPI Eina_Bool  elm_interface_atspi_text_character_extents_get(int offset, Eina_Bool screen_coords, Eina_Rectangle *rect);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- */
-EOAPI int  elm_interface_atspi_text_character_count_get(void);
-#endif
-
-#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
+ * @param[in] start_offset
+ * @param[in] end_offset
  *
- * @param[in] screen_coords No description supplied.
- * @param[in] x No description supplied.
- * @param[in] y No description supplied.
+ * @ingroup Elm_Interface_Atspi_Text
  */
-EOAPI int  elm_interface_atspi_text_offset_at_point_get(Eina_Bool screen_coords, int x, int y);
+EOAPI Eina_List *elm_interface_atspi_text_attributes_get(int * start_offset, int * end_offset);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- *
- * @param[in] screen_coords No description supplied.
- * @param[in] rect No description supplied.
- * @param[in] xclip No description supplied.
- * @param[in] yclip No description supplied.
- */
-EOAPI Eina_List * elm_interface_atspi_text_bounded_ranges_get(Eina_Bool screen_coords, Eina_Rectangle rect, Elm_Atspi_Text_Clip_Type xclip, Elm_Atspi_Text_Clip_Type yclip);
+EOAPI Eina_List *elm_interface_atspi_text_default_attributes_get(void);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- *
- * @param[in] screen_coords If true x and y values will be relative
-to screen origin, otherwise relative to
-canvas
- * @param[in] start_offset No description supplied.
- * @param[in] end_offset No description supplied.
- * @param[out] rect No description supplied.
- */
-EOAPI Eina_Bool  elm_interface_atspi_text_range_extents_get(Eina_Bool screen_coords, int start_offset, int end_offset, Eina_Rectangle *rect);
+EOAPI Eina_Bool elm_interface_atspi_text_character_extents_get(int offset, Eina_Bool screen_coords, Eina_Rectangle *rect);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- */
-EOAPI int  elm_interface_atspi_text_selections_count_get(void);
+EOAPI int elm_interface_atspi_text_character_count_get(void);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- *
- * @param[in] selection_number No description supplied.
- * @param[in] start_offset No description supplied.
- * @param[in] end_offset No description supplied.
- */
-EOAPI Eina_Bool  elm_interface_atspi_text_selection_set(int selection_number, int start_offset, int end_offset);
+EOAPI int elm_interface_atspi_text_offset_at_point_get(Eina_Bool screen_coords, int x, int y);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- *
- * @param[in] selection_number No description supplied.
- * @param[out] start_offset No description supplied.
- * @param[out] end_offset No description supplied.
- */
-EOAPI void  elm_interface_atspi_text_selection_get(int selection_number, int *start_offset, int *end_offset);
+EOAPI Eina_List *elm_interface_atspi_text_bounded_ranges_get(Eina_Bool screen_coords, Eina_Rectangle rect, Elm_Atspi_Text_Clip_Type xclip, Elm_Atspi_Text_Clip_Type yclip);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- *
- * @param[in] start_offset No description supplied.
- * @param[in] end_offset No description supplied.
- */
-EOAPI Eina_Bool  elm_interface_atspi_text_selection_add(int start_offset, int end_offset);
+EOAPI Eina_Bool elm_interface_atspi_text_range_extents_get(Eina_Bool screen_coords, int start_offset, int end_offset, Eina_Rectangle *rect);
 #endif
 
 #ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
-/**
- * No description supplied.
- *
- * @param[in] selection_number No description supplied.
- */
-EOAPI Eina_Bool  elm_interface_atspi_text_selection_remove(int selection_number);
+EOAPI int elm_interface_atspi_text_selections_count_get(void);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
+EOAPI Eina_Bool elm_interface_atspi_text_selection_set(int selection_number, int start_offset, int end_offset);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
+EOAPI void elm_interface_atspi_text_selection_get(int selection_number, int *start_offset, int *end_offset);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
+EOAPI Eina_Bool elm_interface_atspi_text_selection_add(int start_offset, int end_offset);
+#endif
+
+#ifdef ELM_INTERFACE_ATSPI_TEXT_PROTECTED
+EOAPI Eina_Bool elm_interface_atspi_text_selection_remove(int selection_number);
 #endif
 
 EOAPI extern const Eo_Event_Description _ELM_INTERFACE_ATSPI_TEXT_EVENT_ACCESS_TEXT_BOUNDS_CHANGED;

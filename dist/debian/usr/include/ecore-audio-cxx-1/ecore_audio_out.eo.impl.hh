@@ -1,45 +1,45 @@
 /// @cond EO_CXX_EO_IMPL
 
-inline bool ecore_audio_out::input_attach(::efl::eo::concrete input_) const
+inline bool ecore_audio_out::input_attach(::ecore_audio_in input_) const
 {
    Eina_Bool _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_out_input_attach(::efl::eolian::to_c(input_)));
    return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
-inline bool ecore_audio_out::input_detach(::efl::eo::concrete input_) const
+inline bool ecore_audio_out::input_detach(::ecore_audio_in input_) const
 {
    Eina_Bool _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_out_input_detach(::efl::eolian::to_c(input_)));
    return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
-inline ::efl::eina::range_list< ::efl::eo::concrete > ecore_audio_out::inputs_get() const
+inline ::efl::eina::range_list< ::ecore_audio_in > ecore_audio_out::inputs_get() const
 {
    Eina_List * _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_out_inputs_get());
-   return ::efl::eolian::to_cxx<::efl::eina::range_list< ::efl::eo::concrete >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
+   return ::efl::eolian::to_cxx<::efl::eina::range_list< ::ecore_audio_in >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
 }
 
-inline bool eo_cxx::ecore_audio_out::input_attach(::efl::eo::concrete input_) const
+inline bool eo_cxx::ecore_audio_out::input_attach(::ecore_audio_in input_) const
 {
    Eina_Bool _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_out_input_attach(::efl::eolian::to_c(input_)));
    return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
-inline bool eo_cxx::ecore_audio_out::input_detach(::efl::eo::concrete input_) const
+inline bool eo_cxx::ecore_audio_out::input_detach(::ecore_audio_in input_) const
 {
    Eina_Bool _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_out_input_detach(::efl::eolian::to_c(input_)));
    return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
 }
 
-inline ::efl::eina::range_list< ::efl::eo::concrete > eo_cxx::ecore_audio_out::inputs_get() const
+inline ::efl::eina::range_list< ::ecore_audio_in > eo_cxx::ecore_audio_out::inputs_get() const
 {
    Eina_List * _tmp_ret;
    eo_do(_concrete_eo_ptr(), _tmp_ret = ::ecore_audio_obj_out_inputs_get());
-   return ::efl::eolian::to_cxx<::efl::eina::range_list< ::efl::eo::concrete >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
+   return ::efl::eolian::to_cxx<::efl::eina::range_list< ::ecore_audio_in >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
 }
 
 inline ::eo_cxx::ecore_audio_out::operator ::ecore_audio_out() const
@@ -58,11 +58,11 @@ inline ::eo_cxx::ecore_audio_out::operator ::ecore_audio_out const&() const
 }
 
 template <typename T>
-bool _ecore_audio_out_input_attach_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Eo * input_)
+bool _ecore_audio_out_input_attach_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Ecore_Audio_In * input_)
 {
    try
       {
-         return static_cast<T*>(self->this_)->input_attach(::efl::eolian::to_cxx<::efl::eo::concrete>(input_, std::tuple<std::false_type>()));
+         return static_cast<T*>(self->this_)->input_attach(::efl::eolian::to_cxx<::ecore_audio_in>(input_, std::tuple<std::false_type>()));
       }
    catch (...)
       {
@@ -73,11 +73,11 @@ bool _ecore_audio_out_input_attach_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::det
 }
 
 template <typename T>
-bool _ecore_audio_out_input_detach_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Eo * input_)
+bool _ecore_audio_out_input_detach_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self, Ecore_Audio_In * input_)
 {
    try
       {
-         return static_cast<T*>(self->this_)->input_detach(::efl::eolian::to_cxx<::efl::eo::concrete>(input_, std::tuple<std::false_type>()));
+         return static_cast<T*>(self->this_)->input_detach(::efl::eolian::to_cxx<::ecore_audio_in>(input_, std::tuple<std::false_type>()));
       }
    catch (...)
       {
@@ -88,7 +88,7 @@ bool _ecore_audio_out_input_detach_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::det
 }
 
 template <typename T>
-::efl::eina::range_list< ::efl::eo::concrete > _ecore_audio_out_inputs_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+::efl::eina::range_list< ::ecore_audio_in > _ecore_audio_out_inputs_get_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
 {
    try
       {
@@ -98,7 +98,7 @@ template <typename T>
       {
          eina_error_set( ::efl::eina::unknown_error() );
          Eina_List * _tmp_ret{};
-         return ::efl::eolian::to_cxx<::efl::eina::range_list< ::efl::eo::concrete >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
+         return ::efl::eolian::to_cxx<::efl::eina::range_list< ::ecore_audio_in >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
       }
 }
 
@@ -111,7 +111,7 @@ struct operations< ::ecore_audio_out >
    struct type
          : virtual operations< ::ecore_audio >::template type<T>
    {
-      virtual bool input_attach(::efl::eo::concrete input_)
+      virtual bool input_attach(::ecore_audio_in input_)
       {
          Eina_Bool _tmp_ret = {};
 
@@ -121,7 +121,7 @@ struct operations< ::ecore_audio_out >
             return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
       }
 
-      virtual bool input_detach(::efl::eo::concrete input_)
+      virtual bool input_detach(::ecore_audio_in input_)
       {
          Eina_Bool _tmp_ret = {};
 
@@ -131,14 +131,14 @@ struct operations< ::ecore_audio_out >
             return ::efl::eolian::to_cxx<bool>(_tmp_ret, std::tuple<std::false_type>());
       }
 
-      virtual ::efl::eina::range_list< ::efl::eo::concrete > inputs_get()
+      virtual ::efl::eina::range_list< ::ecore_audio_in > inputs_get()
       {
          Eina_List * _tmp_ret = {};
 
          eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
                dynamic_cast<T*>(this)->_eo_class(),
                _tmp_ret = ::ecore_audio_obj_out_inputs_get());
-            return ::efl::eolian::to_cxx<::efl::eina::range_list< ::efl::eo::concrete >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
+            return ::efl::eolian::to_cxx<::efl::eina::range_list< ::ecore_audio_in >>(_tmp_ret, std::tuple<std::false_type, std::false_type>());
       }
 
    };
@@ -170,23 +170,17 @@ int initialize_operation_description(::efl::eo::detail::tag<::ecore_audio_out>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_out_input_attach_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_out_input_attach);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_out_input_detach_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_out_input_detach);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::_ecore_audio_out_inputs_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::ecore_audio_obj_out_inputs_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::ecore_audio>(), &ops[operation_description_class_size< ::ecore_audio_out >::value]);

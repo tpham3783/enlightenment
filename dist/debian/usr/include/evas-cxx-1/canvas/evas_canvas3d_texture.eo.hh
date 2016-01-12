@@ -32,155 +32,55 @@ namespace evas { namespace canvas3d {
 
 struct texture
 {
-   /// @brief Set the data of the given texture.
-   ///
-   /// @see evas_canvas3d_texture_file_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param color_format Color format of the texture.
-   /// @param w Width of the data.
-   /// @param h Height of the data.
-   /// @param data Pointer to the data.
+   /// @param color_format 
+   /// @param w 
+   /// @param h 
+   /// @param data 
    ///
    void data_set(Evas_Colorspace color_format_, int w_, int h_, const void * data_) const;
 
-   /// @brief Set the data of the given texture from file.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param file Path to the image file.
-   /// @param key Key in the image file.
+   /// @param file 
+   /// @param key 
    ///
    void file_set(::efl::eina::string_view file_, ::efl::eina::string_view key_) const;
 
-   /// @brief Set the data of the given texture from an evas object.
-   ///
-   /// Evas 3D support using existing evas object as a texture source. This feature
-   /// make it possible using any exisiting evas object inside 3D scene.
-   ///
-   /// @see evas_canvas3d_texture_source_visible_set
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param source Source evas object to be used as the texture data.
+   /// @param source 
    ///
    void source_set(::evas::object source_) const;
 
-   /// @brief Get the color format of the given texture.
-   ///
-   /// EVAS_CANVAS3D_COLOR_FORMAT_RGBA will be returned if the texture has source object.
-   /// Otherwise, the color format of the data will be returned.
-   ///
-   /// @see evas_canvas3d_texture_data_set()
-   /// @see evas_canvas3d_texture_file_set()
-   /// @see evas_canvas3d_texture_source_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    Evas_Colorspace color_format_get() const;
 
-   /// @brief Get the size of the given texture.
-   ///
-   /// If the texture has source object, the size of the source object will be
-   /// returned. Otherwise, the size of the data (or image file) will be returned.
-   ///
-   /// @see evas_canvas3d_texture_data_set()
-   /// @see evas_canvas3d_texture_file_set()
-   /// @see evas_canvas3d_texture_source_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param[out] w Pointer to receive the width of the texture size.
-   /// @param[out] h Pointer to receive the height of the texture size.
+   /// @param[out] w 
+   /// @param[out] h 
    ///
    void size_get(int* w_, int* h_) const;
 
-   /// @brief Set the wrap mode of the given texture.
-   /// If the texture coordinate exceed range [0.0, 1.0] the values are modified
-   /// according to the wrap mode.
-   ///
-   /// Default wrap modes are both EVAS_CANVAS3D_WRAP_MODE_CLAMP for s and t.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param s Wrap mode for S-axis.
-   /// @param t Wrap mode for T-axis.
+   /// @param s 
+   /// @param t 
    ///
    void wrap_set(Evas_Canvas3D_Wrap_Mode s_, Evas_Canvas3D_Wrap_Mode t_) const;
 
-   /// @brief Get the wrap mode of the given texture.
-   ///
-   /// @see evas_canvas3d_texture_wrap_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param[out] s Pointer to receive S-axis wrap mode.
-   /// @param[out] t Pointer to receive T-axis wrap mode.
+   /// @param[out] s 
+   /// @param[out] t 
    ///
    void wrap_get(Evas_Canvas3D_Wrap_Mode* s_, Evas_Canvas3D_Wrap_Mode* t_) const;
 
-   /// @brief Set the filter of the given texture.
-   ///
-   /// Default filters are both EVAS_CANVAS3D_TEXTURE_FILTER_NEAREST for s and t.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param min Minification filter used when down-scaling.
-   /// @param mag Magnification filter used when up-scaling.
+   /// @param min 
+   /// @param mag 
    ///
    void filter_set(Evas_Canvas3D_Texture_Filter min_, Evas_Canvas3D_Texture_Filter mag_) const;
 
-   /// @brief Get the filter of the given texture.
-   ///
-   /// @param texture       The given texture.
-   /// @param min           Pointer to receive the minification filter.
-   /// @param mag           Pointer to receive the magnification filter.
-   ///
-   /// @see evas_canvas3d_texture_filter_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param[out] min Pointer to receive the minification filter.
-   /// @param[out] mag Pointer to receive the magnification filter.
+   /// @param[out] min 
+   /// @param[out] mag 
    ///
    void filter_get(Evas_Canvas3D_Texture_Filter* min_, Evas_Canvas3D_Texture_Filter* mag_) const;
 
-   /// @brief Get the visibility flag of the source evas object of the given texture.
-   ///
-   /// @see evas_canvas3d_texture_source_visible_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    bool source_visible_get() const;
 
-   /// @brief Set the visibility flag of the source evas object of the given texture.
-   ///
-   /// Recommend to call evas_object_show() on the source object and controll the
-   /// visibility using this function.
-   ///
-   /// By default, source object is visible.
-   ///
-   /// @see evas_canvas3d_texture_source_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    void source_visible_set(bool visible_) const;
 
-   /// @brief Get enable flag of generation texture unit with support atlas.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    bool atlas_enable_get() const;
 
-   /// @brief Set enable flag to generation texture unit with support atlas.
-   ///
-   /// Use this flag only in case not normalize texture coordinates.
-   ///
-   /// By default, is enabled.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    void atlas_enable_set(bool use_atlas_) const;
 
 
@@ -282,155 +182,55 @@ struct texture
 
    ~texture() {}
 
-   /// @brief Set the data of the given texture.
-   ///
-   /// @see evas_canvas3d_texture_file_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param color_format Color format of the texture.
-   /// @param w Width of the data.
-   /// @param h Height of the data.
-   /// @param data Pointer to the data.
+   /// @param color_format 
+   /// @param w 
+   /// @param h 
+   /// @param data 
    ///
    void data_set(Evas_Colorspace color_format_, int w_, int h_, const void * data_) const;
 
-   /// @brief Set the data of the given texture from file.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param file Path to the image file.
-   /// @param key Key in the image file.
+   /// @param file 
+   /// @param key 
    ///
    void file_set(::efl::eina::string_view file_, ::efl::eina::string_view key_) const;
 
-   /// @brief Set the data of the given texture from an evas object.
-   ///
-   /// Evas 3D support using existing evas object as a texture source. This feature
-   /// make it possible using any exisiting evas object inside 3D scene.
-   ///
-   /// @see evas_canvas3d_texture_source_visible_set
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param source Source evas object to be used as the texture data.
+   /// @param source 
    ///
    void source_set(::evas::object source_) const;
 
-   /// @brief Get the color format of the given texture.
-   ///
-   /// EVAS_CANVAS3D_COLOR_FORMAT_RGBA will be returned if the texture has source object.
-   /// Otherwise, the color format of the data will be returned.
-   ///
-   /// @see evas_canvas3d_texture_data_set()
-   /// @see evas_canvas3d_texture_file_set()
-   /// @see evas_canvas3d_texture_source_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    Evas_Colorspace color_format_get() const;
 
-   /// @brief Get the size of the given texture.
-   ///
-   /// If the texture has source object, the size of the source object will be
-   /// returned. Otherwise, the size of the data (or image file) will be returned.
-   ///
-   /// @see evas_canvas3d_texture_data_set()
-   /// @see evas_canvas3d_texture_file_set()
-   /// @see evas_canvas3d_texture_source_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param[out] w Pointer to receive the width of the texture size.
-   /// @param[out] h Pointer to receive the height of the texture size.
+   /// @param[out] w 
+   /// @param[out] h 
    ///
    void size_get(int* w_, int* h_) const;
 
-   /// @brief Set the wrap mode of the given texture.
-   /// If the texture coordinate exceed range [0.0, 1.0] the values are modified
-   /// according to the wrap mode.
-   ///
-   /// Default wrap modes are both EVAS_CANVAS3D_WRAP_MODE_CLAMP for s and t.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param s Wrap mode for S-axis.
-   /// @param t Wrap mode for T-axis.
+   /// @param s 
+   /// @param t 
    ///
    void wrap_set(Evas_Canvas3D_Wrap_Mode s_, Evas_Canvas3D_Wrap_Mode t_) const;
 
-   /// @brief Get the wrap mode of the given texture.
-   ///
-   /// @see evas_canvas3d_texture_wrap_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param[out] s Pointer to receive S-axis wrap mode.
-   /// @param[out] t Pointer to receive T-axis wrap mode.
+   /// @param[out] s 
+   /// @param[out] t 
    ///
    void wrap_get(Evas_Canvas3D_Wrap_Mode* s_, Evas_Canvas3D_Wrap_Mode* t_) const;
 
-   /// @brief Set the filter of the given texture.
-   ///
-   /// Default filters are both EVAS_CANVAS3D_TEXTURE_FILTER_NEAREST for s and t.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param min Minification filter used when down-scaling.
-   /// @param mag Magnification filter used when up-scaling.
+   /// @param min 
+   /// @param mag 
    ///
    void filter_set(Evas_Canvas3D_Texture_Filter min_, Evas_Canvas3D_Texture_Filter mag_) const;
 
-   /// @brief Get the filter of the given texture.
-   ///
-   /// @param texture       The given texture.
-   /// @param min           Pointer to receive the minification filter.
-   /// @param mag           Pointer to receive the magnification filter.
-   ///
-   /// @see evas_canvas3d_texture_filter_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
-   /// @param[out] min Pointer to receive the minification filter.
-   /// @param[out] mag Pointer to receive the magnification filter.
+   /// @param[out] min 
+   /// @param[out] mag 
    ///
    void filter_get(Evas_Canvas3D_Texture_Filter* min_, Evas_Canvas3D_Texture_Filter* mag_) const;
 
-   /// @brief Get the visibility flag of the source evas object of the given texture.
-   ///
-   /// @see evas_canvas3d_texture_source_visible_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    bool source_visible_get() const;
 
-   /// @brief Set the visibility flag of the source evas object of the given texture.
-   ///
-   /// Recommend to call evas_object_show() on the source object and controll the
-   /// visibility using this function.
-   ///
-   /// By default, source object is visible.
-   ///
-   /// @see evas_canvas3d_texture_source_set()
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    void source_visible_set(bool visible_) const;
 
-   /// @brief Get enable flag of generation texture unit with support atlas.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    bool atlas_enable_get() const;
 
-   /// @brief Set enable flag to generation texture unit with support atlas.
-   ///
-   /// Use this flag only in case not normalize texture coordinates.
-   ///
-   /// By default, is enabled.
-   ///
-   /// @ingroup Evas_Canvas3D_Texture
-   ///
    void atlas_enable_set(bool use_atlas_) const;
 
    template <typename F>

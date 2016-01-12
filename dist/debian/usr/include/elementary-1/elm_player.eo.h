@@ -28,7 +28,6 @@ EOAPI extern const Eo_Event_Description _ELM_PLAYER_EVENT_QUALITY_CLICKED;
 EOAPI extern const Eo_Event_Description _ELM_PLAYER_EVENT_EJECT_CLICKED;
 EOAPI extern const Eo_Event_Description _ELM_PLAYER_EVENT_VOLUME_CLICKED;
 EOAPI extern const Eo_Event_Description _ELM_PLAYER_EVENT_MUTE_CLICKED;
-EOAPI extern const Eo_Event_Description _ELM_PLAYER_EVENT_LANGUAGE_CHANGED;
 
 /**
  * No description
@@ -84,10 +83,5 @@ EOAPI extern const Eo_Event_Description _ELM_PLAYER_EVENT_LANGUAGE_CHANGED;
  * No description
  */
 #define ELM_PLAYER_EVENT_MUTE_CLICKED (&(_ELM_PLAYER_EVENT_MUTE_CLICKED))
-
-/**
- * No description
- */
-#define ELM_PLAYER_EVENT_LANGUAGE_CHANGED (&(_ELM_PLAYER_EVENT_LANGUAGE_CHANGED))
 
 #endif

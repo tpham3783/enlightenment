@@ -26,7 +26,7 @@ EAPI const Eo_Class *efl_network_url_class_get(void) EINA_CONST;
  *
  * @ingroup Efl_Network_Url
  */
-EOAPI Eina_Bool  efl_network_url_set(const char *url);
+EOAPI Eina_Bool efl_network_url_set(const char *url);
 
 /**
  * @brief Controls the URL to send the request to.
@@ -35,7 +35,7 @@ EOAPI Eina_Bool  efl_network_url_set(const char *url);
  *
  * @ingroup Efl_Network_Url
  */
-EOAPI const char * efl_network_url_get(void);
+EOAPI const char *efl_network_url_get(void);
 
 EOAPI extern const Eo_Event_Description _EFL_NETWORK_URL_EVENT_DATA;
 EOAPI extern const Eo_Event_Description _EFL_NETWORK_URL_EVENT_PROGRESS;

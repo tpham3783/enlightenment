@@ -691,128 +691,92 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::table>
    (void)ops;
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_clear_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_clear);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_accessor_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_accessor_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_iterator_new_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_iterator_new);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_add_to_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_add_to);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_pack_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_pack_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_pack_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_pack);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_unpack_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_unpack);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_homogeneous_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_homogeneous_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_homogeneous_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_homogeneous_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_align_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_align_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_align_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_align_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_padding_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_padding_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_padding_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_padding_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_mirrored_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_mirrored_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_mirrored_set_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_mirrored_set);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_col_row_size_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_col_row_size_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_children_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_children_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    ops[i].func = reinterpret_cast<void*>(& ::evas_table_child_get_wrapper<T>);
    ops[i].api_func = reinterpret_cast<void*>(& ::evas_obj_table_child_get);
-   ops[i].op = EO_OP_OVERRIDE;
    ops[i].op_type = EO_OP_TYPE_REGULAR;
-   ops[i].doc = NULL;
    ++i;
 
    initialize_operation_description<T>(::efl::eo::detail::tag<::evas::smart_clipped>(), &ops[operation_description_class_size< ::evas::table >::value]);

@@ -74,7 +74,7 @@ EAPI const Eo_Class *elm_scroller_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Scroller
  */
-EOAPI void  elm_obj_scroller_propagate_events_set(Eina_Bool propagation);
+EOAPI void elm_obj_scroller_propagate_events_set(Eina_Bool propagation);
 
 /**
  * @brief Get event propagation for a scroller
@@ -85,7 +85,7 @@ EOAPI void  elm_obj_scroller_propagate_events_set(Eina_Bool propagation);
  *
  * @ingroup Elm_Scroller
  */
-EOAPI Eina_Bool  elm_obj_scroller_propagate_events_get(void);
+EOAPI Eina_Bool elm_obj_scroller_propagate_events_get(void);
 
 /**
  * @brief Set custom theme elements for the scroller
@@ -95,7 +95,7 @@ EOAPI Eina_Bool  elm_obj_scroller_propagate_events_get(void);
  *
  * @ingroup Elm_Scroller
  */
-EOAPI void  elm_obj_scroller_custom_widget_base_theme_set(const char *klass, const char *group);
+EOAPI void elm_obj_scroller_custom_widget_base_theme_set(const char *klass, const char *group);
 
 /**
  * @brief Set the maximum of the movable page at a flicking.
@@ -108,7 +108,7 @@ EOAPI void  elm_obj_scroller_custom_widget_base_theme_set(const char *klass, con
  *
  * @ingroup Elm_Scroller
  */
-EOAPI void  elm_obj_scroller_page_scroll_limit_set(int page_limit_h, int page_limit_v);
+EOAPI void elm_obj_scroller_page_scroll_limit_set(int page_limit_h, int page_limit_v);
 
 /**
  * @brief Get the maximum of the movable page at a flicking.
@@ -119,7 +119,7 @@ EOAPI void  elm_obj_scroller_page_scroll_limit_set(int page_limit_h, int page_li
  *
  * @ingroup Elm_Scroller
  */
-EOAPI void  elm_obj_scroller_page_scroll_limit_get(int *page_limit_h, int *page_limit_v);
+EOAPI void elm_obj_scroller_page_scroll_limit_get(int *page_limit_h, int *page_limit_v);
 
 EOAPI extern const Eo_Event_Description _ELM_SCROLLER_EVENT_SCROLL_PAGE_CHANGED;
 EOAPI extern const Eo_Event_Description _ELM_SCROLLER_EVENT_HBAR_UNPRESS;

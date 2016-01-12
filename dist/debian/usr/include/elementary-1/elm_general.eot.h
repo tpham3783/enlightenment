@@ -146,6 +146,20 @@ typedef enum
   ELM_WRAP_LAST
 } Elm_Wrap_Type;
 
+/** Focus directions.
+ *
+ * @ingroup Elm
+ */
+typedef enum
+{
+  ELM_FOCUS_PREVIOUS = 0, /** previous direction */
+  ELM_FOCUS_NEXT, /** next direction */
+  ELM_FOCUS_UP, /** up direction */
+  ELM_FOCUS_DOWN, /** down direction */
+  ELM_FOCUS_RIGHT, /** right direction */
+  ELM_FOCUS_LEFT /** left direction */
+} Elm_Focus_Direction;
+
 
 #endif
 

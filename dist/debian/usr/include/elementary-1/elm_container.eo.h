@@ -24,7 +24,7 @@ EAPI const Eo_Class *elm_container_class_get(void) EINA_CONST;
  *
  * @ingroup Elm_Container
  */
-EOAPI Eina_Bool  elm_obj_container_content_set(const char *name, Evas_Object *content);
+EOAPI Eina_Bool elm_obj_container_content_set(const char *name, Evas_Object *content);
 
 /**
  * @brief Unswallow the object in the given part of the container and return
@@ -34,7 +34,7 @@ EOAPI Eina_Bool  elm_obj_container_content_set(const char *name, Evas_Object *co
  *
  * @ingroup Elm_Container
  */
-EOAPI Evas_Object * elm_obj_container_content_unset(const char *name);
+EOAPI Evas_Object *elm_obj_container_content_unset(const char *name);
 
 /**
  * @brief Get the object swallowed in the given part of the container.
@@ -43,7 +43,7 @@ EOAPI Evas_Object * elm_obj_container_content_unset(const char *name);
  *
  * @ingroup Elm_Container
  */
-EOAPI Evas_Object * elm_obj_container_content_get(const char *name);
+EOAPI Evas_Object *elm_obj_container_content_get(const char *name);
 
 /**
  * @brief Get the list of swallow parts in the object.
@@ -52,7 +52,7 @@ EOAPI Evas_Object * elm_obj_container_content_get(const char *name);
  *
  * @ingroup Elm_Container
  */
-EOAPI Eina_List * elm_obj_container_content_swallow_list_get(void);
+EOAPI Eina_List *elm_obj_container_content_swallow_list_get(void);
 
 
 #endif

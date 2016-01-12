@@ -30,7 +30,7 @@ EAPI const Eo_Class *evas_canvas3d_camera_class_get(void) EINA_CONST;
  *
  * @ingroup Evas_Canvas3D_Camera
  */
-EOAPI void  evas_canvas3d_camera_projection_matrix_set(const Evas_Real *matrix);
+EOAPI void evas_canvas3d_camera_projection_matrix_set(const Evas_Real *matrix);
 
 /**
  * @brief Get the projection matrix of the given camera.
@@ -41,7 +41,7 @@ EOAPI void  evas_canvas3d_camera_projection_matrix_set(const Evas_Real *matrix);
  *
  * @ingroup Evas_Canvas3D_Camera
  */
-EOAPI void  evas_canvas3d_camera_projection_matrix_get(Evas_Real *matrix);
+EOAPI void evas_canvas3d_camera_projection_matrix_get(Evas_Real *matrix);
 
 /**
  * @brief Set the projection matrix of the given camera with perspective
@@ -55,7 +55,7 @@ EOAPI void  evas_canvas3d_camera_projection_matrix_get(Evas_Real *matrix);
  *
  * @ingroup Evas_Canvas3D_Camera
  */
-EOAPI void  evas_canvas3d_camera_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
+EOAPI void evas_canvas3d_camera_projection_perspective_set(Evas_Real fovy, Evas_Real aspect, Evas_Real dnear, Evas_Real dfar);
 
 /**
  * @brief Set the projection matrix of the given camera with frustum
@@ -71,7 +71,7 @@ EOAPI void  evas_canvas3d_camera_projection_perspective_set(Evas_Real fovy, Evas
  *
  * @ingroup Evas_Canvas3D_Camera
  */
-EOAPI void  evas_canvas3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+EOAPI void evas_canvas3d_camera_projection_frustum_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
 
 /**
  * @brief Set the projection matrix of the given camera with orthogonal
@@ -87,7 +87,7 @@ EOAPI void  evas_canvas3d_camera_projection_frustum_set(Evas_Real left, Evas_Rea
  *
  * @ingroup Evas_Canvas3D_Camera
  */
-EOAPI void  evas_canvas3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
+EOAPI void evas_canvas3d_camera_projection_ortho_set(Evas_Real left, Evas_Real right, Evas_Real bottom, Evas_Real top, Evas_Real dnear, Evas_Real dfar);
 
 /**
  * @brief Check is bounding sphere of given node inside frustum of camera node.
@@ -102,7 +102,7 @@ EOAPI void  evas_canvas3d_camera_projection_ortho_set(Evas_Real left, Evas_Real 
  *
  * @ingroup Evas_Canvas3D_Camera
  */
-EOAPI Eina_Bool  evas_canvas3d_camera_node_visible_get(Evas_Canvas3D_Node *camera_node, Evas_Canvas3D_Node *node, Evas_Canvas3D_Frustum_Mode key);
+EOAPI Eina_Bool evas_canvas3d_camera_node_visible_get(Evas_Canvas3D_Node *camera_node, Evas_Canvas3D_Node *node, Evas_Canvas3D_Frustum_Mode key);
 
 
 #endif
