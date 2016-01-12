@@ -10,9 +10,10 @@ modules_git = http://git.enlightenment.org/core/efl.git \
 	      http://git.enlightenment.org/core/elementary.git \
 	      http://git.enlightenment.org/core/evas_generic_loaders.git \
 	      http://git.enlightenment.org/core/enlightenment.git \
+	      http://git.enlightenment.org/apps/rage.git \
 	      http://git.enlightenment.org/apps/terminology.git
 
-modules = efl elementary evas_generic_loaders enlightenment
+modules = efl elementary evas_generic_loaders rage enlightenment terminology 
 #modules = efl elementary evas_generic_loaders enlightenment terminology
 
 E_VERSION=$(shell grep VERSION enlightenment/config.h | grep -v PACK | cut -d' ' -f 3)
