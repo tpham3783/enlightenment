@@ -1,16 +1,14 @@
-Source: e20 
-Section: unknown
+Source: e20
+Section: misc 
 Priority: extra
 Maintainer: Toan Pham <reset.pointer@gmail.com>
 Build-Depends: debhelper (>= 8.0.0)
-Build-Version: 0.20.99.20916
+Build-Version: 0.20.99.20937
 Homepage: http://www.ups.com 
-Installed-Size: 138
-#Vcs-Git: git://git.debian.org/collab-maint/flashbuilder.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/flashbuilder.git;a=summary
-Package: e19 
+
+Package: e20
 Architecture: i386 
-Depends: nautilus 
+Depends: 
 Description: e19 window manager 
  A better window manager - TP 
-Version: 0.20.99.20916
+Version: 0.20.99.20937

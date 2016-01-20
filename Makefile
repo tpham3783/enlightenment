@@ -64,7 +64,17 @@ bootstrap: prerequisite
 	
 	
 pull:
-	@$(foreach module, $(modules), $(shell cd $(module) && git pull));
+	#$(foreach module, $(modules), $(shell cd $(module) && git pull || echo "unable to pull"));
+	$(foreach module, $(modules), $(shell git -C $(module) pull ));
+
+pull_git: $(modules)
+	echo "Updating module: $<";
+	cd efl && git pull
+	cd elementary && git pull
+	cd evas_generic_loaders && git pull
+	cd rage && git pull
+	cd enlightenment && git pull
+	cd terminology && git pull
 	
 e: 
 	@echo "Building enlightenment from git repo"
@@ -79,15 +89,21 @@ e:
 	install dist/enlightenment.desktop dist/debian/usr/share/xsessions/enlightenment.desktop
 	@echo "Finish & enjoy!"
 
+e_uninstall:
+	cd efl && make uninstall
+	cd elementary && make uninstall
+	cd enlightenment && make uninstall
+	cd terminology && make uninstall
+
 ubuntu_installer: 
 	
 	export CFLAGS="-O3 -ffast-math -march=native"
 	export PREFIX=$(PREFIX_UBUNTU_PACKAGE_DIR)
-	export PATH=$(PREFIX)/bin:$(PATH)
+	export PATH=$(PREFIX_UBUTU_PACKAGE_DIR)/bin:$(PREFIX)/bin:$(PATH)
 	#export PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)
 	#export LD_LIBRARY_PATH=$(PREFIX)/lib:$(LD_LIBRARY_PATH)
-	@echo "Building a ubuntu release of e19 trunk"
-	@echo "Install to: $(PREFIX)"
+	@echo "Building a ubuntu release of e20 trunk"
+	@echo "Install to: $(PREFIX_UBUNTU_PACKAGE_DIR)"
 	@sleep 8;
 	rm -rf dist/debian/usr
 	mkdir -p ${PREFIX}
@@ -98,7 +114,7 @@ ubuntu_installer:
 	cd evas_generic_loaders && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
 	install dist/enlightenment.desktop dist/debian/usr/share/xsessions/enlightenment.desktop
 	make update_version
-	cd dist && make && echo "Create package at dist/e19.deb"
+	cd dist && make E_VERSION=$(E_VERSION) && echo "Create package at dist/e20.deb"
 	
 	
 update_version:

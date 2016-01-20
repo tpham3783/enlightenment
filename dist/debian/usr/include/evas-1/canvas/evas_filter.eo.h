@@ -95,7 +95,7 @@ EOAPI void *evas_filter_output_buffer_get(void);
  *
  * @ingroup Evas_Filter
  */
-EOAPI void evas_filter_constructor(void);
+EOAPI void evas_filter_ctor(void);
 #endif
 
 #ifdef EVAS_FILTER_PROTECTED
@@ -107,7 +107,7 @@ EOAPI void evas_filter_constructor(void);
  *
  * @ingroup Evas_Filter
  */
-EOAPI void evas_filter_destructor(void);
+EOAPI void evas_filter_dtor(void);
 #endif
 
 

@@ -30,11 +30,11 @@ namespace evas {
 struct filter
 {
 #ifdef FILTER_PROTECTED
-   void constructor() const;
+   void ctor() const;
 #endif
 
 #ifdef FILTER_PROTECTED
-   void destructor() const;
+   void dtor() const;
 #endif
 
 #ifdef FILTER_PROTECTED
@@ -167,11 +167,11 @@ struct filter
    ~filter() {}
 
 #ifdef FILTER_PROTECTED
-   void constructor() const;
+   void ctor() const;
 #endif
 
 #ifdef FILTER_PROTECTED
-   void destructor() const;
+   void dtor() const;
 #endif
 
 #ifdef FILTER_PROTECTED

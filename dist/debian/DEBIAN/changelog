@@ -1,5 +1,5 @@
-flashbuilder (3.2-1) unstable; urgency=low
+e20 (0.20.99.20937) vivid; urgency=low
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
- -- atcsupport <tpham3783@gmail.com>  Thu, 18 Jul 2013 11:30:11 -0400
+ -- Toan Pham (toanpham.com) <tpham3783@gmail.com>  Thu, 18 Jul 2013 11:30:11 -0400

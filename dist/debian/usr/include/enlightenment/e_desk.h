@@ -13,7 +13,7 @@ typedef void (*E_Desk_Flip_Cb)(void *data, E_Desk *desk, int dx, int dy, Eina_Bo
 #ifndef E_DESK_H
 #define E_DESK_H
 
-#define E_DESK_TYPE 0xE0b01005
+#define E_DESK_TYPE (int)0xE0b01005
 
 typedef enum
 {
@@ -37,6 +37,7 @@ struct _E_Desk
    Evas_Object         *bg_object;
 
    unsigned int animate_count;
+   Eina_Inlist *obstacles;
 };
 
 struct _E_Event_Desk_Show
@@ -76,7 +77,7 @@ E_API void         e_desk_deskshow(E_Zone *zone);
 E_API E_Client    *e_desk_last_focused_focus(E_Desk *desk);
 E_API E_Client    *e_desk_client_top_visible_get(const E_Desk *desk);
 E_API E_Desk      *e_desk_current_get(E_Zone *zone);
-E_API E_Desk      *e_desk_at_xy_get(E_Zone *zone, int x, int y);
+E_API E_Desk      *e_desk_at_xy_get(const E_Zone *zone, int x, int y);
 E_API E_Desk      *e_desk_at_pos_get(E_Zone *zone, int pos);
 E_API void         e_desk_xy_get(E_Desk *desk, int *x, int *y);
 E_API void         e_desk_next(E_Zone *zone);

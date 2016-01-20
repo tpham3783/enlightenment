@@ -1,16 +1,16 @@
 /// @cond EO_CXX_EO_IMPL
 
 #ifdef FILTER_PROTECTED
-inline void evas::filter::constructor() const
+inline void evas::filter::ctor() const
 {
-   eo_do(_concrete_eo_ptr(), ::evas_filter_constructor());
+   eo_do(_concrete_eo_ptr(), ::evas_filter_ctor());
 }
 #endif
 
 #ifdef FILTER_PROTECTED
-inline void evas::filter::destructor() const
+inline void evas::filter::dtor() const
 {
-   eo_do(_concrete_eo_ptr(), ::evas_filter_destructor());
+   eo_do(_concrete_eo_ptr(), ::evas_filter_dtor());
 }
 #endif
 
@@ -63,16 +63,16 @@ inline void * evas::filter::output_buffer_get() const
 #endif
 
 #ifdef FILTER_PROTECTED
-inline void eo_cxx::evas::filter::constructor() const
+inline void eo_cxx::evas::filter::ctor() const
 {
-   eo_do(_concrete_eo_ptr(), ::evas_filter_constructor());
+   eo_do(_concrete_eo_ptr(), ::evas_filter_ctor());
 }
 #endif
 
 #ifdef FILTER_PROTECTED
-inline void eo_cxx::evas::filter::destructor() const
+inline void eo_cxx::evas::filter::dtor() const
 {
-   eo_do(_concrete_eo_ptr(), ::evas_filter_destructor());
+   eo_do(_concrete_eo_ptr(), ::evas_filter_dtor());
 }
 #endif
 
@@ -141,11 +141,11 @@ inline ::eo_cxx::evas::filter::operator ::evas::filter const&() const
 
 #ifdef FILTER_PROTECTED
 template <typename T>
-void evas_filter_constructor_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+void evas_filter_ctor_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
 {
    try
       {
-         static_cast<T*>(self->this_)->constructor();
+         static_cast<T*>(self->this_)->ctor();
       }
    catch (...)
       {
@@ -156,11 +156,11 @@ void evas_filter_constructor_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::I
 
 #ifdef FILTER_PROTECTED
 template <typename T>
-void evas_filter_destructor_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
+void evas_filter_dtor_wrapper(Eo* objid EINA_UNUSED, ::efl::eo::detail::Inherit_Private_Data* self)
 {
    try
       {
-         static_cast<T*>(self->this_)->destructor();
+         static_cast<T*>(self->this_)->dtor();
       }
    catch (...)
       {
@@ -275,22 +275,22 @@ struct operations< ::evas::filter >
          : virtual operations< ::efl::gfx::filter >::template type<T>
    {
 #ifdef FILTER_PROTECTED
-      virtual void constructor()
+      virtual void ctor()
       {
 
          eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
                dynamic_cast<T*>(this)->_eo_class(),
-               ::evas_filter_constructor());
+               ::evas_filter_ctor());
       }
 #endif
 
 #ifdef FILTER_PROTECTED
-      virtual void destructor()
+      virtual void dtor()
       {
 
          eo_do_super(dynamic_cast<T*>(this)->_eo_ptr(),
                dynamic_cast<T*>(this)->_eo_class(),
-               ::evas_filter_destructor());
+               ::evas_filter_dtor());
       }
 #endif
 
@@ -388,15 +388,15 @@ int initialize_operation_description(::efl::eo::detail::tag<::evas::filter>
    (void)i;
    (void)ops;
 #ifdef FILTER_PROTECTED
-   ops[i].func = reinterpret_cast<void*>(& ::evas_filter_constructor_wrapper<T>);
-   ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_constructor);
+   ops[i].func = reinterpret_cast<void*>(& ::evas_filter_ctor_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_ctor);
    ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 #endif
 
 #ifdef FILTER_PROTECTED
-   ops[i].func = reinterpret_cast<void*>(& ::evas_filter_destructor_wrapper<T>);
-   ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_destructor);
+   ops[i].func = reinterpret_cast<void*>(& ::evas_filter_dtor_wrapper<T>);
+   ops[i].api_func = reinterpret_cast<void*>(& ::evas_filter_dtor);
    ops[i].op_type = EO_OP_TYPE_REGULAR;
    ++i;
 #endif
