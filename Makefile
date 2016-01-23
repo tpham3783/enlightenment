@@ -1,10 +1,13 @@
-
 dirs=$(shell ls)
 PREFIX=/usr/local
 
 
 
-PREFIX_UBUNTU_PACKAGE_DIR=/usr/local/src/enlightenment.source.repo/dist/debian/usr
+PREFIX_UBUNTU_PACKAGE_DIR=$(PWD)/dist/debian
+
+#PREFIX=$(PREFIX_UBUNTU_PACKAGE)
+
+#COMMON_CONFIGURE_FLAGS="PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig ./configure --prefix=$(PREFIX)"
 
 modules_git = http://git.enlightenment.org/core/efl.git \
 	      http://git.enlightenment.org/core/elementary.git \
@@ -14,9 +17,15 @@ modules_git = http://git.enlightenment.org/core/efl.git \
 	      http://git.enlightenment.org/apps/terminology.git
 
 modules = efl elementary evas_generic_loaders rage enlightenment terminology 
-#modules = efl elementary evas_generic_loaders enlightenment terminology
+modules_made = $(modules:%=%.made)
+
+
+# To determine if the package needs to run autoreconf
+config_files = $(modules:%=%/configure)
 
 E_VERSION=$(shell grep VERSION enlightenment/config.h | grep -v PACK | cut -d' ' -f 3)
+
+.PHONY=$(modules)
 
 help:
 	@echo "TARGET              DESCRIPTION"
@@ -34,6 +43,8 @@ help:
 	@echo ""
 	@echo ""
 	@echo "Please run with one of the target names from above"
+
+
 
 	
 	
@@ -56,15 +67,37 @@ x11proto-print-dev libXp-dev libxrender-dev libxrandr-dev libxfixes-dev \
 libxdamage-dev libxcursor-dev libxcomposite-dev libxss-dev libxp-dev \
 libxext-dev libxkbfile-dev libxtst-dev libxcb1-dev libxcb-shape0-dev \
 libxcb-keysyms1-dev libbullet-dev vlc libvlc-dev autoconf libtool
+
+$(modules):
+	cd $@ && autoreconf -i
+	make -C $@ 
+	#make -C $@ DESTDIR=$(PREFIX_UBUNTU_PACKAGE_DIR) install 
+
+$(config_files):
+	cd $(dir $@) && autoreconf -i
+
+#$(modules):
+#	@$(foreach mod, $(modules_git), $(shell if [ ! -d $(mod) ]; then git clone $(mod) || echo ""; fi));
+
+rebuild: $(config_files)
+	make -C $(dir $<) clean
+	make -C $(dir $<) 
+	make -C $(dir $<) DESTDIR=$(PREFIX_UBUNTU_PACKAGE_DIR) install 
+
+
+config: $(modules)
+	cd $< && autoreconf -i
+	#cd $< && make 
+	#cd $< && make DESTDIR=$(PREFIX_UBUNTU_PACKAGE_DIR) install
+	make -C $< 
+	make -C $< DESTDIR=$(PREFIX_UBUNTU_PACKAGE_DIR) install 
 	
+bootstrap: prerequisite $(modules) $(config_files)
+	echo "TODO: initializing git repo $<"
+	#@$(foreach mod, $(modules_git), $(shell if [ ! -d $(mod) ]; then git clone $(mod) || echo ""; fi));
 	
-bootstrap: prerequisite
-	@echo "TODO: initialize all git repos"
-	@$(foreach mod, $(modules_git), $(shell git clone $(mod) || echo ""));
-	
-	
+
 pull:
-	#$(foreach module, $(modules), $(shell cd $(module) && git pull || echo "unable to pull"));
 	$(foreach module, $(modules), $(shell git -C $(module) pull ));
 
 pull_git: $(modules)
@@ -82,7 +115,7 @@ e:
 	@sleep 5;
 	@mkdir -p ${PREFIX}
 	
-	cd efl && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
+	cd efl && ./autogen.sh && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
 	cd elementary && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
 	cd enlightenment && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
 	cd terminology && ./configure --prefix=$(PREFIX) && make -j8 && make install-strip
@@ -95,12 +128,18 @@ e_uninstall:
 	cd enlightenment && make uninstall
 	cd terminology && make uninstall
 
+
+%.made: %
+	cd $< && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) PKG_CONFIG_PATH="$(PREFIX_UBUNTU_PACKAGE_DIR)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && make -j8 && make install && touch $<.made 
+
+xxx: $(modules:%=%.made)
+	echo "done"; 
+
 ubuntu_installer: 
-	
 	export CFLAGS="-O3 -ffast-math -march=native"
 	export PREFIX=$(PREFIX_UBUNTU_PACKAGE_DIR)
 	export PATH=$(PREFIX_UBUTU_PACKAGE_DIR)/bin:$(PREFIX)/bin:$(PATH)
-	#export PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)
+	PKG_CONFIG_PATH=$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)
 	#export LD_LIBRARY_PATH=$(PREFIX)/lib:$(LD_LIBRARY_PATH)
 	@echo "Building a ubuntu release of e20 trunk"
 	@echo "Install to: $(PREFIX_UBUNTU_PACKAGE_DIR)"
@@ -108,7 +147,7 @@ ubuntu_installer:
 	rm -rf dist/debian/usr
 	mkdir -p ${PREFIX}
 	cd efl && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
-	cd elementary && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
+	cd elementary && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) PKG_CONFIG_PATH=${PKG_CONFIG_PATH} && make -j8 && make install
 	cd terminology && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
 	cd enlightenment && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
 	cd evas_generic_loaders && ./configure --prefix=$(PREFIX_UBUNTU_PACKAGE_DIR) && make -j8 && make install
@@ -124,3 +163,5 @@ clean:
 	rm dist/e19.deb
 	rm -rf dist/debian/usr
 	
+
+
